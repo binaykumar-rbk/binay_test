@@ -1,0 +1,400 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Add information for connecting a vCenter Server to a Rubrik cluster allowing the Rubrik cluster to protect the virtual machines running in the vCenter Server environment."/><meta name="DC.relation" content="../saas/vs_vsphere_management.html"/><meta name="DC.relation" content="../cdm/min_vsphere_vapp_privileges.html"/><meta name="DC.relation" content="../saas/adding_vcenter_metro_storage_cluster_connection_information.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="vs_adding_vcenter_server_connection_info"/>        
+      <title>Adding vCenter Server connection information</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="vs_adding_vcenter_server_connection_info-d23139e20170"/><meta name="wh-source-relpath" content="saas/vs_adding_vcenter_server_connection_info.dita"/><meta name="wh-out-relpath" content="saas/vs_adding_vcenter_server_connection_info.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="vs_adding_vcenter_server_connection_info" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html">Data Center Workloads</a></div></div></li><li><div class="topicref" data-id="vs_virtual_machines"><div class="title"><a href="../saas/vs_virtual_machines.html">vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides data management and SLA Domain protection for         vSphere virtual machines, including vSphere VM templates that are managed either through a         VMware vSphere environment or a content library.</p></div></div></div></li><li><div class="topicref" data-id="vs_vsphere_management"><div class="title"><a href="../saas/vs_vsphere_management.html">vSphere management</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster accesses virtual machine data through a connection with the VMware         vCenter Server or ESXi host that manages the hypervisor running the virtual         machine.</p></div></div></div></li><li class="active"><div class="topicref" data-id="vs_adding_vcenter_server_connection_info"><div class="title"><a href="../saas/vs_adding_vcenter_server_connection_info.html">Adding vCenter Server connection information</a><div class="wh-tooltip"><p class="shortdesc">Add information for connecting a vCenter Server to a Rubrik cluster allowing the         Rubrik cluster to protect the virtual machines running in the vCenter Server         environment.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../cdm/min_vsphere_vapp_privileges.html" title="Minimum vSphere vApp privileges" aria-label="Previous topic: Minimum vSphere vApp privileges" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/adding_vcenter_metro_storage_cluster_connection_information.html" title="Adding vCenter Metro Storage Cluster connection information" aria-label="Next topic: Adding vCenter Metro Storage Cluster connection information" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_ahv_virtual_machines-d23139e18101" class="topicref" data-id="rsc_ahv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_ahv_virtual_machines-d23139e18101-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="rsc_ahv_virtual_machines-d23139e18101-link">AHV virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data management and protection for virtual machines         deployed in a Nutanix Acropolis environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hyperv_virtual_machines-d23139e18945" class="topicref" data-id="hyperv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hyperv_virtual_machines-d23139e18945-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/hyper_v/hyperv_virtual_machines.html" id="hyperv_virtual_machines-d23139e18945-link">Hyper-V virtual machines</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster provides data management and protection for virtual machines that are       deployed in a Microsoft Hyper-V environment. The Rubrik cluster can manage and protect virtual       machines in an environment with multiple Hyper-V servers and virtual machines.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="vs_virtual_machines-d23139e19815" class="topicref" data-id="vs_virtual_machines" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action vs_virtual_machines-d23139e19815-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_virtual_machines.html" id="vs_virtual_machines-d23139e19815-link">vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides data management and SLA Domain protection for         vSphere virtual machines, including vSphere VM templates that are managed either through a         VMware vSphere environment or a content library.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="vs_vm_templates-d23139e19828" class="topicref" data-id="vs_vm_templates" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_vm_templates.html" id="vs_vm_templates-d23139e19828-link">vSphere VM templates</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> support selected backup and recovery operations for vSphere         VM templates and content library items. These operations include file recovery, export, live         mount, mounting virtual disks, and recovering virtual machine images as a         template.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_app_consistency_indiv_batch-d23139e19841" class="topicref" data-id="vs_app_consistency_indiv_batch" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_app_consistency_indiv_batch-d23139e19841-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_app_consistency_indiv_batch.html" id="vs_app_consistency_indiv_batch-d23139e19841-link">Application consistency</a><div class="wh-tooltip"><p class="shortdesc">You can set application consistency for vSphere virtual machines individually or in         batch at different levels in the vSphere hierarchy.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_virtual_machine_protection-d23139e19877" class="topicref" data-id="vs_virtual_machine_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_virtual_machine_protection-d23139e19877-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_virtual_machine_protection.html" id="vs_virtual_machine_protection-d23139e19877-link">vSphere virtual machine protection</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides protection for virtual machines through individual assignment of the         virtual machine to an SLA Domain or through automatic protection.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="vs_vsphere_management-d23139e20004" class="topicref" data-id="vs_vsphere_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action vs_vsphere_management-d23139e20004-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_vsphere_management.html" id="vs_vsphere_management-d23139e20004-link">vSphere management</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster accesses virtual machine data through a connection with the VMware         vCenter Server or ESXi host that manages the hypervisor running the virtual         machine.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="vcenter_metro_storage_clusters-d23139e20015" class="topicref" data-id="vcenter_metro_storage_clusters" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/vcenter_metro_storage_clusters.html" id="vcenter_metro_storage_clusters-d23139e20015-link">vCenter Metro Storage Clusters</a><div class="wh-tooltip"><p class="shortdesc">A Metro Storage Cluster is a type of vCenter Server that is geographically         distributed.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vsphere_privs-d23139e20026" class="topicref" data-id="vsphere_privs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vsphere_privs-d23139e20026-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/vsphere_privs.html" id="vsphere_privs-d23139e20026-link">Minimum vSphere privileges</a><div class="wh-tooltip"><p class="shortdesc">The vSphere role assigned to a Rubrik cluster must provide minimum privileges on the       vCenter Server or ESXi host.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="vs_adding_vcenter_server_connection_info-d23139e20170" class="topicref" data-id="vs_adding_vcenter_server_connection_info" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_adding_vcenter_server_connection_info.html" id="vs_adding_vcenter_server_connection_info-d23139e20170-link">Adding vCenter Server connection information</a><div class="wh-tooltip"><p class="shortdesc">Add information for connecting a vCenter Server to a Rubrik cluster allowing the         Rubrik cluster to protect the virtual machines running in the vCenter Server         environment.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_vcenter_metro_storage_cluster_connection_information-d23139e20181" class="topicref" data-id="adding_vcenter_metro_storage_cluster_connection_information" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_vcenter_metro_storage_cluster_connection_information.html" id="adding_vcenter_metro_storage_cluster_connection_information-d23139e20181-link">Adding vCenter Metro Storage Cluster connection information</a><div class="wh-tooltip"><p class="shortdesc">Add connection information for a vCenter Metro Storage Cluster to a Rubrik         cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="vs_refresh_vcenter_metadata-d23139e20192" class="topicref" data-id="vs_refresh_vcenter_metadata" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_refresh_vcenter_metadata.html" id="vs_refresh_vcenter_metadata-d23139e20192-link">Refreshing the metadata provided by a vCenter Server</a><div class="wh-tooltip"><p class="shortdesc">Manually refresh the metadata provided by a vCenter Server.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_resource_visibility-d23139e20203" class="topicref" data-id="vs_resource_visibility" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_resource_visibility-d23139e20203-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_resource_visibility.html" id="vs_resource_visibility-d23139e20203-link">vSphere resource visibility</a><div class="wh-tooltip"><p class="shortdesc">In <span class="ph">RSC</span>, you can allocate vSphere resources to multiple         Rubrik clusters for protection, customizing your <span class="ph">RSC</span> deployment for data         management that fits your requirements.</p></div></div></div></li><li role="treeitem"><div data-tocid="vs_edit_vcenter_server_connection_info-d23139e20231" class="topicref" data-id="vs_edit_vcenter_server_connection_info" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_edit_vcenter_server_connection_info.html" id="vs_edit_vcenter_server_connection_info-d23139e20231-link">vCenter Server connection information edits</a><div class="wh-tooltip"><p class="shortdesc">Some properties of the vCenter Server connection information are editable from <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="vs_deleting_vcenter_server_connection_info-d23139e20245" class="topicref" data-id="vs_deleting_vcenter_server_connection_info" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_deleting_vcenter_server_connection_info.html" id="vs_deleting_vcenter_server_connection_info-d23139e20245-link">Deleting vCenter Server connection information</a><div class="wh-tooltip"><p class="shortdesc">Delete the vCenter Server connection information that is stored by a Rubrik cluster         to remove protection of the virtual machines of that vCenter Server.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_vsphere_diagnostics-d23139e20256" class="topicref" data-id="vs_vsphere_diagnostics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_vsphere_diagnostics-d23139e20256-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_vsphere_diagnostics.html" id="vs_vsphere_diagnostics-d23139e20256-link">vSphere diagnostics</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> vSphere diagnostics confirm connectivity and access         permissions for a vCenter server connected to a Rubrik cluster. You can use vSphere         diagnostics to verify and troubleshoot connectivity, backup, and recovery of a vSphere         object or component.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud_on_aws-d23139e20280" class="topicref" data-id="vmware_cloud_on_aws" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud_on_aws-d23139e20280-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/vmware_cloud_on_aws.html" id="vmware_cloud_on_aws-d23139e20280-link">VMware Cloud on AWS</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster can protect virtual machines deployed on VMware Cloud on         AWS.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud_on_azure-d23139e20335" class="topicref" data-id="vmware_cloud_on_azure" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud_on_azure-d23139e20335-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/vmware_cloud_on_azure.html" id="vmware_cloud_on_azure-d23139e20335-link">Microsoft Azure VMware Solution</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster can protect virtual machines deployed on the Microsoft Azure VMware         Solution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vsphere_on_gcve-d23139e20390" class="topicref" data-id="vsphere_on_gcve" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vsphere_on_gcve-d23139e20390-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/vmware_cloud_on_gcve.html" id="vsphere_on_gcve-d23139e20390-link">Google Cloud VMware Engine</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster can protect virtual machines deployed on the Google Cloud VMware         Engine.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_vmdk_files-d23139e20445" class="topicref" data-id="vs_vmdk_files" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_vmdk_files-d23139e20445-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_vmdk_files.html" id="vs_vmdk_files-d23139e20445-link">VMDK files</a><div class="wh-tooltip"><p class="shortdesc">Virtual machines can include VMDK files that do not need to be protected.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_virtual_machine_scripts-d23139e20467" class="topicref" data-id="vs_virtual_machine_scripts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_virtual_machine_scripts-d23139e20467-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_virtual_machine_scripts.html" id="vs_virtual_machine_scripts-d23139e20467-link">vSphere virtual machine scripts</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> allows you to configure the Rubrik cluster to run scripts on a         guest OS before a snapshot, after a snapshot, and after the Rubrik cluster completes the         backup process.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_backup_service-d23139e20503" class="topicref" data-id="rubrik_backup_service" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_backup_service-d23139e20503-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rubrik_backup_service.html" id="rubrik_backup_service-d23139e20503-link">Rubrik Backup Service</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik Backup Service is software installed on a host that coordinates activity         between the Rubrik cluster and the host.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_ods-d23139e20553" class="topicref" data-id="vs_ods" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_ods-d23139e20553-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_ods.html" id="vs_ods-d23139e20553-link">On-demand snapshots of vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc">In addition to policy-based snapshots, create virtual machine snapshots by using the         on-demand snapshot process.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_vm_details_page-d23139e20575" class="topicref" data-id="vs_vm_details_page" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_vm_details_page-d23139e20575-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_vm_details_page.html" id="vs_vm_details_page-d23139e20575-link">vSphere virtual machine details page</a><div class="wh-tooltip"><p class="shortdesc">The vSphere virtual machine details page provides detailed information about the         virtual machine, protection of the virtual machine, available snapshots, and tasks related         to the virtual machine and snapshots.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_recovery_vm-d23139e20663" class="topicref" data-id="vs_recovery_vm" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_recovery_vm-d23139e20663-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_recovery_vm.html" id="vs_recovery_vm-d23139e20663-link">Recovery of vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc">To recover a vSphere virtual machine, a Rubrik cluster mounts a point-in-time copy of         that virtual machine.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_storage_array_integration-d23139e20934" class="topicref" data-id="vs_storage_array_integration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_storage_array_integration-d23139e20934-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_storage_array_integration.html" id="vs_storage_array_integration-d23139e20934-link">Storage array integration</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides a user interface for integrating Rubrik         clusters with storage arrays, reducing the time a virtual machine is quiescent during         snapshot operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_vm_continuous_data_protection-d23139e21027" class="topicref" data-id="vs_vm_continuous_data_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_vm_continuous_data_protection-d23139e21027-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/vs_vm_continuous_data_protection.html" id="vs_vm_continuous_data_protection-d23139e21027-link">Continuous Data Protection</a><div class="wh-tooltip"><p class="shortdesc">Continuous Data Protection uses VMware vSphere APIs for I/O Filtering to continuously     capture changes to data on a vSphere virtual machine and sends them to a Rubrik     cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="standalone_esxi_host_protection-d23139e21096" class="topicref" data-id="standalone_esxi_host_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action standalone_esxi_host_protection-d23139e21096-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/standalone_esxi_host_protection.html" id="standalone_esxi_host_protection-d23139e21096-link">Standalone ESXi host protection</a><div class="wh-tooltip"><p class="shortdesc">Rubrik supports protecting and restoring virtual machines on standalone ESXi hosts,         providing continuous data security in environments that do not include a vCenter         server.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud-d23139e21140" class="topicref" data-id="vmware_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud-d23139e21140-link" class="wh-expand-btn"></span><div class="title"><a href="../vmware_cloud/vmware_cloud.html" id="vmware_cloud-d23139e21140-link">VMware Cloud</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster effectively protects virtual machines deployed on VMware Cloud         on AWS, Microsoft Azure VMware Solution, and Google Cloud VMware Engine.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud_director_vapps-d23139e21228" class="topicref" data-id="vmware_cloud_director_vapps" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud_director_vapps-d23139e21228-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vmware_cloud_director_vapps.html" id="vmware_cloud_director_vapps-d23139e21228-link">VMware Cloud Director vApps</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster provides SLA Domain protection and data management for VMware Cloud       Director vApps.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Adding vCenter Server connection information</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Add information for connecting a vCenter Server to a Rubrik cluster allowing the
+        Rubrik cluster to protect the virtual machines running in the vCenter Server
+        environment.</p>
+        <section class="- topic/section task/context section context" id="d751473e58"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>Rubrik clusters attempt to initiate a connection
+            with the vCenter Server using vCenter Server 6.0 or later protocols, which require
+            trusted root certificate.<p class="- topic/p p">When a trusted CA root certificate is not provided, the
+                Rubrik cluster relies on Public Key Intrastructure (PKI) or on a Trust On First Use
+                (TOFU) approach to authenticate the vCenter Server. Depending on the network
+                environment, TOFU might not ensure secure operation.</p></section>
+        <section class="- topic/ol task/steps ol steps" id="d751473e66"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../reuse/conrefs/../../images/ui-icons/AppTray.svg"/> and
+                        select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data Protection</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Data Protection dashboard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the navigation bar, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Inventory</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Inventory page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click the vSphere VMs inventory card.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The vSphere VMs page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Manage vSphere</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The vSphere Servers page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Locate the vCenter Server.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Alternatively, you can use the Search by name field to search for a vCenter
+                    Server.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Server/Host → Add vCenter Server</span></span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Add vCenter Server wizard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Select a vCenter page of the wizard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">vCenter</span>, enter the IP address or FQDN of the vCenter
+                    Server.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">For an IPv6 address, enclose the address in square brackets. For
+                    example:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>[fd9d:22d3:cd28:7257::1]</code></pre></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Username</span>, enter the username assigned to the Rubrik
+                    cluster.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Password</span>, enter the password associated with the
+                    username.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Automatically link discovered virtual machines
+                        (Recommended)</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">When adding a vCenter Server, <span class="- topic/ph ph">RSC</span> begins automatically
+                     linking discovered virtual
+                    machines when it adds a vCenter Server.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enable HotAdd transport mode for on-premises vCenter
+                        (Export)</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Selecting this option enables export of snapshots using the HotAdd transport
+                        mode.<p class="- topic/p p">HotAdd transport mode bypasses the ESXi host throughput bottleneck
+                        with the help of the proxy virtual machine. Using the HotAdd transport mode
+                        significantly reduces the latency of exporting large virtual
+                    machines.</p></div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Advanced Settings</span> to add a Certificate Authority
+                    (CA) certificate for TLS validation.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The page expands to show a field to provide the trusted root
+                    certificate.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">When adding the optional trusted CA, paste the text of the trusted
+                    CA root certificate for the vCenter in the field.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Select Rubrik Clusters page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a Rubrik cluster to handle the backup, recovery, replication, and
+                    archiving operations for the vCenter Server.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">You can select multiple clusters. The selected Rubrik clusters must be in
+                    connected state.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Validate Connection page appears. The page displays the selected
+                    Rubrik clusters and their state of connectivity.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">If adding the Rubrik cluster is unsuccessful, hover over the ellipsis and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Try Again</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Use this option when you are certain the credentialing information is
+                    correct.</div>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult"><span class="- topic/ph ph">RSC</span> retries adding the Rubrik cluster.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">If the wizard displays the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Unable to add vCenter Server</span>
+                    option, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enter Credentials</span>, enter a different
+                    username and password combination, and click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Save</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Add vCenter Server wizard uses the new credentials to add the Rubrik
+                    cluster.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Done</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">When multiple Rubrik clusters are selected for the vCenter Server, the
+                    Set Compute Resources Visibility dialog box appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Locate the Rubrik cluster to configure the resource visibility for that
+                    cluster.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">All compute clusters are visible to all Rubrik clusters by default. When you
+                    select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Customize</span>, you can specify the vCenter Server
+                    resources visible to each Rubrik cluster. Resources that are not specified are
+                    hidden.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the Compute cluster 1 section, in <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Compute cluster</span>,
+                    select a compute cluster to be protected by the Rubrik cluster.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Host group</span>, select a host group within the selected
+                    compute cluster.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">VMware vSphere Metro Storage Cluster</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Selecting this option specifies whether the vCenter Server is a Metro Storage
+                    Cluster.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Another Compute Cluster</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Selecting this option adds another compute cluster to the same Rubrik
+                    cluster.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Configure the resource visibility for all the Rubrik clusters.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">If additional Rubrik clusters are connected to the vCenter Server, you can
+                    configure the additional clusters to protect different compute clusters.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Save</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Done</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d751473e381"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The Rubrik cluster tests the connection with the vCenter Server and saves the
+            information.</section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

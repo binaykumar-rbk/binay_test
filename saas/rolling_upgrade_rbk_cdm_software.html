@@ -1,0 +1,291 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="To minimize any potential downtime for your Rubrik clusters, you can perform the rolling upgrade of Rubrik CDM software running your Rubrik cluster."/><meta name="DC.relation" content="../saas/rbk_cdm_software_upgrade.html"/><meta name="DC.relation" content="../saas/rubrik_cdm_upgrades_page.html"/><meta name="DC.relation" content="../saas/rolling_upgrade_advantages.html"/><meta name="DC.relation" content="../saas/rolling_upgrade_advantages.html"/><meta name="DC.relation" content="../saas/supported_workloads_rolling_upgrade.html"/><meta name="DC.relation" content="../saas/rolling_upgrade_statuses.html"/><meta name="DC.relation" content="rolling_upgrade_advantages.html"/><meta name="DC.relation" content="supported_workloads_rolling_upgrade.html"/><meta name="DC.relation" content="rbk_cdm_software_upgrade.html"/><meta name="DC.relation" content="rbk_cdm_soft_upgrade_rsc.html"/><meta name="DC.relation" content="rubrik_cdm_upgrade_using_cli.html"/><meta name="DC.relation" content="upgrade_preparation_and_prechecks.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rolling_upgrade_rbk_cdm_software"/>        
+      <title>Rolling upgrade of Rubrik CDM software</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="rolling_upgrade_rbk_cdm_software-d23139e3170"/><meta name="wh-source-relpath" content="saas/rolling_upgrade_rbk_cdm_software.dita"/><meta name="wh-out-relpath" content="saas/rolling_upgrade_rbk_cdm_software.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="rolling_upgrade_rbk_cdm_software" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/common/rubrik_clusters_2.html">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li><div class="topicref" data-id="rbk_cdm_software_upgrade"><div class="title"><a href="../saas/rbk_cdm_software_upgrade.html">Rubrik CDM software upgrade</a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements, you can upgrade your         Rubrik CDM software running on your Rubrik clusters to the latest version.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rolling_upgrade_rbk_cdm_software"><div class="title"><a href="../saas/rolling_upgrade_rbk_cdm_software.html">Rolling upgrade of Rubrik CDM software</a><div class="wh-tooltip"><p class="shortdesc">To minimize any potential downtime for your Rubrik clusters, you can perform the         rolling upgrade of Rubrik CDM software running your Rubrik cluster.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/rubrik_cdm_upgrades_page.html" title="Rubrik CDM upgrades page" aria-label="Previous topic: Rubrik CDM upgrades page" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/rolling_upgrade_advantages.html" title="Advantages of using a rolling upgrade" aria-label="Next topic: Advantages of using a rolling upgrade" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_clusters-d23139e1438" class="topicref" data-id="rubrik_clusters" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_clusters-d23139e1438-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="rubrik_clusters-d23139e1438-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster is an instance of Rubrik CDM running on any virtual or physical         platform. You can add the Rubrik cluster to <span class="ph">RSC</span> to enable extended features         for the cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="security-d23139e2155" class="topicref" data-id="security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action security-d23139e2155-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/security.html" id="security-d23139e2155-link">Security</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides end-to-end security for data management         information.</p></div></div></div></li><li role="treeitem"><div data-tocid="outbound_connection_through_ports-d23139e2205" class="topicref" data-id="outbound_connection_through_ports" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/outbound_connection_through_ports.html" id="outbound_connection_through_ports-d23139e2205-link">Outbound connection through ports</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> requires you to open an outbound connection through port 443 for         a Rubrik cluster to access specific sites.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_smb_security-d23139e2218" class="topicref" data-id="rsc_smb_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_smb_security-d23139e2218-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_smb_security.html" id="rsc_smb_security-d23139e2218-link">SMB security</a><div class="wh-tooltip"><p class="shortdesc">With the SMB security feature in <span class="ph">RSC</span>, a Rubrik cluster provides         security for SMB shares by requiring Active Directory authentication and enforcing SMB         security.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_cluster_deployment-d23139e2724" class="topicref" data-id="rsc_cluster_deployment" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_cluster_deployment-d23139e2724-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_deployment.html" id="rsc_cluster_deployment-d23139e2724-link">Rubrik cluster deployment</a><div class="wh-tooltip"><p class="shortdesc">Deploying a Rubrik cluster running on Rubrik appliance nodes involves installing the         CDM software on the nodes and setting up that software for your environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_cluster_registration-d23139e2893" class="topicref" data-id="rsc_cluster_registration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_cluster_registration-d23139e2893-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_registration.html" id="rsc_cluster_registration-d23139e2893-link">Cluster registration</a><div class="wh-tooltip"><p class="shortdesc">Rubrik offers two modes for registering clusters with <span class="ph">Rubrik Security Cloud</span>,         online and offline.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_rmfa_totp-d23139e2957" class="topicref" data-id="rsc_rmfa_totp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_rmfa_totp-d23139e2957-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rsc_rmfa_totp.html" id="rsc_rmfa_totp-d23139e2957-link">Rubrik MFA with TOTP</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik two-step verification feature uses time-based one-time passwords in         addition to the user login credentials to enforce multi-factor authentication on user         accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cli_administrator_role-d23139e2990" class="topicref" data-id="cli_administrator_role" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cli_administrator_role-d23139e2990-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/cli_administrator_role.html" id="cli_administrator_role-d23139e2990-link">CLI administrator role</a><div class="wh-tooltip"><p class="shortdesc">As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters         through the CLI Secure Shell (SSH) protocol.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="jumbo_frame_support-d23139e3034" class="topicref" data-id="jumbo_frame_support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jumbo_frame_support-d23139e3034-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/jumbo_frame_support.html" id="jumbo_frame_support-d23139e3034-link">Jumbo frame support</a><div class="wh-tooltip"><p class="shortdesc">For Rubrik CDM versions 9.4 and later, you can set the value for the maximum         transmission unit to a maximum value of 10000, instead of the default value of 1500. This         larger unit size is called jumbo frames.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="system_shutdown-d23139e3079" class="topicref" data-id="system_shutdown" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action system_shutdown-d23139e3079-link" class="wh-expand-btn"></span><div class="title"><a href="../install/system_shutdown.html" id="system_shutdown-d23139e3079-link">System shutdown</a><div class="wh-tooltip"><p class="shortdesc">A system shutdown can be done from the Rubrik CLI.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rbk_cdm_software_upgrade-d23139e3112" class="topicref" data-id="rbk_cdm_software_upgrade" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rbk_cdm_software_upgrade-d23139e3112-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rbk_cdm_software_upgrade.html" id="rbk_cdm_software_upgrade-d23139e3112-link">Rubrik CDM software upgrade</a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements, you can upgrade your         Rubrik CDM software running on your Rubrik clusters to the latest version.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_cdm_release_information-d23139e3123" class="topicref" data-id="rubrik_cdm_release_information" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_cdm_release_information-d23139e3123-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rubrik_cdm_release_information.html" id="rubrik_cdm_release_information-d23139e3123-link">Rubrik CDM release information</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik CDM release information includes details such as release date, end of         support date, and current adoption rate. You can use this information to compare the         available versions for making a decision about upgrading.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="rolling_upgrade_rbk_cdm_software-d23139e3170" class="topicref" data-id="rolling_upgrade_rbk_cdm_software" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rolling_upgrade_rbk_cdm_software-d23139e3170-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rolling_upgrade_rbk_cdm_software.html" id="rolling_upgrade_rbk_cdm_software-d23139e3170-link">Rolling upgrade of Rubrik CDM software</a><div class="wh-tooltip"><p class="shortdesc">To minimize any potential downtime for your Rubrik clusters, you can perform the         rolling upgrade of Rubrik CDM software running your Rubrik cluster.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rolling_upgrade_advantages-d23139e3181" class="topicref" data-id="rolling_upgrade_advantages" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rolling_upgrade_advantages.html" id="rolling_upgrade_advantages-d23139e3181-link">Advantages of using a rolling upgrade</a><div class="wh-tooltip"><p class="shortdesc">With a rolling upgrade, you can upgrade a Rubrik cluster or third-party hardware         without downtime. Rolling upgrades provide a set of advantages, such as simplified upgrade         workflow, support for third-party hardware upgrades, and varied levels of job         resumability.</p></div></div></div></li><li role="treeitem"><div data-tocid="supported_workloads_rolling_upgrade-d23139e3192" class="topicref" data-id="supported_workloads_rolling_upgrade" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/supported_workloads_rolling_upgrade.html" id="supported_workloads_rolling_upgrade-d23139e3192-link">Supported workloads for rolling upgrade</a><div class="wh-tooltip"><p class="shortdesc">Information about the supported workloads during a rolling upgrade.</p></div></div></div></li><li role="treeitem"><div data-tocid="rolling_upgrade_statuses-d23139e3203" class="topicref" data-id="rolling_upgrade_statuses" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rolling_upgrade_statuses.html" id="rolling_upgrade_statuses-d23139e3203-link">Rolling upgrade statuses for workloads</a><div class="wh-tooltip"><p class="shortdesc">Information about the statuses for workloads, such as resumable, restartable, and         unsupported, during a rolling upgrade.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="fast_upgrade_rbk_cdm_software-d23139e3214" class="topicref" data-id="fast_upgrade_rbk_cdm_software" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/fast_upgrade_rbk_cdm_software.html" id="fast_upgrade_rbk_cdm_software-d23139e3214-link">Fast upgrade of Rubrik CDM software</a><div class="wh-tooltip"><p class="shortdesc">With the fast upgrade of Rubrik CDM software running on your Rubrik cluster, you can         simultaneously upgrade all Rubrik cluster nodes. This option saves time but requires some         system downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="upgrade_preparation_and_prechecks-d23139e3225" class="topicref" data-id="upgrade_preparation_and_prechecks" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action upgrade_preparation_and_prechecks-d23139e3225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/upgrade_preparation_and_prechecks.html" id="upgrade_preparation_and_prechecks-d23139e3225-link">Upgrade preparation and prechecks</a><div class="wh-tooltip"><p class="shortdesc">You can prepare the Rubrik CDM cluster for an upgrade process that also automatically         includes a series of prechecks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbk_cdm_soft_upgrade_rsc-d23139e3258" class="topicref" data-id="rbk_cdm_soft_upgrade_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbk_cdm_soft_upgrade_rsc-d23139e3258-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rbk_cdm_soft_upgrade_rsc.html" id="rbk_cdm_soft_upgrade_rsc-d23139e3258-link">Rubrik CDM software upgrade using <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements that Rubrik offers, you can         upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version         using <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_cdm_upgrade_using_cli-d23139e3367" class="topicref" data-id="rubrik_cdm_upgrade_using_cli" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_cdm_upgrade_using_cli-d23139e3367-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rubrik_cdm_upgrade_using_cli.html" id="rubrik_cdm_upgrade_using_cli-d23139e3367-link">Rubrik CDM software upgrade using CLI</a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements that Rubrik offers, you can         upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version         using Rubrik CLI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="downloading_the_rubrik_cluster_upgrade_report-d23139e3466" class="topicref" data-id="downloading_the_rubrik_cluster_upgrade_report" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action downloading_the_rubrik_cluster_upgrade_report-d23139e3466-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/downloading_the_rubrik_cluster_upgrade_report.html" id="downloading_the_rubrik_cluster_upgrade_report-d23139e3466-link">Downloading the Rubrik cluster upgrade report</a><div class="wh-tooltip"><p class="shortdesc">Download and view the Rubrik cluster upgrade report for monitoring or         auditing.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="upgrade_to_rsc-d23139e3488" class="topicref" data-id="upgrade_to_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action upgrade_to_rsc-d23139e3488-link" class="wh-expand-btn"></span><div class="title"><a href="../install/upgrade_to_rubrik_security_cloud.html" id="upgrade_to_rsc-d23139e3488-link">Polaris to <span class="ph">RSC</span> upgrade</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides a unified user interface to manage all your Rubrik         tasks.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Rolling upgrade of Rubrik CDM software</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">To minimize any potential downtime for your Rubrik clusters, you can perform the
+        rolling upgrade of Rubrik CDM software running your Rubrik cluster.</p>
+        <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">The rolling upgrades feature should only be used when you are upgrading a cluster from
+            Rubrik CDM version 9.0 or later.</div></div>
+        <p class="- topic/p p">With the rolling upgrade, you can upgrade the Rubrik CDM software running on a Rubrik
+            cluster without interrupting backup, refresh, and restore jobs. Nodes of the Rubrik
+            cluster are upgraded one by one, while the backup and restore jobs running on the node
+            are transferred to other nodes in the Rubrik cluster to continue the job progress.</p>
+        <p class="- topic/p p">During a rolling upgrade, you can still access <span class="- topic/ph ph">RSC</span> and resume jobs to
+            varying degrees. For instance, if you have MSSQL or VMware Live Mounts, they can
+            continue to run and be kept live by configuring floating IP addresses in the Rubrik
+            cluster. This feature makes the rolling upgrade an ideal option for mission-critical
+            systems. You can initiate an on-demand rolling upgrade or schedule a rolling upgrade
+            directly from the <span class="- topic/ph ph">RSC</span> without taking the system offline.</p>
+        <p class="- topic/p p">Rolling upgrade eliminates the efforts involved in an upgrade, such as planning, working
+            with stakeholders, changing the control board, establishing upgrade requirements, and
+            rolling out upgrade plans.</p>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rbk_cdm_software_upgrade.html" title="To take advantage of the latest features and improvements, you can upgrade your Rubrik CDM software running on your Rubrik clusters to the latest version.">Rubrik CDM software upgrade</a><div class="- topic/desc desc">To take advantage of the latest features and improvements, you can upgrade your         Rubrik CDM software running on your Rubrik clusters to the latest version.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rbk_cdm_soft_upgrade_rsc.html" title="To take advantage of the latest features and improvements that Rubrik offers, you can upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version using RSC.">Rubrik CDM software upgrade using RSC</a><div class="- topic/desc desc">To take advantage of the latest features and improvements that Rubrik offers, you can         upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version         using RSC.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rubrik_cdm_upgrade_using_cli.html" title="To take advantage of the latest features and improvements that Rubrik offers, you can upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version using Rubrik CLI.">Rubrik CDM software upgrade using CLI</a><div class="- topic/desc desc">To take advantage of the latest features and improvements that Rubrik offers, you can         upgrade the Rubrik CDM version running on any connected Rubrik cluster to the latest version         using Rubrik CLI.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="upgrade_preparation_and_prechecks.html" title="You can prepare the Rubrik CDM cluster for an upgrade process that also automatically includes a series of prechecks.">Upgrade preparation and prechecks</a><div class="- topic/desc desc">You can prepare the Rubrik CDM cluster for an upgrade process that also automatically         includes a series of prechecks.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rolling_upgrade_advantages.html" title="With a rolling upgrade, you can upgrade a Rubrik cluster or third-party hardware without downtime. Rolling upgrades provide a set of advantages, such as simplified upgrade workflow, support for third-party hardware upgrades, and varied levels of job resumability.">Advantages of using a rolling upgrade</a><div class="- topic/desc desc">With a rolling upgrade, you can upgrade a Rubrik cluster or third-party hardware         without downtime. Rolling upgrades provide a set of advantages, such as simplified upgrade         workflow, support for third-party hardware upgrades, and varied levels of job         resumability.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="supported_workloads_rolling_upgrade.html" title="Information about the supported workloads during a rolling upgrade.">Supported workloads for rolling upgrade</a><div class="- topic/desc desc">Information about the supported workloads during a rolling upgrade.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="You can create and download reports for Dynamics 365 data protection to view status information about a subscription."/><meta name="DC.relation" content="../microsoft_dynamics_365/microsoft_dynamics_365.html"/><meta name="DC.relation" content="../microsoft_dynamics_365/d365_restoring_data.html"/><meta name="DC.relation" content="../microsoft_dynamics_365/d365_creating_report_subs.html"/><meta name="DC.relation" content="../microsoft_dynamics_365/d365_creating_report_subs.html"/><meta name="DC.relation" content="../microsoft_dynamics_365/d365_downloading_report_subs.html"/><meta name="DC.relation" content="d365_creating_report_subs.html"/><meta name="DC.relation" content="d365_downloading_report_subs.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="d365_reporting"/>        
+      <title>Dynamics 365 reporting</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="d365_reporting-d23139e31070"/><meta name="wh-source-relpath" content="microsoft_dynamics_365/d365_reporting.dita"/><meta name="wh-out-relpath" content="microsoft_dynamics_365/d365_reporting.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="d365_reporting" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref" data-id="microsoft_dynamics_365"><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li class="active"><div class="topicref" data-id="d365_reporting"><div class="title"><a href="../microsoft_dynamics_365/d365_reporting.html">Dynamics 365 reporting </a><div class="wh-tooltip"><p class="shortdesc">You can create and download reports for Dynamics 365 data protection to view status         information about a subscription.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../microsoft_dynamics_365/d365_restoring_data.html" title="Restoring Dynamics 365 data" aria-label="Previous topic: Restoring Dynamics 365 data" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../microsoft_dynamics_365/d365_creating_report_subs.html" title="Creating a report for Dynamics 365 subscription" aria-label="Next topic: Creating a report for Dynamics 365 subscription" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="d365_microsoft_dataverse-d23139e30648" class="topicref" data-id="d365_microsoft_dataverse" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_microsoft_dataverse.html" id="d365_microsoft_dataverse-d23139e30648-link">Dynamics 365 and Microsoft Dataverse</a><div class="wh-tooltip"><p class="shortdesc">Microsoft Dataverse is a data storage platform that stores the data associated with         the Microsoft Dynamics 365 application.</p></div></div></div></li><li role="treeitem"><div data-tocid="d365_key_features_protection-d23139e30659" class="topicref" data-id="d365_key_features_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_key_features_protection.html" id="d365_key_features_protection-d23139e30659-link">Key features for Dynamics 365 protection</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, various recovery options for Microsoft Dynamics 365 Customer Relationship         Management workloads, and advanced security features to protect your workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="d365_common_terms_protection-d23139e30672" class="topicref" data-id="d365_common_terms_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_common_terms_protection.html" id="d365_common_terms_protection-d23139e30672-link">Common terms for Dynamics 365 protection</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting Microsoft Dynamics         365 workloads with <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="d365_comm_rsc_dynamics_subs-d23139e30686" class="topicref" data-id="d365_comm_rsc_dynamics_subs" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_comm_rsc_dynamics_subs.html" id="d365_comm_rsc_dynamics_subs-d23139e30686-link">Communication between <span class="ph">RSC</span> and Dynamics 365 subscription</a><div class="wh-tooltip"><p class="shortdesc">A high-level architecture overview of how <span class="ph">RSC</span> uses Microsoft Entra ID         and OAuth 2.0 authorization flows to manage Microsoft Dynamics 365 workloads         securely.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_planning_protection-d23139e30703" class="topicref" data-id="d365_planning_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_planning_protection-d23139e30703-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_planning_protection.html" id="d365_planning_protection-d23139e30703-link">Planning for Dynamics 365 protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up a Microsoft Dynamics 365 subscription in <span class="ph">RSC</span>, you         need to plan user and access management for designated <span class="ph">RSC</span> users. This         planning also involves reviewing the permissions that <span class="ph">RSC</span> requires in your         Microsoft Dynamics 365 environment to protect your Microsoft Dynamics 365         workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_setup-d23139e30789" class="topicref" data-id="d365_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_setup-d23139e30789-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_setup.html" id="d365_setup-d23139e30789-link">Dynamics 365 setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up a Microsoft Dynamics 365 subscription in <span class="ph">RSC</span> and start         protecting your Microsoft Dynamics 365 environments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_protection_setup-d23139e30844" class="topicref" data-id="d365_protection_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_protection_setup-d23139e30844-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_protection_setup.html" id="d365_protection_setup-d23139e30844-link">Dynamics 365 workload protection setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic         protection of Microsoft Dynamics 365 workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_backup_recovery-d23139e30938" class="topicref" data-id="d365_backup_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_backup_recovery-d23139e30938-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_backup_recovery.html" id="d365_backup_recovery-d23139e30938-link">Dynamics 365 backup and recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your Microsoft Dynamics 365 workloads,         you can recover the required rows or metadata whenever required.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_dashboard_details-d23139e31010" class="topicref" data-id="d365_dashboard_details" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_dashboard_details-d23139e31010-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_dashboard_details.html" id="d365_dashboard_details-d23139e31010-link">Dynamics 365 dashboard details</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> monitors, analyses, and restores Dynamics 365 data and shows the         important details, such as backup jobs, status, changed rows, and backup         summary.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_table_analysis-d23139e31034" class="topicref" data-id="d365_table_analysis" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_table_analysis-d23139e31034-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_table_analysis.html" id="d365_table_analysis-d23139e31034-link">Dynamics 365 table analysis</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> generates comprehensive insights about the changes in Microsoft         Dynamics 365 data, making it easier to analyze and restore data securely.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="d365_reporting-d23139e31070" class="topicref" data-id="d365_reporting" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action d365_reporting-d23139e31070-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_reporting.html" id="d365_reporting-d23139e31070-link">Dynamics 365 reporting </a><div class="wh-tooltip"><p class="shortdesc">You can create and download reports for Dynamics 365 data protection to view status         information about a subscription.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="d365_creating_report_subs-d23139e31081" class="topicref" data-id="d365_creating_report_subs" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_creating_report_subs.html" id="d365_creating_report_subs-d23139e31081-link">Creating a report for Dynamics 365 subscription</a><div class="wh-tooltip"><p class="shortdesc">Create reports for Dynamics 365 subscription to view information such as compliance         status and protection status, using the available templates. You can use the         information generated in the reports to perform audits and data management planning.</p></div></div></div></li><li role="treeitem"><div data-tocid="d365_downloading_report_subs-d23139e31092" class="topicref" data-id="d365_downloading_report_subs" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_downloading_report_subs.html" id="d365_downloading_report_subs-d23139e31092-link">Downloading a report for Dynamics 365 subscription</a><div class="wh-tooltip"><p class="shortdesc">Download reports for Dynamics 365 subscription from <span class="ph">RSC</span> for         monitoring or auditing.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="d365_viewing_events-d23139e31106" class="topicref" data-id="d365_viewing_events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action d365_viewing_events-d23139e31106-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/d365_viewing_events.html" id="d365_viewing_events-d23139e31106-link">Viewing events for Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc">View the Events page from the Dashboard to see the events for Dynamics 365         subscription.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Dynamics 365 reporting </h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can create and download reports for Dynamics 365 data protection to view status
+        information about a subscription.</p>
+        <div class="- topic/p p">To view status information, you can create reports based on the available templates. <span class="- topic/ph ph">RSC</span> provides the following report templates for Dynamics 365 subscription:<ul class="- topic/ul ul">
+                <li class="- topic/li li">Compliance: </li>
+                <li class="- topic/li li">Protection</li>
+                <li class="- topic/li li">Protection task details</li>
+                <li class="- topic/li li">Recovery task details</li>
+            </ul></div>
+        <p class="- topic/p p">You can create views of the most commonly used system metrics by using the Reporting
+            feature. You can use the data gathered in the reports to perform audits and data
+            management planning.</p>
+        <p class="- topic/p p">Reports contain data for instances with access to <span class="- topic/ph ph">RSC</span>.</p>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="d365_creating_report_subs.html" title="Create reports for Dynamics 365 subscription to view information such as compliance status and protection status, using the available templates. You can use the information generated in the reports to perform audits and data management planning.">Creating a report for Dynamics 365 subscription</a><div class="- topic/desc desc">Create reports for Dynamics 365 subscription to view information such as compliance         status and protection status, using the available templates. You can use the         information generated in the reports to perform audits and data management planning.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="d365_downloading_report_subs.html" title="Download reports for Dynamics 365 subscription from RSC for monitoring or auditing.">Downloading a report for Dynamics 365 subscription</a><div class="- topic/desc desc">Download reports for Dynamics 365 subscription from RSC for         monitoring or auditing.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

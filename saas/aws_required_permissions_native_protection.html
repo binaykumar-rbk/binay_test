@@ -1,0 +1,765 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Information about the permissions that RSC requires to protect AWS workloads."/><meta name="DC.relation" content="../saas/aws_req_rbk_perms_cloud_acc.html"/><meta name="DC.relation" content="../saas/aws_req_rbk_perms_cloud_acc.html"/><meta name="DC.relation" content="../saas/aws_orgs_req_permissions.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="aws_required_permissions_native_protection"/>        
+      <title>Required permissions for native AWS protection</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="aws_required_permissions_native_protection-d23139e10601"/><meta name="wh-source-relpath" content="saas/aws_required_permissions_native_protection.dita"/><meta name="wh-out-relpath" content="saas/aws_required_permissions_native_protection.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="aws_required_permissions_native_protection" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../saas/aws_workloads.html">Cloud Workloads</a></div></div></li><li><div class="topicref" data-id="aws_workloads"><div class="title"><a href="../saas/aws_workloads.html">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div></li><li><div class="topicref" data-id="aws_planning_protection"><div class="title"><a href="../saas/aws_planning_protection.html">Planning for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up an AWS cloud account in <span class="ph">RSC</span>, it is necessary to         plan the user and access management for designated <span class="ph">RSC</span> users. This planning         also involves reviewing the permissions that <span class="ph">RSC</span> requires in your AWS         environment to protect your AWS workloads.</p></div></div></div></li><li><div class="topicref" data-id="aws_req_rbk_perms_cloud_acc"><div class="title"><a href="../saas/aws_req_rbk_perms_cloud_acc.html">Required <span class="ph">RSC</span> permissions for AWS cloud accounts</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> requires specific permissions in your AWS environment to protect         the AWS workloads.</p></div></div></div></li><li class="active"><div class="topicref" data-id="aws_required_permissions_native_protection"><div class="title"><a href="../saas/aws_required_permissions_native_protection.html">Required permissions for native AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to protect AWS         workloads.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/aws_req_rbk_perms_cloud_acc.html" title="Required RSC permissions for AWS cloud accounts" aria-label="Previous topic: Required RSC permissions for AWS cloud accounts" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/aws_orgs_req_permissions.html" title="Required permissions for AWS Organization" aria-label="Next topic: Required permissions for AWS Organization" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="aws_workloads-d23139e10380" class="topicref" data-id="aws_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_workloads-d23139e10380-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="aws_workloads-d23139e10380-link">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aws_key_features_protection-d23139e10396" class="topicref" data-id="aws_key_features_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_key_features_protection.html" id="aws_key_features_protection-d23139e10396-link">Key features for protecting AWS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, various recovery options for AWS workloads, and advanced security features to         protect your workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_common_protection_terms-d23139e10409" class="topicref" data-id="aws_common_protection_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_common_protection_terms.html" id="aws_common_protection_terms-d23139e10409-link">Common AWS protection terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AWS workloads with             <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_protection_high_level_arch-d23139e10423" class="topicref" data-id="aws_protection_high_level_arch" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_protection_high_level_arch-d23139e10423-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_protection_high_level_arch.html" id="aws_protection_high_level_arch-d23139e10423-link">High-level architecture for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">A high-level architectural overview of how <span class="ph">RSC</span> protects AWS workloads         and the <span class="ph">RSC</span> AssumeRole workflow.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="aws_planning_protection-d23139e10529" class="topicref" data-id="aws_planning_protection" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_planning_protection-d23139e10529-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_planning_protection.html" id="aws_planning_protection-d23139e10529-link">Planning for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up an AWS cloud account in <span class="ph">RSC</span>, it is necessary to         plan the user and access management for designated <span class="ph">RSC</span> users. This planning         also involves reviewing the permissions that <span class="ph">RSC</span> requires in your AWS         environment to protect your AWS workloads.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="aws_rbac_cnp-d23139e10549" class="topicref" data-id="aws_rbac_cnp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_rbac_cnp-d23139e10549-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rbac_cnp.html" id="aws_rbac_cnp-d23139e10549-link">RBAC for AWS cloud-native protection</a><div class="wh-tooltip"><p class="shortdesc">Role-based Access Control for AWS cloud-native protection allows for precise access         permissions on AWS workloads, thereby enhancing security.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="aws_req_rbk_perms_cloud_acc-d23139e10585" class="topicref" data-id="aws_req_rbk_perms_cloud_acc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_req_rbk_perms_cloud_acc-d23139e10585-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_req_rbk_perms_cloud_acc.html" id="aws_req_rbk_perms_cloud_acc-d23139e10585-link">Required <span class="ph">RSC</span> permissions for AWS cloud accounts</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> requires specific permissions in your AWS environment to protect         the AWS workloads.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="aws_required_permissions_native_protection-d23139e10601" class="topicref" data-id="aws_required_permissions_native_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_required_permissions_native_protection.html" id="aws_required_permissions_native_protection-d23139e10601-link">Required permissions for native AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to protect AWS         workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_orgs_req_permissions-d23139e10615" class="topicref" data-id="aws_orgs_req_permissions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_orgs_req_permissions.html" id="aws_orgs_req_permissions-d23139e10615-link">Required permissions for AWS Organization</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to retrieve the         AWS Organization hierarchy.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_required_permissions_for_exocompute-d23139e10629" class="topicref" data-id="aws_required_permissions_for_exocompute" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_required_permissions_for_exocompute.html" id="aws_required_permissions_for_exocompute-d23139e10629-link">Required permissions for AWS Exocompute</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to configure an         AWS Exocompute instance.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_required_permissions_for_storage_tiering-d23139e10643" class="topicref" data-id="aws_required_permissions_for_storage_tiering" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_required_permissions_for_storage_tiering.html" id="aws_required_permissions_for_storage_tiering-d23139e10643-link">Required permissions for AWS storage tiering</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to perform         storage tiering.</p></div></div></div></li><li role="treeitem"><div data-tocid="required_perm_protect_amazon_s3_resources-d23139e10657" class="topicref" data-id="required_perm_protect_amazon_s3_resources" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../amazon_S3/required_perm_protect_amazon_s3_resources.html" id="required_perm_protect_amazon_s3_resources-d23139e10657-link">Required permissions for protecting Amazon S3 resources</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires at Read and Write         access levels to protect Amazon S3 resources in terms of various use cases.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_rds_required_permissions-d23139e10671" class="topicref" data-id="aws_rds_required_permissions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rds_required_permissions.html" id="aws_rds_required_permissions-d23139e10671-link">Required permissions for Amazon RDS databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> requires certain permissions to protect Amazon RDS         databases.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_dynamodb_req_permissions-d23139e10684" class="topicref" data-id="aws_dynamodb_req_permissions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_dynamodb_req_permissions.html" id="aws_dynamodb_req_permissions-d23139e10684-link">Required permissions for Amazon DynamoDB</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires at Read and Write         access levels to protect Amazon DynamoDB objects in terms of various use cases.</p></div></div></div></li><li role="treeitem"><div data-tocid="req_perms_data_scanning-d23139e10698" class="topicref" data-id="req_perms_data_scanning" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/req_perms_data_scanning.html" id="req_perms_data_scanning-d23139e10698-link">Required permissions for data scanning in AWS</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that <span class="ph">RSC</span> requires to scan data and         generate insights for AWS objects.</p></div></div></div></li><li role="treeitem"><div data-tocid="req_perms_outpost_account-d23139e10712" class="topicref" data-id="req_perms_outpost_account" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/req_perms_outpost_account.html" id="req_perms_outpost_account-d23139e10712-link">Required permissions for AWS outpost account</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions that the outpost account requires to access the AWS         account.</p></div></div></div></li><li role="treeitem"><div data-tocid="required_permissions_for_role_chaining-d23139e10723" class="topicref" data-id="required_permissions_for_role_chaining" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/required_permissions_for_role_chaining.html" id="required_permissions_for_role_chaining-d23139e10723-link">Required permissions for role chaining</a><div class="wh-tooltip"><p class="shortdesc">Information about the permission a role chaining account requires to manage the         associated AWS accounts.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_cloud_acc_setup-d23139e10734" class="topicref" data-id="aws_cloud_acc_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_cloud_acc_setup-d23139e10734-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_cloud_acc_setup.html" id="aws_cloud_acc_setup-d23139e10734-link">AWS cloud account setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up an AWS cloud account in <span class="ph">RSC</span> and start protecting your         AWS workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="exocompute_for_aws-d23139e11346" class="topicref" data-id="exocompute_for_aws" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action exocompute_for_aws-d23139e11346-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/exocompute_for_aws.html" id="exocompute_for_aws-d23139e11346-link">Exocompute on AWS</a><div class="wh-tooltip"><p class="shortdesc">With the Exocompute on AWS feature, <span class="ph">RSC</span> launches an Elastic         Kubernetes Service cluster to perform various operations to protect AWS workloads. <span class="ph">RSC</span> uses the Elastic Kubernetes Service cluster as a compute resource in         your AWS account.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_storage_tiering_setup-d23139e11865" class="topicref" data-id="aws_storage_tiering_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_storage_tiering_setup-d23139e11865-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_storage_tiering_setup.html" id="aws_storage_tiering_setup-d23139e11865-link">AWS storage tiering setup</a><div class="wh-tooltip"><p class="shortdesc">You can use AWS storage tiering to archive Amazon EC2 instance<span class="ph">, EBS volume, or DynamoDB table</span> snapshots         that exceed a specified threshold to Amazon S3 storage classes. By archiving snapshots to         these storage classes, you can optimize costs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workloads_protection_setup-d23139e12003" class="topicref" data-id="aws_workloads_protection_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workloads_protection_setup-d23139e12003-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads_protection_setup.html" id="aws_workloads_protection_setup-d23139e12003-link">AWS workloads protection setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic and         hierarchical protection of AWS accounts and individual AWS workloads, with granular control         overriding higher-level assignments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workload_recovery-d23139e12473" class="topicref" data-id="aws_workload_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workload_recovery-d23139e12473-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workload_recovery.html" id="aws_workload_recovery-d23139e12473-link">AWS workloads recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your AWS workloads, you can recover the         required workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_ec2_ebs_volume-d23139e12865" class="topicref" data-id="aws_ec2_ebs_volume" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_ec2_ebs_volume-d23139e12865-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_ec2_ebs_volume.html" id="aws_ec2_ebs_volume-d23139e12865-link">Amazon EC2 instances and EBS volumes</a><div class="wh-tooltip"><p class="shortdesc">After you set up protection for Amazon EC2 instances and EBS volumes, <span class="ph">RSC</span> takes automated snapshots of those instances and volumes based on the         configured policies in SLA Domains. You can also take on-demand snapshots, refresh AWS         accounts, and add AWS custom tags for better resource management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_rds-d23139e13186" class="topicref" data-id="aws_rds" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_rds-d23139e13186-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rds.html" id="aws_rds-d23139e13186-link">Amazon RDS and Aurora databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the data and resources of Amazon RDS and Amazon Aurora         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="amazon_s3-d23139e13290" class="topicref" data-id="amazon_s3" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action amazon_s3-d23139e13290-link" class="wh-expand-btn"></span><div class="title"><a href="../amazon_S3/amazon_s3.html" id="amazon_s3-d23139e13290-link">Amazon S3</a><div class="wh-tooltip"><p class="shortdesc">By using the protection services offered by <span class="ph">RSC</span>, you can protect and         recover your Amazon S3 buckets and objects.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_dynamodb-d23139e13364" class="topicref" data-id="aws_dynamodb" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_dynamodb-d23139e13364-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_dynamodb.html" id="aws_dynamodb-d23139e13364-link">Amazon DynamoDB</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> secures Amazon DynamoDB tables with automated snapshots governed         by SLA Domain policies. You can gain insights from detailed snapshot data and optimize         resources using on-demand account refresh and AWS custom tags.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_tags-d23139e13441" class="topicref" data-id="aws_tags" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_tags.html" id="aws_tags-d23139e13441-link">AWS tags</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> attaches specific tags to the AWS resources you create using <span class="ph">RSC</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp-d23139e13457" class="topicref" data-id="gcp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp-d23139e13457-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp.html" id="gcp-d23139e13457-link">Google Cloud Platform workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Google Cloud Platform workloads:         Google Compute Engine instances and persistent disks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="azr_workloads-d23139e14639" class="topicref" data-id="azr_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action azr_workloads-d23139e14639-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/azr_workloads.html" id="azr_workloads-d23139e14639-link">Microsoft Azure workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph"><span class="ph">RSC</span> protects the data and resources of Azure             virtual machines, Azure managed disks, Azure Blob Storage, and Azure SQL workloads in             Azure subscriptions.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Required permissions for native AWS protection</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Information about the permissions that <span class="- topic/ph ph">RSC</span> requires to protect AWS
+        workloads.</p>
+        <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption><span class="- topic/desc desc tabledesc">The following table outlines the permissions that <span class="- topic/ph ph">RSC</span> requires for
+                various aspects of AWS protection.</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:20.833333333333332%"/><col style="width:45.83333333333333%"/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="aws_required_permissions_native_protection__entry__1">Permission</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="aws_required_permissions_native_protection__entry__2">Access level</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-1" id="aws_required_permissions_native_protection__entry__3">Use case</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:AttachVolume</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To restore EC2 instances and attach exported EBS volumes.</li>
+                                <li class="- topic/li li">To export crash-consistent snapshot of an EC2 instance.</li>
+                                <li class="- topic/li li">To export EBS volume and replace it wherever attached.</li>
+                                <li class="- topic/li li">To attach the temporary EBS volume to Amazon Elastic Kubernetes
+                                    Service (EKS) cluster for indexing and storage tiering.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CopyImage</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the following tasks:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">Cross-region export of EC2 instances</li>
+                                <li class="- topic/li li">Cross-region replication of EC2 instance snapshots</li>
+                            </ul></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CopySnapshot</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the following tasks:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">Cross-region export and replication of EBS volumes.</li>
+                                <li class="- topic/li li">Cross-region export and replication of crash-consistent
+                                    snapshots of EC2 instances</li>
+                            </ul></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateImage</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create an image of an EC2 instance for backup.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateSecurityGroup</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create a security group with no connectivity for the AWS export
+                            virtual machine in a powered off state.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateSnapshot</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create a snapshot of an EBS volume for backup.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateSnapshots</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create a crash-consistent snapshots of an EC2 instance.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateTags</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Tagging</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To assign metadata tags to the created resources such as EBS volumes,
+                            EC2 instances, images, and snapshots.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateVolume</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To export EBS volumes.</li>
+                                <li class="- topic/li li">To restore EC2 instances.</li>
+                                <li class="- topic/li li">To export crash-consistent snapshot of an EC2 instance.</li>
+                                <li class="- topic/li li">To create temporary EBS volume to perform indexing for file
+                                    search and recovery and storage tiering.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DeleteSnapshot</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection".</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To delete EBS volume snapshots associated with expired
+                                    backups.</li>
+                                <li class="- topic/li li">To delete associated snapshots when deleting an Amazon Machine
+                                    Image (AMI) while reverting the Create EC2 instance snapshot
+                                    task or exporting the EC2 instance snapshot to a different
+                                    region.</li>
+                                <li class="- topic/li li">To delete snapshots when reverting the Create EBS volume
+                                    snapshot task.</li>
+                                <li class="- topic/li li">To delete snapshots when exporting the EBS volume snapshot to a
+                                    different region.</li>
+                                <li class="- topic/li li">To delete crash-consistent snapshots of excluded EBS
+                                    volumes.</li>
+                                <li class="- topic/li li">To delete snapshot when deleting an AWS account.</li>
+                                <li class="- topic/li li">To delete snapshots after expiry.</li>
+                                <li class="- topic/li li">To delete temporary snapshots created during replication and
+                                    export.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DeleteVolume</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection".</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To delete the EBS volumes launched from the backup if a restore
+                                    or export EC2 instance task fails in the middle.</li>
+                                <li class="- topic/li li">To delete temporary EBS volume launched for file indexing and
+                                    storage tiering.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DeleteTags</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Tagging</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To overwrite existing tags when restoring tags in the EC2
+                                    instance restore job.</li>
+                                <li class="- topic/li li">To delete Rubrik metadata tags when the tag limit is
+                                    exceeded.</li>
+                                <li class="- topic/li li">To delete Garbage Collection (GC) tags when the GC task is no
+                                    longer required for the resource.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DeregisterImage</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To delete the AMI associated with an expired backup.</li>
+                                <li class="- topic/li li">To delete image in undo of the EC2 instance snapshot task.</li>
+                                <li class="- topic/li li">To delete image after copying it to a new region during the
+                                    cross-region export.</li>
+                                <li class="- topic/li li">To delete AMIs after a snapshot expiry.</li>
+                                <li class="- topic/li li">To delete any temporary AMI created during replication and
+                                    export.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeAvailabilityZones</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To retrieve the list of availability zones while exporting EBS volume
+                            and EC2 instance snapshots.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeImages</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To track the image creation status in the EC2 backup task.</li>
+                                <li class="- topic/li li">To retrieve image details for the recovery tasks.</li>
+                                <li class="- topic/li li">To periodically ensure that the AMI associated with <span class="- topic/ph ph">RSC</span> backups is still available and not deleted
+                                    by an external actor.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeInstances</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of EC2 instances during the refresh
+                                    task.</li>
+                                <li class="- topic/li li">To retrieve instance details during snapshot and recovery
+                                    tasks.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeKeyPairs</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of SSH key pairs during the virtual machine
+                                    recovery.</li>
+                                <li class="- topic/li li">To track the associated key pairs for EC2 instances when a
+                                    backup is taken.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeSecurityGroups</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of security groups during the account
+                                    refresh task.</li>
+                                <li class="- topic/li li">To retrieve the list of security groups while exporting EC2
+                                    instance snapshots.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeSnapshots</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To track the snapshot creation status during the EBS volume
+                                    snapshot task.</li>
+                                <li class="- topic/li li">To retrieve snapshot details for the recovery tasks.</li>
+                                <li class="- topic/li li">To periodically ensure that the snapshot associated with <span class="- topic/ph ph">RSC</span> backups is still available and not deleted
+                                    by an external actor, for example, an user-initiated
+                                    script.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeSnapshotAttribute</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform a check to determine if an EBS volume snapshot is from the
+                            AWS marketplace or not.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeSubnets</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of subnets during the account refresh
+                                    task.</li>
+                                <li class="- topic/li li">To retrieve the list of subnets while exporting EC2 instance
+                                    snapshots.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeTags</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read, Tagging</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To back up the tags attached to an EC2 instance during
+                                    backup.</li>
+                                <li class="- topic/li li">To avoid the tag limit while assigning tags to new
+                                    resources.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeVolumeAttribute</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To allow <span class="- topic/ph ph">RSC</span> to identify EBS volumes launched from
+                            the AWS marketplace.<p class="- topic/p p">You cannot perform file recovery and storage
+                                tiering for marketplace EBS volumes.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeVolumes</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of EBS Volumes during the refresh
+                                    task.</li>
+                                <li class="- topic/li li">To retrieve volume details in various snapshot and recovery
+                                    tasks.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DescribeVpcs</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To retrieve the list of all Virtual Private Clouds (VPC) while
+                                    exporting EC2 instance snapshots.</li>
+                                <li class="- topic/li li">To retrieve the list of VPCs during the account refresh
+                                    task.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:DetachVolume</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">To detach the existing volumes to replace them with recovered
+                                    copies during the restore EC2 instance.</li>
+                                <li class="- topic/li li">To detach an existing EBS volume when the Replace where attached
+                                    option is selected at the time of exporting an EBS volume.</li>
+                                <li class="- topic/li li">To detach the EBS volume from the temporary EKS cluster when the
+                                    file search is enabled for an EC2 instance or EBS volume.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:GetEbsEncryptionByDefault</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To check if default EBS encryption is enabled in the AWS account of a
+                            user for the given region.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:ModifyImageAttribute</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To modify the description of EC2 instance snapshots created by <span class="- topic/ph ph">RSC</span>.<p class="- topic/p p">The image description is used for identifying all
+                                GC leaked images.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:ModifyInstanceAttribute</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection" <span class="- topic/ph ph">or "Cloud
+                                    Cluster"</span>.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To change security groups of an EC2 instance from the no connectivity
+                            security group to a user-specified security group for export EC2
+                            instance in a powered off state.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:RevokeSecurityGroupEgress</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection".</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To remove the default egress rule from no connectivity security group
+                            for export EC2 instance in a powered off state.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:RunInstances</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To launch a virtual machine from a backup.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:StartInstances</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To start a virtual machine that was restored with new disks.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:StopInstances</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To stop an EC2 instance.<p class="- topic/p p">When restoring a virtual machine, disks
+                                can only be replaced when the EC2 instance is stopped.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:TerminateInstances</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection"<span class="- topic/ph ph"> or "Cloud
+                                    Cluster"</span>.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To terminate EC2 instances created during failed exports.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:CreateGrant</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Permissions management</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To enable EC2 service to use the Customer Managed Key (CMK) on the
+                            behalf of the user.<p class="- topic/p p">Example: If an EBS volume snapshot is copied from
+                                key K1 to key K2, the EC2 service decrypts the K1 encrypted snapshot
+                                so that it can be encrypted to K2. To enable this, the EC2 service
+                                must be allowed to create grants for K1 and K2.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:Decrypt</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:DescribeKey</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:Encrypt</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:GenerateDataKey</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:GenerateDataKeyWithoutPlaintext</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:ListKeys</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To display Key Management Service (KMS) keys for the AWS account in a
+                            region.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:ListAliases</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To display KMS aliases for the AWS account in a region.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:ReEncryptFrom</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">kms:ReEncryptTo</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the custom CMK flow while exporting EC2 instance or EBS
+                            volume.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:ListAllMyBuckets</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To list buckets.<p class="- topic/p p">It is used when listing S3 bucket
+                            endpoints.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:ListBucket</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To list bucket objects and checking if the bucket exists.<p class="- topic/p p">It is
+                                used in the download job.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:AbortMultipartUpload</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To perform the multipart upload.<p class="- topic/p p">It is used in the file recovery
+                                job.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:CreateBucket</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create a bucket.<p class="- topic/p p">It is used in the file recovery
+                            job.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:PutObject</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To upload objects.<p class="- topic/p p">It is used in the file recovery job.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:PutBucketTagging</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To add tags to S3 buckets.<p class="- topic/p p">It is used in the file recovery
+                            job.</p></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:ModifySnapshotAttribute</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To share EBS snapshots with other AWS accounts for cross-account
+                            replication.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">
+                            <ul class="- topic/ul ul">
+                                <li class="- topic/li li">ebs:ListSnapshotBlocks</li>
+                                <li class="- topic/li li">ebs:ListChangedBlocks</li>
+                            </ul>
+                        </td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read<p class="- topic/p p">Requires the resource to have the rk_component tag with the
+                                value set to "Cloud Native Protection".</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To get the indices of blocks with data or the changed block indices
+                            that are used for optimal archival.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">s3:PutObjectTagging</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To add tags to s3 objects</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:GetEbsEncryptionByDefault</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To check if EBS encryption by default is enabled in the AWS customer
+                            account and region.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:CreateSecurityGroup</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To create a security group, without connectivity, for exporting AWS
+                            virtual machines that are powered off.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">iam:ListInstanceProfiles</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Read</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To list the IAM instance profiles to associate with EC2 instances for
+                            s3 bucket access.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__1">ec2:AssociateIamInstanceProfile</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_required_permissions_native_protection__entry__3">To associate an IAM instance profile with an EC2 instance during EC2
+                            export.</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="aws_required_permissions_native_protection__entry__1">ec2:ReplaceIamInstanceProfileAssociation</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="aws_required_permissions_native_protection__entry__2">Write</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="aws_required_permissions_native_protection__entry__3">To replace an IAM instance profile for the EC2 instance during EC2
+                            export.</td>
+                    </tr>
+                </tbody></table></div>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.25 782.62"><metadata>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/">
+    <rdf:Description rdf:about="https://rubrik-docs.s3-us-west-1.amazonaws.com/en-us/polaris/polaris/images/hourglass.svg">
+      <schema:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+      <schema:creator rdf:resource="https://www.rubrik.com/"/>
+    </rdf:Description>
+  </rdf:RDF>
+</metadata>
+  <defs><style type="text/css">.cls-1,.cls-2,.cls-4{fill:none;stroke:#63666a;}.cls-1,.cls-4{stroke-linecap:round;stroke-miterlimit:10;}.cls-1{stroke-width:50px;}.cls-2{stroke-linejoin:round;stroke-width:28px;}.cls-3{fill:#00a3e0;}.cls-4{stroke-width:42px;}</style></defs><line class="cls-1" x1="68.9" y1="67.03" x2="467.35" y2="67.03"/><path class="cls-2" d="M314.4,391.31C378.08,352.58,424.5,236.83,426.72,67H109.61c-2.22,169.8,43.33,285.55,106.84,324.28C152.94,430,107.39,545.79,109.61,715.59H426.72C424.5,545.79,378.08,430,314.4,391.31Z"/><line class="cls-1" x1="68.9" y1="715.59" x2="467.35" y2="715.59"/><path class="cls-3" d="M228.46,503.58c-27.2,10.48-50.39,32.13-67.08,62.61-16.6,30.3-25.86,68.2-27.09,110.4H402c-2.94-42.24-13.41-80.06-30.59-110.18-17.48-30.63-41.1-52.36-68.32-62.82l-31-11.93V378.49l31-18.86c27.22-16.56,50.84-50.91,68.32-99.35a437,437,0,0,0,13.56-45.75c-9.88-2-18.86,4-24.24,9-45,46-108,22-160.2,20-13.51,0-31,0-41.25,10.72.7,2.14,1.41,4.27,2.14,6.37,16.69,48.19,39.88,82.43,67.08,99l30,18.28V492Z"/><line class="cls-4" x1="21" y1="21" x2="515.25" y2="21"/><line class="cls-4" x1="21" y1="761.62" x2="515.25" y2="761.62"/></svg>

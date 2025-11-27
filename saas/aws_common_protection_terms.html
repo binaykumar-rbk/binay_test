@@ -1,0 +1,629 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="It is important to understand some common terms when protecting AWS workloads with RSC."/><meta name="DC.relation" content="../saas/aws_workloads.html"/><meta name="DC.relation" content="../saas/aws_key_features_protection.html"/><meta name="DC.relation" content="../saas/aws_protection_high_level_arch.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="aws_common_protection_terms"/>        
+      <title>Common AWS protection terms</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="aws_common_protection_terms-d23139e10409"/><meta name="wh-source-relpath" content="saas/aws_common_protection_terms.dita"/><meta name="wh-out-relpath" content="saas/aws_common_protection_terms.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="aws_common_protection_terms" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../saas/aws_workloads.html">Cloud Workloads</a></div></div></li><li><div class="topicref" data-id="aws_workloads"><div class="title"><a href="../saas/aws_workloads.html">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div></li><li class="active"><div class="topicref" data-id="aws_common_protection_terms"><div class="title"><a href="../saas/aws_common_protection_terms.html">Common AWS protection terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AWS workloads with             <span class="ph">RSC</span>.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/aws_key_features_protection.html" title="Key features for protecting AWS workloads" aria-label="Previous topic: Key features for protecting AWS workloads" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/aws_protection_high_level_arch.html" title="High-level architecture for AWS protection" aria-label="Next topic: High-level architecture for AWS protection" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="aws_workloads-d23139e10380" class="topicref" data-id="aws_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_workloads-d23139e10380-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="aws_workloads-d23139e10380-link">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aws_key_features_protection-d23139e10396" class="topicref" data-id="aws_key_features_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_key_features_protection.html" id="aws_key_features_protection-d23139e10396-link">Key features for protecting AWS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, various recovery options for AWS workloads, and advanced security features to         protect your workloads.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="aws_common_protection_terms-d23139e10409" class="topicref" data-id="aws_common_protection_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_common_protection_terms.html" id="aws_common_protection_terms-d23139e10409-link">Common AWS protection terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AWS workloads with             <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_protection_high_level_arch-d23139e10423" class="topicref" data-id="aws_protection_high_level_arch" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_protection_high_level_arch-d23139e10423-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_protection_high_level_arch.html" id="aws_protection_high_level_arch-d23139e10423-link">High-level architecture for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">A high-level architectural overview of how <span class="ph">RSC</span> protects AWS workloads         and the <span class="ph">RSC</span> AssumeRole workflow.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_planning_protection-d23139e10529" class="topicref" data-id="aws_planning_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_planning_protection-d23139e10529-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_planning_protection.html" id="aws_planning_protection-d23139e10529-link">Planning for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up an AWS cloud account in <span class="ph">RSC</span>, it is necessary to         plan the user and access management for designated <span class="ph">RSC</span> users. This planning         also involves reviewing the permissions that <span class="ph">RSC</span> requires in your AWS         environment to protect your AWS workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_cloud_acc_setup-d23139e10734" class="topicref" data-id="aws_cloud_acc_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_cloud_acc_setup-d23139e10734-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_cloud_acc_setup.html" id="aws_cloud_acc_setup-d23139e10734-link">AWS cloud account setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up an AWS cloud account in <span class="ph">RSC</span> and start protecting your         AWS workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="exocompute_for_aws-d23139e11346" class="topicref" data-id="exocompute_for_aws" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action exocompute_for_aws-d23139e11346-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/exocompute_for_aws.html" id="exocompute_for_aws-d23139e11346-link">Exocompute on AWS</a><div class="wh-tooltip"><p class="shortdesc">With the Exocompute on AWS feature, <span class="ph">RSC</span> launches an Elastic         Kubernetes Service cluster to perform various operations to protect AWS workloads. <span class="ph">RSC</span> uses the Elastic Kubernetes Service cluster as a compute resource in         your AWS account.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_storage_tiering_setup-d23139e11865" class="topicref" data-id="aws_storage_tiering_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_storage_tiering_setup-d23139e11865-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_storage_tiering_setup.html" id="aws_storage_tiering_setup-d23139e11865-link">AWS storage tiering setup</a><div class="wh-tooltip"><p class="shortdesc">You can use AWS storage tiering to archive Amazon EC2 instance<span class="ph">, EBS volume, or DynamoDB table</span> snapshots         that exceed a specified threshold to Amazon S3 storage classes. By archiving snapshots to         these storage classes, you can optimize costs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workloads_protection_setup-d23139e12003" class="topicref" data-id="aws_workloads_protection_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workloads_protection_setup-d23139e12003-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads_protection_setup.html" id="aws_workloads_protection_setup-d23139e12003-link">AWS workloads protection setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic and         hierarchical protection of AWS accounts and individual AWS workloads, with granular control         overriding higher-level assignments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workload_recovery-d23139e12473" class="topicref" data-id="aws_workload_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workload_recovery-d23139e12473-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workload_recovery.html" id="aws_workload_recovery-d23139e12473-link">AWS workloads recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your AWS workloads, you can recover the         required workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_ec2_ebs_volume-d23139e12865" class="topicref" data-id="aws_ec2_ebs_volume" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_ec2_ebs_volume-d23139e12865-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_ec2_ebs_volume.html" id="aws_ec2_ebs_volume-d23139e12865-link">Amazon EC2 instances and EBS volumes</a><div class="wh-tooltip"><p class="shortdesc">After you set up protection for Amazon EC2 instances and EBS volumes, <span class="ph">RSC</span> takes automated snapshots of those instances and volumes based on the         configured policies in SLA Domains. You can also take on-demand snapshots, refresh AWS         accounts, and add AWS custom tags for better resource management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_rds-d23139e13186" class="topicref" data-id="aws_rds" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_rds-d23139e13186-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rds.html" id="aws_rds-d23139e13186-link">Amazon RDS and Aurora databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the data and resources of Amazon RDS and Amazon Aurora         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="amazon_s3-d23139e13290" class="topicref" data-id="amazon_s3" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action amazon_s3-d23139e13290-link" class="wh-expand-btn"></span><div class="title"><a href="../amazon_S3/amazon_s3.html" id="amazon_s3-d23139e13290-link">Amazon S3</a><div class="wh-tooltip"><p class="shortdesc">By using the protection services offered by <span class="ph">RSC</span>, you can protect and         recover your Amazon S3 buckets and objects.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_dynamodb-d23139e13364" class="topicref" data-id="aws_dynamodb" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_dynamodb-d23139e13364-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_dynamodb.html" id="aws_dynamodb-d23139e13364-link">Amazon DynamoDB</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> secures Amazon DynamoDB tables with automated snapshots governed         by SLA Domain policies. You can gain insights from detailed snapshot data and optimize         resources using on-demand account refresh and AWS custom tags.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_tags-d23139e13441" class="topicref" data-id="aws_tags" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_tags.html" id="aws_tags-d23139e13441-link">AWS tags</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> attaches specific tags to the AWS resources you create using <span class="ph">RSC</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp-d23139e13457" class="topicref" data-id="gcp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp-d23139e13457-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp.html" id="gcp-d23139e13457-link">Google Cloud Platform workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Google Cloud Platform workloads:         Google Compute Engine instances and persistent disks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="azr_workloads-d23139e14639" class="topicref" data-id="azr_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action azr_workloads-d23139e14639-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/azr_workloads.html" id="azr_workloads-d23139e14639-link">Microsoft Azure workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph"><span class="ph">RSC</span> protects the data and resources of Azure             virtual machines, Azure managed disks, Azure Blob Storage, and Azure SQL workloads in             Azure subscriptions.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Common AWS protection terms</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">It is important to understand some common terms when protecting AWS workloads with
+            <span class="- topic/ph ph">RSC</span>.</p>
+        <section class="- topic/section section">
+            <p class="- topic/p p">By familiarizing yourself with common protection terms, you can better understand and
+                navigate the steps and components involved in protecting AWS workloads.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:26.525198938992045%"/><col style="width:73.47480106100795%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="aws_common_protection_terms__entry__1">Term</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="aws_common_protection_terms__entry__2">Definition</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A logical container for creating and managing AWS
+                                    resources.<p class="- topic/p p">The AWS account provides administrative
+                                    capabilities for access control and billing, to organize and
+                                    oversee permissions, security credentials, and the use of AWS
+                                    services. This enables efficient management and governance of
+                                    your cloud infrastructure.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS Management Console</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A graphical interface to manage compute, storage, and other AWS
+                                cloud resources.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS region</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A distinct geographical area independent from other regions in
+                                terms of location, power, cooling, and water supply, for high
+                                availability and fault tolerance. Each region comprises one or more
+                                availability zones, for added redundancy and reliability.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS Availability Zone (AZ)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A subset of an AWS region, except in the rare case where a region
+                                has only one AZ.<p class="- topic/p p">AZs are discrete data centers in a region, with
+                                    redundant power, networking, and connectivity. Network
+                                    performance across AZs is typically high throughput and low
+                                    latency. AZs are remote from each other, but usually within 60
+                                    miles within the region.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Virtual Private Cloud (VPC)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon service for provisioning a logically isolated section
+                                of the AWS cloud, where you can define your own virtual
+                                    network.<p class="- topic/p p">You have full control over this virtual network
+                                    environment, to select IP address ranges, create subnets, and
+                                    configure route tables and network gateways.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Subnet</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A range of IP addresses in your VPC.<p class="- topic/p p">You launch AWS resources,
+                                    such as EC2 instances, into your subnets. You can connect a
+                                    subnet to the internet, other VPCs, and your data centers, and
+                                    route traffic to and from your subnets using route
+                                tables.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Security group</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A virtual firewall for your AWS workloads, such as Amazon EC2
+                                instances and Amazon RDS and Aurora databases, to control incoming
+                                and outgoing traffic.<p class="- topic/p p">Inbound rules control the incoming traffic
+                                    to your workload, and outbound rules control the outgoing
+                                    traffic from your workload. When you launch a workload, you can
+                                    specify one or more security groups.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Identity and Access Management (IAM)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon service that provides fine-grained access control
+                                across AWS accounts. You can specify who can access which AWS
+                                services and resources and under what conditions.<p class="- topic/p p">AWS IAM is a
+                                    fundamental security feature offering simple ways to secure AWS
+                                    accounts and resources.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">IAM policy</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An object in AWS that defines permissions for IAM identities such
+                                as users, groups, or roles, and AWS resources.<p class="- topic/p p">AWS users manage
+                                    access by creating policies and attaching them to these
+                                    identities or resources. When an IAM principal, such as a user
+                                    or role, makes a request, AWS evaluates these policies to decide
+                                    whether the request is allowed.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">IAM role</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An identity AWS users create in AWS, and to which they grant
+                                specific permissions.<p class="- topic/p p">Trusted entities such as AWS services or
+                                    accounts can use these roles. IAM policies attached to the roles
+                                    dictate the actions an entity using the role can
+                                take.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Permissions policy</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An IAM policy attached to an IAM role specifies the actions of an
+                                IAM principal, such as a user or AWS service, and the AWS resources
+                                it can access after assuming that role.<p class="- topic/p p">AWS evaluates these
+                                    permissions policies to determine whether a requested action is
+                                    explicitly allowed or denied.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Trust policy</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A policy document associated with an IAM role specifies which IAM
+                                principals, AWS accounts, or AWS services can assume that
+                                    role.<p class="- topic/p p">AWS evaluates trust policies to verify the identities of
+                                    the entities authorized to assume that IAM role.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS Security Token Service (STS)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A web service you use to request temporary, limited-privilege
+                                credentials for IAM users or for users you authenticate, such as
+                                through your corporate network. These temporary credentials allow
+                                access to AWS services and resources.<p class="- topic/p p">Rubrik uses AWS IAM roles
+                                    with the minimum permissions needed to protect your AWS
+                                    workloads. By setting up these roles through CloudFormation or
+                                    manually, Rubrik can use the STS AssumeRole API call to request
+                                    temporary credentials for secure interactions with your AWS
+                                    resources.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Resource Name (ARN)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A string that uniquely identifies an AWS resource, such as EC2
+                                instances, S3 buckets, or AWS accounts.<p class="- topic/p p">AWS requires an ARN when
+                                    you specify a resource unambiguously across the entire AWS
+                                    environment, such as in IAM policies, Amazon RDS tags, and API
+                                    calls.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS resource</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">Manageable items available through AWS, such as EC2 instances,
+                                EBS volumes, S3 buckets, RDS and Aurora databases, and VPCs.
+                                Resource groups, IAM roles, security groups, and tags are also
+                                considered resources.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Key Management Service (KMS)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A managed service that enables AWS users to create and control
+                                the keys used for cryptographic operations easily.<p class="- topic/p p">This service is
+                                    a highly available key generation, storage, management, and
+                                    auditing solution allowing users to encrypt or digitally sign
+                                    data in their applications or to control the encryption of data
+                                    across AWS services. AWS creates and manages KMS keys, typically
+                                    referred to as Default Keys, while users can create and manage
+                                    their own keys, known as Customer Managed Keys
+                                (CMKs).</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Elastic Cloud Compute (EC2) instance</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A virtual server running in AWS.<p class="- topic/p p">The instance size and type
+                                    dictate the CPU, RAM, and other performance characteristics of
+                                    the instance. Instances run in a subnet within virtual networks
+                                    known as VPCs. Each subnet is associated with one AZ, so each
+                                    instance runs within a single AZ.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Machine Image (AMI)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An AWS image file that contains the information necessary to
+                                launch an EC2 instance.<p class="- topic/p p">An AWS user launching an instance through
+                                    the AWS Management Console or the EC2 API must specify the AMI
+                                    to be used for the launch. An AMI includes a list of EBS volume
+                                    snapshots, permissions that control which AWS accounts can use
+                                    the AMI, and a mapping file that specifies where the volumes
+                                    corresponding to each EBS volume snapshot should be
+                                mounted.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Elastic Block Storage (EBS) volume</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A block storage device that AWS users can connect to EC2
+                                    instances.<p class="- topic/p p">Each EBS volume is automatically replicated within
+                                    a single AZ to protect against hardware failures, but it is not
+                                    replicated across different AZs or regions. Most EC2 instances
+                                    have at least one EBS volume, known as the root volume, attached
+                                    to them. The EC2 instances might also have additional data
+                                    volumes attached to them.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Simple Storage Service (S3)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A public cloud storage resource provided by AWS that offers
+                                object-based storage. Data is stored in S3 buckets as distinct units
+                                called objects, rather than as traditional files.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon S3 Scale to Billions</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">The capability of Amazon S3 to scale and accommodate billions of
+                                objects seamlessly, while maintaining consistent performance and
+                                reliability. It allows AWS users to store, manage, and retrieve any
+                                amount of data at any time.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Relational Database Service (RDS)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A managed relational database service that makes it easy to set
+                                up, operate, and scale a relational database in the AWS cloud.<p class="- topic/p p">It
+                                    provides cost-efficient, resizable capacity while automating
+                                    time-consuming administration tasks such as hardware
+                                    provisioning, database setup, patching, and backups.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon Aurora</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A MySQL and PostgreSQL-compatible relational database built for
+                                the AWS cloud, combining the performance and availability of
+                                high-end commercial databases with the simplicity and
+                                cost-effectiveness of open-source databases.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Simple Notification Service (SNS)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon service for setting up, operating, and sending
+                                notifications from the AWS cloud.<p class="- topic/p p">It provides developers with a
+                                    highly scalable, flexible, and cost-effective way to publish
+                                    messages from an application and immediately deliver them to
+                                    subscribers, such as Amazon SQS queues, AWS Lambda functions,
+                                    email addresses, or other applications.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">CloudFormation</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon service that allows AWS users to model infrastructure
+                                and application resources using templates written in formats such as
+                                JSON or YAML.<p class="- topic/p p">Users submit these templates to the CloudFormation
+                                    service on AWS to create a collection of resources known as a
+                                    stack. By managing stacks and their life cycles through
+                                    CloudFormation, users can update a stack by modifying its
+                                    template, or delete a stack to remove all of its associated
+                                    resources automatically.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS Stack</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A collection of AWS resources manageable as a single unit,
+                                created and managed using AWS CloudFormation templates.<p class="- topic/p p">With a
+                                    stack, you can deploy, update, or delete all the associated
+                                    resources as a cohesive group within a single AWS account and
+                                    region.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS StackSet</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An AWS StackSet extends the capability of stacks by allowing you
+                                to create, update, or delete stacks across multiple AWS accounts and
+                                regions with a single operation.<p class="- topic/p p">StackSets enable centralized
+                                    management and deployment of resources, ensuring consistency and
+                                    compliance across a broader AWS environment.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS workload</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An AWS resource for which <span class="- topic/ph ph">RSC</span> can take a snapshot
+                                for data protection, such as an Amazon EC2 instance, EBS volume,
+                                Amazon S3, <span class="- topic/ph ph">Amazon RDS and Aurora database, and
+                                    AmazonDB</span>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS cloud account in <span class="- topic/ph ph">RSC</span></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An integration that enables <span class="- topic/ph ph">RSC</span> to interact with
+                                AWS workloads in an AWS account, allowing <span class="- topic/ph ph">RSC</span> to
+                                manage data protection, backup, recovery, and archiving services for
+                                these workloads deployed in AWS accounts.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Snapshot</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">Point-in-time copies of protected workloads, used for recovery or
+                                replication.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">SLA Domain</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A Rubrik feature you configure to define policies for data
+                                protection, including snapshot frequency, retention duration, and
+                                archiving and replication requirements. You can configure and apply
+                                these policies to workloads, ensuring consistent and automated data
+                                protection.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Exocompute</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A Rubrik service that provides scalable and automated compute
+                                resources for running data operations, such as indexing, file
+                                recovery, application-consistent snapshots, and storage
+                                tiering.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">AWS Organization</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An AWS service that consolidates multiple AWS accounts for
+                                unified administration. It provides hierarchical framework to group
+                                accounts into Organizational Units (OUs) and apply protection
+                                policies to multiple accounts, simplifying governance, security, and
+                                compliance at scale.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Management account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An account that is used to create an AWS Organization. There is
+                                only one management account with the permissions to create and
+                                manage the AWS Organization. It handles the creation and removal of
+                                accounts from the organization, and manages policy assignments for
+                                OUs and individual accounts. Each management account can create
+                                multiple Delegated administrator account.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Delegated administrator account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A member account within an AWS Organization that has been
+                                authorized to manage specific AWS services on behalf of the
+                                management account. These accounts have the administrator
+                                permissions to manage the AWS Organizations.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Administrator account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An AWS account where you create StackSets. For StackSet using
+                                service-managed permissions, this account is either the management
+                                account associated with the organization or a delegated
+                                administrator account.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Target account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A specific AWS account where a StackSet deploys its stacks. It is
+                                the destination for the resources defined in the StackSet template.
+                                StackSets allow you to deploy the same CloudFormation stack across
+                                multiple target accounts simultaneously from a single, centralized
+                                administrative account.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">StackSet instance</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A stack in a target account within an AWS region. The StackSet
+                                instance is associated with only one stack set.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Service-managed permission model</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A permission model that simplifies deployments by automatically
+                                creating the necessary AWS IAM roles for StackSets. These roles
+                                enable StackSets to deploy resources across accounts within the same
+                                AWS Organization and across different AWS regions.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Amazon DynamoDB</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A fully managed NoSQL database service provided by AWS that
+                                supports key-value and document data structures. It is known for its
+                                scalability and performance, processing millions of requests each
+                                second.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Continuous backup</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon DynamoDB feature that provides point-in-time recovery,
+                                allowing restoration to any point within a specific retention
+                                window.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Global tables</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">An Amazon DynamoDB feature that provides multi-region,
+                                multi-active replication for globally distributed
+                                applications.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_common_protection_terms__entry__1">Point-in-Time Recovery (PITR)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_common_protection_terms__entry__2">A DynamoDB feature that provides continuous backups and enables
+                                restoration to any point within a specified time window, typically
+                                up to 35 days.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="aws_common_protection_terms__entry__1">Role chaining</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="aws_common_protection_terms__entry__2">An AWS IAM method that enables <span class="- topic/ph ph">RSC</span> to securely
+                                access multiple AWS accounts through an intermediary AWS account,
+                                simplifying secure management and rapid access revocation.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

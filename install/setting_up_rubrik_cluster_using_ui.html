@@ -1,0 +1,441 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Set up a Rubrik cluster using the system setup UI provided on a node."/><meta name="DC.relation" content="../install/rsc_cluster_config_considerations.html"/><meta name="DC.relation" content="../install/vlan_tagging_cluster_mgmt_networks.html"/><meta name="DC.relation" content="../install/setting_up_rubrik_cluster_using_cli.html"/><meta name="DC.relation" content="download_install_cdm_on_appliance_nodes.html"/><meta name="DC.relation" content="vlan_tagging_cluster_mgmt_networks.html"/><meta name="DC.relation" content="registering_clusters_online.html"/><meta name="DC.relation" content="registering_clusters_offline.html"/><meta name="DC.relation" content="rsc_resolving_cluster_regn_issues.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rsc_setting_up_rubrik_cluster_using_ui"/>        
+      <title>Setting up a Rubrik cluster using the UI</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="rsc_setting_up_rubrik_cluster_using_ui-d23139e2794"/><meta name="wh-source-relpath" content="install/setting_up_rubrik_cluster_using_ui.dita"/><meta name="wh-out-relpath" content="install/setting_up_rubrik_cluster_using_ui.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="rsc_setting_up_rubrik_cluster_using_ui" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/common/rubrik_clusters_2.html">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li><div class="topicref" data-id="rsc_cluster_deployment"><div class="title"><a href="../install/rsc_cluster_deployment.html">Rubrik cluster deployment</a><div class="wh-tooltip"><p class="shortdesc">Deploying a Rubrik cluster running on Rubrik appliance nodes involves installing the         CDM software on the nodes and setting up that software for your environment.</p></div></div></div></li><li><div class="topicref" data-id="rsc_cluster_config_considerations"><div class="title"><a href="../install/rsc_cluster_config_considerations.html">Cluster configuration considerations</a><div class="wh-tooltip"><p class="shortdesc">You determine network related settings and capabilities of a Rubrik cluster through         the set up task.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rsc_setting_up_rubrik_cluster_using_ui"><div class="title"><a href="../install/setting_up_rubrik_cluster_using_ui.html">Setting up a Rubrik cluster using the UI</a><div class="wh-tooltip"><p class="shortdesc">Set up a Rubrik cluster using the system setup UI provided on a node.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../install/vlan_tagging_cluster_mgmt_networks.html" title="VLAN tagging Rubrik cluster management and data networks" aria-label="Previous topic: VLAN tagging Rubrik cluster management and data networks" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../install/setting_up_rubrik_cluster_using_cli.html" title="Setting up a Rubrik cluster using the CLI" aria-label="Next topic: Setting up a Rubrik cluster using the CLI" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_clusters-d23139e1438" class="topicref" data-id="rubrik_clusters" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_clusters-d23139e1438-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="rubrik_clusters-d23139e1438-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster is an instance of Rubrik CDM running on any virtual or physical         platform. You can add the Rubrik cluster to <span class="ph">RSC</span> to enable extended features         for the cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="security-d23139e2155" class="topicref" data-id="security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action security-d23139e2155-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/security.html" id="security-d23139e2155-link">Security</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides end-to-end security for data management         information.</p></div></div></div></li><li role="treeitem"><div data-tocid="outbound_connection_through_ports-d23139e2205" class="topicref" data-id="outbound_connection_through_ports" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/outbound_connection_through_ports.html" id="outbound_connection_through_ports-d23139e2205-link">Outbound connection through ports</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> requires you to open an outbound connection through port 443 for         a Rubrik cluster to access specific sites.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_smb_security-d23139e2218" class="topicref" data-id="rsc_smb_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_smb_security-d23139e2218-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_smb_security.html" id="rsc_smb_security-d23139e2218-link">SMB security</a><div class="wh-tooltip"><p class="shortdesc">With the SMB security feature in <span class="ph">RSC</span>, a Rubrik cluster provides         security for SMB shares by requiring Active Directory authentication and enforcing SMB         security.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rsc_cluster_deployment-d23139e2724" class="topicref" data-id="rsc_cluster_deployment" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rsc_cluster_deployment-d23139e2724-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_deployment.html" id="rsc_cluster_deployment-d23139e2724-link">Rubrik cluster deployment</a><div class="wh-tooltip"><p class="shortdesc">Deploying a Rubrik cluster running on Rubrik appliance nodes involves installing the         CDM software on the nodes and setting up that software for your environment.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rsc_service_types-d23139e2735" class="topicref" data-id="rsc_service_types" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_service_types.html" id="rsc_service_types-d23139e2735-link"><span class="ph">Rubrik Security Cloud</span> service types</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> offers two distinct service types, SaaS mode and software         mode, which provide different sets of functionality.</p></div></div></div></li><li role="treeitem"><div data-tocid="guidelines_strong_password-d23139e2750" class="topicref" data-id="guidelines_strong_password" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/guidelines_strong_password.html" id="guidelines_strong_password-d23139e2750-link">Guidelines for choosing a strong password</a><div class="wh-tooltip"><p class="shortdesc">When choosing a password, you are required to follow the guidelines recommended by         Rubrik to set a strong password that is difficult to guess or extract through a password         cracker application, but is something that is easy to remember.</p></div></div></div></li><li role="treeitem"><div data-tocid="download_install_cdm_on_appliance_nodes-d23139e2761" class="topicref" data-id="download_install_cdm_on_appliance_nodes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/download_install_cdm_on_appliance_nodes.html" id="download_install_cdm_on_appliance_nodes-d23139e2761-link">Downloading and installing Rubrik CDM</a><div class="wh-tooltip"><p class="shortdesc">Before you set up your Rubrik cluster, you can install a version of Rubrik CDM that         is different from the one already installed on the Rubrik appliance nodes. This involves         downloading the software, transferring it to one of the nodes, and running the         installation.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rsc_cluster_config_considerations-d23139e2772" class="topicref" data-id="rsc_cluster_config_considerations" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rsc_cluster_config_considerations-d23139e2772-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_config_considerations.html" id="rsc_cluster_config_considerations-d23139e2772-link">Cluster configuration considerations</a><div class="wh-tooltip"><p class="shortdesc">You determine network related settings and capabilities of a Rubrik cluster through         the set up task.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="vlan_tagging_cluster_mgmt_networks-d23139e2783" class="topicref" data-id="vlan_tagging_cluster_mgmt_networks" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/vlan_tagging_cluster_mgmt_networks.html" id="vlan_tagging_cluster_mgmt_networks-d23139e2783-link">VLAN tagging Rubrik cluster management and data networks</a><div class="wh-tooltip"><p class="shortdesc">You can add VLAN tagging to a Rubrik cluster to help manage network         traffic.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="rsc_setting_up_rubrik_cluster_using_ui-d23139e2794" class="topicref" data-id="rsc_setting_up_rubrik_cluster_using_ui" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/setting_up_rubrik_cluster_using_ui.html" id="rsc_setting_up_rubrik_cluster_using_ui-d23139e2794-link">Setting up a Rubrik cluster using the UI</a><div class="wh-tooltip"><p class="shortdesc">Set up a Rubrik cluster using the system setup UI provided on a node.</p></div></div></div></li><li role="treeitem"><div data-tocid="setting_up_rubrik_cluster_using_cli-d23139e2805" class="topicref" data-id="setting_up_rubrik_cluster_using_cli" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/setting_up_rubrik_cluster_using_cli.html" id="setting_up_rubrik_cluster_using_cli-d23139e2805-link">Setting up a Rubrik cluster using the CLI</a><div class="wh-tooltip"><p class="shortdesc">Use the Rubrik CLI to set up a new Rubrik cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="setting_up_rubrik_cluster_VLAN_using_cli.-d23139e2816" class="topicref" data-id="setting_up_rubrik_cluster_VLAN_using_cli." data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../install/setting_up_rubrik_cluster_VLAN_using_cli.html" id="setting_up_rubrik_cluster_VLAN_using_cli.-d23139e2816-link">Setting up a Rubrik cluster with VLAN using the CLI</a><div class="wh-tooltip"><p class="shortdesc">Set up a Rubrik cluster using the Rubrik CLI and provide VLAN support. VLAN support         allows you to set up logical segmentation and management of network traffic.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="add_lacp-d23139e2827" class="topicref" data-id="add_lacp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action add_lacp-d23139e2827-link" class="wh-expand-btn"></span><div class="title"><a href="../common/add_lacp.html" id="add_lacp-d23139e2827-link">Add LACP</a><div class="wh-tooltip"><p class="shortdesc">Link aggregation control protocol combines multiple network connections in parallel         to increase throughput. Rubrik CDM provides the ability to enable link aggregation control         protocol to achieve greater network throughput and fault tolerance.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_cluster_registration-d23139e2893" class="topicref" data-id="rsc_cluster_registration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_cluster_registration-d23139e2893-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_registration.html" id="rsc_cluster_registration-d23139e2893-link">Cluster registration</a><div class="wh-tooltip"><p class="shortdesc">Rubrik offers two modes for registering clusters with <span class="ph">Rubrik Security Cloud</span>,         online and offline.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_rmfa_totp-d23139e2957" class="topicref" data-id="rsc_rmfa_totp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_rmfa_totp-d23139e2957-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rsc_rmfa_totp.html" id="rsc_rmfa_totp-d23139e2957-link">Rubrik MFA with TOTP</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik two-step verification feature uses time-based one-time passwords in         addition to the user login credentials to enforce multi-factor authentication on user         accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cli_administrator_role-d23139e2990" class="topicref" data-id="cli_administrator_role" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cli_administrator_role-d23139e2990-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/cli_administrator_role.html" id="cli_administrator_role-d23139e2990-link">CLI administrator role</a><div class="wh-tooltip"><p class="shortdesc">As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters         through the CLI Secure Shell (SSH) protocol.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="jumbo_frame_support-d23139e3034" class="topicref" data-id="jumbo_frame_support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jumbo_frame_support-d23139e3034-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/jumbo_frame_support.html" id="jumbo_frame_support-d23139e3034-link">Jumbo frame support</a><div class="wh-tooltip"><p class="shortdesc">For Rubrik CDM versions 9.4 and later, you can set the value for the maximum         transmission unit to a maximum value of 10000, instead of the default value of 1500. This         larger unit size is called jumbo frames.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="system_shutdown-d23139e3079" class="topicref" data-id="system_shutdown" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action system_shutdown-d23139e3079-link" class="wh-expand-btn"></span><div class="title"><a href="../install/system_shutdown.html" id="system_shutdown-d23139e3079-link">System shutdown</a><div class="wh-tooltip"><p class="shortdesc">A system shutdown can be done from the Rubrik CLI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbk_cdm_software_upgrade-d23139e3112" class="topicref" data-id="rbk_cdm_software_upgrade" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbk_cdm_software_upgrade-d23139e3112-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rbk_cdm_software_upgrade.html" id="rbk_cdm_software_upgrade-d23139e3112-link">Rubrik CDM software upgrade</a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements, you can upgrade your         Rubrik CDM software running on your Rubrik clusters to the latest version.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="upgrade_to_rsc-d23139e3488" class="topicref" data-id="upgrade_to_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action upgrade_to_rsc-d23139e3488-link" class="wh-expand-btn"></span><div class="title"><a href="../install/upgrade_to_rubrik_security_cloud.html" id="upgrade_to_rsc-d23139e3488-link">Polaris to <span class="ph">RSC</span> upgrade</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides a unified user interface to manage all your Rubrik         tasks.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Setting up a Rubrik cluster using the UI</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Set up a Rubrik cluster using the system setup UI provided on a node.</p>
+        <section class="- topic/section task/prereq section prereq" id="d934800e63"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>Ensure that you have installed the Rubrik CDM software on all of the nodes that will
+            be part of the cluster.</section>
+        <section class="- topic/section task/context section context" id="d934800e69"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+            <p class="- topic/p p">To set up all the nodes in a Rubrik cluster, connect to any node. Use the UI to
+                provide the required information and complete the setup. In most cases, the UI is
+                the recommended interface to use when setting up a Rubrik cluster.</p>
+        </section>
+        <section class="- topic/ol task/steps ol steps" id="d934800e78"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Determine the mDNS hostname of one of the Rubrik nodes.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The mDNS hostname of a Rubrik node is the serial number of the node, with
+                        <span class="+ topic/ph sw-d/filepath ph filepath">.local</span> appended to it.</div>
+                <div class="- topic/itemgroup task/stepxmp itemgroup stepxmp">For example, if the node serial number is RBK34DC56789012, the mDNS
+                    hostname of the node would
+                    be:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>RBK34DC56789012.local</code></pre></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Use the mDNS hostname of a node to access the node in your web browser.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">In the address field of the web browser,
+                    enter:<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>https://<var class="+ topic/keyword sw-d/varname keyword varname">node_serial_number</var>.local</code></pre>Where
+                        <var class="+ topic/keyword sw-d/varname keyword varname">node_serial_number</var> is the node serial number.</div>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Welcome page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Start Setup</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The setup wizard discovers the nodes available for the Rubrik cluster.
+                    After node discovery, the Node Configuration page appears with the each node
+                    listed in Rubrik appliance sections.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select an internet protocol.</span>
+                <ul class="- topic/ul task/choices ul choices">
+                    <li class="- topic/li task/choice li choice"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">IPv6</span></li>
+                    <li class="- topic/li task/choice li choice"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">IPv4</span></li>
+                </ul>
+                <div class="- topic/itemgroup task/info itemgroup info">Your selection determines the internet protocol used by the Rubrik cluster for
+                    network communication.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Turn on <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Use IPMI (out-of-band-management)</span> to use IPMI
+                    configuration for nodes.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Virtual platforms do not support the IPMI configuration.</div>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">When you turn on Use IPMI (out-of-band-management), the IPMI
+                    (out-of-band-management) field will be available on the Node Configuration page.
+                    On the Network Configuration page, the Subnet Mask and IP address fields for
+                    IPMI will be available.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Separate management and data</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Use this option if you want the data network and the management network to use
+                    separate bonding interfaces. The data network must use bond0.</div>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The IP address fields for each node split into separate management and
+                    data fields, allowing configuration of a separate data network on
+                    bond0.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">(IPv4 only) Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Auto populate IP addresses</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Auto IP Setup wizard opens so that you can arrange the nodes in the
+                    required sequence and assign IP addresses to the first node listed. The wizard
+                    then uses that information to assign IP addresses sequentially to the other
+                    nodes.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">For each Rubrik appliance that will be part of the cluster, turn on
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Include in cluster</span>.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">For each Rubrik appliance, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">X</span> adjacent to each node
+                    that should be removed from the cluster.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">For each node, provide the requested IP addresses.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Using the internet protocol that you selected, either IPv4 or IPv6, provide
+                    addresses for that node in <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Management &amp; Data</span>, or
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Management (Bond1)</span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data
+                        (Bond0)</span>, and in <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IPMI</span>.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Network Configuration page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">DNS IPs</span>, enter the name of a DNS server for the
+                    cluster to use.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">You can add additional DNS servers by clicking the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span>.</p>
+                    <p class="- topic/p p">Optionally, you can accept the default DNS server IP, 8.8.8.8, which is the
+                        Google DNS server.</p>
+                </div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">DNS Search Domains</span>, enter a DNS search domain name
+                    for the cluster to use.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">You can add additional search domains by clicking the
+                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span>.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">NTP Server Names</span>, enter a NTP server name for the
+                    cluster to use.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">You can add additional NTP servers by clicking the
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span>.</p>
+                    <p class="- topic/p p">Optionally, you can accept the address of the default NTP server,
+                        pool.ntp.org. This address identifies the virtual cluster of NTP servers
+                        provided for public use by the NTP Pool Project.</p>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Management and Data Network (Bond 0)</span> or in
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Management (Bond1)</span> and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data
+                        (Bond0)</span>, enter the management and data network
+                    information.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The management and data network interface information for the Rubrik cluster
+                    includes a subnet mask, an IP address, and, when you have selected IPv4, a VLAN
+                    ID. What you enter depends on the internet protocol that you selected for the
+                    cluster. If you selected IPv6, then enter the integer value of the prefix
+                    length. If you selected IPv4, then enter the IPv4 subnet mask value. Also, when
+                    you selected IPv4, you can optionally set a VLAN tag for the interface. This
+                    must be an integer from 2 to 4094.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">(IPMI) In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">IPMI</span>, enter the subnet mask and gateway IP
+                    address.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The Subnet Mask and Gateway IP address fields are available only when you turn
+                    on IPMI (out-of-band-management) on the Node Configuration page.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Cluster Settings page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Cluster Name</span>, enter a name.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The name identifies the Rubrik cluster in <span class="- topic/ph ph">Rubrik Security Cloud</span>.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Admin Account Email</span>, enter an administrator account
+                    email address.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">The admin account is the primary local account with administrator privileges.
+                        You use the credentials for the account to log in to the Rubrik cluster
+                        after the initial configuration and registration of the cluster.</p>
+                    <p class="- topic/p p">The default value of the username for the account is 'admin' and cannot be
+                        changed through the UI.</p>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Enter Password</span>, enter an administrator
+                    password.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Re-enter Password</span>, reenter the administrator
+                    password.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p">Store the password in a secure location.</p>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">What is your role?</span>, select a role.</span>
+                <ul class="- topic/ul task/choices ul choices">
+                    <li class="- topic/li task/choice li choice">Customer</li>
+                    <li class="- topic/li task/choice li choice">Support</li>
+                    <li class="- topic/li task/choice li choice">Professional Service</li>
+                    <li class="- topic/li task/choice li choice">Partner</li>
+                    <li class="- topic/li task/choice li choice">Sales Engineer</li>
+                </ul>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Choose Software Version</span>, select a version of the
+                    Rubrik CDM software to be used by the cluster.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The version that is pre-installed is identified. Any other versions that have
+                    been installed and staged on the nodes will also appear in the list. Selecting a
+                    version other than the version that is pre-installed will add approximately 30
+                    minutes to the configuration process.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The installer completes the software installation and configuration on
+                    all of the selected nodes. This procedure includes running bootstrap pre-checks,
+                    installing the software, configuring the cluster, and starting the networking
+                    processes. A completion page appears after the successful installation and
+                    configuration.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter the account name and password for the admin account and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Sign in</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d934800e446"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The configuration wizard completes the Rubrik cluster configuration and the cluster
+            registration page appears.</section>
+        <section class="- topic/section task/postreq section postreq" id="d934800e452"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>Continue through the wizard to register your Rubrik cluster using the online or
+            offline method.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="vlan_tagging_cluster_mgmt_networks.html" title="You can add VLAN tagging to a Rubrik cluster to help manage network traffic.">VLAN tagging Rubrik cluster management and data networks</a><div class="- topic/desc desc">You can add VLAN tagging to a Rubrik cluster to help manage network         traffic.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="download_install_cdm_on_appliance_nodes.html" title="Before you set up your Rubrik cluster, you can install a version of Rubrik CDM that is different from the one already installed on the Rubrik appliance nodes. This involves downloading the software, transferring it to one of the nodes, and running the installation.">Downloading and installing Rubrik CDM</a><div class="- topic/desc desc">Before you set up your Rubrik cluster, you can install a version of Rubrik CDM that         is different from the one already installed on the Rubrik appliance nodes. This involves         downloading the software, transferring it to one of the nodes, and running the         installation.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="registering_clusters_online.html" title="When internet connectivity is available, register your Rubrik cluster using the online method.">Registering Rubrik clusters using the online method</a><div class="- topic/desc desc">When internet connectivity is available, register your Rubrik cluster using the         online method.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="registering_clusters_offline.html" title="Use the offline registration method when the cluster cannot establish a connection with Rubrik Security Cloud.">Registering Rubrik clusters using the offline method</a><div class="- topic/desc desc">Use the offline registration method when the cluster cannot establish a connection         with Rubrik Security Cloud.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rsc_resolving_cluster_regn_issues.html" title="Provide the Rubrik Support team secure and time-limited access to the cluster for assistance with resolving issues faced during cluster registration with Rubrik Security Cloud.">Resolving cluster registration issues</a><div class="- topic/desc desc">Provide the Rubrik Support team secure and time-limited access to the cluster          for assistance with resolving issues faced during cluster registration with          Rubrik Security Cloud.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

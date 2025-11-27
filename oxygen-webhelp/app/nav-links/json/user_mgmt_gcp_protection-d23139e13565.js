@@ -1,0 +1,1 @@
+oxy_webhelp_navlinks = {"user_mgmt_gcp_protection-d23139e13565":{"topics":[{"title":"Creating a role","shortdesc":"<p class=\"shortdesc\">Create a role to grant permissions to user accounts.<\/p>","href":"saas\/common\/creating_role_3.html","attributes":{"data-id":"creating_role"},"menu":{"hasChildren":false},"tocID":"creating_role-d23139e13581","topics":[]}]}};

@@ -1,0 +1,345 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Protecting the on-premises Kubernetes clusters RSC requires specific configurations on the Kubernetes clusters."/><meta name="DC.relation" content="../kubernetes/k8s_protect_prereqs.html"/><meta name="DC.relation" content="../kubernetes/supported_mirrored_registry_methods.html"/><meta name="DC.relation" content="../kubernetes/k8s_prereqs_azure_aks.html"/><meta name="DC.relation" content="k8s_protect_prereqs.html"/><meta name="DC.relation" content="https://hub.docker.com/u/rubrikinc"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="k8s_protection_prereqs_onprem"/>        
+      <title>K8S prerequisites for on-premises deployments</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="k8s_protection_prereqs_onprem-d23139e29223"/><meta name="wh-source-relpath" content="kubernetes/k8s_protection_prereqs_onprem.dita"/><meta name="wh-out-relpath" content="kubernetes/k8s_protection_prereqs_onprem.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="k8s_protection_prereqs_onprem" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref" data-id="k8s_workload_protection"><div class="title"><a href="../kubernetes/k8s_workload_protection.html">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li><div class="topicref" data-id="k8s_protection"><div class="title"><a href="../kubernetes/k8s_protection.html">Kubernetes protection requirements</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Rubrik Security Cloud</span> to secure your on-premise or public cloud         Kubernetes clusters by protecting either entire Kubernetes namespaces or specific subsets         within a namespace using the protection set filtering feature.</p></div></div></div></li><li><div class="topicref" data-id="k8s_protect_prereqs"><div class="title"><a href="../kubernetes/k8s_protect_prereqs.html">Kubernetes workload protection requirements</a><div class="wh-tooltip"><p class="shortdesc">Protecting Kubernetes workloads with <span class="ph">RSC</span> requires that the Kubernetes         clusters and the Rubrik clusters meet specific prerequisites.</p></div></div></div></li><li class="active"><div class="topicref" data-id="k8s_protection_prereqs_onprem"><div class="title"><a href="../kubernetes/k8s_protection_prereqs_onprem.html">K8S prerequisites for on-premises deployments</a><div class="wh-tooltip"><p class="shortdesc">Protecting the on-premises Kubernetes clusters <span class="ph">RSC</span> requires specific         configurations on the Kubernetes clusters.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../kubernetes/supported_mirrored_registry_methods.html" title="Supported mirrored registry methods" aria-label="Previous topic: Supported mirrored registry methods" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../kubernetes/k8s_prereqs_azure_aks.html" title="K8S prerequisites for Azure AKS deployments" aria-label="Next topic: K8S prerequisites for Azure AKS deployments" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="k8s_deployment_architecture-d23139e29048" class="topicref" data-id="k8s_deployment_architecture" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_deployment_architecture.html" id="k8s_deployment_architecture-d23139e29048-link">Deployment architecture for Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">For the data protection deployment architecture in Kubernetes protection, <span class="ph">RSC</span> serves as the control plane and stores the Persistent Volume backups on         a Rubrik cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_prereqs-d23139e29062" class="topicref" data-id="k8s_prereqs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_prereqs-d23139e29062-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_prereqs.html" id="k8s_prereqs-d23139e29062-link">Kubernetes protection prerequisites</a><div class="wh-tooltip"><p class="shortdesc">There are common and specific prerequisites for Kubernetes protection.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="k8s_protection-d23139e29158" class="topicref" data-id="k8s_protection" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action k8s_protection-d23139e29158-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_protection.html" id="k8s_protection-d23139e29158-link">Kubernetes protection requirements</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Rubrik Security Cloud</span> to secure your on-premise or public cloud         Kubernetes clusters by protecting either entire Kubernetes namespaces or specific subsets         within a namespace using the protection set filtering feature.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="k8s_supported_distributions-d23139e29172" class="topicref" data-id="k8s_supported_distributions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_supported_distributions.html" id="k8s_supported_distributions-d23139e29172-link">Supported Kubernetes distributions</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data protection for containerized applications and         business-critical data deployed on conforming Kubernetes distributions.</p></div></div></div></li><li role="treeitem"><div data-tocid="rubrik_cluster_access_to_kubernetes_data-d23139e29185" class="topicref" data-id="rubrik_cluster_access_to_kubernetes_data" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/rubrik_cluster_access_to_kubernetes_data.html" id="rubrik_cluster_access_to_kubernetes_data-d23139e29185-link">Rubrik cluster access to Kubernetes data</a><div class="wh-tooltip"><p class="shortdesc">Rubrik clusters access Kubernetes data through a connection with the Kubernetes         API.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="k8s_protect_prereqs-d23139e29196" class="topicref" data-id="k8s_protect_prereqs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action k8s_protect_prereqs-d23139e29196-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_protect_prereqs.html" id="k8s_protect_prereqs-d23139e29196-link">Kubernetes workload protection requirements</a><div class="wh-tooltip"><p class="shortdesc">Protecting Kubernetes workloads with <span class="ph">RSC</span> requires that the Kubernetes         clusters and the Rubrik clusters meet specific prerequisites.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_mirrored_registry_methods-d23139e29210" class="topicref" data-id="supported_mirrored_registry_methods" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/supported_mirrored_registry_methods.html" id="supported_mirrored_registry_methods-d23139e29210-link">Supported mirrored registry methods</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports two mirrored registry methods.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="k8s_protection_prereqs_onprem-d23139e29223" class="topicref" data-id="k8s_protection_prereqs_onprem" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_protection_prereqs_onprem.html" id="k8s_protection_prereqs_onprem-d23139e29223-link">K8S prerequisites for on-premises deployments</a><div class="wh-tooltip"><p class="shortdesc">Protecting the on-premises Kubernetes clusters <span class="ph">RSC</span> requires specific         configurations on the Kubernetes clusters.</p></div></div></div></li><li role="treeitem"><div data-tocid="k8s_prereqs_azure_aks-d23139e29237" class="topicref" data-id="k8s_prereqs_azure_aks" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_prereqs_azure_aks.html" id="k8s_prereqs_azure_aks-d23139e29237-link">K8S prerequisites for Azure AKS deployments</a><div class="wh-tooltip"><p class="shortdesc">Protecting the AKS Kubernetes clusters deployed in the Azure public cloud <span class="ph">RSC</span> requires specific configurations on the Kubernetes clusters.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="k8s_restoring_protection_set_snapshots-d23139e29251" class="topicref" data-id="k8s_restoring_protection_set_snapshots" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_restoring_protection_set_snapshots.html" id="k8s_restoring_protection_set_snapshots-d23139e29251-link">Restoring protection set snapshots using Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">Restore a protection set snapshot by recovering it to the same Kubernetes cluster or         exporting it to another Kubernetes cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="k8s_restore_pvc_snapshots_k8s_protect-d23139e29262" class="topicref" data-id="k8s_restore_pvc_snapshots_k8s_protect" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_restore_pvc_snapshots_k8s_protect.html" id="k8s_restore_pvc_snapshots_k8s_protect-d23139e29262-link">Restoring PersistentVolumeClaims snapshots using Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">Restore a PersistentVolumeClaims snapshot by recovering it to the same Kubernetes         cluster or exporting it to another Kubernetes cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="k8s_restore_snpsht_resources_k8s_protect-d23139e29273" class="topicref" data-id="k8s_restore_snpsht_resources_k8s_protect" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_restore_snpsht_resources_k8s_protect.html" id="k8s_restore_snpsht_resources_k8s_protect-d23139e29273-link">Restoring snapshot resources using Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">Restore a snapshot that includes specific resources by recovering it to the same         Kubernetes cluster or exporting it to another Kubernetes cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="placing_k8s_snapshots_legal_hold-d23139e29284" class="topicref" data-id="placing_k8s_snapshots_legal_hold" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/placing_k8s_snapshots_legal_hold.html" id="placing_k8s_snapshots_legal_hold-d23139e29284-link">Placing Kubernetes snapshots on Legal Hold</a><div class="wh-tooltip"><p class="shortdesc">You can place a Legal Hold on a Kubernetes snapshot to prevent the Rubrik cluster         from expiring and removing the snapshot at the end of the assigned retention         period.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_cluster_onboard_discover_rsc-d23139e29295" class="topicref" data-id="k8s_cluster_onboard_discover_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_cluster_onboard_discover_rsc-d23139e29295-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_cluster_onboard_discover_rsc.html" id="k8s_cluster_onboard_discover_rsc-d23139e29295-link">Kubernetes cluster onboarding</a><div class="wh-tooltip"><p class="shortdesc">To onboard your Kubernetes cluster, add it to your <span class="ph">RSC</span> domain and         provide <span class="ph">RSC</span> with access to the cluster and sufficient         permissions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="least_privilege_configuration_K8S-d23139e29432" class="topicref" data-id="least_privilege_configuration_K8S" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action least_privilege_configuration_K8S-d23139e29432-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_least_privilege_configuration.html" id="least_privilege_configuration_K8S-d23139e29432-link">Least privilege configuration for Kubernetes</a><div class="wh-tooltip"><p class="shortdesc">You can set up your Kubernetes kubeconfig with the least privileges so that only         minimal RBAC permissions are assigned to users and service accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="kubernetes_labels-d23139e29487" class="topicref" data-id="kubernetes_labels" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action kubernetes_labels-d23139e29487-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/kubernetes_labels.html" id="kubernetes_labels-d23139e29487-link">Kubernetes labels</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> integrates with Kubernetes native labels to manage data         protection, enabling you to use Kubernetes labels to identify and group resources, and then         associate those labels with SLA Domains.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_cluster_protection_set-d23139e29563" class="topicref" data-id="k8s_cluster_protection_set" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_cluster_protection_set-d23139e29563-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_cluster_protection_set.html" id="k8s_cluster_protection_set-d23139e29563-link">Protection sets for Kubernetes cluster workloads</a><div class="wh-tooltip"><p class="shortdesc">A Kubernetes cluster protection set is a protectable workload that you create and         protect using <span class="ph">RSC</span>. A protection set might include an entire Kubernetes         namespace or a subset of resources within the namespace.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_browse_kubernetes_snapshots-d23139e29659" class="topicref" data-id="k8s_browse_kubernetes_snapshots" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_browse_kubernetes_snapshots-d23139e29659-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_browse_kubernetes_snapshots.html" id="k8s_browse_kubernetes_snapshots-d23139e29659-link">Browse Kubernetes snapshots</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to browse the resources in a Kubernetes snapshot for         protection sets and virtual machines.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_openshift_clusters-d23139e29684" class="topicref" data-id="k8s_openshift_clusters" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_openshift_clusters-d23139e29684-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_openshift_clusters.html" id="k8s_openshift_clusters-d23139e29684-link">OpenShift Virtual Machine workload</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to protect containers and virtual machines managed on         Kubernetes OpenShift clusters.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection_policies-d23139e29745" class="topicref" data-id="k8s_workload_protection_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection_policies-d23139e29745-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection_policies.html" id="k8s_workload_protection_policies-d23139e29745-link">Kubernetes workload protection policies</a><div class="wh-tooltip"><p class="shortdesc">In <span class="ph">RSC</span>, you can take both policy-based and on-demand snapshots of         Kubernetes protection sets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_snapshot_retention-d23139e29806" class="topicref" data-id="k8s_snapshot_retention" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_snapshot_retention-d23139e29806-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_snapshot_retention.html" id="k8s_snapshot_retention-d23139e29806-link">Kubernetes snapshot retention</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> allows changing the retention period of Kubernetes snapshots with         the help of SLA Domains. Kubernetes snapshot retention works only with Rubrik clusters         running Rubrik CDM version 7.0.2-p2 and later.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="K8s_crd_rsc-d23139e29841" class="topicref" data-id="K8s_crd_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action K8s_crd_rsc-d23139e29841-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/K8s_crd_rsc.html" id="K8s_crd_rsc-d23139e29841-link"><span class="ph">RSC</span> Custom resource definitions</a><div class="wh-tooltip"><p class="shortdesc">You can use the <span class="ph">RSC</span> custom resource definitions to create custom         resources for backup and recovery workflows using APIs native to Kubernetes.</p></div></div></div></li><li role="treeitem"><div data-tocid="anomaly_detection_k8-d23139e30182" class="topicref" data-id="anomaly_detection_k8" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/anomaly_detection_k8.html" id="anomaly_detection_k8-d23139e30182-link"><span class="ph">Anomaly Detection</span> for Kubernetes</a><div class="wh-tooltip"><p class="shortdesc">You can enable <span class="ph">Anomaly Detection</span> for Kubernetes virtual machines and protection         sets to identify and analyze anomalous events that can indicate a ransomware         attack.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">K8S prerequisites for on-premises deployments</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Protecting the on-premises Kubernetes clusters <span class="- topic/ph ph">RSC</span> requires specific
+        configurations on the Kubernetes clusters.</p>
+        <section class="- topic/section section">
+            <div class="- topic/p p">This table describes the supported mirrored registry methods.<div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="k8s_protection_prereqs_onprem__entry__1">Mirrored registry method</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="k8s_protection_prereqs_onprem__entry__2">Description</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__1">Pull-through cache</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__2">Provides mirroring at the container runtime level. Creates
+                                    configurations at the container runtime level to pull images
+                                    from the local registry. The local registry stores images from
+                                    Docker Hub, <code class="+ topic/ph pr-d/codeph ph codeph">https://registry-1.docker.io</code>. If an
+                                    image is missing, <span class="- topic/ph ph">RSC</span> transparently pulls the
+                                    image from Docker Hub and stores it, handling all image versions
+                                    and sha256 digests.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="k8s_protection_prereqs_onprem__entry__1">Mirrored cache</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="k8s_protection_prereqs_onprem__entry__2">Provides mirroring images at the Kubernetes level. When you
+                                    cannot configure the container runtime level, <span class="- topic/ph ph">RSC</span> can mirror images at the Kubernetes level. This method
+                                    requires setting up the local registry to mirror from Docker
+                                    Hub, <code class="+ topic/ph pr-d/codeph ph codeph">https://registry-1.docker.io</code>. The
+                                    Kubernetes deployment image path must point to the local
+                                    registry instead of Docker Hub. <span class="- topic/ph ph">RSC</span> mirrors
+                                    images from Docker Hub to the local registry transparently,
+                                    maintaining the same sha256 digests.</td>
+                            </tr>
+                        </tbody></table></div></div>
+            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> does not support the manually maintained image cache mirrored
+                registry method, because the sha256 digest of the image changes between the local
+                and remote Docker Hub registry, causing images pulled from the local registry to
+                fail.</p>
+            <div class="- topic/p p">To perform backup and recovery for Kubernetes clusters in the on-premises
+                deployments, <span class="- topic/ph ph">RSC</span> relies on the following prerequisites:<div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="k8s_protection_prereqs_onprem__entry__7">Prequisite</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="k8s_protection_prereqs_onprem__entry__8">Description</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__7">Access to the Docker Hub container registry</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__8">Required by the Kubernetes cluster nodes to download the
+                                    Rubrik Kubernetes Agent container image and the Rubrik Backup
+                                    Service container image</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__7">NodePort transport methods</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__8">
+                                    <ul class="- topic/ul ul">
+                                        <li class="- topic/li li">Supported in Rubrik CDM version 9.1.1-p1 and later</li>
+                                        <li class="- topic/li li">Ports in the default node port range of 30000-32767 must
+                                            open to the Rubrik cluster on all Kubernetes nodes</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__7">EKS Kubernetes clusters transport method</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="k8s_protection_prereqs_onprem__entry__8">Required to support LoadBalancer or NodePort types of
+                                    services and allow Rubrik to reserve one IP address for
+                                    performing backup and recovery operations.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="k8s_protection_prereqs_onprem__entry__7">Kubernetes cluster LoadBalancer port requirement</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="k8s_protection_prereqs_onprem__entry__8">Requires that ports in the range of 9000 to 9100 are
+                                    available for the LoadBalancer service.</td>
+                            </tr>
+                        </tbody></table></div></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="k8s_protect_prereqs.html" title="Protecting Kubernetes workloads with RSC requires that the Kubernetes clusters and the Rubrik clusters meet specific prerequisites.">Kubernetes workload protection requirements</a><div class="- topic/desc desc">Protecting Kubernetes workloads with RSC requires that the Kubernetes         clusters and the Rubrik clusters meet specific prerequisites.</div></li></ul></div><div class="- topic/linklist linklist relinfo"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="https://hub.docker.com/u/rubrikinc" target="_blank" rel="external noopener" title="https://hub.docker.com/u/rubrikinc">https://hub.docker.com/u/rubrikinc</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

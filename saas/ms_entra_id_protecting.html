@@ -1,0 +1,333 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Choose a data protection policy for a Microsoft Entra ID directory."/><meta name="DC.relation" content="../saas/ms_entra_id.html"/><meta name="DC.relation" content="../saas/ms_entra_id_no_oauth_perms.html"/><meta name="DC.relation" content="../saas/ms_entra_id_taking_ods.html"/><meta name="DC.relation" content="ms_entra_id.html"/><meta name="DC.relation" content="ms_entra_id_known_limits_rsc.html"/><meta name="DC.relation" content="ms_entra_id_viewing_directories.html"/><meta name="DC.relation" content="adding_entra_id_with_oauth.html"/><meta name="DC.relation" content="adding_entra_id_without_oauth.html"/><meta name="DC.relation" content="ms_entra_id_taking_ods.html"/><meta name="DC.relation" content="../qauth/quorum_authorization.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="ms_entra_id_protecting"/>        
+      <title>Protecting Microsoft Entra ID</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="ms_entra_id_protecting-d23139e23170"/><meta name="wh-source-relpath" content="saas/ms_entra_id_protecting.dita"/><meta name="wh-out-relpath" content="saas/ms_entra_id_protecting.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251123144818"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251123144818"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="ms_entra_id_protecting" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../adds/ad_protection.html">Identity Workloads</a></div></div></li><li><div class="topicref" data-id="microsoft_entra_id"><div class="title"><a href="../saas/ms_entra_id.html">Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports backup and recovery of Microsoft Entra ID.</p></div></div></div></li><li class="active"><div class="topicref" data-id="ms_entra_id_protecting"><div class="title"><a href="../saas/ms_entra_id_protecting.html">Protecting Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc">Choose a data protection policy for a Microsoft Entra ID directory.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/ms_entra_id_no_oauth_perms.html" title="Permissions for adding Microsoft Entra ID without OAuth" aria-label="Previous topic: Permissions for adding Microsoft Entra ID without OAuth" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/ms_entra_id_taking_ods.html" title="Taking on-demand snapshots of Microsoft Entra ID" aria-label="Next topic: Taking on-demand snapshots of Microsoft Entra ID" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23139e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e1432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e1432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23139e1432-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e3520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e3520-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23139e3520-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e7432" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e7432-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23139e7432-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e10356" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e10356-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23139e10356-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23139e10364" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23139e10364-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e10379" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e10379-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23139e10379-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e18100" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e18100-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d23139e18100-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d23139e21569" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d23139e21569-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23139e21569-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23139e22450" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23139e22450-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23139e22450-link">Identity Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="ad_protection-d23139e22451" class="topicref" data-id="ad_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad_protection-d23139e22451-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="ad_protection-d23139e22451-link">Active Directory protection</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> offers capabilities for protecting Active Directory,         including features for backing up and recovering individual domain controllers and entire         Active Directory forests, designed to enhance the identity resilience of an         organization.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="microsoft_entra_id-d23139e23088" class="topicref" data-id="microsoft_entra_id" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action microsoft_entra_id-d23139e23088-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id.html" id="microsoft_entra_id-d23139e23088-link">Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports backup and recovery of Microsoft Entra ID.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="ms_entra_id_known_limits_rsc-d23139e23101" class="topicref" data-id="ms_entra_id_known_limits_rsc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_known_limits_rsc.html" id="ms_entra_id_known_limits_rsc-d23139e23101-link">Known limitations for Microsoft Entra ID on <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Microsoft Entra ID on <span class="ph">RSC</span> includes some known limitations for         recovering groups, users, relationships, and Microsoft Entra ID properties.</p></div></div></div></li><li role="treeitem"><div data-tocid="ms_entra_id_non_recov_soft_del_obj_rsc-d23139e23117" class="topicref" data-id="ms_entra_id_non_recov_soft_del_obj_rsc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_non_recov_soft_del_obj_rsc.html" id="ms_entra_id_non_recov_soft_del_obj_rsc-d23139e23117-link">Non-recovery of soft-deleted objects by <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> does not recover higher-privileged, soft-deleted Microsoft Entra         ID user or group objects. Instead, <span class="ph">RSC</span> creates new objects, leaving the         soft-deleted ones in the Microsoft Recycle Bin.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_entra_id_with_oauth-d23139e23135" class="topicref" data-id="adding_entra_id_with_oauth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_entra_id_with_oauth.html" id="adding_entra_id_with_oauth-d23139e23135-link">Adding Microsoft Entra ID with OAuth</a><div class="wh-tooltip"><p class="shortdesc">Add Microsoft Entra ID as a protected workload that uses OAuth for         authentication.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="adding_entra_id_without_oauth-d23139e23146" class="topicref" data-id="adding_entra_id_without_oauth" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action adding_entra_id_without_oauth-d23139e23146-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_entra_id_without_oauth.html" id="adding_entra_id_without_oauth-d23139e23146-link">Adding Microsoft Entra ID without OAuth</a><div class="wh-tooltip"><p class="shortdesc">Add a Microsoft Entra ID directory as a protected workload without OAuth, and instead         use your existing Microsoft Entra ID application registration.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="ms_entra_id_protecting-d23139e23170" class="topicref" data-id="ms_entra_id_protecting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_protecting.html" id="ms_entra_id_protecting-d23139e23170-link">Protecting Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc">Choose a data protection policy for a Microsoft Entra ID directory.</p></div></div></div></li><li role="treeitem"><div data-tocid="ms_entra_id_taking_ods-d23139e23181" class="topicref" data-id="ms_entra_id_taking_ods" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_taking_ods.html" id="ms_entra_id_taking_ods-d23139e23181-link">Taking on-demand snapshots of Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc">Take on-demand snapshots of Microsoft Entra ID protectable objects in addition to the         policy-based snapshots provided by the SLA Domain.</p></div></div></div></li><li role="treeitem"><div data-tocid="ms_entra_id_deleting_snapshot-d23139e23192" class="topicref" data-id="ms_entra_id_deleting_snapshot" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_deleting_snapshot.html" id="ms_entra_id_deleting_snapshot-d23139e23192-link">Deleting a Microsoft Entra ID snapshot</a><div class="wh-tooltip"><p class="shortdesc">Delete a Microsoft Entra ID snapshot that has the Forever retention policy         assigned.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_viewing_directories-d23139e23203" class="topicref" data-id="ms_entra_id_viewing_directories" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_viewing_directories-d23139e23203-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_viewing_directories.html" id="ms_entra_id_viewing_directories-d23139e23203-link">Viewing Microsoft Entra ID directories</a><div class="wh-tooltip"><p class="shortdesc">View details for the Microsoft Entra ID directories.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_obj_relationship_recovery-d23139e23225" class="topicref" data-id="ms_entra_id_obj_relationship_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_obj_relationship_recovery-d23139e23225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_obj_relationship_recovery.html" id="ms_entra_id_obj_relationship_recovery-d23139e23225-link">Microsoft Entra ID object and relationship recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> recovers various Microsoft Entra ID objects and object         relationships, including users, groups, roles, enterprise apps, and app         registrations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_user_obj_attr_recov-d23139e23342" class="topicref" data-id="ms_entra_id_user_obj_attr_recov" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_user_obj_attr_recov-d23139e23342-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_user_obj_attr_recov.html" id="ms_entra_id_user_obj_attr_recov-d23139e23342-link">Microsoft Entra ID user object attribute recovery</a><div class="wh-tooltip"><p class="shortdesc">Attribute recovery for a Microsoft Entra ID user object selectively restores specific         attributes that were maliciously or accidentally altered without performing a full object         restore. You can compare user object attributes from a snapshot against live data and         recover only the changed attributes.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_obj_recov_across_snapshots-d23139e23376" class="topicref" data-id="ms_entra_id_obj_recov_across_snapshots" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_obj_recov_across_snapshots-d23139e23376-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_obj_recov_across_snapshots.html" id="ms_entra_id_obj_recov_across_snapshots-d23139e23376-link">Microsoft Entra ID object recovery across snapshots</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">RSC</span>, you can search Microsoft Entra ID user, groups, and roles         objects for recovery across different snapshots. This functionality enables recovery of         objects and relationships from a specific date and time.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_conditional_access_recovery-d23139e23423" class="topicref" data-id="ms_entra_id_conditional_access_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_conditional_access_recovery-d23139e23423-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_conditional_access_recovery.html" id="ms_entra_id_conditional_access_recovery-d23139e23423-link">Microsoft Entra ID Conditional Access recovery</a><div class="wh-tooltip"><p class="shortdesc">For Microsoft Entra ID directories that support Conditional Access, <span class="ph">RSC</span> can protect Microsoft Entra ID Conditional Access objects and relationships.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_recovery_hybrid_env-d23139e23465" class="topicref" data-id="ms_entra_id_recovery_hybrid_env" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_recovery_hybrid_env-d23139e23465-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_recovery_hybrid_env.html" id="ms_entra_id_recovery_hybrid_env-d23139e23465-link">Recovery in a hybrid identity environment</a><div class="wh-tooltip"><p class="shortdesc">In a hybrid Microsoft Entra ID and Active Directory environment on <span class="ph">RSC</span>, you can view Active Directory group and user assignments synced from the Active         Directory domain. You can additionally recover relationships for synced Active Directory         user and group objects and protect the Active Direct domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_full_domain_recovery-d23139e23518" class="topicref" data-id="ms_entra_id_full_domain_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_full_domain_recovery-d23139e23518-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_full_domain_recov.html" id="ms_entra_id_full_domain_recovery-d23139e23518-link">Microsoft Entra ID full domain recovery</a><div class="wh-tooltip"><p class="shortdesc">Using Microsoft Entra ID full domain recovery, administrators can restore all objects         and relationships in a domain from a previous state. You can specify objects to exclude from         recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_entra_id_downloading_recovery_details-d23139e23540" class="topicref" data-id="ms_entra_id_downloading_recovery_details" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_entra_id_downloading_recovery_details-d23139e23540-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_downloading_recovery_details.html" id="ms_entra_id_downloading_recovery_details-d23139e23540-link">Downloading Microsoft Entra ID recovery details</a><div class="wh-tooltip"><p class="shortdesc">Download a CSV file containing information about a completed Microsoft Entra ID         snapshot recovery. The information includes details about object IDs, object display names,         object types, and relationship recovery.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_ms_entra_id_directories_oauth-d23139e23562" class="topicref" data-id="editing_ms_entra_id_directories_oauth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_editing_directories_oauth.html" id="editing_ms_entra_id_directories_oauth-d23139e23562-link">Editing Microsoft Entra ID directories with OAuth</a><div class="wh-tooltip"><p class="shortdesc">Edit the login accounts that access Microsoft Entra ID as a protected workload that         uses OAuth.</p></div></div></div></li><li role="treeitem"><div data-tocid="ms_entra_id_editing_directories_without_oauth-d23139e23573" class="topicref" data-id="ms_entra_id_editing_directories_without_oauth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_editing_directories_without_oauth.html" id="ms_entra_id_editing_directories_without_oauth-d23139e23573-link">Editing Microsoft Entra ID directories without OAuth</a><div class="wh-tooltip"><p class="shortdesc">Edit login accounts that access Microsoft Entra ID as a protected workload that does         not use OAuth.</p></div></div></div></li><li role="treeitem"><div data-tocid="ms_entra_id_deleting_domains_directories-d23139e23584" class="topicref" data-id="ms_entra_id_deleting_domains_directories" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id_deleting_domains_directories.html" id="ms_entra_id_deleting_domains_directories-d23139e23584-link">Deleting Microsoft Entra ID domains from directories</a><div class="wh-tooltip"><p class="shortdesc">Delete a Microsoft Entra ID domain from a directory when the domain no longer         requires protection.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e23595" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e23595-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23139e23595-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d23139e28428" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d23139e28428-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d23139e28428-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d23139e29037" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d23139e29037-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d23139e29037-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d23139e30198" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d23139e30198-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d23139e30198-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23139e30635" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23139e30635-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23139e30635-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23139e31129" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23139e31129-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23139e31129-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23139e33168" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23139e33168-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23139e33168-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d23139e33560" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d23139e33560-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d23139e33560-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d23139e33773" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d23139e33773-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d23139e33773-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d23139e34187" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d23139e34187-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d23139e34187-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d23139e34545" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d23139e34545-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d23139e34545-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d23139e34646" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d23139e34646-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d23139e34646-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e34840" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e34840-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23139e34840-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e38705" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e38705-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23139e38705-link">AI, Automation, Integrations and Tooling</a><div class="wh-tooltip"><p class="shortdesc">AI: Utilize conversational intelligence (Ruby and Annapurna). Automation:
+                Access the GraphQL API Playground for programmatic scripting. Integrations:
+                Configure connections to external systems, such as ServiceNow, Zscaler, and more.
+                Tooling: Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e39294" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e39294-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23139e39294-link">Monitoring, Reporting, and Alerting</a><div class="wh-tooltip"><p class="shortdesc">Monitoring/Alerting: Check real-time system health via dashboards, review
+                live Events, and configure notification delivery (email, webhook, and more).
+                Reporting: Generate compliance Reports, and review historical immutable logs for
+                accountability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41006-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23139e41006-link">Troubleshooting</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e41093" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e41093-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_settings_menu_2.html" id="tocId-d23139e41093-link"><span class="ph">Data Protection</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> provides the core tools and features for
+                protecting, managing, and analyzing your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42601" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42601-link" class="wh-expand-btn"></span><div class="title"><a href="https://docs.rubrik.com/en-us/latest/offrec/index.html" id="tocId-d23139e42601-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23139e42622" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23139e42622-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23139e42622-link">Legal Notices and additional resources</a><div class="wh-tooltip"><p class="shortdesc">Rubrik legal notices for this documentation, and topics with additional
+                resources and information.</p></div></div></div></li><li role="treeitem"><div data-tocid="comments_suggestions-d23139e42637" class="topicref" data-id="comments_suggestions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../reuse/comments_suggestions.html" id="comments_suggestions-d23139e42637-link">Comments and suggestions</a><div class="wh-tooltip"><p class="shortdesc">We welcome your comments and suggestions about our products and our product         documentation.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Protecting Microsoft Entra ID</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Choose a data protection policy for a Microsoft Entra ID directory.</p>
+        <section class="- topic/ol task/steps ol steps" id="d394806e65"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../reuse/conrefs/../../images/ui-icons/AppTray.svg"/> and select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data Protection</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Data Protection dashboard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the navigation bar, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Inventory</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Inventory page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click on the  Microsoft Entra ID inventory card.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The inventory list for Microsoft Entra ID appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a domain.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">You can select more than one domain.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Manage protection</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Manage Protection window appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Choose a protection option and click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="simpletable-container"><table class="- topic/simpletable task/choicetable simpletable choicetable choicetableborder"><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead><tr class="- topic/sthead task/chhead sthead chhead"><th scope="col" class="- topic/stentry task/choptionhd stentry choptionhd">Option</th><th scope="col" class="- topic/stentry task/chdeschd stentry chdeschd">Description</th></tr></thead><tbody><tr class="- topic/strow task/chrow strow chrow">
+                        <th scope="row" class="- topic/stentry task/choption stentry choption">SLA Domain</th>
+                        <td class="- topic/stentry task/chdesc stentry chdesc">The SLA Domain is assigned to the object or other databases within
+                            the selected object.</td>
+                    </tr><tr class="- topic/strow task/chrow strow chrow">
+                        <th scope="row" class="- topic/stentry task/choption stentry choption">Don't protect</th>
+                        <td class="- topic/stentry task/chdesc stentry chdesc">An individual SLA Domain assignment is removed from the protected
+                            object, and the object will not derive an assignment from any other
+                            object.</td>
+                    </tr><tr class="- topic/strow task/chrow strow chrow">
+                        <th scope="row" class="- topic/stentry task/choption stentry choption">Clear existing assignment</th>
+                        <td class="- topic/stentry task/chdesc stentry chdesc">An individual SLA Domain assignment is removed from the protected
+                            object, and the object is protected based on the inheritance
+                            rules.</td>
+                    </tr></tbody></table></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Assign</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">If you have created a quorum authorization policy for
+                    this operation, you are required to submit a request for quorum
+                    authorization.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">(Quorum authorization policy) Select a run type option.</span>
+                <div class="simpletable-container"><table class="- topic/simpletable task/choicetable simpletable choicetable choicetableborder"><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead><tr class="- topic/sthead task/chhead sthead chhead"><th scope="col" class="- topic/stentry task/choptionhd stentry choptionhd">Option</th><th scope="col" class="- topic/stentry task/chdeschd stentry chdeschd">Description</th></tr></thead><tbody><tr class="- topic/strow task/chrow strow chrow">
+                        <th scope="row" class="- topic/stentry task/choption stentry choption">Automatically schedule</th>
+                        <td class="- topic/stentry task/chdesc stentry chdesc">Schedules the action to automatically run after approval.</td>
+                    </tr><tr class="- topic/strow task/chrow strow chrow">
+                        <th scope="row" class="- topic/stentry task/choption stentry choption">Manually schedule</th>
+                        <td class="- topic/stentry task/chdesc stentry chdesc">Schedules the action to run within 24 hours after the approval.
+                            Actions not run 24 hours after approval will expire.</td>
+                    </tr></tbody></table></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">(Quorum authorization policy) Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Submit
+                    Request</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d394806e228"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><span class="- topic/ph ph">RSC</span> applies the data protection policy to Microsoft Entra ID. If
+            you have created a quorum authorization policy, <span class="- topic/ph ph">RSC</span> applies the data
+            protection policy according to the specified run type option after the request is
+            approved.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ms_entra_id.html" title="RSC supports backup and recovery of Microsoft Entra ID.">Microsoft Entra ID</a><div class="- topic/desc desc">RSC supports backup and recovery of Microsoft Entra ID.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../qauth/quorum_authorization.html" title="Quorum authorization is a security feature that enforces the requirement of getting additional approvals before a requester can perform data-modifying actions in RSC.">Quorum authorization</a><div class="- topic/desc desc">Quorum authorization is a security feature that enforces the requirement of getting         additional approvals before a requester can perform data-modifying actions in RSC.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ms_entra_id_viewing_directories.html" title="View details for the Microsoft Entra ID directories.">Viewing Microsoft Entra ID directories</a><div class="- topic/desc desc">View details for the Microsoft Entra ID directories.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="adding_entra_id_with_oauth.html" title="Add Microsoft Entra ID as a protected workload that uses OAuth for authentication.">Adding Microsoft Entra ID with OAuth</a><div class="- topic/desc desc">Add Microsoft Entra ID as a protected workload that uses OAuth for         authentication.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="adding_entra_id_without_oauth.html" title="Add a Microsoft Entra ID directory as a protected workload without OAuth, and instead use your existing Microsoft Entra ID application registration.">Adding Microsoft Entra ID without OAuth</a><div class="- topic/desc desc">Add a Microsoft Entra ID directory as a protected workload without OAuth, and instead         use your existing Microsoft Entra ID application registration.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ms_entra_id_taking_ods.html" title="Take on-demand snapshots of Microsoft Entra ID protectable objects in addition to the policy-based snapshots provided by the SLA Domain.">Taking on-demand snapshots of Microsoft Entra ID</a><div class="- topic/desc desc">Take on-demand snapshots of Microsoft Entra ID protectable objects in addition to the         policy-based snapshots provided by the SLA Domain.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ms_entra_id_known_limits_rsc.html" title="Microsoft Entra ID on RSC includes some known limitations for recovering groups, users, relationships, and Microsoft Entra ID properties.">Known limitations for Microsoft Entra ID on RSC</a><div class="- topic/desc desc">Microsoft Entra ID on RSC includes some known limitations for         recovering groups, users, relationships, and Microsoft Entra ID properties.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
