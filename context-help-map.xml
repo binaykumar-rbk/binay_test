@@ -53,6 +53,8 @@
                path="saas/common/revoking_support_access.html"/>
    <appContext helpID="viewing_support_access_audit_logs"
                path="saas/common/viewing_support_access_audit_logs.html"/>
+   <appContext helpID="customer_support" path="saas/customer_support.html"/>
+   <appContext helpID="customer_support_rscp" path="saas/customer_support_rscp.html"/>
    <appContext helpID="rsc_self_help" path="saas/rsc_hc.html"/>
    <appContext helpID="rsc_hc_creating_support_case"
                path="saas/rsc_hc_creating_support_case.html"/>
@@ -69,6 +71,61 @@
    <appContext helpID="accessing_release_notes"
                path="saas/common/accessing_release_notes.html"/>
    <appContext helpID="navigation_history" path="saas/common/navigation_history.html"/>
+   <appContext helpID="data_sources" path="saas/data_sources.html"/>
+   <appContext helpID="rsc_settings_menu" path="saas/rsc_settings_menu.html"/>
+   <appContext helpID="rubrik_cc_es_on_saas" path="saas/rubrik_cc_es_on_saas.html"/>
+   <appContext helpID="azure_cc_es_rsc" path="saas/azure_cc_es_rsc.html"/>
+   <appContext helpID="azr_cc_es_prereq" path="common/azr_cc_es_prereq.html"/>
+   <appContext helpID="azr_cc_es_additional_req_settings"
+               path="common/azr_cc_es_additional_req_settings.html"/>
+   <appContext helpID="service_private_endpoints"
+               path="common/service_private_endpoints.html"/>
+   <appContext helpID="required_settings_private_endpoint"
+               path="common/required_settings_private_endpoint.html"/>
+   <appContext helpID="azr_node_reqs_cc" path="common/azure_node_reqs_cc.html"/>
+   <appContext helpID="azr_req_perms_cc_provisioning"
+               path="saas/azr_req_perms_cc_provisioning.html"/>
+   <appContext helpID="cces_transitioning_managed_identities"
+               path="saas/cces_transitioning_managed_identities.html"/>
+   <appContext helpID="concept_owf_t1r_1cc" path="saas/cces_managed_identities.html"/>
+   <appContext helpID="workflow_for_azure_cloud_cluster_es"
+               path="saas/workflow_for_azure_cloud_cluster_es.html"/>
+   <appContext helpID="provisioning_azure_cc_es"
+               path="saas/provisioning_azure_cc_es.html"/>
+   <appContext helpID="azr_enabling_immutability_new_container"
+               path="saas/azr_enabling_immutability_new_container.html"/>
+   <appContext helpID="azr_enabling_immutability_editing_container"
+               path="saas/azr_enabling_immutability_editing_container.html"/>
+   <appContext helpID="cloud_cluster_es_immutability_support"
+               path="saas/cloud_cluster_es_immutability_support.html"/>
+   <appContext helpID="upgrading_disks_azure_cces"
+               path="saas/upgrading_disks_azure_cces.html"/>
+   <appContext helpID="limitations_upgrading_disks_azure_cces"
+               path="saas/limitations_upgrading_disks_azure_cces.html"/>
+   <appContext helpID="aws_cc_es_rsc" path="saas/aws_cc_es_rsc.html"/>
+   <appContext helpID="aws_cloud_cluster_prerequisites"
+               path="common/aws_cloud_cluster_prerequisites.html"/>
+   <appContext helpID="security_group_rules" path="cloud/security_group_rules.html"/>
+   <appContext helpID="aws_req_perms_table_cc_es" path="saas/aws_req_perms_cc_es.html"/>
+   <appContext helpID="aws_node_reqs_cc" path="common/aws_node_reqs_cc.html"/>
+   <appContext helpID="workflow_for_aws_cloud_cluster"
+               path="saas/workflow_for_aws_cloud_cluster.html"/>
+   <appContext helpID="provisioning_aws_cces" path="saas/provisioning_aws_cces.html"/>
+   <appContext helpID="upgrading_aws_cces_gp3_disks"
+               path="saas/upgrading_aws_cces_gp3_disks.html"/>
+   <appContext helpID="cces_recoverability" path="saas/cces_recoverability.html"/>
+   <appContext helpID="recovering_rubrik_cc_es_aws"
+               path="saas/recovering_rubrik_cc_es_aws.html"/>
+   <appContext helpID="recovering_rubrik_cc_es_azure"
+               path="saas/recovering_rubrik_cc_es_azure.html"/>
+   <appContext helpID="adding_a_node_to_cc_es" path="saas/adding_node_cces.html"/>
+   <appContext helpID="adding_node_predeployed_cces"
+               path="saas/adding_node_predeployed_cces.html"/>
+   <appContext helpID="node_removal_rsc" path="saas/node_removal_rsc.html"/>
+   <appContext helpID="removing_node_cld_cluster"
+               path="saas/removing_node_cld_cluster.html"/>
+   <appContext helpID="extra_dense_migration_cces_clusters"
+               path="saas/extra_dense_migration_cces_clusters.html"/>
    <appContext helpID="rubrik_clusters" path="saas/common/rubrik_clusters.html"/>
    <appContext helpID="clusters_page" path="saas/clusters_page.html"/>
    <appContext helpID="clusters_overview_page"
@@ -180,6 +237,26 @@
    <appContext helpID="data_security" path="saas/common/data_security.html"/>
    <appContext helpID="outbound_connection_through_ports"
                path="saas/common/outbound_connection_through_ports.html"/>
+   <appContext helpID="rubrik_backup_service" path="saas/rubrik_backup_service.html"/>
+   <appContext helpID="obtaining_rubrik_backup_service_connector"
+               path="rbs/rbs_obtaining_connector.html"/>
+   <appContext helpID="downloading_rbs_cnp" path="rbs/rbs_downloading_for_cnp.html"/>
+   <appContext helpID="rbs_min_privileges_windows"
+               path="rbs/rbs_min_privileges_windows.html"/>
+   <appContext helpID="multi_cluster_rbs" path="saas/multi_cluster_rbs.html"/>
+   <appContext helpID="rbs_host_registration_multiple_clusters"
+               path="saas/rbs_host_registration_multiple_clusters.html"/>
+   <appContext helpID="changing_primary_cluster_host"
+               path="saas/changing_primary_cluster_host.html"/>
+   <appContext helpID="rbs_remote_installing_multiple_hosts"
+               path="rbs/rbs_remote_installing_multiple_hosts.html"/>
+   <appContext helpID="rbs_network_throttling" path="rbs/rbs_network_throttling.html"/>
+   <appContext helpID="prereq_limits_rbs_network_throttling"
+               path="rbs/prereq_limits_rbs_network_throttling.html"/>
+   <appContext helpID="configuring_rbs_ntwk_thrtl_win_lnx_host"
+               path="rbs/configuring_rbs_ntwk_thrtl_win_lnx_host.html"/>
+   <appContext helpID="clearing_rbs_ntwk_thrtl_win_lnx_host"
+               path="rbs/clearing_rbs_ntwk_thrtl_win_lnx_host.html"/>
    <appContext helpID="rsc_smb_security" path="saas/rsc_smb_security.html"/>
    <appContext helpID="viewing_smb_security_tab"
                path="saas/viewing_smb_security_tab.html"/>
@@ -4938,6 +5015,8 @@
    <appContext helpID="anomaly_detection" path="saas/anomaly_detection.html"/>
    <appContext helpID="enabling_anomaly_detection"
                path="saas/enabling_anomaly_detection.html"/>
+   <appContext helpID="managing_llm_analysis_anomaly_detection"
+               path="saas/managing_llm_analysis_anomaly_detection.html"/>
    <appContext helpID="ri_features" path="saas/ri_features.html"/>
    <appContext helpID="anomaly_detection_behavioral_model"
                path="saas/anomaly_detection_behavioral_model.html"/>
@@ -5644,131 +5723,6 @@
    <appContext helpID="network_diagnostics" path="saas/network_diagnostics.html"/>
    <appContext helpID="running_network_diagnostics_rsc"
                path="saas/running_network_diagnostics_rsc.html"/>
-   <appContext helpID="rsc_settings_menu" path="saas/rsc_settings_menu.html"/>
-   <appContext helpID="snapshot_management" path="cdm/snapshot_management.html"/>
-   <appContext helpID="retention_management" path="cdm/retention_management.html"/>
-   <appContext helpID="snapshots_types" path="cdm/snapshots_types.html"/>
-   <appContext helpID="object_filters_snapshot_retention"
-               path="cdm/object_filters_snapshot_retention.html"/>
-   <appContext helpID="snapshot_expiry" path="cdm/snapshot_expiry.html"/>
-   <appContext helpID="changing_retention_period_snapshot"
-               path="saas/changing_retention_period_snapshot.html"/>
-   <appContext helpID="changing_retention_multiple_objects"
-               path="saas/changing_retention_multiple_objects.html"/>
-   <appContext helpID="deleting_snapshots"
-               path="saas/deleting_individual_snapshots.html"/>
-   <appContext helpID="search_object_on_snapshot_retention_page"
-               path="saas/searching_object_on_snapshot_retention_page.html"/>
-   <appContext helpID="reader_cluster_workload_refresh"
-               path="cdm/reader_cluster_workload_refresh.html"/>
-   <appContext helpID="rbk_refreshing_reader_location_objects"
-               path="saas/rbk_refreshing_reader_location_objects.html"/>
-   <appContext helpID="cdm_relic_data_sources" path="cdm/cdm_relic_data_sources.html"/>
-   <appContext helpID="intelligent_data_lock" path="common/intelligent_data_lock.html"/>
-   <appContext helpID="legal_hold_snapshot_rtn"
-               path="saas/legal_hold_snapshot_rtn.html"/>
-   <appContext helpID="legal_hold_limitations" path="saas/legal_hold_limitations.html"/>
-   <appContext helpID="placing_legal_hold_snapshot"
-               path="saas/placing_legal_hold_snapshot.html"/>
-   <appContext helpID="removing_snapshot_legal_hold"
-               path="saas/removing_snapshot_legal_hold.html"/>
-   <appContext helpID="data_sources" path="saas/data_sources.html"/>
-   <appContext helpID="rubrik_backup_service" path="saas/rubrik_backup_service.html"/>
-   <appContext helpID="obtaining_rubrik_backup_service_connector"
-               path="rbs/rbs_obtaining_connector.html"/>
-   <appContext helpID="downloading_rbs_cnp" path="rbs/rbs_downloading_for_cnp.html"/>
-   <appContext helpID="rbs_min_privileges_windows"
-               path="rbs/rbs_min_privileges_windows.html"/>
-   <appContext helpID="multi_cluster_rbs" path="saas/multi_cluster_rbs.html"/>
-   <appContext helpID="rbs_host_registration_multiple_clusters"
-               path="saas/rbs_host_registration_multiple_clusters.html"/>
-   <appContext helpID="changing_primary_cluster_host"
-               path="saas/changing_primary_cluster_host.html"/>
-   <appContext helpID="rbs_remote_installing_multiple_hosts"
-               path="rbs/rbs_remote_installing_multiple_hosts.html"/>
-   <appContext helpID="rbs_network_throttling" path="rbs/rbs_network_throttling.html"/>
-   <appContext helpID="prereq_limits_rbs_network_throttling"
-               path="rbs/prereq_limits_rbs_network_throttling.html"/>
-   <appContext helpID="configuring_rbs_ntwk_thrtl_win_lnx_host"
-               path="rbs/configuring_rbs_ntwk_thrtl_win_lnx_host.html"/>
-   <appContext helpID="clearing_rbs_ntwk_thrtl_win_lnx_host"
-               path="rbs/clearing_rbs_ntwk_thrtl_win_lnx_host.html"/>
-   <appContext helpID="guest_os_credentials" path="cdm/guest_os_credentials.html"/>
-   <appContext helpID="guest_os_settings" path="cdm/guest_os_settings.html"/>
-   <appContext helpID="adding_guest_os_credentials"
-               path="saas/adding_guest_os_credentials.html"/>
-   <appContext helpID="editing_guest_os_credentials"
-               path="saas/editing_guest_os_credentials.html"/>
-   <appContext helpID="deleting_guest_os_credentials"
-               path="saas/deleting_guest_os_credentials.html"/>
-   <appContext helpID="recovering_vm_file_guest_os_creds"
-               path="saas/recovering_vm_file_guest_os_creds.html"/>
-   <appContext helpID="vm_pre_post_backup_script_config"
-               path="saas/vm_pre_post_backup_script_config.html"/>
-   <appContext helpID="cloud_accounts" path="saas/cloud_accounts.html"/>
-   <appContext helpID="enabling_stringent_policies_organizations"
-               path="saas/enabling_stringent_policies_organizations.html"/>
-   <appContext helpID="customer_support" path="saas/customer_support.html"/>
-   <appContext helpID="network_diagnostics" path="saas/network_diagnostics.html"/>
-   <appContext helpID="running_network_diagnostics_rsc"
-               path="saas/running_network_diagnostics_rsc.html"/>
-   <appContext helpID="managing_llm_analysis_anomaly_detection"
-               path="saas/managing_llm_analysis_anomaly_detection.html"/>
-   <appContext helpID="enabling_anomaly_detection"
-               path="saas/enabling_anomaly_detection.html"/>
-   <appContext helpID="rubrik_cc_es_on_saas" path="saas/rubrik_cc_es_on_saas.html"/>
-   <appContext helpID="azure_cc_es_rsc" path="saas/azure_cc_es_rsc.html"/>
-   <appContext helpID="azr_cc_es_prereq" path="common/azr_cc_es_prereq.html"/>
-   <appContext helpID="azr_cc_es_additional_req_settings"
-               path="common/azr_cc_es_additional_req_settings.html"/>
-   <appContext helpID="service_private_endpoints"
-               path="common/service_private_endpoints.html"/>
-   <appContext helpID="required_settings_private_endpoint"
-               path="common/required_settings_private_endpoint.html"/>
-   <appContext helpID="azr_node_reqs_cc" path="common/azure_node_reqs_cc.html"/>
-   <appContext helpID="azr_req_perms_cc_provisioning"
-               path="saas/azr_req_perms_cc_provisioning.html"/>
-   <appContext helpID="cces_transitioning_managed_identities"
-               path="saas/cces_transitioning_managed_identities.html"/>
-   <appContext helpID="concept_owf_t1r_1cc" path="saas/cces_managed_identities.html"/>
-   <appContext helpID="workflow_for_azure_cloud_cluster_es"
-               path="saas/workflow_for_azure_cloud_cluster_es.html"/>
-   <appContext helpID="provisioning_azure_cc_es"
-               path="saas/provisioning_azure_cc_es.html"/>
-   <appContext helpID="azr_enabling_immutability_new_container"
-               path="saas/azr_enabling_immutability_new_container.html"/>
-   <appContext helpID="azr_enabling_immutability_editing_container"
-               path="saas/azr_enabling_immutability_editing_container.html"/>
-   <appContext helpID="cloud_cluster_es_immutability_support"
-               path="saas/cloud_cluster_es_immutability_support.html"/>
-   <appContext helpID="upgrading_disks_azure_cces"
-               path="saas/upgrading_disks_azure_cces.html"/>
-   <appContext helpID="limitations_upgrading_disks_azure_cces"
-               path="saas/limitations_upgrading_disks_azure_cces.html"/>
-   <appContext helpID="aws_cc_es_rsc" path="saas/aws_cc_es_rsc.html"/>
-   <appContext helpID="aws_cloud_cluster_prerequisites"
-               path="common/aws_cloud_cluster_prerequisites.html"/>
-   <appContext helpID="security_group_rules" path="cloud/security_group_rules.html"/>
-   <appContext helpID="aws_req_perms_table_cc_es" path="saas/aws_req_perms_cc_es.html"/>
-   <appContext helpID="aws_node_reqs_cc" path="common/aws_node_reqs_cc.html"/>
-   <appContext helpID="workflow_for_aws_cloud_cluster"
-               path="saas/workflow_for_aws_cloud_cluster.html"/>
-   <appContext helpID="provisioning_aws_cces" path="saas/provisioning_aws_cces.html"/>
-   <appContext helpID="upgrading_aws_cces_gp3_disks"
-               path="saas/upgrading_aws_cces_gp3_disks.html"/>
-   <appContext helpID="cces_recoverability" path="saas/cces_recoverability.html"/>
-   <appContext helpID="recovering_rubrik_cc_es_aws"
-               path="saas/recovering_rubrik_cc_es_aws.html"/>
-   <appContext helpID="recovering_rubrik_cc_es_azure"
-               path="saas/recovering_rubrik_cc_es_azure.html"/>
-   <appContext helpID="adding_a_node_to_cc_es" path="saas/adding_node_cces.html"/>
-   <appContext helpID="adding_node_predeployed_cces"
-               path="saas/adding_node_predeployed_cces.html"/>
-   <appContext helpID="node_removal_rsc" path="saas/node_removal_rsc.html"/>
-   <appContext helpID="removing_node_cld_cluster"
-               path="saas/removing_node_cld_cluster.html"/>
-   <appContext helpID="extra_dense_migration_cces_clusters"
-               path="saas/extra_dense_migration_cces_clusters.html"/>
    <appContext helpID="mt_multitenant_organizations"
                path="saas/mt_multitenant_organizations.html"/>
    <appContext helpID="mt_tenant_organizations"
@@ -5843,6 +5797,8 @@
                path="envoy/workload_configuration_envoy_rsc.html"/>
    <appContext helpID="reqs_configuring_specific_workloads_envoy"
                path="envoy/reqs_configuring_specific_workloads_envoy.html"/>
+   <appContext helpID="enabling_stringent_policies_organizations"
+               path="saas/enabling_stringent_policies_organizations.html"/>
    <appContext helpID="notices" path="reuse/notices.html"/>
    <appContext helpID="comments_suggestions" path="reuse/comments_suggestions.html"/>
 </map>
