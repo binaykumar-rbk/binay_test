@@ -1,1 +1,0 @@
-oxy_webhelp_navlinks = {"sys_reqs_for_oracle_dbs-d22872e26089":{"topics":[{"title":"Direct NFS support","shortdesc":"<p class=\"shortdesc\">Rubrik CDM supports dNFS-enabled Oracle systems.<\/p>","href":"oracle\/dnfs_support.html","attributes":{"data-id":"dnfs_support"},"menu":{"hasChildren":false},"tocID":"dnfs_support-d22872e26100","topics":[]}]}};
