@@ -1,0 +1,284 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="To protect your Atlassian Jira data, you can back up and restore data, such as projects, settings, workflows, and issues, in your Jira site ."/><meta name="DC.relation" content="../saas/saas_workloads.html"/><meta name="DC.relation" content="../saas/saas_workloads.html"/><meta name="DC.relation" content="../jira/jira_instance_details.html"/><meta name="DC.relation" content="../jira/jira_instance_details.html"/><meta name="DC.relation" content="../jira/jira_viewing_details.html"/><meta name="DC.relation" content="../jira/jira_analyzing_data.html"/><meta name="DC.relation" content="../jira/jira_supported_data_types.html"/><meta name="DC.relation" content="../jira/jira_regions.html"/><meta name="DC.relation" content="../jira/jira_oauth_authentication.html"/><meta name="DC.relation" content="../jira/jira_rbac_required_permissions.html"/><meta name="DC.relation" content="../jira/jira_adding_instance.html"/><meta name="DC.relation" content="../jira/jira_deleting_instance.html"/><meta name="DC.relation" content="../jira/jira_reauthenticate.html"/><meta name="DC.relation" content="../jira/jira_protection_sla_domain.html"/><meta name="DC.relation" content="../jira/jira_backups.html"/><meta name="DC.relation" content="../jira/jira_recovery.html"/><meta name="DC.relation" content="jira_supported_data_types.html"/><meta name="DC.relation" content="jira_regions.html"/><meta name="DC.relation" content="jira_adding_instance.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="jira"/>        
+      <title>Atlassian Jira</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="jira-d22872e22177"/><meta name="wh-source-relpath" content="jira/jira.dita"/><meta name="wh-out-relpath" content="jira/jira.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251203123030"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251203123030"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="jira" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref" data-id="saas_workloads"><div class="title"><a href="../saas/saas_workloads.html">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li class="active"><div class="topicref" data-id="jira"><div class="title"><a href="../jira/jira.html">Atlassian Jira</a><div class="wh-tooltip"><p class="shortdesc">To protect your Atlassian Jira data, you can back up and restore data, such as         projects, settings, workflows, and issues, in your Jira site .</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/saas_workloads.html" title="SaaS workloads" aria-label="Previous topic: SaaS workloads" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../jira/jira_instance_details.html" title="Atlassian Jira instance details" aria-label="Next topic: Atlassian Jira instance details" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d22872e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e1883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e1883-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d22872e1883-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e4115" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e4115-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d22872e4115-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e8027" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e8027-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d22872e8027-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e10951" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e10951-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d22872e10951-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d22872e10959" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d22872e10959-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e10974" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e10974-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d22872e10974-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e18695" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e18695-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d22872e18695-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="saas_workloads-d22872e22164" class="topicref" data-id="saas_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action saas_workloads-d22872e22164-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d22872e22164-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="jira-d22872e22177" class="topicref" data-id="jira" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action jira-d22872e22177-link" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira.html" id="jira-d22872e22177-link">Atlassian Jira</a><div class="wh-tooltip"><p class="shortdesc">To protect your Atlassian Jira data, you can back up and restore data, such as         projects, settings, workflows, and issues, in your Jira site .</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="jira_instance_details-d22872e22188" class="topicref" data-id="jira_instance_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_instance_details.html" id="jira_instance_details-d22872e22188-link">Atlassian Jira instance details</a><div class="wh-tooltip"><p class="shortdesc">The Atlassian Jira details page helps you monitor and analyze your data to view         important details, such the number of backups during a specified time period. You can also         access features from the details page, such as managing protection and restoring         data.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_viewing_details-d22872e22199" class="topicref" data-id="jira_viewing_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_viewing_details.html" id="jira_viewing_details-d22872e22199-link">Viewing details about an Atlassian Jira instance</a><div class="wh-tooltip"><p class="shortdesc">View details about an Atlassian Jira instance to monitor and analyze data and to         access features, such as managing protection.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_analyzing_data-d22872e22210" class="topicref" data-id="jira_analyzing_data" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_analyzing_data.html" id="jira_analyzing_data-d22872e22210-link">Analyzing Atlassian Jira data</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides graphs about snapshot activity for an Atlassian Jira         instance that helps you analyze the point in time to use to restore data when an anomaly is         detected in deleted, changed, or added issues or settings. Analyzing data helps you         understand if and when data was lost and what data was lost.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_supported_data_types-d22872e22223" class="topicref" data-id="jira_supported_data_types" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_supported_data_types.html" id="jira_supported_data_types-d22872e22223-link">Supported Atlassian Jira data types</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> can back up and restore a variety of Atlassian Jira data types,         such as project issues and workflows.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_regions-d22872e22236" class="topicref" data-id="jira_regions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_regions.html" id="jira_regions-d22872e22236-link">Supported regions for Atlassian Jira</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides support for Atlassian Jira protection in several         regions. You select the region when you set up the Jira instance in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_oauth_authentication-d22872e22252" class="topicref" data-id="jira_oauth_authentication" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_oauth_authentication.html" id="jira_oauth_authentication-d22872e22252-link">Oauth authentication for Atlassian Jira site connection</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses OAuth to connect to the Atlassian Jira sites that you want         to back up. You must use a Jira user or a Jira service account with the appropriate         permissions.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_rbac_required_permissions-d22872e22265" class="topicref" data-id="jira_rbac_required_permissions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_rbac_required_permissions.html" id="jira_rbac_required_permissions-d22872e22265-link">Required RBAC permissions for Atlassian Jira</a><div class="wh-tooltip"><p class="shortdesc">Accessing Atlassian Jira protection features within <span class="ph">RSC</span> requires the         appropriate RBAC permissions. You can use the default Jira Admin role or a custom         role.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_adding_instance-d22872e22279" class="topicref" data-id="jira_adding_instance" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_adding_instance.html" id="jira_adding_instance-d22872e22279-link">Adding an Atlassian Jira instance</a><div class="wh-tooltip"><p class="shortdesc">Add an Atlassian Jira instance of the Jira site that you want to back up and restore.         For example, you can back up and restore data types such as projects, workflows, and issues.         You can add more Jira instances if your have multiple sites that you want to         protect.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_deleting_instance-d22872e22290" class="topicref" data-id="jira_deleting_instance" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_deleting_instance.html" id="jira_deleting_instance-d22872e22290-link">Removing Jira instances</a><div class="wh-tooltip"><p class="shortdesc">Remove a Jira instance to remove all snapshots and configurations from <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_reauthenticate-d22872e22304" class="topicref" data-id="jira_reauthenticate" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_reauthenticate.html" id="jira_reauthenticate-d22872e22304-link">Reauthenticating your Atlassian Jira account</a><div class="wh-tooltip"><p class="shortdesc">Reauthenticate your Atlassian Jira account when Jira revokes authentication after a         period of time or when the account used to authenticate is no longer active in the Jira         site.</p></div></div></div></li><li role="treeitem"><div data-tocid="jira_protection_sla_domain-d22872e22316" class="topicref" data-id="jira_protection_sla_domain" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_protection_sla_domain.html" id="jira_protection_sla_domain-d22872e22316-link">Atlassian Jira protection using SLA Domains</a><div class="wh-tooltip"><p class="shortdesc">You can manage protection for Atlassian Jira sites by using SLA Domains. SLA Domains         provide protection policies for your sites so that you can securely back up and restore         data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="jira_backups-d22872e22327" class="topicref" data-id="jira_backups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jira_backups-d22872e22327-link" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_backups.html" id="jira_backups-d22872e22327-link">Atlassian Jira backups</a><div class="wh-tooltip"><p class="shortdesc">You can securely back up your Atlassian Jira data types with snapshots and restore         your data from those snapshots. You can back up data such as tasks and subtasks and restore         that information if the data is compromised.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="jira_recovery-d22872e22349" class="topicref" data-id="jira_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jira_recovery-d22872e22349-link" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira_recovery.html" id="jira_recovery-d22872e22349-link">Atlassian Jira recovery</a><div class="wh-tooltip"><p class="shortdesc">You can restore data for your Atlassian Jira issues and Jira settings  to their         original location from any point-in-time snapshot.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="salesforce_management-d22872e22410" class="topicref" data-id="salesforce_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action salesforce_management-d22872e22410-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_management.html" id="salesforce_management-d22872e22410-link">Salesforce Data Protection</a><div class="wh-tooltip"><p class="shortdesc">Salesforce Data Protection is a Rubrik-hosted SaaS service that extends <span class="ph">RSC</span> by securely backing up your critical Salesforce data and metadata for         standard and custom objects.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_managing_protection-d22872e22882" class="topicref" data-id="saas_managing_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_managing_protection.html" id="saas_managing_protection-d22872e22882-link">Managing protection for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Protect SaaS applications, such as Atlassian Jira and Salesforce, by assigning them         to an SLA Domain. This protects the instance by applying backup frequency and retention         policies.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_creating_sla_domains-d22872e22893" class="topicref" data-id="saas_creating_sla_domains" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_creating_sla_domains.html" id="saas_creating_sla_domains-d22872e22893-link">Creating an SLA Domain for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Create an SLA Domain with custom backup frequency and retention policies to retain         snapshot data beyond a year.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_deleting_sla_domain-d22872e22904" class="topicref" data-id="saas_deleting_sla_domain" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_deleting_sla_domain.html" id="saas_deleting_sla_domain-d22872e22904-link">Deleting an SLA Domain for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Delete an SLA Domain you created for SaaS applications from <span class="ph">RSC</span> when         it is no longer needed.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_events-d22872e22918" class="topicref" data-id="saas_events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_events-d22872e22918-link" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_events.html" id="saas_events-d22872e22918-link">SaaS application events</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> tracks, monitors, and displays all SaaS application events in a         unified view for all connected instances. For example, you can view backup and recovery         events and statuses, such as succeeded or failed.</p></div></div></div></li><li role="treeitem"><div data-tocid="sass_reporting-d22872e23010" class="topicref" data-id="sass_reporting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/sass_reporting.html" id="sass_reporting-d22872e23010-link">SaaS application reporting</a><div class="wh-tooltip"><p class="shortdesc">You can create reports about SaaS application data protection to view status         information about an instance. You can use the provided report type templates and customize         the default templates as needed. </p></div></div></div></li><li role="treeitem"><div data-tocid="saas_creating_reports_instances-d22872e23021" class="topicref" data-id="saas_creating_reports_instances" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_creating_reports_instances.html" id="saas_creating_reports_instances-d22872e23021-link">Creating reports for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Create reports for SaaS applications to view information in your application, such as         compliance status and protection status, using the available templates, which you can         customize for each report type. You can use the data gathered in the reports to perform         audits and data management planning.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_report_templates-d22872e23032" class="topicref" data-id="saas_report_templates" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_report_templates.html" id="saas_report_templates-d22872e23032-link">SaaS application report templates table</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span>provides a template for each report category. You can use default         reports as basic templates and modify them to create new reports. The following table         describes the available report template types.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e23045" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e23045-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d22872e23045-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e24190" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e24190-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d22872e24190-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d22872e29023" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d22872e29023-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d22872e29023-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d22872e29632" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d22872e29632-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d22872e29632-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d22872e30793" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d22872e30793-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d22872e30793-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d22872e31230" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d22872e31230-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d22872e31230-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d22872e31724" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d22872e31724-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d22872e31724-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d22872e33763" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d22872e33763-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d22872e33763-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d22872e34155" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d22872e34155-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d22872e34155-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d22872e34368" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d22872e34368-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d22872e34368-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d22872e34782" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d22872e34782-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d22872e34782-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d22872e35140" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d22872e35140-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d22872e35140-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d22872e35241" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d22872e35241-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d22872e35241-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e35435" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e35435-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35435-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39325" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39325-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d22872e39325-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational intelligence (Ruby and Annapurna). Access the GraphQL
+                API Playground for programmatic scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39571" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39571-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d22872e39571-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Configure connections to external systems, such as ServiceNow, Zscaler, and
+                more. Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39920" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39920-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d22872e39920-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41632" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41632-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d22872e41632-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41719" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41719-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d22872e41719-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Implement Multitenancy in RSC to logically isolate shared compute, storage,
+                and network resources in such a way that each organization can only see and access
+                data that belongs to that organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e42284" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e42284-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d22872e42284-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Atlassian Jira</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">To protect your Atlassian Jira data, you can back up and restore data, such as
+        projects, settings, workflows, and issues, in your Jira site .</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> protection for Atlassian Jira simplifies managing backups of Jira
+            sites to restore Jira data when the data is either compromised or lost. Leveraging the
+                <span class="- topic/ph ph">RSC</span> protection, you can back up and restore Jira data types such as
+            projects and settings while keeping data relationships intact. You can automatically
+            back up Jira data in either 12-hour or 24-hour frequencies or back up data on
+            demand.</p>
+        <p class="- topic/p p">You can also analyze data to determine if and when data was lost, which would help
+            streamline investigations and recoveries.</p>
+        <p class="- topic/p p">Jira protection is licensed per user, where the product counts all users that have access
+            to the site being protected.</p>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="jira_regions.html" title="RSC provides support for Atlassian Jira protection in several regions. You select the region when you set up the Jira instance in RSC.">Supported regions for Atlassian Jira</a><div class="- topic/desc desc">RSC provides support for Atlassian Jira protection in several         regions. You select the region when you set up the Jira instance in RSC.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="jira_adding_instance.html" title="Add an Atlassian Jira instance of the Jira site that you want to back up and restore. For example, you can back up and restore data types such as projects, workflows, and issues. You can add more Jira instances if your have multiple sites that you want to protect.">Adding an Atlassian Jira instance</a><div class="- topic/desc desc">Add an Atlassian Jira instance of the Jira site that you want to back up and restore.         For example, you can back up and restore data types such as projects, workflows, and issues.         You can add more Jira instances if your have multiple sites that you want to         protect.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="jira_supported_data_types.html" title="RSC can back up and restore a variety of Atlassian Jira data types, such as project issues and workflows.">Supported Atlassian Jira data types</a><div class="- topic/desc desc">RSC can back up and restore a variety of Atlassian Jira data types,         such as project issues and workflows.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

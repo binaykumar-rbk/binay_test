@@ -1,0 +1,316 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Recover your vApp templates using Export."/><meta name="DC.relation" content="../vcd/recovery_restore_vapp_data.html"/><meta name="DC.relation" content="../vcd/vcd_recovering_files_folders.html"/><meta name="DC.relation" content="../vcd/field_descriptions_for_recovering_folders.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="recoverying_vapp_templates"/>        
+      <title>Recovering vApp templates</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="recoverying_vapp_templates-d22872e22098"/><meta name="wh-source-relpath" content="vcd/recoverying_vapp_templates.dita"/><meta name="wh-out-relpath" content="vcd/recoverying_vapp_templates.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251203123030"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251203123030"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="recoverying_vapp_templates" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html">Data Center Workloads</a></div></div></li><li><div class="topicref" data-id="vmware_cloud_director_vapps"><div class="title"><a href="../vcd/vmware_cloud_director_vapps.html">VMware Cloud Director vApps</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster provides SLA Domain protection and data management for VMware Cloud       Director vApps.</p></div></div></div></li><li><div class="topicref" data-id="recovery_restore_vapp_data"><div class="title"><a href="../vcd/recovery_restore_vapp_data.html">Recovery and restore of vApp data</a><div class="wh-tooltip"><p class="shortdesc">You can use Instant Recovery, Export, or file-level recovery to recover data from a     vApp snapshot.</p></div></div></div></li><li class="active"><div class="topicref" data-id="recoverying_vapp_templates"><div class="title"><a href="../vcd/recoverying_vapp_templates.html">Recovering vApp templates</a><div class="wh-tooltip"><p class="shortdesc">Recover your vApp templates using Export.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../vcd/vcd_recovering_files_folders.html" title="Recovering folders and files on vCloud Director" aria-label="Previous topic: Recovering folders and files on vCloud Director" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../vcd/field_descriptions_for_recovering_folders.html" title="Field descriptions for recovering folders" aria-label="Next topic: Field descriptions for recovering folders" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d22872e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e1883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e1883-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d22872e1883-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e4115" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e4115-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d22872e4115-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e8027" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e8027-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d22872e8027-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e10951" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e10951-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d22872e10951-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d22872e10959" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d22872e10959-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e10974" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e10974-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d22872e10974-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e18695" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e18695-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d22872e18695-link">Data Center Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_ahv_virtual_machines-d22872e18696" class="topicref" data-id="rsc_ahv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_ahv_virtual_machines-d22872e18696-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="rsc_ahv_virtual_machines-d22872e18696-link">AHV virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data management and protection for virtual machines         deployed in a Nutanix Acropolis environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hyperv_virtual_machines-d22872e19540" class="topicref" data-id="hyperv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hyperv_virtual_machines-d22872e19540-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/hyper_v/hyperv_virtual_machines.html" id="hyperv_virtual_machines-d22872e19540-link">Hyper-V virtual machines</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster provides data management and protection for virtual machines that are       deployed in a Microsoft Hyper-V environment. The Rubrik cluster can manage and protect virtual       machines in an environment with multiple Hyper-V servers and virtual machines.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_virtual_machines-d22872e20410" class="topicref" data-id="vs_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_virtual_machines-d22872e20410-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_virtual_machines.html" id="vs_virtual_machines-d22872e20410-link">vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides data management and SLA Domain protection for         vSphere virtual machines, including vSphere VM templates that are managed either through a         VMware vSphere environment or a content library.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud-d22872e21735" class="topicref" data-id="vmware_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud-d22872e21735-link" class="wh-expand-btn"></span><div class="title"><a href="../vmware_cloud/vmware_cloud.html" id="vmware_cloud-d22872e21735-link">VMware Cloud</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster effectively protects virtual machines deployed on VMware Cloud         on AWS, Microsoft Azure VMware Solution, and Google Cloud VMware Engine.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="vmware_cloud_director_vapps-d22872e21823" class="topicref" data-id="vmware_cloud_director_vapps" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action vmware_cloud_director_vapps-d22872e21823-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vmware_cloud_director_vapps.html" id="vmware_cloud_director_vapps-d22872e21823-link">VMware Cloud Director vApps</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster provides SLA Domain protection and data management for VMware Cloud       Director vApps.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="protection_and_management_features-d22872e21834" class="topicref" data-id="protection_and_management_features" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/protection_and_management_features.html" id="protection_and_management_features-d22872e21834-link">Protection and management features</a><div class="wh-tooltip"><p class="shortdesc">In addition to full SLA-Domain-based protection of vApps, other features available         for vSphere virtual machines are also provided for vApps.</p></div></div></div></li><li role="treeitem"><div data-tocid="metadata_protection-d22872e21845" class="topicref" data-id="metadata_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/metadata_protection.html" id="metadata_protection-d22872e21845-link">Metadata protection</a><div class="wh-tooltip"><p class="shortdesc">Protection of vApps by Rubrik includes the metadata of the vApp.</p></div></div></div></li><li role="treeitem"><div data-tocid="vapps_limitations-d22872e21856" class="topicref" data-id="vapps_limitations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vapps_limitations.html" id="vapps_limitations-d22872e21856-link">vApps limitations</a><div class="wh-tooltip"><p class="shortdesc">vApps support for Rubrik works within specific limitations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmw_cd_protection_hierarchy-d22872e21867" class="topicref" data-id="vmw_cd_protection_hierarchy" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmw_cd_protection_hierarchy-d22872e21867-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vmw_cd_protection_hierarchy.html" id="vmw_cd_protection_hierarchy-d22872e21867-link">Protection hierarchy for VMware Cloud Director</a><div class="wh-tooltip"><p class="shortdesc">You can protect virtual machines through several levels of the VMware Cloud Director         management hierarchy.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud_director_instances-d22872e21900" class="topicref" data-id="vmware_cloud_director_instances" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud_director_instances-d22872e21900-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vmware_cloud_director_instances.html" id="vmware_cloud_director_instances-d22872e21900-link">VMware Cloud Director instances</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster works with vApps through VMware Cloud Director instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vapp_management-d22872e21955" class="topicref" data-id="vapp_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vapp_management-d22872e21955-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vapp_management.html" id="vapp_management-d22872e21955-link">vApp management</a><div class="wh-tooltip"><p class="shortdesc">After a VMware Cloud Director instance is added, the Rubrik cluster provides methods     for finding, viewing, and protecting the vApps.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="recovery_restore_vapp_data-d22872e22065" class="topicref" data-id="recovery_restore_vapp_data" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action recovery_restore_vapp_data-d22872e22065-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/recovery_restore_vapp_data.html" id="recovery_restore_vapp_data-d22872e22065-link">Recovery and restore of vApp data</a><div class="wh-tooltip"><p class="shortdesc">You can use Instant Recovery, Export, or file-level recovery to recover data from a     vApp snapshot.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rsc_vapp_recovery_workflow-d22872e22076" class="topicref" data-id="rsc_vapp_recovery_workflow" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/rsc_vapp_recovery_workflow.html" id="rsc_vapp_recovery_workflow-d22872e22076-link">Recovery workflow</a><div class="wh-tooltip"><p class="shortdesc">Recovery provides a way to replace a virtual machine in a vApp with a snapshot of the         virtual machine.</p></div></div></div></li><li role="treeitem"><div data-tocid="vcd_recovering_folders_overwrite-d22872e22087" class="topicref" data-id="vcd_recovering_folders_overwrite" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vcd_recovering_files_folders.html" id="vcd_recovering_folders_overwrite-d22872e22087-link">Recovering folders and files on vCloud Director</a><div class="wh-tooltip"><p class="shortdesc">Recover folders and files from one of the virtual machine snapshots in a vApp         snapshot.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="recoverying_vapp_templates-d22872e22098" class="topicref" data-id="recoverying_vapp_templates" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/recoverying_vapp_templates.html" id="recoverying_vapp_templates-d22872e22098-link">Recovering vApp templates</a><div class="wh-tooltip"><p class="shortdesc">Recover your vApp templates using Export.</p></div></div></div></li><li role="treeitem"><div data-tocid="field_descriptions_for_recovering_folders-d22872e22109" class="topicref" data-id="field_descriptions_for_recovering_folders" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/field_descriptions_for_recovering_folders.html" id="field_descriptions_for_recovering_folders-d22872e22109-link">Field descriptions for recovering folders</a><div class="wh-tooltip"><p class="shortdesc">Recovering folders require input for a number of fields.</p></div></div></div></li><li role="treeitem"><div data-tocid="vcd_performing_instant_recovery-d22872e22120" class="topicref" data-id="vcd_performing_instant_recovery" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vcd_performing_instant_recovery.html" id="vcd_performing_instant_recovery-d22872e22120-link">Performing an Instant Recovery of a vApp</a><div class="wh-tooltip"><p class="shortdesc">Use Instant Recovery to recover an entire vApp from a snapshot.</p></div></div></div></li><li role="treeitem"><div data-tocid="vcd_exporting_full_vapp-d22872e22131" class="topicref" data-id="vcd_exporting_full_vapp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vcd_exporting_full_vapp.html" id="vcd_exporting_full_vapp-d22872e22131-link">Exporting a full vApp</a><div class="wh-tooltip"><p class="shortdesc">Use Export to create a vApp using a vApp snapshot.</p></div></div></div></li><li role="treeitem"><div data-tocid="vcd_exporting_partial_vapp-d22872e22142" class="topicref" data-id="vcd_exporting_partial_vapp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vcd_exporting_partial_vapp.html" id="vcd_exporting_partial_vapp-d22872e22142-link">Exporting a partial vApp</a><div class="wh-tooltip"><p class="shortdesc">Export virtual machines from a vApp snapshot to create a vApp or to add to an         existing vApp.</p></div></div></div></li><li role="treeitem"><div data-tocid="vapp_export_options-d22872e22153" class="topicref" data-id="vapp_export_options" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vapp_export_options.html" id="vapp_export_options-d22872e22153-link">vApp export options</a><div class="wh-tooltip"><p class="shortdesc">The Configure Recovery Options section of a vApp export operation includes a number         of optional parameters.</p></div></div></div></li></ul></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d22872e22164" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d22872e22164-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d22872e22164-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e23045" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e23045-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d22872e23045-link">Identity Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e24190" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e24190-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d22872e24190-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d22872e29023" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d22872e29023-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d22872e29023-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="k8s_workload_protection-d22872e29632" class="topicref" data-id="k8s_workload_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action k8s_workload_protection-d22872e29632-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="k8s_workload_protection-d22872e29632-link">Kubernetes protection</a><div class="wh-tooltip"><p class="shortdesc">You can use Kubernetes protection to protect your on-premise or cloud-native         Kubernetes clusters using a protection set.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d22872e30793" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d22872e30793-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d22872e30793-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d22872e31230" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d22872e31230-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d22872e31230-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d22872e31724" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d22872e31724-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d22872e31724-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d22872e33763" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d22872e33763-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d22872e33763-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d22872e34155" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d22872e34155-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d22872e34155-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_sets-d22872e34368" class="topicref" data-id="ncd_data_sets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_sets-d22872e34368-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d22872e34368-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d22872e34782" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d22872e34782-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d22872e34782-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d22872e35140" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d22872e35140-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d22872e35140-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d22872e35241" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d22872e35241-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d22872e35241-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e35435" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e35435-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35435-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39325" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39325-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d22872e39325-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational intelligence (Ruby and Annapurna). Access the GraphQL
+                API Playground for programmatic scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39571" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39571-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d22872e39571-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Configure connections to external systems, such as ServiceNow, Zscaler, and
+                more. Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39920" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39920-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d22872e39920-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41632" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41632-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d22872e41632-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41719" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41719-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d22872e41719-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Implement Multitenancy in RSC to logically isolate shared compute, storage,
+                and network resources in such a way that each organization can only see and access
+                data that belongs to that organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e42284" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e42284-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d22872e42284-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Recovering vApp templates</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Recover your vApp templates using Export.</p>
+        <section class="- topic/ol task/steps ol steps" id="d842133e58"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps" id="recoverying_vapp_templates__steps_ij4_3kz_wwb" data-ofbid="recoverying_vapp_templates__steps_ij4_3kz_wwb"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">On the navigation bar, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Inventory</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Inventory page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click the VCD inventory card.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The VCD vApps page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">vApp Templates</span>.</span>
+            </li><li class="- topic/li task/step li step" id="recoverying_vapp_templates__recovery_start" data-ofbid="recoverying_vapp_templates__recovery_start">
+                <span class="- topic/ph task/cmd ph cmd">Click a vApp template.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The details page for the vApp template appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click a date on the calendar to view the list of snapshots taken on that day. </span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The day view of snapshots appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Hover over the ellipsis menu for a snapshot and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Export</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Select Destination page of the vApp Template Recovery wizard
+                    appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a VCD instance.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a VCD organization</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a VCD catalog.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select a virtual data center.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Configure Recovery Options page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">vApp template name</span>, enter a name for the recovered
+                    template.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Enable <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Customize Storage Profile</span> to use a different
+                    storage profile for this template.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">(If <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Customize Storage Profile</span> is enabled) In
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Storage Profile</span>, select the storage profile for the
+                    new template.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="recoverying_vapp_templates__result_jn1_shf_xwb" data-ofbid="recoverying_vapp_templates__result_jn1_shf_xwb"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>You have recovered the vApp template.</section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

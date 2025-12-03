@@ -1,0 +1,337 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Create an in-place Recovery Plan to protect a set of virtual machines and enable recovery on the same Rubrik cluster where the source virtual machine is being protected."/><meta name="DC.relation" content="../saas/rp_management.html"/><meta name="DC.relation" content="../saas/creating_disaster_rp_ahv.html"/><meta name="DC.relation" content="../saas/editing_disaster_rp.html"/><meta name="DC.relation" content="editing_disaster_rp.html"/><meta name="DC.relation" content="editing_in_place_rp.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="creating_in_place_rp"/>        
+      <title>Creating an in-place Recovery Plan</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="creating_in_place_rp-d22872e38904"/><meta name="wh-source-relpath" content="saas/creating_in_place_rp.dita"/><meta name="wh-out-relpath" content="saas/creating_in_place_rp.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251203123030"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251203123030"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="creating_in_place_rp" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/ri_ransomware_monitoring.html">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../saas/oar.html"><span class="ph">Orchestrated Application Recovery</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span>
+                    <span class="ph">Orchestrated Application Recovery</span> provides disaster recovery and application
+                    migration from an on-premises data center to a secondary recovery
+                    site.</p></div></div></div></li><li><div class="topicref" data-id="oar"><div class="title"><a href="../saas/oar.html"><span class="ph">RSC</span>  <span class="ph">Orchestrated Application Recovery</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Orchestrated Application Recovery</span> feature automates end-to-end recovery as well as         disaster recovery and application migration from an on-premises data center to a secondary         recovery site.</p></div></div></div></li><li><div class="topicref" data-id="rp_management"><div class="title"><a href="../saas/rp_management.html"><span class="ph">Recovery Plan</span> management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recovery Plans</span> manage recovery specifications for the different types         of recovery.</p></div></div></div></li><li class="active"><div class="topicref" data-id="creating_in_place_rp"><div class="title"><a href="../saas/creating_in_place_rp.html">Creating an in-place <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Create an in-place <span class="ph">Recovery Plan</span> to protect a set of virtual machines         and enable recovery on the same Rubrik cluster where the source virtual machine is being         protected.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/creating_disaster_rp_ahv.html" title="Creating a disaster Recovery Plan for AHV virtual machines" aria-label="Previous topic: Creating a disaster Recovery Plan for AHV virtual machines" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/editing_disaster_rp.html" title="Editing a disaster Recovery Plan" aria-label="Next topic: Editing a disaster Recovery Plan" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d22872e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e1883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e1883-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d22872e1883-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e4115" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e4115-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d22872e4115-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e8027" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e8027-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d22872e8027-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e10951" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e10951-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d22872e10951-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e35435" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e35435-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35435-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e35441" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e35441-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35441-link"><span class="ph">Data Threat Analytics</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span>
+                    <span class="ph">Data Threat Analytics</span> provides anomaly detection and data recovery
+                    services on protected resources such as VMware virtual machines, NAS, and Linux
+                    and Windows servers.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e36464" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e36464-link" class="wh-expand-btn"></span><div class="title"><a href="../dspm/data_security_posture.html" id="tocId-d22872e36464-link"><span class="ph">Data Security Posture</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span>
+                    <span class="ph">Data Security Posture</span> enables organizations to find specific types
+                    of data within the data that has been indexed by Rubrik clusters.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e37793" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e37793-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d22872e37793-link">Identity Resilience</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Identity Resilience is designed to protect, monitor, and recover
+                    identities, both human and non-human identities, in hybrid identity
+                    environments.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e38430" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e38430-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar.html" id="tocId-d22872e38430-link"><span class="ph">Orchestrated Application Recovery</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span>
+                    <span class="ph">Orchestrated Application Recovery</span> provides disaster recovery and application
+                    migration from an on-premises data center to a secondary recovery
+                    site.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="oar-d22872e38442" class="topicref" data-id="oar" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action oar-d22872e38442-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar.html" id="oar-d22872e38442-link"><span class="ph">RSC</span>  <span class="ph">Orchestrated Application Recovery</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Orchestrated Application Recovery</span> feature automates end-to-end recovery as well as         disaster recovery and application migration from an on-premises data center to a secondary         recovery site.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="types_of_orchestrated_recovery-d22872e38460" class="topicref" data-id="types_of_orchestrated_recovery" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/types_of_orchestrated_recovery.html" id="types_of_orchestrated_recovery-d22872e38460-link">Types of <span class="ph">Orchestrated Recovery</span></a><div class="wh-tooltip"><p class="shortdesc">You can use the recovery type that is best suited for your virtual machine,         environment, and recovery requirements in <span class="ph">Orchestrated Recovery</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="oar_rp-d22872e38476" class="topicref" data-id="oar_rp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar_rp.html" id="oar_rp-d22872e38476-link"><span class="ph">Recovery Plans</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses <span class="ph">Recovery Plans</span> as templates to store the         virtual machine configurations and resource mappings used during recovery.</p></div></div></div></li><li role="treeitem"><div data-tocid="oar_features-d22872e38493" class="topicref" data-id="oar_features" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar_features.html" id="oar_features-d22872e38493-link"><span class="ph">Orchestrated Recovery</span> features</a><div class="wh-tooltip"><p class="shortdesc">         <span class="ph">Orchestrated Recovery</span> features enable data management and protection tasks for <span class="ph">Recovery Plans</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="orchestrated_recovery_guest_os-d22872e38512" class="topicref" data-id="orchestrated_recovery_guest_os" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/orchestrated_recovery_guest_operating_systems.html" id="orchestrated_recovery_guest_os-d22872e38512-link"><span class="ph">Orchestrated Application Recovery</span> guest operating systems</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Orchestrated Application Recovery</span> feature supports specific guest operating systems         and provides network configuration and postscript support for Rubrik Backup         Services.</p></div></div></div></li><li role="treeitem"><div data-tocid="oar_objects-d22872e38528" class="topicref" data-id="oar_objects" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar_objects.html" id="oar_objects-d22872e38528-link"><span class="ph">Orchestrated Recovery</span> objects</a><div class="wh-tooltip"><p class="shortdesc">The Objects page provides information about the objects for which <span class="ph">Orchestrated Recovery</span> is configured or available for configuration.</p></div></div></div></li><li role="treeitem"><div data-tocid="viewing_rp_details-d22872e38544" class="topicref" data-id="viewing_rp_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/viewing_rp_details.html" id="viewing_rp_details-d22872e38544-link">Viewing <span class="ph">Recovery Plans</span> and recoveries</a><div class="wh-tooltip"><p class="shortdesc">View the configured <span class="ph">Recovery Plans</span> and their details.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovery_plan_page_actions-d22872e38561" class="topicref" data-id="recovery_plan_page_actions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_plan_page_actions.html" id="recovery_plan_page_actions-d22872e38561-link">Actions available for <span class="ph">Recovery Plans</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Recovery Plans</span> page provides a detailed overview of the <span class="ph">Recovery Plans</span> as well as options to search, create, and recover.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovery_plan_details-d22872e38580" class="topicref" data-id="recovery_plan_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_plan_details.html" id="recovery_plan_details-d22872e38580-link"><span class="ph">Recovery Plan</span> details</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Recovery Plan</span> details page provides information about the         configured <span class="ph">Recovery Plan</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovery_information-d22872e38599" class="topicref" data-id="recovery_information" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_information.html" id="recovery_information-d22872e38599-link">Recovery information</a><div class="wh-tooltip"><p class="shortdesc">For recoveries that have been performed, the Recoveries page provides the following         information regarding : <span class="ph">Recovery Plan</span> recovery outcomes.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovery_details-d22872e38613" class="topicref" data-id="recovery_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_details.html" id="recovery_details-d22872e38613-link">Recovery details</a><div class="wh-tooltip"><p class="shortdesc">The recovery details page provides specific details about the selected         recovery.</p></div></div></div></li><li role="treeitem"><div data-tocid="actions_available_recovery-d22872e38625" class="topicref" data-id="actions_available_recovery" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/actions_available_recovery.html" id="actions_available_recovery-d22872e38625-link">Actions available for a recovery</a><div class="wh-tooltip"><p class="shortdesc">You can take specific actions for a selected recovery from the recovery details         page.</p></div></div></div></li><li role="treeitem"><div data-tocid="lock_cyber_recoveries-d22872e38636" class="topicref" data-id="lock_cyber_recoveries" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/lock_cyber_recoveries.html" id="lock_cyber_recoveries-d22872e38636-link">Lock <span class="ph">cyber recoveries</span></a><div class="wh-tooltip"><p class="shortdesc">Locking a <span class="ph">cyber recovery</span> prevents accidental cleanup and changes to the         recovery in future <span class="ph">Orchestrated Recovery</span> operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="oar_events-d22872e38655" class="topicref" data-id="oar_events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action oar_events-d22872e38655-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/oar_events.html" id="oar_events-d22872e38655-link"><span class="ph">Orchestrated Recovery</span> events</a><div class="wh-tooltip"><p class="shortdesc">Event logs and audit logs provide a chronological record of automated operational         tasks and user actions performed during orchestrated recovery, allowing activity monitoring         and tracking, and maintaining accountability.</p></div></div></div></li><li role="treeitem"><div data-tocid="rbac_orchestrated_recovery-d22872e38734" class="topicref" data-id="rbac_orchestrated_recovery" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rbac_orchestrated_recovery.html" id="rbac_orchestrated_recovery-d22872e38734-link">RBAC for <span class="ph">Orchestrated Application Recovery</span></a><div class="wh-tooltip"><p class="shortdesc">Viewing and managing <span class="ph">Recovery Plans</span> and recoveries in <span class="ph">Orchestrated Recovery</span> require RBAC privileges.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rp_management-d22872e38753" class="topicref" data-id="rp_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rp_management-d22872e38753-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rp_management.html" id="rp_management-d22872e38753-link"><span class="ph">Recovery Plan</span> management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recovery Plans</span> manage recovery specifications for the different types         of recovery.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="blueprint_information-d22872e38768" class="topicref" data-id="blueprint_information" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/disaster_rp_information.html" id="blueprint_information-d22872e38768-link">Disaster <span class="ph">Recovery Plan</span> information</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides important information about disaster <span class="ph">Recovery Plan</span> statuses and the actions permitted for each status in the <span class="ph">Recovery Plans</span> page.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_cyber_rp_vsphere-d22872e38790" class="topicref" data-id="creating_cyber_rp_vsphere" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_cyber_rp_vsphere.html" id="creating_cyber_rp_vsphere-d22872e38790-link">Creating a <span class="ph">cyber Recovery Plan</span> for vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc">Create a <span class="ph">cyber</span>         <span class="ph">Recovery Plan</span> to protect a set of virtual machines.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_cyber_rp_ahv-d22872e38810" class="topicref" data-id="creating_cyber_rp_ahv" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_cyber_rp_ahv.html" id="creating_cyber_rp_ahv-d22872e38810-link">Creating a <span class="ph">cyber Recovery Plan</span> for AHV virtual machines</a><div class="wh-tooltip"><p class="shortdesc">Create a <span class="ph">cyber</span>         <span class="ph">Recovery Plan</span> to protect a set of AHV virtual machines.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_cyber_rp_azure-d22872e38830" class="topicref" data-id="creating_cyber_rp_azure" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_cyber_rp_azure.html" id="creating_cyber_rp_azure-d22872e38830-link">Creating a <span class="ph">cyber Recovery Plan</span> for Azure virtual machines</a><div class="wh-tooltip"><p class="shortdesc">Create a <span class="ph">cyber</span>         <span class="ph">Recovery Plan</span> to protect a set of Azure virtual machines.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_cyber_rp_aws-d22872e38850" class="topicref" data-id="creating_cyber_rp_aws" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_cyber_rp_aws.html" id="creating_cyber_rp_aws-d22872e38850-link">Creating a <span class="ph">cyber Recovery Plan</span> for AWS EC2 instances</a><div class="wh-tooltip"><p class="shortdesc">Create a <span class="ph">cyber</span>         <span class="ph">Recovery Plan</span> to protect a set of AWS EC2 instances.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_disaster_rp_vsphere-d22872e38870" class="topicref" data-id="creating_disaster_rp_vsphere" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_disaster_rp_vsphere.html" id="creating_disaster_rp_vsphere-d22872e38870-link">Creating a disaster <span class="ph">Recovery Plan</span> for vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc">Create a disaster <span class="ph">Recovery Plan</span> to enable failover testing and         production failover orchestration for a set of virtual machines.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_disaster_rp_ahv-d22872e38887" class="topicref" data-id="creating_disaster_rp_ahv" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_disaster_rp_ahv.html" id="creating_disaster_rp_ahv-d22872e38887-link">Creating a disaster <span class="ph">Recovery Plan</span> for AHV virtual machines</a><div class="wh-tooltip"><p class="shortdesc">Create a disaster <span class="ph">Recovery Plan</span> to enable failover testing and         production failover orchestration for a set of AHV virtual machines.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="creating_in_place_rp-d22872e38904" class="topicref" data-id="creating_in_place_rp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/creating_in_place_rp.html" id="creating_in_place_rp-d22872e38904-link">Creating an in-place <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Create an in-place <span class="ph">Recovery Plan</span> to protect a set of virtual machines         and enable recovery on the same Rubrik cluster where the source virtual machine is being         protected.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_disaster_rp-d22872e38920" class="topicref" data-id="editing_disaster_rp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/editing_disaster_rp.html" id="editing_disaster_rp-d22872e38920-link">Editing a disaster <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Edit the <span class="ph">Recovery Plan</span> when deployment requirements         change.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_cyber_rp-d22872e38936" class="topicref" data-id="editing_cyber_rp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/editing_cyber_rp.html" id="editing_cyber_rp-d22872e38936-link">Editing a <span class="ph">cyber Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Edit a <span class="ph">cyber recovery</span>         <span class="ph">Recovery Plan</span> when deployment requirements change.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_an_in_place_recovery_plan-d22872e38956" class="topicref" data-id="editing_an_in_place_recovery_plan" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/editing_in_place_rp.html" id="editing_an_in_place_recovery_plan-d22872e38956-link">Editing an in-place <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Edit an in-place <span class="ph">Recovery Plan</span> based on your requirements.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_rp-d22872e38972" class="topicref" data-id="deleting_rp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/deleting_rp.html" id="deleting_rp-d22872e38972-link">Deleting a <span class="ph">Recovery Plan</span>  </a><div class="wh-tooltip"><p class="shortdesc">You can delete an Azure, AHV, or vSphere <span class="ph">Recovery Plan</span> from the <span class="ph">Recovery Plan</span> details page.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="failover_operations-d22872e38992" class="topicref" data-id="failover_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action failover_operations-d22872e38992-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/failover_operations.html" id="failover_operations-d22872e38992-link">Failover operations</a><div class="wh-tooltip"><p class="shortdesc">A failover operation moves a workload from a failed site to a recovery         site.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="recovery_using_rp-d22872e39077" class="topicref" data-id="recovery_using_rp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action recovery_using_rp-d22872e39077-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_using_rp.html" id="recovery_using_rp-d22872e39077-link">Recovery using a <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Recovery Plans</span> can restore data locally when there is data loss from         an on-premises application.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="recovery_without_rp-d22872e39200" class="topicref" data-id="recovery_without_rp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action recovery_without_rp-d22872e39200-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/recovery_without_rp.html" id="recovery_without_rp-d22872e39200-link">Recovery without using a <span class="ph">Recovery Plan</span></a><div class="wh-tooltip"><p class="shortdesc">Using the <span class="ph">Cyber Recovery</span> wizard, you can select and recover objects         on demand even without a <span class="ph">Recovery Plan</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="schedule_recoveries_rp-d22872e39289" class="topicref" data-id="schedule_recoveries_rp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action schedule_recoveries_rp-d22872e39289-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/schedule_recoveries_rp.html" id="schedule_recoveries_rp-d22872e39289-link">Schedule recoveries for <span class="ph">Recovery Plans</span></a><div class="wh-tooltip"><p class="shortdesc">The schedule recovery feature automates periodic testing of disaster <span class="ph">Recovery Plans</span> and cyber <span class="ph">Recovery Plans</span> in <span class="ph">Orchestrated Recovery</span>.</p></div></div></div></li></ul></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39325" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39325-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d22872e39325-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational intelligence (Ruby and Annapurna). Access the GraphQL
+                API Playground for programmatic scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39571" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39571-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d22872e39571-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Configure connections to external systems, such as ServiceNow, Zscaler, and
+                more. Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39920" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39920-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d22872e39920-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41632" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41632-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d22872e41632-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41719" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41719-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d22872e41719-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Implement Multitenancy in RSC to logically isolate shared compute, storage,
+                and network resources in such a way that each organization can only see and access
+                data that belongs to that organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e42284" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e42284-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d22872e42284-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Creating an in-place <span class="- topic/ph ph">Recovery Plan</span></h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Create an in-place <span class="- topic/ph ph">Recovery Plan</span> to protect a set of virtual machines
+        and enable recovery on the same Rubrik cluster where the source virtual machine is being
+        protected.</p>
+        <section class="- topic/section task/context section context" id="d941082e65"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div><span class="- topic/ph ph">Orchestrated Recovery</span> supports creating an in-place <span class="- topic/ph ph">Recovery Plan</span>
+            for only vSphere virtual machines.</section>
+        <section class="- topic/ol task/steps ol steps" id="d941082e76"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../reuse/conrefs/../../images/ui-icons/AppTray.svg"/> and select
+                            <strong class="+ topic/ph hi-d/b ph b"><span class="- topic/ph ph">Orchestrated Recovery</span></strong>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Objects page appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Recovery Plans</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">The <span class="- topic/ph ph">Recovery Plan</span> page appears, listing all <span class="- topic/ph ph">Recovery Plans</span>.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create</span> and then select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">In-place
+                        Recovery Plan</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Create <span class="- topic/ph ph">Recovery Plan</span> wizard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Name</span>, enter a name for the <span class="- topic/ph ph">Recovery Plan</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Recover from</span>, select a Rubrik cluster.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">All virtual machines in the <span class="- topic/ph ph">Recovery Plan</span> have a snapshot on
+                    the selected Rubrik cluster.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The wizard lists the virtual machines on the source Rubrik
+                    cluster.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the virtual machines to recover and click
+                    <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Set the boot order for recovery by assigning virtual machines to a priority
+                    group.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">In <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Post scripts</span>, specify the path to scripts that run on
+                    the virtual machines after instantiation.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">Using post-instantiation scripts affects the Recovery Time Objective (RTO)
+                    metric by requiring high-level services to be available as a prerequisite for
+                    boot order instantiation.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Review <span class="- topic/ph ph">Recovery Plan</span> details step
+                    appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Review the <span class="- topic/ph ph">Recovery Plan</span> details and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d941082e225"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><span class="- topic/ph ph">RSC</span> creates the <span class="- topic/ph ph">Recovery Plan</span> and provides the option
+            to Create Another Plan.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="editing_disaster_rp.html" title="Edit the Recovery Plan when deployment requirements change.">Editing a disaster Recovery Plan</a><div class="- topic/desc desc">Edit the Recovery Plan when deployment requirements         change.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="editing_in_place_rp.html" title="Edit an in-place Recovery Plan based on your requirements.">Editing an in-place Recovery Plan</a><div class="- topic/desc desc">Edit an in-place Recovery Plan based on your requirements.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

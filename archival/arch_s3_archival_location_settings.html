@@ -1,0 +1,365 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Information about the settings required to create an Amazon S3 archival location for a Rubrik cluster."/><meta name="DC.relation" content="../archival/arch_amazon_s3.html"/><meta name="DC.relation" content="../cdm/aws_archive_tiering.html"/><meta name="DC.relation" content="../archival/arch_s3_cloud_compute_settings.html"/><meta name="DC.relation" content="arch_dc_creating_an_archival_location.html"/><meta name="DC.relation" content="s3_archive_prep.html"/><meta name="DC.relation" content="adding_aws_cloud_account_ak_dc_arch_loc.html"/><meta name="DC.relation" content="../common/generating_an_rsa_key.html"/><meta name="DC.relation" content="arch_s3_cloud_compute_settings.html"/><meta name="DC.relation" content="arch_s3_immutability_setting.html"/><meta name="DC.relation" content="arch_proxy_settings.html"/><meta name="DC.relation" content="arch_compute_proxy_settings.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="arch_s3_archival_location_settings"/>        
+      <title>Amazon S3 archival location settings</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="arch_s3_archival_location_settings-d22872e6107"/><meta name="wh-source-relpath" content="archival/arch_s3_archival_location_settings.dita"/><meta name="wh-out-relpath" content="archival/arch_s3_archival_location_settings.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20251203123030"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20251203123030"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="arch_s3_archival_location_settings" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/sla_domains.html">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li><div class="topicref" data-id="archiving_data_center_workloads"><div class="title"><a href="../archival/archiving_data_center_workloads.html">Archiving of data center workloads</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">Rubrik Security Cloud</span>, you can create and manage archival locations to         archive the disaster recovery and long-term retention data of data center         workloads.</p></div></div></div></li><li><div class="topicref" data-id="arch_amazon_s3"><div class="title"><a href="../archival/arch_amazon_s3.html">Amazon S3 archival locations</a><div class="wh-tooltip"><p class="shortdesc">Rubrik CDM supports Amazon S3 as an archival location. You can use <span class="ph">RSC</span> to create an Amazon S3 archival location.</p></div></div></div></li><li class="active"><div class="topicref" data-id="arch_s3_archival_location_settings"><div class="title"><a href="../archival/arch_s3_archival_location_settings.html">Amazon S3 archival location settings</a><div class="wh-tooltip"><p class="shortdesc">Information about the settings required to create an Amazon S3 archival location for         a Rubrik cluster.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../cdm/aws_archive_tiering.html" title="AWS archive tiering" aria-label="Previous topic: AWS archive tiering" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../archival/arch_s3_cloud_compute_settings.html" title="Amazon S3 cloud compute settings" aria-label="Next topic: Amazon S3 cloud compute settings" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e858-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d22872e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e1883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e1883-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d22872e1883-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e4115" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e4115-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d22872e4115-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="sla_domains-d22872e4121" class="topicref" data-id="sla_domains" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sla_domains-d22872e4121-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="sla_domains-d22872e4121-link">SLA Domains</a><div class="wh-tooltip"><p class="shortdesc">SLA Domains in <span class="ph">RSC</span> unify data protection policies, providing a         unified approach to manage data protection across various workloads and         environments.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="archiving_data_center_workloads-d22872e5173" class="topicref" data-id="archiving_data_center_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action archiving_data_center_workloads-d22872e5173-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/archiving_data_center_workloads.html" id="archiving_data_center_workloads-d22872e5173-link">Archiving of data center workloads</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">Rubrik Security Cloud</span>, you can create and manage archival locations to         archive the disaster recovery and long-term retention data of data center         workloads.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="arch_archival_data_encryption-d22872e5187" class="topicref" data-id="arch_archival_data_encryption" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_archival_data_encryption.html" id="arch_archival_data_encryption-d22872e5187-link">Archival data encryption</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster supports and enforces client-side data encryption for all archival         storage types.</p></div></div></div></li><li role="treeitem"><div data-tocid="archival_bucket_exclusivity-d22872e5198" class="topicref" data-id="archival_bucket_exclusivity" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/archival_bucket_exclusivity.html" id="archival_bucket_exclusivity-d22872e5198-link">Archival bucket exclusivity</a><div class="wh-tooltip"><p class="shortdesc">Only one Rubrik cluster can archive data to a specific archival bucket.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_archival_process-d22872e5209" class="topicref" data-id="arch_archival_process" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_archival_process-d22872e5209-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_archival_process.html" id="arch_archival_process-d22872e5209-link">Archival process</a><div class="wh-tooltip"><p class="shortdesc">The process of archiving data follows a standard sequence of tasks. During the         archival process, the Rubrik cluster determines whether to upload an incremental or full         copy of the archival snapshot.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_archival_locations_page-d22872e5231" class="topicref" data-id="arch_archival_locations_page" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_archival_locations_page-d22872e5231-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_archival_locations_page.html" id="arch_archival_locations_page-d22872e5231-link">Archival Locations</a><div class="wh-tooltip"><p class="shortdesc">The Archival Locations page provides summary information about existing archival         locations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="archiving_dc_workloads_azure-d22872e5543" class="topicref" data-id="archiving_dc_workloads_azure" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action archiving_dc_workloads_azure-d22872e5543-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/archiving_dc_workloads_azure.html" id="archiving_dc_workloads_azure-d22872e5543-link">Archiving data center workloads in Azure</a><div class="wh-tooltip"><p class="shortdesc">Archiving data center workloads from a Rubrik cluster to Microsoft Azure requires         specific configuration on Azure and <span class="ph">RSC</span> before archiving can         begin.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="arch_amazon_s3-d22872e5857" class="topicref" data-id="arch_amazon_s3" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action arch_amazon_s3-d22872e5857-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_amazon_s3.html" id="arch_amazon_s3-d22872e5857-link">Amazon S3 archival locations</a><div class="wh-tooltip"><p class="shortdesc">Rubrik CDM supports Amazon S3 as an archival location. You can use <span class="ph">RSC</span> to create an Amazon S3 archival location.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="s3_archive_prep-d22872e5871" class="topicref" data-id="s3_archive_prep" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action s3_archive_prep-d22872e5871-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/s3_archive_prep.html" id="s3_archive_prep-d22872e5871-link">Archive preparation in Amazon S3</a><div class="wh-tooltip"><p class="shortdesc">Preparing Amazon S3 storage for archiving involves creating a bucket with the         required permissions.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_aws_cloud_account_ak_dc_arch_loc-d22872e5915" class="topicref" data-id="adding_aws_cloud_account_ak_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/adding_aws_cloud_account_ak_dc_arch_loc_2.html" id="adding_aws_cloud_account_ak_dc_arch_loc-d22872e5915-link">Adding AWS cloud accounts with access keys for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">To use Amazon S3 for archiving snapshots of data center workloads, add an AWS cloud         account for authentication with access keys.</p></div></div></div></li><li role="treeitem"><div data-tocid="add_aws_cld_accnt_iam_rbac_dc_arch_loc-d22872e5926" class="topicref" data-id="add_aws_cld_accnt_iam_rbac_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/add_aws_cld_accnt_iam_rbac_dc_arch_loc.html" id="add_aws_cld_accnt_iam_rbac_dc_arch_loc-d22872e5926-link">Adding AWS cloud accounts with IAM roles to access data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">Add an AWS cloud account with IAM roles to authenticate access to Amazon S3 archival         locations.</p></div></div></div></li><li role="treeitem"><div data-tocid="edit_aws_cloud_account_dc_archl_loc-d22872e5937" class="topicref" data-id="edit_aws_cloud_account_dc_archl_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/edit_aws_cloud_account_dc_archl_loc.html" id="edit_aws_cloud_account_dc_archl_loc-d22872e5937-link">Editing AWS cloud accounts for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">Edit an AWS cloud account in <span class="ph">RSC</span> for a data center archival location         to modify the AWS account name.</p></div></div></div></li><li role="treeitem"><div data-tocid="delete_aws_cloud_accnt_dc_arch_loc-d22872e5951" class="topicref" data-id="delete_aws_cloud_accnt_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/delete_aws_cloud_accnt_dc_arch_loc.html" id="delete_aws_cloud_accnt_dc_arch_loc-d22872e5951-link">Deleting AWS cloud accounts</a><div class="wh-tooltip"><p class="shortdesc">Delete an AWS cloud account when you do not need the cloud account         anymore.</p></div></div></div></li><li role="treeitem"><div data-tocid="create_addnl_aws_iam_roles_dc_arch_loc-d22872e5962" class="topicref" data-id="create_addnl_aws_iam_roles_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/create_addnl_aws_iam_roles_dc_arch_loc.html" id="create_addnl_aws_iam_roles_dc_arch_loc-d22872e5962-link">Creating additional AWS IAM roles for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">For an AWS cloud account in <span class="ph">RSC</span>, create different IAM roles         corresponding to each data center to isolate access to your Amazon S3 archival         locations.</p></div></div></div></li><li role="treeitem"><div data-tocid="edit_aws_iam_roles_dc_arch_loc-d22872e5976" class="topicref" data-id="edit_aws_iam_roles_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/edit_aws_iam_roles_dc_arch_loc.html" id="edit_aws_iam_roles_dc_arch_loc-d22872e5976-link">Editing AWS IAM roles for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">Edit the details associated with an IAM role in <span class="ph">RSC</span> for data center         archival locations in Amazon S3.</p></div></div></div></li><li role="treeitem"><div data-tocid="update_perm_aws_iam_roles_dc_arch_loc-d22872e5990" class="topicref" data-id="update_perm_aws_iam_roles_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/update_perm_aws_iam_roles_dc_arch_loc.html" id="update_perm_aws_iam_roles_dc_arch_loc-d22872e5990-link">Updating permissions of AWS IAM roles for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">Update IAM roles for data center archival location in AWS when a missing permission         status appears for IAM roles in the <span class="ph">RSC</span> AWS cloud account page.</p></div></div></div></li><li role="treeitem"><div data-tocid="delete_aws_iam_role_dc_arch_loc-d22872e6004" class="topicref" data-id="delete_aws_iam_role_dc_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/delete_aws_iam_role_dc_arch_loc.html" id="delete_aws_iam_role_dc_arch_loc-d22872e6004-link">Deleting an AWS IAM role for data center archival locations</a><div class="wh-tooltip"><p class="shortdesc">Delete an IAM role in <span class="ph">RSC</span> for data center archival locations in         Amazon S3 when you do not need the IAM role anymore.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_amzn_s3_arch_loc_dc_workloads-d22872e6018" class="topicref" data-id="editing_amzn_s3_arch_loc_dc_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/editing_amzn_s3_arch_loc_dc_workloads.html" id="editing_amzn_s3_arch_loc_dc_workloads-d22872e6018-link">Editing Amazon S3 archival locations for data center workloads</a><div class="wh-tooltip"><p class="shortdesc">Edit the Amazon S3 archival locations for a data center workload to modify archival         location information, including archival location name, cloud account, storage type, and         other advanced settings.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="amazon_s3_arch_loc_immu_storage-d22872e6030" class="topicref" data-id="amazon_s3_arch_loc_immu_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action amazon_s3_arch_loc_immu_storage-d22872e6030-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/amazon_s3_arch_loc_immu_storage.html" id="amazon_s3_arch_loc_immu_storage-d22872e6030-link">Amazon S3 archival locations with immutable storage</a><div class="wh-tooltip"><p class="shortdesc">Amazon S3 archival locations with immutable storage prevent modification or deletion         of archived data. Rubrik supports immutable storage on Amazon S3 archival locations both at         the object-level and at the bucket-level.</p></div></div></div></li><li role="treeitem"><div data-tocid="storage_class-d22872e6074" class="topicref" data-id="storage_class" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm/storage_class.html" id="storage_class-d22872e6074-link">Storage class</a><div class="wh-tooltip"><p class="shortdesc">You can choose the storage class depending on the data access, resiliency, and cost         requirements of your workload. The storage class can be edited after the archival location         is added and the Rubrik cluster applies the new storage class to data that is archived after         a change.</p></div></div></div></li><li role="treeitem"><div data-tocid="multipart_uploads-d22872e6085" class="topicref" data-id="multipart_uploads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm/multipart_uploads.html" id="multipart_uploads-d22872e6085-link">Multipart uploads</a><div class="wh-tooltip"><p class="shortdesc">Incomplete partial uploads to Amazon S3 count toward the total storage used by an         account.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_archive_tiering-d22872e6096" class="topicref" data-id="aws_archive_tiering" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm/aws_archive_tiering.html" id="aws_archive_tiering-d22872e6096-link">AWS archive tiering</a><div class="wh-tooltip"><p class="shortdesc">Archive tiering with AWS is used to tier data to the Glacier Flexible Retrieval         Storage Class or Glacier Deep Archive Storage Class based on an SLA Domain policy. </p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="arch_s3_archival_location_settings-d22872e6107" class="topicref" data-id="arch_s3_archival_location_settings" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_s3_archival_location_settings.html" id="arch_s3_archival_location_settings-d22872e6107-link">Amazon S3 archival location settings</a><div class="wh-tooltip"><p class="shortdesc">Information about the settings required to create an Amazon S3 archival location for         a Rubrik cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="arch_s3_cloud_compute_settings-d22872e6118" class="topicref" data-id="arch_s3_cloud_compute_settings" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_s3_cloud_compute_settings.html" id="arch_s3_cloud_compute_settings-d22872e6118-link">Amazon S3 cloud compute settings</a><div class="wh-tooltip"><p class="shortdesc">Information about the Amazon S3 cloud compute advanced settings required to launch a         transient instance in an AWS Virtual Private Cloud.</p></div></div></div></li><li role="treeitem"><div data-tocid="arch_s3_immutability_setting-d22872e6129" class="topicref" data-id="arch_s3_immutability_setting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_s3_immutability_setting.html" id="arch_s3_immutability_setting-d22872e6129-link">Amazon S3 immutability settings</a><div class="wh-tooltip"><p class="shortdesc">The advanced settings configuration of an Amazon S3 archival location includes an         option to enable bucket-level immutability. Amazon S3 archival locations created for Rubrik         clusters running Rubrik CDM version 9.3.1 and later support object-level immutability, which         is always enabled by default.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="verifying_cloud_compute_connectivity-d22872e6140" class="topicref" data-id="verifying_cloud_compute_connectivity" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/verifying_cloud_compute_connectivity.html" id="verifying_cloud_compute_connectivity-d22872e6140-link">Verifying cloud compute connectivity</a><div class="wh-tooltip"><p class="shortdesc">Use the cloud compute connectivity check in <span class="ph">RSC</span> to verify         connectivity between cloud compute instances, a Rubrik cluster, and AWS or Azure cloud         storage services using Archival Consolidation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_instant_tiering_snapshots-d22872e6154" class="topicref" data-id="arch_instant_tiering_snapshots" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_instant_tiering_snapshots-d22872e6154-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_instant_tiering_snapshots.html" id="arch_instant_tiering_snapshots-d22872e6154-link">Instant tiering of snapshots</a><div class="wh-tooltip"><p class="shortdesc">The instant tiering feature archives data immediately to the specified cold storage         tier in the cloud. This approach is ideal for optimizing storage costs when data restoration         is a rare requirement.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_google_cloud-d22872e6176" class="topicref" data-id="arch_google_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_google_cloud-d22872e6176-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/arch_gcp.html" id="arch_google_cloud-d22872e6176-link">Google Cloud Platform archival locations</a><div class="wh-tooltip"><p class="shortdesc">Rubrik CDM supports Google Cloud Platform as an archival location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="amazon_s3_comp_archival_loc-d22872e6220" class="topicref" data-id="amazon_s3_comp_archival_loc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action amazon_s3_comp_archival_loc-d22872e6220-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/amazon_s3_comp_archival_loc.html" id="amazon_s3_comp_archival_loc-d22872e6220-link">Amazon S3 compatible archival locations</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports archival locations that support standard S3         APIs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ibm_cos_archival_locations-d22872e6269" class="topicref" data-id="ibm_cos_archival_locations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ibm_cos_archival_locations-d22872e6269-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/ibm_cos_archival_locations.html" id="ibm_cos_archival_locations-d22872e6269-link">IBM COS archival locations</a><div class="wh-tooltip"><p class="shortdesc">         <span class="ph">RSC</span> supports IBM Cloud Object Storage as an archival location         for which you can configure the immutability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dell_ecs_arch_loc-d22872e6316" class="topicref" data-id="dell_ecs_arch_loc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dell_ecs_arch_loc-d22872e6316-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/dell_ecs_arch_loc.html" id="dell_ecs_arch_loc-d22872e6316-link">Dell ECS archival location</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports Dell ECS Object Store as an archival         location to configure immutability for archiving encrypted data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="netapp_sg_arch_loc-d22872e6362" class="topicref" data-id="netapp_sg_arch_loc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action netapp_sg_arch_loc-d22872e6362-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/netapp_sg_arch_loc.html" id="netapp_sg_arch_loc-d22872e6362-link">NetApp StorageGRID archival locations</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports using NetApp StorageGRID as archival         locations for archiving encrypted data. For data stored in NetApp StorageGRID archival         locations, Rubrik provides bucket-level immutability.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_nfs_archival_locations-d22872e6397" class="topicref" data-id="arch_nfs_archival_locations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_nfs_archival_locations-d22872e6397-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_nfs.html" id="arch_nfs_archival_locations-d22872e6397-link">NFS archival locations</a><div class="wh-tooltip"><p class="shortdesc">An NFS archival location is storage on an NFS server where you can archive snapshots         from your Rubrik cluster. You must identify a specific location on the NFS server to serve         as the archival location.</p></div></div></div></li><li role="treeitem"><div data-tocid="archiving_qstar_tape_archive-d22872e6441" class="topicref" data-id="archiving_qstar_tape_archive" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm/archiving_qstar_tape_archive.html" id="archiving_qstar_tape_archive-d22872e6441-link">QStar tape archive</a><div class="wh-tooltip"><p class="shortdesc">QStar tape archive enables Rubrik cluster to store data on tape for long-term retention     and regulatory compliance using QStar Archive Manager on Windows server.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_disaster_recovery_using_arch_loc-d22872e6452" class="topicref" data-id="arch_disaster_recovery_using_arch_loc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_disaster_recovery_using_arch_loc-d22872e6452-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm/arch_disaster_recovery_using_arch_loc.html" id="arch_disaster_recovery_using_arch_loc-d22872e6452-link">Disaster recovery using an archival location</a><div class="wh-tooltip"><p class="shortdesc">Rubrik CDM supports recovering data from an existing archival location using a Rubrik     cluster that is different from the Rubrik cluster that archives data to the     location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="arch_nw_throttling-d22872e6551" class="topicref" data-id="arch_nw_throttling" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action arch_nw_throttling-d22872e6551-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/arch_nw_throttling.html" id="arch_nw_throttling-d22872e6551-link">Archival network throttling</a><div class="wh-tooltip"><p class="shortdesc">Archival network throttling is a feature by which you can limit the bandwidth of the         network used by a Rubrik cluster to archive data so that more bandwidth is available for         other backup and recovery operations on the Rubrik cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_aws_rcv_arch_loc-d22872e6584" class="topicref" data-id="creating_aws_rcv_arch_loc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../archival/creating_aws_rcv_arch_loc.html" id="creating_aws_rcv_arch_loc-d22872e6584-link">Creating RCV archival locations on AWS</a><div class="wh-tooltip"><p class="shortdesc">Create a Rubrik Cloud Vault location on AWS to archive the backups of cloud native         workloads.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_rubrik_cloud_vault-d22872e6595" class="topicref" data-id="rcv_rubrik_cloud_vault" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_rubrik_cloud_vault-d22872e6595-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_rubrik_cloud_vault.html" id="rcv_rubrik_cloud_vault-d22872e6595-link">Rubrik Cloud Vault</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Cloud Vault is a Rubrik managed cloud service that provides isolated and         immutable copies of protected data, enhancing cyber resiliency.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cascading_archival-d22872e7341" class="topicref" data-id="cascading_archival" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cascading_archival-d22872e7341-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/cascading_archival.html" id="cascading_archival-d22872e7341-link">Cascading archival</a><div class="wh-tooltip"><p class="shortdesc">Using cascading archival, you can increase replicated data redundancy and decrease         data storage costs by archiving replicated snapshots from a replication target Rubrik         cluster to a remote archival location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="replication-d22872e7396" class="topicref" data-id="replication" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action replication-d22872e7396-link" class="wh-expand-btn"></span><div class="title"><a href="../replication/replication.html" id="replication-d22872e7396-link">Replication</a><div class="wh-tooltip"><p class="shortdesc">The replication feature directs the Rubrik cluster to send replicas of source       snapshots or backups to a target Rubrik cluster and defines the maximum time to keep the       replica on each cluster.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e8027" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e8027-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d22872e8027-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e10951" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e10951-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d22872e10951-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e35435" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e35435-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35435-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39325" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39325-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d22872e39325-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational intelligence (Ruby and Annapurna). Access the GraphQL
+                API Playground for programmatic scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39571" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39571-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d22872e39571-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Configure connections to external systems, such as ServiceNow, Zscaler, and
+                more. Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39920" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39920-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d22872e39920-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41632" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41632-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d22872e41632-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41719" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41719-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d22872e41719-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Implement Multitenancy in RSC to logically isolate shared compute, storage,
+                and network resources in such a way that each organization can only see and access
+                data that belongs to that organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e42284" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e42284-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d22872e42284-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Amazon S3 archival location settings</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Information about the settings required to create an Amazon S3 archival location for
+        a Rubrik cluster.</p><section class="- topic/section section">
+        <p class="- topic/p p">The following table specifies the settings required to create an Amazon S3 archival
+                location. The settings are the same to create archival locations for owner and
+                reader Rubrik clusters unless specified otherwise.</p>
+    </section>
+        <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption></caption><colgroup><col style="width:23.201856148491874%"/><col style="width:46.40371229698375%"/><col style="width:30.39443155452436%"/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="arch_s3_archival_location_settings__entry__1">Setting</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="arch_s3_archival_location_settings__entry__2">Description</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-1" id="arch_s3_archival_location_settings__entry__3">Edits Allowed</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Archival Location Name</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">The name of the archival location.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Rubrik Cluster</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">Creating an archival location workflow – The Rubrik cluster that
+                            archives data to the archival location.<p class="- topic/p p">Connecting as reader workflow
+                                – The Rubrik cluster that reads archived data from the archival
+                                location.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">No</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Cloud Account</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">The cloud account associated with the AWS subscription that created
+                            the storage account.<p class="- topic/p p"><span class="- topic/ph ph">RSC</span> requires the AWS access key
+                                and the AWS secret key to create a cloud account for AWS
+                                subscriptions.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Bucket Name</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2"> Unique name for the bucket created in Amazon S3.<p class="- topic/p p">The bucket name
+                                must comply with the  Amazon guidelines for DNS-compliant bucket
+                                names.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">No</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Storage Class</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">The storage class depending on your data access and cost requirement.
+                                <span class="- topic/ph ph">RSC</span> supports the following storage classes:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">Standard, used for frequently accessed data</li>
+                                <li class="- topic/li li">Standard - Infrequent Access, used for less frequently accessed
+                                    data</li>
+                                <li class="- topic/li li">Standard - One Zone Infrequent Access, used for less frequently
+                                    accessed data</li>
+                                <li class="- topic/li li">Glacier Instant Retrieval, used for rarely accessed data</li>
+                                <li class="- topic/li li">
+                                    <p class="- topic/p p">The Glacier Instant Retrieval storage class requires Rubrik
+                                        CDM version 8.0.1 or later.</p>
+                                </li>
+                            </ul></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Region</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">The geographical region of the Amazon S3 bucket, including government regions:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">AWS GovCloud (US-East)</li>
+                                <li class="- topic/li li">AWS GovCloud (US-West)</li>
+                            </ul></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">No</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__1">Retrieval Tier</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="arch_s3_archival_location_settings__entry__2">The retrieval tier for retrieving data from the archive depending on
+                            your speed and cost requirements:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">Standard</li>
+                                <li class="- topic/li li">Expedited</li>
+                                <li class="- topic/li li">Bulk</li>
+                            </ul><div class="- topic/p p">The retrieval tier setting applies only to the following Amazon
+                                S3 cold storage classes:<ul class="- topic/ul ul">
+                                    <li class="- topic/li li">Glacier Flexible Retrieval </li>
+                                    <li class="- topic/li li">S3 Glacier Deep Archive</li>
+                                </ul></div></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="arch_s3_archival_location_settings__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="arch_s3_archival_location_settings__entry__1">Encryption Type</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="arch_s3_archival_location_settings__entry__2">The type of encryption mechanism used to encrypt the data being
+                            archived. <span class="- topic/ph ph">RSC</span> supports the following encryption key types:<ul class="- topic/ul ul">
+                                <li class="- topic/li li">KMS master key ID, available only for non-immutable
+                                    locations</li>
+                                <li class="- topic/li li">RSA key, available only for non-immutable locations</li>
+                                <li class="- topic/li li">Encryption password, available only for immutable locations</li>
+                            </ul><p class="- topic/p p">Depending on the encryption type selected, <span class="- topic/ph ph">RSC</span>
+                                displays a field to enter the corresponding key or password for
+                                encryption.</p></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="arch_s3_archival_location_settings__entry__3">No</td>
+                    </tr>
+                </tbody></table></div></div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="s3_archive_prep.html" title="Preparing Amazon S3 storage for archiving involves creating a bucket with the required permissions.">Archive preparation in Amazon S3</a><div class="- topic/desc desc">Preparing Amazon S3 storage for archiving involves creating a bucket with the         required permissions.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="arch_dc_creating_an_archival_location.html" title="Create an archival location and associate it with a Rubrik cluster for archiving data.">Creating a data center archival location</a><div class="- topic/desc desc">Create an archival location and associate it with a Rubrik cluster for archiving         data.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="adding_aws_cloud_account_ak_dc_arch_loc.html" title="To use Amazon S3 for archiving snapshots of data center workloads, add an AWS cloud account for authentication with access keys.">Adding AWS cloud accounts with access keys for data center archival locations</a><div class="- topic/desc desc">To use Amazon S3 for archiving snapshots of data center workloads, add an AWS cloud         account for authentication with access keys.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../common/generating_an_rsa_key.html" title="Generate an RSA key for encrypting data center workload data to be archived.">Generating an RSA key</a><div class="- topic/desc desc">Generate an RSA key for encrypting data center workload data to be         archived.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="arch_s3_cloud_compute_settings.html" title="Information about the Amazon S3 cloud compute advanced settings required to launch a transient instance in an AWS Virtual Private Cloud.">Amazon S3 cloud compute settings</a><div class="- topic/desc desc">Information about the Amazon S3 cloud compute advanced settings required to launch a         transient instance in an AWS Virtual Private Cloud.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="arch_s3_immutability_setting.html" title="The advanced settings configuration of an Amazon S3 archival location includes an option to enable bucket-level immutability. Amazon S3 archival locations created for Rubrik clusters running Rubrik CDM version 9.3.1 and later support object-level immutability, which is always enabled by default.">Amazon S3 immutability settings</a><div class="- topic/desc desc">The advanced settings configuration of an Amazon S3 archival location includes an         option to enable bucket-level immutability. Amazon S3 archival locations created for Rubrik         clusters running Rubrik CDM version 9.3.1 and later support object-level immutability, which         is always enabled by default.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="arch_proxy_settings.html" title="The archival location configuration includes an option for setting proxy server properties to enable the routing of archival data and requests through the proxy server.">Archival proxy settings</a><div class="- topic/desc desc">The archival location configuration includes an option for setting proxy server         properties to enable the routing of archival data and requests through the proxy         server.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="arch_compute_proxy_settings.html" title="The archival location configuration includes an option for setting proxy server properties to enable the routing of the API calls for instantiating virtual machines on the archival location through the proxy server.">Compute proxy settings</a><div class="- topic/desc desc">The archival location configuration includes an option for setting proxy server         properties to enable the routing of the API calls for instantiating virtual machines on the         archival location through the proxy server.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

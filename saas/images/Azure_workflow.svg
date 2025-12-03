@@ -1,0 +1,113 @@
+<svg width="800" height="990" viewBox="0 0 800 990" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .step-box {
+            fill: #e0f2f7; /* Light blue */
+            stroke: #2B94CC; /* Blue */
+            stroke-width: 2;
+            rx: 10; /* Rounded corners */
+            ry: 10;
+            }
+            .step-text-title {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            fill: #333;
+            }
+            .step-text-desc {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            fill: #555;
+            }
+            .arrow {
+            stroke: #333;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+            }
+            #arrowhead {
+            fill: #333;
+            }
+            .child-box {
+            fill: #f9fdfd;
+            stroke: #2B94CC;
+            stroke-width: 1;
+            rx: 5;
+            ry: 5;
+            }
+        </style>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" />
+        </marker>
+    </defs>
+    
+    <!-- Step 1 -->
+    <rect x="50" y="30" width="700" height="90" class="step-box" />
+    <text x="400" y="60" text-anchor="middle" class="step-text-title">1. Plan Your Azure Protection</text>
+    <text x="400" y="85" text-anchor="middle" class="step-text-desc">Understand RSC capabilities, plan user access, and review necessary permissions.</text>
+    
+    <!-- Arrow 1-2 -->
+    <path d="M400,120 L400,140" class="arrow" />
+    
+    <!-- Step 2 -->
+    <rect x="50" y="140" width="700" height="90" class="step-box" />
+    <text x="400" y="170" text-anchor="middle" class="step-text-title">2. Set Up Azure Cloud Accounts</text>
+    <text x="400" y="195" text-anchor="middle" class="step-text-desc">Connect RSC to your Azure subscription by configuring the chosen authentication method.</text>
+    
+    <!-- Arrow 2-3 -->
+    <path d="M400,230 L400,250" class="arrow" />
+    
+    <!-- Step 3 -->
+    <rect x="50" y="250" width="700" height="200" class="step-box" />
+    <text x="400" y="280" text-anchor="middle" class="step-text-title">3. Configure Core Infrastructure</text>
+    <text x="400" y="305" text-anchor="middle" class="step-text-desc">Configure the underlying Rubrik components within Azure.</text>
+    
+    <!-- Child Box 3.a -->
+    <rect x="70" y="325" width="660" height="40" class="child-box" />
+    <text x="400" y="350" text-anchor="middle" class="step-text-desc">3.a Set Up Exocompute on Azure</text>
+    
+    <!-- Child Box 3.b -->
+    <rect x="70" y="375" width="660" height="40" class="child-box" />
+    <text x="400" y="400" text-anchor="middle" class="step-text-desc">3.b Set up Azure Storage Tiering</text>
+    
+    <!-- Arrow 3-4 (repositioned from 4-5) -->
+    <path d="M400,450 L400,470" class="arrow" />
+    
+    <!-- Step 4 (repositioned and renumbered from Step 5) -->
+    <rect x="50" y="470" width="700" height="90" class="step-box" />
+    <text x="400" y="500" text-anchor="middle" class="step-text-title">4. Configure Azure Protection</text>
+    <text x="400" y="525" text-anchor="middle" class="step-text-desc">Define protection policies (SLA Domains) and assign them to Azure workloads for automated backups.</text>
+    
+    <!-- Arrow 4-5 (repositioned from 5-6) -->
+    <path d="M400,560 L400,580" class="arrow" />
+    
+    <!-- Step 5 (repositioned and renumbered from Step 6) -->
+    <rect x="50" y="580" width="700" height="280" class="step-box" />
+    <text x="400" y="610" text-anchor="middle" class="step-text-title">5. Manage Azure Workloads</text>
+    <text x="400" y="635" text-anchor="middle" class="step-text-desc">Use dashboards to track status, review logs, and continuously optimize the configuration.</text>
+    
+    <!-- Child Box 5.a (repositioned from 6.a) -->
+    <rect x="70" y="655" width="660" height="40" class="child-box" />
+    <text x="400" y="680" text-anchor="middle" class="step-text-desc">5.a Manage Azure Virtual Machines</text>
+    
+    <!-- Child Box 5.b (repositioned from 6.b) -->
+    <rect x="70" y="705" width="660" height="40" class="child-box" />
+    <text x="400" y="730" text-anchor="middle" class="step-text-desc">5.b Manage Azure Blob Storage</text>
+    
+    <!-- Child Box 5.c (repositioned from 6.c) -->
+    <rect x="70" y="755" width="660" height="40" class="child-box" />
+    <text x="400" y="780" text-anchor="middle" class="step-text-desc">5.c Manage Azure SQL Databases</text>
+    
+    <!-- Child Box 5.d (repositioned from 6.d) -->
+    <rect x="70" y="805" width="660" height="40" class="child-box" />
+    <text x="400" y="830" text-anchor="middle" class="step-text-desc">5.d Manage Azure SQL Managed Instances</text>
+    
+    <!-- Arrow 5-6 (repositioned from 6-7) -->
+    <path d="M400,860 L400,880" class="arrow" />
+    
+    <!-- Step 6 (repositioned and renumbered from Step 7) -->
+    <rect x="50" y="880" width="700" height="90" class="step-box" />
+    <text x="400" y="910" text-anchor="middle" class="step-text-title">6. Recover Azure workloads</text>
+    <text x="400" y="935" text-anchor="middle" class="step-text-desc">Perform granular or full recoveries for Azure workloads.</text>
+    
+</svg>

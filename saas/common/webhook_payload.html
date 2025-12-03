@@ -1,0 +1,549 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Information about the common event and audit payload formats that RSC sends to a webhook endpoint."/><meta name="DC.relation" content="../../saas/common/webhooks.html"/><meta name="DC.relation" content="../../saas/common/rubrik_custom_webhook_template.html"/><meta name="DC.relation" content="../../saas/common/configuring_servicenow_create_incident.html"/><meta name="DC.relation" content="webhooks.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="webhook_payload"/>        
+      <title>Webhook payload</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="webhook_payload-d22872e41456"/><meta name="wh-source-relpath" content="saas/common/webhook_payload.dita"/><meta name="wh-out-relpath" content="saas/common/webhook_payload.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20251203123030"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20251203123030"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="webhook_payload" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../../saas/common/events.html">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div></li><li><div class="topicref" data-id="notifications"><div class="title"><a href="../../saas/notifications.html">Notifications</a><div class="wh-tooltip"><p class="shortdesc">In the Notifications menu, you can configure event email preferences, add webhooks,         set up SNMP for network management and monitoring, and create a syslog export rule to enable         the Rubrik cluster to send server messages to an external Syslog server.</p></div></div></div></li><li><div class="topicref" data-id="webhooks"><div class="title"><a href="../../saas/common/webhooks.html">Webhooks</a><div class="wh-tooltip"><p class="shortdesc">Webhook integration provides the capability to send event details related to a         service account from <span class="ph">RSC</span> to external systems. This makes it easier to         monitor and analyze logs for security incidents while keeping control over data         transmission. </p></div></div></div></li><li class="active"><div class="topicref" data-id="webhook_payload"><div class="title"><a href="../../saas/common/webhook_payload.html">Webhook payload</a><div class="wh-tooltip"><p class="shortdesc">Information about the common event and audit payload formats that <span class="ph">RSC</span>         sends to a webhook endpoint.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../saas/common/rubrik_custom_webhook_template.html" title="Rubrik custom webhook template" aria-label="Previous topic: Rubrik custom webhook template" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../saas/common/configuring_servicenow_create_incident.html" title="Configuring ServiceNow to create an incident automatically" aria-label="Next topic: Configuring ServiceNow to create an incident automatically" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e858" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e858-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/getting_started_with_rsc.html" id="tocId-d22872e858-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Your guided first steps for initial RSC service configuration, network
+                prerequisites, and setting up the primary account and access.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e1883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e1883-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rubrik_clusters_2.html" id="tocId-d22872e1883-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage the on-premises infrastructure: Rubrik cluster registration, CDM
+                software upgrades, and hardware configuration details.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e4115" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e4115-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/sla_domains.html" id="tocId-d22872e4115-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Centralize the definition of SLA Domains, data retention guarantees,
+                Archiving, Replication, and Rubrik Cloud Vault (RCV) policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e8027" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e8027-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/users_access.html" id="tocId-d22872e8027-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure user access, authentication (SSO), and platform hardening policies,
+                including RBAC and Encryption management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e10951" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e10951-link" class="wh-expand-btn"></span><div class="title"><a href="../../rubrik/supported_workloads.html" id="tocId-d22872e10951-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e35435" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e35435-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/ri_ransomware_monitoring.html" id="tocId-d22872e35435-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Proactively detect, investigate, and govern data risk using Data Threat
+                Analytics (DTA), Data Security Posture (DSP), and Identity Resilience. Includes
+                guidance for preparing for automated Orchestrated Application Recovery
+                (OAR).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39325" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39325-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas-ai/ruby.html" id="tocId-d22872e39325-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational intelligence (Ruby and Annapurna). Access the GraphQL
+                API Playground for programmatic scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e39571" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e39571-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/integration_third_party_apps_in_rsc.html" id="tocId-d22872e39571-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Configure connections to external systems, such as ServiceNow, Zscaler, and
+                more. Monitor consumption, manage entitlements, and view subscription tier limits
+                (Licenses and usage).</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d22872e39920" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d22872e39920-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/events.html" id="tocId-d22872e39920-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check system health in real-time
+                through dashboards, and configure delivery notifications such as email, webhooks,
+                and more.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="events-d22872e39926" class="topicref" data-id="events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action events-d22872e39926-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/events.html" id="events-d22872e39926-link">Events</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> events identify, isolate, and prioritize events and provide with         a unified view of all Rubrik events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reporting-d22872e40100" class="topicref" data-id="reporting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reporting-d22872e40100-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/reporting.html" id="reporting-d22872e40100-link">Reporting</a><div class="wh-tooltip"><p class="shortdesc">You can use the Reporting feature to perform audits and data management planning by         creating customizable reports for application data protection and for the underlying         infrastructure of <span class="ph">Rubrik Security Cloud</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_dashboards-d22872e40831" class="topicref" data-id="rsc_dashboards" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_dashboards-d22872e40831-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rsc_dashboards.html" id="rsc_dashboards-d22872e40831-link">Dashboards</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> dashboards provide information about the connected Rubrik clusters and the         installed <span class="ph">RSC</span> apps.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_security_command_center-d22872e41232" class="topicref" data-id="data_security_command_center" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_security_command_center-d22872e41232-link" class="wh-expand-btn"></span><div class="title"><a href="../../dscc/data_security_command_center.html" id="data_security_command_center-d22872e41232-link">Data Security Command Center</a><div class="wh-tooltip"><p class="shortdesc">The Data Security Command Center provides you with an assessment of the data security         readiness for your organization, providing scores for different categories and overall. The         Data Security Command Center also offers recommendations to improve low data security         scores.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="notifications-d22872e41298" class="topicref" data-id="notifications" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action notifications-d22872e41298-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/notifications.html" id="notifications-d22872e41298-link">Notifications</a><div class="wh-tooltip"><p class="shortdesc">In the Notifications menu, you can configure event email preferences, add webhooks,         set up SNMP for network management and monitoring, and create a syslog export rule to enable         the Rubrik cluster to send server messages to an external Syslog server.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="emails-d22872e41309" class="topicref" data-id="emails" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action emails-d22872e41309-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/emails.html" id="emails-d22872e41309-link">Emails</a><div class="wh-tooltip"><p class="shortdesc">Email notifications in <span class="ph">RSC</span> notify users about events, such as backup,         recovery, anomaly detection, and so on.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="webhooks-d22872e41351" class="topicref" data-id="webhooks" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action webhooks-d22872e41351-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/webhooks.html" id="webhooks-d22872e41351-link">Webhooks</a><div class="wh-tooltip"><p class="shortdesc">Webhook integration provides the capability to send event details related to a         service account from <span class="ph">RSC</span> to external systems. This makes it easier to         monitor and analyze logs for security incidents while keeping control over data         transmission. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="adding_webhooks-d22872e41365" class="topicref" data-id="adding_webhooks" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action adding_webhooks-d22872e41365-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/adding_webhooks.html" id="adding_webhooks-d22872e41365-link">Adding webhooks</a><div class="wh-tooltip"><p class="shortdesc">Add a webhook in <span class="ph">RSC</span> to send event and audit details to an external         system and URL endpoint.</p></div></div></div></li><li role="treeitem"><div data-tocid="managing_webhook-d22872e41403" class="topicref" data-id="managing_webhook" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/managing_webhook.html" id="managing_webhook-d22872e41403-link">Managing a webhook</a><div class="wh-tooltip"><p class="shortdesc">Enable, disable, or delete a webhook added to <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_webhook-d22872e41417" class="topicref" data-id="editing_webhook" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/editing_webhook.html" id="editing_webhook-d22872e41417-link">Editing a webhook</a><div class="wh-tooltip"><p class="shortdesc">Update the settings of a webhook added to <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="testing_webhook-d22872e41431" class="topicref" data-id="testing_webhook" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/testing_webhook.html" id="testing_webhook-d22872e41431-link">Testing a webhook</a><div class="wh-tooltip"><p class="shortdesc">Determine if the webhook settings are working correctly.</p></div></div></div></li><li role="treeitem"><div data-tocid="rubrik_custom_webhook_template-d22872e41442" class="topicref" data-id="rubrik_custom_webhook_template" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rubrik_custom_webhook_template.html" id="rubrik_custom_webhook_template-d22872e41442-link">Rubrik custom webhook template</a><div class="wh-tooltip"><p class="shortdesc">You can create custom webhook templates in <span class="ph">RSC</span> by defining JSON         payloads with variables supported by Rubrik.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="webhook_payload-d22872e41456" class="topicref" data-id="webhook_payload" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/webhook_payload.html" id="webhook_payload-d22872e41456-link">Webhook payload</a><div class="wh-tooltip"><p class="shortdesc">Information about the common event and audit payload formats that <span class="ph">RSC</span>         sends to a webhook endpoint.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="configuring_servicenow_create_incident-d22872e41470" class="topicref" data-id="configuring_servicenow_create_incident" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configuring_servicenow_create_incident-d22872e41470-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/configuring_servicenow_create_incident.html" id="configuring_servicenow_create_incident-d22872e41470-link">Configuring ServiceNow to create an incident automatically</a><div class="wh-tooltip"><p class="shortdesc">To automatically create a ServiceNow incident by using the data received from an <span class="ph">RSC</span> webhook, configure a scripted REST API resource, add a webhook, and         define the processing script.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="snmp_integration-d22872e41498" class="topicref" data-id="snmp_integration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snmp_integration-d22872e41498-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/snmp_integration.html" id="snmp_integration-d22872e41498-link">SNMP integration</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses Simple Network Management Protocol integration for central         monitoring of managed devices on IP networks. Simple Network Management Protocol  is a         protocol for collecting and organizing information about managed devices on IP         networks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="syslog_settings-d22872e41577" class="topicref" data-id="syslog_settings" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action syslog_settings-d22872e41577-link" class="wh-expand-btn"></span><div class="title"><a href="../../cdm/syslog_settings.html" id="syslog_settings-d22872e41577-link">Syslog protocol</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster supports transmission of system activities to an external syslog     server using standard syslog protocol.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41632" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41632-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rsc_insights.html" id="tocId-d22872e41632-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Diagnostics guides, RSC insights, and solutions for operational issues.
+                Includes network diagnostics, Support Tunnel procedures, and common error
+                resolution.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e41719" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e41719-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/mt_multitenant_organizations.html" id="tocId-d22872e41719-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Implement Multitenancy in RSC to logically isolate shared compute, storage,
+                and network resources in such a way that each organization can only see and access
+                data that belongs to that organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d22872e42284" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d22872e42284-link" class="wh-expand-btn"></span><div class="title"><a href="../../reuse/notices.html" id="tocId-d22872e42284-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access Offline Recovery and Compatibility Matrix guides.
+            </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Webhook payload</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Information about the common event and audit payload formats that <span class="- topic/ph ph">RSC</span>
+        sends to a webhook endpoint.</p>
+        <section class="- topic/section section">
+            <div class="- topic/p p">
+                <div class="table-container"><table class="- topic/table table frame-all" data-cols="4"><caption><span class="- topic/desc desc tabledesc">The following table describes the common fields in an event or audit
+                        payload.</span></caption><colgroup><col style="width:12.5%"/><col style="width:37.5%"/><col style="width:12.5%"/><col style="width:37.5%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__1">Field</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__2">Description</th>
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__3">Type</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="webhook_payload__entry__4">Example</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__1">Summary</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__2">A high-level text summary message of the event or
+                                    audit.</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__3">String</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__4">Successfully completed preparation of t_6984 taken at
+                                    2022-07-20 21:41 (UTC). Visit the Download Center to obtain the
+                                    link to download the report.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__1">Source</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__2">Specific human-readable unique identifier.<p class="- topic/p p">This field
+                                        consists of the Rubrik cluster ID or the <span class="- topic/ph ph">RSC</span>
+                                        cluster ID and the protected object ID that generated the
+                                        event.</p></td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__3">String</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__4">1f513cf1-32cf-4906-67ac-de4f96e49c93 |
+                                        ManagedVolume:::&lt;UUID&gt;<p class="- topic/p p">The UUID is 32 hexadecimal
+                                        characters and four hyphens. An <span class="- topic/ph ph">RSC</span> cluster
+                                        ID starts with a zero.</p></td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__1">Severity</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__2">The severity of the impact to the affected system.</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__3">Enum {Info, Warning, Error, Critical}</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__4">Info, Warning, Error, Critical</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__1">Timestamp</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__2">The time when <span class="- topic/ph ph">RSC</span> detected or created the
+                                    event or audit.<p class="- topic/p p">This is useful for determining if batches or
+                                        hold events occurred before sending them to the server or
+                                        application.</p></td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__3">Timestamp</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__4">May 26 at 12:55 PM</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__1">Class</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__2">Class or type of the event or audit.</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__3">String</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__4">Diagnostic, Backup, Index, Configuration</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__1">Custom</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__2">Custom fields for the event or audit.</td>
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__3">Not applicable</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="webhook_payload__entry__4">Not applicable</td>
+                            </tr>
+                        </tbody></table></div>
+            </div>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="4"><caption><span class="- topic/desc desc tabledesc">The following table describes the custom fields in an event or audit payload
+                    in <span class="- topic/ph ph">RSC</span>.</span></caption><colgroup><col style="width:15.317559153175592%"/><col style="width:34.8692403486924%"/><col style="width:12.453300124533003%"/><col style="width:37.35990037359901%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__29">Field</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__30">Description</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="webhook_payload__entry__31">Type</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="webhook_payload__entry__32">Example</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">SeriesID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">The top-level ID of an operation.<p class="- topic/p p">All event IDs belong to a
+                                    unique series ID. For example, if a backup operation is
+                                    initiated, the associated series ID may consist of multiple
+                                    events.</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">2955cde9-87g3-7j63-ddas-43jd55834ndf</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Unique ID of the audit entry that <span class="- topic/ph ph">RSC</span> generated
+                                for the event.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">2986cde9-57g3-4g63-djks-43jd58934ggs</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">Type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Type of the payload.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Event, Audit</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ObjectID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Unique ID of the object associated with the event.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">auth0|7c00d5cec4caef20cf97854d5</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ObjectName</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Name of the object.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">john.doe@rubrik.com, &lt;protectable object name&gt;</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ObjectType</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Type of the object.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">User, ManagedVolume, SQL server DB</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">Status</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Status of the event.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Success, Failure</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ClusterID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">ID of the cluster on which the event occurred.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">&lt;UUID&gt;<p class="- topic/p p">The UUID is 32 hexadecimal characters and four
+                                    hyphens. <span class="- topic/ph ph">RSC</span> clusters have a UUID that is all
+                                    zeros.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ClusterName</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Name of the cluster on which the event occurred.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">BA-Edge1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">EventName</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">A short name for the event.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Snapshot.BackupSucceeded</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ErrorID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">A unique ID of the error.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Vmware.VsphereSnapshotAlreadyExists</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ErrorCode</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Error code for the failed operation.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">RBK20100027</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ErrorReason</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Information about the reason of the error.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Cannot take vSphere snapshot as there are too many snapshots.
+                                Taking an additional snapshot will cause nested snapshots, which
+                                affects vSphere performance.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">ErrorRemedy</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Information about the resolution of the error.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">Using the vCenter snapshot manager, remove or consolidate any
+                                existing snapshots before performing another snapshot
+                                operation.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">Location</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Location of the object.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">iad-prd-support-vc001.iad.support.rubrik.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">URL</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Custom URL of the event. This field is optional.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">URL to download a file from an event in <span class="- topic/ph ph">RSC</span>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">CustomerID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">ID of the <span class="- topic/ph ph">RSC</span> customer account.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">rubrik-tme</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">auditUserName</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">Name of the user who initiated the operation associated with the
+                                audit. This field is applicable only for the audit payload.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">john.doe@rubrik.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">auditUserID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">ID of the user who initiated the operation associated with the
+                                audit. This field is applicable only for the audit payload.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">auth0|7c00d5cec4caef20cf97854d5</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">logicalSizeInBytes</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">The total logical size of the data transferred, such as the
+                                logical size of the snapshot.<p class="- topic/p p">This field is only applicable for
+                                    data transfer-related operations. Otherwise, it is
+                                null.</p></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">300</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__29">dataTransferredInBytes</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__30">The amount of data transferred in bytes if the associated
+                                workflow involves data transfer. If the workflow does not involve
+                                data transfer, this field is null.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="webhook_payload__entry__32">100</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__29">effectiveThroughput</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__30">The effective throughput of data transfer associated with the
+                                event till now. The unit is bytes per second.</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="webhook_payload__entry__31">String</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="webhook_payload__entry__32">200</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <div class="- topic/example example">The following example shows a sample event payload in <span class="- topic/ph ph">RSC</span>.<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>{
+  "Summary": "Successfully completed preparation of t_6984 taken at 2022-07-20 21:41 (UTC). Visit the Download Center to obtain the link to download the report",
+  "Source":"Rubrik Security Cloud",
+  "Severity":"info",
+  "Timestamp":"2022-07-20 21:41:19.414523344 +0000 UTC",
+  "Class":"Download",
+  "Details": {
+       SeriesID:               "0875ec11-b517-4d79-958b-77002089ee3c",
+	ID:                     event.UUID,
+	Type:                   "Event",
+	ObjectID:               "object-id-1",
+	ObjectName:             "t_6984",
+	ObjectType:             "Report",
+	Status:                 "Completed",
+	ClusterID:              "cluster-id-1",
+	ClusterName:            "Rubrik Security Cloud",
+	EventName:              "ReportDownloadGenerateSuccess",
+	ErrorID:                "",
+	ErrorCode:              "",
+	ErrorReason:            "",
+	ErrorRemedy:            "",
+	Location:               "",
+	URL:                    url,
+	CustomerID:             "rubrik-customer",
+	LogicalSizeInBytes:     "100",
+	DataTransferredInBytes: "200",
+	EffectiveThroughput:    "300",
+  }
+}</code></pre></div>
+        <div class="- topic/example example">The following example shows a sample audit payload in <span class="- topic/ph ph">RSC</span>.<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>{
+  "Summary": "test6 attempted to authenticate against Rubrik 2-Step Verification",
+  "Source":"Rubrik Security Cloud",
+  "Severity":"info",
+  "Timestamp":"2022-07-20 21:41:19.414523344 +0000 UTC",
+  "Class":"Login",
+  "Details": {
+       ID:            "0875ec11-b517-4d79-958b-77002089ee3c",
+	Type:          "Audit",
+	ObjectID:      "object-id-1",
+	ObjectName:    "test6",
+	ObjectType:    "USER",
+	Status:        "Success",
+	SeriesID:      "series-id-1",
+	ClusterID:     "cluster-id-1",
+	ClusterName:   "Rubrik Security Cloud",
+	EventName:     "MfaLoginAttemptAudit",
+	AuditUserName: audit.UserName.String,
+	AuditUserID:   "auth0|id-1",
+	CustomerID:    "rubrik-customer",
+  }
+}</code></pre></div>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="webhooks.html" title="Webhook integration provides the capability to send event details related to a service account from RSC to external systems. This makes it easier to monitor and analyze logs for security incidents while keeping control over data transmission.">Webhooks</a><div class="- topic/desc desc">Webhook integration provides the capability to send event details related to a         service account from RSC to external systems. This makes it easier to         monitor and analyze logs for security incidents while keeping control over data         transmission. </div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
