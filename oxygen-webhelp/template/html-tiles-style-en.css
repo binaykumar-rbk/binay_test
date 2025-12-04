@@ -1,0 +1,578 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.theme-light {
+    --page-background: #fff;
+    --contrast-background: #fff;
+    --top-background: url('resources/images/bgr_right.png') right no-repeat #15292b;
+    --footer-background: none #15292b;
+    --tile-background: #edf5f5;
+    --search-button-background: #009dac;
+    --search-button-icon: #fff;
+    --search-bar-background: #d3d9d9;
+    --search-textfield-border: solid .5px #ccc;
+    --search-breadcrumb: #edf5f5;
+    --primary-color: #333;
+    --code-background-color: #ddd;
+    --uicontrol-background-color: inherit;
+    --uicontrol-font-weight: bold;
+    --userinput-background-color: #ad0000;
+    --hover-background-color: #edf5f5;
+    --title-color: #009dac;
+    --topic-title-color: inherit;
+}
+
+.theme-dark {
+    --page-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 72%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 68%) fixed beige;
+    --contrast-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 92%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 80%) fixed beige;
+    --top-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 72%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 68%) fixed beige;
+    --footer-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 72%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 68%) fixed beige;
+    --tile-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 92%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 80%) fixed beige;
+    --search-button-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 92%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 80%) fixed beige;
+    --search-button-icon: inherit;
+    --search-bar-background: radial-gradient(circle at 0% 0%, rgb(7, 24, 54), rgba(7, 24, 54, 0) 72%) fixed, radial-gradient(circle at 50% 20%, rgb(0, 91, 193), rgba(0, 91, 193, 0) 40%) fixed, radial-gradient(circle at 85% -5%, rgb(96, 50, 210), rgba(96, 50, 210, 0) 42%) fixed, radial-gradient(circle at 50% 50%, rgb(0, 106, 192), rgba(0, 106, 192, 0) 60%) fixed, radial-gradient(circle at 10% 80%, rgb(0, 125, 183), rgba(0, 125, 183, 0) 50%) fixed, radial-gradient(circle at 88% 110%, rgb(1, 136, 160), rgb(0, 63, 119) 68%) fixed beige;
+    --search-textfield-border: solid .5px #9e9e90;
+    --search-breadcrumb: #04418a;
+    --primary-color: #ededed;
+    --code-background-color: #04418a;
+    --uicontrol-font-color: #fff;
+    --uicontrol-font-weight: bold;
+    --userinput-background-color: #ffff00;
+    --hover-background-color: #04418a;
+    --title-color: #02dbf0;
+    --topic-title-color: #02dbf0;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * GLOBAL
+ * 
+ */
+
+body {
+    background: var(--page-background);
+    color: var(--primary-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wh_header {
+    background: var(--top-background);
+}
+
+
+.wh_publication_title > a {
+    color: var(--title-color);
+    font-size: 2.5rem;
+}
+
+.simpletable-container {
+    overflow-x: auto;
+    width: 75%;
+}
+
+div.note {
+    background-repeat: no-repeat;
+    background-image: url(resources/images/note.svg);
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * HYPERLINKS
+ * 
+ */
+
+a,
+a:hover,
+a:visited {
+    color: inherit;
+}
+
+.related-links a,
+.related-links a:visited {
+    color: #009dac;
+    display: inline-block;
+}
+
+/* Topic body links */
+.wh_topic_content a,
+.wh_topic_content a:visited {
+    color: #009dac;
+}
+
+.wh_topic_content a:hover {
+    color: var(--title-color);
+    text-decoration: underline;
+}
+
+a:hover,
+.related-links a:hover {
+    color: var(--title-color);
+    text-decoration: underline;
+}
+
+.webhelp_expand_collapse_sections,
+.wh_hide_highlight,
+.wh_print_link button,
+.wh_navigation_links a,
+.wh_navigation_links a:hover,
+.wh_navigation_links a:active,
+.wh_navigation_links a:visited,
+.wh_print_link a:before,
+.wh_navigation_links a:before,
+.wh_navigation_links a:hover:before,
+.wh_navigation_links a:active:before,
+.wh_navigation_links a:visited:before {
+    color: #009dac;
+    text-decoration: none;
+}
+
+.open-in-tab {
+}
+
+a[target = "_blank"]:after {
+    content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg width=".8em" height=".8em" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>openTab</title><g id="openTab" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M19.5221675,3 C20.3103448,3 21,3.69306931 21,4.48514851 L21,4.48514851 L21,9.61386139 L19.0295567,9.61386139 L19.0295567,4.98019802 L4.97044335,4.98019802 L4.97044335,19.019802 L9.4729064,19.019802 L9.4729064,21 L4.47783251,21 C3.68965517,21 3,20.3069307 3,19.5148515 L3,19.5148515 L3,4.48514851 C3,3.69306931 3.68965517,3 4.47783251,3 L4.47783251,3 Z M20.0430622,12.5789474 C20.6172249,12.5789474 21,12.9617225 21,13.5358852 L21,13.5358852 L21,19.8516746 C21,20.4258373 20.5215311,21 19.8516746,21 L19.8516746,21 L13.5358852,21 C12.9617225,21 12.5789474,20.6172249 12.5789474,20.0430622 C12.5789474,19.4688995 12.9617225,19.0861244 13.5358852,19.0861244 L13.5358852,19.0861244 L17.7464115,19.0861244 L12.9617225,14.3014354 C12.5789474,13.9186603 12.5789474,13.3444976 12.9617225,12.9617225 C13.15311,12.7703349 13.4401914,12.6746411 13.6315789,12.6746411 C13.8229665,12.6746411 14.1100478,12.7703349 14.3014354,12.9617225 L14.3014354,12.9617225 L19.0861244,17.7464115 L19.0861244,13.5358852 C19.0861244,12.9617225 19.4688995,12.5789474 20.0430622,12.5789474 Z" id="Combined-Shape" fill="%232b94cc" transform="translate(12.000000, 12.000000) scale(1, -1) translate(-12.000000, -12.000000) "></path></g></svg>');
+    padding-left: .1em;
+    vertical-align: text-top;
+}
+
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Footer
+ * 
+ */
+
+.wh_footer {
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #dcdcdc;
+    background: var(--footer-background);
+    margin-top: 2em;
+}
+
+
+.footernav {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.footernav li {
+    display: inline-block;
+    padding: 0px 2px;
+}
+
+div.footer {
+    display: block;
+    justify-content: center
+}
+
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * BREADCRUMB, PRINT, AND PAGING
+ * 
+ */
+
+.wh_tools {
+    background: var(--page-background);
+    margin: 1em 0 2em;
+}
+
+.wh_breadcrumb ol .active {
+    color: #009dac;
+}
+
+/*TOOLTIPS*/
+.wh_publication_toc .topicref .wh-tooltip {
+    background-color: #009dac;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * MAIN PAGE
+ * 
+ */
+
+.wh_publication_toc span,
+.wh_publication_toc a,
+.wh_publication_toc a:visited,
+.wh_publication_toc a:hover {
+    color: inherit;
+}
+
+.wh_publication_toc .active > .topicref a {
+    color: #009dac;
+}
+
+/* Dark theme override for right navigation menu links */
+.theme-dark .wh_publication_toc .active > .topicref a {
+    color: #fff !important;
+}
+
+.theme-dark .wh_publication_toc a,
+.theme-dark .wh_publication_toc a:visited,
+.theme-dark .wh_publication_toc a:hover {
+    color: #fff !important;
+}
+
+.wh_tile {
+    background: var(--tile-background);
+}
+
+.wh_tile_title a,
+.wh_tile_title a:hover,
+.wh_tile_title a:active,
+.wh_tile_title a:visited
+.wh_tile_title a:before,
+.wh_tile_title a:hover:before,
+.wh_tile_title a:active:before,
+.wh_tile_title a:visited:before {
+    color: var(--title-color);
+}
+
+.wh_tile_shortdesc {
+    color: inherit;
+}
+
+.wh_topic_content .title.topictitle1 {
+    color: var(--topic-title-color);
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * SEARCH
+ * 
+ */
+
+.wh_main_page .wh_search_input {
+    padding: 30px 0;
+    background: var(--search-bar-background);
+}
+
+.wh_search_input {
+    display: block;
+    margin: 0;
+    position: relative;
+    background: var(--search-bar-background);
+    padding: 30px 0;
+}
+
+.wh_search_textfield {
+    background: var(--contrast-background);
+    color: inherit;
+    border: var(--search-textfield-border);
+}
+
+.wh_search_button {
+    border: solid 1px #9e9e90;
+    border-radius: 0 5px 5px 0;
+    padding: 0.6em 1em;
+    color: var(--search-button-icon);
+    background: var(--search-button-background);
+    height: 2.8em;
+}
+
+.ui-autocomplete {
+    background: var(--page-background);
+    color: inherit;
+}
+
+/* SEARCH RESULTS */
+
+.searchresult {
+    list-style: none;
+}
+
+.searchresult li a {
+    color: #009dac;
+}
+.searchresult .shortdesclink {
+    margin: .3em .5em 0 0;
+}
+.wh_search_expression {
+    font-weight: bold;
+}
+
+/* SEARCH RELATIVE PATH */
+
+.searchresult li .relativePath a {
+    color: #006621;
+}
+
+/* SEARCH RESULTS BREADCRUMB */
+
+.search-breadcrumb li a {
+    background: var(--search-breadcrumb);
+}
+.search-breadcrumb li .title:before,
+.search-breadcrumb li .title:after {
+    border-color: var(--search-breadcrumb);
+}
+.search-breadcrumb li .title:before {
+    border-left-color: transparent;
+}
+.search-breadcrumb li .title:after {
+    border-color: transparent;
+    border-left-color: var(--search-breadcrumb);
+}
+
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * CONTENT PAGES
+ * 
+ */
+
+.wh_publication_toc {
+    background: var(--page-background);
+}
+
+.wh_content_area {
+    background: var(--page-background);
+}
+
+.wh_topic_content,
+.wh_content_area {
+    color: inherit;
+}
+
+.wh_publication_toc {
+    border-radius: 3px;
+    padding: 1.5em .5em;
+    background-color: #fafcfc;
+}
+
+.wh_related_links .related-links,
+.wh_topic_content .related-links,
+.wh_child_links {
+    border-top: .5px solid #9e9e90;
+    padding-top: 7px;
+    margin-top: 0;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * TABLES
+ * 
+ */
+
+.table--title-label {
+    display: none;
+}
+
+.table {
+    width: 90%;
+    border: .5px solid #9e9e90;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    color: inherit;
+    --bs-table-color:#inherit;
+    --bs-table-bg:#inherit;
+}
+
+thead {
+    background-color: var(--search-bar-background);
+}
+
+
+.choicetable {
+    width: 90%;
+    border: .5px solid #9e9e90;
+    border-collapse: collapse;
+    /*    border: none;*/
+    margin-bottom: 1rem;
+    color: inherit;
+    /*    color: #9aacac;*/
+}
+
+/*.choicetable .stentry {
+    border: none;
+}*/
+
+th,
+td {
+    padding: 8px;
+}
+
+
+tr:hover {
+    background-color: var(--hover-background-color);
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * ELEMENT LEVEL FORMATTING
+ * 
+ */
+
+table .desc {
+    font-style: normal;
+}
+
+span.note__title,
+*[dir] *[dir = 'ltr'] span.note__title,
+*[dir] *[dir] *[dir = 'ltr'] span.note__title,
+*[dir] *[dir] *[dir] *[dir = 'ltr'] span.note__title,
+*[dir] *[dir] *[dir] *[dir] *[dir = 'ltr'] span.note__title {
+    padding: 2px 4px 2px 0px;
+    background-position: left;
+}
+
+.parmname,
+.cmdname {
+    font-weight: normal;
+    font-family: monospace;
+    background-color: var(--code-background-color);
+    color: var(--primary-color);
+    font-size: 100%;
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+}
+
+code {
+    /*    background-color: #a87178;*/
+    background-color: var(--code-background-color);
+    /*    background-color: #999;*/
+    color: var(--primary-color);
+    font-size: 100%;
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+}
+
+pre {
+    /*    background-color: #a87178;*/
+    background-color: var(--code-background-color);
+    color: var(--primary-color);
+    /*    background-color: #999;*/
+}
+
+.filepath {
+    background-color: var(--code-background-color);
+    color: var(--primary-color);
+    font-size: 100%;
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+}
+
+.userinput {
+    padding: .2rem .4rem;
+    /*    font-size: 87.5%;*/
+    font-size: 100%;
+    /*    color: #333;
+    background-color: #eee;*/
+    /*    color: #ffaaaa;*/
+    color: var(--userinput-background-color);
+    background-color: var(--code-background-color);
+    border-radius: .2rem;
+}
+
+var {
+    font-style: italic;
+    background-color: inherit;
+    color: var(--primary-color);
+    font-size: 100%;
+    padding: .2rem .2rem .2rem 0rem;
+    border-radius: .2rem;
+}
+
+.uicontrol {
+    font-weight: var(--uicontrol-font-weight);
+    background-color: var(--uicontrol-background-color);
+}
+
+/*Added similar background color to b and strong where used in a ph to catch the
+instances where we workaround the keyref in uicontrol issue by using b*/
+
+b.ph,
+strong.ph {
+    font-weight: var(--uicontrol-font-weight);
+    background-color: var(--uicontrol-background-color);
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * THEME TOGGLE
+ * 
+ */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.eye {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.eye:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 40px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transition: 0.4s;
+    content: url('resources/images/eye.svg');
+    width: 20px;
+    height: 10px;
+}
+
+input:hover + .eye {
+    content: url('resources/images/eye-light.svg');
+}
+
+input:checked + .eye:before {
+    content: url('resources/images/eye.svg');
+}
+
+*[class ~= "topic/related-links"] *[class ~= "topic/desc"] {
+  display: none;
+}
+
+/*
+ * ------------------------------------------------------------------
+ *  
+ * RIGHT TOC
+ * 
+ */
+
+nav#wh_topic_toc {
+    padding-left: 1em;
+    padding-right: 1em;
+    color: inherit;
+    background: inherit;
+}

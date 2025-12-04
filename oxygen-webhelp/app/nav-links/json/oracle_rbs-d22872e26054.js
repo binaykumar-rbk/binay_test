@@ -1,0 +1,1 @@
+oxy_webhelp_navlinks = {"oracle_rbs-d22872e26054":{"topics":[{"title":"Installing RBS on Oracle hosts","shortdesc":"<p class=\"shortdesc\">Download and install the RBS software on Oracle hosts.<\/p>","href":"oracle\/installing_rbs_oracle.html","attributes":{"data-id":"install_rbs_oracle"},"menu":{"hasChildren":false},"tocID":"install_rbs_oracle-d22872e26065","topics":[]}]}};

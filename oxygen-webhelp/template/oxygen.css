@@ -1,3 +1,4 @@
+
 /*
  * ==============================================
  * Skin for oXygen generated WebHelp.
@@ -326,6 +327,18 @@ Example:
     text-decoration: underline;
 }
 
+/* Dark theme override for right navigation menu links */
+.theme-dark .wh_publication_toc .active > .topicref a {
+    color: #fff !important;
+}
+
+.theme-dark .wh_publication_toc span, 
+.theme-dark .wh_publication_toc a, 
+.theme-dark .wh_publication_toc a:visited, 
+.theme-dark .wh_publication_toc a:hover {
+    color: #fff !important;
+}
+
 .wh_publication_toc ul li, #wh_topic_toc ul li{
     margin-top: .7em;
 }
@@ -408,6 +421,17 @@ Example:
     color: #000000;
     line-height: 1.7em;
     margin-bottom: 80px;
+}
+
+/* Topic body links - override inherited color */
+.wh_topic_content a,
+.wh_topic_content a:visited {
+    color: #009dac;
+}
+
+.wh_topic_content a:hover {
+    color: #5185cb;
+    text-decoration: underline;
 }
 .wh_main_page .wh_content_area {
     margin: 40px auto;
