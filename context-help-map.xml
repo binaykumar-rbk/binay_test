@@ -2473,140 +2473,177 @@
                path="saas/azr_sql_db_recovery_settings.html"/>
    <appContext helpID="azr_sql_mi_recovery_settings"
                path="saas/azr_sql_mi_recovery_settings.html"/>
-   <appContext helpID="rsc_ahv_virtual_machines"
-               path="nutanix_ahv/ahv_virtual_machines.html"/>
-   <appContext helpID="ahv_vm_protection" path="nutanix_ahv/ahv_vm_protection.html"/>
-   <appContext helpID="ahv_vm_automatic_protection"
-               path="nutanix_ahv/ahv_vm_automatic_protection.html"/>
-   <appContext helpID="ahv_vm_protection_state"
-               path="nutanix_ahv/ahv_vm_protection_state.html"/>
-   <appContext helpID="ahv_nc2_on_aws_and_azure"
-               path="nutanix_ahv/ahv_nc2_on_aws_and_azure.html"/>
-   <appContext helpID="ahv_dr_support_prism_central"
-               path="nutanix_ahv/ahv_dr_support_prism_central.html"/>
-   <appContext helpID="ahv_addition_nx_cluster_to_rsc"
-               path="nutanix_ahv/ahv_addition_nx_cluster_to_rsc.html"/>
-   <appContext helpID="ahv_prerequisites" path="nutanix_ahv/ahv_prerequisites.html"/>
-   <appContext helpID="port_requirements_nutanix"
-               path="nutanix_ahv/port_requirements_nutanix.html"/>
-   <appContext helpID="ahv_adding_nx_cluster"
-               path="nutanix_ahv/ahv_adding_nx_cluster.html"/>
-   <appContext helpID="ahv_nx_pc_deplymnt_multiple_rbk_clstr"
-               path="nutanix_ahv/ahv_nx_pc_deplymnt_multiple_rbk_clstr.html"/>
-   <appContext helpID="ahv_adding_nx_prism_central_rbk_clstr"
-               path="nutanix_ahv/ahv_adding_nx_prism_central_rbk_clstr.html"/>
-   <appContext helpID="ahv_viewing_details_nx_pc"
-               path="nutanix_ahv/ahv_viewing_details_nx_pc.html"/>
-   <appContext helpID="ahv_edits_nx_pc" path="nutanix_ahv/ahv_edits_nx_pc.html"/>
-   <appContext helpID="ahv_refreshing_cluster_metadata"
-               path="nutanix_ahv/ahv_refreshing_cluster_metadata.html"/>
-   <appContext helpID="ahv_editing_nx_cluster"
-               path="nutanix_ahv/ahv_editing_nx_cluster.html"/>
-   <appContext helpID="ahv_deleting_nx_cluster"
-               path="nutanix_ahv/ahv_deleting_nx_cluster.html"/>
-   <appContext helpID="ahv_virtual_machine_protection"
-               path="nutanix_ahv/ahv_virtual_machine_protection.html"/>
-   <appContext helpID="ahv_protecting_vm" path="nutanix_ahv/ahv_protecting_vm.html"/>
-   <appContext helpID="ahv_protecting_nx_cluster"
-               path="nutanix_ahv/ahv_protecting_nx_cluster.html"/>
-   <appContext helpID="sla_domain_assignment_nx_categories"
-               path="nutanix_ahv/sla_domain_assignment_nx_categories.html"/>
-   <appContext helpID="criteria_inherit_protection_setting"
-               path="nutanix_ahv/criteria_inherit_protection_setting.html"/>
-   <appContext helpID="protecting_ahv_vm_nx_category"
-               path="nutanix_ahv/protecting_ahv_vm_nx_category.html"/>
-   <appContext helpID="ahv_sla_assignment_options"
-               path="nutanix_ahv/ahv_sla_assignment_options.html"/>
-   <appContext helpID="ahv_excluding_vm_disks"
-               path="nutanix_ahv/ahv_excluding_vm_disks.html"/>
-   <appContext helpID="ahv_virtual_machine_scripts"
-               path="cdm/ahv_virtual_machine_scripts.html"/>
-   <appContext helpID="rules_add_update_vm_scripts"
-               path="saas/rules_add_update_vm_scripts.html"/>
-   <appContext helpID="ahv_enabling_vm_scripts"
-               path="nutanix_ahv/ahv_enabling_vm_scripts.html"/>
-   <appContext helpID="ahv_rbs_installation"
-               path="nutanix_ahv/ahv_rbs_installation.html"/>
-   <appContext helpID="ahv_registering_vm_running_rbs"
-               path="nutanix_ahv/ahv_registering_vm_running_rbs.html"/>
-   <appContext helpID="ahv_network_segmentation_on_nutanix_clusters"
-               path="cdm/ahv_network_segmentation_on_nutanix_clusters.html"/>
-   <appContext helpID="ahv_config_for_nutanix_backup_over_vlan"
-               path="cdm/ahv_config_for_nutanix_backup_over_vlan.html"/>
-   <appContext helpID="creating_a_static_route_for_a_live_mount"
-               path="cdm/creating_a_static_route_for_a_live_mount.html"/>
-   <appContext helpID="ahv_snapshot_consistency"
-               path="nutanix_ahv/ahv_snapshot_consistency.html"/>
-   <appContext helpID="configuring_ahv_snapshot_consistency_nx_cluster"
-               path="nutanix_ahv/configuring_ahv_snapshot_consistency_nx_cluster.html"/>
-   <appContext helpID="configuring_ahv_snapshot_consistency_ahv_vm"
-               path="nutanix_ahv/configuring_ahv_snapshot_consistency_ahv_vm.html"/>
-   <appContext helpID="ahv_ods" path="nutanix_ahv/ahv_ods.html"/>
-   <appContext helpID="ahv_taking_ods" path="nutanix_ahv/ahv_taking_ods.html"/>
-   <appContext helpID="ahv_local_host_page"
-               path="nutanix_ahv/ahv_local_host_page.html"/>
-   <appContext helpID="ahv_accessing_local_vm_page"
-               path="nutanix_ahv/ahv_accessing_local_vm_page.html"/>
-   <appContext helpID="ahv_overview_tab" path="nutanix_ahv/ahv_overview_tab.html"/>
-   <appContext helpID="ahv_overview_tab_actions"
-               path="nutanix_ahv/ahv_overview_tab_actions.html"/>
-   <appContext helpID="ahv_overview_snapshot_card"
-               path="nutanix_ahv/ahv_overview_snapshot_card.html"/>
-   <appContext helpID="ahv_snapshots_tab" path="nutanix_ahv/ahv_snapshots_tab.html"/>
-   <appContext helpID="ahv_snapshots_information"
-               path="nutanix_ahv/ahv_snapshots_information.html"/>
-   <appContext helpID="ahv_changing_retention_policy"
-               path="nutanix_ahv/ahv_changing_retention_policy.html"/>
-   <appContext helpID="ahv_deleting_vm_snapshots"
-               path="nutanix_ahv/ahv_deleting_vm_snapshots.html"/>
-   <appContext helpID="ahv_vm_recovery" path="nutanix_ahv/ahv_vm_recovery.html"/>
-   <appContext helpID="ahv_recovering_files"
-               path="nutanix_ahv/ahv_recovering_files.html"/>
-   <appContext helpID="ahv_vm_recovery_using_live_mount"
-               path="cdm/ahv_vm_recovery_using_live_mount.html"/>
-   <appContext helpID="ahv_vm_live_mount_operations"
-               path="cdm/ahv_vm_live_mount_operations.html"/>
-   <appContext helpID="ahv_creating_live_mount"
-               path="nutanix_ahv/ahv_creating_live_mount.html"/>
-   <appContext helpID="ahv_nx_live_mount_page"
-               path="nutanix_ahv/ahv_nx_live_mount_page.html"/>
-   <appContext helpID="ahv_unmounting_vm" path="nutanix_ahv/ahv_unmounting_vm.html"/>
-   <appContext helpID="ahv_powering_off_vm"
-               path="nutanix_ahv/ahv_powering_off_vm.html"/>
-   <appContext helpID="ahv_migrating_live_mounted_vm"
-               path="nutanix_ahv/ahv_migrating_live_mounted_vm.html"/>
-   <appContext helpID="ahv_exporting_vm_snapshot"
-               path="nutanix_ahv/ahv_exporting_vm_snapshot.html"/>
-   <appContext helpID="ahv_v_disk_recovery_mounting"
-               path="nutanix_ahv/ahv_v_disk_recovery_mounting.html"/>
-   <appContext helpID="ahv_recovering_v_disk_mounting"
-               path="nutanix_ahv/ahv_recovering_v_disk_mounting.html"/>
-   <appContext helpID="ahv_migrating_live_mounted_vdisk"
-               path="nutanix_ahv/ahv_migrating_live_mounted_vdisk.html"/>
-   <appContext helpID="ahv_unmounting_vdisk"
-               path="nutanix_ahv/ahv_unmounting_vdisk.html"/>
-   <appContext helpID="ahv_downloading_vdisks_cdm_cluster"
-               path="nutanix_ahv/ahv_downloading_vdisks_cdm_cluster.html"/>
-   <appContext helpID="ahv_downloading_vdisk_local"
-               path="nutanix_ahv/ahv_downloading_vdisk_local.html"/>
-   <appContext helpID="ahv_batch_recovery_of_vm"
-               path="nutanix_ahv/ahv_batch_recovery_of_vm.html"/>
-   <appContext helpID="ahv_recovering_batch_of_vm_using_live_mount"
-               path="nutanix_ahv/ahv_recovering_batch_of_vm_using_live_mount.html"/>
-   <appContext helpID="ahv_recovering_batch_of_vm_using_export"
-               path="nutanix_ahv/ahv_recovering_batch_of_vm_using_export.html"/>
-   <appContext helpID="ahv_virtual_machine_in_place_recovery"
-               path="nutanix_ahv/ahv_virtual_machine_in_place_recovery.html"/>
-   <appContext helpID="inplace_rcvry_prchk_fail_condtns_ahv_vm"
-               path="nutanix_ahv/inplace_rcvry_prchk_fail_condtns_ahv_vm.html"/>
-   <appContext helpID="req_perm_inplace_recoveries"
-               path="nutanix_ahv/req_perm_inplace_recoveries.html"/>
-   <appContext helpID="performing_inplace_recovery_ahv_vm"
-               path="nutanix_ahv/performing_inplace_recovery_ahv_vm.html"/>
-   <appContext helpID="ahv_vm_instant_recovery"
-               path="nutanix_ahv/ahv_vm_instant_recovery.html"/>
-   <appContext helpID="performing_ahv_vm_instant_recovery"
-               path="nutanix_ahv/performing_ahv_vm_instant_recovery.html"/>
+   <appContext helpID="k8s_workload_protection"
+               path="kubernetes/k8s_workload_protection.html"/>
+   <appContext helpID="k8s_deployment_architecture"
+               path="kubernetes/k8s_deployment_architecture.html"/>
+   <appContext helpID="k8s_prereqs" path="kubernetes/k8s_prereqs.html"/>
+   <appContext helpID="k8s_prereqs_aws_eks" path="kubernetes/k8s_prereqs_aws_eks.html"/>
+   <appContext helpID="k8s_prereqs_rosa" path="kubernetes/k8s_prereqs_rosa.html"/>
+   <appContext helpID="k8s_volume_snapshot_prereq"
+               path="kubernetes/k8s_volume_snapshot_prereq.html"/>
+   <appContext helpID="k8s_csi_driver_prereq"
+               path="kubernetes/k8s_csi_driver_prereq.html"/>
+   <appContext helpID="k8s_storage_class_prereq"
+               path="kubernetes/k8s_storage_class_prereq.html"/>
+   <appContext helpID="k8s_volume_snapshot_class_prereq"
+               path="kubernetes/k8s_volume_snapshot_class_prereq.html"/>
+   <appContext helpID="k8s_taking_a_volume_snapshot"
+               path="kubernetes/k8s_taking_a_volume_snapshot.html"/>
+   <appContext helpID="k8s_protection" path="kubernetes/k8s_protection.html"/>
+   <appContext helpID="k8s_supported_distributions"
+               path="kubernetes/k8s_supported_distributions.html"/>
+   <appContext helpID="rubrik_cluster_access_to_kubernetes_data"
+               path="kubernetes/rubrik_cluster_access_to_kubernetes_data.html"/>
+   <appContext helpID="k8s_protect_prereqs" path="kubernetes/k8s_protect_prereqs.html"/>
+   <appContext helpID="supported_mirrored_registry_methods"
+               path="kubernetes/supported_mirrored_registry_methods.html"/>
+   <appContext helpID="k8s_protection_prereqs_onprem"
+               path="kubernetes/k8s_protection_prereqs_onprem.html"/>
+   <appContext helpID="k8s_prereqs_azure_aks"
+               path="kubernetes/k8s_prereqs_azure_aks.html"/>
+   <appContext helpID="k8s_restoring_protection_set_snapshots"
+               path="kubernetes/k8s_restoring_protection_set_snapshots.html"/>
+   <appContext helpID="k8s_restore_pvc_snapshots_k8s_protect"
+               path="kubernetes/k8s_restore_pvc_snapshots_k8s_protect.html"/>
+   <appContext helpID="k8s_restore_snpsht_resources_k8s_protect"
+               path="kubernetes/k8s_restore_snpsht_resources_k8s_protect.html"/>
+   <appContext helpID="placing_k8s_snapshots_legal_hold"
+               path="kubernetes/placing_k8s_snapshots_legal_hold.html"/>
+   <appContext helpID="k8s_cluster_onboard_discover_rsc"
+               path="kubernetes/k8s_cluster_onboard_discover_rsc.html"/>
+   <appContext helpID="k8s_default_protection_sets"
+               path="kubernetes/k8s_default_protection_sets.html"/>
+   <appContext helpID="k8s_adding_k8s_cluster"
+               path="kubernetes/k8s_adding_k8s_cluster.html"/>
+   <appContext helpID="k8s_adding_amazon_eks_cluster"
+               path="kubernetes/k8s_adding_amazon_eks_cluster.html"/>
+   <appContext helpID="k8s_editing_kubernetes_cluster"
+               path="kubernetes/k8s_editing_kubernetes_cluster.html"/>
+   <appContext helpID="k8s_manifest_based_onboarding_resources"
+               path="kubernetes/k8s_manifest_based_onboarding_resources.html"/>
+   <appContext helpID="k8s_deleting_k8s_cluster"
+               path="kubernetes/k8s_deleting_k8s_cluster.html"/>
+   <appContext helpID="k8s_viewing_manifest_file"
+               path="kubernetes/k8s_viewing_manifest_file.html"/>
+   <appContext helpID="k8s_refreshing_k8s_cluster"
+               path="kubernetes/k8s_refreshing_k8s_cluster.html"/>
+   <appContext helpID="regenerating_manifest_file"
+               path="kubernetes/regenerating_manifest_file.html"/>
+   <appContext helpID="least_privilege_configuration_K8S"
+               path="kubernetes/k8s_least_privilege_configuration.html"/>
+   <appContext helpID="k8s_configuring_perms_kubeconfig"
+               path="kubernetes/k8s_configuring_perms_kubeconfig.html"/>
+   <appContext helpID="k8s_configuring_namespace_protection"
+               path="kubernetes/k8s_configuring_namespace_protection.html"/>
+   <appContext helpID="k8s_configuring_perms_specific_resources"
+               path="kubernetes/k8s_configuring_perms_specific_resources.html"/>
+   <appContext helpID="post_onboarding_perms_updates"
+               path="kubernetes/post_onboarding_perms_updates.html"/>
+   <appContext helpID="kubernetes_labels" path="kubernetes/kubernetes_labels.html"/>
+   <appContext helpID="kubernetes_label_recommendations_limitations"
+               path="kubernetes/kubernetes_label_recommendations_limitations.html"/>
+   <appContext helpID="assigning_sla_domains_kubernetes_labels"
+               path="kubernetes/assigning_sla_domains_kubernetes_labels.html"/>
+   <appContext helpID="viewing_k8s_labels_rsc"
+               path="kubernetes/viewing_k8s_labels_rsc.html"/>
+   <appContext helpID="recovering_files_using_kubernetes_labels"
+               path="kubernetes/recovering_files_using_kubernetes_labels.html"/>
+   <appContext helpID="exporting_snapshots_created_k8s_labels"
+               path="kubernetes/exporting_snapshots_created_k8s_labels.html"/>
+   <appContext helpID="k8s_cluster_protection_set"
+               path="kubernetes/k8s_cluster_protection_set.html"/>
+   <appContext helpID="k8s_protection_set_updates_rsc"
+               path="kubernetes/k8s_protection_set_updates_rsc.html"/>
+   <appContext helpID="k8s_creating_custom_protection_set"
+               path="kubernetes/k8s_creating_custom_protection_set.html"/>
+   <appContext helpID="k8s_creating_dflt_protec_set_namespace"
+               path="kubernetes/k8s_creating_dflt_protec_set_namespace.html"/>
+   <appContext helpID="k8s_editing_protection_set"
+               path="kubernetes/k8s_editing_protection_set.html"/>
+   <appContext helpID="k8s_disabling_default_protection_set"
+               path="kubernetes/k8s_disabling_default_protection_set.html"/>
+   <appContext helpID="k8s_deleting_protection_set_rsc"
+               path="kubernetes/k8s_deleting_protection_set_rsc.html"/>
+   <appContext helpID="k8s_browse_kubernetes_snapshots"
+               path="kubernetes/k8s_browse_kubernetes_snapshots.html"/>
+   <appContext helpID="k8s_browsing_kubernetes_snapshots"
+               path="kubernetes/k8s_browsing_kubernetes_snapshots.html"/>
+   <appContext helpID="k8s_openshift_clusters"
+               path="kubernetes/k8s_openshift_clusters.html"/>
+   <appContext helpID="k8s_limitations_openshift_clusters"
+               path="kubernetes/k8s_limitations_openshift_clusters.html"/>
+   <appContext helpID="k8s_performing_ods_openshift_clusters"
+               path="kubernetes/k8s_performing_ods_openshift_clusters.html"/>
+   <appContext helpID="k8s_openshift_recovering_files"
+               path="kubernetes/k8s_openshift_recovering_files.html"/>
+   <appContext helpID="k8s_exporting_openshift_snapshots"
+               path="kubernetes/k8s_exporting_openshift_snapshots.html"/>
+   <appContext helpID="k8s_workload_protection_policies"
+               path="kubernetes/k8s_workload_protection_policies.html"/>
+   <appContext helpID="post_onboarding_perms_updates"
+               path="kubernetes/post_onboarding_perms_updates.html"/>
+   <appContext helpID="k8s_protection_hierarchy"
+               path="kubernetes/k8s_protection_hierarchy.html"/>
+   <appContext helpID="k8s_managing_workload_protection"
+               path="kubernetes/k8s_managing_workload_protection.html"/>
+   <appContext helpID="k8s_taking_protection_set_ods"
+               path="kubernetes/k8s_taking_protection_set_ods.html"/>
+   <appContext helpID="k8s_snapshot_retention"
+               path="kubernetes/k8s_snapshot_retention.html"/>
+   <appContext helpID="k8s_changing_retention_for_ods_snapshots"
+               path="kubernetes/k8s_changing_retention_for_ods_snapshots.html"/>
+   <appContext helpID="k8s_deleting_snapshot"
+               path="kubernetes/k8s_deleting_snapshot.html"/>
+   <appContext helpID="K8s_crd_rsc" path="kubernetes/K8s_crd_rsc.html"/>
+   <appContext helpID="k8s_clusterroles" path="kubernetes/k8s_clusterroles.html"/>
+   <appContext helpID="k8s_crd_prerqs" path="kubernetes/k8s_crd_prerqs.html"/>
+   <appContext helpID="k8s_custom_resources_k8s_protection"
+               path="kubernetes/k8s_custom_resources_k8s_protection.html"/>
+   <appContext helpID="k8s_validate_k8s_cluster_resources"
+               path="kubernetes/k8s_validate_k8s_cluster_resources.html"/>
+   <appContext helpID="k8s_create_bindings_k8s_crd"
+               path="kubernetes/k8s_create_bindings_k8s_crd.html"/>
+   <appContext helpID="k8s_hook_crd" path="kubernetes/k8s_hook_crd.html"/>
+   <appContext helpID="k8s_hook_spec_and_status_fields"
+               path="kubernetes/k8s_hook_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_hook_example" path="kubernetes/k8s_hook_example.html"/>
+   <appContext helpID="k8s_cluster" path="kubernetes/k8s_cluster.html"/>
+   <appContext helpID="k8s_cluster_spec_and_status_fields"
+               path="kubernetes/k8s_cluster_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_cluster_example" path="kubernetes/k8s_cluster_example.html"/>
+   <appContext helpID="k8s_protectionset" path="kubernetes/k8s_protectionset.html"/>
+   <appContext helpID="k8s_protectionset_spec_fields"
+               path="kubernetes/k8s_protectionset_spec_fields.html"/>
+   <appContext helpID="k8s_protectionset_example"
+               path="kubernetes/k8s_protectionset_example.html"/>
+   <appContext helpID="k8s_recoveryjob" path="kubernetes/k8s_recoveryjob.html"/>
+   <appContext helpID="k8s_recoveryjob_spec_and_status_fields"
+               path="kubernetes/k8s_recoveryjob_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_recoveryjob_example"
+               path="kubernetes/k8s_recoveryjob_example.html"/>
+   <appContext helpID="k8s_rubrikcluster" path="kubernetes/k8s_rubrikcluster.html"/>
+   <appContext helpID="k8s_rubrikcluster_spec_and_status_fields"
+               path="kubernetes/k8s_rubrikcluster_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_rubrikcluster_example"
+               path="kubernetes/k8s_rubrikcluster_example.html"/>
+   <appContext helpID="k8s_sladomain" path="kubernetes/k8s_sladomain.html"/>
+   <appContext helpID="k8s_sladomain_spec_and_status_fields"
+               path="kubernetes/k8s_sladomain_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_sladomain_example"
+               path="kubernetes/k8s_sladomain_example.html"/>
+   <appContext helpID="k8s_snapshot" path="kubernetes/k8s_snapshot.html"/>
+   <appContext helpID="k8s_snapshot_spec_and_status_fields"
+               path="kubernetes/k8s_snapshot_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_snapshot_example"
+               path="kubernetes/k8s_snapshot_example.html"/>
+   <appContext helpID="k8s_snapshotjob" path="kubernetes/k8s_snapshotjob.html"/>
+   <appContext helpID="snapshotjob_spec_and_status_fields"
+               path="kubernetes/k8s_snapshotjob_spec_and_status_fields.html"/>
+   <appContext helpID="k8s_snapshotjob_example"
+               path="kubernetes/k8s_snapshotjob_example.html"/>
+   <appContext helpID="anomaly_detection_k8"
+               path="kubernetes/anomaly_detection_k8.html"/>
    <appContext helpID="hyperv_virtual_machines"
                path="saas/hyper_v/hyperv_virtual_machines.html"/>
    <appContext helpID="hyperv_vm_protection"
@@ -2747,6 +2784,265 @@
                path="saas/hyper_v/azure_stack_hci_management.html"/>
    <appContext helpID="azure_stack_hci_limitations"
                path="saas/hyper_v/azure_stack_hci_limitations.html"/>
+   <appContext helpID="fs_filesystems" path="saas/fs_filesystems.html"/>
+   <appContext helpID="fs_host_management_for_filesets"
+               path="saas/fs_host_management_for_filesets.html"/>
+   <appContext helpID="fs_fileset_host_details"
+               path="saas/fs_fileset_host_details.html"/>
+   <appContext helpID="fs_adding_a_fileset_host"
+               path="saas/fs_adding_a_fileset_host.html"/>
+   <appContext helpID="fs_removing_a_fileset_host"
+               path="saas/fs_removing_a_fileset_host.html"/>
+   <appContext helpID="fs_fileset_host_management_actions"
+               path="saas/fs_fileset_host_management_actions.html"/>
+   <appContext helpID="fs_filesets" path="saas/fs_filesets.html"/>
+   <appContext helpID="fileset_fields_rules_value_types"
+               path="common/fileset_fields_rules_value_types.html"/>
+   <appContext helpID="host_specific_fileset_desc_rules"
+               path="common/host_specific_fileset_desc_rules.html"/>
+   <appContext helpID="accepted_values_fileset_descs"
+               path="common/accepted_values_fileset_descs.html"/>
+   <appContext helpID="fileset_description_rules"
+               path="common/fileset_description_rules.html"/>
+   <appContext helpID="fileset_regular_expression_handling"
+               path="common/fileset_regular_expression_handling.html"/>
+   <appContext helpID="fileset_regular_expression_conversions"
+               path="common/fileset_regular_expression_conversions.html"/>
+   <appContext helpID="common_fileset_use_cases"
+               path="saas/common_fileset_use_cases.html"/>
+   <appContext helpID="fs_fileset_details" path="saas/fs_fileset_details.html"/>
+   <appContext helpID="fs_creating_fileset" path="saas/fs_creating_fileset.html"/>
+   <appContext helpID="fs_deleting_a_fileset_from_a_host"
+               path="saas/fs_deleting_a_fileset_from_a_host.html"/>
+   <appContext helpID="fs_deleting_a_fileset_from_the_cluster"
+               path="saas/fs_deleting_a_fileset_from_the_cluster.html"/>
+   <appContext helpID="fs_fileset_management_actions"
+               path="saas/fs_fileset_management_actions.html"/>
+   <appContext helpID="fs_fileset_protection_for_hosts"
+               path="saas/fs_fileset_protection_for_hosts.html"/>
+   <appContext helpID="fs_protecting_a_host_fileset"
+               path="saas/fs_protecting_a_host_fileset.html"/>
+   <appContext helpID="fs_taking_on_demand_snapshot_of_a_host_fileset"
+               path="saas/fs_taking_on_demand_snapshot_of_a_host_fileset.html"/>
+   <appContext helpID="fs_removing_protection_for_host_fileset"
+               path="saas/fs_removing_protection_for_host_fileset.html"/>
+   <appContext helpID="backup_throttle_host_filesets"
+               path="saas/backup_throttle_host_filesets.html"/>
+   <appContext helpID="configuring_backup_throttle_fileset"
+               path="saas/configuring_backup_throttle_fileset.html"/>
+   <appContext helpID="fs_fileset_protection_for_failover_clusters"
+               path="saas/fs_fileset_protection_for_failover_clusters.html"/>
+   <appContext helpID="fs_protection_hierarchy_for_failover_clusters"
+               path="saas/fs_protection_hierarchy_for_failover_clusters.html"/>
+   <appContext helpID="fs_creating_a_failover_cluster"
+               path="saas/fs_creating_a_failover_cluster.html"/>
+   <appContext helpID="fs_failover_cluster_management_actions"
+               path="saas/fs_failover_cluster_management_actions.html"/>
+   <appContext helpID="fs_creating_a_failover_cluster_service"
+               path="saas/fs_creating_a_failover_cluster_service.html"/>
+   <appContext helpID="fs_failover_cluster_service_management_actions"
+               path="saas/fs_failover_cluster_service_management_actions.html"/>
+   <appContext helpID="fs_managing_protection_for_failover_clusters"
+               path="saas/fs_managing_protection_for_failover_clusters.html"/>
+   <appContext helpID="fs_managing_protection_for_failover_cluster_services"
+               path="saas/fs_managing_protection_for_failover_cluster_services.html"/>
+   <appContext helpID="fs_managing_protection_for_filesets"
+               path="saas/fs_managing_protection_for_filesets.html"/>
+   <appContext helpID="fs_local_pages_for_fileset_objects"
+               path="saas/fs_local_pages_for_fileset_objects.html"/>
+   <appContext helpID="fs_viewing_the_fileset_host_local_page"
+               path="saas/fs_viewing_the_fileset_host_local_page.html"/>
+   <appContext helpID="fs_viewing_the_failover_cluster_service_local_page"
+               path="saas/fs_viewing_the_failover_cluster_service_local_page.html"/>
+   <appContext helpID="fs_overview_tab_details"
+               path="saas/fs_overview_tab_details.html"/>
+   <appContext helpID="fs_overview_tab_actions_list"
+               path="saas/fs_overview_tab_actions_list.html"/>
+   <appContext helpID="fs_snapshots_card_for_filesets"
+               path="saas/fs_snapshots_card_for_filesets.html"/>
+   <appContext helpID="fs_snapshots_card_calendar_view"
+               path="saas/fs_snapshots_card_calendar_view.html"/>
+   <appContext helpID="fs_snapshots_tab_for_filesets"
+               path="saas/fs_snapshots_tab_for_filesets.html"/>
+   <appContext helpID="fs_changing_the_retention_policy_for_fileset_snapshot"
+               path="saas/fs_changing_the_retention_policy_for_fileset_snapshot.html"/>
+   <appContext helpID="fs_deleting_fileset_snapshots"
+               path="saas/fs_deleting_fileset_snapshots.html"/>
+   <appContext helpID="fs_data_recovery_from_a_host_fileset"
+               path="saas/fs_data_recovery_from_a_host_fileset.html"/>
+   <appContext helpID="fs_locating_a_fileset_snapshot_for_recovery"
+               path="saas/fs_locating_a_fileset_snapshot_for_recovery.html"/>
+   <appContext helpID="fs_searching_for_a_file_or_folder_for_recovery"
+               path="saas/fs_searching_for_a_file_or_folder_for_recovery.html"/>
+   <appContext helpID="fs_downloading_data_fileset_snapshot"
+               path="saas/fs_downloading_data_fileset_snapshot.html"/>
+   <appContext helpID="fs_restoring_fileset_snapshot_data_src"
+               path="saas/fs_restoring_fileset_snapshot_data_src.html"/>
+   <appContext helpID="fs_restoring_fileset_snaps_data_new_loc"
+               path="saas/fs_restoring_fileset_snaps_data_new_loc.html"/>
+   <appContext helpID="fs_export_path" path="saas/fs_export_path.html"/>
+   <appContext helpID="fs_exporting_fileset_snapshot_data"
+               path="saas/fs_exporting_fileset_snapshot_data.html"/>
+   <appContext helpID="ms_exchange_server" path="saas/ms_exchange_server.html"/>
+   <appContext helpID="ms_exchange_workflow" path="saas/ms_exchange_workflow.html"/>
+   <appContext helpID="ms_exchange_availability_groups"
+               path="saas/ms_exchange_availability_groups.html"/>
+   <appContext helpID="ms_exchange_databases" path="saas/ms_exchange_databases.html"/>
+   <appContext helpID="ms_exchange_hosts" path="saas/ms_exchange_hosts.html"/>
+   <appContext helpID="ms_exchange_protection" path="saas/ms_exchange_protection.html"/>
+   <appContext helpID="ms_exchange_protection_prerequisites"
+               path="saas/ms_exchange_protection_prerequisites.html"/>
+   <appContext helpID="ms_exchange_protection_hierarchy"
+               path="saas/ms_exchange_protection_hierarchy.html"/>
+   <appContext helpID="ms_exchange_assigning_sla_domain"
+               path="saas/ms_exchange_assigning_sla_domain.html"/>
+   <appContext helpID="ms_exchange_management" path="saas/ms_exchange_management.html"/>
+   <appContext helpID="ms_exchange_adding_host"
+               path="saas/ms_exchange_adding_host.html"/>
+   <appContext helpID="ms_exchange_setting_backup_preference"
+               path="saas/ms_exchange_setting_backup_preference.html"/>
+   <appContext helpID="ms_exchange_snapshots" path="saas/ms_exchange_snapshots.html"/>
+   <appContext helpID="ms_exchange_taking_ods" path="saas/ms_exchange_taking_ods.html"/>
+   <appContext helpID="ms_exchange_changing_retention_snapshot"
+               path="saas/ms_exchange_changing_retention_snapshot.html"/>
+   <appContext helpID="ms_exchange_deleting_snapshot"
+               path="saas/ms_exchange_deleting_snapshot.html"/>
+   <appContext helpID="ms_exchange_recovering_snapshot"
+               path="saas/ms_exchange_recovering_snapshot.html"/>
+   <appContext helpID="rsc_ahv_virtual_machines"
+               path="nutanix_ahv/ahv_virtual_machines.html"/>
+   <appContext helpID="ahv_vm_protection" path="nutanix_ahv/ahv_vm_protection.html"/>
+   <appContext helpID="ahv_vm_automatic_protection"
+               path="nutanix_ahv/ahv_vm_automatic_protection.html"/>
+   <appContext helpID="ahv_vm_protection_state"
+               path="nutanix_ahv/ahv_vm_protection_state.html"/>
+   <appContext helpID="ahv_nc2_on_aws_and_azure"
+               path="nutanix_ahv/ahv_nc2_on_aws_and_azure.html"/>
+   <appContext helpID="ahv_dr_support_prism_central"
+               path="nutanix_ahv/ahv_dr_support_prism_central.html"/>
+   <appContext helpID="ahv_addition_nx_cluster_to_rsc"
+               path="nutanix_ahv/ahv_addition_nx_cluster_to_rsc.html"/>
+   <appContext helpID="ahv_prerequisites" path="nutanix_ahv/ahv_prerequisites.html"/>
+   <appContext helpID="port_requirements_nutanix"
+               path="nutanix_ahv/port_requirements_nutanix.html"/>
+   <appContext helpID="ahv_adding_nx_cluster"
+               path="nutanix_ahv/ahv_adding_nx_cluster.html"/>
+   <appContext helpID="ahv_nx_pc_deplymnt_multiple_rbk_clstr"
+               path="nutanix_ahv/ahv_nx_pc_deplymnt_multiple_rbk_clstr.html"/>
+   <appContext helpID="ahv_adding_nx_prism_central_rbk_clstr"
+               path="nutanix_ahv/ahv_adding_nx_prism_central_rbk_clstr.html"/>
+   <appContext helpID="ahv_viewing_details_nx_pc"
+               path="nutanix_ahv/ahv_viewing_details_nx_pc.html"/>
+   <appContext helpID="ahv_edits_nx_pc" path="nutanix_ahv/ahv_edits_nx_pc.html"/>
+   <appContext helpID="ahv_refreshing_cluster_metadata"
+               path="nutanix_ahv/ahv_refreshing_cluster_metadata.html"/>
+   <appContext helpID="ahv_editing_nx_cluster"
+               path="nutanix_ahv/ahv_editing_nx_cluster.html"/>
+   <appContext helpID="ahv_deleting_nx_cluster"
+               path="nutanix_ahv/ahv_deleting_nx_cluster.html"/>
+   <appContext helpID="ahv_virtual_machine_protection"
+               path="nutanix_ahv/ahv_virtual_machine_protection.html"/>
+   <appContext helpID="ahv_protecting_vm" path="nutanix_ahv/ahv_protecting_vm.html"/>
+   <appContext helpID="ahv_protecting_nx_cluster"
+               path="nutanix_ahv/ahv_protecting_nx_cluster.html"/>
+   <appContext helpID="sla_domain_assignment_nx_categories"
+               path="nutanix_ahv/sla_domain_assignment_nx_categories.html"/>
+   <appContext helpID="criteria_inherit_protection_setting"
+               path="nutanix_ahv/criteria_inherit_protection_setting.html"/>
+   <appContext helpID="protecting_ahv_vm_nx_category"
+               path="nutanix_ahv/protecting_ahv_vm_nx_category.html"/>
+   <appContext helpID="ahv_sla_assignment_options"
+               path="nutanix_ahv/ahv_sla_assignment_options.html"/>
+   <appContext helpID="ahv_excluding_vm_disks"
+               path="nutanix_ahv/ahv_excluding_vm_disks.html"/>
+   <appContext helpID="ahv_virtual_machine_scripts"
+               path="cdm/ahv_virtual_machine_scripts.html"/>
+   <appContext helpID="rules_add_update_vm_scripts"
+               path="saas/rules_add_update_vm_scripts.html"/>
+   <appContext helpID="ahv_enabling_vm_scripts"
+               path="nutanix_ahv/ahv_enabling_vm_scripts.html"/>
+   <appContext helpID="ahv_rbs_installation"
+               path="nutanix_ahv/ahv_rbs_installation.html"/>
+   <appContext helpID="ahv_registering_vm_running_rbs"
+               path="nutanix_ahv/ahv_registering_vm_running_rbs.html"/>
+   <appContext helpID="ahv_network_segmentation_on_nutanix_clusters"
+               path="cdm/ahv_network_segmentation_on_nutanix_clusters.html"/>
+   <appContext helpID="ahv_config_for_nutanix_backup_over_vlan"
+               path="cdm/ahv_config_for_nutanix_backup_over_vlan.html"/>
+   <appContext helpID="creating_a_static_route_for_a_live_mount"
+               path="cdm/creating_a_static_route_for_a_live_mount.html"/>
+   <appContext helpID="ahv_snapshot_consistency"
+               path="nutanix_ahv/ahv_snapshot_consistency.html"/>
+   <appContext helpID="configuring_ahv_snapshot_consistency_nx_cluster"
+               path="nutanix_ahv/configuring_ahv_snapshot_consistency_nx_cluster.html"/>
+   <appContext helpID="configuring_ahv_snapshot_consistency_ahv_vm"
+               path="nutanix_ahv/configuring_ahv_snapshot_consistency_ahv_vm.html"/>
+   <appContext helpID="ahv_ods" path="nutanix_ahv/ahv_ods.html"/>
+   <appContext helpID="ahv_taking_ods" path="nutanix_ahv/ahv_taking_ods.html"/>
+   <appContext helpID="ahv_local_host_page"
+               path="nutanix_ahv/ahv_local_host_page.html"/>
+   <appContext helpID="ahv_accessing_local_vm_page"
+               path="nutanix_ahv/ahv_accessing_local_vm_page.html"/>
+   <appContext helpID="ahv_overview_tab" path="nutanix_ahv/ahv_overview_tab.html"/>
+   <appContext helpID="ahv_overview_tab_actions"
+               path="nutanix_ahv/ahv_overview_tab_actions.html"/>
+   <appContext helpID="ahv_overview_snapshot_card"
+               path="nutanix_ahv/ahv_overview_snapshot_card.html"/>
+   <appContext helpID="ahv_snapshots_tab" path="nutanix_ahv/ahv_snapshots_tab.html"/>
+   <appContext helpID="ahv_snapshots_information"
+               path="nutanix_ahv/ahv_snapshots_information.html"/>
+   <appContext helpID="ahv_changing_retention_policy"
+               path="nutanix_ahv/ahv_changing_retention_policy.html"/>
+   <appContext helpID="ahv_deleting_vm_snapshots"
+               path="nutanix_ahv/ahv_deleting_vm_snapshots.html"/>
+   <appContext helpID="ahv_vm_recovery" path="nutanix_ahv/ahv_vm_recovery.html"/>
+   <appContext helpID="ahv_recovering_files"
+               path="nutanix_ahv/ahv_recovering_files.html"/>
+   <appContext helpID="ahv_vm_recovery_using_live_mount"
+               path="cdm/ahv_vm_recovery_using_live_mount.html"/>
+   <appContext helpID="ahv_vm_live_mount_operations"
+               path="cdm/ahv_vm_live_mount_operations.html"/>
+   <appContext helpID="ahv_creating_live_mount"
+               path="nutanix_ahv/ahv_creating_live_mount.html"/>
+   <appContext helpID="ahv_nx_live_mount_page"
+               path="nutanix_ahv/ahv_nx_live_mount_page.html"/>
+   <appContext helpID="ahv_unmounting_vm" path="nutanix_ahv/ahv_unmounting_vm.html"/>
+   <appContext helpID="ahv_powering_off_vm"
+               path="nutanix_ahv/ahv_powering_off_vm.html"/>
+   <appContext helpID="ahv_migrating_live_mounted_vm"
+               path="nutanix_ahv/ahv_migrating_live_mounted_vm.html"/>
+   <appContext helpID="ahv_exporting_vm_snapshot"
+               path="nutanix_ahv/ahv_exporting_vm_snapshot.html"/>
+   <appContext helpID="ahv_v_disk_recovery_mounting"
+               path="nutanix_ahv/ahv_v_disk_recovery_mounting.html"/>
+   <appContext helpID="ahv_recovering_v_disk_mounting"
+               path="nutanix_ahv/ahv_recovering_v_disk_mounting.html"/>
+   <appContext helpID="ahv_migrating_live_mounted_vdisk"
+               path="nutanix_ahv/ahv_migrating_live_mounted_vdisk.html"/>
+   <appContext helpID="ahv_unmounting_vdisk"
+               path="nutanix_ahv/ahv_unmounting_vdisk.html"/>
+   <appContext helpID="ahv_downloading_vdisks_cdm_cluster"
+               path="nutanix_ahv/ahv_downloading_vdisks_cdm_cluster.html"/>
+   <appContext helpID="ahv_downloading_vdisk_local"
+               path="nutanix_ahv/ahv_downloading_vdisk_local.html"/>
+   <appContext helpID="ahv_batch_recovery_of_vm"
+               path="nutanix_ahv/ahv_batch_recovery_of_vm.html"/>
+   <appContext helpID="ahv_recovering_batch_of_vm_using_live_mount"
+               path="nutanix_ahv/ahv_recovering_batch_of_vm_using_live_mount.html"/>
+   <appContext helpID="ahv_recovering_batch_of_vm_using_export"
+               path="nutanix_ahv/ahv_recovering_batch_of_vm_using_export.html"/>
+   <appContext helpID="ahv_virtual_machine_in_place_recovery"
+               path="nutanix_ahv/ahv_virtual_machine_in_place_recovery.html"/>
+   <appContext helpID="inplace_rcvry_prchk_fail_condtns_ahv_vm"
+               path="nutanix_ahv/inplace_rcvry_prchk_fail_condtns_ahv_vm.html"/>
+   <appContext helpID="req_perm_inplace_recoveries"
+               path="nutanix_ahv/req_perm_inplace_recoveries.html"/>
+   <appContext helpID="performing_inplace_recovery_ahv_vm"
+               path="nutanix_ahv/performing_inplace_recovery_ahv_vm.html"/>
+   <appContext helpID="ahv_vm_instant_recovery"
+               path="nutanix_ahv/ahv_vm_instant_recovery.html"/>
+   <appContext helpID="performing_ahv_vm_instant_recovery"
+               path="nutanix_ahv/performing_ahv_vm_instant_recovery.html"/>
    <appContext helpID="vs_virtual_machines" path="saas/vs_virtual_machines.html"/>
    <appContext helpID="vs_vm_templates" path="saas/vs_vm_templates.html"/>
    <appContext helpID="vs_app_consistency_indiv_batch"
@@ -3006,294 +3302,37 @@
    <appContext helpID="vcd_exporting_partial_vapp"
                path="vcd/vcd_exporting_partial_vapp.html"/>
    <appContext helpID="vapp_export_options" path="vcd/vapp_export_options.html"/>
-   <appContext helpID="saas_workloads" path="saas/saas_workloads.html"/>
-   <appContext helpID="jira" path="jira/jira.html"/>
-   <appContext helpID="jira_instance_details" path="jira/jira_instance_details.html"/>
-   <appContext helpID="jira_viewing_details" path="jira/jira_viewing_details.html"/>
-   <appContext helpID="jira_analyzing_data" path="jira/jira_analyzing_data.html"/>
-   <appContext helpID="jira_supported_data_types"
-               path="jira/jira_supported_data_types.html"/>
-   <appContext helpID="jira_regions" path="jira/jira_regions.html"/>
-   <appContext helpID="jira_oauth_authentication"
-               path="jira/jira_oauth_authentication.html"/>
-   <appContext helpID="jira_rbac_required_permissions"
-               path="jira/jira_rbac_required_permissions.html"/>
-   <appContext helpID="jira_adding_instance" path="jira/jira_adding_instance.html"/>
-   <appContext helpID="jira_deleting_instance" path="jira/jira_deleting_instance.html"/>
-   <appContext helpID="jira_reauthenticate" path="jira/jira_reauthenticate.html"/>
-   <appContext helpID="jira_protection_sla_domain"
-               path="jira/jira_protection_sla_domain.html"/>
-   <appContext helpID="jira_backups" path="jira/jira_backups.html"/>
-   <appContext helpID="jira_taking_on_demand_snapshots"
-               path="jira/jira_taking_on_demand_snapshots.html"/>
-   <appContext helpID="jira_recovery" path="jira/jira_recovery.html"/>
-   <appContext helpID="jira_relationships" path="jira/jira_relationships.html"/>
-   <appContext helpID="jira_restoring_issue" path="jira/jira_restoring_issue.html"/>
-   <appContext helpID="jira_restore_issue_keys"
-               path="jira/jira_restore_issue_keys.html"/>
-   <appContext helpID="jira_restoring_settings"
-               path="jira/jira_restoring_settings.html"/>
-   <appContext helpID="salesforce_management"
-               path="salesforce/salesforce_management.html"/>
-   <appContext helpID="monitoring_salesforce_organizations"
-               path="salesforce/monitoring_salesforce_organizations.html"/>
-   <appContext helpID="salesforce_dashboard_details"
-               path="salesforce/salesforce_dashboard_details.html"/>
-   <appContext helpID="salesforce_supported_data_types"
-               path="salesforce/salesforce_supported_data_types.html"/>
-   <appContext helpID="salesforce_regions" path="salesforce/salesforce_regions.html"/>
-   <appContext helpID="salesforce_apis" path="salesforce/salesforce_apis.html"/>
-   <appContext helpID="salesforce_permissions"
-               path="salesforce/salesforce_permissions.html"/>
-   <appContext helpID="salesforce_configuring_permissions"
-               path="salesforce/salesforce_configuring_permissions.html"/>
-   <appContext helpID="salesforce_required_permissions"
-               path="salesforce/salesforce_required_permissions.html"/>
-   <appContext helpID="salesforce_limitations"
-               path="salesforce/salesforce_protection_limitations.html"/>
-   <appContext helpID="salesforce_rbac" path="salesforce/salesforce_rbac.html"/>
-   <appContext helpID="salesforce_adding_instance"
-               path="salesforce/salesforce_adding_instance.html"/>
-   <appContext helpID="salesforce_removing_org"
-               path="salesforce/salesforce_removing_org.html"/>
-   <appContext helpID="salesforce_running_perms_check"
-               path="salesforce/salesforce_running_perms_check.html"/>
-   <appContext helpID="salesforce_managing_excluded_perms"
-               path="salesforce/salesforce_managing_excluded_perms.html"/>
-   <appContext helpID="salesforce_monitoring_api"
-               path="salesforce/salesforce_monitoring_api.html"/>
-   <appContext helpID="changing_api_limits_sf_org"
-               path="salesforce/changing_api_limits_sf_org.html"/>
-   <appContext helpID="salesforce_api_usage_details"
-               path="salesforce/salesforce_api_usage_details.html"/>
-   <appContext helpID="salesforce_backup_recovery"
-               path="salesforce/salesforce_backup_recovery.html"/>
-   <appContext helpID="managing_salesforce_data_protection"
-               path="salesforce/managing_salesforce_data_protection.html"/>
-   <appContext helpID="salesforce_taking_on_demand_snapshot"
-               path="salesforce/salesforce_taking_on_demand_snapshot.html"/>
-   <appContext helpID="salesforce_recovering_records"
-               path="salesforce/salesforce_recovering_records.html"/>
-   <appContext helpID="salesforce_recovering_objects"
-               path="salesforce/salesforce_recovering_objects.html"/>
-   <appContext helpID="salesforce_recovering_object_metadata"
-               path="salesforce/salesforce_recovering_object_metadata.html"/>
-   <appContext helpID="salesforce_recovering_general_metadata"
-               path="salesforce/salesforce_recovering_general_metadata.html"/>
-   <appContext helpID="salesforce_gen_metadata_types"
-               path="salesforce/salesforce_gen_metadata_types.html"/>
-   <appContext helpID="salesforce_rubrik_def_metadata"
-               path="salesforce/salesforce_rubrik_def_metadata.html"/>
-   <appContext helpID="salesforce_seeding" path="salesforce/salesforce_seeding.html"/>
-   <appContext helpID="salesforce_creating_data_seed_template"
-               path="salesforce/salesforce_creating_data_seed_templates.html"/>
-   <appContext helpID="salesforce_create_obj_meta_temp"
-               path="salesforce/salesforce_create_obj_meta_temp.html"/>
-   <appContext helpID="salesforce_create_gen_meta_temp"
-               path="salesforce/salesforce_create_gen_meta_temp.html"/>
-   <appContext helpID="salesforce_editing_seed_template"
-               path="salesforce/salesforce_editing_seed_template.html"/>
-   <appContext helpID="salesforce_deleting_seed_template"
-               path="salesforce/salesforce_deleting_seed_template.html"/>
-   <appContext helpID="salesforce_cloning_seed_template"
-               path="salesforce/salesforce_cloning_seed_template.html"/>
-   <appContext helpID="salesforce_seed_data"
-               path="salesforce/salesforce_seed_data.html"/>
-   <appContext helpID="salesforce_seed_metadata"
-               path="salesforce/salesforce_seed_metadata.html"/>
-   <appContext helpID="salesforce_data_analysis"
-               path="salesforce/salesforce_data_analysis.html"/>
-   <appContext helpID="analyzing_salesforce_data"
-               path="salesforce/analyzing_salesforce_data.html"/>
-   <appContext helpID="salesforce_recovering_data_metadata"
-               path="salesforce/salesforce_recovering_data_metadata.html"/>
-   <appContext helpID="salesforce_dashboard_details"
-               path="salesforce/salesforce_dashboard_details.html"/>
-   <appContext helpID="saas_managing_protection"
-               path="common/saas_managing_protection.html"/>
-   <appContext helpID="saas_creating_sla_domains"
-               path="common/saas_creating_sla_domains.html"/>
-   <appContext helpID="saas_deleting_sla_domain"
-               path="common/saas_deleting_sla_domain.html"/>
-   <appContext helpID="saas_events" path="common/saas_events.html"/>
-   <appContext helpID="jira_viewing_events" path="common/saas_viewing_events.html"/>
-   <appContext helpID="jira_events_filter" path="common/saas_events_filter.html"/>
-   <appContext helpID="jira_data_event_backup_failure"
-               path="jira/jira_data_event_backup_failure.html"/>
-   <appContext helpID="saas_viewing_audit_logs"
-               path="common/saas_viewing_audit_logs.html"/>
-   <appContext helpID="jira_audit_logs" path="common/saas_audit_logs.html"/>
-   <appContext helpID="jira_downloading_file_prepration_center"
-               path="common/saas_downloading_file_prep_center.html"/>
-   <appContext helpID="saas_file_preparation_center"
-               path="common/saas_file_preparation_center.html"/>
-   <appContext helpID="sass_reporting" path="common/sass_reporting.html"/>
-   <appContext helpID="saas_creating_reports_instances"
-               path="common/saas_creating_reports_instances.html"/>
-   <appContext helpID="saas_report_templates" path="common/saas_report_templates.html"/>
-   <appContext helpID="ad_protection" path="adds/ad_protection.html"/>
-   <appContext helpID="active_directory_forest"
-               path="adds/active_directory_forest.html"/>
-   <appContext helpID="ad_forest_protection_recovery_benefits"
-               path="adds/ad_forest_protection_recovery_benefits.html"/>
-   <appContext helpID="ad_forest_discovery" path="adds/ad_forest_discovery.html"/>
-   <appContext helpID="adding_ad_domain_controller"
-               path="adds/adding_ad_domain_controller.html"/>
-   <appContext helpID="deleting_ad_domain_controller"
-               path="adds/deleting_ad_domain_controller.html"/>
-   <appContext helpID="ad_forest_inventory_management"
-               path="adds/ad_forest_inventory_management.html"/>
-   <appContext helpID="ad_forests_domains_info"
-               path="adds/ad_forests_domains_info.html"/>
-   <appContext helpID="info_ad_domain_controllers"
-               path="adds/ad_domain_controllers_info.html"/>
-   <appContext helpID="ad_forest_protection" path="adds/ad_forest_protection.html"/>
-   <appContext helpID="ad_forest_protection_recovery_hierarchy"
-               path="adds/ad_forest_protection_recovery_hierarchy.html"/>
-   <appContext helpID="managing_protection_ad_forest"
-               path="adds/managing_protection_ad_forest.html"/>
-   <appContext helpID="recovering_ad_forest" path="adds/recovering_ad_forest.html"/>
-   <appContext helpID="ad_forest_recovery_health_checks"
-               path="adds/ad_forest_recovery_health_checks.html"/>
-   <appContext helpID="ad_ahr_prereq" path="adds/ad_ahr_prereq.html"/>
-   <appContext helpID="ad_host_promotion_prereqs"
-               path="adds/ad_host_promotion_prereqs.html"/>
-   <appContext helpID="adfr_bmr_prereq" path="adds/adfr_bmr_prereq.html"/>
-   <appContext helpID="tracking_ad_forest_recovery"
-               path="adds/tracking_ad_forest_recovery.html"/>
-   <appContext helpID="ad_forest_recovery_advanced_settings_options_"
-               path="adds/ad_forest_recovery_advanced_settings_options_.html"/>
-   <appContext helpID="ad_forest_recovery_using_replicated_snapshots"
-               path="adds/ad_forest_recovery_using_replicated_snapshots.html"/>
-   <appContext helpID="configuring_rbrk_clstr_primry_win_host"
-               path="adds/configuring_rbrk_clstr_primry_win_host.html"/>
-   <appContext helpID="active_directory_domain_dc"
-               path="adds/active_directory_domain_dc.html"/>
-   <appContext helpID="discovery_ad_domains_dc"
-               path="adds/discovery_ad_domains_dc.html"/>
-   <appContext helpID="adding_ad_domain_controller"
-               path="adds/adding_ad_domain_controller.html"/>
-   <appContext helpID="deleting_ad_domain_controller"
-               path="adds/deleting_ad_domain_controller.html"/>
-   <appContext helpID="viewing_ad_domain_controllers"
-               path="adds/viewing_ad_domain_controllers.html"/>
-   <appContext helpID="active_directory_inventory_management"
-               path="adds/active_directory_inventory_management.html"/>
-   <appContext helpID="info_ad_domains" path="adds/info_ad_domains.html"/>
-   <appContext helpID="info_ad_domain_controllers"
-               path="adds/ad_domain_controllers_info.html"/>
-   <appContext helpID="ad_domain_controller_protection"
-               path="adds/ad_domain_controller_protection.html"/>
-   <appContext helpID="protection_hierarchy_ad"
-               path="adds/protection_hierarchy_ad.html"/>
-   <appContext helpID="managing_protection_ad_objects"
-               path="adds/managing_protection_ad_objects.html"/>
-   <appContext helpID="active_directory_snapshots"
-               path="adds/active_directory_snapshots.html"/>
-   <appContext helpID="ad_snapshot_filters" path="adds/ad_snapshot_filters.html"/>
-   <appContext helpID="taking_ods_ad_domain_controller"
-               path="adds/taking_ods_ad_domain_controller.html"/>
-   <appContext helpID="changing_dc_snapshot_retention"
-               path="adds/changing_dc_snapshot_retention.html"/>
-   <appContext helpID="deleting_dc_snapshot" path="adds/deleting_dc_snapshot.html"/>
-   <appContext helpID="recovering_dc_snapshot" path="adds/recovering_dc_snapshot.html"/>
-   <appContext helpID="ad_dc_recovery_options" path="adds/ad_dc_recovery_options.html"/>
-   <appContext helpID="ad_ahr_prereq" path="adds/ad_ahr_prereq.html"/>
-   <appContext helpID="restoring_original_domain_controller"
-               path="adds/restoring_original_domain_controller.html"/>
-   <appContext helpID="restoring_dc_alternate_host"
-               path="adds/restoring_dc_alternate_host.html"/>
-   <appContext helpID="restoring_new_host_using_bmr"
-               path="adds/restoring_new_host_using_bmr.html"/>
-   <appContext helpID="restoring_ad_objects_using_granular_recovery"
-               path="adds/restoring_ad_objects_using_granular_recovery.html"/>
-   <appContext helpID="ad_objects_search" path="adds/ad_objects_search.html"/>
-   <appContext helpID="ad_object_conflict_during_recovery"
-               path="adds/ad_object_conflict_during_recovery.html"/>
-   <appContext helpID="restoring_objects_using_search_recovery"
-               path="adds/restoring_objects_using_search_recovery.html"/>
-   <appContext helpID="ad_object_comparison" path="adds/ad_object_comparison.html"/>
-   <appContext helpID="microsoft_entra_id" path="saas/ms_entra_id.html"/>
-   <appContext helpID="ms_entra_id_known_limits_rsc"
-               path="saas/ms_entra_id_known_limits_rsc.html"/>
-   <appContext helpID="ms_entra_id_non_recov_soft_del_obj_rsc"
-               path="saas/ms_entra_id_non_recov_soft_del_obj_rsc.html"/>
-   <appContext helpID="adding_entra_id_with_oauth"
-               path="saas/adding_entra_id_with_oauth.html"/>
-   <appContext helpID="adding_entra_id_without_oauth"
-               path="saas/adding_entra_id_without_oauth.html"/>
-   <appContext helpID="ms_entra_id_no_oauth_perms"
-               path="saas/ms_entra_id_no_oauth_perms.html"/>
-   <appContext helpID="ms_entra_id_protecting" path="saas/ms_entra_id_protecting.html"/>
-   <appContext helpID="ms_entra_id_taking_ods" path="saas/ms_entra_id_taking_ods.html"/>
-   <appContext helpID="ms_entra_id_deleting_snapshot"
-               path="saas/ms_entra_id_deleting_snapshot.html"/>
-   <appContext helpID="ms_entra_id_viewing_directories"
-               path="saas/ms_entra_id_viewing_directories.html"/>
-   <appContext helpID="ms_entra_id_snapshot_protection_details"
-               path="saas/ms_entra_id_snapshot_protection_details.html"/>
-   <appContext helpID="ms_entra_id_obj_relationship_recovery"
-               path="saas/ms_entra_id_obj_relationship_recovery.html"/>
-   <appContext helpID="ms_entra_id_relationship_recovery_modes"
-               path="saas/ms_entra_id_relationship_recovery_modes.html"/>
-   <appContext helpID="ms_entra_id_recov_user_obj_relationships"
-               path="saas/ms_entra_id_recov_user_obj_relationships.html"/>
-   <appContext helpID="ms_entra_id_recov_user_manual_pw"
-               path="saas/ms_entra_id_recov_user_manual_pw.html"/>
-   <appContext helpID="ms_entra_id_recovering_grp_obj_relationships"
-               path="saas/ms_entra_id_recovering_grp_obj_relationships.html"/>
-   <appContext helpID="ms_entra_id_recovering_roles_obj_relationships"
-               path="saas/ms_entra_id_recovering_roles_obj_relationships.html"/>
-   <appContext helpID="ms_entra_id_recovering_ent_apps"
-               path="saas/ms_entra_id_recovering_ent_apps.html"/>
-   <appContext helpID="ms_entra_id_recovering_app_reg"
-               path="saas/ms_entra_id_recovering_app_reg.html"/>
-   <appContext helpID="ms_entra_id_admin_units_recov"
-               path="saas/ms_entra_id_admin_units_recov.html"/>
-   <appContext helpID="ms_entra_id_recovering_admin_units"
-               path="saas/ms_entra_id_recovering_admin_units.html"/>
-   <appContext helpID="ms_entra_id_user_obj_attr_recov"
-               path="saas/ms_entra_id_user_obj_attr_recov.html"/>
-   <appContext helpID="ms_entra_id_recov_user_attr_pit"
-               path="saas/ms_entra_id_recov_user_attr_pit.html"/>
-   <appContext helpID="ms_entra_id_recov_user_attr_snap"
-               path="saas/ms_entra_id_recov_user_attr_snap.html"/>
-   <appContext helpID="ms_entra_id_obj_recov_across_snapshots"
-               path="saas/ms_entra_id_obj_recov_across_snapshots.html"/>
-   <appContext helpID="ms_entra_id_recov_users_across_snapshots"
-               path="saas/ms_entra_id_recov_users_across_snapshots.html"/>
-   <appContext helpID="ms_entra_id_recov_groups_across_snapshots"
-               path="saas/ms_entra_id_recov_groups_across_snapshots.html"/>
-   <appContext helpID="ms_entra_id_recov_roles_across_snapshots"
-               path="saas/ms_entra_id_recov_roles_across_snapshots.html"/>
-   <appContext helpID="ms_entra_id_conditional_access_recovery"
-               path="saas/ms_entra_id_conditional_access_recovery.html"/>
-   <appContext helpID="ms_entra_id_recov_cond_access_obj_rel"
-               path="saas/ms_entra_id_recov_cond_access_obj_rel.html"/>
-   <appContext helpID="ms_entra_id_recov_cond_access_pol_rel.dita"
-               path="saas/ms_entra_id_recov_cond_access_pol_rel.html"/>
-   <appContext helpID="ms_entra_id_recovery_hybrid_env"
-               path="saas/ms_entra_id_recovery_hybrid_env.html"/>
-   <appContext helpID="ms_entra_id_recovering_users_hybrid_env"
-               path="saas/ms_entra_id_recovering_users_hybrid_env.html"/>
-   <appContext helpID="ms_entra_id_recovering_users_hybrid_env_manual"
-               path="saas/ms_entra_id_recovering_users_hybrid_env_manual.html"/>
-   <appContext helpID="ms_entra_id_recovering_groups_hybrid_env"
-               path="saas/ms_entra_id_recovering_groups_hybrid_env.html"/>
-   <appContext helpID="ms_entra_id_full_domain_recovery"
-               path="saas/ms_entra_id_full_domain_recov.html"/>
-   <appContext helpID="ms_entra_id_recov_full_domain"
-               path="saas/ms_entra_id_recov_full_domain.html"/>
-   <appContext helpID="ms_entra_id_downloading_recovery_details"
-               path="saas/ms_entra_id_downloading_recovery_details.html"/>
-   <appContext helpID="ms_entra_id_recovery_details"
-               path="saas/ms_entra_id_recovery_details.html"/>
-   <appContext helpID="editing_ms_entra_id_directories_oauth"
-               path="saas/ms_entra_id_editing_directories_oauth.html"/>
-   <appContext helpID="ms_entra_id_editing_directories_without_oauth"
-               path="saas/ms_entra_id_editing_directories_without_oauth.html"/>
-   <appContext helpID="ms_entra_id_deleting_domains_directories"
-               path="saas/ms_entra_id_deleting_domains_directories.html"/>
+   <appContext helpID="windows_volume_groups" path="saas/windows_volume_groups.html"/>
+   <appContext helpID="viewing_the_windows_volume_group_details_page"
+               path="saas/wvg_viewing_windows_volumes_group_details.html"/>
+   <appContext helpID="windows_volume_group_object_details_page"
+               path="saas/wvg_windows_volumes_group_details.html"/>
+   <appContext helpID="rubrik_backup_service" path="saas/rubrik_backup_service.html"/>
+   <appContext helpID="obtaining_rubrik_backup_service_connector"
+               path="rbs/rbs_obtaining_connector.html"/>
+   <appContext helpID="registering_an_rbs_host"
+               path="saas/registering_an_rbs_host.html"/>
+   <appContext helpID="wvg_adding_a_windows_host"
+               path="saas/wvg_adding_a_windows_host.html"/>
+   <appContext helpID="protecting_a_windows_volume_group"
+               path="saas/wvg_protecting_a_windows_volume_group.html"/>
+   <appContext helpID="configuring_the_windows_volume_filter_driver"
+               path="saas/wvg_configuring_the_volume_filter_driver_on_a_windows_host.html"/>
+   <appContext helpID="taking_an_on_demand_snapshot_of_a_windows_volume_group"
+               path="saas/wvg_taking_an_on_demand_snapshot_of_a_windows_volumes_group.html"/>
+   <appContext helpID="wvg_volume_group_recovery"
+               path="saas/wvg_volume_group_recovery.html"/>
+   <appContext helpID="wvg_recover_files_folders_win_with_rbs"
+               path="saas/wvg_recover_files_folders_win_with_rbs.html"/>
+   <appContext helpID="wvg_creating_lm_win_with_rbs"
+               path="saas/wvg_creating_lm_win_with_rbs.html"/>
+   <appContext helpID="wvg_creating_lm_win_without_rbs"
+               path="saas/wvg_creating_lm_win_without_rbs.html"/>
+   <appContext helpID="wvg_bare_metal_recovery"
+               path="saas/wvg_bare_metal_recovery.html"/>
+   <appContext helpID="wvg_bmr_restore" path="saas/wvg_bmr_restore.html"/>
+   <appContext helpID="verifying_connectivity"
+               path="saas/wvg_verifying_connectivity.html"/>
    <appContext helpID="ibm_db2" path="db2/ibm_db2.html"/>
    <appContext helpID="requirements_db2_protection"
                path="db2/requirements_db2_protection.html"/>
@@ -4066,426 +4105,272 @@
                path="saas/mssql_recovering_multi_datacenter_avail_grp.html"/>
    <appContext helpID="mssql_unlinking_multi_datacenter_avail_grp"
                path="saas/mssql_unlinking_multi_datacenter_avail_grp.html"/>
-   <appContext helpID="fs_filesystems" path="saas/fs_filesystems.html"/>
-   <appContext helpID="fs_host_management_for_filesets"
-               path="saas/fs_host_management_for_filesets.html"/>
-   <appContext helpID="fs_fileset_host_details"
-               path="saas/fs_fileset_host_details.html"/>
-   <appContext helpID="fs_adding_a_fileset_host"
-               path="saas/fs_adding_a_fileset_host.html"/>
-   <appContext helpID="fs_removing_a_fileset_host"
-               path="saas/fs_removing_a_fileset_host.html"/>
-   <appContext helpID="fs_fileset_host_management_actions"
-               path="saas/fs_fileset_host_management_actions.html"/>
-   <appContext helpID="fs_filesets" path="saas/fs_filesets.html"/>
-   <appContext helpID="fileset_fields_rules_value_types"
-               path="common/fileset_fields_rules_value_types.html"/>
-   <appContext helpID="host_specific_fileset_desc_rules"
-               path="common/host_specific_fileset_desc_rules.html"/>
-   <appContext helpID="accepted_values_fileset_descs"
-               path="common/accepted_values_fileset_descs.html"/>
-   <appContext helpID="fileset_description_rules"
-               path="common/fileset_description_rules.html"/>
-   <appContext helpID="fileset_regular_expression_handling"
-               path="common/fileset_regular_expression_handling.html"/>
-   <appContext helpID="fileset_regular_expression_conversions"
-               path="common/fileset_regular_expression_conversions.html"/>
-   <appContext helpID="common_fileset_use_cases"
-               path="saas/common_fileset_use_cases.html"/>
-   <appContext helpID="fs_fileset_details" path="saas/fs_fileset_details.html"/>
-   <appContext helpID="fs_creating_fileset" path="saas/fs_creating_fileset.html"/>
-   <appContext helpID="fs_deleting_a_fileset_from_a_host"
-               path="saas/fs_deleting_a_fileset_from_a_host.html"/>
-   <appContext helpID="fs_deleting_a_fileset_from_the_cluster"
-               path="saas/fs_deleting_a_fileset_from_the_cluster.html"/>
-   <appContext helpID="fs_fileset_management_actions"
-               path="saas/fs_fileset_management_actions.html"/>
-   <appContext helpID="fs_fileset_protection_for_hosts"
-               path="saas/fs_fileset_protection_for_hosts.html"/>
-   <appContext helpID="fs_protecting_a_host_fileset"
-               path="saas/fs_protecting_a_host_fileset.html"/>
-   <appContext helpID="fs_taking_on_demand_snapshot_of_a_host_fileset"
-               path="saas/fs_taking_on_demand_snapshot_of_a_host_fileset.html"/>
-   <appContext helpID="fs_removing_protection_for_host_fileset"
-               path="saas/fs_removing_protection_for_host_fileset.html"/>
-   <appContext helpID="backup_throttle_host_filesets"
-               path="saas/backup_throttle_host_filesets.html"/>
-   <appContext helpID="configuring_backup_throttle_fileset"
-               path="saas/configuring_backup_throttle_fileset.html"/>
-   <appContext helpID="fs_fileset_protection_for_failover_clusters"
-               path="saas/fs_fileset_protection_for_failover_clusters.html"/>
-   <appContext helpID="fs_protection_hierarchy_for_failover_clusters"
-               path="saas/fs_protection_hierarchy_for_failover_clusters.html"/>
-   <appContext helpID="fs_creating_a_failover_cluster"
-               path="saas/fs_creating_a_failover_cluster.html"/>
-   <appContext helpID="fs_failover_cluster_management_actions"
-               path="saas/fs_failover_cluster_management_actions.html"/>
-   <appContext helpID="fs_creating_a_failover_cluster_service"
-               path="saas/fs_creating_a_failover_cluster_service.html"/>
-   <appContext helpID="fs_failover_cluster_service_management_actions"
-               path="saas/fs_failover_cluster_service_management_actions.html"/>
-   <appContext helpID="fs_managing_protection_for_failover_clusters"
-               path="saas/fs_managing_protection_for_failover_clusters.html"/>
-   <appContext helpID="fs_managing_protection_for_failover_cluster_services"
-               path="saas/fs_managing_protection_for_failover_cluster_services.html"/>
-   <appContext helpID="fs_managing_protection_for_filesets"
-               path="saas/fs_managing_protection_for_filesets.html"/>
-   <appContext helpID="fs_local_pages_for_fileset_objects"
-               path="saas/fs_local_pages_for_fileset_objects.html"/>
-   <appContext helpID="fs_viewing_the_fileset_host_local_page"
-               path="saas/fs_viewing_the_fileset_host_local_page.html"/>
-   <appContext helpID="fs_viewing_the_failover_cluster_service_local_page"
-               path="saas/fs_viewing_the_failover_cluster_service_local_page.html"/>
-   <appContext helpID="fs_overview_tab_details"
-               path="saas/fs_overview_tab_details.html"/>
-   <appContext helpID="fs_overview_tab_actions_list"
-               path="saas/fs_overview_tab_actions_list.html"/>
-   <appContext helpID="fs_snapshots_card_for_filesets"
-               path="saas/fs_snapshots_card_for_filesets.html"/>
-   <appContext helpID="fs_snapshots_card_calendar_view"
-               path="saas/fs_snapshots_card_calendar_view.html"/>
-   <appContext helpID="fs_snapshots_tab_for_filesets"
-               path="saas/fs_snapshots_tab_for_filesets.html"/>
-   <appContext helpID="fs_changing_the_retention_policy_for_fileset_snapshot"
-               path="saas/fs_changing_the_retention_policy_for_fileset_snapshot.html"/>
-   <appContext helpID="fs_deleting_fileset_snapshots"
-               path="saas/fs_deleting_fileset_snapshots.html"/>
-   <appContext helpID="fs_data_recovery_from_a_host_fileset"
-               path="saas/fs_data_recovery_from_a_host_fileset.html"/>
-   <appContext helpID="fs_locating_a_fileset_snapshot_for_recovery"
-               path="saas/fs_locating_a_fileset_snapshot_for_recovery.html"/>
-   <appContext helpID="fs_searching_for_a_file_or_folder_for_recovery"
-               path="saas/fs_searching_for_a_file_or_folder_for_recovery.html"/>
-   <appContext helpID="fs_downloading_data_fileset_snapshot"
-               path="saas/fs_downloading_data_fileset_snapshot.html"/>
-   <appContext helpID="fs_restoring_fileset_snapshot_data_src"
-               path="saas/fs_restoring_fileset_snapshot_data_src.html"/>
-   <appContext helpID="fs_restoring_fileset_snaps_data_new_loc"
-               path="saas/fs_restoring_fileset_snaps_data_new_loc.html"/>
-   <appContext helpID="fs_export_path" path="saas/fs_export_path.html"/>
-   <appContext helpID="fs_exporting_fileset_snapshot_data"
-               path="saas/fs_exporting_fileset_snapshot_data.html"/>
-   <appContext helpID="k8s_workload_protection"
-               path="kubernetes/k8s_workload_protection.html"/>
-   <appContext helpID="k8s_deployment_architecture"
-               path="kubernetes/k8s_deployment_architecture.html"/>
-   <appContext helpID="k8s_prereqs" path="kubernetes/k8s_prereqs.html"/>
-   <appContext helpID="k8s_prereqs_aws_eks" path="kubernetes/k8s_prereqs_aws_eks.html"/>
-   <appContext helpID="k8s_prereqs_rosa" path="kubernetes/k8s_prereqs_rosa.html"/>
-   <appContext helpID="k8s_volume_snapshot_prereq"
-               path="kubernetes/k8s_volume_snapshot_prereq.html"/>
-   <appContext helpID="k8s_csi_driver_prereq"
-               path="kubernetes/k8s_csi_driver_prereq.html"/>
-   <appContext helpID="k8s_storage_class_prereq"
-               path="kubernetes/k8s_storage_class_prereq.html"/>
-   <appContext helpID="k8s_volume_snapshot_class_prereq"
-               path="kubernetes/k8s_volume_snapshot_class_prereq.html"/>
-   <appContext helpID="k8s_taking_a_volume_snapshot"
-               path="kubernetes/k8s_taking_a_volume_snapshot.html"/>
-   <appContext helpID="k8s_protection" path="kubernetes/k8s_protection.html"/>
-   <appContext helpID="k8s_supported_distributions"
-               path="kubernetes/k8s_supported_distributions.html"/>
-   <appContext helpID="rubrik_cluster_access_to_kubernetes_data"
-               path="kubernetes/rubrik_cluster_access_to_kubernetes_data.html"/>
-   <appContext helpID="k8s_protect_prereqs" path="kubernetes/k8s_protect_prereqs.html"/>
-   <appContext helpID="supported_mirrored_registry_methods"
-               path="kubernetes/supported_mirrored_registry_methods.html"/>
-   <appContext helpID="k8s_protection_prereqs_onprem"
-               path="kubernetes/k8s_protection_prereqs_onprem.html"/>
-   <appContext helpID="k8s_prereqs_azure_aks"
-               path="kubernetes/k8s_prereqs_azure_aks.html"/>
-   <appContext helpID="k8s_restoring_protection_set_snapshots"
-               path="kubernetes/k8s_restoring_protection_set_snapshots.html"/>
-   <appContext helpID="k8s_restore_pvc_snapshots_k8s_protect"
-               path="kubernetes/k8s_restore_pvc_snapshots_k8s_protect.html"/>
-   <appContext helpID="k8s_restore_snpsht_resources_k8s_protect"
-               path="kubernetes/k8s_restore_snpsht_resources_k8s_protect.html"/>
-   <appContext helpID="placing_k8s_snapshots_legal_hold"
-               path="kubernetes/placing_k8s_snapshots_legal_hold.html"/>
-   <appContext helpID="k8s_cluster_onboard_discover_rsc"
-               path="kubernetes/k8s_cluster_onboard_discover_rsc.html"/>
-   <appContext helpID="k8s_default_protection_sets"
-               path="kubernetes/k8s_default_protection_sets.html"/>
-   <appContext helpID="k8s_adding_k8s_cluster"
-               path="kubernetes/k8s_adding_k8s_cluster.html"/>
-   <appContext helpID="k8s_adding_amazon_eks_cluster"
-               path="kubernetes/k8s_adding_amazon_eks_cluster.html"/>
-   <appContext helpID="k8s_editing_kubernetes_cluster"
-               path="kubernetes/k8s_editing_kubernetes_cluster.html"/>
-   <appContext helpID="k8s_manifest_based_onboarding_resources"
-               path="kubernetes/k8s_manifest_based_onboarding_resources.html"/>
-   <appContext helpID="k8s_deleting_k8s_cluster"
-               path="kubernetes/k8s_deleting_k8s_cluster.html"/>
-   <appContext helpID="k8s_viewing_manifest_file"
-               path="kubernetes/k8s_viewing_manifest_file.html"/>
-   <appContext helpID="k8s_refreshing_k8s_cluster"
-               path="kubernetes/k8s_refreshing_k8s_cluster.html"/>
-   <appContext helpID="regenerating_manifest_file"
-               path="kubernetes/regenerating_manifest_file.html"/>
-   <appContext helpID="least_privilege_configuration_K8S"
-               path="kubernetes/k8s_least_privilege_configuration.html"/>
-   <appContext helpID="k8s_configuring_perms_kubeconfig"
-               path="kubernetes/k8s_configuring_perms_kubeconfig.html"/>
-   <appContext helpID="k8s_configuring_namespace_protection"
-               path="kubernetes/k8s_configuring_namespace_protection.html"/>
-   <appContext helpID="k8s_configuring_perms_specific_resources"
-               path="kubernetes/k8s_configuring_perms_specific_resources.html"/>
-   <appContext helpID="post_onboarding_perms_updates"
-               path="kubernetes/post_onboarding_perms_updates.html"/>
-   <appContext helpID="kubernetes_labels" path="kubernetes/kubernetes_labels.html"/>
-   <appContext helpID="kubernetes_label_recommendations_limitations"
-               path="kubernetes/kubernetes_label_recommendations_limitations.html"/>
-   <appContext helpID="assigning_sla_domains_kubernetes_labels"
-               path="kubernetes/assigning_sla_domains_kubernetes_labels.html"/>
-   <appContext helpID="viewing_k8s_labels_rsc"
-               path="kubernetes/viewing_k8s_labels_rsc.html"/>
-   <appContext helpID="recovering_files_using_kubernetes_labels"
-               path="kubernetes/recovering_files_using_kubernetes_labels.html"/>
-   <appContext helpID="exporting_snapshots_created_k8s_labels"
-               path="kubernetes/exporting_snapshots_created_k8s_labels.html"/>
-   <appContext helpID="k8s_cluster_protection_set"
-               path="kubernetes/k8s_cluster_protection_set.html"/>
-   <appContext helpID="k8s_protection_set_updates_rsc"
-               path="kubernetes/k8s_protection_set_updates_rsc.html"/>
-   <appContext helpID="k8s_creating_custom_protection_set"
-               path="kubernetes/k8s_creating_custom_protection_set.html"/>
-   <appContext helpID="k8s_creating_dflt_protec_set_namespace"
-               path="kubernetes/k8s_creating_dflt_protec_set_namespace.html"/>
-   <appContext helpID="k8s_editing_protection_set"
-               path="kubernetes/k8s_editing_protection_set.html"/>
-   <appContext helpID="k8s_disabling_default_protection_set"
-               path="kubernetes/k8s_disabling_default_protection_set.html"/>
-   <appContext helpID="k8s_deleting_protection_set_rsc"
-               path="kubernetes/k8s_deleting_protection_set_rsc.html"/>
-   <appContext helpID="k8s_browse_kubernetes_snapshots"
-               path="kubernetes/k8s_browse_kubernetes_snapshots.html"/>
-   <appContext helpID="k8s_browsing_kubernetes_snapshots"
-               path="kubernetes/k8s_browsing_kubernetes_snapshots.html"/>
-   <appContext helpID="k8s_openshift_clusters"
-               path="kubernetes/k8s_openshift_clusters.html"/>
-   <appContext helpID="k8s_limitations_openshift_clusters"
-               path="kubernetes/k8s_limitations_openshift_clusters.html"/>
-   <appContext helpID="k8s_performing_ods_openshift_clusters"
-               path="kubernetes/k8s_performing_ods_openshift_clusters.html"/>
-   <appContext helpID="k8s_openshift_recovering_files"
-               path="kubernetes/k8s_openshift_recovering_files.html"/>
-   <appContext helpID="k8s_exporting_openshift_snapshots"
-               path="kubernetes/k8s_exporting_openshift_snapshots.html"/>
-   <appContext helpID="k8s_workload_protection_policies"
-               path="kubernetes/k8s_workload_protection_policies.html"/>
-   <appContext helpID="post_onboarding_perms_updates"
-               path="kubernetes/post_onboarding_perms_updates.html"/>
-   <appContext helpID="k8s_protection_hierarchy"
-               path="kubernetes/k8s_protection_hierarchy.html"/>
-   <appContext helpID="k8s_managing_workload_protection"
-               path="kubernetes/k8s_managing_workload_protection.html"/>
-   <appContext helpID="k8s_taking_protection_set_ods"
-               path="kubernetes/k8s_taking_protection_set_ods.html"/>
-   <appContext helpID="k8s_snapshot_retention"
-               path="kubernetes/k8s_snapshot_retention.html"/>
-   <appContext helpID="k8s_changing_retention_for_ods_snapshots"
-               path="kubernetes/k8s_changing_retention_for_ods_snapshots.html"/>
-   <appContext helpID="k8s_deleting_snapshot"
-               path="kubernetes/k8s_deleting_snapshot.html"/>
-   <appContext helpID="K8s_crd_rsc" path="kubernetes/K8s_crd_rsc.html"/>
-   <appContext helpID="k8s_clusterroles" path="kubernetes/k8s_clusterroles.html"/>
-   <appContext helpID="k8s_crd_prerqs" path="kubernetes/k8s_crd_prerqs.html"/>
-   <appContext helpID="k8s_custom_resources_k8s_protection"
-               path="kubernetes/k8s_custom_resources_k8s_protection.html"/>
-   <appContext helpID="k8s_validate_k8s_cluster_resources"
-               path="kubernetes/k8s_validate_k8s_cluster_resources.html"/>
-   <appContext helpID="k8s_create_bindings_k8s_crd"
-               path="kubernetes/k8s_create_bindings_k8s_crd.html"/>
-   <appContext helpID="k8s_hook_crd" path="kubernetes/k8s_hook_crd.html"/>
-   <appContext helpID="k8s_hook_spec_and_status_fields"
-               path="kubernetes/k8s_hook_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_hook_example" path="kubernetes/k8s_hook_example.html"/>
-   <appContext helpID="k8s_cluster" path="kubernetes/k8s_cluster.html"/>
-   <appContext helpID="k8s_cluster_spec_and_status_fields"
-               path="kubernetes/k8s_cluster_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_cluster_example" path="kubernetes/k8s_cluster_example.html"/>
-   <appContext helpID="k8s_protectionset" path="kubernetes/k8s_protectionset.html"/>
-   <appContext helpID="k8s_protectionset_spec_fields"
-               path="kubernetes/k8s_protectionset_spec_fields.html"/>
-   <appContext helpID="k8s_protectionset_example"
-               path="kubernetes/k8s_protectionset_example.html"/>
-   <appContext helpID="k8s_recoveryjob" path="kubernetes/k8s_recoveryjob.html"/>
-   <appContext helpID="k8s_recoveryjob_spec_and_status_fields"
-               path="kubernetes/k8s_recoveryjob_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_recoveryjob_example"
-               path="kubernetes/k8s_recoveryjob_example.html"/>
-   <appContext helpID="k8s_rubrikcluster" path="kubernetes/k8s_rubrikcluster.html"/>
-   <appContext helpID="k8s_rubrikcluster_spec_and_status_fields"
-               path="kubernetes/k8s_rubrikcluster_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_rubrikcluster_example"
-               path="kubernetes/k8s_rubrikcluster_example.html"/>
-   <appContext helpID="k8s_sladomain" path="kubernetes/k8s_sladomain.html"/>
-   <appContext helpID="k8s_sladomain_spec_and_status_fields"
-               path="kubernetes/k8s_sladomain_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_sladomain_example"
-               path="kubernetes/k8s_sladomain_example.html"/>
-   <appContext helpID="k8s_snapshot" path="kubernetes/k8s_snapshot.html"/>
-   <appContext helpID="k8s_snapshot_spec_and_status_fields"
-               path="kubernetes/k8s_snapshot_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_snapshot_example"
-               path="kubernetes/k8s_snapshot_example.html"/>
-   <appContext helpID="k8s_snapshotjob" path="kubernetes/k8s_snapshotjob.html"/>
-   <appContext helpID="snapshotjob_spec_and_status_fields"
-               path="kubernetes/k8s_snapshotjob_spec_and_status_fields.html"/>
-   <appContext helpID="k8s_snapshotjob_example"
-               path="kubernetes/k8s_snapshotjob_example.html"/>
-   <appContext helpID="anomaly_detection_k8"
-               path="kubernetes/anomaly_detection_k8.html"/>
-   <appContext helpID="mv_managed_volumes_sla_managed_volumes"
-               path="managedvolumes/mv_managed_volumes_sla_managed_volumes.html"/>
-   <appContext helpID="mv_versus_sla_managed_volumes"
-               path="managedvolumes/mv_versus_sla_managed_volumes.html"/>
-   <appContext helpID="mv_setup_requirements_slamv"
-               path="managedvolumes/mv_setup_requirements_slamv.html"/>
-   <appContext helpID="mv_channel_guidelines"
-               path="managedvolumes/mv_channel_guidelines.html"/>
-   <appContext helpID="mv_floating_ip_addresses"
-               path="managedvolumes/mv_floating_ip_addresses.html"/>
-   <appContext helpID="rbk_setting_up_floating_ip_addresses"
-               path="managedvolumes/rbk_setting_up_floating_ip_addresses.html"/>
-   <appContext helpID="mv_managed_volume_configuration"
-               path="managedvolumes/mv_managed_volume_configuration.html"/>
-   <appContext helpID="mv_managed_volume_application_tags"
-               path="managedvolumes/mv_managed_volume_application_tags.html"/>
-   <appContext helpID="mv_creating_mv" path="managedvolumes/mv_creating_mv.html"/>
-   <appContext helpID="mv_editing_mv_rsc" path="managedvolumes/mv_editing_mv_rsc.html"/>
-   <appContext helpID="mv_sla_mv_configuration"
-               path="managedvolumes/mv_sla_mv_configuration.html"/>
-   <appContext helpID="mv_backup_script_settings"
-               path="managedvolumes/mv_backup_script_settings.html"/>
-   <appContext helpID="mv_prohibited_mount_points_script_dirs_sla_mv"
-               path="managedvolumes/mv_prohibited_mount_points_script_dirs_sla_mv.html"/>
-   <appContext helpID="mv_creating_sla_mv"
-               path="managedvolumes/mv_creating_sla_mv.html"/>
-   <appContext helpID="mv_editing_sla_mv" path="managedvolumes/mv_editing_sla_mv.html"/>
-   <appContext helpID="mv_resizing_a_managed_volume_sla_managed_volume"
-               path="managedvolumes/mv_resizing_a_managed_volume_sla_managed_volume.html"/>
-   <appContext helpID="mv_deleting_managed_volume_sla_managed_volume"
-               path="managedvolumes/mv_deleting_managed_volume_sla_managed_volume.html"/>
-   <appContext helpID="mv_managed_volume_object_details"
-               path="managedvolumes/mv_managed_volume_object_details.html"/>
-   <appContext helpID="mv_viewing_managed_volume_object_details"
-               path="managedvolumes/mv_viewing_managed_volume_object_details.html"/>
-   <appContext helpID="mv_overview_details"
-               path="managedvolumes/mv_overview_details.html"/>
-   <appContext helpID="mv_overview_actions"
-               path="managedvolumes/mv_overview_actions.html"/>
-   <appContext helpID="mv_events_details" path="managedvolumes/mv_events_details.html"/>
-   <appContext helpID="mv_view_mv_events" path="managedvolumes/mv_view_mv_events.html"/>
-   <appContext helpID="mv_snapshots_details"
-               path="managedvolumes/mv_snapshots_details.html"/>
-   <appContext helpID="mv_snapshot_actions"
-               path="managedvolumes/mv_snapshot_actions.html"/>
-   <appContext helpID="mv_taking_a_managed_volume_snapshot"
-               path="managedvolumes/mv_taking_a_managed_volume_snapshot.html"/>
-   <appContext helpID="mv_taking_ondemand_slamv_snapshot"
-               path="managedvolumes/mv_taking_ondemand_slamv_snapshot.html"/>
-   <appContext helpID="mv_placing_snapshot_legalhold"
-               path="managedvolumes/mv_placing_snapshot_legalhold.html"/>
-   <appContext helpID="mv_recovering_files_folders"
-               path="managedvolumes/mv_recovering_files_folders.html"/>
-   <appContext helpID="mv_live_mount_from_mv_snapshots"
-               path="managedvolumes/mv_live_mount_from_mv_snapshots.html"/>
-   <appContext helpID="mv_creating_livemount_mv_snapshot"
-               path="managedvolumes/mv_creating_livemount_mv_snapshot.html"/>
-   <appContext helpID="mv_creating_livemount_sla"
-               path="managedvolumes/mv_creating_livemount_slamv_snapshot.html"/>
-   <appContext helpID="mv_unmounting_mv_live_mount"
-               path="managedvolumes/mv_unmounting_mv_live_mount.html"/>
-   <appContext helpID="mv_changing_retention_snapshot"
-               path="managedvolumes/mv_changing_retention_snapshot.html"/>
-   <appContext helpID="mv_deleting_managed_volumes_snapshots"
-               path="managedvolumes/mv_deleting_managed_volumes_snapshots.html"/>
-   <appContext helpID="mv_managed_volume_snapshot_management"
-               path="managedvolumes/mv_managed_volume_snapshot_management.html"/>
-   <appContext helpID="mv_scripted_backups_snapshots_with_assigned_sla_domain"
-               path="managedvolumes/mv_scripted_backups_snapshots_with_assigned_sla_domain.html"/>
-   <appContext helpID="mv_custom_sla_domains_for_sla_managed_volumes"
-               path="managedvolumes/mv_custom_sla_domains_for_sla_managed_volumes.html"/>
-   <appContext helpID="mv_protecting_mv_slamv"
-               path="managedvolumes/mv_protecting_mv_slamv.html"/>
-   <appContext helpID="microsoft_dynamics_365"
-               path="microsoft_dynamics_365/microsoft_dynamics_365.html"/>
-   <appContext helpID="d365_microsoft_dataverse"
-               path="microsoft_dynamics_365/d365_microsoft_dataverse.html"/>
-   <appContext helpID="d365_key_features_protection"
-               path="microsoft_dynamics_365/d365_key_features_protection.html"/>
-   <appContext helpID="d365_common_terms_protection"
-               path="microsoft_dynamics_365/d365_common_terms_protection.html"/>
-   <appContext helpID="d365_comm_rsc_dynamics_subs"
-               path="microsoft_dynamics_365/d365_comm_rsc_dynamics_subs.html"/>
-   <appContext helpID="d365_planning_protection"
-               path="microsoft_dynamics_365/d365_planning_protection.html"/>
-   <appContext helpID="d365_rsc_user_management"
-               path="microsoft_dynamics_365/d365_rsc_user_management.html"/>
-   <appContext helpID="d365_creating_custom_role"
-               path="microsoft_dynamics_365/d365_creating_custom_role.html"/>
-   <appContext helpID="d365_admin_permissions"
-               path="microsoft_dynamics_365/d365_admin_permissions.html"/>
-   <appContext helpID="d365_reqs_protection"
-               path="microsoft_dynamics_365/d365_reqs_protection.html"/>
-   <appContext helpID="d365_req_perms_protection"
-               path="microsoft_dynamics_365/d365_req_perms_protection.html"/>
-   <appContext helpID="d365_setup" path="microsoft_dynamics_365/d365_setup.html"/>
-   <appContext helpID="d365_recommendations_add_subs"
-               path="microsoft_dynamics_365/d365_recommendations_add_subs.html"/>
-   <appContext helpID="d365_supp_regions_protection"
-               path="microsoft_dynamics_365/d365_regions.html"/>
-   <appContext helpID="d365_adding_subs_protection"
-               path="microsoft_dynamics_365/d365_adding_subs_protection.html"/>
-   <appContext helpID="d365_protection_setup"
-               path="microsoft_dynamics_365/d365_protection_setup.html"/>
-   <appContext helpID="d365_retention_lock"
-               path="microsoft_dynamics_365/d365_retention_lock.html"/>
-   <appContext helpID="d365_protection_config"
-               path="microsoft_dynamics_365/d365_protection_config.html"/>
-   <appContext helpID="saas_creating_sla_domains"
-               path="common/saas_creating_sla_domains.html"/>
-   <appContext helpID="d365_assigning_protection_subs"
-               path="microsoft_dynamics_365/d365_assigning_protection_subs.html"/>
-   <appContext helpID="saas_deleting_sla_domain"
-               path="common/saas_deleting_sla_domain.html"/>
-   <appContext helpID="d365_cloning_sla_domain"
-               path="microsoft_dynamics_365/d365_cloning_sla_domain.html"/>
-   <appContext helpID="d365_taking_ods"
-               path="microsoft_dynamics_365/d365_taking_ods.html"/>
-   <appContext helpID="d365_backup_recovery"
-               path="microsoft_dynamics_365/d365_backup_recovery.html"/>
-   <appContext helpID="d365_recovery_options"
-               path="microsoft_dynamics_365/d365_recovery_options.html"/>
-   <appContext helpID="d365_workload_recovery"
-               path="microsoft_dynamics_365/d365_workload_recovery.html"/>
-   <appContext helpID="d365_restoring_rows"
-               path="microsoft_dynamics_365/d365_restoring_rows.html"/>
-   <appContext helpID="d365_restoring_table_metadata"
-               path="microsoft_dynamics_365/d365_restoring_table_metadata.html"/>
-   <appContext helpID="d365_restoring_global_metadata"
-               path="microsoft_dynamics_365/d365_restoring_global_metadata.html"/>
-   <appContext helpID="d365_dashboard_details"
-               path="microsoft_dynamics_365/d365_dashboard_details.html"/>
-   <appContext helpID="d365_monitoring_subs_dashboard"
-               path="microsoft_dynamics_365/d365_monitoring_subs_dashboard.html"/>
-   <appContext helpID="d365_table_analysis"
-               path="microsoft_dynamics_365/d365_table_analysis.html"/>
-   <appContext helpID="d365_analyzing_data_changes"
-               path="microsoft_dynamics_365/d365_analyzing_data_changes.html"/>
-   <appContext helpID="d365_restoring_data"
-               path="microsoft_dynamics_365/d365_restoring_data.html"/>
-   <appContext helpID="d365_reporting"
-               path="microsoft_dynamics_365/d365_reporting.html"/>
-   <appContext helpID="d365_creating_report_subs"
-               path="microsoft_dynamics_365/d365_creating_report_subs.html"/>
-   <appContext helpID="d365_downloading_report_subs"
-               path="microsoft_dynamics_365/d365_downloading_report_subs.html"/>
-   <appContext helpID="d365_viewing_events"
-               path="microsoft_dynamics_365/d365_viewing_events.html"/>
-   <appContext helpID="d365_event_log_details"
-               path="microsoft_dynamics_365/d365_event_log_details.html"/>
+   <appContext helpID="ad_protection" path="adds/ad_protection.html"/>
+   <appContext helpID="active_directory_forest"
+               path="adds/active_directory_forest.html"/>
+   <appContext helpID="ad_forest_protection_recovery_benefits"
+               path="adds/ad_forest_protection_recovery_benefits.html"/>
+   <appContext helpID="ad_forest_discovery" path="adds/ad_forest_discovery.html"/>
+   <appContext helpID="adding_ad_domain_controller"
+               path="adds/adding_ad_domain_controller.html"/>
+   <appContext helpID="deleting_ad_domain_controller"
+               path="adds/deleting_ad_domain_controller.html"/>
+   <appContext helpID="ad_forest_inventory_management"
+               path="adds/ad_forest_inventory_management.html"/>
+   <appContext helpID="ad_forests_domains_info"
+               path="adds/ad_forests_domains_info.html"/>
+   <appContext helpID="info_ad_domain_controllers"
+               path="adds/ad_domain_controllers_info.html"/>
+   <appContext helpID="ad_forest_protection" path="adds/ad_forest_protection.html"/>
+   <appContext helpID="ad_forest_protection_recovery_hierarchy"
+               path="adds/ad_forest_protection_recovery_hierarchy.html"/>
+   <appContext helpID="managing_protection_ad_forest"
+               path="adds/managing_protection_ad_forest.html"/>
+   <appContext helpID="recovering_ad_forest" path="adds/recovering_ad_forest.html"/>
+   <appContext helpID="ad_forest_recovery_health_checks"
+               path="adds/ad_forest_recovery_health_checks.html"/>
+   <appContext helpID="ad_ahr_prereq" path="adds/ad_ahr_prereq.html"/>
+   <appContext helpID="ad_host_promotion_prereqs"
+               path="adds/ad_host_promotion_prereqs.html"/>
+   <appContext helpID="adfr_bmr_prereq" path="adds/adfr_bmr_prereq.html"/>
+   <appContext helpID="tracking_ad_forest_recovery"
+               path="adds/tracking_ad_forest_recovery.html"/>
+   <appContext helpID="ad_forest_recovery_advanced_settings_options_"
+               path="adds/ad_forest_recovery_advanced_settings_options_.html"/>
+   <appContext helpID="ad_forest_recovery_using_replicated_snapshots"
+               path="adds/ad_forest_recovery_using_replicated_snapshots.html"/>
+   <appContext helpID="configuring_rbrk_clstr_primry_win_host"
+               path="adds/configuring_rbrk_clstr_primry_win_host.html"/>
+   <appContext helpID="active_directory_domain_dc"
+               path="adds/active_directory_domain_dc.html"/>
+   <appContext helpID="discovery_ad_domains_dc"
+               path="adds/discovery_ad_domains_dc.html"/>
+   <appContext helpID="adding_ad_domain_controller"
+               path="adds/adding_ad_domain_controller.html"/>
+   <appContext helpID="deleting_ad_domain_controller"
+               path="adds/deleting_ad_domain_controller.html"/>
+   <appContext helpID="viewing_ad_domain_controllers"
+               path="adds/viewing_ad_domain_controllers.html"/>
+   <appContext helpID="active_directory_inventory_management"
+               path="adds/active_directory_inventory_management.html"/>
+   <appContext helpID="info_ad_domains" path="adds/info_ad_domains.html"/>
+   <appContext helpID="info_ad_domain_controllers"
+               path="adds/ad_domain_controllers_info.html"/>
+   <appContext helpID="ad_domain_controller_protection"
+               path="adds/ad_domain_controller_protection.html"/>
+   <appContext helpID="protection_hierarchy_ad"
+               path="adds/protection_hierarchy_ad.html"/>
+   <appContext helpID="managing_protection_ad_objects"
+               path="adds/managing_protection_ad_objects.html"/>
+   <appContext helpID="active_directory_snapshots"
+               path="adds/active_directory_snapshots.html"/>
+   <appContext helpID="ad_snapshot_filters" path="adds/ad_snapshot_filters.html"/>
+   <appContext helpID="taking_ods_ad_domain_controller"
+               path="adds/taking_ods_ad_domain_controller.html"/>
+   <appContext helpID="changing_dc_snapshot_retention"
+               path="adds/changing_dc_snapshot_retention.html"/>
+   <appContext helpID="deleting_dc_snapshot" path="adds/deleting_dc_snapshot.html"/>
+   <appContext helpID="recovering_dc_snapshot" path="adds/recovering_dc_snapshot.html"/>
+   <appContext helpID="ad_dc_recovery_options" path="adds/ad_dc_recovery_options.html"/>
+   <appContext helpID="ad_ahr_prereq" path="adds/ad_ahr_prereq.html"/>
+   <appContext helpID="restoring_original_domain_controller"
+               path="adds/restoring_original_domain_controller.html"/>
+   <appContext helpID="restoring_dc_alternate_host"
+               path="adds/restoring_dc_alternate_host.html"/>
+   <appContext helpID="restoring_new_host_using_bmr"
+               path="adds/restoring_new_host_using_bmr.html"/>
+   <appContext helpID="restoring_ad_objects_using_granular_recovery"
+               path="adds/restoring_ad_objects_using_granular_recovery.html"/>
+   <appContext helpID="ad_objects_search" path="adds/ad_objects_search.html"/>
+   <appContext helpID="ad_object_conflict_during_recovery"
+               path="adds/ad_object_conflict_during_recovery.html"/>
+   <appContext helpID="restoring_objects_using_search_recovery"
+               path="adds/restoring_objects_using_search_recovery.html"/>
+   <appContext helpID="ad_object_comparison" path="adds/ad_object_comparison.html"/>
+   <appContext helpID="microsoft_entra_id" path="saas/ms_entra_id.html"/>
+   <appContext helpID="ms_entra_id_known_limits_rsc"
+               path="saas/ms_entra_id_known_limits_rsc.html"/>
+   <appContext helpID="ms_entra_id_non_recov_soft_del_obj_rsc"
+               path="saas/ms_entra_id_non_recov_soft_del_obj_rsc.html"/>
+   <appContext helpID="adding_entra_id_with_oauth"
+               path="saas/adding_entra_id_with_oauth.html"/>
+   <appContext helpID="adding_entra_id_without_oauth"
+               path="saas/adding_entra_id_without_oauth.html"/>
+   <appContext helpID="ms_entra_id_no_oauth_perms"
+               path="saas/ms_entra_id_no_oauth_perms.html"/>
+   <appContext helpID="ms_entra_id_protecting" path="saas/ms_entra_id_protecting.html"/>
+   <appContext helpID="ms_entra_id_taking_ods" path="saas/ms_entra_id_taking_ods.html"/>
+   <appContext helpID="ms_entra_id_deleting_snapshot"
+               path="saas/ms_entra_id_deleting_snapshot.html"/>
+   <appContext helpID="ms_entra_id_viewing_directories"
+               path="saas/ms_entra_id_viewing_directories.html"/>
+   <appContext helpID="ms_entra_id_snapshot_protection_details"
+               path="saas/ms_entra_id_snapshot_protection_details.html"/>
+   <appContext helpID="ms_entra_id_obj_relationship_recovery"
+               path="saas/ms_entra_id_obj_relationship_recovery.html"/>
+   <appContext helpID="ms_entra_id_relationship_recovery_modes"
+               path="saas/ms_entra_id_relationship_recovery_modes.html"/>
+   <appContext helpID="ms_entra_id_recov_user_obj_relationships"
+               path="saas/ms_entra_id_recov_user_obj_relationships.html"/>
+   <appContext helpID="ms_entra_id_recov_user_manual_pw"
+               path="saas/ms_entra_id_recov_user_manual_pw.html"/>
+   <appContext helpID="ms_entra_id_recovering_grp_obj_relationships"
+               path="saas/ms_entra_id_recovering_grp_obj_relationships.html"/>
+   <appContext helpID="ms_entra_id_recovering_roles_obj_relationships"
+               path="saas/ms_entra_id_recovering_roles_obj_relationships.html"/>
+   <appContext helpID="ms_entra_id_recovering_ent_apps"
+               path="saas/ms_entra_id_recovering_ent_apps.html"/>
+   <appContext helpID="ms_entra_id_recovering_app_reg"
+               path="saas/ms_entra_id_recovering_app_reg.html"/>
+   <appContext helpID="ms_entra_id_admin_units_recov"
+               path="saas/ms_entra_id_admin_units_recov.html"/>
+   <appContext helpID="ms_entra_id_recovering_admin_units"
+               path="saas/ms_entra_id_recovering_admin_units.html"/>
+   <appContext helpID="ms_entra_id_user_obj_attr_recov"
+               path="saas/ms_entra_id_user_obj_attr_recov.html"/>
+   <appContext helpID="ms_entra_id_recov_user_attr_pit"
+               path="saas/ms_entra_id_recov_user_attr_pit.html"/>
+   <appContext helpID="ms_entra_id_recov_user_attr_snap"
+               path="saas/ms_entra_id_recov_user_attr_snap.html"/>
+   <appContext helpID="ms_entra_id_obj_recov_across_snapshots"
+               path="saas/ms_entra_id_obj_recov_across_snapshots.html"/>
+   <appContext helpID="ms_entra_id_recov_users_across_snapshots"
+               path="saas/ms_entra_id_recov_users_across_snapshots.html"/>
+   <appContext helpID="ms_entra_id_recov_groups_across_snapshots"
+               path="saas/ms_entra_id_recov_groups_across_snapshots.html"/>
+   <appContext helpID="ms_entra_id_recov_roles_across_snapshots"
+               path="saas/ms_entra_id_recov_roles_across_snapshots.html"/>
+   <appContext helpID="ms_entra_id_conditional_access_recovery"
+               path="saas/ms_entra_id_conditional_access_recovery.html"/>
+   <appContext helpID="ms_entra_id_recov_cond_access_obj_rel"
+               path="saas/ms_entra_id_recov_cond_access_obj_rel.html"/>
+   <appContext helpID="ms_entra_id_recov_cond_access_pol_rel.dita"
+               path="saas/ms_entra_id_recov_cond_access_pol_rel.html"/>
+   <appContext helpID="ms_entra_id_recovery_hybrid_env"
+               path="saas/ms_entra_id_recovery_hybrid_env.html"/>
+   <appContext helpID="ms_entra_id_recovering_users_hybrid_env"
+               path="saas/ms_entra_id_recovering_users_hybrid_env.html"/>
+   <appContext helpID="ms_entra_id_recovering_users_hybrid_env_manual"
+               path="saas/ms_entra_id_recovering_users_hybrid_env_manual.html"/>
+   <appContext helpID="ms_entra_id_recovering_groups_hybrid_env"
+               path="saas/ms_entra_id_recovering_groups_hybrid_env.html"/>
+   <appContext helpID="ms_entra_id_full_domain_recovery"
+               path="saas/ms_entra_id_full_domain_recov.html"/>
+   <appContext helpID="ms_entra_id_recov_full_domain"
+               path="saas/ms_entra_id_recov_full_domain.html"/>
+   <appContext helpID="ms_entra_id_downloading_recovery_details"
+               path="saas/ms_entra_id_downloading_recovery_details.html"/>
+   <appContext helpID="ms_entra_id_recovery_details"
+               path="saas/ms_entra_id_recovery_details.html"/>
+   <appContext helpID="editing_ms_entra_id_directories_oauth"
+               path="saas/ms_entra_id_editing_directories_oauth.html"/>
+   <appContext helpID="ms_entra_id_editing_directories_without_oauth"
+               path="saas/ms_entra_id_editing_directories_without_oauth.html"/>
+   <appContext helpID="ms_entra_id_deleting_domains_directories"
+               path="saas/ms_entra_id_deleting_domains_directories.html"/>
+   <appContext helpID="saas_workloads" path="saas/saas_workloads.html"/>
+   <appContext helpID="jira" path="jira/jira.html"/>
+   <appContext helpID="jira_instance_details" path="jira/jira_instance_details.html"/>
+   <appContext helpID="jira_viewing_details" path="jira/jira_viewing_details.html"/>
+   <appContext helpID="jira_analyzing_data" path="jira/jira_analyzing_data.html"/>
+   <appContext helpID="jira_supported_data_types"
+               path="jira/jira_supported_data_types.html"/>
+   <appContext helpID="jira_regions" path="jira/jira_regions.html"/>
+   <appContext helpID="jira_oauth_authentication"
+               path="jira/jira_oauth_authentication.html"/>
+   <appContext helpID="jira_rbac_required_permissions"
+               path="jira/jira_rbac_required_permissions.html"/>
+   <appContext helpID="jira_adding_instance" path="jira/jira_adding_instance.html"/>
+   <appContext helpID="jira_deleting_instance" path="jira/jira_deleting_instance.html"/>
+   <appContext helpID="jira_reauthenticate" path="jira/jira_reauthenticate.html"/>
+   <appContext helpID="jira_protection_sla_domain"
+               path="jira/jira_protection_sla_domain.html"/>
+   <appContext helpID="jira_backups" path="jira/jira_backups.html"/>
+   <appContext helpID="jira_taking_on_demand_snapshots"
+               path="jira/jira_taking_on_demand_snapshots.html"/>
+   <appContext helpID="jira_recovery" path="jira/jira_recovery.html"/>
+   <appContext helpID="jira_relationships" path="jira/jira_relationships.html"/>
+   <appContext helpID="jira_restoring_issue" path="jira/jira_restoring_issue.html"/>
+   <appContext helpID="jira_restore_issue_keys"
+               path="jira/jira_restore_issue_keys.html"/>
+   <appContext helpID="jira_restoring_settings"
+               path="jira/jira_restoring_settings.html"/>
+   <appContext helpID="salesforce_management"
+               path="salesforce/salesforce_management.html"/>
+   <appContext helpID="monitoring_salesforce_organizations"
+               path="salesforce/monitoring_salesforce_organizations.html"/>
+   <appContext helpID="salesforce_dashboard_details"
+               path="salesforce/salesforce_dashboard_details.html"/>
+   <appContext helpID="salesforce_supported_data_types"
+               path="salesforce/salesforce_supported_data_types.html"/>
+   <appContext helpID="salesforce_regions" path="salesforce/salesforce_regions.html"/>
+   <appContext helpID="salesforce_apis" path="salesforce/salesforce_apis.html"/>
+   <appContext helpID="salesforce_permissions"
+               path="salesforce/salesforce_permissions.html"/>
+   <appContext helpID="salesforce_configuring_permissions"
+               path="salesforce/salesforce_configuring_permissions.html"/>
+   <appContext helpID="salesforce_required_permissions"
+               path="salesforce/salesforce_required_permissions.html"/>
+   <appContext helpID="salesforce_limitations"
+               path="salesforce/salesforce_protection_limitations.html"/>
+   <appContext helpID="salesforce_rbac" path="salesforce/salesforce_rbac.html"/>
+   <appContext helpID="salesforce_adding_instance"
+               path="salesforce/salesforce_adding_instance.html"/>
+   <appContext helpID="salesforce_removing_org"
+               path="salesforce/salesforce_removing_org.html"/>
+   <appContext helpID="salesforce_running_perms_check"
+               path="salesforce/salesforce_running_perms_check.html"/>
+   <appContext helpID="salesforce_managing_excluded_perms"
+               path="salesforce/salesforce_managing_excluded_perms.html"/>
+   <appContext helpID="salesforce_monitoring_api"
+               path="salesforce/salesforce_monitoring_api.html"/>
+   <appContext helpID="changing_api_limits_sf_org"
+               path="salesforce/changing_api_limits_sf_org.html"/>
+   <appContext helpID="salesforce_api_usage_details"
+               path="salesforce/salesforce_api_usage_details.html"/>
+   <appContext helpID="salesforce_backup_recovery"
+               path="salesforce/salesforce_backup_recovery.html"/>
+   <appContext helpID="managing_salesforce_data_protection"
+               path="salesforce/managing_salesforce_data_protection.html"/>
+   <appContext helpID="salesforce_taking_on_demand_snapshot"
+               path="salesforce/salesforce_taking_on_demand_snapshot.html"/>
+   <appContext helpID="salesforce_recovering_records"
+               path="salesforce/salesforce_recovering_records.html"/>
+   <appContext helpID="salesforce_recovering_objects"
+               path="salesforce/salesforce_recovering_objects.html"/>
+   <appContext helpID="salesforce_recovering_object_metadata"
+               path="salesforce/salesforce_recovering_object_metadata.html"/>
+   <appContext helpID="salesforce_recovering_general_metadata"
+               path="salesforce/salesforce_recovering_general_metadata.html"/>
+   <appContext helpID="salesforce_gen_metadata_types"
+               path="salesforce/salesforce_gen_metadata_types.html"/>
+   <appContext helpID="salesforce_rubrik_def_metadata"
+               path="salesforce/salesforce_rubrik_def_metadata.html"/>
+   <appContext helpID="salesforce_seeding" path="salesforce/salesforce_seeding.html"/>
+   <appContext helpID="salesforce_creating_data_seed_template"
+               path="salesforce/salesforce_creating_data_seed_templates.html"/>
+   <appContext helpID="salesforce_create_obj_meta_temp"
+               path="salesforce/salesforce_create_obj_meta_temp.html"/>
+   <appContext helpID="salesforce_create_gen_meta_temp"
+               path="salesforce/salesforce_create_gen_meta_temp.html"/>
+   <appContext helpID="salesforce_editing_seed_template"
+               path="salesforce/salesforce_editing_seed_template.html"/>
+   <appContext helpID="salesforce_deleting_seed_template"
+               path="salesforce/salesforce_deleting_seed_template.html"/>
+   <appContext helpID="salesforce_cloning_seed_template"
+               path="salesforce/salesforce_cloning_seed_template.html"/>
+   <appContext helpID="salesforce_seed_data"
+               path="salesforce/salesforce_seed_data.html"/>
+   <appContext helpID="salesforce_seed_metadata"
+               path="salesforce/salesforce_seed_metadata.html"/>
+   <appContext helpID="salesforce_data_analysis"
+               path="salesforce/salesforce_data_analysis.html"/>
+   <appContext helpID="analyzing_salesforce_data"
+               path="salesforce/analyzing_salesforce_data.html"/>
+   <appContext helpID="salesforce_recovering_data_metadata"
+               path="salesforce/salesforce_recovering_data_metadata.html"/>
+   <appContext helpID="salesforce_dashboard_details"
+               path="salesforce/salesforce_dashboard_details.html"/>
    <appContext helpID="m365" path="saas/m365.html"/>
    <appContext helpID="m365_dashboard" path="saas/m365_dashboard.html"/>
    <appContext helpID="m365_dashboard_details" path="saas/m365_dashboard_details.html"/>
@@ -4848,69 +4733,178 @@
                path="m365_backup_storage/performing_mr_m365_b_s_onedrive_data.html"/>
    <appContext helpID="mass_recovery_m365_b_s"
                path="m365_backup_storage/mass_recovery_m365_b_s.html"/>
-   <appContext helpID="ms_exchange_server" path="saas/ms_exchange_server.html"/>
-   <appContext helpID="ms_exchange_workflow" path="saas/ms_exchange_workflow.html"/>
-   <appContext helpID="ms_exchange_availability_groups"
-               path="saas/ms_exchange_availability_groups.html"/>
-   <appContext helpID="ms_exchange_databases" path="saas/ms_exchange_databases.html"/>
-   <appContext helpID="ms_exchange_hosts" path="saas/ms_exchange_hosts.html"/>
-   <appContext helpID="ms_exchange_protection" path="saas/ms_exchange_protection.html"/>
-   <appContext helpID="ms_exchange_protection_prerequisites"
-               path="saas/ms_exchange_protection_prerequisites.html"/>
-   <appContext helpID="ms_exchange_protection_hierarchy"
-               path="saas/ms_exchange_protection_hierarchy.html"/>
-   <appContext helpID="ms_exchange_assigning_sla_domain"
-               path="saas/ms_exchange_assigning_sla_domain.html"/>
-   <appContext helpID="ms_exchange_management" path="saas/ms_exchange_management.html"/>
-   <appContext helpID="ms_exchange_adding_host"
-               path="saas/ms_exchange_adding_host.html"/>
-   <appContext helpID="ms_exchange_setting_backup_preference"
-               path="saas/ms_exchange_setting_backup_preference.html"/>
-   <appContext helpID="ms_exchange_snapshots" path="saas/ms_exchange_snapshots.html"/>
-   <appContext helpID="ms_exchange_taking_ods" path="saas/ms_exchange_taking_ods.html"/>
-   <appContext helpID="ms_exchange_changing_retention_snapshot"
-               path="saas/ms_exchange_changing_retention_snapshot.html"/>
-   <appContext helpID="ms_exchange_deleting_snapshot"
-               path="saas/ms_exchange_deleting_snapshot.html"/>
-   <appContext helpID="ms_exchange_recovering_snapshot"
-               path="saas/ms_exchange_recovering_snapshot.html"/>
-   <appContext helpID="ncd_data_sets" path="saas/ncd_data_sets.html"/>
-   <appContext helpID="ncd_unstructured_data_dashboard"
-               path="saas/ncd_unstructured_data_dashboard.html"/>
-   <appContext helpID="ncd_viewing_unstructured_data_dashboard"
-               path="saas/ncd_viewing_unstructured_data_dashboard.html"/>
-   <appContext helpID="ncd_unstructured_data_dashboard_info"
-               path="saas/ncd_unstructured_data_dashboard_pane.html"/>
-   <appContext helpID="ncd_data_observability" path="saas/ncd_data_observability.html"/>
-   <appContext helpID="data_observability_requirements_ncd_data_sets"
-               path="saas/data_observability_requirements_ncd_data_sets.html"/>
-   <appContext helpID="ncd_enabling_ransomware_monitoring_NAS_CD"
-               path="saas/ncd_enabling_ransomware_monitoring_NAS_CD.html"/>
-   <appContext helpID="ncd_creating_a_policy_for_data_obs"
-               path="saas/ncd_creating_a_policy_for_data_obs.html"/>
-   <appContext helpID="ncd_data_discovery" path="saas/ncd_data_discovery.html"/>
-   <appContext helpID="ncd_assigning_a_NAS_CD_policy_for_data_obs"
-               path="saas/ncd_assigning_a_NAS_CD_policy_for_data_obs.html"/>
-   <appContext helpID="rsc_api_proxy_nascd_rest_api"
-               path="saas/rsc_api_proxy_nascd_rest_api.html"/>
-   <appContext helpID="using_rsc_api_proxy_nascd_rest_api"
-               path="saas/using_rsc_api_proxy_nascd_rest_api.html"/>
-   <appContext helpID="nascd_inventory_management"
-               path="saas/nascd_inventory_management.html"/>
-   <appContext helpID="accessing_nascd_inventory_page"
-               path="saas/accessing_nascd_inventory_page.html"/>
-   <appContext helpID="nascd_recovery" path="saas/nascd_recovery.html"/>
-   <appContext helpID="recovering_nascd_data_sets"
-               path="saas/recovering_nascd_data_sets.html"/>
-   <appContext helpID="rbac_nascd" path="saas/rbac_nascd.html"/>
-   <appContext helpID="creating_custom_role_ncd_ds_obj_type"
-               path="saas/creating_custom_role_ncd_ds_obj_type.html"/>
-   <appContext helpID="creating_custom_role_ncd_ds_cluster"
-               path="saas/creating_custom_role_ncd_ds_cluster.html"/>
-   <appContext helpID="creating_custom_role_ncd_ds_all_obj_type"
-               path="saas/creating_custom_role_ncd_ds_all_obj_type.html"/>
-   <appContext helpID="access_mgmt_tenant_org_users"
-               path="saas/access_mgmt_tenant_org_users.html"/>
+   <appContext helpID="microsoft_dynamics_365"
+               path="microsoft_dynamics_365/microsoft_dynamics_365.html"/>
+   <appContext helpID="d365_microsoft_dataverse"
+               path="microsoft_dynamics_365/d365_microsoft_dataverse.html"/>
+   <appContext helpID="d365_key_features_protection"
+               path="microsoft_dynamics_365/d365_key_features_protection.html"/>
+   <appContext helpID="d365_common_terms_protection"
+               path="microsoft_dynamics_365/d365_common_terms_protection.html"/>
+   <appContext helpID="d365_comm_rsc_dynamics_subs"
+               path="microsoft_dynamics_365/d365_comm_rsc_dynamics_subs.html"/>
+   <appContext helpID="d365_planning_protection"
+               path="microsoft_dynamics_365/d365_planning_protection.html"/>
+   <appContext helpID="d365_rsc_user_management"
+               path="microsoft_dynamics_365/d365_rsc_user_management.html"/>
+   <appContext helpID="d365_creating_custom_role"
+               path="microsoft_dynamics_365/d365_creating_custom_role.html"/>
+   <appContext helpID="d365_admin_permissions"
+               path="microsoft_dynamics_365/d365_admin_permissions.html"/>
+   <appContext helpID="d365_reqs_protection"
+               path="microsoft_dynamics_365/d365_reqs_protection.html"/>
+   <appContext helpID="d365_req_perms_protection"
+               path="microsoft_dynamics_365/d365_req_perms_protection.html"/>
+   <appContext helpID="d365_setup" path="microsoft_dynamics_365/d365_setup.html"/>
+   <appContext helpID="d365_recommendations_add_subs"
+               path="microsoft_dynamics_365/d365_recommendations_add_subs.html"/>
+   <appContext helpID="d365_supp_regions_protection"
+               path="microsoft_dynamics_365/d365_regions.html"/>
+   <appContext helpID="d365_adding_subs_protection"
+               path="microsoft_dynamics_365/d365_adding_subs_protection.html"/>
+   <appContext helpID="d365_protection_setup"
+               path="microsoft_dynamics_365/d365_protection_setup.html"/>
+   <appContext helpID="d365_retention_lock"
+               path="microsoft_dynamics_365/d365_retention_lock.html"/>
+   <appContext helpID="d365_protection_config"
+               path="microsoft_dynamics_365/d365_protection_config.html"/>
+   <appContext helpID="saas_creating_sla_domains"
+               path="common/saas_creating_sla_domains.html"/>
+   <appContext helpID="d365_assigning_protection_subs"
+               path="microsoft_dynamics_365/d365_assigning_protection_subs.html"/>
+   <appContext helpID="saas_deleting_sla_domain"
+               path="common/saas_deleting_sla_domain.html"/>
+   <appContext helpID="d365_cloning_sla_domain"
+               path="microsoft_dynamics_365/d365_cloning_sla_domain.html"/>
+   <appContext helpID="d365_taking_ods"
+               path="microsoft_dynamics_365/d365_taking_ods.html"/>
+   <appContext helpID="d365_backup_recovery"
+               path="microsoft_dynamics_365/d365_backup_recovery.html"/>
+   <appContext helpID="d365_recovery_options"
+               path="microsoft_dynamics_365/d365_recovery_options.html"/>
+   <appContext helpID="d365_workload_recovery"
+               path="microsoft_dynamics_365/d365_workload_recovery.html"/>
+   <appContext helpID="d365_restoring_rows"
+               path="microsoft_dynamics_365/d365_restoring_rows.html"/>
+   <appContext helpID="d365_restoring_table_metadata"
+               path="microsoft_dynamics_365/d365_restoring_table_metadata.html"/>
+   <appContext helpID="d365_restoring_global_metadata"
+               path="microsoft_dynamics_365/d365_restoring_global_metadata.html"/>
+   <appContext helpID="d365_dashboard_details"
+               path="microsoft_dynamics_365/d365_dashboard_details.html"/>
+   <appContext helpID="d365_monitoring_subs_dashboard"
+               path="microsoft_dynamics_365/d365_monitoring_subs_dashboard.html"/>
+   <appContext helpID="d365_table_analysis"
+               path="microsoft_dynamics_365/d365_table_analysis.html"/>
+   <appContext helpID="d365_analyzing_data_changes"
+               path="microsoft_dynamics_365/d365_analyzing_data_changes.html"/>
+   <appContext helpID="d365_restoring_data"
+               path="microsoft_dynamics_365/d365_restoring_data.html"/>
+   <appContext helpID="d365_reporting"
+               path="microsoft_dynamics_365/d365_reporting.html"/>
+   <appContext helpID="d365_creating_report_subs"
+               path="microsoft_dynamics_365/d365_creating_report_subs.html"/>
+   <appContext helpID="d365_downloading_report_subs"
+               path="microsoft_dynamics_365/d365_downloading_report_subs.html"/>
+   <appContext helpID="d365_viewing_events"
+               path="microsoft_dynamics_365/d365_viewing_events.html"/>
+   <appContext helpID="d365_event_log_details"
+               path="microsoft_dynamics_365/d365_event_log_details.html"/>
+   <appContext helpID="saas_managing_protection"
+               path="common/saas_managing_protection.html"/>
+   <appContext helpID="saas_creating_sla_domains"
+               path="common/saas_creating_sla_domains.html"/>
+   <appContext helpID="saas_deleting_sla_domain"
+               path="common/saas_deleting_sla_domain.html"/>
+   <appContext helpID="saas_events" path="common/saas_events.html"/>
+   <appContext helpID="jira_viewing_events" path="common/saas_viewing_events.html"/>
+   <appContext helpID="jira_events_filter" path="common/saas_events_filter.html"/>
+   <appContext helpID="jira_data_event_backup_failure"
+               path="jira/jira_data_event_backup_failure.html"/>
+   <appContext helpID="saas_viewing_audit_logs"
+               path="common/saas_viewing_audit_logs.html"/>
+   <appContext helpID="jira_audit_logs" path="common/saas_audit_logs.html"/>
+   <appContext helpID="jira_downloading_file_prepration_center"
+               path="common/saas_downloading_file_prep_center.html"/>
+   <appContext helpID="saas_file_preparation_center"
+               path="common/saas_file_preparation_center.html"/>
+   <appContext helpID="sass_reporting" path="common/sass_reporting.html"/>
+   <appContext helpID="saas_creating_reports_instances"
+               path="common/saas_creating_reports_instances.html"/>
+   <appContext helpID="saas_report_templates" path="common/saas_report_templates.html"/>
+   <appContext helpID="mv_managed_volumes_sla_managed_volumes"
+               path="managedvolumes/mv_managed_volumes_sla_managed_volumes.html"/>
+   <appContext helpID="mv_versus_sla_managed_volumes"
+               path="managedvolumes/mv_versus_sla_managed_volumes.html"/>
+   <appContext helpID="mv_setup_requirements_slamv"
+               path="managedvolumes/mv_setup_requirements_slamv.html"/>
+   <appContext helpID="mv_channel_guidelines"
+               path="managedvolumes/mv_channel_guidelines.html"/>
+   <appContext helpID="mv_floating_ip_addresses"
+               path="managedvolumes/mv_floating_ip_addresses.html"/>
+   <appContext helpID="rbk_setting_up_floating_ip_addresses"
+               path="managedvolumes/rbk_setting_up_floating_ip_addresses.html"/>
+   <appContext helpID="mv_managed_volume_configuration"
+               path="managedvolumes/mv_managed_volume_configuration.html"/>
+   <appContext helpID="mv_managed_volume_application_tags"
+               path="managedvolumes/mv_managed_volume_application_tags.html"/>
+   <appContext helpID="mv_creating_mv" path="managedvolumes/mv_creating_mv.html"/>
+   <appContext helpID="mv_editing_mv_rsc" path="managedvolumes/mv_editing_mv_rsc.html"/>
+   <appContext helpID="mv_sla_mv_configuration"
+               path="managedvolumes/mv_sla_mv_configuration.html"/>
+   <appContext helpID="mv_backup_script_settings"
+               path="managedvolumes/mv_backup_script_settings.html"/>
+   <appContext helpID="mv_prohibited_mount_points_script_dirs_sla_mv"
+               path="managedvolumes/mv_prohibited_mount_points_script_dirs_sla_mv.html"/>
+   <appContext helpID="mv_creating_sla_mv"
+               path="managedvolumes/mv_creating_sla_mv.html"/>
+   <appContext helpID="mv_editing_sla_mv" path="managedvolumes/mv_editing_sla_mv.html"/>
+   <appContext helpID="mv_resizing_a_managed_volume_sla_managed_volume"
+               path="managedvolumes/mv_resizing_a_managed_volume_sla_managed_volume.html"/>
+   <appContext helpID="mv_deleting_managed_volume_sla_managed_volume"
+               path="managedvolumes/mv_deleting_managed_volume_sla_managed_volume.html"/>
+   <appContext helpID="mv_managed_volume_object_details"
+               path="managedvolumes/mv_managed_volume_object_details.html"/>
+   <appContext helpID="mv_viewing_managed_volume_object_details"
+               path="managedvolumes/mv_viewing_managed_volume_object_details.html"/>
+   <appContext helpID="mv_overview_details"
+               path="managedvolumes/mv_overview_details.html"/>
+   <appContext helpID="mv_overview_actions"
+               path="managedvolumes/mv_overview_actions.html"/>
+   <appContext helpID="mv_events_details" path="managedvolumes/mv_events_details.html"/>
+   <appContext helpID="mv_view_mv_events" path="managedvolumes/mv_view_mv_events.html"/>
+   <appContext helpID="mv_snapshots_details"
+               path="managedvolumes/mv_snapshots_details.html"/>
+   <appContext helpID="mv_snapshot_actions"
+               path="managedvolumes/mv_snapshot_actions.html"/>
+   <appContext helpID="mv_taking_a_managed_volume_snapshot"
+               path="managedvolumes/mv_taking_a_managed_volume_snapshot.html"/>
+   <appContext helpID="mv_taking_ondemand_slamv_snapshot"
+               path="managedvolumes/mv_taking_ondemand_slamv_snapshot.html"/>
+   <appContext helpID="mv_placing_snapshot_legalhold"
+               path="managedvolumes/mv_placing_snapshot_legalhold.html"/>
+   <appContext helpID="mv_recovering_files_folders"
+               path="managedvolumes/mv_recovering_files_folders.html"/>
+   <appContext helpID="mv_live_mount_from_mv_snapshots"
+               path="managedvolumes/mv_live_mount_from_mv_snapshots.html"/>
+   <appContext helpID="mv_creating_livemount_mv_snapshot"
+               path="managedvolumes/mv_creating_livemount_mv_snapshot.html"/>
+   <appContext helpID="mv_creating_livemount_sla"
+               path="managedvolumes/mv_creating_livemount_slamv_snapshot.html"/>
+   <appContext helpID="mv_unmounting_mv_live_mount"
+               path="managedvolumes/mv_unmounting_mv_live_mount.html"/>
+   <appContext helpID="mv_changing_retention_snapshot"
+               path="managedvolumes/mv_changing_retention_snapshot.html"/>
+   <appContext helpID="mv_deleting_managed_volumes_snapshots"
+               path="managedvolumes/mv_deleting_managed_volumes_snapshots.html"/>
+   <appContext helpID="mv_managed_volume_snapshot_management"
+               path="managedvolumes/mv_managed_volume_snapshot_management.html"/>
+   <appContext helpID="mv_scripted_backups_snapshots_with_assigned_sla_domain"
+               path="managedvolumes/mv_scripted_backups_snapshots_with_assigned_sla_domain.html"/>
+   <appContext helpID="mv_custom_sla_domains_for_sla_managed_volumes"
+               path="managedvolumes/mv_custom_sla_domains_for_sla_managed_volumes.html"/>
+   <appContext helpID="mv_protecting_mv_slamv"
+               path="managedvolumes/mv_protecting_mv_slamv.html"/>
    <appContext helpID="nas_systems" path="nas/nas_systems.html"/>
    <appContext helpID="nas_management" path="nas/nas_management.html"/>
    <appContext helpID="adding_cluster" path="saas/adding_cluster.html"/>
@@ -4964,6 +4958,43 @@
                path="nas/nas_share_recovery_download_overwrite_recover.html"/>
    <appContext helpID="nas_share_recovery_export"
                path="nas/nas_share_recovery_export.html"/>
+   <appContext helpID="ncd_data_sets" path="saas/ncd_data_sets.html"/>
+   <appContext helpID="ncd_unstructured_data_dashboard"
+               path="saas/ncd_unstructured_data_dashboard.html"/>
+   <appContext helpID="ncd_viewing_unstructured_data_dashboard"
+               path="saas/ncd_viewing_unstructured_data_dashboard.html"/>
+   <appContext helpID="ncd_unstructured_data_dashboard_info"
+               path="saas/ncd_unstructured_data_dashboard_pane.html"/>
+   <appContext helpID="ncd_data_observability" path="saas/ncd_data_observability.html"/>
+   <appContext helpID="data_observability_requirements_ncd_data_sets"
+               path="saas/data_observability_requirements_ncd_data_sets.html"/>
+   <appContext helpID="ncd_enabling_ransomware_monitoring_NAS_CD"
+               path="saas/ncd_enabling_ransomware_monitoring_NAS_CD.html"/>
+   <appContext helpID="ncd_creating_a_policy_for_data_obs"
+               path="saas/ncd_creating_a_policy_for_data_obs.html"/>
+   <appContext helpID="ncd_data_discovery" path="saas/ncd_data_discovery.html"/>
+   <appContext helpID="ncd_assigning_a_NAS_CD_policy_for_data_obs"
+               path="saas/ncd_assigning_a_NAS_CD_policy_for_data_obs.html"/>
+   <appContext helpID="rsc_api_proxy_nascd_rest_api"
+               path="saas/rsc_api_proxy_nascd_rest_api.html"/>
+   <appContext helpID="using_rsc_api_proxy_nascd_rest_api"
+               path="saas/using_rsc_api_proxy_nascd_rest_api.html"/>
+   <appContext helpID="nascd_inventory_management"
+               path="saas/nascd_inventory_management.html"/>
+   <appContext helpID="accessing_nascd_inventory_page"
+               path="saas/accessing_nascd_inventory_page.html"/>
+   <appContext helpID="nascd_recovery" path="saas/nascd_recovery.html"/>
+   <appContext helpID="recovering_nascd_data_sets"
+               path="saas/recovering_nascd_data_sets.html"/>
+   <appContext helpID="rbac_nascd" path="saas/rbac_nascd.html"/>
+   <appContext helpID="creating_custom_role_ncd_ds_obj_type"
+               path="saas/creating_custom_role_ncd_ds_obj_type.html"/>
+   <appContext helpID="creating_custom_role_ncd_ds_cluster"
+               path="saas/creating_custom_role_ncd_ds_cluster.html"/>
+   <appContext helpID="creating_custom_role_ncd_ds_all_obj_type"
+               path="saas/creating_custom_role_ncd_ds_all_obj_type.html"/>
+   <appContext helpID="access_mgmt_tenant_org_users"
+               path="saas/access_mgmt_tenant_org_users.html"/>
    <appContext helpID="snapmirror_cloud" path="saas/snapmirror_cloud.html"/>
    <appContext helpID="adding_netapp_system" path="saas/adding_netapp_system.html"/>
    <appContext helpID="netapp_volume_export" path="saas/netapp_volume_export.html"/>
@@ -4979,37 +5010,6 @@
                path="saas/recovering_from_smc_to_existing_volume.html"/>
    <appContext helpID="recovering_files_from_a_snapmirror_cloud_snapshot"
                path="saas/recovering_files_from_a_snapmirror_cloud_snapshot.html"/>
-   <appContext helpID="windows_volume_groups" path="saas/windows_volume_groups.html"/>
-   <appContext helpID="viewing_the_windows_volume_group_details_page"
-               path="saas/wvg_viewing_windows_volumes_group_details.html"/>
-   <appContext helpID="windows_volume_group_object_details_page"
-               path="saas/wvg_windows_volumes_group_details.html"/>
-   <appContext helpID="rubrik_backup_service" path="saas/rubrik_backup_service.html"/>
-   <appContext helpID="obtaining_rubrik_backup_service_connector"
-               path="rbs/rbs_obtaining_connector.html"/>
-   <appContext helpID="registering_an_rbs_host"
-               path="saas/registering_an_rbs_host.html"/>
-   <appContext helpID="wvg_adding_a_windows_host"
-               path="saas/wvg_adding_a_windows_host.html"/>
-   <appContext helpID="protecting_a_windows_volume_group"
-               path="saas/wvg_protecting_a_windows_volume_group.html"/>
-   <appContext helpID="configuring_the_windows_volume_filter_driver"
-               path="saas/wvg_configuring_the_volume_filter_driver_on_a_windows_host.html"/>
-   <appContext helpID="taking_an_on_demand_snapshot_of_a_windows_volume_group"
-               path="saas/wvg_taking_an_on_demand_snapshot_of_a_windows_volumes_group.html"/>
-   <appContext helpID="wvg_volume_group_recovery"
-               path="saas/wvg_volume_group_recovery.html"/>
-   <appContext helpID="wvg_recover_files_folders_win_with_rbs"
-               path="saas/wvg_recover_files_folders_win_with_rbs.html"/>
-   <appContext helpID="wvg_creating_lm_win_with_rbs"
-               path="saas/wvg_creating_lm_win_with_rbs.html"/>
-   <appContext helpID="wvg_creating_lm_win_without_rbs"
-               path="saas/wvg_creating_lm_win_without_rbs.html"/>
-   <appContext helpID="wvg_bare_metal_recovery"
-               path="saas/wvg_bare_metal_recovery.html"/>
-   <appContext helpID="wvg_bmr_restore" path="saas/wvg_bmr_restore.html"/>
-   <appContext helpID="verifying_connectivity"
-               path="saas/wvg_verifying_connectivity.html"/>
    <appContext helpID="ri_ransomware_monitoring"
                path="saas/ri_ransomware_monitoring.html"/>
    <appContext helpID="anomaly_detection" path="saas/anomaly_detection.html"/>
