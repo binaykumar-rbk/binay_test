@@ -1,0 +1,1378 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="Salesforce data types supported for substitution masking include financial, personal, and geographic identifiers."/><meta name="DC.relation" content="../salesforce/salesforce_data_masking_templates.html"/><meta name="DC.relation" content="../salesforce/data_masking_methods.html"/><meta name="DC.relation" content="../salesforce/salesforce_dashboard_details_2.html"/><meta name="DC.relation" content="salesforce_data_masking_templates.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="data_types_substitution_masking"/>        
+      <title>Supported data types for substitution masking</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="data_types_substitution_masking-d23535e30253"/><meta name="wh-source-relpath" content="salesforce/data_types_substitution_masking.dita"/><meta name="wh-out-relpath" content="salesforce/data_types_substitution_masking.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260118162454"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260118162454"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="data_types_substitution_masking" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc">Securely manage and protect data across a wide variety of workload
+                types.</p></div></div></div></li><li><div class="topicref" data-id="saas_workloads"><div class="title"><a href="../saas/saas_workloads.html">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li><div class="topicref" data-id="salesforce_management"><div class="title"><a href="../salesforce/salesforce_management.html">Salesforce Data Protection</a><div class="wh-tooltip"><p class="shortdesc">Salesforce Data Protection is a Rubrik-hosted SaaS service that extends <span class="ph">RSC</span> by securely backing up your critical Salesforce data and metadata for         standard and custom objects.</p></div></div></div></li><li><div class="topicref" data-id="salesforce_data_masking_templates"><div class="title"><a href="../salesforce/salesforce_data_masking_templates.html">Data masking templates</a><div class="wh-tooltip"><p class="shortdesc">A data masking template defines data fields and the methods to prevent the exposure         of sensitive data when recovering a production snapshot to a non-production         environment.</p></div></div></div></li><li class="active"><div class="topicref" data-id="data_types_substitution_masking"><div class="title"><a href="../salesforce/data_types_substitution_masking.html">Supported data types for substitution masking</a><div class="wh-tooltip"><p class="shortdesc">Salesforce data types supported for substitution masking include financial, personal,         and geographic identifiers.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../salesforce/data_masking_methods.html" title="Data masking methods" aria-label="Previous topic: Data masking methods" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../salesforce/salesforce_dashboard_details_2.html" title="Salesforce dashboard details" aria-label="Next topic: Salesforce dashboard details" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e868" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e868-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23535e868-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e1909" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e1909-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23535e1909-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e4157" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e4157-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23535e4157-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e8064" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e8064-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23535e8064-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23535e10936" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23535e10936-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23535e10936-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc">Securely manage and protect data across a wide variety of workload
+                types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d23535e10942" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d23535e10942-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e10957" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e10957-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d23535e10957-link">Cloud Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e18764" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e18764-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d23535e18764-link">Container Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e20031" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e20031-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/hyper_v/hyperv_virtual_machines.html" id="tocId-d23535e20031-link">Data Center Workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e24585" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e24585-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d23535e24585-link">Database Workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="saas_workloads-d23535e29444" class="topicref" data-id="saas_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action saas_workloads-d23535e29444-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d23535e29444-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="jira-d23535e29457" class="topicref" data-id="jira" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jira-d23535e29457-link" class="wh-expand-btn"></span><div class="title"><a href="../jira/jira.html" id="jira-d23535e29457-link">Atlassian Jira</a><div class="wh-tooltip"><p class="shortdesc">To protect your Atlassian Jira data, you can back up and restore data, such as         projects, settings, workflows, and issues, in your Jira site .</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="salesforce_management-d23535e29690" class="topicref" data-id="salesforce_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action salesforce_management-d23535e29690-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_management.html" id="salesforce_management-d23535e29690-link">Salesforce Data Protection</a><div class="wh-tooltip"><p class="shortdesc">Salesforce Data Protection is a Rubrik-hosted SaaS service that extends <span class="ph">RSC</span> by securely backing up your critical Salesforce data and metadata for         standard and custom objects.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="monitoring_salesforce_organizations-d23535e29704" class="topicref" data-id="monitoring_salesforce_organizations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitoring_salesforce_organizations-d23535e29704-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/monitoring_salesforce_organizations.html" id="monitoring_salesforce_organizations-d23535e29704-link">Monitoring Salesforce organizations</a><div class="wh-tooltip"><p class="shortdesc">View details about a Salesforce instance to monitor the data changes, backup jobs,         status, backup summary, and license usage.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_supported_data_types-d23535e29728" class="topicref" data-id="salesforce_supported_data_types" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_supported_data_types.html" id="salesforce_supported_data_types-d23535e29728-link">Salesforce Data Protection support table</a><div class="wh-tooltip"><p class="shortdesc">Information about Salesforce Data Protection support.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_regions-d23535e29739" class="topicref" data-id="salesforce_regions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_regions.html" id="salesforce_regions-d23535e29739-link">Supported regions for Salesforce</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides support for Salesforce protection in several regions.         You select the region when you set up the Salesforce instance in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_apis-d23535e29755" class="topicref" data-id="salesforce_apis" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_apis.html" id="salesforce_apis-d23535e29755-link">Salesforce APIs</a><div class="wh-tooltip"><p class="shortdesc">Rubrik accesses a Salesforce organization using APIs. Before capturing a scheduled         backup job, <span class="ph">RSC</span> checks how many API calls are available for the Salesforce         organization. If the set daily limits for API usage are exceeded, the scheduled backup job         does not start.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="salesforce_permissions-d23535e29769" class="topicref" data-id="salesforce_permissions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action salesforce_permissions-d23535e29769-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_permissions.html" id="salesforce_permissions-d23535e29769-link">Salesforce permissions for backup and recovery</a><div class="wh-tooltip"><p class="shortdesc">Backing up and restoring data requires that you assign certain Salesforce permissions         to the user account that authenticates into Salesforce.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_protection_limitations-d23535e29805" class="topicref" data-id="salesforce_protection_limitations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_protection_limitations.html" id="salesforce_protection_limitations-d23535e29805-link">Salesforce protection limitations</a><div class="wh-tooltip"><p class="shortdesc">Information about limitations for Salesforce protection.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_rbac-d23535e29816" class="topicref" data-id="salesforce_rbac" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_rbac.html" id="salesforce_rbac-d23535e29816-link">Table of RBAC privileges for Salesforce Data Protection</a><div class="wh-tooltip"><p class="shortdesc">Accessing Salesforce protection features within <span class="ph">RSC</span> requires the         appropriate RBAC permissions. You can use the default Salesforce Admin role or a custom         role.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_adding_instance-d23535e29830" class="topicref" data-id="salesforce_adding_instance" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_adding_instance.html" id="salesforce_adding_instance-d23535e29830-link">Adding a Salesforce organization</a><div class="wh-tooltip"><p class="shortdesc">Add a Salesforce organization to back up the data in your organization.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_removing_org-d23535e29841" class="topicref" data-id="salesforce_removing_org" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_removing_org.html" id="salesforce_removing_org-d23535e29841-link">Removing Salesforce organizations</a><div class="wh-tooltip"><p class="shortdesc">Remove a Salesforce organization to remove all snapshots and configurations from <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_running_perms_check-d23535e29855" class="topicref" data-id="salesforce_running_perms_check" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_running_perms_check.html" id="salesforce_running_perms_check-d23535e29855-link">Running permissions checks for Salesforce</a><div class="wh-tooltip"><p class="shortdesc">Rubrik automatically runs a permissions check every four days to determine if the         authenticated user has any missing permissions. You can also run an on-demand permissions         check. By checking permissions, you can quickly identify if there are any gaps in your         backup data and easily update any necessary permissions to ensure that all necessary data is         captured.</p></div></div></div></li><li role="treeitem"><div data-tocid="salesforce_managing_excluded_perms-d23535e29867" class="topicref" data-id="salesforce_managing_excluded_perms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_managing_excluded_perms.html" id="salesforce_managing_excluded_perms-d23535e29867-link">Managing excluded permissions</a><div class="wh-tooltip"><p class="shortdesc">Manage the permissions that you excluded for a Salesforce organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="salesforce_monitoring_api-d23535e29878" class="topicref" data-id="salesforce_monitoring_api" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action salesforce_monitoring_api-d23535e29878-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_monitoring_api.html" id="salesforce_monitoring_api-d23535e29878-link">Monitoring API usage for Salesforce</a><div class="wh-tooltip"><p class="shortdesc">View and monitor the Bulk 2.0 and REST API usage details over a period of time from         the API Usage page.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="salesforce_backup_recovery-d23535e29914" class="topicref" data-id="salesforce_backup_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action salesforce_backup_recovery-d23535e29914-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_backup_recovery.html" id="salesforce_backup_recovery-d23535e29914-link">Salesforce backup and recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely backs up your Salesforce organization with snapshots and         recovers your data from those snapshots.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="salesforce_data_analysis-d23535e30125" class="topicref" data-id="salesforce_data_analysis" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action salesforce_data_analysis-d23535e30125-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_data_analysis.html" id="salesforce_data_analysis-d23535e30125-link">Salesforce data analysis</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> generates comprehensive insights about the changes in Salesforce         data and metadata, facilitating detailed monitoring and secure restore         operations.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="salesforce_data_masking_templates-d23535e30160" class="topicref" data-id="salesforce_data_masking_templates" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action salesforce_data_masking_templates-d23535e30160-link" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_data_masking_templates.html" id="salesforce_data_masking_templates-d23535e30160-link">Data masking templates</a><div class="wh-tooltip"><p class="shortdesc">A data masking template defines data fields and the methods to prevent the exposure         of sensitive data when recovering a production snapshot to a non-production         environment.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="creating_data_masking_template-d23535e30171" class="topicref" data-id="creating_data_masking_template" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/creating_data_masking_template.html" id="creating_data_masking_template-d23535e30171-link">Creating a data masking template</a><div class="wh-tooltip"><p class="shortdesc">Create a data masking template by specifying the object and fields to mask and the         corresponding masking rules.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_data_masking_template-d23535e30182" class="topicref" data-id="editing_data_masking_template" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/editing_data_masking_template.html" id="editing_data_masking_template-d23535e30182-link">Editing a data masking template</a><div class="wh-tooltip"><p class="shortdesc">Edit an existing data masking template to update the data fields and methods used to         mask sensitive information.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_data_masking_template-d23535e30193" class="topicref" data-id="deleting_data_masking_template" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/deleting_data_masking_template.html" id="deleting_data_masking_template-d23535e30193-link">Deleting a data masking template</a><div class="wh-tooltip"><p class="shortdesc">Deleting a data masking template permanently removes the configuration and masking         rules for Salesforce data protection from <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="cloning_data_masking_template-d23535e30207" class="topicref" data-id="cloning_data_masking_template" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/cloning_data_masking_template.html" id="cloning_data_masking_template-d23535e30207-link">Cloning a data masking template</a><div class="wh-tooltip"><p class="shortdesc">Cloning an existing data masking template creates a duplicate with similar         configuration settings.</p></div></div></div></li><li role="treeitem"><div data-tocid="performing_in_place_data_masking-d23535e30218" class="topicref" data-id="performing_in_place_data_masking" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/performing_in_place_data_masking.html" id="performing_in_place_data_masking-d23535e30218-link">Performing in-place masking of sandbox data</a><div class="wh-tooltip"><p class="shortdesc">In-place data masking uses a masking template to anonymize sensitive information that         exists in a sandbox.</p></div></div></div></li><li role="treeitem"><div data-tocid="data_masking_template_details-d23535e30229" class="topicref" data-id="data_masking_template_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/data_masking_template_details.html" id="data_masking_template_details-d23535e30229-link">Data masking template details</a><div class="wh-tooltip"><p class="shortdesc">Data masking templates contain configurations for objects, fields, and methods used         to anonymize Salesforce data.</p></div></div></div></li><li role="treeitem"><div data-tocid="data_masking_methods-d23535e30240" class="topicref" data-id="data_masking_methods" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/data_masking_methods.html" id="data_masking_methods-d23535e30240-link">Data masking methods</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides a number of data masking methods for Salesforce         data.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="data_types_substitution_masking-d23535e30253" class="topicref" data-id="data_types_substitution_masking" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/data_types_substitution_masking.html" id="data_types_substitution_masking-d23535e30253-link">Supported data types for substitution masking</a><div class="wh-tooltip"><p class="shortdesc">Salesforce data types supported for substitution masking include financial, personal,         and geographic identifiers.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="salesforce_dashboard_details-d23535e30264" class="topicref" data-id="salesforce_dashboard_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../salesforce/salesforce_dashboard_details_2.html" id="salesforce_dashboard_details-d23535e30264-link">Salesforce dashboard details</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> monitors Salesforce data and displays important details such as         API and license usage and the number of failed or successful backups.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365-d23535e30277" class="topicref" data-id="m365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365-d23535e30277-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/m365.html" id="m365-d23535e30277-link">Microsoft 365</a><div class="wh-tooltip"><p class="shortdesc">Using the data management and protection services offered by <span class="ph">Rubrik Security Cloud</span>, you can protect Microsoft 365 data operations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="m365_backup_storage-d23535e32316" class="topicref" data-id="m365_backup_storage" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action m365_backup_storage-d23535e32316-link" class="wh-expand-btn"></span><div class="title"><a href="../m365_backup_storage/m365_backup_storage.html" id="m365_backup_storage-d23535e32316-link">Microsoft 365 Backup Storage</a><div class="wh-tooltip"><p class="shortdesc">With the Microsoft 365 Backup Storage feature, you can back up Microsoft 365         applications such as SharePoint sites, OneDrive user accounts, and Exchange mailboxes. You         can also restore large volumes of data during ransomware attacks, accidental deletion, or         malicious data deletion and overwrite events.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_dynamics_365-d23535e32708" class="topicref" data-id="microsoft_dynamics_365" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_dynamics_365-d23535e32708-link" class="wh-expand-btn"></span><div class="title"><a href="../microsoft_dynamics_365/microsoft_dynamics_365.html" id="microsoft_dynamics_365-d23535e32708-link">Microsoft Dynamics 365</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the tables and metadata in your Microsoft Dynamics 365         subscription.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_managing_protection-d23535e33201" class="topicref" data-id="saas_managing_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_managing_protection.html" id="saas_managing_protection-d23535e33201-link">Managing protection for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Protect SaaS applications, such as Atlassian Jira and Salesforce, by assigning them         to an SLA Domain. This protects the instance by applying backup frequency and retention         policies.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_creating_sla_domains-d23535e33212" class="topicref" data-id="saas_creating_sla_domains" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_creating_sla_domains_2.html" id="saas_creating_sla_domains-d23535e33212-link">Creating an SLA Domain for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Create an SLA Domain with custom backup frequency and retention policies to retain         snapshot data beyond a year.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_deleting_sla_domain-d23535e33223" class="topicref" data-id="saas_deleting_sla_domain" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_deleting_sla_domain_2.html" id="saas_deleting_sla_domain-d23535e33223-link">Deleting an SLA Domain for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Delete an SLA Domain you created for SaaS applications from <span class="ph">RSC</span> when         it is no longer needed.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_events-d23535e33237" class="topicref" data-id="saas_events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_events-d23535e33237-link" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_events.html" id="saas_events-d23535e33237-link">SaaS application events</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> tracks, monitors, and displays all SaaS application events in a         unified view for all connected instances. For example, you can view backup and recovery         events and statuses, such as succeeded or failed.</p></div></div></div></li><li role="treeitem"><div data-tocid="sass_reporting-d23535e33329" class="topicref" data-id="sass_reporting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/sass_reporting.html" id="sass_reporting-d23535e33329-link">SaaS application reporting</a><div class="wh-tooltip"><p class="shortdesc">You can create reports about SaaS application data protection to view status         information about an instance. You can use the provided report type templates and customize         the default templates as needed. </p></div></div></div></li><li role="treeitem"><div data-tocid="saas_creating_reports_instances-d23535e33341" class="topicref" data-id="saas_creating_reports_instances" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_creating_reports_instances.html" id="saas_creating_reports_instances-d23535e33341-link">Creating reports for SaaS applications</a><div class="wh-tooltip"><p class="shortdesc">Create reports for SaaS applications to view information in your application, such as         compliance status and protection status, using the available templates, which you can         customize for each report type. You can use the data gathered in the reports to perform         audits and data management planning.</p></div></div></div></li><li role="treeitem"><div data-tocid="saas_report_templates-d23535e33352" class="topicref" data-id="saas_report_templates" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/saas_report_templates.html" id="saas_report_templates-d23535e33352-link">SaaS application report templates table</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span>provides a template for each report category. You can use default         reports as basic templates and modify them to create new reports. The following table         describes the available report template types.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e33365" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e33365-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d23535e33365-link">Storage Workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e34757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e34757-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23535e34757-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics, Data Security Posture, and
+                Identity Resilience. Prepare for automated Orchestrated Application
+                Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e38011" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e38011-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d23535e38011-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40192" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40192-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23535e40192-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40438" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40438-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d23535e40438-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as ServiceNow and Zscaler. Monitor
+                consumption, entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40871" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40871-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23535e40871-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health, and
+                configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e42649" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e42649-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23535e42649-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic guides, RSC Insights, Support Tunnels, and solutions for
+                operational issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e42736" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e42736-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d23535e42736-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e43301" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e43301-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23535e43301-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Supported data types for substitution masking</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">Salesforce data types supported for substitution masking include financial, personal,
+        and geographic identifiers.</p>
+        <section class="- topic/section section">
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption><span class="- topic/desc desc tabledesc">The following table lists the Salesforce data types supported for substitution
+                    masking and provides examples of sensitive data for each type.</span></caption><colgroup><col style="width:20%"/><col style="width:40%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="data_types_substitution_masking__entry__1">Data Type</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="data_types_substitution_masking__entry__2">Description</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="data_types_substitution_masking__entry__3">Examples</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">ABA Routing Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A 9-digit code used in the United States to identify a specific
+                                financial institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">021000021, 111000025</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Advertising identifier</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique code that identifies a user device for targeted
+                                advertising.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678-1234-1234-1234-123456789012,
+                                87654321-4321-4321-4321-210987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Age</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Age of a person in years.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">25, 42</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Amazon Auth Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A temporary security credential used to authenticate API requests
+                                to AWS.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AtzawEB aman mws.token</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">American Bankers CUSIP</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique 9-digit alphanumeric code used to identify American and
+                                Canadian securities.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">a037833100.594918104</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AU Bank Account Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a bank account in Australia.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456788, 887654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AU BSB Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Bank-State-Branch code, a 6-digit number used to identify
+                                individual bank branches in Australia.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123-456, 967-664</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AU Medical Account Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a medical record in an
+                                Australian healthcare system.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678910, 9676543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AU Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of an Australian passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">PA1234567, PB9676543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australia Driver's License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in Australia.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">CIL123456 CH 987654</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australia Medicare Beneficiary Identifier</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Australian Medicare Beneficiary identifier.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234 58788 0, 9876 543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australian Business Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique 11-digit number used to identify a business by the
+                                Australian government.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12 345 678 001, 08705-432 109</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australian Company Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique 9-digit number used to identify a company by the
+                                Australian Securities and Investment Commission.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123 456 789, 987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australian Pensioner Concession Card</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Australian Pensioner Concession Card.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123 456 789 0, 957 654 321 0</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Australian TFN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for an individual or organization used by
+                                Australian tax authorities.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456789 987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Auth0 Domain URL</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique URL endpoint for an Auth0 tenant.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">dev 123456 autho.com.company.autho.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Auth0 OAuth Client ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Auth0 OAuth client identifier.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">autho-client-1234567890abodef, al-cliers-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AWS Access Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Amazon Web Services access key identifier.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AKIАМОНОНБЕXAMPLE, AKIAIOSFOONNTEXAMPLE</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AWS API key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Amazon Web Services API key.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AKIAIDSFOONNTEXAMPLE, AKIA144CHEDHBEXAMPLE</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AWS Connection String</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Amazon Web Services connection string.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">JAKIAIOSFOONNTEXAMPLE w.Jal/XUFEM@amazws.com/buchet aws
+                                ЛАКТАМ40HBDHBEXAMPLE
+                                secretkey@dynamodi.us-east-1.amazonaws.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">AWS Secret</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Amazon Web Services secret access key.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">JBXUHFEMI/KTMDENG/UPXRSCYEXAMPLEKEY,
+                                abodelghijklmnopqrstuvwxyz1234567890ABCD</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Azure Client Secret</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Microsoft Azure client secret.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">asure-secret-1234567890abcdef, az secrel abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Azure Connection String</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Microsoft Azure connection string.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Clefaultfindpoints Protocolrhttps:AccountName myaccount:
+                                AccountKeywkey 123 EndpointSuffiancore windows.net. DefaultEndpoints
+                                Protocolmhttps AccountName storage AccountKey key456
+                                indpontfluffixncare.windows.net</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bank Account Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A number used to identify a bank account.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456789012, 987654321096</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bank name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Name of a financial institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Bank of America, Chase Bank</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Belgium Driver's License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in Belgium.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">BE 123456789 BE987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Belgium National Number (BNN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify residents of Belgium.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12.34.58-780:01.98.76.54-321.00</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Belgium Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of a Belgian passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB 123-456 CD 987654</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Birth Date</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The date of birth of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1855-03-15. 1990-07-22</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bitbucket Client ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier assigned to a registered application on
+                                Bitbucket.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">bilbucket-cienil id-1234567890, bb-client-id abcdef123456</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bitbucket Client Secret</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Cryptographic key used to authenticate an application accessing
+                                Bitbucket.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">bilbucket-secret abodet1234567890. bb-secnel
+                                1234567890abcdef</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bitcoin Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for a bitcoin wallet where bitcoins can be
+                                sent.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1A1zP1eP5QGel20MPTTTL5SLw7DiviNa, 339811WpEZ73CNmWiecmy
+                                WmqRhWNLy</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Bitcoin Secret</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A cryptographic key used to access and control bitcoin
+                                wallets.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">SHueCGU MEXxPuD5BDk4MkFjZyd4dZTjvhTViqve LvyTJ
+                                KwDB88QgGbjEnkhuH7LcVwZ3qYjgd9M7 FU73svHnoWn</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Blood Type</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Blood type.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">A+, 0</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Brazilian Boleto Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier used by boleto bancário, a popular Brazilian
+                                payment method, to process.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890 12345678901 123456789011 12345678901234, 9876543210
+                                9876543210996766.4321099 98765432100876</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">California Driver's License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The unique identifier used to identify a driver's license in California.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">01234567, 9876543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">California ZIP Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A zip code from the state of California.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">90210. 94102</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canada Bank Account Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a bank account in
+                                Canada.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345-678 98786-432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canada Health Service Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify an individual to healthcare
+                                services in Canada.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234-567-890-9876-543-210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canada Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of a Canadian passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB 123456 CD867854</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canada Personal Health Identification Number (PHIN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify an individual to healthcare
+                                services in Canada.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890, 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canada SIN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A Canadian Social Insurance Number used to identify Canadian
+                                citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123-456-789, 967-664-321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Canadian Routing Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A 5-digit code used in Canada to identify a specific financial
+                                institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">00012-345, 00098-765</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CC Last Four</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The last 4 digits of a credit card.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">City</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The name of a city.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">New York. Los Angeles</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CloudElements API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to CloudElements.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">се -key-1234567890ebodef
+                                cloudelements-key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CloudFlare API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Cloudflare.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">chap key 1234567890abodef,
+                                cloudflare-key-abcdef1234567880</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CloudFlare API Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A temporary credential used to authenticate to
+                                Cloudflare.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">cfHoken-1234567890abcdef, cloudflare-token
+                                abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CloudFiles Certificate Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A cryptographic key used in the authentication process to
+                                Cloudflare.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">BEGIN CERTIFICATE END CERTIFICATE BEGIN PRIVATE KEY END PRIVATE
+                                KEY</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Cloudimage API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Cloudimage.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890abodef cloudimage-key-abcdef1234567890 capi
+                                key-</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Cloudmersive API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Cloudmersive.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">cm-api key-1234567890abcdef
+                                cloudmersive-key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CloudPlan API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Cloudplan.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">cp-ap-key-1234567890abcdef cloudplan-key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Cloudsmith API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Cloudsmith.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">cs-token-1234567890abcdef,
+                                goudsmith-token-abodet1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Coinbase Access Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Coinbase.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">coinbase-token-1234567890upodel co-token-abode 1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Country</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A country.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">United States, Canada</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Country Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A short alphanumeric code used to represent a country.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">UB GB</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">County</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A geographical subdivision of a country or state.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Los Angeles County Cook County</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Credit Card</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Credit card number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">4532-1234-5878-5010, 5425-2354-3010-9903</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Credit Score</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A numerical expression of creditworthiness.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">720, 660</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Cryptographic Certificate</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A digital document used to prove ownership of a public
+                                cryptographic key.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">BEGIN CERTIFICATE END CERTIFICATE BEGIN CERTIFICATE END
+                                CERTIFICATE</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Current Procedural Terminology (HCPCS)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A standardized code used to report medical, surgical and
+                                diagnostic services.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">99213, 99214</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">CVV</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Card Verification Value, a 3- or 4-digit number associated with a
+                                credit card as an additional security measure.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123, 456</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Databricks API Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application making API requests to Databricks.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">dapi1234567890abcdef1234567890aticdel, dap
+                                aboder1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Datadog Access Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Datadog API access token.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">dd-token-1234567890abcdef, datadog-tolken
+                                abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Date of Hire</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The date of hire of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">2020-01-15. 2019-06-30</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Device ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique code that identifies a specific electronic device such
+                                as a smartphone or computer.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">DEV-123456-ABCD DEVICE 987654-WXYZ</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Digital Certificate</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A cryptographic document used to prove ownership of a public
+                                cryptographic key.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">BEGIN CERTIFICATE END CERTIFICATE BEGIN CERTIFICATE END
+                                CERTIFICATE</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Disability Status</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A classification of an individual based on the presence of a
+                                physical or mental impairment.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Cisabled, Not Disabled</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Driver License</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Government issued driver's license number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">01234667, DL98786432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Drug Enforcement Agency Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Drug Enforcement Administration number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB1234563 C09876549</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Elastic API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Elastic.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">elastic-key-1234567890abcdef, es-key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Email Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Email address.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">john.smin@example.com, jane doe@test.org</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Employer Identification Number (EIN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Employer Identification Number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12-3456789 66-7654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ethereum Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for an Ethereum wallet where Ethereum can be
+                                sent.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">0x742635Cc6634C05329258368448c9e759506Eb
+                                0x5aeb0053F36940969409133609435ETE11B6Aed</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ethereum Contract Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for an Ethereum smart contract.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">0x1234567890123456789012345678901234567890,
+                                Oxabcdefabcdefabcdefabcdefabcdefabcdefanod</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ethereum Secret</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A cryptographic key used to access and control Ethereum
+                                wallets.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">0x1234567890abcdef1234567890bdef123456780abdef1234567890abogel,
+                                Oxfeditia0987654321fedca0987654321009876543211e0b987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ethnicity</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The ethnicity of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Caucasian, Asian</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Country</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A country in the European Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Germany, France</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Country Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A country code associated with a country in the European
+                                Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">DE FR</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Email Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An email address that is associated with a European
+                                domain.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">user example eu, contact@joompany.de</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU IBAN code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An International Bank Account Number associated with a bank
+                                account in the European Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">DE89370400440532013000 FR 1420041010050500013M02006</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Nationality</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A nationality that is associated with a country in the European
+                                Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">German, French</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Phone Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A phone number with a country code associated with a country in
+                                the European Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">+49 30 12345678 +33 123-456789</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">EU Swift Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A SWIFT code associated with a financial institution in the
+                                European Union.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">DEUTDEFFOX, BNPAFRPPXXX</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">First Name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The first name of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Jahn, Jane</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France Driver License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier used to identify a driver's license in France.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456788012, 987654321088</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France Health Insurance Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">French Health insurance Number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1.85 03.75 118 12345, 290 07 69 238 96715</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France National ID Card</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">French National Identity Card number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">987654321006 123456789012</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">French passport number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12AB54567 990076543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France Social Security Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A French Social Security Number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">03 75 116 123 45, 290 076923596765 11.85</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">France Tax Identification Number (NIF)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">French Tax Identification Number (NIF).</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890123. 9676543210987</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Full Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A complete street address of a house or building.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123 Main St. New York, NY 10001. 456 Oak Ave. Los Angeles, CA
+                                90001</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Full Name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The full name of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">John Smith, Jane Doe</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">GCP OAuth Refresh Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A credential in GCP used to obtain new access tokens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1//0gABCDEFGHIJKLMNOPQRSTUVWXYZ
+                                10gZYXWWUTSROPONMLKJIHGFEDCBA</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Gender</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The gender of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Mae Female</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">German Tax Identification Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier used by individuals for tax purposes in
+                                Germany.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678901, 98765432109</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Germany Driving License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The unique number given to a driver's license in Germany.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">81234567890 88876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Germany Identity Card Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique alphanumerical code used to identify German
+                                citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">L01XO0T471 LOOXOBTOOO</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Germany Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of a German passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">C01X00T47, C80X90199</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Germany Schufa</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">German Schufa credit bureau identifier.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890, 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Git Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A token for Git service.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">ghp 1234567890abodellghijklmnopqrst gho_abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">GitHub OAuth Refresh Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A credential in Github used to obtain new access tokens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">ghr 1234567890abcdefghijkämmopqrstuvwxyz.
+                                ghr_zywwwuterqpormlikjingfedcba0987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Gitlab Personal Access token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Gitlab.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">gipat-1234567890abcdefgnij, gitab token-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Google API key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Google Cloud Platform API key.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AlzaSyD1234567890abcdefghijklmnopqrst,
+                                AlzsSyAbcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Health Insurance Claim Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Health insurance Claim Number, a unique identifier for an
+                                insurance claim.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123-45-67894, 987-65-43218</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IBM API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to IBM.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">-ap-key-1234567890abcdef, m key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">ICD10 Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">International Classification of Diseases Code, version 10. A
+                                short numeric code for a disease.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">E11.9, 110</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">ICD9 Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">International Classification of Diseases Code, version 9. A short
+                                numeric code for a disease.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">250.00, 401.9</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IMEI</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">International Mobile Equipment Identity, a unique number for a
+                                mobile phone.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456789012345 987654321096768</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IMSI</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">International Mobile Subscriber Identity, a unique number for a
+                                user of a cellular network.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">310150123456788 310200987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">International Banking Account Number (IBAN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">International bank account number, used to identify a bank
+                                account in a globally standardized format.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">GB82 WEST 1234 5098 7654 32 DE89 3704 0044 0532013000</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IPv4 Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An IP address for IP version 4.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">192.168.1.1, 10.0.0.5</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IPv4 with Port</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An IP address for IP version 4 with a TCP/UDP port.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">192.168.1.1:8080, 10.0.0.5:443</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">IPv6</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An IP address for IP version 6.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">2001 Od 85a38a3e0570-7334, 801</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ireland Drivers License</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number given to a driver's license in Ireland.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456, 987854</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ireland Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Irish passport number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">P1234567, P9678543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Ireland personal public service (PPS) number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify Irish citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567A 98765438</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">ISIN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A number used in the United Kingdom to identify securities such
+                                as stock, equities, and bonds.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">US0378331005, GB0002374008</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Israeli ID Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identification number used to identify an Israeli
+                                citizen.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456789. 987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Israeli Vehicle ID Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A vehicle identification number used by the Israeli motor vehicle
+                                office.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">IL-12345678, IL 98765432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Italy Drivers License</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in Italy.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB 1234567CO, XY9876645ZW</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Italy Fiscal Code (Tax ID &amp; SSN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Italian Fiscal Code (Codice Fiscale).</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">RSSMRABISMO1H501U, VRDGPP90L22F205X</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Italy Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Italian passport number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB 1234567, CD9876543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">ITIN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Individual Tax Identification Number, a tax processing number
+                                issued by the IRS.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">900-70-1234 900-80-5678</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">JSON Web Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A compact token used to securely transmit information as a JSON
+                                object (JWT).</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">eyJhbGciOJIUzI1NiisinR5cClelkpXVCJB JedWIIOXM MONTY3ODkMHO
+                                dozioNryP4J3jVmNHOWEN PIFUPOTHERS
+                                eyJhbGcQJSUz1NisinR5cCl@kpXVCJ9.eyJzdW5ODc2NTQzMjEwin.abcdeghijklmnopqrstuvwxyz</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Last Four SSN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The last four digits of an American Social Security
+                                Number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234 5878</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Last Name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The last name of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Smith, Johnson</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Latitude</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An imprecise latitude that is accurate to over 10 meters.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">37.7748, 40.7128</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Launchdarkly Access Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Launchdarkly.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">api 12345678-1234-1234-1234-123456789012, id hen
+                                abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Linux Passwd Entry</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Information about a user account including username, user ID
+                                group ID, and home directory.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">user 1000 1000 User Name /home/user/bin/bash, adminx 00
+                                Administrator/root/bin/bash</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Linux Shadow Password Entry</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Secure information about a user account including username,
+                                hashed password, password age, and creation date.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">$65rounds 5000 saltShash $1Sualt Shash</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Loan ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number that identifies a specific loan in
+                                a financial institution's system.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">LOAN-123456789, LN-987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Longitude</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An imprecise longitude that is accurate to over 10
+                                meters.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">122-4194-74.0000</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">MAC Address</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier assigned to network interfaces.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">00:14:28:30:40 SE A182 03:04 FB</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">National Health Service Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for an individual used by the National Health
+                                Service of the United Kingdom.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123 7890, 987 054-3210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Nationality</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The nationality of an individual.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">American, Canadiani</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">NCCI Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Council on Compensation insurance code used to classify a
+                                business.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">8810, 8742</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">NDC Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">National Drug Code, a unique number used to identify a drug
+                                product by the American Federal Drug Administration.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345-678-90 96765-432-10</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Netherlands Citizen Service Number (BSN)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify Dutch citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456708 987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Netherlands Driver's License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in the
+                                Netherlands.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Netherlands Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of a Dutch passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">NL1234567, NL9876543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Netherlands Tax Identification Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify Dutch citizens for tax
+                                purposes.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123456789, 987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Netherlands Value Added Tax Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier assigned to businesses in the
+                                Netherlands.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">NL123456789801, NL987654321899</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Nicename</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Human readable version of a name, often used in online platforms
+                                in place of standard user names.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Johnny. J0</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">OKTA API Domain</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">URL endpoint on the API of an Okta organization.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">dev-123456.olita.com, company.okta.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">OKTA Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Cryptographic key used to sign and verify Okta tokens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">00wbodelghijklmnopqrstuvwxyz1234567890,
+                                okta-key-123456789Qubcdef</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Passport number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">A12345678, P98786432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Password</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Password.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Pssa0rd123 SensePass4568</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Patent Serial Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique serial number used to identify a patent in the United
+                                States Patent and Trademark Office.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">CUS1234567A, US987854382</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Patient Date of Birth</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The date of birth of an individual with regards to a patient in a
+                                healthcare institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">11880-05-15, 1975-11-22</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Patient Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A number used to identify a patient in a healthcare
+                                institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">PAT-123456, P987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Paypal Access Token</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Paypal.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">A21AАНК всcess_token productions</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Paypal Payer ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number that identifies a Paypal user.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">P-1AB2CO3EF4GH5J6, payer @example.com</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Phone Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Phone number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">(555) 123-4567 (556) 987-6543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Physician Name</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The name of a treating physician in a healthcare
+                                institution.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Dr. John Simith, Dr. Jane Doe</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">PO Box</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The number for a post office box.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Box 1234, PO Box 5678</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Port</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A TCP/UDP port.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">8080, 445</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Precise Latitude</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A precise latitude that is accurate to under 10 meters.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">37.7748 40 7128</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Precise Location</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A precise geolocation represented by latitude and longitude and
+                                accurate to under 10 meters.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">37: 7749 N. 122.4194" W 40 7128 N 74 0000 W</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Precise Longitude</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A precise longitude that is accurate to under 10 meters.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">-122-4194,-74.0000</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Private Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An alphanumeric string used as a cryptographic key to decrypt
+                                data or create digital signatures.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">END RSA PRIVATE KEY BEGIN OPENSSH PRIVATE KEY BEGIN RSA PRIVATE
+                                KEY END OPENSSH PRIVATE KEY</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Procedure Code (HCPCS)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A standardized code that describes healthcare services, items,
+                                and procedures.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">A0428. J3490</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Relationship info</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Information regarding a relationship between two people such as
+                                marital status.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">Mament Single</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Salary Details</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Compensation or wage information.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">$75,000 per year, $50.00 per hour</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Splunk API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to Splunk.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">splunk key-123-4567890abcdef sp-key-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">SSN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An American Social Security Number, used to identify US
+                                citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">987-65-4321, 900-12-3456</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Steel</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">The name of a street.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123 Main St. 456 Chak Ave</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Stripe Fingerprint</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier generated by Stripe for a credit
+                                card.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">fp1234567890abcdef, stipe-tp-abcdef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Student ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An ID number for a student given by a school or
+                                university.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">STU123456 S987654321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Sweden Driving License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in Sweden.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890, 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Sweden National ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify Swedish citizens.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">19550315-1234, 19900722-9870</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Sweden Passport Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A passport number of a Swedish passport.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678, 98765432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Sweden Tax Identification Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify Swedish citizens for tax
+                                purposes.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">123-456-7890, 987654-3210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Swift Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique code made up of numbers and digits used to identify a
+                                bank.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">ABCDUS33XXX, EFGHGB2LXXX</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Synthetic Credit Card</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A credit card number that is fake or synthetic and used for
+                                demonstrative purposes.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">4532-1234-8678-9010, 5425-2334-3010-9903</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Synthetic SSN</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An American Social Security Number that is fake or synthetic and
+                                used for demonstrative purposes.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">987-65-4220, 900-12-3455</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">TMSI</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Temporary Mobile Subscriber Identity, a non-unique number used to
+                                temporarily identify a user.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">usm 12345678, 87854321</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">TravisCI API Key</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique string of characters used to authenticate a user or
+                                application to TravisCI.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">travis-api-key-1234567890abcdef, key-abodef1234567890</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Twitter ID</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique ID that identifies a Twitter user.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">username 123 @user name 450</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">UK Driver's License Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a driver's license in the UK.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">SMITH123456ABCD, JONES987864XY1ZW</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">UK Electoral Roll Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number assigned to individuals in the UK on the
+                                electoral register.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678 98765432</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">UK National Insurance Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a citizen of the United Kingdom,
+                                equivalent to an American SSN.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">AB123456C CD987654E</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">UK Unique Taxpayer Reference (UTR)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique number used to identify a taxpayer in the United
+                                Kingdom.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1234567890, 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">UK Zip Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A zip code used in the United Kingdom.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">SWIA TAA, EC1A 198</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Universal Loan Identifier</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique alphanumeric code assigned to a loan application by
+                                financial institutions in the US.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678901234567890ABCDE 98765432100876543210ZVXWV</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">US Healthcare National Provider Identifier</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique 10-digit number used to identify a healthcare provider
+                                in the USA.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">12345678910, 9876543210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">US Medicare Beneficiary identifier (SMB)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique identifier for Medicare beneficiaries in the US.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1AB2-CDS-EF45 9XYS-WV7-UTBS</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">US Phone Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">An American phone number.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">(555) 123-4567 (555) 987-6543</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">US State</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">One of the states in the United States of America.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">California, New York</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">USCIS</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Green Card Number, a unique identifier found on an American
+                                Permanent Resident Card.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">ABC-12-345-67890, XYZ 08-765-43210</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Username</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">Username.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">jamith joe123</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__1">Vehicle ID Number</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="data_types_substitution_masking__entry__2">A unique code that identifies a motor vehicle.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="data_types_substitution_masking__entry__3">1HGBH41. XMN1091AE SYJSATE 14HF123456</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="data_types_substitution_masking__entry__1">ZIP Code</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="data_types_substitution_masking__entry__2">A zip code used in the USA.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="data_types_substitution_masking__entry__3">90210 10001</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="salesforce_data_masking_templates.html" title="A data masking template defines data fields and the methods to prevent the exposure of sensitive data when recovering a production snapshot to a non-production environment.">Data masking templates</a><div class="- topic/desc desc">A data masking template defines data fields and the methods to prevent the exposure         of sensitive data when recovering a production snapshot to a non-production         environment.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

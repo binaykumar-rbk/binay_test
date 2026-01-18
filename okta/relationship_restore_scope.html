@@ -1,0 +1,334 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="Granular recovery for Okta objects enables you to restore selected objects along with their dependencies. RSC provides options to recover selected objects, interconnected objects, and their relationships. This feature enables you to re-establish broken links and corrupted relationships, such as those between users and groups."/><meta name="DC.relation" content="../okta/recover_okta_objects.html"/><meta name="DC.relation" content="../okta/recover_okta_objects.html"/><meta name="DC.relation" content="../okta/recreate_objects_restore_relationships.html"/><meta name="DC.relation" content="recreate_objects_restore_relationships.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="relationship_restore_scope"/>        
+      <title>Relationship restore scope</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="relationship_restore_scope-d23535e40069"/><meta name="wh-source-relpath" content="okta/relationship_restore_scope.dita"/><meta name="wh-out-relpath" content="okta/relationship_restore_scope.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260118162454"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260118162454"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="relationship_restore_scope" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../identity_resilience/identity_resilience.html">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../adds/ad_protection.html">Identity Workloads</a></div></div></li><li><div class="topicref" data-id="okta_idp"><div class="title"><a href="../okta/okta_idp.html">Okta IdP</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection and recovery for Okta Identity Provider         objects. By integrating your Okta tenant with Rubrik, you can leverage a comprehensive set         of data protection features designed for security, simplicity, and reliability.</p></div></div></div></li><li><div class="topicref" data-id="recover_okta_objects"><div class="title"><a href="../okta/recover_okta_objects.html">Recover Okta objects</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides protection for critical Okta objects. You can assign an         SLA Domain to your Okta tenant to begin the automated backups. You can recover the required         Okta objects using the automated backups or on-demand snapshots.</p></div></div></div></li><li class="active"><div class="topicref" data-id="relationship_restore_scope"><div class="title"><a href="../okta/relationship_restore_scope.html">Relationship restore scope</a><div class="wh-tooltip"><p class="shortdesc">Granular recovery for Okta objects enables you to restore selected objects along with         their dependencies. <span class="ph">RSC</span> provides options to recover selected objects,         interconnected objects, and their relationships. This feature enables you to re-establish         broken links and corrupted relationships, such as those between users and         groups.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../okta/recover_okta_objects.html" title="Recover Okta objects" aria-label="Previous topic: Recover Okta objects" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../okta/recreate_objects_restore_relationships.html" title="Recreate objects and restore relationships" aria-label="Next topic: Recreate objects and restore relationships" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e868" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e868-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d23535e868-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e1909" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e1909-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d23535e1909-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e4157" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e4157-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d23535e4157-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e8064" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e8064-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d23535e8064-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e10936" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e10936-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d23535e10936-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc">Securely manage and protect data across a wide variety of workload
+                types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e34757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e34757-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d23535e34757-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics, Data Security Posture, and
+                Identity Resilience. Prepare for automated Orchestrated Application
+                Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23535e38011" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23535e38011-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d23535e38011-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e38017" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e38017-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d23535e38017-link">Identity Resilience</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Identity Resilience is designed to protect, monitor, and recover
+                    identities, both human and non-human identities, in hybrid identity
+                    environments.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d23535e38679" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d23535e38679-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d23535e38679-link">Identity Workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="ad_protection-d23535e38680" class="topicref" data-id="ad_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad_protection-d23535e38680-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="ad_protection-d23535e38680-link">Active Directory protection</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> offers capabilities for protecting Active Directory,         including features for backing up and recovering individual domain controllers and entire         Active Directory forests, designed to enhance the identity resilience of an         organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="microsoft_entra_id-d23535e39317" class="topicref" data-id="microsoft_entra_id" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action microsoft_entra_id-d23535e39317-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_entra_id.html" id="microsoft_entra_id-d23535e39317-link">Microsoft Entra ID</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports backup and recovery of Microsoft Entra ID.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="okta_idp-d23535e39870" class="topicref" data-id="okta_idp" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action okta_idp-d23535e39870-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/okta_idp.html" id="okta_idp-d23535e39870-link">Okta IdP</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection and recovery for Okta Identity Provider         objects. By integrating your Okta tenant with Rubrik, you can leverage a comprehensive set         of data protection features designed for security, simplicity, and reliability.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e39883" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e39883-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/okta_key_features_protection.html" id="tocId-d23535e39883-link">Introduction to Okta protection</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="plan_okta_idp_protection-d23535e39908" class="topicref" data-id="plan_okta_idp_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action plan_okta_idp_protection-d23535e39908-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/plan_okta_idp_protection.html" id="plan_okta_idp_protection-d23535e39908-link">Plan your Okta IdP protection</a><div class="wh-tooltip"><p class="shortdesc">Before integrating Okta IdP with <span class="ph">RSC</span>, you must meet certain         requirements to start protecting your critical Okta objects.</p></div></div></div></li><li role="treeitem"><div data-tocid="evaluate_okta_configuration_options-d23535e39942" class="topicref" data-id="evaluate_okta_configuration_options" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../okta/evaluate_okta_configuration_options.html" id="evaluate_okta_configuration_options-d23535e39942-link">Evaluate Okta configuration options</a><div class="wh-tooltip"><p class="shortdesc">You can add Okta tenants to <span class="ph">RSC</span> using the Identity Resilience         inventory, Data Protection inventory, or Settings menu.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="configure_okta_idp-d23535e39956" class="topicref" data-id="configure_okta_idp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configure_okta_idp-d23535e39956-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/configure_okta_idp.html" id="configure_okta_idp-d23535e39956-link">Configure Okta IdP</a><div class="wh-tooltip"><p class="shortdesc">Configure your Okta Identity Provider by adding Okta tenants to <span class="ph">RSC</span>         and perform other maintenance operations, such as editing and removing the Okta         tenants.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_protection_okta_idp-d23535e40009" class="topicref" data-id="manage_protection_okta_idp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_protection_okta_idp-d23535e40009-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/manage_protection_okta_idp.html" id="manage_protection_okta_idp-d23535e40009-link">Manage protection for Okta IdP</a><div class="wh-tooltip"><p class="shortdesc">You can use SLA Domains to apply data protection and management policies to Okta         tenants for optimal protection.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="recover_okta_objects-d23535e40056" class="topicref" data-id="recover_okta_objects" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action recover_okta_objects-d23535e40056-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/recover_okta_objects.html" id="recover_okta_objects-d23535e40056-link">Recover Okta objects</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides protection for critical Okta objects. You can assign an         SLA Domain to your Okta tenant to begin the automated backups. You can recover the required         Okta objects using the automated backups or on-demand snapshots.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="relationship_restore_scope-d23535e40069" class="topicref" data-id="relationship_restore_scope" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../okta/relationship_restore_scope.html" id="relationship_restore_scope-d23535e40069-link">Relationship restore scope</a><div class="wh-tooltip"><p class="shortdesc">Granular recovery for Okta objects enables you to restore selected objects along with         their dependencies. <span class="ph">RSC</span> provides options to recover selected objects,         interconnected objects, and their relationships. This feature enables you to re-establish         broken links and corrupted relationships, such as those between users and         groups.</p></div></div></div></li><li role="treeitem"><div data-tocid="recreate_objects_restore_relationships-d23535e40083" class="topicref" data-id="recreate_objects_restore_relationships" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../okta/recreate_objects_restore_relationships.html" id="recreate_objects_restore_relationships-d23535e40083-link">Recreate objects and restore relationships</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enhances granular recovery of critical Okta objects by         discovering, displaying, and simplifying the complex, interlinked object structure and         dependencies in Okta. This enables you to precisely select and manage the recovery of         critical Okta objects and their associated dependencies.</p></div></div></div></li><li role="treeitem"><div data-tocid="multivalued_data_recovery_rules-d23535e40096" class="topicref" data-id="multivalued_data_recovery_rules" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../okta/multivalued_data_recovery_rules.html" id="multivalued_data_recovery_rules-d23535e40096-link">Multi-valued data recovery rules</a><div class="wh-tooltip"><p class="shortdesc">Information about how to handle conflicts for multi-valued data, both attributes and         relationships, during recovery. <span class="ph">RSC</span> provides two options, overwrite or merge         values, enabling you to select the option that best meets your organizational requirements         for data consistency.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovering_okta_objects-d23535e40110" class="topicref" data-id="recovering_okta_objects" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../okta/recovering_okta_objects.html" id="recovering_okta_objects-d23535e40110-link">Recovering Okta objects</a><div class="wh-tooltip"><p class="shortdesc">Recover required Okta objects using automated or on-demand snapshots of your Okta         tenant when a critical object is accidentally deleted or changed.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_okta_tenants-d23535e40121" class="topicref" data-id="manage_okta_tenants" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_okta_tenants-d23535e40121-link" class="wh-expand-btn"></span><div class="title"><a href="../okta/manage_okta_tenants.html" id="manage_okta_tenants-d23535e40121-link">Manage Okta tenants</a><div class="wh-tooltip"><p class="shortdesc">Viewing and analyzing detailed information about your protected Okta IdP from the         Inventory page enables you to make informed decisions. Key aspects include viewing tenants,         checking protection status, reviewing detailed object attributes, browsing the snapshot         calendar, viewing events log for audit and compliance, and performing maintenance such as         deleting snapshots.</p></div></div></div></li></ul></li></ul></li><li role="treeitem"><div data-tocid="identity_recovery_scenarios-d23535e40182" class="topicref" data-id="identity_recovery_scenarios" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_recovery_scenarios.html" id="identity_recovery_scenarios-d23535e40182-link">Recovery scenarios for identity workloads</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40192" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40192-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby.html" id="tocId-d23535e40192-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40438" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40438-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d23535e40438-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as ServiceNow and Zscaler. Monitor
+                consumption, entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e40871" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e40871-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d23535e40871-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health, and
+                configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e42649" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e42649-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d23535e42649-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic guides, RSC Insights, Support Tunnels, and solutions for
+                operational issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e42736" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e42736-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d23535e42736-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d23535e43301" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d23535e43301-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d23535e43301-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Relationship restore scope</h1>
+    
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">Granular recovery for Okta objects enables you to restore selected objects along with
+        their dependencies. <span class="- topic/ph ph">RSC</span> provides options to recover selected objects,
+        interconnected objects, and their relationships. This feature enables you to re-establish
+        broken links and corrupted relationships, such as those between users and
+        groups.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Context and problem solved</h2>
+            
+            <div class="- topic/p p">Okta objects are frequently interconnected, and these connections are their
+                dependencies. For example, a User object is typically linked to a Group object. <ul class="- topic/ul ul">
+                    <li class="- topic/li li">Example use case: You need to recover a specific User object. However, due
+                        to an unintended action such as a misconfiguration or accidental deletion,
+                        the Group that the user belongs to in the live tenant was either altered or
+                        accidentally deleted. In such cases, the link or relationship between the
+                        recovered User and the Group cannot be re-established because the Group is
+                        modified or does not exist in the live tenant.</li>
+                    <li class="- topic/li li"><span class="- topic/ph ph">RSC</span> solution: As part of granular recovery for Okta objects,
+                            <span class="- topic/ph ph">RSC</span> provides various restore options that enable you to
+                        fix these broken relationships by choosing precisely how to recover the
+                        selected objects, their related objects, and the relationships between
+                        them.</li>
+                </ul></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Restore options</h2>
+            
+            <div class="- topic/p p"><span class="- topic/ph ph">RSC</span> provides the following restore options to recover Okta objects,
+                their related objects, and the relationships:<div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="relationship_restore_scope__entry__1">Option</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="relationship_restore_scope__entry__2">Description</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="relationship_restore_scope__entry__1">Restore and recreate</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="relationship_restore_scope__entry__2">Recovers the selected objects and recreates any missing
+                                    directly related objects that were present in the
+                                        snapshot.<p class="- topic/p p">You can use this option when the related object
+                                        was deleted. For example, if you recover a User whose
+                                        related Group or Application was deleted from the live
+                                        tenant, this option recreates the Group or the application
+                                        and re-establishes the relationship between the User and the
+                                        Group or the application.</p></td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="relationship_restore_scope__entry__1">Restore and re-link</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="relationship_restore_scope__entry__2">Recovers the selected objects and re-establishes
+                                    relationships only with the linked objects that exist in the
+                                    live tenant.<div class="- topic/p p">You can use this option when related objects are
+                                        still present but the relationship was broken.<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">This
+                                            option only fixes the link and does not recreate any
+                                            related objects that are missing from the live
+                                            tenant.</div></div></div></td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="relationship_restore_scope__entry__1">Restore only</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="relationship_restore_scope__entry__2">Recovers only the selected objects and does not recreate any
+                                    related objects or attempt to re-establish any
+                                        relationships.<p class="- topic/p p">You can use this option when you only need
+                                        to fix attributes of the primary object and do not want to
+                                        alter its current relationships in the live
+                                    tenant.</p></td>
+                            </tr>
+                        </tbody></table></div></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="recreate_objects_restore_relationships.html" title="RSC enhances granular recovery of critical Okta objects by discovering, displaying, and simplifying the complex, interlinked object structure and dependencies in Okta. This enables you to precisely select and manage the recovery of critical Okta objects and their associated dependencies.">Recreate objects and restore relationships</a><div class="- topic/desc desc">RSC enhances granular recovery of critical Okta objects by         discovering, displaying, and simplifying the complex, interlinked object structure and         dependencies in Okta. This enables you to precisely select and manage the recovery of         critical Okta objects and their associated dependencies.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
