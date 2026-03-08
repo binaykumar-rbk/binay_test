@@ -1,0 +1,329 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="You can configure multiple archival policies within a single SLA Domain to automate the delivery of snapshots and log data to distinct cloud storage targets."/><meta name="DC.relation" content="../postgresql/postgresql.html"/><meta name="DC.relation" content="../postgresql/changing_retention_policy_postgresql.html"/><meta name="DC.relation" content="../postgresql/creating_restore_mp_postgresql.html"/><meta name="DC.relation" content="postgresql.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="multiple_archival_locations_postgresql"/>        
+      <title>Multiple archival locations for PostgreSQL</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="multiple_archival_locations_postgresql-d26997e30859"/><meta name="wh-source-relpath" content="postgresql/multiple_archival_locations_postgresql.dita"/><meta name="wh-out-relpath" content="postgresql/multiple_archival_locations_postgresql.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="multiple_archival_locations_postgresql" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../db2/ibm_db2.html">Database workloads</a></div></div></li><li><div class="topicref" data-id="postgresql"><div class="title"><a href="../postgresql/postgresql.html">PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> protects your PostgreSQL cluster by simplifying complex         backup and recovery processes, discovering the databases automatically, and protecting data         using SLA Domains.</p></div></div></div></li><li class="active"><div class="topicref" data-id="multiple_archival_locations_postgresql"><div class="title"><a href="../postgresql/multiple_archival_locations_postgresql.html">Multiple archival locations for PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc">You can configure multiple archival policies within a single SLA Domain to automate         the delivery of snapshots and log data to distinct cloud storage targets.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../postgresql/changing_retention_policy_postgresql.html" title="Changing the retention policy of a PostgreSQL snapshot" aria-label="Previous topic: Changing the retention policy of a PostgreSQL snapshot" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../postgresql/creating_restore_mp_postgresql.html" title="Creating restore mount point for a PostgreSQL cluster" aria-label="Next topic: Creating restore mount point for a PostgreSQL cluster" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="ibm_db2-d26997e26218" class="topicref" data-id="ibm_db2" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ibm_db2-d26997e26218-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="ibm_db2-d26997e26218-link">IBM Db2</a><div class="wh-tooltip"><p class="shortdesc">With IBM Db2 workloads, you can automate complex tasks such as database discovery and         data protection for managing databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ibm_informix-d26997e27103" class="topicref" data-id="ibm_informix" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ibm_informix-d26997e27103-link" class="wh-expand-btn"></span><div class="title"><a href="../informix/ibm_informix.html" id="ibm_informix-d26997e27103-link">IBM Informix</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides native data protection and recovery for IBM Informix         instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sql_server_databases-d26997e27405" class="topicref" data-id="sql_server_databases" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sql_server_databases-d26997e27405-link" class="wh-expand-btn"></span><div class="title"><a href="../common/sql_server_databases.html" id="sql_server_databases-d26997e27405-link">Microsoft SQL Server databases</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster provides data management and protection for Microsoft SQL Server         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mongodb_workloads-d26997e28104" class="topicref" data-id="mongodb_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mongodb_workloads-d26997e28104-link" class="wh-expand-btn"></span><div class="title"><a href="../mongodb/mongodb_workloads.html" id="mongodb_workloads-d26997e28104-link">MongoDB workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> protects your MongoDB sources, databases, and collections,         ensuring optimal storage efficiency and smooth database operations with its advanced         security features and strong data protection.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mysql-d26997e28645" class="topicref" data-id="mysql" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mysql-d26997e28645-link" class="wh-expand-btn"></span><div class="title"><a href="../mysql/mysql.html" id="mysql-d26997e28645-link">MySQL</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the MySQL databases from accidental deletions,         ransomware attacks, and other potential threats.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="oracle_databases_rsc-d26997e29238" class="topicref" data-id="oracle_databases_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action oracle_databases_rsc-d26997e29238-link" class="wh-expand-btn"></span><div class="title"><a href="../oracle/oracle_databases_rsc.html" id="oracle_databases_rsc-d26997e29238-link">Oracle databases</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to back up, archive, replicate, and recover Oracle         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="postgresql-d26997e30694" class="topicref" data-id="postgresql" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action postgresql-d26997e30694-link" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql.html" id="postgresql-d26997e30694-link">PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> protects your PostgreSQL cluster by simplifying complex         backup and recovery processes, discovering the databases automatically, and protecting data         using SLA Domains.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="postgresql_protection_key_features-d26997e30707" class="topicref" data-id="postgresql_protection_key_features" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_protection_key_features.html" id="postgresql_protection_key_features-d26997e30707-link">PostgreSQL protection key features</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, backup and recovery options for PostgreSQL databases, and advanced security         features to protect critical data.</p></div></div></div></li><li role="treeitem"><div data-tocid="postgresql_protection_prereq-d26997e30720" class="topicref" data-id="postgresql_protection_prereq" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_protection_prereq.html" id="postgresql_protection_prereq-d26997e30720-link">PostgreSQL protection prerequisites</a><div class="wh-tooltip"><p class="shortdesc">Information about the specific prerequisites that <span class="ph">RSC</span> requires for         protecting PostgreSQL clusters.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_host_postgresql-d26997e30734" class="topicref" data-id="adding_host_postgresql" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/adding_host_postgresql.html" id="adding_host_postgresql-d26997e30734-link">Adding a host for PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc">To establish a connection between the PostgreSQL cluster and <span class="ph">RSC</span>, add         a host for performing backup and recovery operations.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_postgresql_cluster-d26997e30748" class="topicref" data-id="adding_postgresql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/adding_postgresql_cluster.html" id="adding_postgresql_cluster-d26997e30748-link">Adding a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">Add a PostgreSQL cluster to establish a connection with the Rubrik cluster with the         required configuration details.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_postrgesql_cluster-d26997e30759" class="topicref" data-id="editing_postrgesql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/editing_postrgesql_cluster.html" id="editing_postrgesql_cluster-d26997e30759-link">Editing a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">To modify a PostgreSQL cluster, edit the PostgreSQL cluster settings.</p></div></div></div></li><li role="treeitem"><div data-tocid="refreshing_postgresql_cluster-d26997e30770" class="topicref" data-id="refreshing_postgresql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/refreshing_postgresql_cluster.html" id="refreshing_postgresql_cluster-d26997e30770-link">Refreshing a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">To ensure that the PostgreSQL cluster information is up to date, refresh the         PostgreSQL cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_postresql_cluster-d26997e30781" class="topicref" data-id="deleting_postresql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/deleting_postresql_cluster.html" id="deleting_postresql_cluster-d26997e30781-link">Deleting a PostreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">To remove a PostgreSQL cluster that is no longer required, delete the PostgreSQL         cluster from the Rubrik cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="postgresql_rbk_cloud_cluster_elastic_storage-d26997e30792" class="topicref" data-id="postgresql_rbk_cloud_cluster_elastic_storage" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_rbk_cloud_cluster_elastic_storage.html" id="postgresql_rbk_cloud_cluster_elastic_storage-d26997e30792-link">Rubrik cloud cluster elastic storage for PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Cloud Cluster Elastic Storage is a cloud-native Rubrik deployment model that         protects PostgreSQL workloads running on virtual instances within a Virtual Private Cloud in         public cloud environments.</p></div></div></div></li><li role="treeitem"><div data-tocid="postgresql_user_notes-d26997e30803" class="topicref" data-id="postgresql_user_notes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_user_notes.html" id="postgresql_user_notes-d26997e30803-link">User notes for PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc">You can add user notes to explain the reason behind performing a specific task,         ensuring comprehensive audit tracking for your PostgreSQL environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="postgresql_cluster_protection-d26997e30814" class="topicref" data-id="postgresql_cluster_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action postgresql_cluster_protection-d26997e30814-link" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_cluster_protection.html" id="postgresql_cluster_protection-d26997e30814-link">PostgreSQL cluster protection</a><div class="wh-tooltip"><p class="shortdesc">PostgreSQL cluster protection uses SLA Domains to provide configurable data         protection policies, ensuring consistent and secure management of PostgreSQL cluster         workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="changing_retention_policy_postgresql-d26997e30848" class="topicref" data-id="changing_retention_policy_postgresql" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/changing_retention_policy_postgresql.html" id="changing_retention_policy_postgresql-d26997e30848-link">Changing the retention policy of a PostgreSQL snapshot</a><div class="wh-tooltip"><p class="shortdesc">To optimize data accessibility, change the retention policy of a PostgreSQL         snapshot.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="multiple_archival_locations_postgresql-d26997e30859" class="topicref" data-id="multiple_archival_locations_postgresql" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/multiple_archival_locations_postgresql.html" id="multiple_archival_locations_postgresql-d26997e30859-link">Multiple archival locations for PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc">You can configure multiple archival policies within a single SLA Domain to automate         the delivery of snapshots and log data to distinct cloud storage targets.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_restore_mp_postgresql-d26997e30870" class="topicref" data-id="creating_restore_mp_postgresql" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/creating_restore_mp_postgresql.html" id="creating_restore_mp_postgresql-d26997e30870-link">Creating restore mount point for a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">To recover a PostgreSQL cluster, create a restore mount point by mounting a snapshot         of backup data to the mount point using NFS and then performing the recovery         instructions.</p></div></div></div></li><li role="treeitem"><div data-tocid="unmouting_restore_mount_point_postgresql_cluster-d26997e30881" class="topicref" data-id="unmouting_restore_mount_point_postgresql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/unmouting_restore_mount_point_postgresql_cluster.html" id="unmouting_restore_mount_point_postgresql_cluster-d26997e30881-link">Unmounting restore mount point after PostgreSQL cluster recovery</a><div class="wh-tooltip"><p class="shortdesc">After recovering a PostgreSQL cluster, unmount it to remove the metadata associated         with the selected PostgreSQL cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="recovering_postgresql_cluster-d26997e30892" class="topicref" data-id="recovering_postgresql_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/recovering_postgresql_cluster.html" id="recovering_postgresql_cluster-d26997e30892-link">Recovering a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">After you have created a mount point for the PostgreSQL cluster, recover the cluster         manually by following the recovery instructions.</p></div></div></div></li><li role="treeitem"><div data-tocid="ha_postgres_cluster-d26997e30903" class="topicref" data-id="ha_postgres_cluster" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/ha_postgres_cluster.html" id="ha_postgres_cluster-d26997e30903-link">High Availability for a PostgreSQL cluster</a><div class="wh-tooltip"><p class="shortdesc">High Availability for a PostgreSQL cluster ensures uninterrupted system operation and         data protection against hardware and software failures, natural disasters, power outages,         and network failures.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="postgresql_automated_recovery-d26997e30914" class="topicref" data-id="postgresql_automated_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action postgresql_automated_recovery-d26997e30914-link" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_automated_recovery.html" id="postgresql_automated_recovery-d26997e30914-link">PostgreSQL automated recovery</a><div class="wh-tooltip"><p class="shortdesc">PostgreSQL automated recovery enables you to recover PostgreSQL clusters on <span class="ph">RSC</span> from Rubrik CDM versions 9.4.1 and later without requiring manual         steps.</p></div></div></div></li><li role="treeitem"><div data-tocid="postgresql_protection_limitations-d26997e30950" class="topicref" data-id="postgresql_protection_limitations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql_protection_limitations.html" id="postgresql_protection_limitations-d26997e30950-link">PostgreSQL protection limitations</a><div class="wh-tooltip"><p class="shortdesc">PostgreSQL clusters are subject to certain protection limitations.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="sap_hana_protection-d26997e30961" class="topicref" data-id="sap_hana_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sap_hana_protection-d26997e30961-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_protection.html" id="sap_hana_protection-d26997e30961-link">SAP HANA databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enables administrators to implement backup policies on SAP HANA         databases running on public clouds and on-premises.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Multiple archival locations for PostgreSQL</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can configure multiple archival policies within a single SLA Domain to automate
+        the delivery of snapshots and log data to distinct cloud storage targets.</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> supports multiple archival locations for PostgreSQL clusters,
+            providing granular control over data archiving. You can configure up to two distinct
+            archiving policies to diversify storage strategies and optimize storage costs.</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> provides a streamlined user interface for managing the multiple
+            archival policies to ensure that each policy aligns with organizational goals.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Key features</h2>
+            
+            <p class="- topic/p p">Multiple archival locations include the following features:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Archival locations: You can configure an SLA Domain with up to two distinct
+                    archival policies, where each policy specifies a unique location.<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">For
+                        PostgreSQL clusters, <span class="- topic/ph ph">RSC</span> archives the log snapshots to the
+                        location with a higher archival frequency to ensure log data is available
+                        for point-in-time recovery.</div></div></li>
+                <li class="- topic/li li">Archival thresholds: Each policy requires a distinct threshold, such as the
+                    number of days, for moving data from local storage to a specific archival
+                    target.</li>
+                <li class="- topic/li li">Snapshot frequencies: By default, all snapshot frequencies defined in the SLA
+                    Domain apply to both archival locations for comprehensive coverage.</li>
+                <li class="- topic/li li">Local retention: The local data retention period defined in the SLA Domain must
+                    exceed the archival thresholds set in the archival policies.</li>
+            </ul>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Benefits</h2>
+            
+            <p class="- topic/p p">Using multiple archival locations, provides the following benefits:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Enhanced data protection: Diversifying data across multiple locations reduces
+                    the risk of data loss and improves disaster recovery readiness.</li>
+                <li class="- topic/li li">Regulatory compliance: Granular control over archival targets helps meet
+                    industry-specific regulations and compliance standards for long-term data
+                    retention.</li>
+                <li class="- topic/li li">Optimized storage costs: Customized strategies balance storage costs and data
+                    availability by using different storage tiers for each policy.</li>
+            </ul>
+            <p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="../saas/multiple_archival_policies.html" title="RSC enables you to configure an SLA Domain with up to two archival policies for Rubrik CDM and cloud workloads.">Multiple archival policies</a>.</p>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="postgresql.html" title="Rubrik Security Cloud protects your PostgreSQL cluster by simplifying complex backup and recovery processes, discovering the databases automatically, and protecting data using SLA Domains.">PostgreSQL</a><div class="- topic/desc desc">Rubrik Security Cloud protects your PostgreSQL cluster by simplifying complex         backup and recovery processes, discovering the databases automatically, and protecting data         using SLA Domains.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

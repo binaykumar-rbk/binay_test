@@ -1,0 +1,370 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Deploy Rubrik Cloud Cluster ES from the Azure Marketplace using programmatic methods, such as Terraform or the Azure CLI, you must accept the Azure Marketplace agreement for the specific software plan and accept the licensing terms."/><meta name="DC.relation" content="../common/azr_cc_es_prereq.html"/><meta name="DC.relation" content="../common/required_settings_private_endpoint.html"/><meta name="DC.relation" content="../common/azure_node_reqs_cc.html"/><meta name="DC.relation" content="../common/azr_cc_es_prereq.html"/><meta name="DC.relation" content="https://github.com/rubrikinc/terraform-azure-rubrik-cloud-cluster-elastic-storage"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="cces_enabling_prog_deployment_azure_cli"/>        
+      <title>Enabling programmatic deployment using Azure CLI</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="cces_enabling_prog_deployment_azure_cli-d26997e4183"/><meta name="wh-source-relpath" content="saas/cces_enabling_prog_deployment_azure_cli.dita"/><meta name="wh-out-relpath" content="saas/cces_enabling_prog_deployment_azure_cli.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="cces_enabling_prog_deployment_azure_cli" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/common/rubrik_clusters_2.html">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li><div class="topicref" data-id="rubrik_cc_es_on_saas"><div class="title"><a href="../saas/rubrik_cc_es_on_saas.html">Rubrik Cloud Cluster Elastic Storage </a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Rubrik Security Cloud</span> to provision a Rubrik Cloud Cluster Elastic         Storage deployment.</p></div></div></div></li><li><div class="topicref" data-id="azure_cc_es_rsc"><div class="title"><a href="../saas/azure_cc_es_rsc.html">Rubrik Cloud Cluster ES for Azure</a><div class="wh-tooltip"><p class="shortdesc">You can use Rubrik Cloud Cluster Elastic Storage for Azure to protect applications         and data within a Microsoft Azure virtual network.</p></div></div></div></li><li><div class="topicref" data-id="azr_cc_es_prereq"><div class="title"><a href="../common/azr_cc_es_prereq.html">Prerequisites for Rubrik Cloud Cluster ES on Azure</a><div class="wh-tooltip"><p class="shortdesc">Describes the prerequisites for provisioning Rubrik Cloud Cluster Elastic Storage on         Azure.</p></div></div></div></li><li class="active"><div class="topicref" data-id="cces_enabling_prog_deployment_azure_cli"><div class="title"><a href="../saas/cces_enabling_prog_deployment_azure_cli.html">Enabling programmatic deployment using Azure CLI</a><div class="wh-tooltip"><p class="shortdesc">Deploy Rubrik Cloud Cluster ES from the Azure Marketplace using programmatic methods,         such as Terraform or the Azure CLI, you must accept the Azure Marketplace agreement for the         specific software plan and accept the licensing terms.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../common/required_settings_private_endpoint.html" title="Required settings for private endpoints" aria-label="Previous topic: Required settings for private endpoints" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../common/azure_node_reqs_cc.html" title="Node requirements for CCES on Azure" aria-label="Next topic: Node requirements for CCES on Azure" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_clusters-d26997e1547" class="topicref" data-id="rubrik_clusters" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_clusters-d26997e1547-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="rubrik_clusters-d26997e1547-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster is an instance of Rubrik CDM running on any virtual or physical         platform. You can add the Rubrik cluster to <span class="ph">RSC</span> to enable extended features         for the cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e2275" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e2275-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_deployment.html" id="tocId-d26997e2275-link">Rubrik CDM Install and Upgrade Guide</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="security-d26997e3490" class="topicref" data-id="security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action security-d26997e3490-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/security.html" id="security-d26997e3490-link">Security</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides end-to-end security for data management         information.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_sources-d26997e3553" class="topicref" data-id="data_sources" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_sources-d26997e3553-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/data_sources.html" id="data_sources-d26997e3553-link">Data Sources</a><div class="wh-tooltip"><p class="shortdesc">You can add hosts, instances, and servers for various data-center workloads in the         Data Sources menu. Additionally, you can configure access credentials by setting up Guest OS         settings and SMB security.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rubrik_cc_es_on_saas-d26997e4114" class="topicref" data-id="rubrik_cc_es_on_saas" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rubrik_cc_es_on_saas-d26997e4114-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rubrik_cc_es_on_saas.html" id="rubrik_cc_es_on_saas-d26997e4114-link">Rubrik Cloud Cluster Elastic Storage </a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Rubrik Security Cloud</span> to provision a Rubrik Cloud Cluster Elastic         Storage deployment.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="azure_cc_es_rsc-d26997e4128" class="topicref" data-id="azure_cc_es_rsc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action azure_cc_es_rsc-d26997e4128-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/azure_cc_es_rsc.html" id="azure_cc_es_rsc-d26997e4128-link">Rubrik Cloud Cluster ES for Azure</a><div class="wh-tooltip"><p class="shortdesc">You can use Rubrik Cloud Cluster Elastic Storage for Azure to protect applications         and data within a Microsoft Azure virtual network.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="azr_cc_es_prereq-d26997e4139" class="topicref" data-id="azr_cc_es_prereq" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action azr_cc_es_prereq-d26997e4139-link" class="wh-expand-btn"></span><div class="title"><a href="../common/azr_cc_es_prereq.html" id="azr_cc_es_prereq-d26997e4139-link">Prerequisites for Rubrik Cloud Cluster ES on Azure</a><div class="wh-tooltip"><p class="shortdesc">Describes the prerequisites for provisioning Rubrik Cloud Cluster Elastic Storage on         Azure.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="azr_cc_es_additional_req_settings-d26997e4150" class="topicref" data-id="azr_cc_es_additional_req_settings" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/azr_cc_es_additional_req_settings.html" id="azr_cc_es_additional_req_settings-d26997e4150-link">Additional required CCES storage account settings on Azure</a><div class="wh-tooltip"><p class="shortdesc">Information about additional required settings for provisioning Rubrik Cloud Cluster         Elastic Storage storage accounts on Azure.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="service_private_endpoints-d26997e4161" class="topicref" data-id="service_private_endpoints" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action service_private_endpoints-d26997e4161-link" class="wh-expand-btn"></span><div class="title"><a href="../common/service_private_endpoints.html" id="service_private_endpoints-d26997e4161-link">Service and private endpoints</a><div class="wh-tooltip"><p class="shortdesc">Azure endpoints permit locally routed communication between Rubrik Cloud Cluster         Elastic Storage and the Azure Blob storage.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="cces_enabling_prog_deployment_azure_cli-d26997e4183" class="topicref" data-id="cces_enabling_prog_deployment_azure_cli" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/cces_enabling_prog_deployment_azure_cli.html" id="cces_enabling_prog_deployment_azure_cli-d26997e4183-link">Enabling programmatic deployment using Azure CLI</a><div class="wh-tooltip"><p class="shortdesc">Deploy Rubrik Cloud Cluster ES from the Azure Marketplace using programmatic methods,         such as Terraform or the Azure CLI, you must accept the Azure Marketplace agreement for the         specific software plan and accept the licensing terms.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="azure_node_reqs_cc-d26997e4194" class="topicref" data-id="azure_node_reqs_cc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../common/azure_node_reqs_cc.html" id="azure_node_reqs_cc-d26997e4194-link">Node requirements for CCES on Azure</a><div class="wh-tooltip"><p class="shortdesc">Provides the required node configurations for Rubrik Cloud Cluster on Azure based on         workload density.</p></div></div></div></li><li role="treeitem"><div data-tocid="azr_req_perms_cc_provisioning-d26997e4205" class="topicref" data-id="azr_req_perms_cc_provisioning" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/azr_req_perms_cc_provisioning.html" id="azr_req_perms_cc_provisioning-d26997e4205-link">Required permissions for Azure Cloud Cluster provisioning</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses a cloud account that requires certain permissions or actions         to provision Rubrik Cloud Cluster Elastic Storage for Azure.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cces_transitioning_managed_identities-d26997e4218" class="topicref" data-id="cces_transitioning_managed_identities" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cces_transitioning_managed_identities-d26997e4218-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/cces_transitioning_managed_identities.html" id="cces_transitioning_managed_identities-d26997e4218-link">Transitioning to using Azure managed identities</a><div class="wh-tooltip"><p class="shortdesc">For enhanced security, transition your cluster from using connection strings to using         managed identities as the authentication type to your storage container.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="workflow_for_azure_cloud_cluster_es-d26997e4240" class="topicref" data-id="workflow_for_azure_cloud_cluster_es" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action workflow_for_azure_cloud_cluster_es-d26997e4240-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/workflow_for_azure_cloud_cluster_es.html" id="workflow_for_azure_cloud_cluster_es-d26997e4240-link">Workflow for Rubrik Cloud Cluster ES for Azure</a><div class="wh-tooltip"><p class="shortdesc">Provisioning an Azure Cloud Cluster Elastic Storage on <span class="ph">RSC</span> consists         of several tasks. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_cc_es_rsc-d26997e4325" class="topicref" data-id="aws_cc_es_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_cc_es_rsc-d26997e4325-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_cc_es_rsc.html" id="aws_cc_es_rsc-d26997e4325-link">Rubrik Cloud Cluster ES for AWS</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster Elastic Storage protects applications and data by running         Rubrik CDM software on Amazon EC2 instances within a virtual private cloud.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_cloud_cluster_es_rsc-d26997e4439" class="topicref" data-id="gcp_cloud_cluster_es_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_cloud_cluster_es_rsc-d26997e4439-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/gcp_cloud_cluster_es_rsc.html" id="gcp_cloud_cluster_es_rsc-d26997e4439-link">Rubrik Cloud Cluster ES for GCP</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster protects applications and data by running Rubrik CDM software         on Google Cloud Platform instances within a virtual private cloud.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cces_recoverability-d26997e4521" class="topicref" data-id="cces_recoverability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cces_recoverability-d26997e4521-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/cces_recoverability.html" id="cces_recoverability-d26997e4521-link">Rubrik Cloud Cluster recoverability</a><div class="wh-tooltip"><p class="shortdesc">To restore your data, you can recover a Rubrik Cloud Cluster Elastic Storage that has         immutability enabled. You can do this only when the cluster nodes cannot be         recovered.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_a_node_to_cc_es-d26997e4565" class="topicref" data-id="adding_a_node_to_cc_es" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_node_cces.html" id="adding_a_node_to_cc_es-d26997e4565-link">Adding a node to Cloud Cluster ES</a><div class="wh-tooltip"><p class="shortdesc">Add a node to a Cloud Cluster ES to increase capacity and improve         performance.</p></div></div></div></li><li role="treeitem"><div data-tocid="adding_node_predeployed_cces-d26997e4576" class="topicref" data-id="adding_node_predeployed_cces" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_node_predeployed_cces.html" id="adding_node_predeployed_cces-d26997e4576-link">Adding a pre-deployed node to Rubrik CCES</a><div class="wh-tooltip"><p class="shortdesc">Add a node that you have manually deployed to the Rubrik Cloud Cluster ES in <span class="ph">RSC</span> to  increase capacity and improve performance.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="node_removal_rsc-d26997e4590" class="topicref" data-id="node_removal_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action node_removal_rsc-d26997e4590-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/node_removal_rsc_2.html" id="node_removal_rsc-d26997e4590-link">Node removal in <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">If you no longer require a node in a Rubrik cluster, a supported third-party hardware         cluster, or a Rubrik Cloud Cluster, you can remove the node by using <span class="ph">RSC</span>.         To remove a node, you must meet the requirements for node removal.</p></div></div></div></li><li role="treeitem"><div data-tocid="extra_dense_migration_cces_clusters-d26997e4617" class="topicref" data-id="extra_dense_migration_cces_clusters" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/extra_dense_migration_cces_clusters.html" id="extra_dense_migration_cces_clusters-d26997e4617-link">Extra dense node migration for CCES clusters</a><div class="wh-tooltip"><p class="shortdesc">Extra dense nodes offer greater storage and performance, without a loss of storage         capacity. Using extra dense nodes, organizations can reduce node counts by half during         migration. Customization options are available through the GraphQL API.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="cces_dynamic_scaling-d26997e4628" class="topicref" data-id="cces_dynamic_scaling" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cces_dynamic_scaling-d26997e4628-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/cces_dynamic_scaling.html" id="cces_dynamic_scaling-d26997e4628-link">Rubrik Cloud Cluster ES dynamic scaling</a><div class="wh-tooltip"><p class="shortdesc">Dynamic scaling for Rubrik Cloud Cluster ES on <span class="ph">RSC</span> optimizes compute         costs by automatically adjusting the number of active nodes based on workload         demand.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Enabling programmatic deployment using Azure CLI</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Deploy Rubrik Cloud Cluster ES from the Azure Marketplace using programmatic methods,
+        such as Terraform or the Azure CLI, you must accept the Azure Marketplace agreement for the
+        specific software plan and accept the licensing terms.</p>
+        <section class="- topic/section task/prereq section prereq" id="d687357e60"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
+            <div class="- topic/p p">Ensure that you have completed the following: <ul class="- topic/ul ul">
+                    <li class="- topic/li li">You have installed the Azure CLI on a computer with access to the Azure
+                        subscription.</li>
+                    <li class="- topic/li li">You have logged in to the Azure CLI using the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">az login</span>
+                        command.</li>
+                    <li class="- topic/li li">Additionally, ensure that you have identified the Azure subscription ID to
+                        deploy the cloud cluster.</li>
+                </ul></div>
+        </section>
+        <section class="- topic/section task/context section context" id="d687357e83"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+            <div class="- topic/p p"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">You must perform these actions on the Azure CLI for each
+                    Azure subscription for which you will deploy a cloud cluster.</div></div> The
+                    <cite class="- topic/cite cite">Azure Command-Line Interface (CLI) documentation</cite> provides more
+                information on enabling and using the Azure CLI. The Rubrik documentation <a class="- topic/xref xref" href="https://github.com/rubrikinc/terraform-azure-rubrik-cloud-cluster-elastic-storage?tab=readme-ov-file#accept-the-azure-marketplace-agreement-for-cces" target="_blank" rel="external noopener">Terraform Module - Azure Cloud Cluster Elastic
+                    Storage Deployment</a> describes more information on Azure CLI usage for a
+                cloud cluster deployment.</div>
+        </section>
+        <section class="- topic/ol task/steps ol steps" id="d687357e104"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Sign into the tenant where the Azure CLI has been installed.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>az login --tenant <var class="+ topic/keyword sw-d/varname keyword varname">tenant-id</var></code></pre> Where
+                        <var class="+ topic/keyword sw-d/varname keyword varname">tenant-id</var> is the ID of the tenant. If you only have one
+                    tenant, you can omit this variable.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select the Azure subscription.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>az account set --subscription <var class="+ topic/keyword sw-d/varname keyword varname">subscription_id</var></code></pre>
+                    Where <var class="+ topic/keyword sw-d/varname keyword varname">subscription_id</var> is your specific Azure subscription
+                    ID.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">List the available SKUs for CCES.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>az vm image list-skus --location <var class="+ topic/keyword sw-d/varname keyword varname">location</var> -p rubrik-inc -f rubrik-data-protection --output table</code></pre>
+                    Where <var class="+ topic/keyword sw-d/varname keyword varname">location</var> is the Azure Location code for the region
+                    where CCES will be deployed.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Review the SKU output.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Confirm that the plan name and the SKU name are the same.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>az vm image show --location <var class="+ topic/keyword sw-d/varname keyword varname">location</var> --urn rubrik-inc:rubrik-data-protection:<var class="+ topic/keyword sw-d/varname keyword varname">SKU</var>:latest --query plan.name --output tsv</code></pre>
+                    Where <var class="+ topic/keyword sw-d/varname keyword varname">location</var> is the Azure Location code for the region
+                    where CCES will be deployed and <var class="+ topic/keyword sw-d/varname keyword varname">SKU</var> is the SKU
+                    selected.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Accept the terms of the Azure Marketplace.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>az vm image terms accept --offer rubrik-data-protection --publisher rubrik-inc --plan <var class="+ topic/keyword sw-d/varname keyword varname">plan-name</var> --output jsonc</code></pre>
+                    Where <var class="+ topic/keyword sw-d/varname keyword varname">plan-name</var> is the name of the plan that was
+                    collected.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Review the result and confirm that the <code class="+ topic/ph pr-d/codeph ph codeph">accepted</code> value is set
+                    to <var class="+ topic/keyword sw-d/varname keyword varname">true</var>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>{
+  "accepted": true,
+  "id": "/subscriptions/<var class="+ topic/keyword sw-d/varname keyword varname">Subscription_ID</var>/providers/Microsoft.MarketplaceOrdering/offerTypes/Microsoft.MarketplaceOrdering/offertypes/publishers/rubrik-inc/offers/rubrik-data-protection/plans/rubrik-cdm-90/agreements/current",
+  "licenseTextLink": "https://storelegalterms.blob.core.windows.net/legalterms/3E5ED_legalterms_RUBRIK%253a2DINC%253a24RUBRIK%253a2DDATA%253a2DPROTECTION%253a24RUBRIK%253a2DCDM%253a2D90%253a24JRAHGUAQ44GVF2TFRYQ5727EY5ZA3HLQ3KU2L76ISIHHQQY2ZJYDCGQTOHXDJ7LU7UO4PPM6UM6DMUQXIIVE763XZJZZNTLHNRCZXBA.txt",
+  "marketplaceTermsLink": "https://mpcprodsa.blob.core.windows.net/marketplaceterms/3EDEF_marketplaceterms_VIRTUALMACHINE%253a24AAK2OAIZEAWW5H4MSP5KSTVB6NDKKRTUBAU23BRFTWN4YC2MQLJUB5ZEYUOUJBVF3YK34CIVPZL2HWYASPGDUY5O2FWEGRBYOXWZE5Y.txt",
+  "name": "rubrik-cdm-90",
+  "plan": "rubrik-cdm-90",
+  "privacyPolicyLink": "https://www.rubrik.com/legal/privacy-policy",
+  "product": "rubrik-data-protection",
+  "publisher": "rubrik-inc",
+  "retrieveDatetime": "2023-09-04T05:14:55.6081829Z",
+  "signature": "<var class="+ topic/keyword sw-d/varname keyword varname">Unique_Signature</var>",
+  "systemData": {
+    "createdAt": "2023-09-04T05:14:57.794366+00:00",
+    "createdBy": "<var class="+ topic/keyword sw-d/varname keyword varname">Subscription_ID</var>",
+    "createdByType": "ManagedIdentity",
+    "lastModifiedAt": "2023-09-04T05:14:57.794366+00:00",
+    "lastModifiedBy": "<var class="+ topic/keyword sw-d/varname keyword varname">Subscription_ID</var>",
+    "lastModifiedByType": "ManagedIdentity"
+  },
+  "type": "Microsoft.MarketplaceOrdering/offertypes"
+}</code></pre>
+                </div>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d687357e235"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>You have accepted the Azure Marketplace agreement for the specific software plan and
+            accepted the licensing terms.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../common/azr_cc_es_prereq.html" title="Describes the prerequisites for provisioning Rubrik Cloud Cluster Elastic Storage on Azure.">Prerequisites for Rubrik Cloud Cluster ES on Azure</a><div class="- topic/desc desc">Describes the prerequisites for provisioning Rubrik Cloud Cluster Elastic Storage on         Azure.</div></li></ul></div><div class="- topic/linklist linklist relinfo"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="https://github.com/rubrikinc/terraform-azure-rubrik-cloud-cluster-elastic-storage" target="_blank" rel="external noopener" title="https://github.com/rubrikinc/terraform-azure-rubrik-cloud-cluster-elastic-storage">https://github.com/rubrikinc/terraform-azure-rubrik-cloud-cluster-elastic-storage</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

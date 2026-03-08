@@ -1,0 +1,333 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="RSC enhances the security of your GitHub organization by employing a least permission model that limits the access granted to the minimal necessary roles and resources."/><meta name="DC.relation" content="../github/github_recover.html"/><meta name="DC.relation" content="../github/github_recover.html"/><meta name="DC.relation" content="../github/github_recovering_repos.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="github_privilege_elevation"/>        
+      <title>Privilege elevation for GitHub recovery</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="github_privilege_elevation-d26997e32956"/><meta name="wh-source-relpath" content="github/github_privilege_elevation.dita"/><meta name="wh-out-relpath" content="github/github_privilege_elevation.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="github_privilege_elevation" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../azure_devops/azr_devops.html">DevOps workloads</a></div></div></li><li><div class="topicref" data-id="github"><div class="title"><a href="../github/github.html">GitHub</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data protection for GitHub organizations and         repositories.</p></div></div></div></li><li><div class="topicref" data-id="github_recover"><div class="title"><a href="../github/github_recover.html">Recover GitHub</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your GitHub repositories, you can         recover the necessary details.</p></div></div></div></li><li class="active"><div class="topicref" data-id="github_privilege_elevation"><div class="title"><a href="../github/github_privilege_elevation.html">Privilege elevation for GitHub recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enhances the security of your GitHub organization by employing a         least permission model that limits the access granted to the minimal necessary roles and         resources.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../github/github_recover.html" title="Recover GitHub" aria-label="Previous topic: Recover GitHub" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../github/github_recovering_repos.html" title="Recovering GitHub repositories" aria-label="Next topic: Recovering GitHub repositories" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="azr_devops-d26997e31624" class="topicref" data-id="azr_devops" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action azr_devops-d26997e31624-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="azr_devops-d26997e31624-link">Azure DevOps</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the data and resources of Azure DevOps projects and         repositories within the Azure DevOps organization.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="github-d26997e32276" class="topicref" data-id="github" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action github-d26997e32276-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github.html" id="github-d26997e32276-link">GitHub</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data protection for GitHub organizations and         repositories.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e32289" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e32289-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_protection_key_feature.html" id="tocId-d26997e32289-link">Introduction to GitHub</a></div></div></li><li role="treeitem"><div data-tocid="github_high_level_implement_workflow-d26997e32348" class="topicref" data-id="github_high_level_implement_workflow" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../github/github_high_level_implement_workflow.html" id="github_high_level_implement_workflow-d26997e32348-link">High-level implementation workflow for GitHub</a><div class="wh-tooltip"><p class="shortdesc">The GitHub protection implementation workflow involves a structured approach to         secure data management, starting with planning and preparation, followed by GitHub         organization setup, GitHub protection, continuous management and optimization, and         repository recovery.</p></div></div></div></li><li role="treeitem"><div data-tocid="github_quick_links-d26997e32359" class="topicref" data-id="github_quick_links" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../github/github_quick_links.html" id="github_quick_links-d26997e32359-link">Quick links for GitHub</a><div class="wh-tooltip"><p class="shortdesc">Immediate access to important tasks and information, enabling quick setup, daily         operations, and critical recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="github_plan_protection-d26997e32370" class="topicref" data-id="github_plan_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action github_plan_protection-d26997e32370-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_plan_protection.html" id="github_plan_protection-d26997e32370-link">Plan your GitHub protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up a GitHub organization in <span class="ph">RSC</span>, you need to plan user         and access management for designated <span class="ph">RSC</span> users. This involves reviewing the         permissions that <span class="ph">RSC</span> requires for GitHub, as well as in your Azure or AWS         cloud provider, to install Exocompute and create storage accounts for protecting GitHub         organizations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="github_setup_organization-d26997e32496" class="topicref" data-id="github_setup_organization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action github_setup_organization-d26997e32496-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_setup_organization.html" id="github_setup_organization-d26997e32496-link">Set up GitHub organization</a><div class="wh-tooltip"><p class="shortdesc">You can add a GitHub organization in <span class="ph">RSC</span> to start protecting GitHub         resources.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="github_set_up_protection-d26997e32753" class="topicref" data-id="github_set_up_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action github_set_up_protection-d26997e32753-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_set_up_protection.html" id="github_set_up_protection-d26997e32753-link">Set up protection for GitHub</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic and         hierarchical protection of GitHub organizations and repositories, with granular control         overriding higher-level assignments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="github_manage_orgs_repos-d26997e32868" class="topicref" data-id="github_manage_orgs_repos" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action github_manage_orgs_repos-d26997e32868-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_manage_orgs_repos.html" id="github_manage_orgs_repos-d26997e32868-link">Manage GitHub organizations and repositories</a><div class="wh-tooltip"><p class="shortdesc">After completing the protection setup for GitHub organizations and repositories, <span class="ph">RSC</span> takes automated snapshots of those repositories based on the configured         policies in SLA Domains. You can also take on-demand snapshots and refresh GitHub         organizations for better resource management.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="github_recover-d26997e32942" class="topicref" data-id="github_recover" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action github_recover-d26997e32942-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_recover.html" id="github_recover-d26997e32942-link">Recover GitHub</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your GitHub repositories, you can         recover the necessary details.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="github_privilege_elevation-d26997e32956" class="topicref" data-id="github_privilege_elevation" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../github/github_privilege_elevation.html" id="github_privilege_elevation-d26997e32956-link">Privilege elevation for GitHub recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enhances the security of your GitHub organization by employing a         least permission model that limits the access granted to the minimal necessary roles and         resources.</p></div></div></div></li><li role="treeitem"><div data-tocid="github_recovering_repos-d26997e32969" class="topicref" data-id="github_recovering_repos" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../github/github_recovering_repos.html" id="github_recovering_repos-d26997e32969-link">Recovering GitHub repositories</a><div class="wh-tooltip"><p class="shortdesc">Recover GitHub repositories from a protected snapshot.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="github_access_reports-d26997e32980" class="topicref" data-id="github_access_reports" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action github_access_reports-d26997e32980-link" class="wh-expand-btn"></span><div class="title"><a href="../github/github_access_reports.html" id="github_access_reports-d26997e32980-link">Access GitHub reports</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">RSC</span>, you can create and download reports based on templates to         monitor the protection status of your GitHub organizations and repositories.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Privilege elevation for GitHub recovery</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">RSC</span> enhances the security of your GitHub organization by employing a
+        least permission model that limits the access granted to the minimal necessary roles and
+        resources.</p>
+        <section class="- topic/section section">
+            <p class="- topic/p p">The least privilege model for GitHub protection ensures that <span class="- topic/ph ph">RSC</span>
+                grants permissions to the minimal necessary roles and resources. This
+                security-conscious approach significantly reduces risk, aligning with the concerns
+                of the GitHub owner.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Onboarding and core principles</h2>
+            
+            <p class="- topic/p p">When you onboard your GitHub organization, <span class="- topic/ph ph">RSC</span> adheres to the
+                following principles:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Discovery and Backup (Read permissions): <span class="- topic/ph ph">RSC</span> operates on a least
+                    privilege model, requesting only the minimum set of read-only permissions
+                    required to perform discovery and backup operations.</li>
+                <li class="- topic/li li">Restore (Write permissions): You need write permissions to perform recovery
+                    operations, such as restoring a repository to a new organization.</li>
+            </ul>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">GitHub Restore app</h2>
+            
+            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> is initially configured with just the GitHub Backup app, which
+                requires minimal read permissions and provides a mechanism to temporarily install
+                the GitHub Restore app, which requires write permissions only when a recovery
+                operation is initiated.</p>
+            <p class="- topic/p p">Installing the GitHub Restore app process works as follows:</p>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li">Request for installation: When you initiate a restore, <span class="- topic/ph ph">RSC</span>
+                    indicates installing the required GitHub Restore app.</li>
+                <li class="- topic/li li">User provision: <span class="- topic/ph ph">RSC</span> requests you to provide the permissions
+                    necessary to perform the write operation. If you have already installed the
+                    GitHub Restore app, <span class="- topic/ph ph">RSC</span> does not request it again.</li>
+                <li class="- topic/li li">Granular visibility: Unlike other SaaS applications, <span class="- topic/ph ph">RSC</span> clearly
+                    displays the granular permissions it is requesting from you for discovery,
+                    backup, and recovery. This includes the GitHub Backup app with read permissions
+                    for discovery and backup, and the GitHub Restore app with write permissions for
+                    recovery.</li>
+            </ol>
+            <p class="- topic/p p">This security feature ensures that the GitHub Restore app does not persist longer
+                than necessary and is explicitly requested and installed by you when critical
+                recovery operations are needed.</p>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

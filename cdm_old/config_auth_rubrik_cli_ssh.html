@@ -1,0 +1,313 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="You can assign an SSH key to a user account. With this key, users can authenticate as a Rubrik cluster administrator without needing to transmit an account password."/><meta name="DC.relation" content="../cdm_old/cli_administrator_role.html"/><meta name="DC.relation" content="../cdm_old/disabling_ssh_passwords.html"/><meta name="DC.relation" content="../cdm_old/jumbo_frame_support.html"/><meta name="DC.relation" content="cli_access_through_ssh.html"/><meta name="DC.relation" content="cli_administrator_role.html"/><meta name="DC.relation" content="disabling_ssh_passwords.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="config_ssh_key_auth_for_cli"/>        
+      <title>Configuring Rubrik CLI SSH Key authentication</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="config_ssh_key_auth_for_cli-d26997e2993"/><meta name="wh-source-relpath" content="cdm_old/config_auth_rubrik_cli_ssh.dita"/><meta name="wh-out-relpath" content="cdm_old/config_auth_rubrik_cli_ssh.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="config_ssh_key_auth_for_cli" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/common/rubrik_clusters_2.html">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../install/rsc_cluster_deployment.html">Rubrik CDM Install and Upgrade Guide</a></div></div></li><li><div class="topicref" data-id="cli_administrator_role"><div class="title"><a href="../cdm_old/cli_administrator_role.html">CLI administrator role</a><div class="wh-tooltip"><p class="shortdesc">As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters         through the CLI Secure Shell (SSH) protocol.</p></div></div></div></li><li class="active"><div class="topicref" data-id="config_ssh_key_auth_for_cli"><div class="title"><a href="../cdm_old/config_auth_rubrik_cli_ssh.html">Configuring Rubrik CLI SSH Key authentication</a><div class="wh-tooltip"><p class="shortdesc">You can assign an SSH key to a user account. With this key, users can authenticate as         a Rubrik cluster administrator without needing to transmit an account password.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../cdm_old/disabling_ssh_passwords.html" title="Disabling SSH password authentication" aria-label="Previous topic: Disabling SSH password authentication" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../cdm_old/jumbo_frame_support.html" title="Jumbo frame support" aria-label="Next topic: Jumbo frame support" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_clusters-d26997e1547" class="topicref" data-id="rubrik_clusters" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_clusters-d26997e1547-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="rubrik_clusters-d26997e1547-link">Rubrik clusters</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster is an instance of Rubrik CDM running on any virtual or physical         platform. You can add the Rubrik cluster to <span class="ph">RSC</span> to enable extended features         for the cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e2275" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e2275-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_deployment.html" id="tocId-d26997e2275-link">Rubrik CDM Install and Upgrade Guide</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_cluster_deployment-d26997e2716" class="topicref" data-id="rsc_cluster_deployment" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_cluster_deployment-d26997e2716-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_deployment.html" id="rsc_cluster_deployment-d26997e2716-link">Rubrik cluster deployment</a><div class="wh-tooltip"><p class="shortdesc">Deploying a Rubrik cluster running on Rubrik appliance nodes involves installing the         CDM software on the nodes and setting up that software for your environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_cluster_registration-d26997e2863" class="topicref" data-id="rsc_cluster_registration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_cluster_registration-d26997e2863-link" class="wh-expand-btn"></span><div class="title"><a href="../install/rsc_cluster_registration.html" id="rsc_cluster_registration-d26997e2863-link">Cluster registration</a><div class="wh-tooltip"><p class="shortdesc">Rubrik offers two modes for registering clusters with <span class="ph">Rubrik Security Cloud</span>,         online and offline.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_rmfa_totp-d26997e2927" class="topicref" data-id="rsc_rmfa_totp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_rmfa_totp-d26997e2927-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rsc_rmfa_totp.html" id="rsc_rmfa_totp-d26997e2927-link">Rubrik MFA with TOTP</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik two-step verification feature uses time-based one-time passwords in         addition to the user login credentials to enforce multi-factor authentication on user         accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="cli_administrator_role-d26997e2960" class="topicref" data-id="cli_administrator_role" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action cli_administrator_role-d26997e2960-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm_old/cli_administrator_role.html" id="cli_administrator_role-d26997e2960-link">CLI administrator role</a><div class="wh-tooltip"><p class="shortdesc">As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters         through the CLI Secure Shell (SSH) protocol.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="cli_access_through_ssh-d26997e2971" class="topicref" data-id="cli_access_through_ssh" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm_old/cli_access_through_ssh.html" id="cli_access_through_ssh-d26997e2971-link">CLI access through SSH</a><div class="wh-tooltip"><p class="shortdesc">SSH protocol is the standard way for Rubrik CDM users to access the Rubrik CLI. To         use the SSH protocol, users require both administrator and CLI administrator         roles.</p></div></div></div></li><li role="treeitem"><div data-tocid="disabling_ssh_passwords-d26997e2982" class="topicref" data-id="disabling_ssh_passwords" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm_old/disabling_ssh_passwords.html" id="disabling_ssh_passwords-d26997e2982-link">Disabling SSH password authentication</a><div class="wh-tooltip"><p class="shortdesc">Disable password authentication for Secure Shell sessions to authenticate using SSH         key pairs.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="config_ssh_key_auth_for_cli-d26997e2993" class="topicref" data-id="config_ssh_key_auth_for_cli" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../cdm_old/config_auth_rubrik_cli_ssh.html" id="config_ssh_key_auth_for_cli-d26997e2993-link">Configuring Rubrik CLI SSH Key authentication</a><div class="wh-tooltip"><p class="shortdesc">You can assign an SSH key to a user account. With this key, users can authenticate as         a Rubrik cluster administrator without needing to transmit an account password.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="jumbo_frame_support-d26997e3004" class="topicref" data-id="jumbo_frame_support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action jumbo_frame_support-d26997e3004-link" class="wh-expand-btn"></span><div class="title"><a href="../cdm_old/jumbo_frame_support.html" id="jumbo_frame_support-d26997e3004-link">Jumbo frame support</a><div class="wh-tooltip"><p class="shortdesc">For Rubrik CDM versions 9.4 and later, you can set the value for the maximum         transmission unit to a maximum value of 10000, instead of the default value of 1500. This         larger unit size is called jumbo frames.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="system_shutdown-d26997e3048" class="topicref" data-id="system_shutdown" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action system_shutdown-d26997e3048-link" class="wh-expand-btn"></span><div class="title"><a href="../install/system_shutdown.html" id="system_shutdown-d26997e3048-link">System shutdown</a><div class="wh-tooltip"><p class="shortdesc">A system shutdown can be done from the Rubrik CLI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbk_cdm_software_upgrade-d26997e3081" class="topicref" data-id="rbk_cdm_software_upgrade" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbk_cdm_software_upgrade-d26997e3081-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rbk_cdm_software_upgrade.html" id="rbk_cdm_software_upgrade-d26997e3081-link">Rubrik CDM software upgrade</a><div class="wh-tooltip"><p class="shortdesc">To take advantage of the latest features and improvements, you can upgrade your         Rubrik CDM software running on your Rubrik clusters to the latest version.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="upgrade_to_rsc-d26997e3458" class="topicref" data-id="upgrade_to_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action upgrade_to_rsc-d26997e3458-link" class="wh-expand-btn"></span><div class="title"><a href="../install/upgrade_to_rubrik_security_cloud.html" id="upgrade_to_rsc-d26997e3458-link">Polaris to <span class="ph">RSC</span> upgrade</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides a unified user interface to manage all your Rubrik         tasks.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="security-d26997e3490" class="topicref" data-id="security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action security-d26997e3490-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/security.html" id="security-d26997e3490-link">Security</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides end-to-end security for data management         information.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_sources-d26997e3553" class="topicref" data-id="data_sources" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_sources-d26997e3553-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/data_sources.html" id="data_sources-d26997e3553-link">Data Sources</a><div class="wh-tooltip"><p class="shortdesc">You can add hosts, instances, and servers for various data-center workloads in the         Data Sources menu. Additionally, you can configure access credentials by setting up Guest OS         settings and SMB security.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rubrik_cc_es_on_saas-d26997e4114" class="topicref" data-id="rubrik_cc_es_on_saas" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rubrik_cc_es_on_saas-d26997e4114-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rubrik_cc_es_on_saas.html" id="rubrik_cc_es_on_saas-d26997e4114-link">Rubrik Cloud Cluster Elastic Storage </a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Rubrik Security Cloud</span> to provision a Rubrik Cloud Cluster Elastic         Storage deployment.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Configuring Rubrik CLI SSH Key authentication</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">You can assign an SSH key to a user account. With this key, users can authenticate as
+        a Rubrik cluster administrator without needing to transmit an account password.</p>
+        <section class="- topic/section task/prereq section prereq" id="d466036e61"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must obtain the public SSH key for the user account and copy it. The key must be
+            in the OpenSSH format.</section>
+        <section class="- topic/section task/context section context" id="d466036e67"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>This task assigns an SSH key to a user account. You can use any OpenSSH format
+            method that results in a valid SSH key. Authenticating with an SSH key pair does not
+            require transmitting the password to the user account, but key pairs generated with a
+            passphrase still require the passphrase to authenticate a login attempt.</section>
+        <section class="- topic/ol task/steps ol steps" id="d466036e73"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to the Rubrik CDM UI as the Rubrik cluster administrator.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select 	
+                    <img class="- topic/image image" height="16" width="NaN" src="../images/ui-icons/User.svg"/>, then select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">User
+                    Preferences</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">SSH Authentication</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Paste the SSH key into the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">SSH Key</span> box.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">UPDATE SSH KEY</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d466036e118"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The Rubrik cluster saves the configuration and you can use the SSH key to create
+            authenticated sessions for the account.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="cli_access_through_ssh.html" title="SSH protocol is the standard way for Rubrik CDM users to access the Rubrik CLI. To use the SSH protocol, users require both administrator and CLI administrator roles.">CLI access through SSH</a><div class="- topic/desc desc">SSH protocol is the standard way for Rubrik CDM users to access the Rubrik CLI. To         use the SSH protocol, users require both administrator and CLI administrator         roles.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="cli_administrator_role.html" title="As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters through the CLI Secure Shell (SSH) protocol.">CLI administrator role</a><div class="- topic/desc desc">As a CLI administrator, a Rubrik cluster user can connect to nodes in Rubrik clusters         through the CLI Secure Shell (SSH) protocol.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="disabling_ssh_passwords.html" title="Disable password authentication for Secure Shell sessions to authenticate using SSH key pairs.">Disabling SSH password authentication</a><div class="- topic/desc desc">Disable password authentication for Secure Shell sessions to authenticate using SSH         key pairs.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

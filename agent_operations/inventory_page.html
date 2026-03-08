@@ -1,0 +1,469 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="reference"/><meta name="description" content="The Inventory page displays a list of AI agents monitored by Agent Operations, a list of tools found running on agents, and a list connections to AI agents from Agent Operations."/><meta name="DC.relation" content="../agent_operations/viewing_ai_agent_inventory.html"/><meta name="DC.relation" content="../agent_operations/viewing_ai_agent_inventory.html"/><meta name="DC.relation" content="../agent_operations/viewing_tool_details.html"/><meta name="DC.relation" content="monitor_analyze_ai_agent_activity.html"/><meta name="DC.relation" content="viewing_ai_agent_inventory.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="agent_inventory_page"/>        
+      <title>Inventory page</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="agent_inventory_page-d26997e46401"/><meta name="wh-source-relpath" content="agent_operations/inventory_page.dita"/><meta name="wh-out-relpath" content="agent_operations/inventory_page.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="agent_inventory_page" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../agent_operations/agent_rewind.html">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li><div class="topicref" data-id="monitor_analyze_ai_agent_activity"><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html">Monitor and analyze AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">You can view information about AI agents, violations, tools, policies, and AI         gateways on the <span class="ph">Agent Operations</span> UI.</p></div></div></div></li><li><div class="topicref" data-id="viewing_ai_agent_inventory"><div class="title"><a href="../agent_operations/viewing_ai_agent_inventory.html">Viewing the AI agent inventory</a><div class="wh-tooltip"><p class="shortdesc">View the list of AI agents monitored by <span class="ph">Agent Operations</span>.</p></div></div></div></li><li class="active"><div class="topicref" data-id="agent_inventory_page"><div class="title"><a href="../agent_operations/inventory_page.html">Inventory page</a><div class="wh-tooltip"><p class="shortdesc">The Inventory page displays a list of AI agents monitored by <span class="ph">Agent Operations</span>,         a list of tools found running on agents, and a list connections to AI agents from <span class="ph">Agent Operations</span>.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../agent_operations/viewing_ai_agent_inventory.html" title="Viewing the AI agent inventory" aria-label="Previous topic: Viewing the AI agent inventory" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../agent_operations/viewing_tool_details.html" title="Viewing Tool Details" aria-label="Next topic: Viewing Tool Details" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="agent_rewind-d26997e45745" class="topicref" data-id="agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="agent_rewind-d26997e45745-link"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span> provides a comprehensive solution         for discovering agents, detecting risky actions on your data caused by autonomous AI agents,         finding their root causes, and rewinding the actions to repair changes to the data and         configurations without downtime.</p></div></div></div></li><li role="treeitem"><div data-tocid="key_concepts_agent_operations-d26997e45765" class="topicref" data-id="key_concepts_agent_operations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/key_concepts_agent_operations.html" id="key_concepts_agent_operations-d26997e45765-link">Key concepts for <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">Information about the core components of <span class="ph">Agent Operations</span> and how these         components work together to provide observability, security, and remediation for your AI         infrastructure.</p></div></div></div></li><li role="treeitem"><div data-tocid="common_agent_operations_terms-d26997e45781" class="topicref" data-id="common_agent_operations_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/common_agent_operations_terms.html" id="common_agent_operations_terms-d26997e45781-link">Common <span class="ph">Agent Operations</span> terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AI agents with <span class="ph">Agent Operations</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="configure_ai_connections-d26997e45798" class="topicref" data-id="configure_ai_connections" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configure_ai_connections-d26997e45798-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="configure_ai_connections-d26997e45798-link">Configure AI connections</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> connections provide governance and monitoring for AI agent         interactions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="onboard_ai_operations-d26997e46169" class="topicref" data-id="onboard_ai_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action onboard_ai_operations-d26997e46169-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboard_ai_operations.html" id="onboard_ai_operations-d26997e46169-link">Onboard <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">After deploying the model gateways or native integrations for your custom AI agents,         you must onboard Agent Operations within <span class="ph">RSC</span> to monitor AI agent actions and         rewind the actions when required.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_agent_operations_policies-d26997e46272" class="topicref" data-id="manage_agent_operations_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_agent_operations_policies-d26997e46272-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/manage_agent_operations_policies.html" id="manage_agent_operations_policies-d26997e46272-link">Manage <span class="ph">Agent Operations</span> policies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> policies are the governance rules that define the acceptable         behavior for your AI agents to ensure they operate within safe boundaries.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="monitor_analyze_ai_agent_activity-d26997e46359" class="topicref" data-id="monitor_analyze_ai_agent_activity" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action monitor_analyze_ai_agent_activity-d26997e46359-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html" id="monitor_analyze_ai_agent_activity-d26997e46359-link">Monitor and analyze AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">You can view information about AI agents, violations, tools, policies, and AI         gateways on the <span class="ph">Agent Operations</span> UI.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="dashboard_page-d26997e46373" class="topicref" data-id="dashboard_page" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/dashboard_page.html" id="dashboard_page-d26997e46373-link">Dashboard page</a><div class="wh-tooltip"><p class="shortdesc">The Dashboard page provides an overview of the high-risk AI agents <span class="ph">Agent Operations</span> is monitoring and the active violations it has found.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="viewing_ai_agent_inventory-d26997e46387" class="topicref" data-id="viewing_ai_agent_inventory" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action viewing_ai_agent_inventory-d26997e46387-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_ai_agent_inventory.html" id="viewing_ai_agent_inventory-d26997e46387-link">Viewing the AI agent inventory</a><div class="wh-tooltip"><p class="shortdesc">View the list of AI agents monitored by <span class="ph">Agent Operations</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="agent_inventory_page-d26997e46401" class="topicref" data-id="agent_inventory_page" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/inventory_page.html" id="agent_inventory_page-d26997e46401-link">Inventory page</a><div class="wh-tooltip"><p class="shortdesc">The Inventory page displays a list of AI agents monitored by <span class="ph">Agent Operations</span>,         a list of tools found running on agents, and a list connections to AI agents from <span class="ph">Agent Operations</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="viewing_tool_details-d26997e46418" class="topicref" data-id="viewing_tool_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_tool_details.html" id="viewing_tool_details-d26997e46418-link">Viewing Tool Details</a><div class="wh-tooltip"><p class="shortdesc">View specific information about a tool, including its description, functional capabilities, and authorized agents.</p></div></div></div></li><li role="treeitem"><div data-tocid="marking_tools_authorized_unauthorized-d26997e46429" class="topicref" data-id="marking_tools_authorized_unauthorized" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/marking_tools_authorized_unauthorized.html" id="marking_tools_authorized_unauthorized-d26997e46429-link">Marking tools as authorized or unauthorized</a><div class="wh-tooltip"><p class="shortdesc">Mark tools that are available to <span class="ph">Agent Operations</span> as authorized or         unauthorized.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_tool_exception-d26997e46443" class="topicref" data-id="creating_tool_exception" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/creating_tool_exception.html" id="creating_tool_exception-d26997e46443-link">Creating tool policy exceptions</a><div class="wh-tooltip"><p class="shortdesc">Edit a tool configuration to create exceptions for policies.</p></div></div></div></li><li role="treeitem"><div data-tocid="viewing_connected_router_models-d26997e46454" class="topicref" data-id="viewing_connected_router_models" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_connected_router_models.html" id="viewing_connected_router_models-d26997e46454-link">Viewing the connected model gateways</a><div class="wh-tooltip"><p class="shortdesc">View the AI model gateways connected to <span class="ph">Agent Operations</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_connected_model_gateways-d26997e46468" class="topicref" data-id="deleting_connected_model_gateways" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/deleting_connected_model_gateways.html" id="deleting_connected_model_gateways-d26997e46468-link">Deleting the connected model gateways</a><div class="wh-tooltip"><p class="shortdesc">Delete an AI model gateways connected to <span class="ph">Agent Operations</span> that is no longer         needed.</p></div></div></div></li><li role="treeitem"><div data-tocid="regenerating_api_key_model_gateway-d26997e46482" class="topicref" data-id="regenerating_api_key_model_gateway" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/regenerating_api_key_model_gateway.html" id="regenerating_api_key_model_gateway-d26997e46482-link">Regenerating an API key for a model gateway</a><div class="wh-tooltip"><p class="shortdesc">Regenerate an API key use to authenticate a model gateway connection to <span class="ph">Agent Operations</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="viewing_agent_map-d26997e46496" class="topicref" data-id="viewing_agent_map" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action viewing_agent_map-d26997e46496-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_action_explorer.html" id="viewing_agent_map-d26997e46496-link">Viewing the Explorer</a><div class="wh-tooltip"><p class="shortdesc">View a roadmap of risky actions reported by <span class="ph">Agent Operations</span>, detailing the         flow from root cause to execution for AI agents and applications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="viewing_violation_details-d26997e46521" class="topicref" data-id="viewing_violation_details" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action viewing_violation_details-d26997e46521-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_violation_details.html" id="viewing_violation_details-d26997e46521-link">Viewing violation details</a><div class="wh-tooltip"><p class="shortdesc">View details regarding policy violations, including the affected application, the         tool used, and the underlying LLM model.</p></div></div></div></li><li role="treeitem"><div data-tocid="policies_page-d26997e46548" class="topicref" data-id="policies_page" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/policies_page.html" id="policies_page-d26997e46548-link">Policies page</a><div class="wh-tooltip"><p class="shortdesc">The Policies page lists the rules that govern <span class="ph">Agent Operations</span>         policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="viewing_action_history-d26997e46562" class="topicref" data-id="viewing_action_history" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action viewing_action_history-d26997e46562-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_action_history.html" id="viewing_action_history-d26997e46562-link">Viewing the Activity Log</a><div class="wh-tooltip"><p class="shortdesc">View a list of the risky activities performed by AI agents that were reported by <span class="ph">Agent Operations</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind_actions_using_agent_operations-d26997e46612" class="topicref" data-id="rewind_actions_using_agent_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind_actions_using_agent_operations-d26997e46612-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/rewind_ai_agent_actions_using_agent_operations.html" id="rewind_actions_using_agent_operations-d26997e46612-link">Rewind AI agent violations using <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Agent Operations</span> to rewind the AI agent violations, undoing         high-risk alterations to data and configurations, or create tickets to resolve the errors at         a later date.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Inventory page</h1>
+    
+    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc">The Inventory page displays a list of AI agents monitored by <span class="- topic/ph ph">Agent Operations</span>,
+        a list of tools found running on agents, and a list connections to AI agents from <span class="- topic/ph ph">Agent Operations</span>.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Agents Inventory page</h2>
+            
+            <p class="- topic/p p">The Agent Inventory page includes an overview of all the agents <span class="- topic/ph ph">Agent Operations</span> has discovered using the connections you have configured, the number of these
+                agents that are high risk, and the number of AI agents that are inactive.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the filters available on the Agent Inventory page.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_inventory_page__entry__1">Filter</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_inventory_page__entry__2">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__1">Applications Accessible</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__2">Applications accessible by the AI agent.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_inventory_page__entry__1">Agent Risk</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_inventory_page__entry__2">Level of risk the action performed by the AI agent poses for your
+                                data or configuration.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section">
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the columns displayed on the Agent Inventory page.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_inventory_page__entry__7">Column</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_inventory_page__entry__8">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Name</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Name of the discovered AI agent.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Agent Risk</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Current risk level <span class="- topic/ph ph">Agent Operations</span> assigns to the AI
+                                agent.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Active Violations</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Number of active violations for each AI agent.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Active Alerts</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Number of active alerts for each AI agent.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Apps Accessible</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Applications the AI agent can access.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__7">Connection Type</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__8">Connection from which the agents originate. For example, Micosoft
+                                Copilot Studio or LiteLLM or Rubrik Gateway.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_inventory_page__entry__7">First Discovered</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_inventory_page__entry__8">Initial date and time <span class="- topic/ph ph">Agent Operations</span> discovered the AI
+                                agent.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Tools Inventory page</h2>
+            
+            <div class="- topic/p p">
+                <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">The following table describes the columns displayed for the Tools
+                        Inventory page.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row">
+                                <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_inventory_page__entry__23">Filter</th>
+                                <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_inventory_page__entry__24">Description</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody">
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Tools</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Name of the tool <span class="- topic/ph ph">Agent Operations</span> found running on the
+                                    workload.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Application</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Application issuing the tool.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Agents with Access</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Names of the agents with permission to access the
+                                    tools.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Active Violations</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Number of times this tool has caused a violation in the
+                                    workload.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Active Alerts</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Number of active alerts that resulted from this
+                                    violation.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Approval Status</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Tool status.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__23">Last Used</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__24">Date and time the tool was last issued.</td>
+                            </tr>
+                            <tr class="- topic/row">
+                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_inventory_page__entry__23">First Discovered</td>
+                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_inventory_page__entry__24">Date and time when the tool was first discovered.</td>
+                            </tr>
+                        </tbody></table></div>
+            </div>
+            <p class="- topic/p p"><span class="- topic/ph ph">Agent Operations</span> limits AI agents to read-only, planning, and agent-to-agent
+                tools. <span class="- topic/ph ph">Agent Operations</span> does not permit using write and delete tools.</p>
+            <div class="- topic/p p"><span class="- topic/ph ph">Agent Operations</span> flags tool violations for tools that have a capability to
+                perform at least one of the following actions:<ul class="- topic/ul ul">
+                    <li class="- topic/li li">Create</li>
+                    <li class="- topic/li li">Update</li>
+                    <li class="- topic/li li">Delete</li>
+                </ul></div>
+            <div class="- topic/p p"><span class="- topic/ph ph">Agent Operations</span> flags alerts for actions that use tools to perform at least
+                one of the following actions:<ul class="- topic/ul ul">
+                    <li class="- topic/li li">Create</li>
+                    <li class="- topic/li li">Update</li>
+                    <li class="- topic/li li">Delete</li>
+                </ul></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">The Connections page</h2>
+            
+            <p class="- topic/p p">The Connections page displays all connections to <span class="- topic/ph ph">Agent Operations</span> and the API
+                keys used to authenticate these gateways. The Connections page includes information
+                about model gateways and native integrations such as Microsoft Copilot. You can
+                click on the Connection Name to view details about the connection.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the information included in the Connected Inventory
+                    tab.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_inventory_page__entry__41">Heading</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_inventory_page__entry__42">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__41">Connection Name</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__42">Name of the connection specified in <span class="- topic/ph ph">Agent Operations</span>.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__41">Agents Discovered</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__42">Number of AI model gateways included with this
+                                connection.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__41">Last Sync</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__42">Date and time of the last sync for this connection.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__41">Added by</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__42">User account that added the connection.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_inventory_page__entry__41">Time added</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_inventory_page__entry__42">Date and time this connection was added.</td>
+                        </tr>
+                    </tbody></table></div>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the information included in the Connected Models
+                    tab.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_inventory_page__entry__53">Heading</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_inventory_page__entry__54">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_inventory_page__entry__53">Model Name</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_inventory_page__entry__54">Name of the AI router model specified by the Provider.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_inventory_page__entry__53">Provider</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_inventory_page__entry__54">Name of the API router model provider.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="monitor_analyze_ai_agent_activity.html" title="You can view information about AI agents, violations, tools, policies, and AI gateways on the Agent Operations UI.">Monitor and analyze AI agent activity</a><div class="- topic/desc desc">You can view information about AI agents, violations, tools, policies, and AI         gateways on the Agent Operations UI.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="viewing_ai_agent_inventory.html" title="View the list of AI agents monitored by Agent Operations.">Viewing the AI agent inventory</a><div class="- topic/desc desc">View the list of AI agents monitored by Agent Operations.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,971 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');.theme-light{--page-background:#fff;--contrast-background:#fff;--top-background:url('resources/images/bgr_right.png') right no-repeat #15292b;--footer-background:none #15292b;--tile-background:#edf5f5;--search-button-background:#009dac;--search-button-icon:#fff;--search-bar-background:#d3d9d9;--search-textfield-border:solid .5px #ccc;--search-breadcrumb:#edf5f5;--primary-color:#333;--code-background-color:#ddd;--uicontrol-background-color:inherit;--uicontrol-font-weight:bold;--userinput-background-color:#ad0000;--hover-background-color:#edf5f5;--title-color:#009dac;--topic-title-color:inherit;}.theme-dark{--page-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 72%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 68%) fixed beige;--contrast-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 92%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 80%) fixed beige;--top-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 72%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 68%) fixed beige;--footer-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 72%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 68%) fixed beige;--tile-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 92%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 80%) fixed beige;--search-button-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 92%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 80%) fixed beige;--search-button-icon:inherit;--search-bar-background:radial-gradient(circle at 0% 0%,rgb(7,24,54),rgba(7,24,54,0) 72%) fixed,radial-gradient(circle at 50% 20%,rgb(0,91,193),rgba(0,91,193,0) 40%) fixed,radial-gradient(circle at 85% -5%,rgb(96,50,210),rgba(96,50,210,0) 42%) fixed,radial-gradient(circle at 50% 50%,rgb(0,106,192),rgba(0,106,192,0) 60%) fixed,radial-gradient(circle at 10% 80%,rgb(0,125,183),rgba(0,125,183,0) 50%) fixed,radial-gradient(circle at 88% 110%,rgb(1,136,160),rgb(0,63,119) 68%) fixed beige;--search-textfield-border:solid .5px #9e9e90;--search-breadcrumb:#04418a;--primary-color:#ededed;--code-background-color:#04418a;--uicontrol-font-color:#fff;--uicontrol-font-weight:bold;--userinput-background-color:#ffff00;--hover-background-color:#04418a;--title-color:#02dbf0;--topic-title-color:#02dbf0;}body{background:var(--page-background);color:var(--primary-color);font-family:'Open Sans',sans-serif;}.wh_header{background:var(--top-background);}.wh_publication_title>a{color:var(--title-color);font-size:2.5rem;}.simpletable-container{overflow-x:auto;width:75%;}div.note{background-repeat:no-repeat;background-image:url(resources/images/note.svg);}a,a:hover,a:visited{color:#009dac;}.related-links a,.related-links a:visited{color:#009dac;display:inline-block;}a:hover,.related-links a:hover{color:var(--title-color);text-decoration:underline;}.webhelp_expand_collapse_sections,.wh_hide_highlight,.wh_print_link button,.wh_navigation_links a,.wh_navigation_links a:hover,.wh_navigation_links a:active,.wh_navigation_links a:visited,.wh_print_link a:before,.wh_navigation_links a:before,.wh_navigation_links a:hover:before,.wh_navigation_links a:active:before,.wh_navigation_links a:visited:before{color:#009dac;text-decoration:none;}.open-in-tab{}a[target="_blank"]:after{content:url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg width=".8em" height=".8em" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>openTab</title><g id="openTab" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M19.5221675,3 C20.3103448,3 21,3.69306931 21,4.48514851 L21,4.48514851 L21,9.61386139 L19.0295567,9.61386139 L19.0295567,4.98019802 L4.97044335,4.98019802 L4.97044335,19.019802 L9.4729064,19.019802 L9.4729064,21 L4.47783251,21 C3.68965517,21 3,20.3069307 3,19.5148515 L3,19.5148515 L3,4.48514851 C3,3.69306931 3.68965517,3 4.47783251,3 L4.47783251,3 Z M20.0430622,12.5789474 C20.6172249,12.5789474 21,12.9617225 21,13.5358852 L21,13.5358852 L21,19.8516746 C21,20.4258373 20.5215311,21 19.8516746,21 L19.8516746,21 L13.5358852,21 C12.9617225,21 12.5789474,20.6172249 12.5789474,20.0430622 C12.5789474,19.4688995 12.9617225,19.0861244 13.5358852,19.0861244 L13.5358852,19.0861244 L17.7464115,19.0861244 L12.9617225,14.3014354 C12.5789474,13.9186603 12.5789474,13.3444976 12.9617225,12.9617225 C13.15311,12.7703349 13.4401914,12.6746411 13.6315789,12.6746411 C13.8229665,12.6746411 14.1100478,12.7703349 14.3014354,12.9617225 L14.3014354,12.9617225 L19.0861244,17.7464115 L19.0861244,13.5358852 C19.0861244,12.9617225 19.4688995,12.5789474 20.0430622,12.5789474 Z" id="Combined-Shape" fill="%232b94cc" transform="translate(12.000000, 12.000000) scale(1, -1) translate(-12.000000, -12.000000) "></path></g></svg>');padding-left:.1em;vertical-align:text-top;}.wh_footer{text-align:center;padding:1em;position:relative;bottom:0;width:100%;color:#dcdcdc;background:var(--footer-background);margin-top:2em;}.footernav{list-style-type:none;text-align:center;margin:0;padding:0;}.footernav li{display:inline-block;padding:0px 2px;}div.footer{display:block;justify-content:center}.wh_tools{background:var(--page-background);margin:1em 0 2em;}.wh_breadcrumb ol .active{color:#009dac;}.wh_publication_toc .topicref .wh-tooltip{background-color:#009dac;color:#fff;font-size:1.4rem;}.wh_publication_toc span,.wh_publication_toc a,.wh_publication_toc a:visited,.wh_publication_toc a:hover{color:inherit;}.wh_publication_toc .active>.topicref a{color:#009dac;}.wh_tile{background:var(--tile-background);}.wh_tile_title a,.wh_tile_title a:hover,.wh_tile_title a:active,.wh_tile_title a:visited .wh_tile_title a:before,.wh_tile_title a:hover:before,.wh_tile_title a:active:before,.wh_tile_title a:visited:before{color:var(--title-color);}.wh_tile_shortdesc{color:inherit;}.wh_topic_content .title.topictitle1{color:var(--topic-title-color);}.wh_main_page .wh_search_input{padding:30px 0;background:var(--search-bar-background);}.wh_search_input{display:block;margin:0;position:relative;background:var(--search-bar-background);padding:30px 0;}.wh_search_textfield{background:var(--contrast-background);color:inherit;border:var(--search-textfield-border);}.wh_search_button{border:solid 1px #9e9e90;border-radius:0 5px 5px 0;padding:0.6em 1em;color:var(--search-button-icon);background:var(--search-button-background);height:2.8em;}.ui-autocomplete{background:var(--page-background);color:inherit;}.searchresult{list-style:none;}.searchresult li a{color:#009dac;}.searchresult .shortdesclink{margin:.3em .5em 0 0;}.wh_search_expression{font-weight:bold;}.searchresult li .relativePath a{color:#006621;}.search-breadcrumb li a{background:var(--search-breadcrumb);}.search-breadcrumb li .title:before,.search-breadcrumb li .title:after{border-color:var(--search-breadcrumb);}.search-breadcrumb li .title:before{border-left-color:transparent;}.search-breadcrumb li .title:after{border-color:transparent;border-left-color:var(--search-breadcrumb);}.wh_publication_toc{background:var(--page-background);}.wh_content_area{background:var(--page-background);}.wh_topic_content,.wh_content_area{color:inherit;}.wh_publication_toc{border-radius:3px;padding:1.5em .5em;background-color:#fafcfc;}.wh_related_links .related-links,.wh_topic_content .related-links,.wh_child_links{border-top:.5px solid #9e9e90;padding-top:7px;margin-top:0;}.table--title-label{display:none;}.table{width:90%;border:.5px solid #9e9e90;border-collapse:collapse;margin-bottom:1rem;color:inherit;--bs-table-color:#inherit;--bs-table-bg:#inherit;}thead{background-color:var(--search-bar-background);}.choicetable{width:90%;border:.5px solid #9e9e90;border-collapse:collapse;margin-bottom:1rem;color:inherit;}th,td{padding:8px;}tr:hover{background-color:var(--hover-background-color);}table .desc{font-style:normal;}span.note__title,*[dir] *[dir='ltr'] span.note__title,*[dir] *[dir] *[dir='ltr'] span.note__title,*[dir] *[dir] *[dir] *[dir='ltr'] span.note__title,*[dir] *[dir] *[dir] *[dir] *[dir='ltr'] span.note__title{padding:2px 4px 2px 0px;background-position:left;}.parmname,.cmdname{font-weight:normal;font-family:monospace;background-color:var(--code-background-color);color:var(--primary-color);font-size:100%;padding:.2rem .4rem;border-radius:.2rem;}code{background-color:var(--code-background-color);color:var(--primary-color);font-size:100%;padding:.2rem .4rem;border-radius:.2rem;}pre{background-color:var(--code-background-color);color:var(--primary-color);}.filepath{background-color:var(--code-background-color);color:var(--primary-color);font-size:100%;padding:.2rem .4rem;border-radius:.2rem;}.userinput{padding:.2rem .4rem;font-size:100%;color:var(--userinput-background-color);background-color:var(--code-background-color);border-radius:.2rem;}var{font-style:italic;background-color:inherit;color:var(--primary-color);font-size:100%;padding:.2rem .2rem .2rem 0rem;border-radius:.2rem;}.uicontrol{font-weight:var(--uicontrol-font-weight);background-color:var(--uicontrol-background-color);}b.ph,strong.ph{font-weight:var(--uicontrol-font-weight);background-color:var(--uicontrol-background-color);}.switch{position:relative;display:inline-block;width:20px;height:10px;}.switch input{opacity:0;width:0;height:0;}.eye{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;transition:0.4s;}.eye:before{position:absolute;content:"";height:20px;width:40px;left:0px;bottom:4px;top:0;bottom:0;margin:auto 0;transition:0.4s;content:url('resources/images/eye.svg');width:20px;height:10px;}input:hover+.eye{content:url('resources/images/eye-light.svg');}input:checked+.eye:before{content:url('resources/images/eye.svg');}*[class~="topic/related-links"] *[class~="topic/desc"]{display:none;}
+
+/* --- GLOBALS ---------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+
+/* --- STICKY HEADER --------------------------------------------- */
+
+.wh_header {
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    min-height: 64px !important;
+}
+
+/* Header navbar container — force height and padding */
+.wh_header .container-fluid,
+.wh_header .navbar-expand-md,
+.wh_header > div {
+    min-height: 64px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.wh_logo_and_publication_title_container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.wh_publication_title > a {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    color: #009dac !important;
+}
+
+/* --- HERO / SEARCH SECTION ------------------------------------- */
+
+.wh_main_page_search {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 280px !important;
+    padding: 64px 24px 80px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-align: center !important;
+}
+
+/* Light theme: force a rich dark gradient regardless of CSS var */
+.theme-light .wh_main_page_search {
+    background: linear-gradient(160deg, #0b2d3c 0%, #0e1e3a 50%, #0d1528 100%) !important;
+}
+
+/* Subtle dot grid overlay — fades to transparent at edges */
+.wh_main_page_search::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: radial-gradient(circle, rgba(0,157,172,0.22) 1px, transparent 1px) !important;
+    background-size: 28px 28px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 30%, transparent 100%) !important;
+    -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 30%, transparent 100%) !important;
+}
+
+/* Top accent gradient stripe */
+.wh_main_page_search::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #009dac 0%, #02dbf0 45%, #6032d2 100%) !important;
+    z-index: 1 !important;
+}
+
+/* Welcome text if populated */
+.wh_welcome:not(:empty) {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.12 !important;
+    color: #fff !important;
+    text-shadow: 0 2px 32px rgba(0,0,0,0.5) !important;
+    margin-bottom: 0.3em !important;
+    padding: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Hero headline — rendered by setHeroTitle() in head.html using the publication title */
+.wh_main_page_search form:first-of-type::before {
+    content: none !important;
+    display: none !important;
+}
+.wh_hero_title {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Injected hint text below the search bar */
+.wh_main_page_search form:first-of-type::after {
+    content: 'Search topics, features, and guides' !important;
+    display: block !important;
+    color: rgba(255,255,255,0.38) !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.03em !important;
+    margin-top: 10px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Search form sizing */
+.wh_main_page_search form,
+.wh_main_page_search #searchForm {
+    width: 100% !important;
+    max-width: 600px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Search row wrapper — unified pill shape */
+.wh_main_page_search #searchForm > div,
+.wh_main_page_search form > div {
+    display: flex !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,157,172,0.28) !important;
+}
+
+/* Search input field */
+.wh_search_textfield {
+    flex: 1 !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 12px 0 0 12px !important;
+    padding: 0 1.25em !important;
+    font-size: 1rem !important;
+    font-family: inherit !important;
+    outline: none !important;
+    background: rgba(255,255,255,0.97) !important;
+    color: #111827 !important;
+    transition: box-shadow 0.15s ease !important;
+}
+
+.theme-dark .wh_search_textfield {
+    background: rgba(6, 17, 44, 0.92) !important;
+    color: #e2e8f0 !important;
+}
+
+.wh_search_textfield:focus {
+    box-shadow: inset 0 0 0 2px rgba(0,157,172,0.55) !important;
+}
+
+/* Search button */
+.wh_search_button {
+    height: 50px !important;
+    padding: 0 1.75em !important;
+    border: none !important;
+    border-radius: 0 12px 12px 0 !important;
+    background: #009dac !important;
+    color: #fff !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    letter-spacing: 0.04em !important;
+    cursor: pointer !important;
+    transition: background 0.18s ease, transform 0.1s ease !important;
+    white-space: nowrap !important;
+}
+
+.wh_search_button:hover {
+    background: #00b5c8 !important;
+}
+
+.wh_search_button:active {
+    transform: scale(0.97) !important;
+}
+
+/* --- TILES CONTENT AREA ---------------------------------------- */
+
+.wh_main_page .wh_content_area {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 14px 0 32px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.container-fluid.wh_content_flex_container {
+    padding: 0 14px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* TILE GRID — auto-fill responsive columns */
+.wh_tiles {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-content: unset !important;
+}
+
+/* --- INDIVIDUAL TILE CARD --------------------------------------- */
+
+.wh_tile {
+    width: auto !important;
+    min-width: unset !important;
+    min-height: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.22s ease,
+                border-color 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+/* Light theme card */
+.theme-light .wh_tile {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.07) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04) !important;
+}
+
+.theme-light .wh_tile:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 30px rgba(0,157,172,0.15), 0 2px 6px rgba(0,0,0,0.06) !important;
+    border-color: rgba(0,157,172,0.3) !important;
+}
+
+/* Dark theme card — glass morphism */
+.theme-dark .wh_tile {
+    background: rgba(8, 18, 50, 0.58) !important;
+    border: 1px solid rgba(255,255,255,0.07) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.28) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.theme-dark .wh_tile:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(2,219,240,0.22) !important;
+    border-color: rgba(2,219,240,0.22) !important;
+}
+
+/* Inner wrapper — row layout: icon left, text right + accent left border */
+.wh_tile > div {
+    padding: 20px 22px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    border-left: 4px solid #009dac !important;
+}
+
+/* Tile text area */
+.wh_tile_text {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    overflow: visible !important;
+}
+
+.wh_tile_text::after { display: none !important; }
+
+/* TILE TITLE */
+.wh_tile_title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+}
+
+.wh_tile_title a,
+.wh_tile_title a:hover,
+.wh_tile_title a:active,
+.wh_tile_title a:visited {
+    text-decoration: none !important;
+    display: block !important;
+    transition: color 0.15s ease !important;
+}
+
+.theme-light .wh_tile_title a,
+.theme-light .wh_tile_title a:visited { color: #0f172a !important; }
+.theme-light .wh_tile_title a:hover  { color: #009dac !important; }
+
+.theme-dark .wh_tile_title a,
+.theme-dark .wh_tile_title a:visited { color: #e2f0f7 !important; }
+.theme-dark .wh_tile_title a:hover   { color: #02dbf0 !important; }
+
+/* Arrow indicator on hover */
+.wh_tile_title .topicref::after {
+    content: ' →' !important;
+    font-size: 0.95em !important;
+    opacity: 0 !important;
+    transform: translateX(-6px) !important;
+    display: inline-block !important;
+    transition: opacity 0.18s ease, transform 0.18s ease !important;
+    color: #009dac !important;
+}
+
+.wh_tile:hover .wh_tile_title .topicref::after {
+    opacity: 1 !important;
+    transform: translateX(2px) !important;
+}
+
+/* TILE SHORT DESCRIPTION */
+.wh_tile_shortdesc {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    margin-top: 0 !important;
+    flex: 1 !important;
+}
+
+.theme-light .wh_tile_shortdesc { color: #64748b !important; }
+.theme-dark  .wh_tile_shortdesc { color: rgba(176,204,222,0.68) !important; }
+
+/* --- RESPONSIVE ------------------------------------------------- */
+
+@media (max-width: 599px) {
+    .wh_tiles {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    .wh_main_page .wh_content_area {
+        padding: 12px 12px 32px !important;
+    }
+    .wh_main_page_search {
+        min-height: 210px !important;
+        padding: 44px 16px 56px !important;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 849px) {
+    .wh_tiles {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+/* --- FOOTER ---------------------------------------------------- */
+
+.wh_footer {
+    border-top: 1px solid rgba(255,255,255,0.06) !important;
+    padding: 20px 16px !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.01em !important;
+    margin-top: 0 !important;
+    color: #dcdcdc !important;
+}
+
+.wh_footer a,
+.wh_footer a:visited {
+    color: #dcdcdc !important;
+    text-decoration: none !important;
+    transition: color 0.14s ease !important;
+}
+
+.wh_footer a:hover { color: #02dbf0 !important; }
+
+.footernav li { padding: 0 4px !important; }
+
+/* --- CUSTOM SCROLLBAR ------------------------------------------ */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,157,172,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,157,172,0.65); }
+/* ================================================================
+   LAYOUT & READABILITY FIXES (v2)
+   ================================================================ */
+
+/* Give every tile a comfortable minimum height */
+.wh_tile > div {
+    min-height: 130px !important;
+}
+
+/* Dark theme: make cards more opaque & distinct against the bg */
+.theme-dark .wh_tile {
+    background: rgba(12, 25, 65, 0.72) !important;
+}
+
+/* Light theme: stronger shadow baseline */
+.theme-light .wh_tile {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 8px 24px rgba(0,0,0,0.05) !important;
+}
+
+/* Tile title: left-aligned, readable */
+.wh_tile_title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+}
+
+/* Tile description: comfortable reading size */
+.wh_tile_shortdesc {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    margin-top: 6px !important;
+}
+
+/* Remove the ::after arrow animation — interferes with link display */
+.wh_tile_title .topicref::after {
+    display: none !important;
+}
+
+/* Tile link: clear, clean color */
+.theme-dark .wh_tile_title a,
+.theme-dark .wh_tile_title a:visited {
+    color: #d4edf5 !important;
+    font-weight: 700 !important;
+}
+
+/* Hero headline: bold and impactful */
+.wh_main_page_search form:first-of-type::before {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.15 !important;
+}
+
+/* Tile area padding */
+.wh_main_page .wh_content_area {
+    padding: 24px 24px 32px !important;
+}
+
+/* Container max-width: keep tiles from stretching too wide */
+.container-fluid.wh_content_flex_container {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* ================================================================
+   FULL-TILE CLICK AREA
+   Stretches the title link to cover the entire card
+   ================================================================ */
+
+/* Tile must be a positioning context (already set) */
+.wh_tile {
+    position: relative !important;
+}
+
+/* Expand the <a> inside the tile title to cover the whole card */
+.wh_tile_title .topicref a::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    border-radius: 12px !important;
+    outline: none !important;
+}
+
+/* Replace browser default purple focus ring with a clean teal ring */
+.wh_tile_title .topicref a:focus-visible::before {
+    box-shadow: 0 0 0 3px rgba(0,157,172,0.65) !important;
+}
+
+/* Suppress legacy :focus outline (non-keyboard clicks) */
+.wh_tile_title .topicref a:focus:not(:focus-visible)::before {
+    box-shadow: none !important;
+}
+
+/* ================================================================
+   DARK MODE — unified background for header, search hero & tile area
+   All three elements use the same CSS variable as the header bar.
+   ================================================================ */
+
+/* Body uses the same variable as the header (--top-background) */
+.theme-dark body {
+    background: var(--top-background) !important;
+}
+
+/* Search hero: match header exactly */
+.theme-dark .wh_main_page_search {
+    background: var(--top-background) !important;
+}
+
+/* Tile content area: match header exactly */
+.theme-dark .wh_main_page .wh_content_area {
+    background: var(--top-background) !important;
+}
+
+/* ================================================================
+   OPTION B — Icon-left tile layout
+   ================================================================ */
+
+/* Icon box: fixed-width tinted square */
+.wh_tile_image {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+    padding: 0 !important;
+    text-align: unset !important;
+    background: rgba(0,157,172,0.13) !important;
+}
+
+.theme-dark .wh_tile_image {
+    background: rgba(0,157,172,0.2) !important;
+}
+
+.wh_tile_image img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Text column fills remaining width */
+.wh_tile_text {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+/* ================================================================
+   PER-TILE ACCENT COLORS — unique color per category via nth-child
+   Matches the 14 tiles in order
+   ================================================================ */
+
+/* 1 Getting started — amber */
+.wh_tiles > .wh_tile:nth-child(1) > div { border-left-color: #f59e0b !important; }
+.wh_tiles > .wh_tile:nth-child(1) .wh_tile_image { background: rgba(245,158,11,0.13) !important; }
+
+/* 2 Rubrik Clusters — blue */
+.wh_tiles > .wh_tile:nth-child(2) > div { border-left-color: #2563eb !important; }
+.wh_tiles > .wh_tile:nth-child(2) .wh_tile_image { background: rgba(37,99,235,0.12) !important; }
+
+/* 3 Protection Policies — teal */
+.wh_tiles > .wh_tile:nth-child(3) > div { border-left-color: #0d9488 !important; }
+.wh_tiles > .wh_tile:nth-child(3) .wh_tile_image { background: rgba(13,148,136,0.13) !important; }
+
+/* 4 Security — red */
+.wh_tiles > .wh_tile:nth-child(4) > div { border-left-color: #dc2626 !important; }
+.wh_tiles > .wh_tile:nth-child(4) .wh_tile_image { background: rgba(220,38,38,0.11) !important; }
+
+/* 5 Workloads — purple */
+.wh_tiles > .wh_tile:nth-child(5) > div { border-left-color: #7c3aed !important; }
+.wh_tiles > .wh_tile:nth-child(5) .wh_tile_image { background: rgba(124,58,237,0.12) !important; }
+
+/* 6 Cyber Resiliency — green */
+.wh_tiles > .wh_tile:nth-child(6) > div { border-left-color: #16a34a !important; }
+.wh_tiles > .wh_tile:nth-child(6) .wh_tile_image { background: rgba(22,163,74,0.12) !important; }
+
+/* 7 Identity Resiliency — indigo */
+.wh_tiles > .wh_tile:nth-child(7) > div { border-left-color: #4f46e5 !important; }
+.wh_tiles > .wh_tile:nth-child(7) .wh_tile_image { background: rgba(79,70,229,0.12) !important; }
+
+/* 8 Agent Operations — pink */
+.wh_tiles > .wh_tile:nth-child(8) > div { border-left-color: #db2777 !important; }
+.wh_tiles > .wh_tile:nth-child(8) .wh_tile_image { background: rgba(219,39,119,0.11) !important; }
+
+/* 9 AI and Automation — violet */
+.wh_tiles > .wh_tile:nth-child(9) > div { border-left-color: #9333ea !important; }
+.wh_tiles > .wh_tile:nth-child(9) .wh_tile_image { background: rgba(147,51,234,0.12) !important; }
+
+/* 10 Integrations — orange */
+.wh_tiles > .wh_tile:nth-child(10) > div { border-left-color: #ea580c !important; }
+.wh_tiles > .wh_tile:nth-child(10) .wh_tile_image { background: rgba(234,88,12,0.11) !important; }
+
+/* 11 Monitoring — cyan */
+.wh_tiles > .wh_tile:nth-child(11) > div { border-left-color: #0891b2 !important; }
+.wh_tiles > .wh_tile:nth-child(11) .wh_tile_image { background: rgba(8,145,178,0.12) !important; }
+
+/* 12 Diagnostic Tools — amber-dark */
+.wh_tiles > .wh_tile:nth-child(12) > div { border-left-color: #d97706 !important; }
+.wh_tiles > .wh_tile:nth-child(12) .wh_tile_image { background: rgba(217,119,6,0.12) !important; }
+
+/* 13 Multitenancy — sky */
+.wh_tiles > .wh_tile:nth-child(13) > div { border-left-color: #0284c7 !important; }
+.wh_tiles > .wh_tile:nth-child(13) .wh_tile_image { background: rgba(2,132,199,0.12) !important; }
+
+/* 14 Additional Resources — rose */
+.wh_tiles > .wh_tile:nth-child(14) > div { border-left-color: #be185d !important; }
+.wh_tiles > .wh_tile:nth-child(14) .wh_tile_image { background: rgba(190,24,93,0.11) !important; }
+
+/* ================================================================
+   SEARCH BAR — bigger and more impactful
+   ================================================================ */
+.wh_search_textfield {
+    height: 52px !important;
+    font-size: 1rem !important;
+}
+
+.wh_search_button {
+    height: 52px !important;
+    font-size: 0.95rem !important;
+    padding: 0 2em !important;
+}
+
+/* Hero section — more vertical breathing room */
+.wh_main_page_search {
+    min-height: 300px !important;
+    padding: 72px 24px 88px !important;
+}
+
+/* Hint text below search */
+.wh_main_page_search form:first-of-type::after {
+    font-size: 0.78rem !important;
+}
+
+/* ================================================================
+   PIXEL SIZE OVERRIDES
+   Oxygen WebHelp sets html { font-size: 10px } — every rem above
+   equals 10px not 16px. This section re-declares all sizes in px.
+   Being last in the file, these win over every earlier !important.
+   ================================================================ */
+
+/* Publication title */
+.wh_publication_title > a {
+    font-size: 24px !important;
+}
+
+/* Hero headline */
+.wh_main_page_search form:first-of-type::before {
+    font-size: 28px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Hint text — hidden */
+.wh_main_page_search form:first-of-type::after {
+    display: none !important;
+}
+
+/* Search input & button */
+.wh_search_textfield {
+    height: 55px !important;
+    font-size: 17px !important;
+    padding: 0 22px !important;
+}
+
+.wh_search_button {
+    height: 55px !important;
+    font-size: 14px !important;
+    padding: 0 28px !important;
+}
+
+/* Tile title — 16.5px bold, left-aligned */
+.wh_tile_title {
+    font-size: 16.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    margin-bottom: 5px !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* wh_tile_title span inherits line-height from main.css — reset it */
+.wh_tile_title span {
+    line-height: inherit !important;
+    display: inline !important;
+    width: auto !important;
+}
+
+/* Tile description — 15.5px regular weight */
+.wh_tile_shortdesc {
+    font-size: 15.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    margin-top: 4px !important;
+}
+
+/* Light theme description color */
+.theme-light .wh_tile_shortdesc { color: #475569 !important; }
+/* Dark theme description color */
+.theme-dark  .wh_tile_shortdesc { color: rgba(176,204,222,0.75) !important; }
+
+/* Tile title link colors */
+.theme-light .wh_tile_title a,
+.theme-light .wh_tile_title a:visited { color: #0f172a !important; }
+.theme-light .wh_tile_title a:hover  { color: #009dac !important; }
+
+.theme-dark .wh_tile_title a,
+.theme-dark .wh_tile_title a:visited { color: #e2f0f7 !important; font-weight: 700 !important; }
+.theme-dark .wh_tile_title a:hover   { color: #02dbf0 !important; }
+
+/* Footer */
+.wh_footer {
+    font-size: 13px !important;
+}
+
+/* ================================================================
+   OPTION B — STACKED LAYOUT (search hero on top, tiles below)
+   Matches option_B_preview.html exactly.
+
+   Breakpoints:
+   ≥ 960px  : 4-col tiles, compact hero
+   640–959px: 2-col tiles
+   < 640px  : 1-col tiles
+   ================================================================ */
+
+/* Reset body to normal stacked column — undo any grid from before */
+body.wh_main_page {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    align-items: stretch !important;
+}
+
+/* ---- HERO / SEARCH: compact, centered, full-width ---- */
+.wh_main_page_search {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+    padding: 24px 24px 24px !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+/* Headline above search bar */
+.wh_main_page_search form:first-of-type::before {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+    text-align: center !important;
+}
+
+/* Hint text — hidden */
+.wh_main_page_search form:first-of-type::after {
+    display: none !important;
+}
+
+/* Search form: 70% of container width */
+.wh_main_page_search form,
+.wh_main_page_search #searchForm {
+    width: 70% !important;
+    max-width: 1092px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Search row: horizontal pill — applies on ALL pages (main + search results) */
+#searchForm > div,
+.wh_main_page_search #searchForm > div,
+.wh_main_page_search form > div,
+.wh_search_input #searchForm > div,
+.wh_search_input form > div {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,157,172,0.28) !important;
+}
+
+/* Search input — height -20% */
+.wh_search_textfield {
+    flex: 1 !important;
+    height: 55px !important;
+    border: none !important;
+    border-radius: 12px 0 0 12px !important;
+    padding: 0 22px !important;
+    font-size: 15px !important;
+    font-family: inherit !important;
+    outline: none !important;
+    width: auto !important;
+}
+
+/* Search button — height -20% */
+.wh_search_button {
+    height: 55px !important;
+    padding: 0 28px !important;
+    border: none !important;
+    border-radius: 0 12px 12px 0 !important;
+    background: #009dac !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    width: auto !important;
+}
+
+/* ---- TILE GRID: 3 columns default → ~450px per tile (1.5× wider) ---- */
+.wh_tiles {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-content: unset !important;
+}
+
+/* Tile container: max 1380px */
+.container-fluid.wh_content_flex_container {
+    max-width: 1380px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Tile content area */
+.wh_main_page .wh_content_area {
+    padding: 40px 0 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+}
+
+/* Card inner: 130px min-height, proportional to 450px width */
+.wh_tile > div {
+    padding: 20px 20px !important;
+    min-height: 130px !important;
+    gap: 14px !important;
+}
+
+/* Icons (desktop default) */
+.wh_tile_image {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+}
+.wh_tile_image img {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* ---- LARGE DESKTOP (≥ 1840px): 4 columns at 450px each ---- */
+@media (min-width: 1840px) {
+    .wh_tiles {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 16px !important;
+    }
+    .container-fluid.wh_content_flex_container {
+        max-width: 1840px !important;
+    }
+    .wh_tile > div {
+        padding: 20px 20px !important;
+        min-height: 130px !important;
+    }
+}
+
+/* ---- STANDARD LAPTOP / DESKTOP (960–1839px): 3 columns ~450px — the default ---- */
+
+/* ---- SMALL LAPTOP (600–959px): 2 columns ---- */
+@media (max-width: 959px) and (min-width: 600px) {
+    .wh_tiles {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+    }
+    .container-fluid.wh_content_flex_container {
+        padding: 0 16px !important;
+    }
+    .wh_tile > div {
+        padding: 18px 16px !important;
+        min-height: 120px !important;
+    }
+    .wh_main_page_search form,
+    .wh_main_page_search #searchForm {
+        max-width: 100% !important;
+    }
+}
+
+/* ---- TABLET (450–599px): 2 columns ---- */
+@media (max-width: 599px) and (min-width: 450px) {
+    .wh_tiles {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .container-fluid.wh_content_flex_container {
+        padding: 0 14px !important;
+    }
+    .wh_main_page_search {
+        padding: 22px 18px 26px !important;
+    }
+    .wh_main_page_search form:first-of-type::before {
+        font-size: 22px !important;
+    }
+    .wh_main_page_search form,
+    .wh_main_page_search #searchForm {
+        max-width: 100% !important;
+    }
+    .wh_tile > div {
+        padding: 14px 12px !important;
+        min-height: 110px !important;
+        gap: 10px !important;
+    }
+    .wh_tile_image {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+    }
+    .wh_tile_image img {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+/* ---- MOBILE (< 450px): 1 column ---- */
+@media (max-width: 449px) {
+    .wh_tiles {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    .container-fluid.wh_content_flex_container {
+        padding: 0 12px !important;
+    }
+    .wh_main_page_search {
+        padding: 18px 14px 22px !important;
+    }
+    .wh_main_page_search form:first-of-type::before {
+        font-size: 20px !important;
+    }
+    .wh_main_page_search form,
+    .wh_main_page_search #searchForm {
+        max-width: 100% !important;
+    }
+    .wh_tile > div {
+        padding: 16px 14px !important;
+        min-height: 100px !important;
+        gap: 10px !important;
+    }
+    .wh_tile_image {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+    }
+    .wh_tile_image img {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+

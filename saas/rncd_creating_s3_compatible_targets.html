@@ -1,0 +1,316 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Create an S3-compatible target to back up and archive your NAS data from a source system using RSC."/><meta name="DC.relation" content="../rncd/rncd_configure_targets.html"/><meta name="DC.relation" content="../saas/rncd_nfs_detail_ncd_target.html"/><meta name="DC.relation" content="../saas/rncd_s3_compatible_details_ncd_targets.html"/><meta name="DC.relation" content="../saas/rncd_s3_compatible_details_ncd_targets.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rncd_creating_s3_compatible_targets"/>        
+      <title>Creating S3-compatible targets from RSC</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="rncd_creating_s3_compatible_targets-d26997e38762"/><meta name="wh-source-relpath" content="saas/rncd_creating_s3_compatible_targets.dita"/><meta name="wh-out-relpath" content="saas/rncd_creating_s3_compatible_targets.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="rncd_creating_s3_compatible_targets" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html">Storage workloads</a></div></div></li><li><div class="topicref" data-id="ncd_data_sets"><div class="title"><a href="../saas/ncd_data_sets.html"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div></li><li><div class="topicref" data-id="rncd_setup_ncd_datasets_rsc"><div class="title"><a href="../rncd/rncd_setup_ncd_datasets_rsc.html">Set up <span class="ph">NAS CD</span> data sets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">You can set up and protect your <span class="ph">NAS CD</span> data sets from the <span class="ph">RSC</span>.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../rncd/rncd_creating_targets_rsc.html">Set up NASCD targets from RSC</a></div></div></li><li><div class="topicref" data-id="rncd_configure_targets"><div class="title"><a href="../rncd/rncd_configure_targets.html">Configure <span class="ph">NAS CD</span> targets</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to back up and archive your NAS data to the supported         storage destinations, known as targets.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rncd_creating_s3_compatible_targets"><div class="title"><a href="../saas/rncd_creating_s3_compatible_targets.html">Creating S3-compatible targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create an S3-compatible target to back up and archive your NAS data from a source         system using <span class="ph">RSC</span>.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/rncd_nfs_detail_ncd_target.html" title="Network File System details for NAS CD targets" aria-label="Previous topic: Network File System details for NAS CD targets" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/rncd_s3_compatible_details_ncd_targets.html" title="S3-compatible details for NAS CD targets" aria-label="Next topic: S3-compatible details for NAS CD targets" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="mv_managed_volumes_sla_managed_volumes-d26997e37410" class="topicref" data-id="mv_managed_volumes_sla_managed_volumes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mv_managed_volumes_sla_managed_volumes-d26997e37410-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="mv_managed_volumes_sla_managed_volumes-d26997e37410-link">Managed Volumes and SLA Managed Volumes</a><div class="wh-tooltip"><p class="shortdesc">Managed Volumes in <span class="ph">RSC</span> protect and manage data while SLA Managed         Volumes schedule and initiate backups using an SLA Domain.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="ncd_data_sets-d26997e37860" class="topicref" data-id="ncd_data_sets" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ncd_data_sets-d26997e37860-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_sets.html" id="ncd_data_sets-d26997e37860-link"><span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik NAS Cloud Direct</span> offers secure data protection with high-performance,         scalable enterprise backup, and archive services for unstructured file data.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rncd_data_protection_mgmt_using_rsc_ncd-d26997e37875" class="topicref" data-id="rncd_data_protection_mgmt_using_rsc_ncd" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_data_protection_mgmt_using_rsc_ncd.html" id="rncd_data_protection_mgmt_using_rsc_ncd-d26997e37875-link">Data protection and Recovery using <span class="ph">RSC</span> and <span class="ph">NAS CD</span></a><div class="wh-tooltip"><p class="shortdesc">You can manage your <span class="ph">NAS CD</span> datasets depending on whether you import or         set up the NAS systems in <span class="ph">NAS CD</span> or <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rncd_setup_ncd_datasets_rsc-d26997e37900" class="topicref" data-id="rncd_setup_ncd_datasets_rsc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rncd_setup_ncd_datasets_rsc-d26997e37900-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_setup_ncd_datasets_rsc.html" id="rncd_setup_ncd_datasets_rsc-d26997e37900-link">Set up <span class="ph">NAS CD</span> data sets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">You can set up and protect your <span class="ph">NAS CD</span> data sets from the <span class="ph">RSC</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37922" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37922-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_rbac_rsc_based_protection.html" id="tocId-d26997e37922-link">Plan your NAS CD protection using RSC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e38009" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e38009-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_cluster_settings.html" id="tocId-d26997e38009-link">Configure NAS CD cluster settings from RSC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e38076" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e38076-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_add_systems.html" id="tocId-d26997e38076-link">Set up NASCD Systems from RSC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e38460" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e38460-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_system_settings.html" id="tocId-d26997e38460-link">Configure NAS CD System settings from RSC</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e38503" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e38503-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_creating_targets_rsc.html" id="tocId-d26997e38503-link">Set up NASCD targets from RSC</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rncd_creating_targets_rsc-d26997e38504" class="topicref" data-id="rncd_creating_targets_rsc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_creating_targets_rsc.html" id="rncd_creating_targets_rsc-d26997e38504-link">Creating <span class="ph">NAS CD</span> targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create a target to backup and archive your NAS data from a source system using <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rncd_configure_targets-d26997e38523" class="topicref" data-id="rncd_configure_targets" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rncd_configure_targets-d26997e38523-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_configure_targets.html" id="rncd_configure_targets-d26997e38523-link">Configure <span class="ph">NAS CD</span> targets</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to back up and archive your NAS data to the supported         storage destinations, known as targets.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_prequistites_target_immutability-d26997e38540" class="topicref" data-id="rncd_prequistites_target_immutability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_prequistites_target_immutability-d26997e38540-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_prequistites_target_immutability.html" id="rncd_prequistites_target_immutability-d26997e38540-link">Prerequisites for target immutability</a><div class="wh-tooltip"><p class="shortdesc">You can use immutability that prevents alteration or deletion of snapshots for a         specified period, safeguarding data integrity. You must fulfill certain prerequisites to         successfully use immutability for your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_amazon_s3_target_creation-d26997e38619" class="topicref" data-id="rncd_amazon_s3_target_creation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_amazon_s3_target_creation-d26997e38619-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_amazon_s3_target_creation.html" id="rncd_amazon_s3_target_creation-d26997e38619-link">Create Amazon S3 target</a><div class="wh-tooltip"><p class="shortdesc">You can create an Amazon S3 target for the secure storage of backup snapshots and         archived data. Additionally, you can customize proxy settings and choose an S3 endpoint for         managing data transfers to the target.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_creating_microsoft_azure_targets-d26997e38663" class="topicref" data-id="rncd_creating_microsoft_azure_targets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_creating_microsoft_azure_targets-d26997e38663-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_creating_microsoft_azure_targets.html" id="rncd_creating_microsoft_azure_targets-d26997e38663-link">Creating Microsoft Azure targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create a Microsoft Azure target to back up and archive your NAS data from a source         system using <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_creating_gcp_targets-d26997e38696" class="topicref" data-id="rncd_creating_gcp_targets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_creating_gcp_targets-d26997e38696-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_creating_gcp_targets.html" id="rncd_creating_gcp_targets-d26997e38696-link">Creating Google Cloud Platform targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create a Google Cloud Platform target to back up and archive your NAS data from a         source system using <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_creating_nfs_targets-d26997e38729" class="topicref" data-id="rncd_creating_nfs_targets" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_creating_nfs_targets-d26997e38729-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_creating_nfs_targets.html" id="rncd_creating_nfs_targets-d26997e38729-link">Creating Network File System targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create a Network File System target to back up and archive your NAS data from a         source system using <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="rncd_creating_s3_compatible_targets-d26997e38762" class="topicref" data-id="rncd_creating_s3_compatible_targets" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rncd_creating_s3_compatible_targets-d26997e38762-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_creating_s3_compatible_targets.html" id="rncd_creating_s3_compatible_targets-d26997e38762-link">Creating S3-compatible targets from <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">Create an S3-compatible target to back up and archive your NAS data from a source         system using <span class="ph">RSC</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rncd_s3_compatible_details_ncd_targets-d26997e38778" class="topicref" data-id="rncd_s3_compatible_details_ncd_targets" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_s3_compatible_details_ncd_targets.html" id="rncd_s3_compatible_details_ncd_targets-d26997e38778-link">S3-compatible details for <span class="ph">NAS CD</span> targets</a><div class="wh-tooltip"><p class="shortdesc">Information about S3-compatible storage details that you need to provide while         creating an S3-compatible target for your <span class="ph">NAS CD</span> data sets.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e38795" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e38795-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rncd_viewing_targets.html" id="tocId-d26997e38795-link">Manage NAS CD Targets using RSC</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e38854" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e38854-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_eval_sla_domains_options_ncd.html" id="tocId-d26997e38854-link">Set up NASCD protection from RSC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_recover-d26997e39048" class="topicref" data-id="rncd_recover" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_recover-d26997e39048-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_recover.html" id="rncd_recover-d26997e39048-link">Recover <span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc">You can recover shares from the snapshots on the Overview tab of a share on the <span class="ph">NAS CD</span> Inventory page.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rncd_setup_datasets_ncd-d26997e39082" class="topicref" data-id="rncd_setup_datasets_ncd" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rncd_setup_datasets_ncd-d26997e39082-link" class="wh-expand-btn"></span><div class="title"><a href="../rncd/rncd_setup_datasets_ncd.html" id="rncd_setup_datasets_ncd-d26997e39082-link">Set up <span class="ph">NAS CD</span> datasets from <span class="ph">NAS CD</span></a><div class="wh-tooltip"><p class="shortdesc">You can set up and protect your <span class="ph">NAS CD</span> data sets from the <span class="ph">NAS CD</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_unstructured_data_dashboard-d26997e39439" class="topicref" data-id="ncd_unstructured_data_dashboard" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_unstructured_data_dashboard-d26997e39439-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_unstructured_data_dashboard.html" id="ncd_unstructured_data_dashboard-d26997e39439-link">Unstructured Data dashboard</a><div class="wh-tooltip"><p class="shortdesc">The Unstructured Data dashboard in <span class="ph">RSC</span> provides a comprehensive data         protection summary for all connected clusters, displaying statistics on data collection,         archive usage, storage, and the status of protected files and shares.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ncd_data_observability-d26997e39487" class="topicref" data-id="ncd_data_observability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ncd_data_observability-d26997e39487-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ncd_data_observability.html" id="ncd_data_observability-d26997e39487-link">Data Observability for <span class="ph">NAS CD</span> data sets</a><div class="wh-tooltip"><p class="shortdesc"> To provide Data Observability, you can enable <span class="ph">Data Threat Analytics</span> and         configure <span class="ph">Data Security Posture</span> for <span class="ph">NAS CD</span> data sets. <span class="ph">Data Threat Analytics</span> detects ransomware attacks and <span class="ph">Data Security Posture</span> identifies sensitive data in your <span class="ph">NAS CD</span> data sets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_api_proxy_nascd_rest_api-d26997e39702" class="topicref" data-id="rsc_api_proxy_nascd_rest_api" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_api_proxy_nascd_rest_api-d26997e39702-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_api_proxy_nascd_rest_api.html" id="rsc_api_proxy_nascd_rest_api-d26997e39702-link"><span class="ph">RSC</span> API proxy for <span class="ph">NAS CD</span> REST API</a><div class="wh-tooltip"><p class="shortdesc">Using the <span class="ph">RSC</span> API proxy, you can send <span class="ph">NAS CD</span> REST API         requests directly to an <span class="ph">RSC</span> instance instead of a <span class="ph">NAS CD</span>         instance. This simplifies data management across <span class="ph">NAS CD</span> clusters and         streamlines API interactions, reduces complexity, and enables efficient management of <span class="ph">NAS CD</span> data from a single, secure location.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="nas_systems-d26997e39766" class="topicref" data-id="nas_systems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nas_systems-d26997e39766-link" class="wh-expand-btn"></span><div class="title"><a href="../nas/nas_systems.html" id="nas_systems-d26997e39766-link">NAS systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> manages and protects NFS and SMB shares on NAS systems for     efficient data storage and retrieval.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapmirror_cloud-d26997e40124" class="topicref" data-id="snapmirror_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapmirror_cloud-d26997e40124-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapmirror_cloud.html" id="snapmirror_cloud-d26997e40124-link">SnapMirror Cloud</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects user data replicated by the NetApp SnapMirror Cloud         service.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Creating S3-compatible targets from <span class="- topic/ph ph">RSC</span></h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Create an S3-compatible target to back up and archive your NAS data from a source
+        system using <span class="- topic/ph ph">RSC</span>.</p>
+        <section class="- topic/section task/prereq section prereq" id="d1414634e64"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>Review the immutability prerequisites for S3-compatible targets, as described in
+                <a class="- topic/xref xref" href="../rncd/rncd_s3_storage_immutability_prereq.html" title="Information about prerequisites for setting up immutable NAS CD targets on supported S3-compatible storage. You must configure IAM policies with specific permissions. These permissions enable the storage user account to set up S3 buckets with Object Lock and Versioning for immutable backups.">S3 storage immutability prerequisites for NAS CD data sets</a>.</section>
+        <section class="- topic/ol task/steps ol steps" id="d1414634e73"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../reuse/conrefs/../../images/ui-icons/AppTray.svg"/> and select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Settings menu appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Archival &amp; Storage</span> and select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">NAS
+                        Cloud Direct Locations</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Create Target Location</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Create a Target Location wizard appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Object Store (S3 Compatible)</span> and click
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Enter the target location details.</span>
+                <div class="- topic/itemgroup task/info itemgroup info">For more information about the fields for location details, see <a class="- topic/xref xref" href="rncd_s3_compatible_details_ncd_targets.html" title="Information about S3-compatible storage details that you need to provide while creating an S3-compatible target for your NAS CD data sets.">S3-compatible details for NAS CD targets</a>.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d1414634e152"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><span class="- topic/ph ph">RSC</span> creates the S3-compatible target location based on the storage
+            type and the location details you provide.</section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

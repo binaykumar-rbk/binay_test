@@ -1,0 +1,322 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="You can migrate an archival location to RCV by running the migration tool in your own AWS environment."/><meta name="DC.relation" content="../saas/migration_arch_loc_rcv.html"/><meta name="DC.relation" content="../saas/rcv_migration_workflow.html"/><meta name="DC.relation" content="../saas/rcv_preparing_customer_hosted_migration.html"/><meta name="DC.relation" content="../saas/rcv_preparing_customer_hosted_migration.html"/><meta name="DC.relation" content="../saas/rcv_configuring_cust_hosted_migration.html"/><meta name="DC.relation" content="../saas/rcv_running_cust_hosted_migration.html"/><meta name="DC.relation" content="../saas/rcv_finalizing_customer_hosted_migration.html"/><meta name="DC.relation" content="rcv_migration_workflow.html"/><meta name="DC.relation" content="migration_arch_loc_rcv.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rcv_cust_managed_migration_process"/>        
+      <title>Customer-hosted migration process</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="rcv_cust_managed_migration_process-d26997e7951"/><meta name="wh-source-relpath" content="saas/rcv_cust_managed_migration_process.dita"/><meta name="wh-out-relpath" content="saas/rcv_cust_managed_migration_process.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="rcv_cust_managed_migration_process" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/sla_domains.html">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li><div class="topicref" data-id="rcv_rubrik_cloud_vault"><div class="title"><a href="../saas/rcv_rubrik_cloud_vault.html">Rubrik Cloud Vault</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Cloud Vault is a Rubrik managed cloud service that provides isolated and         immutable copies of protected data, enhancing cyber resiliency.</p></div></div></div></li><li><div class="topicref" data-id="rcv_location_management"><div class="title"><a href="../saas/rcv_location_management.html">Rubrik Cloud Vault location management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides different options to manage your Rubrik Cloud Vault         locations.</p></div></div></div></li><li><div class="topicref" data-id="migration_arch_loc_rcv"><div class="title"><a href="../saas/migration_arch_loc_rcv.html">Migration of S3 archival locations to RCV</a><div class="wh-tooltip"><p class="shortdesc">You can migrate your Amazon S3 and S3-compatible data center archival locations to         Rubrik Cloud Vault using a Professional Services assisted workflow.</p></div></div></div></li><li class="active"><div class="topicref" data-id="rcv_cust_managed_migration_process"><div class="title"><a href="../saas/rcv_cust_managed_migration_process.html">Customer-hosted migration process</a><div class="wh-tooltip"><p class="shortdesc">You can migrate an archival location to RCV by running the migration tool in your own         AWS environment.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/rcv_migration_workflow.html" title="RCV migration workflow" aria-label="Previous topic: RCV migration workflow" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/rcv_preparing_customer_hosted_migration.html" title="Preparing for customer-hosted migration" aria-label="Next topic: Preparing for customer-hosted migration" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="sla_domains-d26997e4661" class="topicref" data-id="sla_domains" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sla_domains-d26997e4661-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="sla_domains-d26997e4661-link">SLA Domains</a><div class="wh-tooltip"><p class="shortdesc">SLA Domains in <span class="ph">RSC</span> unify data protection policies, providing a         unified approach to manage data protection across various workloads and         environments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="archiving_data_center_workloads-d26997e5769" class="topicref" data-id="archiving_data_center_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action archiving_data_center_workloads-d26997e5769-link" class="wh-expand-btn"></span><div class="title"><a href="../archival/archiving_data_center_workloads.html" id="archiving_data_center_workloads-d26997e5769-link">Archiving of data center workloads</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">Rubrik Security Cloud</span>, you can create and manage archival locations to         archive the disaster recovery and long-term retention data of data center         workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rcv_rubrik_cloud_vault-d26997e7167" class="topicref" data-id="rcv_rubrik_cloud_vault" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rcv_rubrik_cloud_vault-d26997e7167-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_rubrik_cloud_vault.html" id="rcv_rubrik_cloud_vault-d26997e7167-link">Rubrik Cloud Vault</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Cloud Vault is a Rubrik managed cloud service that provides isolated and         immutable copies of protected data, enhancing cyber resiliency.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_dashboard-d26997e7178" class="topicref" data-id="rcv_dashboard" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_dashboard-d26997e7178-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_dashboard.html" id="rcv_dashboard-d26997e7178-link">Rubrik Cloud Vault dashboard</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik Cloud Vault dashboard in <span class="ph">RSC</span> displays the data protection         and usage summary of all the Rubrik Cloud Vault locations connected to <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_page-d26997e7223" class="topicref" data-id="rcv_page" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_page-d26997e7223-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_page.html" id="rcv_page-d26997e7223-link">Rubrik Cloud Vaults page</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik Cloud Vaults page provides a list of all available archival locations and         the actions that <span class="ph">RSC</span> supports for each location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_security-d26997e7259" class="topicref" data-id="rcv_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_security-d26997e7259-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_security.html" id="rcv_security-d26997e7259-link">Rubrik Cloud Vault security</a><div class="wh-tooltip"><p class="shortdesc">Rubrik Cloud Vault adheres to security standards for the protection of archived         backups.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_prep_location_creation-d26997e7466" class="topicref" data-id="rcv_prep_location_creation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_prep_location_creation-d26997e7466-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_prep_location_creation.html" id="rcv_prep_location_creation-d26997e7466-link">Preparation for RCV location creation</a><div class="wh-tooltip"><p class="shortdesc">Before utilizing Rubrik Cloud Vault, it is essential to understand the various         options available for creating an RCV location, ensuring optimal data protection and         recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_azure_config-d26997e7607" class="topicref" data-id="rcv_azure_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_azure_config-d26997e7607-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_azure_config.html" id="rcv_azure_config-d26997e7607-link">Configuration of RCV on Azure</a><div class="wh-tooltip"><p class="shortdesc">Information about configuring Rubrik Cloud Vault locations on Azure.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_aws_config-d26997e7657" class="topicref" data-id="rcv_aws_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_aws_config-d26997e7657-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_aws_config.html" id="rcv_aws_config-d26997e7657-link">Configuration of RCV on AWS</a><div class="wh-tooltip"><p class="shortdesc">Information about configuring Rubrik Cloud Vault locations on AWS.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_gcp_config-d26997e7707" class="topicref" data-id="rcv_gcp_config" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_gcp_config-d26997e7707-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_gcp_config.html" id="rcv_gcp_config-d26997e7707-link">Configuration of RCV on GCP</a><div class="wh-tooltip"><p class="shortdesc">Information about configuring Rubrik Cloud Vault locations on GCP.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_failover_azure-d26997e7729" class="topicref" data-id="rcv_failover_azure" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_failover_azure-d26997e7729-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_failover_azure.html" id="rcv_failover_azure-d26997e7729-link">Failover for RCV on Azure</a><div class="wh-tooltip"><p class="shortdesc">The failover process for Rubrik Cloud Vault ensures continuous data availability         during regional outages and disasters by switching between primary and secondary regions         configured with Multi-region redundancy.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_workloads_protection-d26997e7795" class="topicref" data-id="rcv_workloads_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_workloads_protection-d26997e7795-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_workloads_protection.html" id="rcv_workloads_protection-d26997e7795-link">Protection of workloads in RCV</a><div class="wh-tooltip"><p class="shortdesc">You can protect your workloads in the Rubrik Cloud Vault locations by assigning SLA         Domains to your workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rcv_location_management-d26997e7839" class="topicref" data-id="rcv_location_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rcv_location_management-d26997e7839-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_location_management.html" id="rcv_location_management-d26997e7839-link">Rubrik Cloud Vault location management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides different options to manage your Rubrik Cloud Vault         locations.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rcv_editing_locations-d26997e7852" class="topicref" data-id="rcv_editing_locations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_editing_locations.html" id="rcv_editing_locations-d26997e7852-link">Editing RCV locations</a><div class="wh-tooltip"><p class="shortdesc">Edit a Rubrik Cloud Vault location to modify the location name, bypass proxy setting,         or IP address allowlist.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_pausing_locations-d26997e7863" class="topicref" data-id="rcv_pausing_locations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_pausing_locations.html" id="rcv_pausing_locations-d26997e7863-link">Pausing RCV locations</a><div class="wh-tooltip"><p class="shortdesc">You can pause a Rubrik Cloud Vault location to temporarily stop the archiving jobs on         the Rubrik Cloud Vault locations.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_disabling_locations-d26997e7874" class="topicref" data-id="rcv_disabling_locations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_disabling_locations.html" id="rcv_disabling_locations-d26997e7874-link">Disabling RCV locations</a><div class="wh-tooltip"><p class="shortdesc">You can stop a Rubrik Cloud Vault location from archiving and any other background         operations that can change data on the archival location.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_deleting_locations-d26997e7885" class="topicref" data-id="rcv_deleting_locations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_deleting_locations.html" id="rcv_deleting_locations-d26997e7885-link">Deleting RCV locations</a><div class="wh-tooltip"><p class="shortdesc">Delete a Rubrik Cloud Vault location when you do not need the archived         data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_redundancy_conversion-d26997e7896" class="topicref" data-id="rcv_redundancy_conversion" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_redundancy_conversion-d26997e7896-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_redundancy_conversion.html" id="rcv_redundancy_conversion-d26997e7896-link">RCV redundancy conversion</a><div class="wh-tooltip"><p class="shortdesc">You can convert the storage redundancy of an existing RCV location on Azure to a         different type.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="migration_arch_loc_rcv-d26997e7918" class="topicref" data-id="migration_arch_loc_rcv" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action migration_arch_loc_rcv-d26997e7918-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/migration_arch_loc_rcv.html" id="migration_arch_loc_rcv-d26997e7918-link">Migration of S3 archival locations to RCV</a><div class="wh-tooltip"><p class="shortdesc">You can migrate your Amazon S3 and S3-compatible data center archival locations to         Rubrik Cloud Vault using a Professional Services assisted workflow.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rcv_prereq_arch_loc_migration-d26997e7929" class="topicref" data-id="rcv_prereq_arch_loc_migration" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_prereq_arch_loc_migration.html" id="rcv_prereq_arch_loc_migration-d26997e7929-link">Prerequisites for migrating archival locations to RCV</a><div class="wh-tooltip"><p class="shortdesc">Before migrating your data center archival location to Rubrik Cloud Vault, ensure         your source location, Rubrik cluster, and SLA Domain configurations meet all         requirements.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_migration_workflow-d26997e7940" class="topicref" data-id="rcv_migration_workflow" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_migration_workflow.html" id="rcv_migration_workflow-d26997e7940-link">RCV migration workflow</a><div class="wh-tooltip"><p class="shortdesc">Migration of archival locations to Rubrik Cloud Vault involves specific         responsibilities for both the customer and Rubrik Professional Services, depending on         whether the workflow is customer-hosted or Rubrik-hosted.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="rcv_cust_managed_migration_process-d26997e7951" class="topicref" data-id="rcv_cust_managed_migration_process" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rcv_cust_managed_migration_process-d26997e7951-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_cust_managed_migration_process.html" id="rcv_cust_managed_migration_process-d26997e7951-link">Customer-hosted migration process</a><div class="wh-tooltip"><p class="shortdesc">You can migrate an archival location to RCV by running the migration tool in your own         AWS environment.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rcv_preparing_customer_hosted_migration-d26997e7962" class="topicref" data-id="rcv_preparing_customer_hosted_migration" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_preparing_customer_hosted_migration.html" id="rcv_preparing_customer_hosted_migration-d26997e7962-link">Preparing for customer-hosted migration</a><div class="wh-tooltip"><p class="shortdesc">Prepare the source location for migration by validating source location eligibility,         disabling archival locations, and updating encryption keys.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_configuring_cust_hosted_migration-d26997e7973" class="topicref" data-id="rcv_configuring_cust_hosted_migration" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_configuring_cust_hosted_migration.html" id="rcv_configuring_cust_hosted_migration-d26997e7973-link">Configuring customer-hosted migration</a><div class="wh-tooltip"><p class="shortdesc">Configure the security permissions required for AWS DataSync to move data, including         fetching bucket names, creating IAM roles, and registering destination roles with <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_running_cust_hosted_migration-d26997e7987" class="topicref" data-id="rcv_running_cust_hosted_migration" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_running_cust_hosted_migration.html" id="rcv_running_cust_hosted_migration-d26997e7987-link">Running the customer-hosted migration task</a><div class="wh-tooltip"><p class="shortdesc">Create and start the AWS DataSync transfer task to migrate data from the source         location to the destination RCV bucket.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_finalizing_customer_hosted_migration-d26997e7998" class="topicref" data-id="rcv_finalizing_customer_hosted_migration" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_finalizing_customer_hosted_migration.html" id="rcv_finalizing_customer_hosted_migration-d26997e7998-link">Finalizing customer-hosted migration</a><div class="wh-tooltip"><p class="shortdesc">After the data transfer is complete, perform the final configuration and validation         steps to finalize the transition to the RCV location.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_rbk_managed_migration_process-d26997e8009" class="topicref" data-id="rcv_rbk_managed_migration_process" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_rbk_managed_migration_process-d26997e8009-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_rbk_managed_migration_process.html" id="rcv_rbk_managed_migration_process-d26997e8009-link">Rubrik-hosted migration process</a><div class="wh-tooltip"><p class="shortdesc">You can migrate an archival location to RCV by authorizing Rubrik to run the         migration tool within the Rubrik AWS environment.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rcv_immutability_conv_azure_loc-d26997e8064" class="topicref" data-id="rcv_immutability_conv_azure_loc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rcv_immutability_conv_azure_loc-d26997e8064-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_immutability_conv_azure_loc.html" id="rcv_immutability_conv_azure_loc-d26997e8064-link">Immutability conversion for Azure RCV locations</a><div class="wh-tooltip"><p class="shortdesc">Using <span class="ph">RSC</span>, you can convert non-immutable data center RCV locations on         Azure to immutable locations.</p></div></div></div></li><li role="treeitem"><div data-tocid="rcv_license_replacement-d26997e8089" class="topicref" data-id="rcv_license_replacement" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/rcv_license_replacement.html" id="rcv_license_replacement-d26997e8089-link">RCV license replacement</a><div class="wh-tooltip"><p class="shortdesc">You can replace an existing Rubrik Cloud Vault license with a new license mid-term,         ensuring backup and archiving continuity during the transition.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="cascading_archival-d26997e8100" class="topicref" data-id="cascading_archival" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action cascading_archival-d26997e8100-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/cascading_archival.html" id="cascading_archival-d26997e8100-link">Cascading archival</a><div class="wh-tooltip"><p class="shortdesc">Using cascading archival, you can increase replicated data redundancy and decrease         data storage costs by archiving replicated snapshots from a replication target Rubrik         cluster to a remote archival location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="replication-d26997e8155" class="topicref" data-id="replication" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action replication-d26997e8155-link" class="wh-expand-btn"></span><div class="title"><a href="../replication/replication.html" id="replication-d26997e8155-link">Replication</a><div class="wh-tooltip"><p class="shortdesc">The replication feature directs the Rubrik cluster to send replicas of source       snapshots or backups to a target Rubrik cluster and defines the maximum time to keep the       replica on each cluster.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Customer-hosted migration process</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can migrate an archival location to RCV by running the migration tool in your own
+        AWS environment.</p>
+        <p class="- topic/p p">In a customer-hosted migration, you are responsible for configuring and running the
+            migration tool in your own AWS account. Rubrik Professional Services prepares the
+            destination RCV resources and finalizes the transition in <span class="- topic/ph ph">RSC</span>.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Prerequisites</h2>
+            
+            <div class="- topic/p p">Before preparing for migration, ensure the following:<ul class="- topic/ul ul">
+                    <li class="- topic/li li">Review the prerequisites for archival location migration to RCV, as
+                        described in <a class="- topic/xref xref" href="rcv_prereq_arch_loc_migration.html" title="Before migrating your data center archival location to Rubrik Cloud Vault, ensure your source location, Rubrik cluster, and SLA Domain configurations meet all requirements.">Prerequisites for migrating archival locations to RCV</a>.</li>
+                    <li class="- topic/li li">Retrieve the RSA key for the source archival location.</li>
+                    <li class="- topic/li li">Confirm with Rubrik Professional Services that the migration will use the
+                        customer-hosted method.</li>
+                    <li class="- topic/li li">Obtain administrative access to the AWS account hosting the source bucket or
+                        the account where you plan to run the migration tool.</li>
+                </ul></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Migration steps</h2>
+            
+            <div class="- topic/p p">You need to perform the following steps to complete the migration:<ol class="- topic/ol ol">
+                    <li class="- topic/li li">Prepare for the migration by validating source location eligibility,
+                        disabling archival locations, and updating encryption keys, as described in
+                            <a class="- topic/xref xref" href="rcv_preparing_customer_hosted_migration.html" title="Prepare the source location for migration by validating source location eligibility, disabling archival locations, and updating encryption keys.">Preparing for customer-hosted migration</a>.</li>
+                    <li class="- topic/li li">Configure the security permissions required for AWS DataSync to move data,
+                        as described in <a class="- topic/xref xref" href="rcv_configuring_cust_hosted_migration.html" title="Configure the security permissions required for AWS DataSync to move data, including fetching bucket names, creating IAM roles, and registering destination roles with RSC.">Configuring customer-hosted migration</a>.</li>
+                    <li class="- topic/li li">Create and start the AWS DataSync transfer task to migrate data from the
+                        source location to the destination RCV bucket, as described in <a class="- topic/xref xref" href="rcv_running_cust_hosted_migration.html" title="Create and start the AWS DataSync transfer task to migrate data from the source location to the destination RCV bucket.">Running the customer-hosted migration task</a>.</li>
+                    <li class="- topic/li li">After the data transfer is complete, perform the final configuration and
+                        validation steps to finalize the transition to the RCV location, as
+                        described in <a class="- topic/xref xref" href="rcv_finalizing_customer_hosted_migration.html" title="After the data transfer is complete, perform the final configuration and validation steps to finalize the transition to the RCV location.">Finalizing customer-hosted migration</a>.</li>
+                </ol></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="migration_arch_loc_rcv.html" title="You can migrate your Amazon S3 and S3-compatible data center archival locations to Rubrik Cloud Vault using a Professional Services assisted workflow.">Migration of S3 archival locations to RCV</a><div class="- topic/desc desc">You can migrate your Amazon S3 and S3-compatible data center archival locations to         Rubrik Cloud Vault using a Professional Services assisted workflow.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rcv_migration_workflow.html" title="Migration of archival locations to Rubrik Cloud Vault involves specific responsibilities for both the customer and Rubrik Professional Services, depending on whether the workflow is customer-hosted or Rubrik-hosted.">RCV migration workflow</a><div class="- topic/desc desc">Migration of archival locations to Rubrik Cloud Vault involves specific         responsibilities for both the customer and Rubrik Professional Services, depending on         whether the workflow is customer-hosted or Rubrik-hosted.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

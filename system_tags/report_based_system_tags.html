@@ -1,0 +1,390 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="You can use the System Tags filter in RSC to generate reports and view metrics based on the created tags."/><meta name="DC.relation" content="../system_tags/system_tags.html"/><meta name="DC.relation" content="../system_tags/assigning_system_tags_objects.html"/><meta name="DC.relation" content="../saas/common/rubrik_clusters_2.html"/><meta name="DC.relation" content="system_tags.html"/><meta name="DC.relation" content="key_features_system_tags.html"/><meta name="DC.relation" content="creating_system_tags.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="report_based_system_tags"/>        
+      <title>Manage reports based on System Tags</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="report_based_system_tags-d26997e1525"/><meta name="wh-source-relpath" content="system_tags/report_based_system_tags.dita"/><meta name="wh-out-relpath" content="system_tags/report_based_system_tags.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="report_based_system_tags" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../saas/common/getting_started_with_rsc.html">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li><div class="topicref" data-id="system_tags"><div class="title"><a href="../system_tags/system_tags.html">System Tags</a><div class="wh-tooltip"><p class="shortdesc">You can use Rubrik System Tags in <span class="ph">RSC</span> to manage your data assets         efficiently by categorizing them based on tags relevant to a business context.</p></div></div></div></li><li class="active"><div class="topicref" data-id="report_based_system_tags"><div class="title"><a href="../system_tags/report_based_system_tags.html">Manage reports based on System Tags</a><div class="wh-tooltip"><p class="shortdesc">You can use the System Tags filter in <span class="ph">RSC</span> to generate reports and         view metrics based on the created tags.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../system_tags/assigning_system_tags_objects.html" title="Assigning System Tags to objects" aria-label="Previous topic: Assigning System Tags to objects" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/common/rubrik_clusters_2.html" title="Rubrik clusters" aria-label="Next topic: Rubrik clusters" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e893" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="getting_started_with_rsc-d26997e901" class="topicref" data-id="getting_started_with_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action getting_started_with_rsc-d26997e901-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="getting_started_with_rsc-d26997e901-link">Getting started with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">To start using <span class="ph">Rubrik Security Cloud</span>, add         authorized user accounts before adding Rubrik clusters.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="system_tags-d26997e1421" class="topicref" data-id="system_tags" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action system_tags-d26997e1421-link" class="wh-expand-btn"></span><div class="title"><a href="../system_tags/system_tags.html" id="system_tags-d26997e1421-link">System Tags</a><div class="wh-tooltip"><p class="shortdesc">You can use Rubrik System Tags in <span class="ph">RSC</span> to manage your data assets         efficiently by categorizing them based on tags relevant to a business context.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1435" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1435-link" class="wh-expand-btn"></span><div class="title"><a href="../system_tags/key_features_system_tags.html" id="tocId-d26997e1435-link">Introduction to System Tags</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="managing_system_tags-d26997e1450" class="topicref" data-id="managing_system_tags" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action managing_system_tags-d26997e1450-link" class="wh-expand-btn"></span><div class="title"><a href="../system_tags/managing_system_tags.html" id="managing_system_tags-d26997e1450-link">Manage System Tags</a><div class="wh-tooltip"><p class="shortdesc">Managing System Tags involves several key actions performed on <span class="ph">RSC</span> UI         to manage your data assets efficiently.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="report_based_system_tags-d26997e1525" class="topicref" data-id="report_based_system_tags" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../system_tags/report_based_system_tags.html" id="report_based_system_tags-d26997e1525-link">Manage reports based on System Tags</a><div class="wh-tooltip"><p class="shortdesc">You can use the System Tags filter in <span class="ph">RSC</span> to generate reports and         view metrics based on the created tags.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Manage reports based on System Tags</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">You can use the System Tags filter in <span class="- topic/ph ph">RSC</span> to generate reports and
+        view metrics based on the created tags.</p>
+        <p class="- topic/p p"><img class="- topic/image image" src="../reuse/conrefs/../../saas/images/hourglass.svg" width="20"/><cite class="- topic/cite cite">This topic describes a
+                feature or features that Rubrik is gradually rolling out to customers.</cite></p>
+        <p class="- topic/p p">You can generate customizable reports based on the types of objects that you group using
+            System Tags. You can either create and schedule custom reports or utilize predefined
+            reports using <span class="- topic/ph ph">RSC</span>.</p>
+        <div class="- topic/p p">You can use Reports for the following benefits:<ul class="- topic/ul ul">
+                <li class="- topic/li li">Audits: Using reports containing data for Rubrik clusters or other sources for
+                    audits</li>
+                <li class="- topic/li li">Data management: Using report metrics for data management and planning</li>
+                <li class="- topic/li li">Customizable views: Establishing views of the most common system metrics using
+                    various filters</li>
+                <li class="- topic/li li">Operational visibility: Tracking compliance, monitoring capacity, and overseeing
+                    the status of protection and recovery tasks across the environment</li>
+            </ul></div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Reports available with the System Tags filter</h2>
+            
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption><span class="- topic/desc desc tabledesc">The following table lists reports available with the System Tags
+                    filter:</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="report_based_system_tags__entry__1">Report Name</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="report_based_system_tags__entry__2">Description</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="report_based_system_tags__entry__3">Use case</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Object Capacity report</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays the amount of transferred local data and used
+                                storage.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To gain insights on storage consumption for effective resource
+                                management and planning of objects associated with a particular
+                                System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Object Capacity Over Time</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays the amount of transferred local data and used storage on
+                                a monthly, daily, or hourly basis. <span class="- topic/ph ph">RSC</span>supports
+                                creating custom reports for specific objects.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To gain insights on storage consumption over a period of time for
+                                effective resource management and planning of objects associated
+                                with a particular System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Event Report</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays the <span class="- topic/ph ph">RSC</span> events status. Reports use
+                                colors to indicate Critical, Warning, and Information severity
+                                levels. You can view a column for the reason for failed events, and
+                                each event is a hyperlink to the event series in <span class="- topic/ph ph">RSC</span>.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To monitor and troubleshoot event failures by using System Tag
+                                filters for isolating <span class="- topic/ph ph">RSC</span> events based on objects
+                                associated with a particular System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Indexing Report </td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays information about the indexing status of
+                                objects.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To monitor the indexing status of objects associated with a
+                                particular System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Compliance Report</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays the compliance status of the selected workload.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To determine whether the snapshots taken for an object are in
+                                compliance with the policy schedule of the objects associated with a
+                                particular System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Protection Report</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays protection information for the selected
+                                workload.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To check the health of a backup for data integrity and safety and
+                                view whether a protection policy is assigned to the objects
+                                associated with a particular System Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__1">Protection Tasks Details</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="report_based_system_tags__entry__2">Displays the protection tasks for each cluster and a summary
+                                table with detailed information. Task types include Backup,
+                                Archival, Index, Replication, and Log operations.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="report_based_system_tags__entry__3">To monitor the status and details of protection tasks across
+                                clusters with objects associated with a particular System
+                                Tag.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="report_based_system_tags__entry__1">Recovery Tasks Details</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="report_based_system_tags__entry__2">Displays the status of the recovery tasks for each cluster and a
+                                summary table with detailed information. Task types include Export,
+                                File Download, File Restore, In-Place Recovery, Instant Recovery,
+                                Live Mount, Restore, and Validation.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="report_based_system_tags__entry__3">To monitor the status and details of recovery tasks across
+                                clusters with objects associated with a particular System
+                                Tag.</td>
+                        </tr>
+                    </tbody></table></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">When generating a report, you can filter the results by selecting one System Tag
+                at a time. This ensures optimal performance when aggregating data across multiple
+                workloads.</div></div>
+            <p class="- topic/p p">For more information about reporting, see <a class="- topic/xref xref" href="../saas/common/reporting.html" title="You can use the Reporting feature to perform audits and data management planning by creating customizable reports for application data protection and for the underlying infrastructure of Rubrik Security Cloud.">Reporting</a> in <span class="- topic/ph ph">RSC</span> User Guide.</p>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="system_tags.html" title="You can use Rubrik System Tags in RSC to manage your data assets efficiently by categorizing them based on tags relevant to a business context.">System Tags</a><div class="- topic/desc desc">You can use Rubrik System Tags in RSC to manage your data assets         efficiently by categorizing them based on tags relevant to a business context.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="key_features_system_tags.html" title="The System Tags in RSC provide flexible and efficient methods for managing data protection through enhanced object visibility and reporting.">Key features of System Tags</a><div class="- topic/desc desc">The System Tags in RSC provide flexible and efficient methods for         managing data protection through enhanced object visibility and reporting.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="creating_system_tags.html" title="Create System Tags and associate them to objects for efficient organization and management your data assets.">Creating System Tags</a><div class="- topic/desc desc">Create System Tags and associate them to objects for efficient organization and         management your data assets.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

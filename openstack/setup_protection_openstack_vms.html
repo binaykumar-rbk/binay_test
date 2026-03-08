@@ -1,0 +1,300 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="RSC protects OpenStack virtual machines and regions using SLA Domains and on-demand snapshots."/><meta name="DC.relation" content="../openstack/openstack_virtual_machines.html"/><meta name="DC.relation" content="../openstack/monitoring_proxy_openstack_virtual_machines.html"/><meta name="DC.relation" content="../openstack/assigning_sla_domains_openstack.html"/><meta name="DC.relation" content="../openstack/assigning_sla_domains_openstack.html"/><meta name="DC.relation" content="openstack_virtual_machines.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="setup_protection_openstack_vms"/>        
+      <title>Set up protection for OpenStack virtual machines</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="setup_protection_openstack_vms-d26997e23953"/><meta name="wh-source-relpath" content="openstack/setup_protection_openstack_vms.dita"/><meta name="wh-out-relpath" content="openstack/setup_protection_openstack_vms.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="setup_protection_openstack_vms" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html">Data center workloads</a></div></div></li><li><div class="topicref" data-id="openstack_vms"><div class="title"><a href="../openstack/openstack_virtual_machines.html">OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data management, SLA Domain protection, and recovery for         OpenStack virtual machines.</p></div></div></div></li><li class="active"><div class="topicref" data-id="setup_protection_openstack_vms"><div class="title"><a href="../openstack/setup_protection_openstack_vms.html">Set up protection for OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects OpenStack virtual machines and regions using SLA Domains         and on-demand snapshots. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../openstack/monitoring_proxy_openstack_virtual_machines.html" title="Monitoring OpenStack proxy virtual machines" aria-label="Previous topic: Monitoring OpenStack proxy virtual machines" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../openstack/assigning_sla_domains_openstack.html" title="Assigning an SLA Domain to OpenStack assets" aria-label="Next topic: Assigning an SLA Domain to OpenStack assets" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_ahv_virtual_machines-d26997e21258" class="topicref" data-id="rsc_ahv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_ahv_virtual_machines-d26997e21258-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="rsc_ahv_virtual_machines-d26997e21258-link">AHV virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data management and protection for virtual machines         deployed in a Nutanix Acropolis environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fs_filesystems-d26997e22114" class="topicref" data-id="fs_filesystems" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fs_filesystems-d26997e22114-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/fs_filesystems.html" id="fs_filesystems-d26997e22114-link">File systems</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides management and protection of file system data on supported Linux,         Unix, and Windows hosts through filesets.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="hyperv_virtual_machines-d26997e22740" class="topicref" data-id="hyperv_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hyperv_virtual_machines-d26997e22740-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/hyper_v/hyperv_virtual_machines.html" id="hyperv_virtual_machines-d26997e22740-link">Hyper-V virtual machines</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster provides data management and protection for virtual machines that are       deployed in a Microsoft Hyper-V environment. The Rubrik cluster can manage and protect virtual       machines in an environment with multiple Hyper-V servers and virtual machines.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ms_exchange_server-d26997e23610" class="topicref" data-id="ms_exchange_server" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ms_exchange_server-d26997e23610-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ms_exchange_server.html" id="ms_exchange_server-d26997e23610-link">Microsoft Exchange Server</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides protection for Microsoft Exchange         Servers.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="openstack_vms-d26997e23823" class="topicref" data-id="openstack_vms" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action openstack_vms-d26997e23823-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/openstack_virtual_machines.html" id="openstack_vms-d26997e23823-link">OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides data management, SLA Domain protection, and recovery for         OpenStack virtual machines.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="add_openstack_virtual_machine-d26997e23836" class="topicref" data-id="add_openstack_virtual_machine" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action add_openstack_virtual_machine-d26997e23836-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/add_openstack_virtual_machine.html" id="add_openstack_virtual_machine-d26997e23836-link">Add an OpenStack virtual machine</a><div class="wh-tooltip"><p class="shortdesc">Add an OpenStack virtual machine to <span class="ph">RSC</span> so you can perform snapshots         to protect your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="openstack_vm_management.-d26997e23878" class="topicref" data-id="openstack_vm_management." data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action openstack_vm_management.-d26997e23878-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/openstack_vm_management.html" id="openstack_vm_management.-d26997e23878-link"> OpenStack virtual machine management</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to onboard, refresh, edit, monitor, and delete         OpenStack virtual machines.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="setup_protection_openstack_vms-d26997e23953" class="topicref" data-id="setup_protection_openstack_vms" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action setup_protection_openstack_vms-d26997e23953-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/setup_protection_openstack_vms.html" id="setup_protection_openstack_vms-d26997e23953-link">Set up protection for OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects OpenStack virtual machines and regions using SLA Domains         and on-demand snapshots. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="assigning_sla_domains_openstack-d26997e23966" class="topicref" data-id="assigning_sla_domains_openstack" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../openstack/assigning_sla_domains_openstack.html" id="assigning_sla_domains_openstack-d26997e23966-link">Assigning an SLA Domain to OpenStack assets</a><div class="wh-tooltip"><p class="shortdesc">Assign SLA Domains to OpenStack assets to protect your OpenStack virtual machines or         regions.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_protection_openstack_vms-d26997e23977" class="topicref" data-id="manage_protection_openstack_vms" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_protection_openstack_vms-d26997e23977-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/manage_protection_openstack_vms.html" id="manage_protection_openstack_vms-d26997e23977-link">Manage protection for OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc">After completing the protection setup for OpenStack virtual machines, <span class="ph">RSC</span> takes automated snapshots of those virtual machines and disks based on         the configured policies in SLA Domains. You can also take on-demand snapshots, recover files         and folders from OpenStack virtual machines, and export OpenStack virtual machine         snapshots.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="recover_openstack_vms-d26997e24013" class="topicref" data-id="recover_openstack_vms" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action recover_openstack_vms-d26997e24013-link" class="wh-expand-btn"></span><div class="title"><a href="../openstack/recover_openstack_vms.html" id="recover_openstack_vms-d26997e24013-link">Recover OpenStack virtual machines</a><div class="wh-tooltip"><p class="shortdesc">You can recover files and folders used by OpenStack virtual machines by mounting         snapshots from local clusters or remote archival locations. You can also export an OpenStack         virtual machine snapshot to create a point-in-time copy for backup or migration.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="olvm_vms-d26997e24046" class="topicref" data-id="olvm_vms" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action olvm_vms-d26997e24046-link" class="wh-expand-btn"></span><div class="title"><a href="../OLVM/olvm_vms.html" id="olvm_vms-d26997e24046-link">Oracle Linux Virtualization Manager virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides Zero Trust Data Security for Oracle Linux Virtualization         Manager environments, offering automated data protection and cyber resilience for virtual         machines.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vs_virtual_machines-d26997e24217" class="topicref" data-id="vs_virtual_machines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vs_virtual_machines-d26997e24217-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/vs_virtual_machines.html" id="vs_virtual_machines-d26997e24217-link">vSphere virtual machines</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides data management and SLA Domain protection for         vSphere virtual machines, including vSphere VM templates that are managed either through a         VMware vSphere environment or a content library.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud-d26997e25595" class="topicref" data-id="vmware_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud-d26997e25595-link" class="wh-expand-btn"></span><div class="title"><a href="../vmware_cloud/vmware_cloud.html" id="vmware_cloud-d26997e25595-link">VMware Cloud</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik Cloud Cluster effectively protects virtual machines deployed on VMware Cloud         on AWS, Microsoft Azure VMware Solution, and Google Cloud VMware Engine.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="vmware_cloud_director_vapps-d26997e25683" class="topicref" data-id="vmware_cloud_director_vapps" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action vmware_cloud_director_vapps-d26997e25683-link" class="wh-expand-btn"></span><div class="title"><a href="../vcd/vmware_cloud_director_vapps.html" id="vmware_cloud_director_vapps-d26997e25683-link">VMware Cloud Director vApps</a><div class="wh-tooltip"><p class="shortdesc">The Rubrik cluster provides SLA Domain protection and data management for VMware Cloud       Director vApps.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="windows_volume_groups-d26997e26024" class="topicref" data-id="windows_volume_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action windows_volume_groups-d26997e26024-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/windows_volume_groups.html" id="windows_volume_groups-d26997e26024-link">Windows volume groups</a><div class="wh-tooltip"><p class="shortdesc">A volume group is a Rubrik workload comprised of at least one data storage volume on         a Windows host.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Set up protection for OpenStack virtual machines</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">RSC</span> protects OpenStack virtual machines and regions using SLA Domains
+        and on-demand snapshots. </p>
+        <p class="- topic/p p">RSC provides protection for OpenStack virtual machines and regions through two
+            methods:</p>
+        <ul class="- topic/ul ul">
+            <li class="- topic/li li">SLA Domains: You can create and assign SLA Domains to protect OpenStack virtual
+                machines and regions.</li>
+            <li class="- topic/li li">On-demand snapshots: You can take on-demand snapshots to create a recovery point for
+                your OpenStack virtual machines and regions.</li>
+        </ul>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="openstack_virtual_machines.html" title="RSC provides data management, SLA Domain protection, and recovery for OpenStack virtual machines.">OpenStack virtual machines</a><div class="- topic/desc desc">RSC provides data management, SLA Domain protection, and recovery for         OpenStack virtual machines.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

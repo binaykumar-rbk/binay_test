@@ -1,0 +1,435 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="Private Exocompute on GCP feature deploys a managed Exocompute cluster as a private GKE cluster to meet enterprise security mandates for private control plane operations."/><meta name="DC.relation" content="../gcp/exocompute_gcp.html"/><meta name="DC.relation" content="../gcp/exo_gcp_setup_automation.html"/><meta name="DC.relation" content="../gcp/exo_gcp_workflow_example.html"/><meta name="DC.relation" content="exocompute_gcp.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="gcp_private_exocompute"/>        
+      <title>Private Exocompute on GCP</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="gcp_private_exocompute-d26997e15495"/><meta name="wh-source-relpath" content="gcp/gcp_private_exocompute.dita"/><meta name="wh-out-relpath" content="gcp/gcp_private_exocompute.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="gcp_private_exocompute" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../saas/aws_workloads.html">Cloud workloads</a></div></div></li><li><div class="topicref" data-id="gcp"><div class="title"><a href="../gcp/gcp.html">Google Cloud Platform workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Google Cloud Platform workloads:         Google Compute Engine instances and persistent disks.</p></div></div></div></li><li><div class="topicref" data-id="exocompute_gcp"><div class="title"><a href="../gcp/exocompute_gcp.html">Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">With the Exocompute on GCP feature, <span class="ph">RSC</span> launches a Google Kubernetes         Engine cluster to perform various operations to protect GCP workloads. <span class="ph">RSC</span>         uses the Google Kubernetes Engine cluster to serve as a compute resource in your GCP         project.</p></div></div></div></li><li class="active"><div class="topicref" data-id="gcp_private_exocompute"><div class="title"><a href="../gcp/gcp_private_exocompute.html">Private Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">Private Exocompute on GCP feature deploys a managed Exocompute cluster as a private         GKE cluster to meet enterprise security mandates for private control plane         operations.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../gcp/exo_gcp_setup_automation.html" title="Exocompute on GCP setup and automation" aria-label="Previous topic: Exocompute on GCP setup and automation" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../gcp/exo_gcp_workflow_example.html" title="Exocompute on GCP workflow example" aria-label="Next topic: Exocompute on GCP workflow example" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workloads-d26997e11761" class="topicref" data-id="aws_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workloads-d26997e11761-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="aws_workloads-d26997e11761-link">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="gcp-d26997e14933" class="topicref" data-id="gcp" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action gcp-d26997e14933-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp.html" id="gcp-d26997e14933-link">Google Cloud Platform workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Google Cloud Platform workloads:         Google Compute Engine instances and persistent disks.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="key_features_gcp_protection-d26997e14946" class="topicref" data-id="key_features_gcp_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/key_features_gcp_protection.html" id="key_features_gcp_protection-d26997e14946-link">Key features for protecting GCP workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, and various recovery options to protect your GCP workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="common_gcp_protection_terms-d26997e14959" class="topicref" data-id="common_gcp_protection_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/common_gcp_protection_terms.html" id="common_gcp_protection_terms-d26997e14959-link">Common GCP protection terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting GCP workloads with             <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="high_level_arch_gcp_protection-d26997e14973" class="topicref" data-id="high_level_arch_gcp_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action high_level_arch_gcp_protection-d26997e14973-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/high_level_arch_gcp_protection.html" id="high_level_arch_gcp_protection-d26997e14973-link">High-level architecture for GCP protection</a><div class="wh-tooltip"><p class="shortdesc">A high-level architectural overview of how <span class="ph">RSC</span> protects GCP workloads         and <span class="ph">RSC</span> and GCP IAM roles provisioning process.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="planning_gcp_protection-d26997e15021" class="topicref" data-id="planning_gcp_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action planning_gcp_protection-d26997e15021-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/planning_gcp_protection.html" id="planning_gcp_protection-d26997e15021-link">Planning for GCP protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up a GCP project in <span class="ph">RSC</span>, you need to plan user and         access management for designated <span class="ph">RSC</span> users. This planning also involves         reviewing the permissions that <span class="ph">RSC</span> requires in your GCP environment to         protect your GCP workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_project_setup-d26997e15153" class="topicref" data-id="gcp_project_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_project_setup-d26997e15153-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_project_setup.html" id="gcp_project_setup-d26997e15153-link">GCP project setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up a GCP project by adding the project to <span class="ph">RSC</span> and start         protecting your GCP workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="exocompute_gcp-d26997e15465" class="topicref" data-id="exocompute_gcp" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action exocompute_gcp-d26997e15465-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/exocompute_gcp.html" id="exocompute_gcp-d26997e15465-link">Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">With the Exocompute on GCP feature, <span class="ph">RSC</span> launches a Google Kubernetes         Engine cluster to perform various operations to protect GCP workloads. <span class="ph">RSC</span>         uses the Google Kubernetes Engine cluster to serve as a compute resource in your GCP         project.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="exo_gcp_setup_automation-d26997e15482" class="topicref" data-id="exo_gcp_setup_automation" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/exo_gcp_setup_automation.html" id="exo_gcp_setup_automation-d26997e15482-link">Exocompute on GCP setup and automation</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> sets up and automates Exocompute infrastructure on Google Cloud         Platform by creating and configuring necessary resources.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="gcp_private_exocompute-d26997e15495" class="topicref" data-id="gcp_private_exocompute" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_private_exocompute.html" id="gcp_private_exocompute-d26997e15495-link">Private Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">Private Exocompute on GCP feature deploys a managed Exocompute cluster as a private         GKE cluster to meet enterprise security mandates for private control plane         operations.</p></div></div></div></li><li role="treeitem"><div data-tocid="exo_gcp_workflow_example-d26997e15506" class="topicref" data-id="exo_gcp_workflow_example" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/exo_gcp_workflow_example.html" id="exo_gcp_workflow_example-d26997e15506-link">Exocompute on GCP workflow example</a><div class="wh-tooltip"><p class="shortdesc">A workflow example to demonstrate the Exocompute lifecycle on GCP when indexing a         snapshot of a GCE instance.</p></div></div></div></li><li role="treeitem"><div data-tocid="config_exocompute_gcp-d26997e15517" class="topicref" data-id="config_exocompute_gcp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/config_exocompute_gcp.html" id="config_exocompute_gcp-d26997e15517-link">Configuration of Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">You can configure Exocompute on GCP to launch Exocompute resources to perform tasks         such as restoring files and leveraging storage tiering.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_exocompute_health_check-d26997e15528" class="topicref" data-id="gcp_exocompute_health_check" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_exocompute_health_check-d26997e15528-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_exocompute_health_check.html" id="gcp_exocompute_health_check-d26997e15528-link">Exocompute health check for GCP</a><div class="wh-tooltip"><p class="shortdesc">The Exocompute health check for GCP feature in <span class="ph">RSC</span> runs a health         check for a GKE cluster and displays the cluster's current status. With this health check         feature, you can confirm if the GKE cluster is functioning correctly.</p></div></div></div></li><li role="treeitem"><div data-tocid="maint_exo_gcp-d26997e15564" class="topicref" data-id="maint_exo_gcp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../gcp/maint_exo_gcp.html" id="maint_exo_gcp-d26997e15564-link">Maintenance of Exocompute on GCP</a><div class="wh-tooltip"><p class="shortdesc">Maintaining Exocompute on GCP involves regularly reviewing and updating permissions         to ensure optimal performance and resource management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="viewing_exo_health_check_events-d26997e15575" class="topicref" data-id="viewing_exo_health_check_events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action viewing_exo_health_check_events-d26997e15575-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/viewing_exo_health_check_events_2.html" id="viewing_exo_health_check_events-d26997e15575-link">Viewing Exocompute events</a><div class="wh-tooltip"><p class="shortdesc">View the Events page from the Dashboard to see the Exocompute events.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_storage_tiering_setup-d26997e15597" class="topicref" data-id="gcp_storage_tiering_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_storage_tiering_setup-d26997e15597-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_storage_tiering_setup.html" id="gcp_storage_tiering_setup-d26997e15597-link">GCP storage tiering setup</a><div class="wh-tooltip"><p class="shortdesc">You can use GCP storage tiering to archive GCE instance or persistent disk snapshots         that are older than a specified threshold to GCS storage classes. By archiving snapshots to         these storage classes, you can optimize costs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_workload_protection_setup-d26997e15685" class="topicref" data-id="gcp_workload_protection_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_workload_protection_setup-d26997e15685-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_workload_protection_setup.html" id="gcp_workload_protection_setup-d26997e15685-link">GCP workloads protection setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic and         hierarchical protection of GCP projects and individual GCP workloads, with granular control         overriding higher-level assignments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp_workload_recovery-d26997e15868" class="topicref" data-id="gcp_workload_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp_workload_recovery-d26997e15868-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp_workload_recovery.html" id="gcp_workload_recovery-d26997e15868-link">GCP workloads recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your GCE instances and persistent disks,         you can recover the required instances and disks using these snapshots.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gce_instances_persistent_disks-d26997e16054" class="topicref" data-id="gce_instances_persistent_disks" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gce_instances_persistent_disks-d26997e16054-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gce_instances_persistent_disks.html" id="gce_instances_persistent_disks-d26997e16054-link">GCE instances and persistent disks</a><div class="wh-tooltip"><p class="shortdesc">After you set up protection for GCE instances and persistent disks, <span class="ph">RSC</span> takes automated snapshots of those instances and disks based on the policies configured         in SLA Domains. You can also take on-demand snapshots and refresh GCP projects.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="azr_workloads-d26997e16273" class="topicref" data-id="azr_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action azr_workloads-d26997e16273-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/azr_workloads.html" id="azr_workloads-d26997e16273-link">Microsoft Azure workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph"><span class="ph">RSC</span> protects the data and resources of Azure             virtual machines, Azure managed disks, Azure Blob Storage, and Azure SQL workloads in             Azure subscriptions.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Private Exocompute on GCP</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">Private Exocompute on GCP feature deploys a managed Exocompute cluster as a private
+        GKE cluster to meet enterprise security mandates for private control plane
+        operations.</p>
+        <p class="- topic/p p"><img class="- topic/image image" src="../reuse/conrefs/../../saas/images/hourglass.svg" width="20"/><cite class="- topic/cite cite">This topic describes a
+                feature or features that Rubrik is gradually rolling out to customers.</cite></p>
+        <p class="- topic/p p">Private Exocompute secures your data environment by isolating the GKE control plane from
+            the public internet. By using a private GKE cluster, your Kubernetes API server endpoint
+            remains isolated within your Virtual Private Cloud (VPC) network.</p>
+        <p class="- topic/p p">When you add a GCP project, the default permission group grants <span class="- topic/ph ph">RSC</span> all
+            the required permissions to manage GKE clusters, Cloud Run services, and Compute
+            resources automatically. This ensures the control plane communication remains securely
+            isolated within your VPC network.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">How it works: Secure tunneling</h2>
+            
+            <p class="- topic/p p">As the API server is inaccessible from the public internet, <span class="- topic/ph ph">RSC</span> uses
+                a secure outbound-only communication tunnel to manage the cluster.</p>
+            <div class="- topic/p p"><span class="- topic/ph ph">RSC</span> establishes a tunnel using a temporary Google Cloud Run service,
+                which acts as the setup tool.<ul class="- topic/ul ul">
+                    <li class="- topic/li li">GKE cluster provisioning: <span class="- topic/ph ph">RSC</span> creates a private GKE cluster
+                        within your designated VPC, ensuring the API server has no public IP
+                        address.</li>
+                    <li class="- topic/li li">One-time setup: <span class="- topic/ph ph">RSC</span> uses a temporary Google Cloud Run
+                        service to initiate a remote command on the GKE worker nodes.</li>
+                    <li class="- topic/li li">Agent Pod deployment: The Cloud Run service initiates the installation of a
+                        dedicated Agent Pod on the GKE worker nodes.</li>
+                    <li class="- topic/li li">Persistent connection: The Agent Pod establishes a secure WebSocket
+                        connection back to the <span class="- topic/ph ph">RSC</span> Cluster Gateway service.</li>
+                    <li class="- topic/li li">Secure operations: All subsequent commands from the <span class="- topic/ph ph">RSC</span>
+                        control plane to the GKE API server are routed through this established
+                        tunnel.</li>
+                </ul><div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">: <span class="- topic/ph ph">RSC</span> automatically deletes the Cloud Run service after
+                    the Agent Pod is successfully deployed. If a cluster restarts after inactivity,
+                        <span class="- topic/ph ph">RSC</span> re-runs this sequence to restore the tunnel.</div></div></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Deployment lifecycle</h2>
+            
+            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> manages the private Exocompute deployment and automatically
+                provisions and removes management resources.</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Initial deployment: <span class="- topic/ph ph">RSC</span> initiates the deployment sequence once
+                    for each cluster.</li>
+                <li class="- topic/li li">On-demand restart: If a cluster shuts down due to inactivity, <span class="- topic/ph ph">RSC</span> automatically initiates the deployment sequence to deploy the Agent Pod again
+                    after the cluster restarts.</li>
+                <li class="- topic/li li">Automatic cleanup: <span class="- topic/ph ph">RSC</span> automatically deletes the Cloud Run
+                    service when the deployment task completes successfully.</li>
+            </ul>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Deployment requirements</h2>
+            
+            <p class="- topic/p p">Before enabling private Exocompute, confirm that your GCP environment meets these
+                specifications based on your VPC management model.</p>
+            <div class="- topic/p p">
+                <ul class="- topic/ul ul">
+                    <li class="- topic/li li">Customer-managed networking: You must manually configure a PGA or
+                        internal-facing Cloud NAT instance. For more information, see <a class="- topic/xref xref" href="https://www.google.com/search?q=https://docs.rubrik.com/en-us/saas/saas/gcp_exocompute_prereq.html" target="_blank" rel="external noopener">Exocompute on GCP customer-managed
+                            networking prerequisites</a>.</li>
+                    <li class="- topic/li li">Rubrik-managed networking: <span class="- topic/ph ph">RSC</span> automatically handles this
+                        configuration.</li>
+                </ul>
+            </div>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="4"><caption><span class="- topic/desc desc tabledesc">The following table outlines the access configurations required for a private
+                    Exocompute deployment:</span></caption><colgroup><col style="width:25%"/><col style="width:25%"/><col style="width:25%"/><col style="width:25%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="gcp_private_exocompute__entry__1">Component</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="gcp_private_exocompute__entry__2">GCP feature</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="gcp_private_exocompute__entry__3">Access requirement</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="gcp_private_exocompute__entry__4">Purpose</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__1">GKE control plane</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__2">GKE private cluster</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__3">Private IP address that is internal to the VPC.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="gcp_private_exocompute__entry__4">Ensures the Kubernetes API server is internal to your
+                                VPC.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__1">Node egress</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__2">Cloud NAT or Private Google Access (PGA)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__3">Outbound-only access to the <span class="- topic/ph ph">RSC</span> Cluster Gateway
+                                service endpoint.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="gcp_private_exocompute__entry__4">Enables the Agent Pod to initiate an outbound connection to the
+                                    <span class="- topic/ph ph">RSC</span> Cluster Gateway.<p class="- topic/p p">Required for
+                                    customer-managed networking.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__1">Inbound access</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__2">WebSocket tunnel </td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="gcp_private_exocompute__entry__3">No internet-facing inbound connections are required.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="gcp_private_exocompute__entry__4">Enables <span class="- topic/ph ph">RSC</span> to perform Exocompute tasks after the
+                                tunnel is established within the VPC.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="gcp_private_exocompute__entry__1">Setup tool</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="gcp_private_exocompute__entry__2">Google Cloud Run service</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="gcp_private_exocompute__entry__3">Used for one-time Agent Pod deployment.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="gcp_private_exocompute__entry__4">Acts as a temporary bridge that sets up the GKE internal cluster
+                                environment and installs the Agent Pods before automatically
+                                deleting itself after the secure tunnel is established.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section">
+            <div class="- topic/p p">To enable <span class="- topic/ph ph">RSC</span> to perform the one-time setup of the Agent Pod, you must:<ul class="- topic/ul ul">
+                    <li class="- topic/li li">Allow public inbound communication to the Cloud Run service.</li>
+                    <li class="- topic/li li">Ensure that organization policies, such as
+                            <code class="+ topic/ph pr-d/codeph ph codeph">constraints/run.allowedIngressSettings</code> do not restrict
+                        inbound connectivity to internal-only.</li>
+                </ul></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">IAM service account permissions</h2>
+            
+            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> requires the following specific permissions to manage the
+                lifecycle of the secure tunnel.</p>
+            <div class="- topic/p p">If you use the default <span class="- topic/ph ph">RSC</span> permission group, these permissions are
+                included automatically. If you are configuring permissions manually, an
+                administrator must ensure that the following permissions are available for Cloud Run
+                management from the Google Cloud Console (GCC):<ul class="- topic/ul ul">
+                    <li class="- topic/li li">run.services.create</li>
+                    <li class="- topic/li li">run.services.get</li>
+                    <li class="- topic/li li">run.services.delete</li>
+                    <li class="- topic/li li">run.routes.invoke</li>
+                    <li class="- topic/li li">run.operations.get</li>
+                </ul></div>
+            <p class="- topic/p p">For more information about these permissions, see <a class="- topic/xref xref" href="req_perms_gke_setup.html" title="Information about the permissions that RSC requires for the Google Kubernetes Engine setup.">Required permissions for GKE setup</a>.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Shared VPC configuration</h2>
+            
+            <div class="- topic/p p">If you are using shared VPC, you must perform additional configuration to bridge
+                permissions between your onboarded GCP project and the host project.<ul class="- topic/ul ul">
+                    <li class="- topic/li li">Host project: Adding the host project as a Shared VPC project to <span class="- topic/ph ph">RSC</span>. This grants <span class="- topic/ph ph">RSC</span> permission to list and
+                        use subnets managed by the host.</li>
+                    <li class="- topic/li li">Cloud Run service agent: Granting the Google-managed Cloud Run service agent
+                        to access the Shared VPC network in the host project. For more information,
+                        see <a class="- topic/xref xref" href="https://docs.cloud.google.com/run/docs/configuring/shared-vpc-direct-vpc#iam" target="_blank" rel="external noopener">Set up IAM permissions</a>.</li>
+                    <li class="- topic/li li">Exocompute service account: Enabling Shared VPC and granting the
+                            <code class="+ topic/ph pr-d/codeph ph codeph">compute.subnetworks.use</code> permission in the host project
+                        if you are manually onboarding your GCP project.</li>
+                    <li class="- topic/li li">Service agents: Granting required permissions to Google-managed service
+                        agents, such as GKE and Google API agents. For more information, see <a class="- topic/xref xref" href="https://www.google.com/search?q=https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-shared-vpc%23grant_roles" target="_blank" rel="external noopener">Enable Shared VPC and grant
+                        roles</a>.</li>
+                </ul></div>
+            <p class="- topic/p p">For more information about permissions required to configure shared VPC for private
+                Exocompute, see <a class="- topic/xref xref" href="req_perms_gcp_networking_setup.html" title="Information about the permissions that RSC requires to set up the GCP network for Exocompute purposes.">Required permissions for GCP networking setup</a>.</p>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="exocompute_gcp.html" title="With the Exocompute on GCP feature, RSC launches a Google Kubernetes Engine cluster to perform various operations to protect GCP workloads. RSC uses the Google Kubernetes Engine cluster to serve as a compute resource in your GCP project.">Exocompute on GCP</a><div class="- topic/desc desc">With the Exocompute on GCP feature, RSC launches a Google Kubernetes         Engine cluster to perform various operations to protect GCP workloads. RSC         uses the Google Kubernetes Engine cluster to serve as a compute resource in your GCP         project.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

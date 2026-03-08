@@ -1,0 +1,342 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../../favicon.ico"/><link rel="icon" href="../../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="Clone an existing role to copy its permissions and settings as a new role."/><meta name="DC.relation" content="../../saas/common/roles_and_permissions.html"/><meta name="DC.relation" content="../../saas/common/creating_role.html"/><meta name="DC.relation" content="../../saas/common/editing_a_role.html"/><meta name="DC.relation" content="rsc_roles.html"/><meta name="DC.relation" content="creating_role.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="cloning_roles"/>        
+      <title>Cloning a role</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="cloning_roles-d26997e8922"/><meta name="wh-source-relpath" content="saas/common/cloning_roles.dita"/><meta name="wh-out-relpath" content="saas/common/cloning_roles.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="cloning_roles" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../../saas/users_access.html">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li><div class="topicref" data-id="users_access"><div class="title"><a href="../../saas/users_access.html">Users and Access</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides role-based access control, and several methods for authenticating a         user account.</p></div></div></div></li><li><div class="topicref" data-id="roles_and_permissions"><div class="title"><a href="../../saas/common/roles_and_permissions.html">User roles and permissions</a><div class="wh-tooltip"><p class="shortdesc">Roles are sets of permissions that are assigned to a user account. You can assign         multiple roles to a user account.</p></div></div></div></li><li class="active"><div class="topicref" data-id="cloning_roles"><div class="title"><a href="../../saas/common/cloning_roles.html">Cloning a role</a><div class="wh-tooltip"><p class="shortdesc">Clone an existing role to copy its permissions and settings as a new         role.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../saas/common/creating_role.html" title="Creating a role" aria-label="Previous topic: Creating a role" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../saas/common/editing_a_role.html" title="Editing a role" aria-label="Next topic: Editing a role" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="users_access-d26997e8794" class="topicref" data-id="users_access" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action users_access-d26997e8794-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/users_access.html" id="users_access-d26997e8794-link">Users and Access</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides role-based access control, and several methods for authenticating a         user account.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="user_auth-d26997e8807" class="topicref" data-id="user_auth" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/user_auth.html" id="user_auth-d26997e8807-link">User authorization</a><div class="wh-tooltip"><p class="shortdesc">Information about explicit authorization of the user to perform actions on resources         specified in the assigned roles. </p></div></div></div></li><li role="treeitem"><div data-tocid="multiple_role_assignment_scenarios-d26997e8818" class="topicref" data-id="multiple_role_assignment_scenarios" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/multiple_role_assignment_scenarios.html" id="multiple_role_assignment_scenarios-d26997e8818-link">Multiple role assignment scenarios</a><div class="wh-tooltip"><p class="shortdesc">Information about the permissions when multiple roles are assigned to a user or a         group.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="auth_sso_user_accounts_saml-d26997e8829" class="topicref" data-id="auth_sso_user_accounts_saml" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action auth_sso_user_accounts_saml-d26997e8829-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/auth_sso_user_accounts_saml.html" id="auth_sso_user_accounts_saml-d26997e8829-link">Authentication of SSO user accounts using SAML</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses a third-party identity provider for authentication. The         identity provider authenticates the SSO user accounts through the SAML 2.0         protocol.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="roles_and_permissions-d26997e8889" class="topicref" data-id="roles_and_permissions" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action roles_and_permissions-d26997e8889-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/roles_and_permissions.html" id="roles_and_permissions-d26997e8889-link">User roles and permissions</a><div class="wh-tooltip"><p class="shortdesc">Roles are sets of permissions that are assigned to a user account. You can assign         multiple roles to a user account.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rsc_roles-d26997e8900" class="topicref" data-id="rsc_roles" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rsc_roles.html" id="rsc_roles-d26997e8900-link">Roles</a><div class="wh-tooltip"><p class="shortdesc">Roles define privileges for user accounts in a Rubrik cluster. With the administrator         account, you can assign roles that grant different access permissions to user accounts for         specific purposes.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_role-d26997e8911" class="topicref" data-id="creating_role" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/creating_role.html" id="creating_role-d26997e8911-link">Creating a role</a><div class="wh-tooltip"><p class="shortdesc">Create a role by using a custom template or a predefined template to grant specific         permissions to user accounts.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="cloning_roles-d26997e8922" class="topicref" data-id="cloning_roles" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/cloning_roles.html" id="cloning_roles-d26997e8922-link">Cloning a role</a><div class="wh-tooltip"><p class="shortdesc">Clone an existing role to copy its permissions and settings as a new         role.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_a_role-d26997e8933" class="topicref" data-id="editing_a_role" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/editing_a_role.html" id="editing_a_role-d26997e8933-link">Editing a role</a><div class="wh-tooltip"><p class="shortdesc">Add additional permissions to or remove particular permissions from the         role.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_a_role-d26997e8944" class="topicref" data-id="deleting_a_role" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/deleting_a_role.html" id="deleting_a_role-d26997e8944-link">Deleting a role</a><div class="wh-tooltip"><p class="shortdesc">Delete a role.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_role_asmt_single_obj-d26997e8955" class="topicref" data-id="editing_role_asmt_single_obj" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/editing_role_asmt_single_obj.html" id="editing_role_asmt_single_obj-d26997e8955-link">Editing role assignments for a single user, SSO group, or service account</a><div class="wh-tooltip"><p class="shortdesc">Edit the roles that are assigned to a single user, SSO group, or service account to         modify the privileges associated with the object.</p></div></div></div></li><li role="treeitem"><div data-tocid="editing_role_asmt_multiple_obj-d26997e8966" class="topicref" data-id="editing_role_asmt_multiple_obj" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/editing_role_asmt_multiple_obj.html" id="editing_role_asmt_multiple_obj-d26997e8966-link">Editing role assignments for multiple users, SSO groups, or service accounts</a><div class="wh-tooltip"><p class="shortdesc">Change the roles that are assigned to multiple users, SSO groups, or service accounts         to modify the privileges associated with the objects.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="rbac_practical_scenarios_role_config-d26997e8977" class="topicref" data-id="rbac_practical_scenarios_role_config" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rbac_practical_scenarios_role_config.html" id="rbac_practical_scenarios_role_config-d26997e8977-link">Practical scenarios for role configuration</a><div class="wh-tooltip"><p class="shortdesc">Information about the scenarios that map common administrative tasks to their minimum         required privileges, offering a blueprint to help create custom roles based on the Principle         of Least Privilege (PoLP).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management_permission_types-d26997e8988" class="topicref" data-id="data_management_permission_types" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management_permission_types-d26997e8988-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/data_management_permission_types.html" id="data_management_permission_types-d26997e8988-link">Data management permission types</a><div class="wh-tooltip"><p class="shortdesc">Information on data management permissions for a role based on object types, Rubrik         clusters, or data sources.</p></div></div></div></li><li role="treeitem"><div data-tocid="data_management_permissions-d26997e9010" class="topicref" data-id="data_management_permissions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/data_management_permissions.html" id="data_management_permissions-d26997e9010-link">Data management permissions</a><div class="wh-tooltip"><p class="shortdesc">Details of data management permissions that are available for assignment to different         roles in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="system_config_privileges-d26997e9024" class="topicref" data-id="system_config_privileges" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/system_config_privileges.html" id="system_config_privileges-d26997e9024-link">System configuration privileges</a><div class="wh-tooltip"><p class="shortdesc">Details of system configuration privileges that are available for assignment to         different roles in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="rubrik_application_privileges-d26997e9038" class="topicref" data-id="rubrik_application_privileges" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rubrik_application_privileges.html" id="rubrik_application_privileges-d26997e9038-link">Rubrik application privileges</a><div class="wh-tooltip"><p class="shortdesc">Details of application-specific privileges that are available for assignment to         different roles in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="creating_role-d26997e9052" class="topicref" data-id="creating_role" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/creating_role_2.html" id="creating_role-d26997e9052-link">Creating a role</a><div class="wh-tooltip"><p class="shortdesc">Create a role by using a custom template or a predefined template to grant specific         permissions to user accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbac_roles_dba-d26997e9064" class="topicref" data-id="rbac_roles_dba" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbac_roles_dba-d26997e9064-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/rbac_roles_dba.html" id="rbac_roles_dba-d26997e9064-link">Role-based access control roles for database administrators</a><div class="wh-tooltip"><p class="shortdesc">Role-based access control roles for database administrators allow you to specify with         granularity which objects database administrators have access to and what permissions they         have to perform actions on these objects.</p></div></div></div></li><li role="treeitem"><div data-tocid="setting_dm_privileges_by_object_type-d26997e9163" class="topicref" data-id="setting_dm_privileges_by_object_type" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/setting_dm_privileges_by_object_type.html" id="setting_dm_privileges_by_object_type-d26997e9163-link">Setting data management privileges by object type</a><div class="wh-tooltip"><p class="shortdesc">Set data protection and recovery permissions for protected data objects.</p></div></div></div></li><li role="treeitem"><div data-tocid="setting_data_management_privileges-d26997e9174" class="topicref" data-id="setting_data_management_privileges" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/setting_data_management_privileges.html" id="setting_data_management_privileges-d26997e9174-link">Setting data management privileges by Rubrik cluster</a><div class="wh-tooltip"><p class="shortdesc">Set privileges for a role to permit user accounts with the role to manage backup and         recovery operations on a Rubrik cluster.</p></div></div></div></li><li role="treeitem"><div data-tocid="setting_system_configuration_privileges-d26997e9185" class="topicref" data-id="setting_system_configuration_privileges" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/setting_system_configuration_privileges.html" id="setting_system_configuration_privileges-d26997e9185-link">Setting system configuration privileges</a><div class="wh-tooltip"><p class="shortdesc">System configuration privileges enable users to manage aspects of <span class="ph">RSC</span>         and the associated Rubrik clusters.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="local_users-d26997e9199" class="topicref" data-id="local_users" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action local_users-d26997e9199-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/local_users.html" id="local_users-d26997e9199-link">Local users</a><div class="wh-tooltip"><p class="shortdesc">You can manage local user accounts on <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sso_users-d26997e9283" class="topicref" data-id="sso_users" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sso_users-d26997e9283-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/sso_users.html" id="sso_users-d26997e9283-link">SSO users</a><div class="wh-tooltip"><p class="shortdesc">SSO users receive permissions according to the roles assigned to their SSO groups.         Additionally, you can assign roles directly to individual SSO users as needed.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sso_groups-d26997e9333" class="topicref" data-id="sso_groups" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sso_groups-d26997e9333-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/sso_groups.html" id="sso_groups-d26997e9333-link">SSO groups</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> grants permissions to SSO users based on the role assigned by         their IdP groups.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="service_account-d26997e9368" class="topicref" data-id="service_account" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action service_account-d26997e9368-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/service_account.html" id="service_account-d26997e9368-link">Service accounts</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> uses service accounts to represent services and client         applications that need to invoke <span class="ph">RSC</span> APIs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbac_troubleshooting_permissions-d26997e9487" class="topicref" data-id="rbac_troubleshooting_permissions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbac_troubleshooting_permissions-d26997e9487-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rbac_troubleshooting_permissions.html" id="rbac_troubleshooting_permissions-d26997e9487-link">Troubleshooting permissions</a><div class="wh-tooltip"><p class="shortdesc">Information about how you can troubleshoot permission issues when a user or service         account cannot perform an intended task.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="import_users_roles_rsc-d26997e9509" class="topicref" data-id="import_users_roles_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action import_users_roles_rsc-d26997e9509-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/import_users_roles_rsc.html" id="import_users_roles_rsc-d26997e9509-link">Import users and roles to <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc">You can import users and roles created on the Rubrik cluster to manage them on <span class="ph">RSC</span>. After import, you can view the CDM RBAC migration summary report for         confirmation or for further changes to users and roles.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="federated_access-d26997e9558" class="topicref" data-id="federated_access" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action federated_access-d26997e9558-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/federated_access.html" id="federated_access-d26997e9558-link">Federated access</a><div class="wh-tooltip"><p class="shortdesc">Federated access enables <span class="ph">RSC</span> user and service accounts to access         connected Rubrik clusters, including <span class="ph">Rubrik NAS Cloud Direct</span> clusters. This access is         provided through the <span class="ph">RSC</span> user interface using Single Sign-On, eliminating         the need for separate login credentials.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="privileged_access_management-d26997e9596" class="topicref" data-id="privileged_access_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action privileged_access_management-d26997e9596-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/privileged_access_management.html" id="privileged_access_management-d26997e9596-link">Privileged access management</a><div class="wh-tooltip"><p class="shortdesc">You can create and manage API credentials to use with the Privileged Access         Management solution.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="quorum_authorization-d26997e9654" class="topicref" data-id="quorum_authorization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action quorum_authorization-d26997e9654-link" class="wh-expand-btn"></span><div class="title"><a href="../../qauth/quorum_authorization.html" id="quorum_authorization-d26997e9654-link">Quorum authorization</a><div class="wh-tooltip"><p class="shortdesc">Quorum authorization is a security feature that enforces the requirement of getting         additional approvals before a requester can perform data-modifying actions in <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="single_sign_on-d26997e10199" class="topicref" data-id="single_sign_on" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action single_sign_on-d26997e10199-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/single_sign_on.html" id="single_sign_on-d26997e10199-link">Single sign-on</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> supports SSO using the SAML 2.0 standard. With SSO, you can         log in to <span class="ph">RSC</span> using credentials associated with an identity         provider.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rsc_security-d26997e10852" class="topicref" data-id="rsc_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rsc_security-d26997e10852-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rsc_security.html" id="rsc_security-d26997e10852-link">Security settings</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> provides enhanced security authentication services and         features.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic task/task topic task" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Cloning a role</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">Clone an existing role to copy its permissions and settings as a new
+        role.</p>
+        <section class="- topic/section task/prereq section prereq" id="d746167e60"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>Ensure that the following prerequisites are met:<ul class="- topic/ul ul">
+                <li class="- topic/li li">Required permissions: You must have an administrator account with manage roles
+                    permissions.</li>
+                <li class="- topic/li li">Cluster compatibility: To synchronize the cloned role to clusters, the target
+                        <span class="- topic/ph ph">Rubrik cluster</span> must be running version 9.3.0 or later.</li>
+            </ul><div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">You cannot clone static roles such as Administrator, Owner, and Read-only
+                Administrator.</div></div></section>
+        <section class="- topic/ol task/steps ol steps" id="d746167e83"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Log in to <span class="- topic/ph ph">RSC</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../../reuse/conrefs/../../images/ui-icons/AppTray.svg"/> and select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Settings</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Settings menu appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Users &amp; Access</span> and then select
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Roles</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The list of roles appears.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <img class="- topic/image image" height="16" width="NaN" src="../../images/ui-icons/More.svg"/> for the role you
+                    want to clone.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Clone</span>.</span>
+                <div class="- topic/itemgroup task/stepresult itemgroup stepresult">The Clone Role page appears with pre-populated privileges.</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Review the privileges for the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Data Management</span>,
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">System Configuration</span>, and <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Rubrik
+                        Applications</span> sections.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">To modify privileges, click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit</span> or
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Configure</span> in the relevant sections.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span>.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Role Details</span> section, enter a unique name in
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Role Name</span>.</span>
+                <div class="- topic/itemgroup task/info itemgroup info"><span class="- topic/ph ph">RSC</span> provides a default name of <samp class="+ topic/ph sw-d/systemoutput ph systemoutput sysout">Copy of
+                        &lt;existing role name&gt;</samp>.</div>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Modify the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Description</span> for the role.</span>
+            </li><li class="- topic/li task/step li step"><strong>Optional: </strong>
+                <span class="- topic/ph task/cmd ph cmd">Review the role synchronization with <span class="- topic/ph ph">Rubrik cluster</span> and turn
+                        <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Synchronize Role to CDM Clusters</span> on or off as
+                    required.</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Clone</span>.</span>
+            </li></ol></section>
+        <section class="- topic/section task/result section result" id="d746167e225"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>You have successfully created a new role by cloning an existing one. The Roles page
+            displays the newly created cloned role. If synchronization with <span class="- topic/ph ph">Rubrik cluster</span> is enabled for the role, <span class="- topic/ph ph">RSC</span> creates the same role on selected
+            clusters and applies permissions based on federated login permission
+            translations.</section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="rsc_roles.html" title="Roles define privileges for user accounts in a Rubrik cluster. With the administrator account, you can assign roles that grant different access permissions to user accounts for specific purposes.">Roles</a><div class="- topic/desc desc">Roles define privileges for user accounts in a Rubrik cluster. With the administrator         account, you can assign roles that grant different access permissions to user accounts for         specific purposes.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="creating_role.html" title="Create a role by using a custom template or a predefined template to grant specific permissions to user accounts.">Creating a role</a><div class="- topic/desc desc">Create a role by using a custom template or a predefined template to grant specific         permissions to user accounts.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

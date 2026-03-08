@@ -1,0 +1,70 @@
+<svg width="800" height="680" viewBox="0 0 800 680" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .step-box {
+            fill: #E0F2F7; /* Light blue */
+            stroke: #2B94CC; /* Azure Blue */
+            stroke-width: 2;
+            rx: 10; /* Rounded corners */
+            ry: 10;
+            }
+            .step-text-title {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            fill: #000;
+            }
+            .step-text-desc {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 14px;
+            fill: #444;
+            }
+            .arrow {
+            stroke: #333;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+            }
+            #arrowhead {
+            fill: #333;
+            }
+        </style>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7"/>
+        </marker>
+    </defs>
+    <!-- Step 1: Plan the GitHub Protection -->
+    <rect x="50" y="30" width="700" height="100" class="step-box"/>
+    <text x="400" y="60" text-anchor="middle" class="step-text-title">1. Plan the GitHub Protection</text>
+    <text x="400" y="85" text-anchor="middle" class="step-text-desc">Understand RSC capabilities, architecture, and necessary permissions.</text>
+    <text x="400" y="105" text-anchor="middle" class="step-text-desc">Review user and access management requirements.</text>
+    <!-- Arrow 1-2 -->
+    <path d="M400,130 L400,160" class="arrow"/>
+    <!-- Step 2: Add the GitHub Organization -->
+    <rect x="50" y="160" width="700" height="120" class="step-box"/>
+    <text x="400" y="190" text-anchor="middle" class="step-text-title">2. Add the GitHub Organization</text>
+    <text x="400" y="215" text-anchor="middle" class="step-text-desc">Securely connect the GitHub organization to RSC.</text>
+    <text x="400" y="235" text-anchor="middle" class="step-text-desc">Configure Exocompute and set up Azure and AWS backup locations for archival.</text>
+    <!-- Arrow 2-3 -->
+    <path d="M400,280 L400,310" class="arrow"/>
+    <!-- Step 3: Configure GitHub Protection (SLA Domains) -->
+    <rect x="50" y="310" width="700" height="120" class="step-box"/>
+    <text x="400" y="340" text-anchor="middle" class="step-text-title">3. Configure GitHub Protection (SLA Domains)</text>
+    <text x="400" y="365" text-anchor="middle" class="step-text-desc">Create and customize SLA Domains to define automated protection policies.</text>
+    <text x="400" y="385" text-anchor="middle" class="step-text-desc">Specify snapshot frequency and data retention to meet business objectives.</text>
+    <text x="400" y="405" text-anchor="middle" class="step-text-desc">Apply SLA domains to target organization and repositories.</text>
+    <!-- Arrow 3-4 -->
+    <path d="M400,430 L400,460" class="arrow"/>
+    <!-- Step 4: Manage and Monitor GitHub Protection -->
+    <rect x="50" y="460" width="700" height="100" class="step-box"/>
+    <text x="400" y="490" text-anchor="middle" class="step-text-title">4. Manage and Monitor GitHub Protection</text>
+    <text x="400" y="515" text-anchor="middle" class="step-text-desc">Monitor protection dashboards and track job statuses.</text>
+    <text x="400" y="535" text-anchor="middle" class="step-text-desc">Generate reports, review event logs, and optimize the configuration.</text>
+    <!-- Arrow 4-5 -->
+    <path d="M400,560 L400,590" class="arrow"/>
+    <!-- Step 5: Recover Data from Snapshots -->
+    <!-- Reduced height to 70px (from 100px) and adjusted text positions -->
+    <rect x="50" y="590" width="700" height="70" class="step-box"/>
+    <text x="400" y="620" text-anchor="middle" class="step-text-title">5. Recover Data from Snapshots</text>
+    <text x="400" y="645" text-anchor="middle" class="step-text-desc">Recover repositories using appropriate recovery options.</text>
+</svg>

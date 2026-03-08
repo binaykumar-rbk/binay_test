@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="800" height="850" viewBox="0 0 800 850" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .step-box {
+            fill: #e0f2f7; /* Light blue */
+            stroke: #2B94CC; /* Blue */
+            stroke-width: 2;
+            rx: 10; /* Rounded corners */
+            ry: 10;
+            }
+            .step-text-title {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            fill: #333;
+            }
+            .step-text-desc {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            fill: #555;
+            }
+            .arrow {
+            stroke: #333;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+            }
+            #arrowhead {
+            fill: #333;
+            }
+        </style>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" />
+        </marker>
+    </defs>
+    <title>Google Workspace Protection Workflow</title>
+    
+    <rect x="50" y="30" width="700" height="90" class="step-box" />
+    <text x="400" y="60" text-anchor="middle" class="step-text-title">1. Plan your Google Workspace protection</text>
+    <text x="400" y="85" text-anchor="middle" class="step-text-desc">Plan user access (RBAC) and review the required API permissions.</text>
+    
+    <path d="M400,120 L400,140" class="arrow" />
+    
+    <rect x="50" y="140" width="700" height="90" class="step-box" />
+    <text x="400" y="170" text-anchor="middle" class="step-text-title">2. Add your Google Workspace account</text>
+    <text x="400" y="195" text-anchor="middle" class="step-text-desc">Add the Google Workspace organization to RSC using the secure OAuth workflow.</text>
+    
+    <path d="M400,230 L400,250" class="arrow" />
+    
+    <rect x="50" y="250" width="700" height="90" class="step-box" />
+    <text x="400" y="280" text-anchor="middle" class="step-text-title">3. Define data protection policies</text>
+    <text x="400" y="305" text-anchor="middle" class="step-text-desc">Create SLA Domains to define snapshot frequency and data retention policies.</text>
+    
+    <path d="M400,340 L400,360" class="arrow" />
+    
+    <rect x="50" y="360" width="700" height="90" class="step-box" />
+    <text x="400" y="390" text-anchor="middle" class="step-text-title">4. Assign protection to Google Workspace workloads</text>
+    <text x="400" y="415" text-anchor="middle" class="step-text-desc">Assign SLA Domains to workloads, such as Google Drive, OUs, and Shared Drives.</text>
+    
+    <path d="M400,450 L400,470" class="arrow" />
+    
+    <rect x="50" y="470" width="700" height="90" class="step-box" />
+    <text x="400" y="500" text-anchor="middle" class="step-text-title">5. Recover Google Workspace data</text>
+    <text x="400" y="525" text-anchor="middle" class="step-text-desc">Perform full or granular recoveries of workloads, such as Google Drive.</text>
+    
+    <path d="M400,560 L400,580" class="arrow" />
+    
+    <rect x="50" y="580" width="700" height="90" class="step-box" />
+    <text x="400" y="610" text-anchor="middle" class="step-text-title">6. Monitor and manage workloads</text>
+    <text x="400" y="635" text-anchor="middle" class="step-text-desc">Use the dashboard and reports to monitor protection status and SLA compliance.</text>
+    
+</svg>

@@ -1,0 +1,316 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="RSC provides an option for backups after a failover to either run according to the SLA Domain or to force a full backup during the next scheduled backup for systems running on Rubrik cluster version 9.5 or later."/><meta name="DC.relation" content="../saas/sap_hana_system_replication.html"/><meta name="DC.relation" content="../saas/hsr_config_scenarios.html"/><meta name="DC.relation" content="../saas/configuring_post_failover_backup.html"/><meta name="DC.relation" content="../saas/configuring_post_failover_backup.html"/><meta name="DC.relation" content="sap_hana_system_replication.html"/><meta name="DC.relation" content="configuring_post_failover_backup.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="sap_hana_auto_full_backup_after_failover"/>        
+      <title>SAP HANA automatic full backup after a failover</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="sap_hana_auto_full_backup_after_failover-d26997e31051"/><meta name="wh-source-relpath" content="saas/sap_hana_auto_full_backup_after_failover.dita"/><meta name="wh-out-relpath" content="saas/sap_hana_auto_full_backup_after_failover.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
+    </script>
+    <script>
+    function setHeroTitle() {
+        var pubEl = document.querySelector('.wh_publication_title a');
+        if (!pubEl) return;
+        var title = pubEl.textContent.trim();
+        if (!title) return;
+        var form = document.querySelector('.wh_main_page_search form');
+        if (!form) return;
+        var h = document.createElement('div');
+        h.className = 'wh_hero_title';
+        h.textContent = title;
+        form.parentNode.insertBefore(h, form);
+    }
+    function setSearchPlaceholder() {
+        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
+        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
+    }
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="sap_hana_auto_full_backup_after_failover" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../db2/ibm_db2.html">Database workloads</a></div></div></li><li><div class="topicref" data-id="sap_hana_protection"><div class="title"><a href="../saas/sap_hana_protection.html">SAP HANA databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enables administrators to implement backup policies on SAP HANA         databases running on public clouds and on-premises.</p></div></div></div></li><li><div class="topicref" data-id="sap_hana_system_replication"><div class="title"><a href="../saas/sap_hana_system_replication.html">SAP HANA system replication</a><div class="wh-tooltip"><p class="shortdesc">SAP HANA system replication ensures high availability and disaster recovery for your         SAP HANA system by setting up a backup system in the same or a different data center. <span class="ph">RSC</span> protects these configurations through SLA Domain policies.</p></div></div></div></li><li class="active"><div class="topicref" data-id="sap_hana_auto_full_backup_after_failover"><div class="title"><a href="../saas/sap_hana_auto_full_backup_after_failover.html">SAP HANA automatic full backup after a failover</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides an option for backups after a failover to either run         according to the SLA Domain or to force a full backup during the next scheduled backup for         systems running on <span class="ph">Rubrik cluster</span> version 9.5 or later.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/hsr_config_scenarios.html" title="HSR configuration scenarios" aria-label="Previous topic: HSR configuration scenarios" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/configuring_post_failover_backup.html" title="Configuring post-failover backup behavior" aria-label="Next topic: Configuring post-failover backup behavior" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d26997e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e1539" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e1539-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d26997e1539-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e4653" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e4653-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d26997e4653-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e8786" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e8786-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d26997e8786-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e11735" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e11735-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d26997e11735-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d26997e11745" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d26997e11745-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e11760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e11760-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d26997e11760-link">Cloud workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e19872" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e19872-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d26997e19872-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e21257" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e21257-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d26997e21257-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d26997e26217" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d26997e26217-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d26997e26217-link">Database workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="ibm_db2-d26997e26218" class="topicref" data-id="ibm_db2" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ibm_db2-d26997e26218-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="ibm_db2-d26997e26218-link">IBM Db2</a><div class="wh-tooltip"><p class="shortdesc">With IBM Db2 workloads, you can automate complex tasks such as database discovery and         data protection for managing databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ibm_informix-d26997e27103" class="topicref" data-id="ibm_informix" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ibm_informix-d26997e27103-link" class="wh-expand-btn"></span><div class="title"><a href="../informix/ibm_informix.html" id="ibm_informix-d26997e27103-link">IBM Informix</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides native data protection and recovery for IBM Informix         instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sql_server_databases-d26997e27405" class="topicref" data-id="sql_server_databases" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sql_server_databases-d26997e27405-link" class="wh-expand-btn"></span><div class="title"><a href="../common/sql_server_databases.html" id="sql_server_databases-d26997e27405-link">Microsoft SQL Server databases</a><div class="wh-tooltip"><p class="shortdesc">A Rubrik cluster provides data management and protection for Microsoft SQL Server         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mongodb_workloads-d26997e28104" class="topicref" data-id="mongodb_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mongodb_workloads-d26997e28104-link" class="wh-expand-btn"></span><div class="title"><a href="../mongodb/mongodb_workloads.html" id="mongodb_workloads-d26997e28104-link">MongoDB workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> protects your MongoDB sources, databases, and collections,         ensuring optimal storage efficiency and smooth database operations with its advanced         security features and strong data protection.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="mysql-d26997e28645" class="topicref" data-id="mysql" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action mysql-d26997e28645-link" class="wh-expand-btn"></span><div class="title"><a href="../mysql/mysql.html" id="mysql-d26997e28645-link">MySQL</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the MySQL databases from accidental deletions,         ransomware attacks, and other potential threats.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="oracle_databases_rsc-d26997e29238" class="topicref" data-id="oracle_databases_rsc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action oracle_databases_rsc-d26997e29238-link" class="wh-expand-btn"></span><div class="title"><a href="../oracle/oracle_databases_rsc.html" id="oracle_databases_rsc-d26997e29238-link">Oracle databases</a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">RSC</span> to back up, archive, replicate, and recover Oracle         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="postgresql-d26997e30694" class="topicref" data-id="postgresql" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action postgresql-d26997e30694-link" class="wh-expand-btn"></span><div class="title"><a href="../postgresql/postgresql.html" id="postgresql-d26997e30694-link">PostgreSQL</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud</span> protects your PostgreSQL cluster by simplifying complex         backup and recovery processes, discovering the databases automatically, and protecting data         using SLA Domains.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="sap_hana_protection-d26997e30961" class="topicref" data-id="sap_hana_protection" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action sap_hana_protection-d26997e30961-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_protection.html" id="sap_hana_protection-d26997e30961-link">SAP HANA databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> enables administrators to implement backup policies on SAP HANA         databases running on public clouds and on-premises.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="sap_hana_architecture-d26997e30974" class="topicref" data-id="sap_hana_architecture" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_architecture.html" id="sap_hana_architecture-d26997e30974-link">SAP HANA protection architecture</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> integrates with SAP HANA through its native Backint client, which         is deployed automatically on the SAP HANA host when the RBS or an external tool is         deployed.</p></div></div></div></li><li role="treeitem"><div data-tocid="prerequisites_for_sap_hana_protection-d26997e30987" class="topicref" data-id="prerequisites_for_sap_hana_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/prerequisites_for_sap_hana_protection.html" id="prerequisites_for_sap_hana_protection-d26997e30987-link">Prerequisites for SAP HANA protection</a><div class="wh-tooltip"><p class="shortdesc">There are a number of prerequisites that you must complete to protect SAP HANA         systems.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="sap_hana_system_replication-d26997e30998" class="topicref" data-id="sap_hana_system_replication" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action sap_hana_system_replication-d26997e30998-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_system_replication.html" id="sap_hana_system_replication-d26997e30998-link">SAP HANA system replication</a><div class="wh-tooltip"><p class="shortdesc">SAP HANA system replication ensures high availability and disaster recovery for your         SAP HANA system by setting up a backup system in the same or a different data center. <span class="ph">RSC</span> protects these configurations through SLA Domain policies.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="protection_hsr_config_for_high_availability-d26997e31012" class="topicref" data-id="protection_hsr_config_for_high_availability" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/protection_hsr_config_for_high_availability.html" id="protection_hsr_config_for_high_availability-d26997e31012-link">Protection of HSR configuration for high availability</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">RSC</span>, you can protect the SAP HANA system replication         configuration for high availability by performing specific actions.</p></div></div></div></li><li role="treeitem"><div data-tocid="protection_hsr_config_for_disaster_recovery-d26997e31026" class="topicref" data-id="protection_hsr_config_for_disaster_recovery" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/protection_hsr_config_for_disaster_recovery.html" id="protection_hsr_config_for_disaster_recovery-d26997e31026-link">Protection of HSR configuration for disaster recovery</a><div class="wh-tooltip"><p class="shortdesc">With <span class="ph">RSC</span>, you can protect the SAP HANA system replication         configuration for disaster recovery by performing specific actions.</p></div></div></div></li><li role="treeitem"><div data-tocid="hsr_config_scenarios-d26997e31040" class="topicref" data-id="hsr_config_scenarios" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/hsr_config_scenarios.html" id="hsr_config_scenarios-d26997e31040-link">HSR configuration scenarios</a><div class="wh-tooltip"><p class="shortdesc">Information about the various scenarios related to SAP HANA system replication         configuration for high availability and disaster recovery and the corresponding results or         operations you can perform.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="sap_hana_auto_full_backup_after_failover-d26997e31051" class="topicref" data-id="sap_hana_auto_full_backup_after_failover" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action sap_hana_auto_full_backup_after_failover-d26997e31051-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_auto_full_backup_after_failover.html" id="sap_hana_auto_full_backup_after_failover-d26997e31051-link">SAP HANA automatic full backup after a failover</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides an option for backups after a failover to either run         according to the SLA Domain or to force a full backup during the next scheduled backup for         systems running on <span class="ph">Rubrik cluster</span> version 9.5 or later.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="configuring_post_failover_backup-d26997e31067" class="topicref" data-id="configuring_post_failover_backup" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/configuring_post_failover_backup.html" id="configuring_post_failover_backup-d26997e31067-link">Configuring post-failover backup behavior</a><div class="wh-tooltip"><p class="shortdesc">Define how <span class="ph">RSC</span> handles the first backup after an SAP HANA failover         occurs at the system level.</p></div></div></div></li></ul></li></ul></li><li role="treeitem"><div data-tocid="adding_a_host_saphana-d26997e31081" class="topicref" data-id="adding_a_host_saphana" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_a_host.html" id="adding_a_host_saphana-d26997e31081-link">Adding an SAP HANA host</a><div class="wh-tooltip"><p class="shortdesc">To begin managing and protecting SAP HANA databases on a Linux host, add the host to         the Rubrik cluster.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="adding_a_sap_hana_system-d26997e31092" class="topicref" data-id="adding_a_sap_hana_system" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action adding_a_sap_hana_system-d26997e31092-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/adding_a_sap_hana_system.html" id="adding_a_sap_hana_system-d26997e31092-link">Adding an SAP HANA system</a><div class="wh-tooltip"><p class="shortdesc">Add an SAP HANA system to the <span class="ph">RSC</span> domain to start protecting SAP HANA         workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rbs_sap_hana-d26997e31133" class="topicref" data-id="rbs_sap_hana" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rbs_sap_hana-d26997e31133-link" class="wh-expand-btn"></span><div class="title"><a href="../rbs/rbs_sap_hana.html" id="rbs_sap_hana-d26997e31133-link">Rubrik Backup Service for SAP HANA</a><div class="wh-tooltip"><p class="shortdesc">Install and configure the Rubrik Backup Service on a SAP HANA host to allow backup and     restore of SAP HANA databases.</p></div></div></div></li><li role="treeitem"><div data-tocid="sap_hana_database_details-d26997e31155" class="topicref" data-id="sap_hana_database_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_database_details.html" id="sap_hana_database_details-d26997e31155-link">SAP HANA database details</a><div class="wh-tooltip"><p class="shortdesc">The details page for an SAP HANA database displays the protection status, snapshot         calendar, and protection events list.</p></div></div></div></li><li role="treeitem"><div data-tocid="protection_hierarchy_for_sap_hana-d26997e31166" class="topicref" data-id="protection_hierarchy_for_sap_hana" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/protection_hierarchy_for_sap_hana.html" id="protection_hierarchy_for_sap_hana-d26997e31166-link">Protection hierarchy for SAP HANA objects</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides hierarchy-based, automatic protection of SAP HANA         objects.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saphana_protection-d26997e31179" class="topicref" data-id="saphana_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saphana_protection-d26997e31179-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saphana_protection.html" id="saphana_protection-d26997e31179-link">SAP HANA protection</a><div class="wh-tooltip"><p class="shortdesc">With the SAP HANA protection feature, you can use SLA Domains to apply the data         protection policies and management policies to SAP HANA workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="snapshots_saphana-d26997e31212" class="topicref" data-id="snapshots_saphana" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action snapshots_saphana-d26997e31212-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/snapshots.html" id="snapshots_saphana-d26997e31212-link">SAP HANA snapshots</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects and manages data through snapshots of the source object         and enables you to take full, incremental, and differential snapshots.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sap_hana_storage_snapshots-d26997e31237" class="topicref" data-id="sap_hana_storage_snapshots" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sap_hana_storage_snapshots-d26997e31237-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_storage_snapshots.html" id="sap_hana_storage_snapshots-d26997e31237-link">SAP HANA storage snapshots</a><div class="wh-tooltip"><p class="shortdesc">Using <span class="ph">RSC</span>, you can take storage snapshots of SAP HANA systems running         on an Azure virtual machine and use those snapshots to recover your SAP HANA databases.         Storage snapshots are fast, encrypted, have negligible network load, and capture the entire         data area at a particular point in time.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="legal_hold_snapshot_rtn-d26997e31287" class="topicref" data-id="legal_hold_snapshot_rtn" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action legal_hold_snapshot_rtn-d26997e31287-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/legal_hold_snapshot_rtn_3.html" id="legal_hold_snapshot_rtn-d26997e31287-link">Legal hold for snapshot retention</a><div class="wh-tooltip"><p class="shortdesc">Legal hold ensures that snapshots are retained indefinitely until the hold is         removed, overriding the scheduled expiry of an SLA Domain policy. This ensures that         snapshots are available as long as necessary to meet legal obligations.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_retention_sap_hana_snapshots-d26997e31323" class="topicref" data-id="manage_retention_sap_hana_snapshots" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_retention_sap_hana_snapshots-d26997e31323-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/manage_retention_sap_hana_snapshots.html" id="manage_retention_sap_hana_snapshots-d26997e31323-link">Manage retention of SAP HANA snapshots</a><div class="wh-tooltip"><p class="shortdesc">To meet data governance and regulatory compliance, you can increase the retention         period of individual SAP HANA snapshots, as required.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sap_hana_archival-d26997e31345" class="topicref" data-id="sap_hana_archival" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sap_hana_archival-d26997e31345-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_archival.html" id="sap_hana_archival-d26997e31345-link">SAP HANA archival</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> allows you to include an archival policy in an SLA Domain for         archiving SAP HANA snapshots to an archival location.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sap_hana_replication-d26997e31380" class="topicref" data-id="sap_hana_replication" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sap_hana_replication-d26997e31380-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_replication.html" id="sap_hana_replication-d26997e31380-link">SAP HANA replication</a><div class="wh-tooltip"><p class="shortdesc">In <span class="ph">RSC</span>, you can use the SLA Domain replication policy to replicate         SAP HANA snapshots from one Rubrik cluster to another.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="sap_hana_recovery-d26997e31405" class="topicref" data-id="sap_hana_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action sap_hana_recovery-d26997e31405-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sap_hana_recovery.html" id="sap_hana_recovery-d26997e31405-link">SAP HANA recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides point-in-time, full snapshot, and system copy recovery         methods for SAP HANA databases. You can recover SAP HANA databases by using <span class="ph">RSC</span> or SAP HANA Studio.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e31623" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e31623-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d26997e31623-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d26997e33005" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d26997e33005-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d26997e33005-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e37409" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e37409-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d26997e37409-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e40225" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e40225-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d26997e40225-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e43499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e43499-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d26997e43499-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e45737" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e45737-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d26997e45737-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46650" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46650-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d26997e46650-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e46915" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e46915-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d26997e46915-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e47382" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e47382-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d26997e47382-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49162" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49162-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d26997e49162-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49251" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49251-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d26997e49251-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d26997e49818" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d26997e49818-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d26997e49818-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">SAP HANA automatic full backup after a failover</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">RSC</span> provides an option for backups after a failover to either run
+        according to the SLA Domain or to force a full backup during the next scheduled backup for
+        systems running on <span class="- topic/ph ph">Rubrik cluster</span> version 9.5 or later.</p>
+        <p class="- topic/p p">A failover transfers database operations from a primary site to a secondary site to
+            ensure high availability. After a failover, the base full backup for the delta backups,
+            such as incremental and differential backups, is not present on the new primary system.
+            This causes delta backups to fail.</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">Rubrik cluster</span> resolves this issue by automatically converting the next scheduled
+            delta backup to a full backup. This process keeps backups consistent and reduces the
+            time required for future recovery operations.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Post-failover backups considerations</h2>
+            
+            <p class="- topic/p p">Before configuring post-failover backups, ensure that you understand the following
+                behaviors:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Default behavior: By default, <span class="- topic/ph ph">Rubrik cluster</span> triggers the first backup
+                    after a failover according to the assigned SLA Domain. This backup can be a
+                    full, incremental, or differential backup.</li>
+                <li class="- topic/li li">Bulk configuration: You can configure the post-failover backup behavior for
+                    multiple systems simultaneously. However, you can only perform bulk
+                    configuration for systems that connect to the same <span class="- topic/ph ph">Rubrik cluster</span>.</li>
+                <li class="- topic/li li">User interface visibility: The First Backup Post-Failover column in the SAP HANA
+                    inventory is hidden by default. You can select the column on the SAP HANA Systems page
+                    to display it.</li>
+            </ul>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="sap_hana_system_replication.html" title="SAP HANA system replication ensures high availability and disaster recovery for your SAP HANA system by setting up a backup system in the same or a different data center. RSC protects these configurations through SLA Domain policies.">SAP HANA system replication</a><div class="- topic/desc desc">SAP HANA system replication ensures high availability and disaster recovery for your         SAP HANA system by setting up a backup system in the same or a different data center. RSC protects these configurations through SLA Domain policies.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="configuring_post_failover_backup.html" title="Define how RSC handles the first backup after an SAP HANA failover occurs at the system level.">Configuring post-failover backup behavior</a><div class="- topic/desc desc">Define how RSC handles the first backup after an SAP HANA failover         occurs at the system level.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
