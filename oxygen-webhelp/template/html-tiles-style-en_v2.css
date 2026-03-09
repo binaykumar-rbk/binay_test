@@ -237,38 +237,38 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
     border-radius: 12px !important;
     overflow: hidden !important;
     position: relative !important;
-    transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
-                box-shadow 0.22s ease,
-                border-color 0.2s ease !important;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease !important;
     cursor: pointer !important;
 }
 
-/* Light theme card */
+/* Light theme card — RSC levelTwo shadow + grey2 border */
 .theme-light .wh_tile {
     background: #ffffff !important;
-    border: 1px solid rgba(0,0,0,0.07) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04) !important;
+    border: 1px solid #E6EAE9 !important;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.08), 4px 4px 6px rgba(0,0,0,0.04), 2px 2px 3px rgba(0,0,0,0.08) !important;
 }
 
 .theme-light .wh_tile:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 30px rgba(0,157,172,0.15), 0 2px 6px rgba(0,0,0,0.06) !important;
-    border-color: rgba(0,157,172,0.3) !important;
+    transform: translate3d(0, -4px, 0) !important;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.08), 4px 4px 6px rgba(0,0,0,0.04), 2px 2px 3px rgba(0,0,0,0.08), 0 0 0 1px rgba(7,151,167,0.25) !important;
+    border-color: rgba(7,151,167,0.35) !important;
 }
 
-/* Dark theme card — glass morphism */
+/* Dark theme card — RSC grey8 surface + grey7 border */
 .theme-dark .wh_tile {
-    background: rgba(8, 18, 50, 0.58) !important;
-    border: 1px solid rgba(255,255,255,0.07) !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.28) !important;
+    background: rgba(22, 41, 43, 0.88) !important;
+    border: 1px solid #273637 !important;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.08), 4px 4px 6px rgba(0,0,0,0.04), 2px 2px 3px rgba(0,0,0,0.08) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
 }
 
 .theme-dark .wh_tile:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 14px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(2,219,240,0.22) !important;
-    border-color: rgba(2,219,240,0.22) !important;
+    transform: translate3d(0, -4px, 0) !important;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.08), 4px 4px 6px rgba(0,0,0,0.04), 2px 2px 3px rgba(0,0,0,0.08), 0 0 0 1px rgba(77,210,210,0.28) !important;
+    border-color: rgba(77,210,210,0.28) !important;
 }
 
 /* Inner wrapper — row layout: icon left, text right + accent left border */
@@ -408,20 +408,20 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
     min-height: 130px !important;
 }
 
-/* Dark theme: make cards more opaque & distinct against the bg */
+/* Dark theme: RSC grey8 surface */
 .theme-dark .wh_tile {
-    background: rgba(12, 25, 65, 0.72) !important;
+    background: rgba(22, 41, 43, 0.88) !important;
 }
 
-/* Light theme: stronger shadow baseline */
+/* Light theme: RSC levelTwo shadow */
 .theme-light .wh_tile {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 8px 24px rgba(0,0,0,0.05) !important;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.08), 4px 4px 6px rgba(0,0,0,0.04), 2px 2px 3px rgba(0,0,0,0.08) !important;
 }
 
-/* Tile title: left-aligned, readable */
+/* Tile title: left-aligned, RSC h5MinorTitle spec (16px / 600) */
 .wh_tile_title {
     font-size: 1rem !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     line-height: 1.4 !important;
     text-align: left !important;
 }
@@ -442,7 +442,7 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
 .theme-dark .wh_tile_title a,
 .theme-dark .wh_tile_title a:visited {
     color: #d4edf5 !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
 }
 
 /* Hero headline: bold and impactful */
@@ -519,7 +519,7 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
    OPTION B — Icon-left tile layout
    ================================================================ */
 
-/* Icon box: fixed-width tinted square */
+/* Icon box: fixed-width badge — RSC teal5 base, overridden per tile */
 .wh_tile_image {
     width: 48px !important;
     height: 48px !important;
@@ -532,11 +532,11 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
     margin-top: 2px !important;
     padding: 0 !important;
     text-align: unset !important;
-    background: rgba(0,157,172,0.13) !important;
+    background: rgba(0,125,147,0.85) !important;
 }
 
 .theme-dark .wh_tile_image {
-    background: rgba(0,157,172,0.2) !important;
+    background: rgba(0,125,147,0.88) !important;
 }
 
 .wh_tile_image img {
@@ -557,61 +557,66 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
    Matches the 14 tiles in order
    ================================================================ */
 
-/* 1 Getting started — amber */
-.wh_tiles > .wh_tile:nth-child(1) > div { border-left-color: #f59e0b !important; }
-.wh_tiles > .wh_tile:nth-child(1) .wh_tile_image { background: rgba(245,158,11,0.13) !important; }
+/* ================================================================
+   PER-TILE ACCENT COLORS — RSC exact palette (GlobalColors tokens)
+   Border accents + solid icon badge backgrounds for white SVG icons
+   ================================================================ */
 
-/* 2 Rubrik Clusters — blue */
-.wh_tiles > .wh_tile:nth-child(2) > div { border-left-color: #2563eb !important; }
-.wh_tiles > .wh_tile:nth-child(2) .wh_tile_image { background: rgba(37,99,235,0.12) !important; }
+/* 1 Getting started — amber4 #FFA326 */
+.wh_tiles > .wh_tile:nth-child(1) > div { border-left-color: #FFA326 !important; }
+.wh_tiles > .wh_tile:nth-child(1) .wh_tile_image { background: rgba(255,163,38,0.85) !important; }
 
-/* 3 Protection Policies — teal */
-.wh_tiles > .wh_tile:nth-child(3) > div { border-left-color: #0d9488 !important; }
-.wh_tiles > .wh_tile:nth-child(3) .wh_tile_image { background: rgba(13,148,136,0.13) !important; }
+/* 2 Rubrik Clusters — blue4 #0086C0 */
+.wh_tiles > .wh_tile:nth-child(2) > div { border-left-color: #0086C0 !important; }
+.wh_tiles > .wh_tile:nth-child(2) .wh_tile_image { background: rgba(0,134,192,0.85) !important; }
 
-/* 4 Security — red */
-.wh_tiles > .wh_tile:nth-child(4) > div { border-left-color: #dc2626 !important; }
-.wh_tiles > .wh_tile:nth-child(4) .wh_tile_image { background: rgba(220,38,38,0.11) !important; }
+/* 3 Protection Policies — teal4 #0797A7 */
+.wh_tiles > .wh_tile:nth-child(3) > div { border-left-color: #0797A7 !important; }
+.wh_tiles > .wh_tile:nth-child(3) .wh_tile_image { background: rgba(7,151,167,0.85) !important; }
 
-/* 5 Workloads — purple */
-.wh_tiles > .wh_tile:nth-child(5) > div { border-left-color: #7c3aed !important; }
-.wh_tiles > .wh_tile:nth-child(5) .wh_tile_image { background: rgba(124,58,237,0.12) !important; }
+/* 4 Security — red5 #F63747 */
+.wh_tiles > .wh_tile:nth-child(4) > div { border-left-color: #F63747 !important; }
+.wh_tiles > .wh_tile:nth-child(4) .wh_tile_image { background: rgba(246,55,71,0.85) !important; }
 
-/* 6 Cyber Resiliency — green */
-.wh_tiles > .wh_tile:nth-child(6) > div { border-left-color: #16a34a !important; }
-.wh_tiles > .wh_tile:nth-child(6) .wh_tile_image { background: rgba(22,163,74,0.12) !important; }
+/* 5 Workloads — periwinkle5 #584AF9 */
+.wh_tiles > .wh_tile:nth-child(5) > div { border-left-color: #584AF9 !important; }
+.wh_tiles > .wh_tile:nth-child(5) .wh_tile_image { background: rgba(88,74,249,0.85) !important; }
 
-/* 7 Identity Resiliency — indigo */
-.wh_tiles > .wh_tile:nth-child(7) > div { border-left-color: #4f46e5 !important; }
-.wh_tiles > .wh_tile:nth-child(7) .wh_tile_image { background: rgba(79,70,229,0.12) !important; }
+/* 6 Cyber Resiliency — green4 #00B287 */
+.wh_tiles > .wh_tile:nth-child(6) > div { border-left-color: #00B287 !important; }
+.wh_tiles > .wh_tile:nth-child(6) .wh_tile_image { background: rgba(0,178,135,0.85) !important; }
 
-/* 8 Agent Operations — pink */
-.wh_tiles > .wh_tile:nth-child(8) > div { border-left-color: #db2777 !important; }
-.wh_tiles > .wh_tile:nth-child(8) .wh_tile_image { background: rgba(219,39,119,0.11) !important; }
+/* 7 Identity Resiliency — indigo5 #0E5BCF */
+.wh_tiles > .wh_tile:nth-child(7) > div { border-left-color: #0E5BCF !important; }
+.wh_tiles > .wh_tile:nth-child(7) .wh_tile_image { background: rgba(14,91,207,0.85) !important; }
 
-/* 9 AI and Automation — violet */
-.wh_tiles > .wh_tile:nth-child(9) > div { border-left-color: #9333ea !important; }
-.wh_tiles > .wh_tile:nth-child(9) .wh_tile_image { background: rgba(147,51,234,0.12) !important; }
+/* 8 Agent Operations — pink5 #B739A5 */
+.wh_tiles > .wh_tile:nth-child(8) > div { border-left-color: #B739A5 !important; }
+.wh_tiles > .wh_tile:nth-child(8) .wh_tile_image { background: rgba(183,57,165,0.85) !important; }
 
-/* 10 Integrations — orange */
-.wh_tiles > .wh_tile:nth-child(10) > div { border-left-color: #ea580c !important; }
-.wh_tiles > .wh_tile:nth-child(10) .wh_tile_image { background: rgba(234,88,12,0.11) !important; }
+/* 9 AI and Automation — violet5 #8247DD */
+.wh_tiles > .wh_tile:nth-child(9) > div { border-left-color: #8247DD !important; }
+.wh_tiles > .wh_tile:nth-child(9) .wh_tile_image { background: rgba(130,71,221,0.85) !important; }
 
-/* 11 Monitoring — cyan */
-.wh_tiles > .wh_tile:nth-child(11) > div { border-left-color: #0891b2 !important; }
-.wh_tiles > .wh_tile:nth-child(11) .wh_tile_image { background: rgba(8,145,178,0.12) !important; }
+/* 10 Integrations — orange5 #E75900 */
+.wh_tiles > .wh_tile:nth-child(10) > div { border-left-color: #E75900 !important; }
+.wh_tiles > .wh_tile:nth-child(10) .wh_tile_image { background: rgba(231,89,0,0.85) !important; }
 
-/* 12 Diagnostic Tools — amber-dark */
-.wh_tiles > .wh_tile:nth-child(12) > div { border-left-color: #d97706 !important; }
-.wh_tiles > .wh_tile:nth-child(12) .wh_tile_image { background: rgba(217,119,6,0.12) !important; }
+/* 11 Monitoring — teal5 #007D93 */
+.wh_tiles > .wh_tile:nth-child(11) > div { border-left-color: #007D93 !important; }
+.wh_tiles > .wh_tile:nth-child(11) .wh_tile_image { background: rgba(0,125,147,0.85) !important; }
 
-/* 13 Multitenancy — sky */
-.wh_tiles > .wh_tile:nth-child(13) > div { border-left-color: #0284c7 !important; }
-.wh_tiles > .wh_tile:nth-child(13) .wh_tile_image { background: rgba(2,132,199,0.12) !important; }
+/* 12 Diagnostic Tools — amber6 #E36B00 */
+.wh_tiles > .wh_tile:nth-child(12) > div { border-left-color: #E36B00 !important; }
+.wh_tiles > .wh_tile:nth-child(12) .wh_tile_image { background: rgba(227,107,0,0.85) !important; }
 
-/* 14 Additional Resources — rose */
-.wh_tiles > .wh_tile:nth-child(14) > div { border-left-color: #be185d !important; }
-.wh_tiles > .wh_tile:nth-child(14) .wh_tile_image { background: rgba(190,24,93,0.11) !important; }
+/* 13 Multitenancy — blue4 #0086C0 */
+.wh_tiles > .wh_tile:nth-child(13) > div { border-left-color: #0086C0 !important; }
+.wh_tiles > .wh_tile:nth-child(13) .wh_tile_image { background: rgba(0,134,192,0.85) !important; }
+
+/* 14 Additional Resources — pink6 #93077E */
+.wh_tiles > .wh_tile:nth-child(14) > div { border-left-color: #93077E !important; }
+.wh_tiles > .wh_tile:nth-child(14) .wh_tile_image { background: rgba(147,7,126,0.85) !important; }
 
 /* ================================================================
    SEARCH BAR — bigger and more impactful
@@ -674,10 +679,10 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
     padding: 0 28px !important;
 }
 
-/* Tile title — 16.5px bold, left-aligned */
+/* Tile title — RSC h5MinorTitle: 16px / 600 */
 .wh_tile_title {
-    font-size: 16.5px !important;
-    font-weight: 700 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     line-height: 1.4 !important;
     text-align: left !important;
     margin-bottom: 5px !important;
@@ -706,13 +711,15 @@ html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays
 .theme-dark  .wh_tile_shortdesc { color: rgba(176,204,222,0.75) !important; }
 
 /* Tile title link colors */
+/* RSC: strong text on light, teal4 hover */
 .theme-light .wh_tile_title a,
-.theme-light .wh_tile_title a:visited { color: #0f172a !important; }
-.theme-light .wh_tile_title a:hover  { color: #009dac !important; }
+.theme-light .wh_tile_title a:visited { color: #273637 !important; }
+.theme-light .wh_tile_title a:hover  { color: #0797A7 !important; }
 
+/* RSC: light text on dark, teal3 hover */
 .theme-dark .wh_tile_title a,
-.theme-dark .wh_tile_title a:visited { color: #e2f0f7 !important; font-weight: 700 !important; }
-.theme-dark .wh_tile_title a:hover   { color: #02dbf0 !important; }
+.theme-dark .wh_tile_title a:visited { color: #e2f0f7 !important; font-weight: 600 !important; }
+.theme-dark .wh_tile_title a:hover   { color: #4DD2D2 !important; }
 
 /* Footer */
 .wh_footer {
