@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" width="920" height="640" font-family="Segoe UI, Calibri, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="920" height="640" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="920" height="68" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="52" width="920" height="16" fill="#1B2A4A"/>
+  <text x="460" y="29" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">Exocompute on Azure: AKS Architecture</text>
+  <text x="460" y="53" text-anchor="middle" font-size="12" fill="#8BB8E8">How Rubrik RSC uses Azure Kubernetes Service (AKS) to perform data operations in your subscription.</text>
+
+  <!-- ═══ RSC SaaS Cloud (top) ═══ -->
+  <rect x="300" y="82" width="320" height="52" fill="#1B2A4A" rx="8"/>
+  <text x="460" y="103" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Rubrik Security Cloud (RSC)</text>
+  <text x="460" y="122" text-anchor="middle" font-size="11" fill="#8BB8E8">SaaS control plane — orchestrates and monitors all operations</text>
+
+  <!-- Line RSC → Kubernetes Service RG -->
+  <line x1="460" y1="134" x2="460" y2="162" stroke="#374151" stroke-width="2"/>
+  <polygon points="454,159 466,159 460,169" fill="#374151"/>
+
+  <!-- ═══ Azure Subscription wrapper ═══ -->
+  <rect x="18" y="172" width="884" height="458" fill="#FFFFFF" rx="8" stroke="#0078D4" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="36" y="195" font-size="11" font-weight="bold" fill="#0078D4">Your Azure Subscription</text>
+
+  <!-- ═══ Kubernetes Service Resource Group ═══ -->
+  <rect x="270" y="206" width="380" height="66" fill="#E3F2FD" rx="6" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="460" y="228" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565C0">Kubernetes Service Resource Group</text>
+  <text x="460" y="247" text-anchor="middle" font-size="10" fill="#333">Created by RSC — contains only the AKS cluster service resource</text>
+  <text x="460" y="263" text-anchor="middle" font-size="9" fill="#666">Name: configurable during Exocompute setup</text>
+
+  <!-- Line KS RG → Node RG -->
+  <line x1="460" y1="272" x2="460" y2="300" stroke="#1565C0" stroke-width="2"/>
+  <polygon points="454,297 466,297 460,307" fill="#1565C0"/>
+  <text x="480" y="290" font-size="9" fill="#1565C0">AKS automatically creates</text>
+
+  <!-- ═══ Node Resource Group ═══ -->
+  <rect x="36" y="308" width="848" height="296" fill="#E8F4FF" rx="6" stroke="#0076CE" stroke-width="1.5"/>
+  <text x="460" y="328" text-anchor="middle" font-size="12" font-weight="bold" fill="#0076CE">Node Resource Group (auto-created by AKS)</text>
+  <text x="460" y="344" text-anchor="middle" font-size="10" fill="#555">Named: MC_&lt;resource-group&gt;_&lt;cluster-name&gt;_&lt;region&gt;  |  Deleted automatically when Exocompute cluster is deleted</text>
+
+  <!-- ═══ Master Node ═══ -->
+  <rect x="56" y="358" width="360" height="210" fill="#FFFFFF" rx="6" stroke="#1E88E5" stroke-width="1.5"/>
+  <rect x="56" y="358" width="360" height="36" fill="#1E88E5" rx="6"/>
+  <rect x="56" y="378" width="360" height="16" fill="#1E88E5"/>
+  <text x="236" y="381" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Master Node</text>
+  <!-- Master node responsibilities -->
+  <text x="76" y="416" font-size="11" font-weight="bold" fill="#1565C0">Responsibilities:</text>
+  <text x="86" y="436" font-size="10" fill="#333">&#x2022; Orchestrates the lifecycle of worker nodes</text>
+  <text x="86" y="453" font-size="10" fill="#333">&#x2022; Launches worker nodes when operations are queued</text>
+  <text x="86" y="470" font-size="10" fill="#333">&#x2022; Assigns data operation jobs to worker nodes</text>
+  <text x="86" y="487" font-size="10" fill="#333">&#x2022; Terminates worker nodes when jobs complete</text>
+  <text x="86" y="504" font-size="10" fill="#333">&#x2022; Manages auto-scaling of the worker node pool</text>
+  <!-- Note box -->
+  <rect x="66" y="516" width="338" height="40" fill="#FFF8E1" rx="4" stroke="#FFC107" stroke-width="1"/>
+  <text x="235" y="532" text-anchor="middle" font-size="10" font-weight="bold" fill="#7B5E00">No Rubrik logic is executed within the master node.</text>
+  <text x="235" y="548" text-anchor="middle" font-size="10" fill="#7B5E00">Only the worker nodes run Rubrik operations.</text>
+
+  <!-- ═══ Worker Node Pool ═══ -->
+  <rect x="440" y="358" width="428" height="242" fill="#FFFFFF" rx="6" stroke="#42A5F5" stroke-width="1.5"/>
+  <rect x="440" y="358" width="428" height="36" fill="#42A5F5" rx="6"/>
+  <rect x="440" y="378" width="428" height="16" fill="#42A5F5"/>
+  <text x="654" y="381" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Worker Node Pool (min. 1 node, auto-scales)</text>
+
+  <!-- Four operations boxes -->
+  <rect x="452" y="406" width="192" height="68" fill="#E8F4FF" rx="4" stroke="#42A5F5" stroke-width="1"/>
+  <text x="548" y="423" text-anchor="middle" font-size="11" font-weight="bold" fill="#0D47A1">File Indexing</text>
+  <text x="548" y="440" text-anchor="middle" font-size="9" fill="#333">Each new VM/MD backup triggers</text>
+  <text x="548" y="453" text-anchor="middle" font-size="9" fill="#333">a file indexing operation to enable</text>
+  <text x="548" y="466" text-anchor="middle" font-size="9" fill="#333">file search and in-place recovery</text>
+
+  <rect x="656" y="406" width="200" height="68" fill="#E8F4FF" rx="4" stroke="#42A5F5" stroke-width="1"/>
+  <text x="756" y="423" text-anchor="middle" font-size="11" font-weight="bold" fill="#0D47A1">File Recovery</text>
+  <text x="756" y="440" text-anchor="middle" font-size="9" fill="#333">When file recovery is initiated,</text>
+  <text x="756" y="453" text-anchor="middle" font-size="9" fill="#333">a worker node reads file data</text>
+  <text x="756" y="466" text-anchor="middle" font-size="9" fill="#333">from the VM/MD backup snapshot</text>
+
+  <rect x="452" y="484" width="192" height="68" fill="#E8F5E9" rx="4" stroke="#43A047" stroke-width="1"/>
+  <text x="548" y="501" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B5E20">App-Consistent Backups</text>
+  <text x="548" y="518" text-anchor="middle" font-size="9" fill="#333">Temporary Exocompute instance</text>
+  <text x="548" y="531" text-anchor="middle" font-size="9" fill="#333">coordinates VSS/script activity</text>
+  <text x="548" y="544" text-anchor="middle" font-size="9" fill="#333">with the RBS agent on the VM</text>
+
+  <rect x="656" y="484" width="200" height="68" fill="#E8F5E9" rx="4" stroke="#43A047" stroke-width="1"/>
+  <text x="756" y="501" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B5E20">Storage Tiering</text>
+  <text x="756" y="518" text-anchor="middle" font-size="9" fill="#333">When snapshot reaches archival</text>
+  <text x="756" y="531" text-anchor="middle" font-size="9" fill="#333">threshold, mounts disk, identifies</text>
+  <text x="756" y="544" text-anchor="middle" font-size="9" fill="#333">changed blocks, tiers to storage</text>
+
+  <!-- Arrow between master and worker pool — label rotated 90° to fit the 24px gap -->
+  <line x1="416" y1="460" x2="436" y2="460" stroke="#374151" stroke-width="2"/>
+  <polygon points="436,454 448,460 436,466" fill="#374151"/>
+  <text x="428" y="460" text-anchor="middle" dominant-baseline="middle" font-size="8" fill="#374151"
+        transform="rotate(-90,428,460)">assigns jobs</text>
+
+  <!-- Auto-scale note -->
+  <rect x="440" y="556" width="428" height="36" fill="#EDE7F6" rx="4"/>
+  <text x="654" y="572" text-anchor="middle" font-size="10" fill="#4527A0">Auto-scaling: Additional worker nodes launch automatically based on workload.</text>
+  <text x="654" y="585" text-anchor="middle" font-size="10" fill="#4527A0">The AKS cluster is destroyed automatically after all operations complete.</text>
+
+</svg>

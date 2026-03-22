@@ -8,40 +8,19 @@
     <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/commons.css?buildId=2025041503"/>
     <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/main.css?buildId=2025041503"/>
 
-    <script src="./oxygen-webhelp/app/options/properties.js?buildId=20260308222008"></script>
+    <script src="./oxygen-webhelp/app/options/properties.js?buildId=20260322093117"></script>
     <script src="./oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
-    <script src="./oxygen-webhelp/app/search/index/keywords.js?buildId=20260308222008"></script>
+    <script src="./oxygen-webhelp/app/search/index/keywords.js?buildId=20260322093117"></script>
     <script src="./oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
     <script src="./oxygen-webhelp/app/main.js?buildId=2025041503"></script>
 
     
 
-        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/html-tiles-style-en_v2.css?buildId=2025041503"/>
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
         
         
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
     <script>
-    window.addEventListener("load", myInit, true); function myInit(){ addTargetBlank(); setSearchPlaceholder(); setHeroTitle(); };
-    </script>
-    <script>
-    function setHeroTitle() {
-        var pubEl = document.querySelector('.wh_publication_title a');
-        if (!pubEl) return;
-        var title = pubEl.textContent.trim();
-        if (!title) return;
-        var form = document.querySelector('.wh_main_page_search form');
-        if (!form) return;
-        var h = document.createElement('div');
-        h.className = 'wh_hero_title';
-        h.textContent = title;
-        form.parentNode.insertBefore(h, form);
-    }
-    function setSearchPlaceholder() {
-        var fields = document.querySelectorAll('.wh_search_textfield, #textToSearch');
-        fields.forEach(function(f){ f.setAttribute('placeholder', 'Search topics and features...'); });
-    }
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
     </script>
         
     <script>
@@ -135,7 +114,7 @@
             
             
             <div class="wh_welcome"></div>          
-            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search topics and features..." class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
             
             
             
@@ -150,7 +129,7 @@
             <div class="container-fluid wh_content_flex_container">
                 <div class=" wh_tiles "><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-getting-started.svg" alt="Getting started with RSC"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/common/getting_started_with_rsc.html">Getting started with RSC</a></span></div>
@@ -161,7 +140,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-clusters.svg" alt="Rubrik Clusters"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/common/rubrik_clusters_2.html">Rubrik Clusters</a></span></div>
@@ -172,7 +151,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-protection.svg" alt="Protection Policies"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/sla_domains.html">Protection Policies</a></span></div>
@@ -183,7 +162,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-security.svg" alt="Security"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/users_access.html">Security</a></span></div>
@@ -194,7 +173,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-workloads.svg" alt="Workloads"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="rubrik/supported_workloads.html">Workloads</a></span></div>
@@ -205,7 +184,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-cyber-resiliency.svg" alt="Cyber Resiliency"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/ri_ransomware_monitoring.html">Cyber Resiliency</a></span></div>
@@ -216,7 +195,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-identity.svg" alt="Identity Resiliency"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="identity_resilience/identity_resilience.html">Identity Resiliency</a></span></div>
@@ -227,7 +206,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-agent-ops.svg" alt="Agent Operations"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="agent_operations/agent_rewind.html">Agent Operations</a></span></div>
@@ -239,7 +218,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-ai.svg" alt="AI and Automation"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas-ai/ruby_overview.html">AI and Automation</a></span></div>
@@ -250,7 +229,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-integrations.svg" alt="Integrations and License Usage"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/integration_third_party_apps_in_rsc.html">Integrations and License Usage</a></span></div>
@@ -261,7 +240,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-monitoring.svg" alt="Monitoring and Reporting"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/common/events.html">Monitoring and Reporting</a></span></div>
@@ -272,7 +251,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-diagnostics.svg" alt="Diagnostic Tools"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/rsc_insights.html">Diagnostic Tools</a></span></div>
@@ -283,7 +262,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="rubrik/resources/images/tile-icons/icon-multitenancy.svg" alt="Multitenancy"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="saas/mt_multitenant_organizations.html">Multitenancy</a></span></div>
@@ -294,7 +273,7 @@
                         </div>
                     </div><div class=" wh_tile  ">
                         <div>
-                            <div class=" wh_tile_image "><img src="resources/images/tile-icons/icon-resources.svg" alt="Additional Resources"/></div>
+                            
 
                             <div class="wh_tile_text">
                                 <div class=" wh_tile_title "><span class="topicref"><a href="reuse/notices.html">Additional Resources</a></span></div>

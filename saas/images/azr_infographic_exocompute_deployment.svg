@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="940" height="580" font-family="Segoe UI, Calibri, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="940" height="580" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="940" height="68" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="52" width="940" height="16" fill="#1B2A4A"/>
+  <text x="470" y="29" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">Exocompute on Azure: Localized vs. Centralized Deployment</text>
+  <text x="470" y="53" text-anchor="middle" font-size="12" fill="#8BB8E8">Choose the deployment model that best fits your organization's subscription structure and management preferences.</text>
+
+  <!-- ═══════════════ LEFT PANEL: LOCALIZED ═══════════════ -->
+  <rect x="16" y="80" width="436" height="486" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="16" y="80" width="436" height="48" fill="#0076CE" rx="8"/>
+  <rect x="16" y="108" width="436" height="20" fill="#0076CE"/>
+  <text x="234" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Localized Exocompute</text>
+  <text x="234" y="122" text-anchor="middle" font-size="11" fill="#BAD9F5">One Exocompute per application subscription</text>
+
+  <!-- RSC SaaS box at top-left -->
+  <rect x="146" y="143" width="176" height="36" fill="#1B2A4A" rx="6"/>
+  <text x="234" y="166" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">RSC</text>
+
+  <!-- Lines from RSC down to two subscriptions -->
+  <line x1="190" y1="179" x2="130" y2="235" stroke="#0076CE" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <line x1="278" y1="179" x2="338" y2="235" stroke="#0076CE" stroke-width="1.8" stroke-dasharray="5,3"/>
+
+  <!-- Subscription A box (left) -->
+  <rect x="36" y="235" width="180" height="130" fill="#E8F4FF" rx="6" stroke="#0076CE" stroke-width="1.5"/>
+  <text x="126" y="254" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B2A4A">Azure Subscription A</text>
+  <!-- Exocompute box inside A -->
+  <rect x="51" y="263" width="150" height="36" fill="#0076CE" rx="5"/>
+  <text x="126" y="286" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">Exocompute A</text>
+  <!-- Workload labels -->
+  <text x="126" y="318" text-anchor="middle" font-size="10" fill="#444">VM-1  |  MD-1  |  Blob-1</text>
+  <text x="126" y="332" text-anchor="middle" font-size="10" fill="#666">Protected resources</text>
+  <text x="126" y="349" text-anchor="middle" font-size="10" fill="#888">(Subscription A only)</text>
+
+  <!-- Subscription B box (right) -->
+  <rect x="252" y="235" width="180" height="130" fill="#E8F4FF" rx="6" stroke="#0076CE" stroke-width="1.5"/>
+  <text x="342" y="254" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B2A4A">Azure Subscription B</text>
+  <!-- Exocompute box inside B -->
+  <rect x="267" y="263" width="150" height="36" fill="#0076CE" rx="5"/>
+  <text x="342" y="286" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">Exocompute B</text>
+  <!-- Workload labels -->
+  <text x="342" y="318" text-anchor="middle" font-size="10" fill="#444">VM-2  |  SQL-1</text>
+  <text x="342" y="332" text-anchor="middle" font-size="10" fill="#666">Protected resources</text>
+  <text x="342" y="349" text-anchor="middle" font-size="10" fill="#888">(Subscription B only)</text>
+
+  <!-- Use when box -->
+  <rect x="30" y="427" width="408" height="88" fill="#EBF5FF" rx="6" stroke="#90CAF9" stroke-width="1.2"/>
+  <text x="234" y="446" text-anchor="middle" font-size="11" font-weight="bold" fill="#0D47A1">Best for:</text>
+  <text x="50" y="465" font-size="11" fill="#1B2A4A">&#x2022; Environments needing full subscription isolation</text>
+  <text x="50" y="483" font-size="11" fill="#1B2A4A">&#x2022; Different configurations per subscription</text>
+  <text x="50" y="501" font-size="11" fill="#1B2A4A">&#x2022; Independent scaling per workload group</text>
+
+  <!-- Trade-off note -->
+  <text x="234" y="528" text-anchor="middle" font-size="10" fill="#E65100">Trade-off: Higher management overhead — separate setup per subscription</text>
+
+  <!-- ═══════════════ CENTER DIVIDER ═══════════════ -->
+  <line x1="470" y1="90" x2="470" y2="555" stroke="#CBD5E0" stroke-width="1.5"/>
+  <rect x="453" y="305" width="34" height="28" fill="#F4F7FB" stroke="#CBD5E0" stroke-width="1" rx="4"/>
+  <text x="470" y="324" text-anchor="middle" font-size="11" font-weight="bold" fill="#666">VS</text>
+
+  <!-- ═══════════════ RIGHT PANEL: CENTRALIZED ═══════════════ -->
+  <rect x="488" y="80" width="436" height="486" fill="#FFFFFF" rx="8" stroke="#43A047" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="488" y="80" width="436" height="48" fill="#43A047" rx="8"/>
+  <rect x="488" y="108" width="436" height="20" fill="#43A047"/>
+  <text x="706" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Centralized Exocompute</text>
+  <text x="706" y="122" text-anchor="middle" font-size="11" fill="#C8E6C9">One shared Exocompute host serves multiple subscriptions</text>
+
+  <!-- RSC SaaS box at top-right -->
+  <rect x="618" y="143" width="176" height="36" fill="#1B2A4A" rx="6"/>
+  <text x="706" y="166" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">RSC</text>
+
+  <!-- Line from RSC to Host Subscription -->
+  <line x1="706" y1="179" x2="706" y2="230" stroke="#43A047" stroke-width="2"/>
+
+  <!-- Exocompute Host Subscription box -->
+  <rect x="576" y="230" width="260" height="58" fill="#43A047" rx="6"/>
+  <text x="706" y="248" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Exocompute Host Subscription</text>
+  <text x="706" y="263" text-anchor="middle" font-size="9" fill="#C8E6C9">Exocompute cluster</text>
+  <text x="706" y="276" text-anchor="middle" font-size="9" fill="#C8E6C9">(serves all mapped subscriptions)</text>
+
+  <!-- Lines from host to three app subscriptions -->
+  <line x1="620" y1="288" x2="558" y2="338" stroke="#43A047" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <line x1="706" y1="288" x2="706" y2="338" stroke="#43A047" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <line x1="792" y1="288" x2="854" y2="338" stroke="#43A047" stroke-width="1.8" stroke-dasharray="5,3"/>
+
+  <!-- App Subscription 1 -->
+  <rect x="500" y="338" width="118" height="56" fill="#E8F5E9" rx="5" stroke="#43A047" stroke-width="1.2"/>
+  <text x="559" y="357" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B5E20">App Sub A</text>
+  <text x="559" y="373" text-anchor="middle" font-size="9" fill="#444">VM, Blob,</text>
+  <text x="559" y="386" text-anchor="middle" font-size="9" fill="#444">SQL workloads</text>
+
+  <!-- App Subscription 2 -->
+  <rect x="648" y="338" width="118" height="56" fill="#E8F5E9" rx="5" stroke="#43A047" stroke-width="1.2"/>
+  <text x="707" y="357" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B5E20">App Sub B</text>
+  <text x="707" y="373" text-anchor="middle" font-size="9" fill="#444">VM, MD</text>
+  <text x="707" y="386" text-anchor="middle" font-size="9" fill="#444">workloads</text>
+
+  <!-- App Subscription 3 -->
+  <rect x="796" y="338" width="118" height="56" fill="#E8F5E9" rx="5" stroke="#43A047" stroke-width="1.2"/>
+  <text x="855" y="357" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B5E20">App Sub C</text>
+  <text x="855" y="373" text-anchor="middle" font-size="9" fill="#444">SQL DB,</text>
+  <text x="855" y="386" text-anchor="middle" font-size="9" fill="#444">SQL MI</text>
+
+  <!-- "Mapped to host" label -->
+  <text x="706" y="416" text-anchor="middle" font-size="10" fill="#555">All application subscriptions are mapped to the host subscription</text>
+
+  <!-- Use when box -->
+  <rect x="502" y="427" width="408" height="88" fill="#E8F5E9" rx="6" stroke="#A5D6A7" stroke-width="1.2"/>
+  <text x="706" y="446" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B5E20">Best for:</text>
+  <text x="522" y="465" font-size="11" fill="#1B2A4A">&#x2022; Centralized management of many subscriptions</text>
+  <text x="522" y="483" font-size="11" fill="#1B2A4A">&#x2022; Reducing compute costs via resource sharing</text>
+  <text x="522" y="501" font-size="11" fill="#1B2A4A">&#x2022; Streamlining configuration across the organization</text>
+
+  <!-- Trade-off note -->
+  <text x="706" y="528" text-anchor="middle" font-size="10" fill="#E65100">Trade-off: Shared dependency — host issues may affect all mapped subscriptions</text>
+
+  <!-- Footer note -->
+  <rect x="16" y="550" width="908" height="24" fill="#EEF2F7" rx="4"/>
+  <text x="470" y="567" text-anchor="middle" font-size="11" fill="#444">You configure the deployment model in RSC when setting up Exocompute. Both models use AKS.</text>
+
+</svg>

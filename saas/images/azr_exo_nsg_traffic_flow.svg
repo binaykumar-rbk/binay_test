@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560"
+     font-family="Segoe UI, Calibri, Arial, sans-serif">
+  <rect width="960" height="560" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="960" height="64" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="48" width="960" height="16" fill="#1B2A4A"/>
+  <text x="480" y="27" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">NSG Outbound Rules: Why Each Rule Exists</text>
+  <text x="480" y="50" text-anchor="middle" font-size="11" fill="#8BB8E8">Each outbound rule enables a specific traffic flow required for Exocompute operations. Configure all rules on the NSG for the Exocompute subnet.</text>
+
+  <!-- LEFT PANEL: AKS Subnet. x=14, y=78, w=240, h=452 -->
+  <rect x="14" y="78" width="240" height="452" fill="#FFFFFF" rx="8" stroke="#1565C0" stroke-width="2"/>
+  <rect x="14" y="78" width="240" height="36" fill="#1565C0" rx="8"/>
+  <rect x="14" y="100" width="240" height="14" fill="#1565C0"/>
+  <text x="134" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Exocompute AKS Subnet</text>
+
+  <!-- Master Node box: y=124, h=58 -->
+  <rect x="26" y="124" width="215" height="58" fill="#E3F2FD" rx="5" stroke="#0076CE" stroke-width="1.2"/>
+  <text x="133" y="146" text-anchor="middle" font-size="11" font-weight="bold" fill="#0076CE">Master Node</text>
+  <text x="133" y="163" text-anchor="middle" font-size="9" fill="#555">Orchestrates worker nodes</text>
+  <text x="133" y="175" text-anchor="middle" font-size="9" fill="#555">FQDN-addressed via Azure DNS</text>
+
+  <!-- Worker Nodes box: y=194, h=320 -->
+  <rect x="26" y="194" width="215" height="320" fill="#E8F4FF" rx="5" stroke="#0076CE" stroke-width="1.2"/>
+  <text x="133" y="216" text-anchor="middle" font-size="11" font-weight="bold" fill="#0076CE">Worker Nodes (1&#x2013;64)</text>
+  <text x="133" y="234" text-anchor="middle" font-size="9" fill="#555">Execute all Rubrik operations:</text>
+  <rect x="36" y="242" width="194" height="18" fill="#BBDEFB" rx="3"/>
+  <text x="133" y="255" text-anchor="middle" font-size="9" fill="#1565C0">File indexing &#x00B7; File recovery</text>
+  <rect x="36" y="264" width="194" height="18" fill="#BBDEFB" rx="3"/>
+  <text x="133" y="277" text-anchor="middle" font-size="9" fill="#1565C0">Storage tiering</text>
+  <rect x="36" y="286" width="194" height="18" fill="#BBDEFB" rx="3"/>
+  <text x="133" y="299" text-anchor="middle" font-size="9" fill="#1565C0">App-consistent backups</text>
+  <text x="44" y="324" font-size="9" fill="#333">Outbound connections:</text>
+  <text x="44" y="340" font-size="9" fill="#555">&#x2022; Port 443/TCP &#x2014; HTTPS</text>
+  <text x="44" y="355" font-size="9" fill="#555">&#x2022; Port 9000/TCP &#x2014; AKS tunnel</text>
+  <text x="44" y="370" font-size="9" fill="#555">&#x2022; Port 53/UDP &#x2014; DNS queries</text>
+  <text x="44" y="385" font-size="9" fill="#555">&#x2022; Port 1433/TCP &#x2014; SQL backup</text>
+  <text x="44" y="405" font-size="9" fill="#C62828">&#x2022; No inbound rules needed</text>
+  <text x="44" y="420" font-size="9" fill="#555">NSG blocks all inbound by default</text>
+  <text x="44" y="440" font-size="9" fill="#C62828">&#x2022; Disable DPI on this subnet</text>
+  <text x="44" y="455" font-size="9" fill="#555">DPI breaks AKS health checks</text>
+  <text x="44" y="470" font-size="9" fill="#555">and cluster launch</text>
+
+  <!-- ═══ FLOW ARROWS + BOXES (x=280, w=662, center x=611) ═══ -->
+  <!-- Arrow: line x1=254→x2=272, polygon tip 268→280, box x=280 -->
+
+  <!-- Flow 1: 443 → AzureCloud  arrow y=153, box y=133 h=40 -->
+  <line x1="254" y1="153" x2="272" y2="153" stroke="#0078D4" stroke-width="2"/>
+  <polygon points="268,147 280,153 268,159" fill="#0078D4"/>
+  <rect x="280" y="133" width="662" height="40" fill="#E3F2FD" rx="5" stroke="#0078D4" stroke-width="1.5"/>
+  <text x="611" y="149" text-anchor="middle" font-size="10" font-weight="bold" fill="#0078D4">Port 443/TCP &#x2192; AzureCloud</text>
+  <text x="611" y="163" text-anchor="middle" font-size="9" fill="#333">Workers pull container images from ACR and upload recovered data to Azure Storage</text>
+
+  <!-- Flow 2: 9000 → AzureCloud  arrow y=225, box y=199 h=52 -->
+  <line x1="254" y1="225" x2="272" y2="225" stroke="#1E88E5" stroke-width="2"/>
+  <polygon points="268,219 280,225 268,231" fill="#1E88E5"/>
+  <rect x="280" y="199" width="662" height="52" fill="#E3F2FD" rx="5" stroke="#1E88E5" stroke-width="1.5"/>
+  <text x="611" y="215" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565C0">Port 9000/TCP &#x2192; AzureCloud.&lt;region&gt;</text>
+  <text x="611" y="230" text-anchor="middle" font-size="9" fill="#333">Worker-to-master node communication tunnel (AKS tunnel endpoint)</text>
+  <text x="611" y="243" text-anchor="middle" font-size="8" fill="#1565C0">Tip: Can restrict destination to a specific region using the AzureCloud.&lt;region&gt; service tag</text>
+
+  <!-- Flow 3: 443 → Google Cloud  arrow y=295, box y=269 h=52 -->
+  <line x1="254" y1="295" x2="272" y2="295" stroke="#4285F4" stroke-width="2"/>
+  <polygon points="268,289 280,295 268,301" fill="#4285F4"/>
+  <rect x="280" y="269" width="662" height="52" fill="#E8F0FE" rx="5" stroke="#4285F4" stroke-width="1.5"/>
+  <text x="611" y="285" text-anchor="middle" font-size="10" font-weight="bold" fill="#4285F4">Port 443/TCP &#x2192; Google Cloud IPs</text>
+  <text x="611" y="300" text-anchor="middle" font-size="9" fill="#333">Workers upload index metadata to Google Cloud Storage</text>
+  <text x="611" y="313" text-anchor="middle" font-size="8" fill="#4285F4">Tip: Can substitute the Internet service tag instead of specific Google Cloud IP ranges</text>
+
+  <!-- Flow 4: 443 → prod-*.rubrik.com  arrow y=363, box y=345 h=36 -->
+  <line x1="254" y1="363" x2="272" y2="363" stroke="#0076CE" stroke-width="2"/>
+  <polygon points="268,357 280,363 268,369" fill="#0076CE"/>
+  <rect x="280" y="345" width="662" height="36" fill="#E8F4FF" rx="5" stroke="#0076CE" stroke-width="1.5"/>
+  <text x="611" y="360" text-anchor="middle" font-size="10" font-weight="bold" fill="#0076CE">Port 443/TCP &#x2192; prod-*.prod.my.rubrik.com</text>
+  <text x="611" y="374" text-anchor="middle" font-size="9" fill="#333">Workers upload job logs and metrics to RSC for monitoring</text>
+
+  <!-- Flow 5: 53/UDP → Azure DNS  arrow y=430, box y=404 h=52 -->
+  <line x1="254" y1="430" x2="272" y2="430" stroke="#7B1FA2" stroke-width="2"/>
+  <polygon points="268,424 280,430 268,436" fill="#7B1FA2"/>
+  <rect x="280" y="404" width="662" height="52" fill="#F3E5F5" rx="5" stroke="#7B1FA2" stroke-width="1.5"/>
+  <text x="611" y="420" text-anchor="middle" font-size="10" font-weight="bold" fill="#7B1FA2">Port 53/UDP &#x2192; 168.63.129.16</text>
+  <text x="611" y="435" text-anchor="middle" font-size="9" fill="#333">DNS resolution for master node FQDN &#x2014; Azure platform DNS resolves AKS FQDNs</text>
+  <text x="611" y="448" text-anchor="middle" font-size="8" fill="#7B1FA2">Tip: Required when using a custom DNS server on the VNet</text>
+
+  <!-- Flow 6: 1433 → SQL VNet  arrow y=480, box y=462 h=36 -->
+  <line x1="254" y1="480" x2="272" y2="480" stroke="#2E7D32" stroke-width="2"/>
+  <polygon points="268,474 280,480 268,486" fill="#2E7D32"/>
+  <rect x="280" y="462" width="662" height="36" fill="#E8F5E9" rx="5" stroke="#43A047" stroke-width="1.5"/>
+  <text x="611" y="477" text-anchor="middle" font-size="10" font-weight="bold" fill="#2E7D32">Port 1433/TCP &#x2192; SQL workload VNet</text>
+  <text x="611" y="491" text-anchor="middle" font-size="9" fill="#333">Required for Azure SQL DB and SQL MI backups &#x2014; apply only when protecting Azure SQL workloads</text>
+
+  <!-- Priority note -->
+  <rect x="14" y="538" width="932" height="18" fill="#FFF3E0" rx="4" stroke="#FF8F00" stroke-width="1"/>
+  <text x="480" y="551" text-anchor="middle" font-size="10" fill="#E65100">Priority: Rubrik outbound rules must have lower priority numbers (higher precedence) than any custom deny-all rule you have configured.</text>
+</svg>

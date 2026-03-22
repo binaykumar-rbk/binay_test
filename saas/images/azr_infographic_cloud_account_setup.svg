@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700"
+     font-family="Segoe UI, Calibri, Arial, sans-serif">
+
+  <rect width="1000" height="700" fill="#F4F7FB" rx="8"/>
+
+  <!-- ═══ Title ═══ -->
+  <rect x="0" y="0" width="1000" height="64" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="48" width="1000" height="16" fill="#1B2A4A"/>
+  <text x="500" y="27" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">Azure Cloud Account: Choose Your Setup Path</text>
+  <text x="500" y="50" text-anchor="middle" font-size="11" fill="#8BB8E8">Follow this decision flow to select the right method for adding your Azure subscription to RSC.</text>
+
+  <!-- ═══ START node ═══ -->
+  <rect x="340" y="76" width="320" height="38" fill="#1B2A4A" rx="20"/>
+  <text x="500" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Start: Adding Azure subscription to RSC</text>
+
+  <!-- Arrow START → Decision 1  (single arrowhead only) -->
+  <line x1="500" y1="114" x2="500" y2="126" stroke="#374151" stroke-width="2"/>
+  <polygon points="494,123 506,123 500,131" fill="#374151"/>
+
+  <!-- ═══ Decision 1: Configure with OAuth? ═══
+       center=(500,160), top=131, right=660, bottom=189, left=340 -->
+  <polygon points="500,131 660,160 500,189 340,160" fill="#E8F4FF" stroke="#0076CE" stroke-width="2"/>
+  <!-- Single centered text line, vertically centered in diamond -->
+  <text x="500" y="165" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B2A4A">Configure with OAuth?</text>
+
+  <!-- YES label above horizontal segment -->
+  <text x="278" y="152" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">YES</text>
+  <!-- YES: horizontal from diamond left (340,160) to corner (220,160), then vertical to box top (220,226)
+       Both segments share the same x=220 corner — connected -->
+  <line x1="340" y1="160" x2="220" y2="160" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="220" y1="160" x2="220" y2="222" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Single arrowhead: polygon base y=222, tip y=230 -->
+  <polygon points="214,222 226,222 220,230" fill="#2E7D32"/>
+
+  <!-- NO label above horizontal segment -->
+  <text x="722" y="152" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828">NO</text>
+  <!-- NO: horizontal from diamond right (660,160) to corner (780,160), then vertical to box top (780,226)
+       Both segments share the same x=780 corner — connected -->
+  <line x1="660" y1="160" x2="780" y2="160" stroke="#C62828" stroke-width="2"/>
+  <line x1="780" y1="160" x2="780" y2="222" stroke="#C62828" stroke-width="2"/>
+  <!-- Single arrowhead: base y=222, tip y=230 -->
+  <polygon points="774,222 786,222 780,230" fill="#C62828"/>
+
+  <!-- ═══ Configure with OAuth box  x=60 y=230 w=320 h=162 ═══ -->
+  <rect x="60" y="230" width="320" height="162" fill="#FFFFFF" rx="8" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Header h=48 -->
+  <rect x="60" y="230" width="320" height="48" fill="#2E7D32" rx="8"/>
+  <rect x="60" y="256" width="320" height="22" fill="#2E7D32"/>
+  <!-- Header title -->
+  <text x="220" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Configure with OAuth</text>
+  <!-- Recommended badge — centered below title, inside header -->
+  <rect x="163" y="257" width="114" height="17" fill="#C8E6C9" rx="8"/>
+  <text x="220" y="270" text-anchor="middle" font-size="9" font-weight="bold" fill="#1B5E20">Recommended</text>
+  <!-- Content: all bullets left-aligned from x=78 -->
+  <text x="78" y="300" font-size="10" fill="#333">&#x2022; RSC auto-creates Service Principal</text>
+  <text x="78" y="317" font-size="10" fill="#333">&#x2022; Automated permission assignment</text>
+  <text x="78" y="334" font-size="10" fill="#333">&#x2022; Up to 5 subscriptions at a time</text>
+  <text x="78" y="351" font-size="10" fill="#555">&#x2022; Requires Azure Global Admin (Entra ID)</text>
+
+  <!-- ═══ Configure without OAuth box  x=620 y=230 w=320 h=162 ═══ -->
+  <rect x="620" y="230" width="320" height="162" fill="#FFFFFF" rx="8" stroke="#C62828" stroke-width="2"/>
+  <!-- Header h=40 -->
+  <rect x="620" y="230" width="320" height="40" fill="#C62828" rx="8"/>
+  <rect x="620" y="254" width="320" height="16" fill="#C62828"/>
+  <text x="780" y="254" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Configure without OAuth</text>
+  <!-- Content: all bullets left-aligned from x=638 -->
+  <text x="638" y="292" font-size="10" fill="#333">&#x2022; Create Service Principal manually</text>
+  <text x="638" y="309" font-size="10" fill="#333">&#x2022; Manage permission assignment</text>
+  <text x="638" y="326" font-size="10" fill="#333">&#x2022; Up to 30 subscriptions at a time</text>
+  <text x="638" y="343" font-size="10" fill="#555">&#x2022; Azure Global Admin not required</text>
+  <text x="638" y="360" font-size="10" fill="#555">&#x2022; Steps: Entra App &#x2192; API perms</text>
+  <text x="638" y="377" font-size="10" fill="#555">   &#x2192; Client secret &#x2192; Add to RSC</text>
+
+  <!-- ═══ Arrow from Without-OAuth → Decision 2 (single arrowhead) ═══ -->
+  <!-- Arrow tip now targets new diamond top at y=404 -->
+  <line x1="780" y1="392" x2="780" y2="400" stroke="#374151" stroke-width="2"/>
+  <polygon points="774,397 786,397 780,405" fill="#374151"/>
+
+  <!-- ═══ Decision 2: Multiple subscriptions at once?
+       center=(780,432), half-w=90 → right=870, left=690, width=180px
+       half-h=28 (was 21) → top=404, bottom=460, height=56px
+       Text at y=432 (exact centre = widest point, 180px) — no overflow.
+       Increased height adds visual padding: 28px above and below text. ═══ -->
+  <polygon points="780,404 870,432 780,460 690,432" fill="#FFF8E1" stroke="#F57F17" stroke-width="2"/>
+  <text x="780" y="436" text-anchor="middle" font-size="9" font-weight="bold" fill="#E65100">Multiple subscriptions at once?</text>
+
+  <!-- YES from D2: horizontal (690,432)→(580,432) then vertical (580,432)→(492)
+       Corner at x=580 — both segments connected. YES horizontal=110px, clearly visible. -->
+  <text x="633" y="424" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">YES</text>
+  <line x1="690" y1="432" x2="580" y2="432" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="580" y1="432" x2="580" y2="492" stroke="#2E7D32" stroke-width="2"/>
+  <polygon points="574,492 586,492 580,500" fill="#2E7D32"/>
+
+  <!-- NO from D2: horizontal (870,432)→(900,432) — 30px visible
+       then vertical (900,432)→(492), arrowhead tip at y=500 = Individual box top -->
+  <text x="887" y="424" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828">NO</text>
+  <line x1="870" y1="432" x2="900" y2="432" stroke="#C62828" stroke-width="2"/>
+  <line x1="900" y1="432" x2="900" y2="492" stroke="#C62828" stroke-width="2"/>
+  <polygon points="894,492 906,492 900,500" fill="#C62828"/>
+
+  <!-- ═══ Bulk Addition box  x=490 y=500 w=180 h=82 ═══ -->
+  <rect x="490" y="500" width="180" height="82" fill="#FFFFFF" rx="6" stroke="#F57F17" stroke-width="2"/>
+  <rect x="490" y="500" width="180" height="28" fill="#F57F17" rx="6"/>
+  <rect x="490" y="514" width="180" height="14" fill="#F57F17"/>
+  <text x="580" y="518" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">Bulk Addition</text>
+  <text x="500" y="543" font-size="9" fill="#333">&#x2022; Rubrik Terraform provider</text>
+  <text x="500" y="558" font-size="9" fill="#333">&#x2022; Multiple subscriptions at once</text>
+  <text x="500" y="573" font-size="9" fill="#333">&#x2022; Consistent configuration</text>
+
+  <!-- ═══ Individual Addition box  x=810 y=500 w=180 h=82 ═══ -->
+  <rect x="810" y="500" width="180" height="82" fill="#FFFFFF" rx="6" stroke="#0076CE" stroke-width="2"/>
+  <rect x="810" y="500" width="180" height="28" fill="#0076CE" rx="6"/>
+  <rect x="810" y="514" width="180" height="14" fill="#0076CE"/>
+  <text x="900" y="518" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">Individual Addition</text>
+  <text x="820" y="543" font-size="9" fill="#333">&#x2022; One subscription at a time</text>
+  <text x="820" y="558" font-size="9" fill="#333">&#x2022; Via RSC UI setup wizard</text>
+  <text x="820" y="573" font-size="9" fill="#333">&#x2022; Per-account configuration</text>
+
+  <!-- ═══ Optional: Data Scanning ═══ -->
+  <rect x="60" y="598" width="860" height="50" fill="#EDE7F6" rx="6" stroke="#7E57C2" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="490" y="617" text-anchor="middle" font-size="11" font-weight="bold" fill="#4527A0">Optional for any path: Enable data scanning</text>
+  <text x="490" y="634" text-anchor="middle" font-size="10" fill="#555">Configure the cloud account with data scanning to discover and classify sensitive data in your Azure workloads.</text>
+
+  <!-- ═══ Footer ═══ -->
+  <rect x="14" y="660" width="972" height="34" fill="#FFFFFF" rx="5" stroke="#CBD5E0" stroke-width="1"/>
+  <text x="500" y="673" text-anchor="middle" font-size="10" fill="#555">After adding the cloud account, proceed to:</text>
+  <text x="500" y="687" text-anchor="middle" font-size="10" fill="#0076CE">Set up Exocompute &#x2192; Configure storage tiering &#x2192; Assign SLA Domains &#x2192; Begin protection</text>
+
+</svg>

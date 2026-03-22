@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" font-family="Segoe UI, Calibri, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="960" height="430" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="960" height="68" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="52" width="960" height="16" fill="#1B2A4A"/>
+  <text x="480" y="29" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">Minimum Viable Setup: Protect Your First Azure Subscription</text>
+  <text x="480" y="53" text-anchor="middle" font-size="12" fill="#8BB8E8">An overview of the 5 key phases for minimum viable Azure VM protection. Advanced features can be added later.</text>
+
+  <!-- Step boxes layout:
+       5 boxes, each 180px wide, gap 8px, starting at x=14
+       x positions: 14, 202, 390, 578, 766
+       centers:     104, 292, 480, 668, 856
+  -->
+
+  <!-- Progress bar: from center of box 1 to center of box 5 -->
+  <rect x="104" y="96" width="752" height="4" fill="#CBD5E0" rx="2"/>
+  <rect x="104" y="96" width="752" height="4" fill="#0076CE" rx="2"/>
+
+  <!-- Step circles centered on each box -->
+  <circle cx="104" cy="98" r="18" fill="#0076CE"/>
+  <text x="104" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">1</text>
+
+  <circle cx="292" cy="98" r="18" fill="#0076CE"/>
+  <text x="292" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">2</text>
+
+  <circle cx="480" cy="98" r="18" fill="#0076CE"/>
+  <text x="480" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">3</text>
+
+  <circle cx="668" cy="98" r="18" fill="#0076CE"/>
+  <text x="668" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">4</text>
+
+  <circle cx="856" cy="98" r="18" fill="#1B2A4A"/>
+  <text x="856" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">5</text>
+
+  <!-- STEP 1: Plan. x=14, w=180 -->
+  <rect x="14" y="128" width="180" height="276" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
+  <rect x="14" y="128" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="14" y="148" width="180" height="16" fill="#0076CE"/>
+  <text x="104" y="151" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Plan</text>
+  <text x="22" y="184" font-size="10" font-weight="bold" fill="#1B2A4A">Review permissions:</text>
+  <text x="22" y="200" font-size="9" fill="#333">&#x2022; Identify workloads to protect</text>
+  <text x="22" y="215" font-size="9" fill="#333">&#x2022; Note subscription IDs</text>
+  <text x="22" y="230" font-size="9" fill="#333">&#x2022; Confirm Azure Global Admin</text>
+  <text x="22" y="244" font-size="9" fill="#333">  access (for OAuth)</text>
+  <text x="22" y="260" font-size="10" font-weight="bold" fill="#1B2A4A">RSC user roles:</text>
+  <text x="22" y="276" font-size="9" fill="#333">&#x2022; Assign appropriate RSC</text>
+  <text x="22" y="290" font-size="9" fill="#333">  roles for Azure management</text>
+  <rect x="22" y="306" width="164" height="80" fill="#EEF2F7" rx="4"/>
+  <text x="104" y="320" text-anchor="middle" font-size="9" font-weight="bold" fill="#555">Key topics:</text>
+  <text x="104" y="334" text-anchor="middle" font-size="9" fill="#0076CE">Plan your Azure protection</text>
+  <text x="104" y="348" text-anchor="middle" font-size="9" fill="#0076CE">Rubrik permissions for</text>
+  <text x="104" y="362" text-anchor="middle" font-size="9" fill="#0076CE">cloud accounts</text>
+
+  <!-- STEP 2: Connect. x=202, w=180 -->
+  <rect x="202" y="128" width="180" height="276" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
+  <rect x="202" y="128" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="202" y="148" width="180" height="16" fill="#0076CE"/>
+  <text x="292" y="151" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Connect</text>
+  <text x="210" y="184" font-size="10" font-weight="bold" fill="#1B2A4A">Add Azure subscription:</text>
+  <text x="210" y="200" font-size="9" fill="#333">&#x2022; Choose setup method</text>
+  <text x="210" y="215" font-size="9" fill="#333">  (OAuth recommended)</text>
+  <text x="210" y="230" font-size="9" fill="#333">&#x2022; Select permission</text>
+  <text x="210" y="244" font-size="9" fill="#333">  categories for workloads</text>
+  <text x="210" y="259" font-size="9" fill="#333">&#x2022; Choose target regions</text>
+  <text x="210" y="276" font-size="10" font-weight="bold" fill="#2E7D32">Minimum categories:</text>
+  <text x="210" y="291" font-size="9" fill="#333">Basic only (can add more</text>
+  <text x="210" y="305" font-size="9" fill="#333">later at recovery time)</text>
+  <rect x="210" y="318" width="164" height="80" fill="#EEF2F7" rx="4"/>
+  <text x="292" y="334" text-anchor="middle" font-size="9" font-weight="bold" fill="#555">Key topics:</text>
+  <text x="292" y="350" text-anchor="middle" font-size="9" fill="#0076CE">Configure with OAuth</text>
+  <text x="292" y="366" text-anchor="middle" font-size="9" fill="#0076CE">Configure without OAuth</text>
+  <text x="292" y="382" text-anchor="middle" font-size="9" fill="#0076CE">Permission categories</text>
+
+  <!-- STEP 3: Configure Infrastructure. x=390, w=180 -->
+  <rect x="390" y="128" width="180" height="276" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
+  <rect x="390" y="128" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="390" y="148" width="180" height="16" fill="#0076CE"/>
+  <text x="480" y="151" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Configure Infrastructure</text>
+  <text x="398" y="184" font-size="10" font-weight="bold" fill="#1B2A4A">Set up Exocompute:</text>
+  <text x="398" y="200" font-size="9" fill="#333">&#x2022; Choose localized or</text>
+  <text x="398" y="215" font-size="9" fill="#333">  centralized deployment</text>
+  <text x="398" y="230" font-size="9" fill="#333">&#x2022; Create or designate VNet</text>
+  <text x="398" y="245" font-size="9" fill="#333">&#x2022; Configure Exo host</text>
+  <text x="398" y="262" font-size="10" font-weight="bold" fill="#1B2A4A">Storage tiering (optional):</text>
+  <text x="398" y="278" font-size="9" fill="#555">&#x2022; Create archival location</text>
+  <text x="398" y="293" font-size="9" fill="#555">  (skip for basic VM backup)</text>
+  <rect x="398" y="308" width="164" height="80" fill="#EEF2F7" rx="4"/>
+  <text x="480" y="320" text-anchor="middle" font-size="9" font-weight="bold" fill="#555">Key topics:</text>
+  <text x="480" y="334" text-anchor="middle" font-size="9" fill="#0076CE">Set up Exocompute on Azure</text>
+  <text x="480" y="348" text-anchor="middle" font-size="9" fill="#0076CE">Localized vs. centralized</text>
+  <text x="480" y="362" text-anchor="middle" font-size="9" fill="#0076CE">Create a VNet for Exocompute</text>
+
+  <!-- STEP 4: Protect. x=578, w=180 -->
+  <rect x="578" y="128" width="180" height="276" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
+  <rect x="578" y="128" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="578" y="148" width="180" height="16" fill="#0076CE"/>
+  <text x="668" y="151" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Protect</text>
+  <text x="586" y="184" font-size="10" font-weight="bold" fill="#1B2A4A">Create SLA Domain:</text>
+  <text x="586" y="200" font-size="9" fill="#333">&#x2022; Define snapshot frequency</text>
+  <text x="586" y="215" font-size="9" fill="#333">&#x2022; Set retention duration</text>
+  <text x="586" y="230" font-size="9" fill="#333">&#x2022; Configure archival and</text>
+  <text x="586" y="244" font-size="9" fill="#333">  replication (optional)</text>
+  <text x="586" y="262" font-size="10" font-weight="bold" fill="#1B2A4A">Assign protection:</text>
+  <text x="586" y="278" font-size="9" fill="#333">&#x2022; Assign SLA Domain to</text>
+  <text x="586" y="292" font-size="9" fill="#333">  subscription, RG, region,</text>
+  <text x="586" y="306" font-size="9" fill="#333">  or individual workloads</text>
+  <rect x="586" y="318" width="164" height="80" fill="#EEF2F7" rx="4"/>
+  <text x="668" y="334" text-anchor="middle" font-size="9" font-weight="bold" fill="#555">Key topics:</text>
+  <text x="668" y="350" text-anchor="middle" font-size="9" fill="#0076CE">Create a custom SLA Domain</text>
+  <text x="668" y="366" text-anchor="middle" font-size="9" fill="#0076CE">Assign protection to VMs</text>
+  <text x="668" y="382" text-anchor="middle" font-size="9" fill="#0076CE">SLA assignment hierarchy</text>
+
+  <!-- STEP 5: Verify. x=766, w=180 -->
+  <rect x="766" y="128" width="180" height="276" fill="#FFFFFF" rx="8" stroke="#1B2A4A" stroke-width="2"/>
+  <rect x="766" y="128" width="180" height="36" fill="#1B2A4A" rx="8"/>
+  <rect x="766" y="148" width="180" height="16" fill="#1B2A4A"/>
+  <text x="856" y="151" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Verify</text>
+  <text x="774" y="184" font-size="10" font-weight="bold" fill="#1B2A4A">Confirm protection:</text>
+  <text x="774" y="200" font-size="9" fill="#333">&#x2022; View Azure subscription</text>
+  <text x="774" y="215" font-size="9" fill="#333">  dashboard in RSC</text>
+  <text x="774" y="230" font-size="9" fill="#333">&#x2022; Confirm VMs show</text>
+  <text x="774" y="244" font-size="9" fill="#333">  "Protected" status</text>
+  <text x="774" y="262" font-size="10" font-weight="bold" fill="#1B2A4A">Check Exocompute:</text>
+  <text x="774" y="278" font-size="9" fill="#333">&#x2022; Review Exocompute page</text>
+  <text x="774" y="292" font-size="9" fill="#333">  for cluster health status</text>
+  <rect x="774" y="308" width="164" height="80" fill="#E8F5E9" rx="4" stroke="#43A047" stroke-width="1"/>
+  <text x="856" y="322" text-anchor="middle" font-size="9" font-weight="bold" fill="#1B5E20">You are protected!</text>
+  <text x="856" y="336" text-anchor="middle" font-size="9" fill="#333">RSC automatically takes</text>
+  <text x="856" y="350" text-anchor="middle" font-size="9" fill="#333">snapshots per your</text>
+  <text x="856" y="364" text-anchor="middle" font-size="9" fill="#333">SLA Domain schedule.</text>
+
+  <!-- Bottom bar -->
+  <rect x="14" y="410" width="932" height="16" fill="#EEF2F7" rx="4"/>
+  <text x="480" y="422" text-anchor="middle" font-size="10" fill="#555">Advanced features to add later: Storage tiering, Replication, Tag-based protection, Data scanning, App-consistent backups</text>
+
+</svg>

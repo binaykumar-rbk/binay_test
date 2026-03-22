@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520" font-family="Segoe UI, Calibri, Arial, sans-serif">
+  <rect width="860" height="520" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="860" height="64" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="48" width="860" height="16" fill="#1B2A4A"/>
+  <text x="430" y="27" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">Exocompute IP Address Planning for AKS Clusters</text>
+  <text x="430" y="50" text-anchor="middle" font-size="11" fill="#8BB8E8">Azure CNI Overlay assigns node IPs from the subnet and pod IPs from a separate private CIDR.</text>
+
+  <!-- AZURE VNET wrapper: x=14, y=80, w=500, h=424 -->
+  <rect x="14" y="80" width="500" height="424" fill="#FFFFFF" rx="8" stroke="#0078D4" stroke-width="2"/>
+  <text x="264" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0078D4">Azure VNet</text>
+  <text x="264" y="120" text-anchor="middle" font-size="10" fill="#555">(must accommodate the subnet below)</text>
+
+  <!-- SUBNET block: x=26, y=130, w=476, h=200 -->
+  <rect x="26" y="130" width="476" height="200" fill="#E3F2FD" rx="6" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="264" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565C0">Exocompute Subnet — Rubrik recommends /25</text>
+
+  <!-- IP breakdown bar: x=38, y=162, w=452, h=36 -->
+  <rect x="38" y="162" width="452" height="36" fill="#BBDEFB" rx="4"/>
+  <!-- 5 reserved Azure IPs: w=36 -->
+  <rect x="38" y="162" width="36" height="36" fill="#EF9A9A" rx="4"/>
+  <text x="56" y="176" text-anchor="middle" font-size="8" fill="#C62828">5 IPs</text>
+  <text x="56" y="189" text-anchor="middle" font-size="8" fill="#C62828">Azure</text>
+  <!-- 123 usable IPs -->
+  <rect x="74" y="162" width="416" height="36" fill="#64B5F6" rx="4"/>
+  <text x="282" y="176" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">123 usable IPs (128 total in /25, minus 5 Azure-reserved)</text>
+  <text x="282" y="192" text-anchor="middle" font-size="10" fill="#E3F2FD">One IP per AKS node — supports up to 64 nodes</text>
+
+  <!-- Labels -->
+  <text x="38" y="215" font-size="10" font-weight="bold" fill="#1565C0">Total IPs in /25 subnet: 128</text>
+  <text x="38" y="231" font-size="10" fill="#555">Minus 5 Azure-reserved = 123 usable node IPs</text>
+  <text x="38" y="247" font-size="10" fill="#555">Note: /26 has only 64 IPs. After 5 reserved, only 59 usable.</text>
+  <text x="38" y="261" font-size="10" fill="#555">Use /25 (128 IPs, 123 usable) for maximum scale of 64 nodes.</text>
+  <text x="38" y="277" font-size="10" fill="#555">Start: 1 node   |   Maximum: 64 nodes   |   Pods per node: 30</text>
+
+  <!-- Node pool visual: x=26, y=346, w=476, h=140 -->
+  <rect x="26" y="346" width="476" height="140" fill="#E8F4FF" rx="6" stroke="#0076CE" stroke-width="1.5"/>
+  <text x="264" y="368" text-anchor="middle" font-size="11" font-weight="bold" fill="#0076CE">Node Pool — IPs from subnet</text>
+  <!-- Node boxes: each 60x40, gap 8 -->
+  <rect x="38" y="378" width="60" height="40" fill="#0076CE" rx="4"/>
+  <text x="68" y="394" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Node 1</text>
+  <text x="68" y="408" text-anchor="middle" font-size="8" fill="#BBDEFB">1 IP</text>
+  <rect x="106" y="378" width="60" height="40" fill="#0076CE" rx="4"/>
+  <text x="136" y="394" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Node 2</text>
+  <text x="136" y="408" text-anchor="middle" font-size="8" fill="#BBDEFB">1 IP</text>
+  <rect x="174" y="378" width="60" height="40" fill="#0076CE" rx="4"/>
+  <text x="204" y="394" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Node 3</text>
+  <text x="204" y="408" text-anchor="middle" font-size="8" fill="#BBDEFB">1 IP</text>
+  <text x="264" y="402" text-anchor="middle" font-size="20" fill="#555">...</text>
+  <rect x="342" y="378" width="60" height="40" fill="#1565C0" rx="4"/>
+  <text x="372" y="394" text-anchor="middle" font-size="8" font-weight="bold" fill="#FFFFFF">Node 64</text>
+  <text x="372" y="408" text-anchor="middle" font-size="8" fill="#BBDEFB">1 IP (max)</text>
+  <text x="264" y="440" text-anchor="middle" font-size="10" fill="#1565C0">Auto-scales: RSC launches/terminates nodes based on workload</text>
+  <text x="264" y="456" text-anchor="middle" font-size="10" fill="#1565C0">Pod IPs come from Pod CIDR — not from subnet</text>
+  <text x="264" y="472" text-anchor="middle" font-size="10" fill="#1565C0">No IP reservation needed in subnet for pods</text>
+
+  <!-- POD CIDR block (right): x=526, y=80, w=320, h=424 -->
+  <rect x="526" y="80" width="320" height="424" fill="#FFFFFF" rx="8" stroke="#7E57C2" stroke-width="2"/>
+  <text x="686" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#7E57C2">Pod CIDR (Overlay)</text>
+  <text x="686" y="120" text-anchor="middle" font-size="10" fill="#555">Private, isolated address space</text>
+  <text x="686" y="136" text-anchor="middle" font-size="10" fill="#555">Does NOT consume subnet IPs</text>
+
+  <!-- CIDR requirement box: x=538, y=146, w=296, h=60 -->
+  <rect x="538" y="146" width="296" height="60" fill="#EDE7F6" rx="6" stroke="#7E57C2" stroke-width="1.5"/>
+  <text x="686" y="166" text-anchor="middle" font-size="12" font-weight="bold" fill="#5C4F9E">Pod CIDR must be /18 or larger</text>
+  <text x="686" y="184" text-anchor="middle" font-size="10" fill="#555">Example: 10.244.0.0/16 (Azure default)</text>
+  <text x="686" y="198" text-anchor="middle" font-size="10" fill="#555">Must NOT overlap subnet, peered VNets, or on-prem</text>
+
+  <!-- Pod visualization: x=538, y=218, w=296, h=180 -->
+  <rect x="538" y="218" width="296" height="180" fill="#F3E5F5" rx="6" stroke="#CE93D8" stroke-width="1"/>
+  <text x="686" y="240" text-anchor="middle" font-size="11" font-weight="bold" fill="#7E57C2">Pod IP Space (Isolated)</text>
+  <text x="686" y="258" text-anchor="middle" font-size="10" fill="#555">Each node hosts up to 30 pods</text>
+  <!-- Pod grid (2 rows of 6) -->
+  <rect x="548" y="268" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="586" y="268" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="624" y="268" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="662" y="268" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="700" y="268" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="738" y="268" width="32" height="20" fill="#AB47BC" rx="2"/>
+  <rect x="548" y="294" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="586" y="294" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="624" y="294" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="662" y="294" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <rect x="700" y="294" width="32" height="20" fill="#CE93D8" rx="2"/>
+  <text x="740" y="308" text-anchor="middle" font-size="14" fill="#7E57C2">...</text>
+  <text x="686" y="340" text-anchor="middle" font-size="10" fill="#7E57C2">Pods get IPs from Pod CIDR, not from subnet</text>
+  <text x="686" y="356" text-anchor="middle" font-size="10" fill="#7E57C2">Up to 64 nodes × 30 pods = up to 1,920 pods</text>
+  <text x="686" y="372" text-anchor="middle" font-size="10" fill="#7E57C2">Pod CIDR /18 = 16,384 addresses — sufficient</text>
+
+  <!-- Summary box: x=538, y=410, w=296, h=82 -->
+  <rect x="538" y="410" width="296" height="82" fill="#E8F5E9" rx="6" stroke="#43A047" stroke-width="1.5"/>
+  <text x="686" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">Summary: Configure in RSC</text>
+  <text x="686" y="449" text-anchor="middle" font-size="10" fill="#333">Subnet: provide the /25 subnet CIDR block</text>
+  <text x="686" y="465" text-anchor="middle" font-size="10" fill="#333">Pod CIDR: provide /18+ block (or leave blank</text>
+  <text x="686" y="481" text-anchor="middle" font-size="10" fill="#333">  to use Azure default 10.244.0.0/16)</text>
+
+  <!-- "Separate space" connector: left panel right=514, right panel left=526 -->
+  <line x1="502" y1="290" x2="526" y2="290" stroke="#7E57C2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="514" y="284" text-anchor="middle" font-size="8" fill="#7E57C2">Separate</text>
+  <text x="514" y="296" text-anchor="middle" font-size="8" fill="#7E57C2">space</text>
+</svg>

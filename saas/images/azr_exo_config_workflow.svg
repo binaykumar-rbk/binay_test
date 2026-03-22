@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" font-family="Segoe UI, Calibri, Arial, sans-serif">
+  <rect width="960" height="460" fill="#F4F7FB" rx="8"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="960" height="64" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="48" width="960" height="16" fill="#1B2A4A"/>
+  <text x="480" y="27" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">Exocompute on Azure: Manual Configuration Workflow</text>
+  <text x="480" y="50" text-anchor="middle" font-size="11" fill="#8BB8E8">Complete these steps in order after choosing manual networking setup for your Azure cloud account.</text>
+
+  <!-- Legend -->
+  <text x="14" y="88" font-size="9" font-weight="bold" fill="#555">Deployment scope:</text>
+  <rect x="110" y="75" width="170" height="20" fill="#0076CE" rx="3"/>
+  <text x="195" y="89" text-anchor="middle" font-size="9" font-weight="bold" fill="#FFFFFF">Localized + centralized</text>
+  <rect x="290" y="75" width="160" height="20" fill="#5C4F9E" rx="3"/>
+  <text x="370" y="89" text-anchor="middle" font-size="9" font-weight="bold" fill="#FFFFFF">Centralized deployments only</text>
+
+  <!-- Progress connector: blue for steps 1–3, purple for steps 4–5 -->
+  <!-- Circle centers: 104, 292, 480, 668, 856 — split at x=574 -->
+  <rect x="104" y="128" width="470" height="4" fill="#0076CE" rx="2"/>
+  <rect x="574" y="128" width="282" height="4" fill="#5C4F9E" rx="2"/>
+
+  <!-- Visual separator between steps 3 and 4 -->
+  <line x1="574" y1="108" x2="574" y2="435" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- STEP CIRCLES -->
+  <circle cx="104" cy="130" r="22" fill="#0076CE" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="104" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">1</text>
+  <circle cx="292" cy="130" r="22" fill="#0076CE" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="292" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">2</text>
+  <circle cx="480" cy="130" r="22" fill="#0076CE" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="480" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">3</text>
+  <circle cx="668" cy="130" r="22" fill="#5C4F9E" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="668" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">4</text>
+  <circle cx="856" cy="130" r="22" fill="#5C4F9E" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="856" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">5</text>
+
+  <!-- STEP 1 BOX  x=14, w=180 -->
+  <rect x="14" y="160" width="180" height="270" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="1.5"/>
+  <rect x="14" y="160" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="14" y="182" width="180" height="14" fill="#0076CE"/>
+  <text x="104" y="183" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Evaluate Options</text>
+  <!-- Content -->
+  <text x="24" y="216" font-size="10" font-weight="bold" fill="#1B2A4A">Deployment model:</text>
+  <text x="30" y="230" font-size="9" fill="#333">&#x2022; Localized: one Exocompute</text>
+  <text x="30" y="243" font-size="9" fill="#333">  per subscription</text>
+  <text x="30" y="257" font-size="9" fill="#333">&#x2022; Centralized: shared</text>
+  <text x="30" y="270" font-size="9" fill="#333">  host, mapped app subs</text>
+  <text x="24" y="288" font-size="10" font-weight="bold" fill="#1B2A4A">Container registry:</text>
+  <text x="30" y="302" font-size="9" fill="#333">&#x2022; Rubrik-hosted ACR</text>
+  <text x="30" y="315" font-size="9" fill="#333">  (default, simpler)</text>
+  <text x="30" y="329" font-size="9" fill="#333">&#x2022; Private Container</text>
+  <text x="30" y="342" font-size="9" fill="#333">  Registry (PCR)</text>
+  <text x="24" y="360" font-size="10" font-weight="bold" fill="#1B2A4A">VNet approach:</text>
+  <text x="30" y="374" font-size="9" fill="#333">&#x2022; New VNet for Exocompute</text>
+  <text x="30" y="387" font-size="9" fill="#333">&#x2022; Designate existing</text>
+  <rect x="22" y="400" width="164" height="22" fill="#EEF2F7" rx="4"/>
+  <text x="104" y="415" text-anchor="middle" font-size="8" fill="#555">See: Evaluate Exocompute on Azure options</text>
+
+  <!-- STEP 2 BOX  x=202, w=180 -->
+  <rect x="202" y="160" width="180" height="270" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="1.5"/>
+  <rect x="202" y="160" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="202" y="182" width="180" height="14" fill="#0076CE"/>
+  <text x="292" y="183" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">Create/Designate VNet</text>
+  <text x="212" y="216" font-size="10" font-weight="bold" fill="#1B2A4A">If creating new VNet:</text>
+  <text x="218" y="230" font-size="9" fill="#333">&#x2022; Create VNet/subnets</text>
+  <text x="218" y="243" font-size="9" fill="#333">  in Azure portal</text>
+  <text x="218" y="257" font-size="9" fill="#333">&#x2022; Use /25 subnet</text>
+  <text x="218" y="270" font-size="9" fill="#333">  (128 IPs, max 64 nodes)</text>
+  <text x="218" y="284" font-size="9" fill="#333">&#x2022; Assign Pod CIDR</text>
+  <text x="218" y="297" font-size="9" fill="#333">  /18 or larger</text>
+  <text x="212" y="315" font-size="10" font-weight="bold" fill="#1B2A4A">If using existing VNet:</text>
+  <text x="218" y="329" font-size="9" fill="#333">&#x2022; Confirm /25 subnet</text>
+  <text x="218" y="343" font-size="9" fill="#333">&#x2022; No IP range conflicts</text>
+  <text x="218" y="357" font-size="9" fill="#333">&#x2022; NSG modification</text>
+  <text x="218" y="370" font-size="9" fill="#333">  policies permitted</text>
+  <rect x="210" y="390" width="164" height="32" fill="#EEF2F7" rx="4"/>
+  <text x="292" y="403" text-anchor="middle" font-size="8" fill="#555">See: Creating a VNet</text>
+  <text x="292" y="416" text-anchor="middle" font-size="8" fill="#555">IP address planning for Exocompute on Azure</text>
+
+  <!-- STEP 3 BOX  x=390, w=180 -->
+  <rect x="390" y="160" width="180" height="270" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="1.5"/>
+  <rect x="390" y="160" width="180" height="36" fill="#0076CE" rx="8"/>
+  <rect x="390" y="182" width="180" height="14" fill="#0076CE"/>
+  <text x="480" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Configure Network</text>
+  <text x="480" y="191" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Requirements</text>
+  <text x="400" y="216" font-size="9" fill="#333">&#x2022; Standard load balancer</text>
+  <text x="400" y="229" font-size="9" fill="#333">  settings (policy exemption</text>
+  <text x="400" y="242" font-size="9" fill="#333">  or UDR for public IPs)</text>
+  <text x="400" y="258" font-size="9" fill="#333">&#x2022; NSG outbound rules</text>
+  <text x="400" y="271" font-size="9" fill="#333">  (ports 443, 9000,</text>
+  <text x="400" y="284" font-size="9" fill="#333">  53/UDP, 1433 for SQL)</text>
+  <text x="400" y="300" font-size="9" fill="#333">&#x2022; Firewall rules if VNet</text>
+  <text x="400" y="313" font-size="9" fill="#333">  has a firewall</text>
+  <text x="400" y="327" font-size="9" fill="#333">&#x2022; CNI overlay rules</text>
+  <text x="400" y="341" font-size="9" fill="#333">&#x2022; vCPU quotas for VMs</text>
+  <text x="400" y="357" font-size="9" fill="#333">&#x2022; Azure Blob NSG and</text>
+  <text x="400" y="370" font-size="9" fill="#333">  private endpoints (Blob)</text>
+  <rect x="398" y="381" width="164" height="42" fill="#EEF2F7" rx="4"/>
+  <text x="480" y="392" text-anchor="middle" font-size="8" fill="#555">See: Set up network for Exocompute on Azure</text>
+  <text x="480" y="405" text-anchor="middle" font-size="8" fill="#555">Outbound rules for Azure network security group</text>
+  <text x="480" y="418" text-anchor="middle" font-size="8" fill="#555">Firewall configuration for Exocompute on Azure</text>
+
+  <!-- STEP 4 BOX  x=578, w=180 (centralized only) -->
+  <rect x="578" y="160" width="180" height="270" fill="#FFFFFF" rx="8" stroke="#5C4F9E" stroke-width="1.5"/>
+  <rect x="578" y="160" width="180" height="36" fill="#5C4F9E" rx="8"/>
+  <rect x="578" y="182" width="180" height="14" fill="#5C4F9E"/>
+  <text x="668" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Configure Exocompute</text>
+  <text x="668" y="191" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Host in RSC</text>
+  <rect x="586" y="208" width="164" height="20" fill="#EDE7F6" rx="3"/>
+  <text x="668" y="222" text-anchor="middle" font-size="9" fill="#4527A0">Centralized only</text>
+  <text x="588" y="244" font-size="9" fill="#333">Add Exocompute host</text>
+  <text x="588" y="258" font-size="9" fill="#333">subscription to RSC as</text>
+  <text x="588" y="272" font-size="9" fill="#333">the centralized compute</text>
+  <text x="588" y="286" font-size="9" fill="#333">resource.</text>
+  <text x="588" y="306" font-size="9" fill="#333">Configure the host sub</text>
+  <text x="588" y="320" font-size="9" fill="#333">for the Rubrik-managed</text>
+  <text x="588" y="334" font-size="9" fill="#333">AKS cluster.</text>
+  <rect x="586" y="390" width="164" height="32" fill="#EEF2F7" rx="4"/>
+  <text x="668" y="403" text-anchor="middle" font-size="8" fill="#555">See: Configuring Exocompute for</text>
+  <text x="668" y="416" text-anchor="middle" font-size="8" fill="#555">Rubrik-managed clusters</text>
+
+  <!-- STEP 5 BOX  x=766, w=180 (centralized only) -->
+  <rect x="766" y="160" width="180" height="270" fill="#FFFFFF" rx="8" stroke="#5C4F9E" stroke-width="1.5"/>
+  <rect x="766" y="160" width="180" height="36" fill="#5C4F9E" rx="8"/>
+  <rect x="766" y="182" width="180" height="14" fill="#5C4F9E"/>
+  <text x="856" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Map Application</text>
+  <text x="856" y="191" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFFFFF">Subscriptions</text>
+  <rect x="774" y="208" width="164" height="20" fill="#EDE7F6" rx="3"/>
+  <text x="856" y="222" text-anchor="middle" font-size="9" fill="#4527A0">Centralized only</text>
+  <text x="776" y="244" font-size="9" fill="#333">Map application subs</text>
+  <text x="776" y="258" font-size="9" fill="#333">to the centralized</text>
+  <text x="776" y="272" font-size="9" fill="#333">Exocompute host.</text>
+  <text x="776" y="292" font-size="9" fill="#555">Optional:</text>
+  <text x="776" y="306" font-size="9" fill="#555">Configure Private</text>
+  <text x="776" y="320" font-size="9" fill="#555">Container Registry (PCR)</text>
+  <text x="776" y="334" font-size="9" fill="#555">and advanced AKS</text>
+  <text x="776" y="348" font-size="9" fill="#555">settings.</text>
+  <rect x="774" y="390" width="164" height="32" fill="#EEF2F7" rx="4"/>
+  <text x="856" y="403" text-anchor="middle" font-size="8" fill="#555">See: Mapping Azure accounts to</text>
+  <text x="856" y="416" text-anchor="middle" font-size="8" fill="#555">centralized Exocompute</text>
+
+  <!-- Footer -->
+  <rect x="14" y="438" width="932" height="18" fill="#FFFFFF" rx="4" stroke="#CBD5E0" stroke-width="1"/>
+  <text x="480" y="451" text-anchor="middle" font-size="10" fill="#555">For localized setups: steps 1–3 are required. Steps 4 and 5 apply only when configuring centralized Exocompute.</text>
+</svg>

@@ -1,0 +1,350 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="RSC provides you with an option to secure AWS cloud accounts by using a least permission model, granting minimal necessary permissions starting with the Basic permission category. For recovery operations, you can elevate permissions by including permission categories and updating the IAM role in your AWS environment."/><meta name="DC.relation" content="../saas/aws_workload_recovery.html"/><meta name="DC.relation" content="../saas/aws_workload_recovery.html"/><meta name="DC.relation" content="../saas/aws_recovery_assigning_perm_cat.html"/><meta name="DC.relation" content="../saas/aws_recovery_assigning_perm_cat.html"/><meta name="DC.relation" content="aws_recovery_assigning_perm_cat.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="aws_recovery_privilege_elevation"/>        
+      <title>Privilege elevation for AWS recovery</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="aws_recovery_privilege_elevation-d27248e13996"/><meta name="wh-source-relpath" content="saas/aws_recovery_privilege_elevation.dita"/><meta name="wh-out-relpath" content="saas/aws_recovery_privilege_elevation.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260322093117"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260322093117"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="aws_recovery_privilege_elevation" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../rubrik/supported_workloads.html">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../saas/aws_workloads.html">Cloud workloads</a></div></div></li><li><div class="topicref" data-id="aws_workloads"><div class="title"><a href="../saas/aws_workloads.html">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div></li><li><div class="topicref" data-id="aws_workload_recovery"><div class="title"><a href="../saas/aws_workload_recovery.html">AWS workloads recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your AWS workloads, you can recover the         required workloads.</p></div></div></div></li><li class="active"><div class="topicref" data-id="aws_recovery_privilege_elevation"><div class="title"><a href="../saas/aws_recovery_privilege_elevation.html">Privilege elevation for AWS recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides you with an option to secure AWS cloud accounts by using         a least permission model, granting minimal necessary permissions starting with the             <code class="ph codeph">Basic</code> permission category. For recovery operations, you can elevate         permissions by including permission categories and updating the IAM role in your AWS         environment.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../saas/aws_workload_recovery.html" title="AWS workloads recovery" aria-label="Previous topic: AWS workloads recovery" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../saas/aws_recovery_assigning_perm_cat.html" title="Assigning a permission category for AWS recovery" aria-label="Next topic: Assigning a permission category for AWS recovery" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d27248e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e1537" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e1537-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d27248e1537-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e4649" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e4649-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d27248e4649-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e8780" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e8780-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d27248e8780-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27248e11727" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27248e11727-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d27248e11727-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="supported_workloads-d27248e11735" class="topicref" data-id="supported_workloads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="supported_workloads-d27248e11735-link"><span class="ph">Rubrik Security Cloud</span> workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> securely manages and protects data from a wide variety of         workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27248e11750" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27248e11750-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="tocId-d27248e11750-link">Cloud workloads</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="aws_workloads-d27248e11751" class="topicref" data-id="aws_workloads" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_workloads-d27248e11751-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads.html" id="aws_workloads-d27248e11751-link">Amazon Web Services workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Amazon Web Services workloads:         EC2 instances, EBS volumes, Amazon S3, <span class="ph">Amazon RDS and Aurora databases,             and Amazon DynamoDB</span>.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aws_key_features_protection-d27248e11767" class="topicref" data-id="aws_key_features_protection" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_key_features_protection.html" id="aws_key_features_protection-d27248e11767-link">Key features for protecting AWS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides unified data management, automated global data         protection, various recovery options for AWS workloads, and advanced security features to         protect your workloads.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_common_protection_terms-d27248e11780" class="topicref" data-id="aws_common_protection_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_common_protection_terms.html" id="aws_common_protection_terms-d27248e11780-link">Common AWS protection terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AWS workloads with             <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_protection_high_level_arch-d27248e11794" class="topicref" data-id="aws_protection_high_level_arch" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_protection_high_level_arch-d27248e11794-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_protection_high_level_arch.html" id="aws_protection_high_level_arch-d27248e11794-link">High-level architecture for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">A high-level architectural overview of how <span class="ph">RSC</span> protects AWS workloads         and the <span class="ph">RSC</span> AssumeRole workflow.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_planning_protection-d27248e11900" class="topicref" data-id="aws_planning_protection" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_planning_protection-d27248e11900-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_planning_protection.html" id="aws_planning_protection-d27248e11900-link">Planning for AWS protection</a><div class="wh-tooltip"><p class="shortdesc">Before setting up an AWS cloud account in <span class="ph">RSC</span>, it is necessary to         plan the user and access management for designated <span class="ph">RSC</span> users. This planning         also involves reviewing the permissions that <span class="ph">RSC</span> requires in your AWS         environment to protect your AWS workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_cloud_acc_setup-d27248e12120" class="topicref" data-id="aws_cloud_acc_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_cloud_acc_setup-d27248e12120-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_cloud_acc_setup.html" id="aws_cloud_acc_setup-d27248e12120-link">AWS cloud account setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up an AWS cloud account in <span class="ph">RSC</span> and start protecting your         AWS workloads.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="exocompute_for_aws-d27248e12830" class="topicref" data-id="exocompute_for_aws" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action exocompute_for_aws-d27248e12830-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/exocompute_for_aws.html" id="exocompute_for_aws-d27248e12830-link">Exocompute on AWS</a><div class="wh-tooltip"><p class="shortdesc">With the Exocompute on AWS feature, <span class="ph">RSC</span> launches an Elastic         Kubernetes Service cluster to perform various operations to protect AWS workloads. <span class="ph">RSC</span> uses the Elastic Kubernetes Service cluster as a compute resource in         your AWS account.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_storage_tiering_setup-d27248e13349" class="topicref" data-id="aws_storage_tiering_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_storage_tiering_setup-d27248e13349-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_storage_tiering_setup.html" id="aws_storage_tiering_setup-d27248e13349-link">AWS storage tiering setup</a><div class="wh-tooltip"><p class="shortdesc">You can use AWS storage tiering to archive Amazon EC2 instance<span class="ph">, EBS volume, or DynamoDB table</span> snapshots         that exceed a specified threshold to Amazon S3 storage classes. By archiving snapshots to         these storage classes, you can optimize costs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_workloads_protection_setup-d27248e13487" class="topicref" data-id="aws_workloads_protection_setup" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_workloads_protection_setup-d27248e13487-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workloads_protection_setup.html" id="aws_workloads_protection_setup-d27248e13487-link">AWS workloads protection setup</a><div class="wh-tooltip"><p class="shortdesc">You can set up SLA Domains to apply data protection policies, ensuring automatic and         hierarchical protection of AWS accounts and individual AWS workloads, with granular control         overriding higher-level assignments.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="aws_workload_recovery-d27248e13982" class="topicref" data-id="aws_workload_recovery" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_workload_recovery-d27248e13982-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_workload_recovery.html" id="aws_workload_recovery-d27248e13982-link">AWS workloads recovery</a><div class="wh-tooltip"><p class="shortdesc">After <span class="ph">RSC</span> takes snapshots of your AWS workloads, you can recover the         required workloads.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="aws_recovery_privilege_elevation-d27248e13996" class="topicref" data-id="aws_recovery_privilege_elevation" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action aws_recovery_privilege_elevation-d27248e13996-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_recovery_privilege_elevation.html" id="aws_recovery_privilege_elevation-d27248e13996-link">Privilege elevation for AWS recovery</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides you with an option to secure AWS cloud accounts by using         a least permission model, granting minimal necessary permissions starting with the             <code class="ph codeph">Basic</code> permission category. For recovery operations, you can elevate         permissions by including permission categories and updating the IAM role in your AWS         environment.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aws_recovery_assigning_perm_cat-d27248e14012" class="topicref" data-id="aws_recovery_assigning_perm_cat" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_recovery_assigning_perm_cat.html" id="aws_recovery_assigning_perm_cat-d27248e14012-link">Assigning a permission category for AWS recovery</a><div class="wh-tooltip"><p class="shortdesc">When you are performing recovery operations such as exporting, restoring, or         recovering files and the target AWS account does not have the required permission category,         you must assign the permission category to ensure recovery.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="aws_ec2_marketplace_support-d27248e14023" class="topicref" data-id="aws_ec2_marketplace_support" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_ec2_marketplace_support.html" id="aws_ec2_marketplace_support-d27248e14023-link">AWS EC2 marketplace support</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> supports indexing, archiving, restoring, and exporting snapshots         of EC2 instances deployed from the AWS EC2 marketplace and recovering files or folders from         those instances using the direct read APIs.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_ec2_recovery-d27248e14036" class="topicref" data-id="aws_ec2_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_ec2_recovery-d27248e14036-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_ec2_recovery.html" id="aws_ec2_recovery-d27248e14036-link">Amazon EC2 instance recovery</a><div class="wh-tooltip"><p class="shortdesc">You can recover Amazon EC2 instances and EBS volumes using the various recovery         options that <span class="ph">RSC</span> provides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_s3_recovery-d27248e14190" class="topicref" data-id="aws_s3_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_s3_recovery-d27248e14190-link" class="wh-expand-btn"></span><div class="title"><a href="../amazon_S3/aws_s3_recovery.html" id="aws_s3_recovery-d27248e14190-link">Amazon S3 recovery</a><div class="wh-tooltip"><p class="shortdesc">You can recover Amazon S3 buckets using the various recovery options that <span class="ph">RSC</span> provides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_rds_recovery-d27248e14284" class="topicref" data-id="aws_rds_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_rds_recovery-d27248e14284-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rds_recovery.html" id="aws_rds_recovery-d27248e14284-link">Amazon RDS recovery</a><div class="wh-tooltip"><p class="shortdesc">You can recover Amazon RDS, Aurora,<span class="ph"> Aurora PostgreSQL, and RDS SQL             Server</span> databases using the various recovery options that <span class="ph">RSC</span>         provides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_dynamodb_recovery-d27248e14341" class="topicref" data-id="aws_dynamodb_recovery" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_dynamodb_recovery-d27248e14341-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_dynamodb_recovery.html" id="aws_dynamodb_recovery-d27248e14341-link">Amazon DynamoDB recovery</a><div class="wh-tooltip"><p class="shortdesc">You can recover Amazon DynamoDB tables using the various recovery options provided by             <span class="ph">RSC</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_ec2_ebs_volume-d27248e14401" class="topicref" data-id="aws_ec2_ebs_volume" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_ec2_ebs_volume-d27248e14401-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_ec2_ebs_volume.html" id="aws_ec2_ebs_volume-d27248e14401-link">Amazon EC2 instances and EBS volumes</a><div class="wh-tooltip"><p class="shortdesc">After you set up protection for Amazon EC2 instances and EBS volumes, <span class="ph">RSC</span> takes automated snapshots of those instances and volumes based on the         configured policies in SLA Domains. You can also take on-demand snapshots, refresh AWS         accounts, and add AWS custom tags for better resource management.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_rds-d27248e14722" class="topicref" data-id="aws_rds" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_rds-d27248e14722-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_rds.html" id="aws_rds-d27248e14722-link">Amazon RDS and Aurora databases</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the data and resources of Amazon RDS and Amazon Aurora         databases.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="amazon_s3-d27248e14826" class="topicref" data-id="amazon_s3" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action amazon_s3-d27248e14826-link" class="wh-expand-btn"></span><div class="title"><a href="../amazon_S3/amazon_s3.html" id="amazon_s3-d27248e14826-link">Amazon S3</a><div class="wh-tooltip"><p class="shortdesc">By using the protection services offered by <span class="ph">RSC</span>, you can protect and         recover your Amazon S3 buckets and objects.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="aws_dynamodb-d27248e14922" class="topicref" data-id="aws_dynamodb" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action aws_dynamodb-d27248e14922-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_dynamodb.html" id="aws_dynamodb-d27248e14922-link">Amazon DynamoDB</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> secures Amazon DynamoDB tables with automated snapshots governed         by SLA Domain policies. You can gain insights from detailed snapshot data and optimize         resources using on-demand account refresh and AWS custom tags.</p></div></div></div></li><li role="treeitem"><div data-tocid="aws_tags-d27248e14999" class="topicref" data-id="aws_tags" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../saas/aws_tags.html" id="aws_tags-d27248e14999-link">AWS tags</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> attaches specific tags to the AWS resources you create using <span class="ph">RSC</span>.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="gcp-d27248e15015" class="topicref" data-id="gcp" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gcp-d27248e15015-link" class="wh-expand-btn"></span><div class="title"><a href="../gcp/gcp.html" id="gcp-d27248e15015-link">Google Cloud Platform workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protects the following types of Google Cloud Platform workloads:         Google Compute Engine instances and persistent disks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="azr_workloads-d27248e16355" class="topicref" data-id="azr_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action azr_workloads-d27248e16355-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/azr_workloads.html" id="azr_workloads-d27248e16355-link">Microsoft Azure workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph"><span class="ph">RSC</span> protects the data and resources of Azure             virtual machines, Azure managed disks, Azure Blob Storage, and Azure SQL workloads in             Azure subscriptions.</span></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e19988" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e19988-link" class="wh-expand-btn"></span><div class="title"><a href="../kubernetes/k8s_workload_protection.html" id="tocId-d27248e19988-link">Container workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e21373" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e21373-link" class="wh-expand-btn"></span><div class="title"><a href="../nutanix_ahv/ahv_virtual_machines.html" id="tocId-d27248e21373-link">Data center workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e26333" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e26333-link" class="wh-expand-btn"></span><div class="title"><a href="../db2/ibm_db2.html" id="tocId-d27248e26333-link">Database workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e31750" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e31750-link" class="wh-expand-btn"></span><div class="title"><a href="../azure_devops/azr_devops.html" id="tocId-d27248e31750-link">DevOps workloads</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="saas_workloads-d27248e33132" class="topicref" data-id="saas_workloads" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action saas_workloads-d27248e33132-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/saas_workloads.html" id="saas_workloads-d27248e33132-link">SaaS workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> protection for SaaS workloads simplifies protecting and managing         backups for SaaS application instances.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e37569" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e37569-link" class="wh-expand-btn"></span><div class="title"><a href="../managedvolumes/mv_managed_volumes_sla_managed_volumes.html" id="tocId-d27248e37569-link">Storage workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e40385" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e40385-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d27248e40385-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e43670" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e43670-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d27248e43670-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e46059" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e46059-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d27248e46059-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47148" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47148-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d27248e47148-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47411" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47411-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d27248e47411-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47887" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47887-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d27248e47887-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e49667" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e49667-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d27248e49667-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e49754" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e49754-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d27248e49754-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e50319" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e50319-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d27248e50319-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Privilege elevation for AWS recovery</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">RSC</span> provides you with an option to secure AWS cloud accounts by using
+        a least permission model, granting minimal necessary permissions starting with the
+            <code class="+ topic/ph pr-d/codeph ph codeph">Basic</code> permission category. For recovery operations, you can elevate
+        permissions by including permission categories and updating the IAM role in your AWS
+        environment.</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> enhances the security of AWS cloud accounts by using a least
+            permission model, which limits the permissions granted to the minimal necessary roles
+            and resources. When adding an AWS cloud account to <span class="- topic/ph ph">RSC</span>, the
+                <code class="+ topic/ph pr-d/codeph ph codeph">Basic</code> permission category is selected by default and cannot be
+            cleared. You grant permissions primarily for resource discovery, backup, archiving, and
+            replication at the account level. This significantly reduces the risk of security
+            breaches by ensuring that high-privilege write permissions are not available in the IAM
+            role, such as those required to stop instances or replace volumes, until you add the
+            corresponding permission category during a recovery operation.</p>
+        <p class="- topic/p p">After adding the AWS cloud account with the <code class="+ topic/ph pr-d/codeph ph codeph">Basic</code> permission category
+            and when a recovery operation becomes necessary, such as Export or Restore, <span class="- topic/ph ph">RSC</span> provides the <code class="+ topic/ph pr-d/codeph ph codeph">Assign Permissions</code> option within the
+            recovery wizard to elevate the required permissions.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Permission assignment methods</h2>
+            
+            <p class="- topic/p p">AWS privilege elevation requires manual intervention to update the cross-account IAM
+                role. <span class="- topic/ph ph">RSC</span> provides two methods for this update, depending on how the
+                AWS account was initially onboarded.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption></caption><colgroup><col/><col/><col/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="aws_recovery_privilege_elevation__entry__1">Method</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="aws_recovery_privilege_elevation__entry__2">Description</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="aws_recovery_privilege_elevation__entry__3">Recommended for</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_recovery_privilege_elevation__entry__1">Authorize using CloudFormation (CFT)</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="aws_recovery_privilege_elevation__entry__2"><span class="- topic/ph ph">RSC</span> generates an updated CFT containing the
+                                elevated permissions. This method redirects you to the AWS console
+                                to perform a stack update.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="aws_recovery_privilege_elevation__entry__3">AWS accounts onboarded using the Add using CFT method.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="aws_recovery_privilege_elevation__entry__1">Authorize manually</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="aws_recovery_privilege_elevation__entry__2"><span class="- topic/ph ph">RSC</span> provides a JSON policy document. You must
+                                manually update the Managed Policy or Inline Policy attached to the
+                                Rubrik cross-account IAM role in your AWS environment.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="aws_recovery_privilege_elevation__entry__3">AWS accounts onboarded using the Add manually method.</td>
+                        </tr>
+                    </tbody></table></div>
+            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> groups elevated AWS permissions into functional categories.
+                During elevation, you can select specific categories to match your recovery
+                needs:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph">Export</code>: Required for standard virtual machine or volume
+                    exports.</li>
+                <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph">Export in powered off state</code>: Required for launching exported
+                    virtual machines without network connectivity initially, before turning them
+                    off. This category automatically includes the <code class="+ topic/ph pr-d/codeph ph codeph">Export</code> category
+                    as a prerequisite.</li>
+                <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph">Restore</code>: Required for in-place recovery operations where
+                    existing volumes are replaced.</li>
+                <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph">Recover Files</code>: Required to recover specific files or folders to
+                    a user-provided S3 bucket.</li>
+            </ul>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Manual cleanup after recovery</h2>
+            
+            <div class="- topic/p p">To restore the least privilege model after you have completed a recovery operation,
+                an administrator must manually revoke the elevated permissions.<ul class="- topic/ul ul">
+                    <li class="- topic/li li">CFT method: The administrator must use the <code class="+ topic/ph pr-d/codeph ph codeph">Manage Granular
+                            Permissions</code> option within <span class="- topic/ph ph">RSC</span> to clear the
+                        recovery-related permission categories and then run the updated CFT stack
+                        update in the AWS Management Console to remove the permissions from the IAM
+                        role.</li>
+                    <li class="- topic/li li">Manual method: The administrator must use the <code class="+ topic/ph pr-d/codeph ph codeph">Manage Granular
+                            Permissions</code> option within <span class="- topic/ph ph">RSC</span> to clear the
+                        recovery-related permission categories and then manually remove the
+                        corresponding JSON policy statements from the Managed Policy or Inline
+                        Policy attached to the Rubrik cross-account IAM role in the AWS
+                        environment.</li>
+                </ul></div>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span> <div class="note__body">Elevated AWS permissions do not expire automatically after
+                applying required permissions on the IAM role. You must perform these manual steps
+                to ensure the AWS cross-account role returns to the <code class="+ topic/ph pr-d/codeph ph codeph">Basic</code>
+                permission category.</div></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="aws_recovery_assigning_perm_cat.html" title="When you are performing recovery operations such as exporting, restoring, or recovering files and the target AWS account does not have the required permission category, you must assign the permission category to ensure recovery.">Assigning a permission category for AWS recovery</a><div class="- topic/desc desc">When you are performing recovery operations such as exporting, restoring, or         recovering files and the target AWS account does not have the required permission category,         you must assign the permission category to ensure recovery.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -339,8 +339,8 @@
                path="rbs/rbs_package_verification.html"/>
    <appContext helpID="rbs_account_windows_host"
                path="rbs/rbs_account_windows_host.html"/>
-   <appContext helpID="rsc_rbs_automatically_deploying"
-               path="rbs/rsc_rbs_automatically_deploying.html"/>
+   <appContext helpID="rsc_deploying_rbs_automatically"
+               path="rbs/rsc_deploying_rbs_automatically.html"/>
    <appContext helpID="rbs_min_privileges_windows"
                path="rbs/rbs_min_privileges_windows.html"/>
    <appContext helpID="determining_if_rbs_runs_windows_sys"
@@ -434,8 +434,7 @@
                path="saas/upgrading_aws_cces_gp3_disks.html"/>
    <appContext helpID="gcp_cloud_cluster_es_rsc"
                path="saas/gcp_cloud_cluster_es_rsc.html"/>
-   <appContext helpID="gcp_cloud_cluster_prereqs"
-               path="common/gcp_cloud_cluster_prereqs.html"/>
+   <appContext helpID="gcp_cces_preq" path="common/gcp_cloud_cluster_prereqs.html"/>
    <appContext helpID="gcp_cces_node_reqs" path="common/gcp_cces_node_reqs.html"/>
    <appContext helpID="required_ports_cc_gcp" path="cloud/required_ports_cc_gcp.html"/>
    <appContext helpID="cloud_cluster_security_model"
@@ -1527,11 +1526,17 @@
                path="saas/aws_recommendations_add_cloud_acc.html"/>
    <appContext helpID="aws_permission_categories"
                path="saas/aws_permission_categories.html"/>
+   <appContext helpID="aws_perm_model_privilege_elevation"
+               path="saas/aws_perm_model_privilege_elevation.html"/>
+   <appContext helpID="aws_managing_granular_perms_cloud_acc"
+               path="saas/aws_managing_granular_perms_cloud_acc.html"/>
    <appContext helpID="aws_evaluate_options_cloud_acc_setup"
                path="saas/aws_evaluate_options_cloud_acc_setup.html"/>
    <appContext helpID="aws_cloud_discovery" path="saas/aws_cloud_discovery.html"/>
    <appContext helpID="aws_manual_vs_cft_config_cld_acc"
                path="saas/aws_manual_vs_cft_config_cld_acc.html"/>
+   <appContext helpID="aws_supported_regions_onboarding_cft"
+               path="saas/aws_supported_regions_onboarding_cft.html"/>
    <appContext helpID="aws_multiple_vs_indv_acc_addition"
                path="saas/aws_multiple_vs_indv_acc_addition.html"/>
    <appContext helpID="data_protection_insights_aws"
@@ -1795,6 +1800,10 @@
    <appContext helpID="aws_dynamodb_taking_ods"
                path="saas/aws_dynamodb_taking_ods.html"/>
    <appContext helpID="aws_workload_recovery" path="saas/aws_workload_recovery.html"/>
+   <appContext helpID="aws_recovery_privilege_elevation"
+               path="saas/aws_recovery_privilege_elevation.html"/>
+   <appContext helpID="aws_recovery_assigning_perm_cat"
+               path="saas/aws_recovery_assigning_perm_cat.html"/>
    <appContext helpID="aws_ec2_marketplace_support"
                path="saas/aws_ec2_marketplace_support.html"/>
    <appContext helpID="aws_ec2_recovery" path="saas/aws_ec2_recovery.html"/>
@@ -1918,6 +1927,10 @@
                path="amazon_S3/taking_ods_amazon_s3_buckets.html"/>
    <appContext helpID="aws_protect_large_s3_buckets"
                path="saas/aws_protect_large_s3_buckets.html"/>
+   <appContext helpID="s3_multiple_backup_locations"
+               path="saas/s3_multiple_backup_locations.html"/>
+   <appContext helpID="s3_configuring_multiple_backup_locations"
+               path="saas/s3_configuring_multiple_backup_locations.html"/>
    <appContext helpID="anomaly_detection_amazon_s3_buckets"
                path="amazon_S3/anomaly_detection_amazon_s3_buckets.html"/>
    <appContext helpID="aws_dynamodb" path="saas/aws_dynamodb.html"/>
@@ -2121,10 +2134,11 @@
    <appContext helpID="azr_cnp_arch" path="saas/azr_cnp_arch.html"/>
    <appContext helpID="azr_comm_rbk_azr_subscription"
                path="saas/azr_comm_rbk_azr_subscription.html"/>
-   <appContext helpID="azr_tags" path="saas/azr_tags.html"/>
    <appContext helpID="azr_protect_implementation"
                path="saas/azr_protect_implementation.html"/>
    <appContext helpID="azr_quick_links" path="saas/azr_quick_links.html"/>
+   <appContext helpID="azr_protecting_first_subscription"
+               path="saas/azr_protecting_first_subscription.html"/>
    <appContext helpID="azr_protection_planning"
                path="saas/azr_protection_planning.html"/>
    <appContext helpID="azr_protection_rsc_user_management"
@@ -2209,6 +2223,8 @@
                path="saas/azr_creating_cld_acc_data_scanning.html"/>
    <appContext helpID="azure_enabling_data_scanning"
                path="saas/azure_enabling_data_scanning.html"/>
+   <appContext helpID="azr_manage_cloud_accounts"
+               path="saas/azr_manage_cloud_accounts.html"/>
    <appContext helpID="azr_entra_domain_mapping_moving_subs"
                path="saas/azr_entra_domain_mapping_moving_subs.html"/>
    <appContext helpID="azr_updating_entra_domain_mapping_oath"
@@ -2232,6 +2248,8 @@
                path="saas/azr_migrating_existing_accounts_cloud_discovery_model.html"/>
    <appContext helpID="azr_deleting_cloud_discovery"
                path="saas/azr_deleting_cloud_discovery.html"/>
+   <appContext helpID="azr_troubleshoot_cloud_account_setup"
+               path="saas/azr_troubleshoot_cloud_account_setup.html"/>
    <appContext helpID="azr_exocompute" path="saas/azr_exocompute.html"/>
    <appContext helpID="azr_pvt_aks_clusters" path="saas/azr_pvt_aks_clusters.html"/>
    <appContext helpID="azr_workflow_example_exocompute"
@@ -2350,6 +2368,8 @@
                path="saas/azr_creating_arch_loc_storage_acc.html"/>
    <appContext helpID="azr_configuring_private_endpoint"
                path="saas/azr_configuring_private_endpoint.html"/>
+   <appContext helpID="azr_troubleshoot_storage_tiering"
+               path="saas/azr_troubleshoot_storage_tiering.html"/>
    <appContext helpID="azr_workloads_protection_setup"
                path="saas/azr_workloads_protection_setup.html"/>
    <appContext helpID="azr_hierarchy_sla_assignment"
@@ -2432,6 +2452,7 @@
    <appContext helpID="azr_custom_tag" path="saas/azr_custom_tag.html"/>
    <appContext helpID="adding_azure_custom_tag"
                path="saas/adding_azure_custom_tag.html"/>
+   <appContext helpID="azr_tags" path="saas/azr_tags.html"/>
    <appContext helpID="app_consistent_backups_azure"
                path="saas/app_consistent_backups_azure.html"/>
    <appContext helpID="rbs_downloading_cnp" path="rbs/rbs_downloading_cnp.html"/>
@@ -2468,13 +2489,15 @@
                path="azure_blob/anomaly_detection_azure_blob_storage.html"/>
    <appContext helpID="enabling_ad_azure_blob_storage_accnts"
                path="azure_blob/enabling_ad_azure_blob_storage_accnts.html"/>
-   <appContext helpID="azr_sql_db_manage" path="saas/azr_sql_db_manage.html"/>
+   <appContext helpID="azr_sql_protection_overview"
+               path="saas/azr_sql_protection_overview.html"/>
    <appContext helpID="azr_sql_native_backup_capability"
                path="saas/azr_sql_native_backup_capability.html"/>
    <appContext helpID="azr_sql_native_vs_rbk_backups"
                path="saas/azr_sql_native_vs_rbk_backups.html"/>
    <appContext helpID="azr_sql_supp_backup_recv_types"
                path="saas/azr_sql_supp_backup_recv_types.html"/>
+   <appContext helpID="azr_sql_db_manage" path="saas/azr_sql_db_manage.html"/>
    <appContext helpID="azr_sql_db_rbk_backup_components"
                path="saas/azr_sql_db_rbk_backup_components.html"/>
    <appContext helpID="azr_sql_db_supp_datatypes_rbk_backup"
@@ -2513,12 +2536,6 @@
    <appContext helpID="azr_sql_db_rbk_backup_limitations"
                path="saas/azr_sql_db_rbk_backup_limitations.html"/>
    <appContext helpID="azr_sql_mi_manage" path="saas/azr_sql_mi_manage.html"/>
-   <appContext helpID="azr_sql_native_backup_capability"
-               path="saas/azr_sql_native_backup_capability.html"/>
-   <appContext helpID="azr_sql_native_vs_rbk_backups"
-               path="saas/azr_sql_native_vs_rbk_backups.html"/>
-   <appContext helpID="azr_sql_supp_backup_recv_types"
-               path="saas/azr_sql_supp_backup_recv_types.html"/>
    <appContext helpID="azr_sql_mi_rbk_backup_components"
                path="saas/azr_sql_mi_rbk_backup_components.html"/>
    <appContext helpID="azr_sql_mi_supp_datatypes_rbk_backups"
@@ -3340,30 +3357,31 @@
    <appContext helpID="vs_vsphere_management" path="saas/vs_vsphere_management.html"/>
    <appContext helpID="vcenter_metro_storage_clusters"
                path="common/vcenter_metro_storage_clusters.html"/>
-   <appContext helpID="vsphere_privs" path="cdm_old/vsphere_privs.html"/>
+   <appContext helpID="vsphere_privs" path="cdm/vsphere/vsphere_privs.html"/>
    <appContext helpID="min_cryptographic_ops_privileges"
-               path="cdm_old/min_cryptographic_ops_privileges.html"/>
+               path="cdm/vsphere/min_cryptographic_ops_privileges.html"/>
    <appContext helpID="min_datastore_privileges"
-               path="cdm_old/min_datastore_privileges.html"/>
+               path="cdm/vsphere/min_datastore_privileges.html"/>
    <appContext helpID="min_global_privileges"
-               path="cdm_old/min_global_privileges.html"/>
-   <appContext helpID="min_host_privileges" path="cdm_old/min_host_privileges.html"/>
+               path="cdm/vsphere/min_global_privileges.html"/>
+   <appContext helpID="min_host_privileges"
+               path="cdm/vsphere/min_host_privileges.html"/>
    <appContext helpID="min_network_privileges"
-               path="cdm_old/min_network_privileges.html"/>
+               path="cdm/vsphere/min_network_privileges.html"/>
    <appContext helpID="min_profile_storage_privs"
-               path="cdm_old/min_profile_storage_privs.html"/>
+               path="cdm/vsphere/min_profile_storage_privs.html"/>
    <appContext helpID="min_resource_privileges"
-               path="cdm_old/min_resource_privileges.html"/>
+               path="cdm/vsphere/min_resource_privileges.html"/>
    <appContext helpID="min_sessions_privileges"
-               path="cdm_old/min_sessions_privileges.html"/>
+               path="cdm/vsphere/min_sessions_privileges.html"/>
    <appContext helpID="min_system_privileges_esxi"
-               path="cdm_old/min_system_privileges_esxi.html"/>
+               path="cdm/vsphere/min_system_privileges_esxi.html"/>
    <appContext helpID="min_virtual_machine_privileges"
-               path="cdm_old/min_virtual_machine_privileges.html"/>
+               path="cdm/vsphere/min_virtual_machine_privileges.html"/>
    <appContext helpID="min_vsphere_tagging_privileges"
-               path="cdm_old/min_vsphere_tagging_privileges.html"/>
+               path="cdm/vsphere/min_vsphere_tagging_privileges.html"/>
    <appContext helpID="min_vsphere_vapp_privileges"
-               path="cdm_old/min_vsphere_vapp_privileges.html"/>
+               path="cdm/vsphere/min_vsphere_vapp_privileges.html"/>
    <appContext helpID="vs_adding_vcenter_server_connection_info"
                path="saas/vs_adding_vcenter_server_connection_info.html"/>
    <appContext helpID="adding_vcenter_metro_storage_cluster_connection_information"
@@ -3820,6 +3838,8 @@
    <appContext helpID="rbs_installing_windows" path="rbs/rbs_installing_windows.html"/>
    <appContext helpID="mssql_windows_host_management_actions"
                path="saas/mssql_windows_host_management_actions.html"/>
+   <appContext helpID="rsc_rbs_sql_role_perms_reqs"
+               path="rbs/rsc_rbs_sql_role_perms_reqs.html"/>
    <appContext helpID="mssql_removing_windows_server_host"
                path="saas/mssql_removing_windows_server_host.html"/>
    <appContext helpID="mssql_configuring_sens_data_auth"
@@ -5135,6 +5155,12 @@
                path="saas/m365_mass_recovery_parameters.html"/>
    <appContext helpID="m365_api_prioritized_recovery_params"
                path="saas/m365_api_prioritized_recovery_params.html"/>
+   <appContext helpID="m365_autonomous_business_recovery"
+               path="saas/m365_autonomous_business_recovery.html"/>
+   <appContext helpID="m365_recover_groups_autonomous_bus_rec"
+               path="saas/m365_recover_groups_autonomous_bus_rec.html"/>
+   <appContext helpID="m365_recovering_remaining_data"
+               path="saas/m365_recovering_remaining_data.html"/>
    <appContext helpID="m365_downloading_files_folders"
                path="saas/m365_downloading_files_folders.html"/>
    <appContext helpID="m365_duplicates_recovery"
@@ -5795,6 +5821,8 @@
                path="dspm/supported_workloads_data_classification.html"/>
    <appContext helpID="data_discovery_class_microsoft_365"
                path="saas/data_discovery_class_microsoft_365.html"/>
+   <appContext helpID="classification_rms_encrypt_files"
+               path="dspm/classification_rms_encrypt_files.html"/>
    <appContext helpID="data_discovery_class_sql_server_dbs"
                path="saas/data_discovery_class_sql_server_dbs.html"/>
    <appContext helpID="data_discovery_class_sql_server_db_req"
@@ -6059,6 +6087,8 @@
                path="identity_resilience/ir_identity_memberships.html"/>
    <appContext helpID="ir_viewing_identity_summary"
                path="identity_resilience/ir_viewing_identity_summary.html"/>
+   <appContext helpID="ir_activity_auditor"
+               path="identity_resilience/ir_activity_auditor.html"/>
    <appContext helpID="ir_activity_logs"
                path="identity_resilience/ir_activity_logs.html"/>
    <appContext helpID="ir_configure_actor_identification"
@@ -6073,6 +6103,13 @@
                path="identity_resilience/ir_viewing_activity_log.html"/>
    <appContext helpID="ir_reverting_activity_log"
                path="identity_resilience/ir_reverting_activity_log.html"/>
+   <appContext helpID="ir_ad_authentication_log"
+               path="identity_resilience/ir_ad_authentication_log.html"/>
+   <appContext helpID="signin_logs" path="identity_resilience/signin_logs.html"/>
+   <appContext helpID="viewing_signin_logs"
+               path="identity_resilience/viewing_signin_logs.html"/>
+   <appContext helpID="signin_log_details"
+               path="identity_resilience/signin_log_details.html"/>
    <appContext helpID="ir_alerts" path="identity_resilience/ir_alerts.html"/>
    <appContext helpID="ir_changing_status_alerts"
                path="identity_resilience/ir_changing_status_alerts.html"/>
@@ -6185,6 +6222,14 @@
    <appContext helpID="restoring_objects_using_search_recovery"
                path="adds/restoring_objects_using_search_recovery.html"/>
    <appContext helpID="ad_object_comparison" path="adds/ad_object_comparison.html"/>
+   <appContext helpID="dynamic_disk_foreign_state_dc"
+               path="adds/dynamic_disk_foreign_state_dc.html"/>
+   <appContext helpID="resolving_dynamic_disk_foreign_state"
+               path="adds/resolving_dynamic_disk_foreign_state.html"/>
+   <appContext helpID="dns_debug_log_path_not_restored"
+               path="adds/dns_debug_log_path_not_restored.html"/>
+   <appContext helpID="resolving_dns_debug_log_path"
+               path="adds/resolving_dns_debug_log_path.html"/>
    <appContext helpID="microsoft_entra_id" path="saas/ms_entra_id.html"/>
    <appContext helpID="ms_entra_id_known_limits_rsc"
                path="saas/ms_entra_id_known_limits_rsc.html"/>
@@ -6195,8 +6240,8 @@
                path="saas/adding_entra_id_with_oauth.html"/>
    <appContext helpID="adding_entra_id_without_oauth"
                path="saas/adding_entra_id_without_oauth.html"/>
-   <appContext helpID="ms_entra_id_without_oauth_perms"
-               path="saas/ms_entra_id_without_oauth_perms.html"/>
+   <appContext helpID="ms_entra_id_no_oauth_perms"
+               path="saas/ms_entra_id_no_oauth_perms.html"/>
    <appContext helpID="ms_entra_id_editing_domain"
                path="saas/ms_entra_id_editing_domain.html"/>
    <appContext helpID="ms_entra_id_deleting_domains_directories"
@@ -6237,6 +6282,14 @@
                path="saas/ms_entra_id_using_ctr_granular_recov.html"/>
    <appContext helpID="ms_entra_id_using_ctr_full_recov"
                path="saas/ms_entra_id_using_ctr_full_recov.html"/>
+   <appContext helpID="ms_entra_id_protect_microsoft_intune"
+               path="saas/ms_entra_id_protect_microsoft_intune.html"/>
+   <appContext helpID="ms_entra_id_intune_protection_config"
+               path="saas/ms_entra_id_intune_protection_config.html"/>
+   <appContext helpID="ms_entra_id_rev_intune_protection_limits"
+               path="saas/ms_entra_id_rev_intune_protection_limits.html"/>
+   <appContext helpID="ms_entra_id_granular_recovery_intune"
+               path="saas/ms_entra_id_granular_recovery_intune.html"/>
    <appContext helpID="ms_entra_id_user_obj_attr_recov"
                path="saas/ms_entra_id_user_obj_attr_recov.html"/>
    <appContext helpID="ms_entra_id_recov_user_attr_pit"
@@ -6265,7 +6318,7 @@
                path="saas/ms_entra_id_recov_users_hybrid_env_man.html"/>
    <appContext helpID="ms_entra_id_recovering_groups_hybrid_env"
                path="saas/ms_entra_id_recovering_groups_hybrid_env.html"/>
-   <appContext helpID="ms_entra_id_full_domain_recovery"
+   <appContext helpID="ms_entra_id_full_domain_recov"
                path="saas/ms_entra_id_full_domain_recov.html"/>
    <appContext helpID="ms_entra_id_recov_full_domain"
                path="saas/ms_entra_id_recov_full_domain.html"/>
@@ -6336,6 +6389,20 @@
                path="agent_operations/onboarding_agent_operation_ms_copilot_studio.html"/>
    <appContext helpID="enabling_tool_blocking"
                path="agent_operations/enabling_tool_blocking.html"/>
+   <appContext helpID="vertex_ai_agent_operations"
+               path="agent_operations/vertex_ai_agent_operations.html"/>
+   <appContext helpID="vertex_ai_requirements"
+               path="agent_operations/vertex_ai_requirements.html"/>
+   <appContext helpID="determine_domain_sharing_policy"
+               path="agent_operations/determine_domain_sharing_policy.html"/>
+   <appContext helpID="deploying_google_vertex_ai"
+               path="agent_operations/deploying_google_vertex_ai.html"/>
+   <appContext helpID="ms_foundry_deployed_agent_operations"
+               path="agent_operations/ms_foundry_deployed_agent_operations.html"/>
+   <appContext helpID="ms_foundry_requirements_agent_operations"
+               path="agent_operations/ms_foundry_requirements_agent_operations.html"/>
+   <appContext helpID="deploying_ms_foundry_agent_operations"
+               path="agent_operations/deploying_ms_foundry_agent_operations.html"/>
    <appContext helpID="litellm_model_gateway_concepts"
                path="agent_operations/litellm_model_gateway_deployed_agent_operations.html"/>
    <appContext helpID="litellm_requirements_agent_operations"
@@ -6350,6 +6417,8 @@
                path="agent_operations/deploying_jamf_model_gateways_agent_operations.html"/>
    <appContext helpID="agent_operation_deployment_provisioning_options"
                path="agent_operations/agent_operation_deployment_provisioning_options.html"/>
+   <appContext helpID="aws_azure_region_support"
+               path="agent_operations/aws_azure_region_support.html"/>
    <appContext helpID="provisioning_aws_vpc_agent_operations"
                path="agent_operations/provisioning_aws_vpc_agent_operations.html"/>
    <appContext helpID="architecture_aws_vpc_deployed_agent_operations"
@@ -6362,8 +6431,14 @@
                path="agent_operations/cost_management_for_aws_agent_gateway.html"/>
    <appContext helpID="deploying_aws_vpc_rsc"
                path="agent_operations/deploying_aws_vpc_rsc.html"/>
-   <appContext helpID="deploy_azure_agent_gateways_agent_operations"
-               path="agent_operations/deploy_azure_agent_gateways_agent_operations.html"/>
+   <appContext helpID="configuring_aws_privatelink"
+               path="agent_operations/configuring_aws_privatelink.html"/>
+   <appContext helpID="configuring_aws_privatelink_using_aws_cli"
+               path="agent_operations/configuring_aws_privatelink_using_aws_cli.html"/>
+   <appContext helpID="https_endpoint_access_aws"
+               path="agent_operations/https_endpoint_access_aws.html"/>
+   <appContext helpID="deploy_azure_vpc_ao"
+               path="agent_operations/deploy_azure_vpc_ao.html"/>
    <appContext helpID="architecture_azure_vpc_deployed_agent_operations"
                path="agent_operations/architecture_azure_vpc_deployed_agent_operations.html"/>
    <appContext helpID="best_practices_deploying_azure_vpc_agent_operations"
@@ -6374,6 +6449,10 @@
                path="agent_operations/cost_management_azure_model_gateways.html"/>
    <appContext helpID="deploying_azure_vpc_agent_operations"
                path="agent_operations/deploying_azure_vpc_agent_operations.html"/>
+   <appContext helpID="configuring_azure_private_link"
+               path="agent_operations/configuring_azure_private_link.html"/>
+   <appContext helpID="https_endpoint_access_azure"
+               path="agent_operations/https_endpoint_access_azure.html"/>
    <appContext helpID="onboard_ai_operations"
                path="agent_operations/onboard_ai_operations.html"/>
    <appContext helpID="agent_rewind_prerequisites"
@@ -6510,13 +6589,15 @@
                path="rscintegrations/crowdstrike_reverting_related_actions.html"/>
    <appContext helpID="disconnecting_crowdstrike_rbk"
                path="rscintegrations/disconnecting_crowdstrike_rbk.html"/>
-   <appContext helpID="licenses_usage" path="saas/licenses_usage.html"/>
+   <appContext helpID="licenses_usage_details" path="saas/licenses_usage_details.html"/>
    <appContext helpID="accessing_licenses_usage_details"
                path="saas/accessing_licenses_usage_details.html"/>
    <appContext helpID="m365_license_usage_details"
                path="saas/m365_license_usage_details.html"/>
    <appContext helpID="cloud_license_usage_details"
                path="saas/cloud_license_usage_details.html"/>
+   <appContext helpID="data_centers_license_usage_details"
+               path="saas/data_centers_license_usage_details.html"/>
    <appContext helpID="nas_cd_license_usage_details"
                path="saas/nas_cd_license_usage_details.html"/>
    <appContext helpID="events" path="saas/common/events.html"/>
@@ -6540,82 +6621,90 @@
    <appContext helpID="file_preparation_center_details"
                path="saas/file_preparation_center_details.html"/>
    <appContext helpID="reporting" path="saas/common/reporting.html"/>
-   <appContext helpID="report_templates" path="saas/report_templates.html"/>
-   <appContext helpID="report_filters" path="saas/common/report_filters.html"/>
    <appContext helpID="reports_page_nav" path="saas/common/reports_page_nav.html"/>
-   <appContext helpID="rsc_users_reports" path="saas/common/rsc_users_reports.html"/>
-   <appContext helpID="creating_users_report"
-               path="saas/common/creating_users_report.html"/>
-   <appContext helpID="viewing_users_report"
-               path="saas/common/viewing_users_report.html"/>
-   <appContext helpID="user_report_details"
-               path="saas/common/user_report_details.html"/>
-   <appContext helpID="rsc_service_account_report"
-               path="saas/common/rsc_service_account_report.html"/>
-   <appContext helpID="creating_service_account_report"
-               path="saas/common/creating_service_account_report.html"/>
-   <appContext helpID="viewing_service_account_report"
-               path="saas/common/viewing_service_account_report.html"/>
-   <appContext helpID="service_account_report_details"
-               path="saas/common/service_account_report_details.html"/>
-   <appContext helpID="rsc_sso_group_report"
-               path="saas/common/rsc_sso_group_report.html"/>
-   <appContext helpID="creating_a_sso_group_report"
-               path="saas/common/creating_a_sso_group_report.html"/>
-   <appContext helpID="viewing_sso_group_report"
-               path="saas/common/viewing_sso_group_report.html"/>
-   <appContext helpID="sso_group_report_details"
-               path="saas/common/sso_group_report_details.html"/>
-   <appContext helpID="roles_report" path="saas/common/roles_report.html"/>
-   <appContext helpID="creating_roles_report"
-               path="saas/common/creating_roles_report.html"/>
-   <appContext helpID="viewing_roles_report"
-               path="saas/common/viewing_roles_report.html"/>
-   <appContext helpID="roles_report_details"
-               path="saas/common/roles_report_details.html"/>
-   <appContext helpID="object_backup_task_summary_report"
-               path="saas/common/object_backup_task_summary_report.html"/>
-   <appContext helpID="fields_object_backup_task_summary_report"
-               path="saas/common/fields_object_backup_task_summary_report.html"/>
-   <appContext helpID="qauth_roles_report" path="saas/common/qauth_roles_report.html"/>
-   <appContext helpID="creating_qauth_roles_report"
-               path="saas/common/creating_qauth_roles_report.html"/>
-   <appContext helpID="viewing_qauth_roles_report"
-               path="saas/common/viewing_qauth_roles_report.html"/>
-   <appContext helpID="fields_qauth_roles_report"
-               path="saas/common/fields_qauth_roles_report.html"/>
-   <appContext helpID="sla_domain_versions"
-               path="saas/common/sla_domain_versions.html"/>
-   <appContext helpID="groupings" path="saas/common/groupings.html"/>
-   <appContext helpID="limitations" path="saas/common/limitations.html"/>
-   <appContext helpID="report_customization"
-               path="saas/common/report_customization.html"/>
+   <appContext helpID="create_customize_manage_reports"
+               path="saas/common/create_customize_manage_reports.html"/>
    <appContext helpID="creating_a_report" path="saas/common/creating_a_report.html"/>
    <appContext helpID="assigning_rbac_custom_reports"
-               path="saas/common/assigning_role_based_access_control_on_custom_reports.html"/>
-   <appContext helpID="creating_custom_object_capacity_over_time_report"
-               path="saas/common/creating_custom_object_capacity_over_time_report.html"/>
-   <appContext helpID="sending_instant_report"
-               path="saas/common/sending_instant_report.html"/>
-   <appContext helpID="displaying_a_report"
-               path="saas/common/displaying_a_report.html"/>
-   <appContext helpID="editing_a_report" path="saas/common/editing_a_report.html"/>
+               path="saas/common/assigning_rbac_custom_reports.html"/>
+   <appContext helpID="apply_groupings_report_charts"
+               path="saas/common/apply_groupings_report_charts.html"/>
+   <appContext helpID="apply_report_filters"
+               path="saas/common/apply_report_filters.html"/>
    <appContext helpID="downloading_a_report"
                path="saas/common/downloading_a_report.html"/>
-   <appContext helpID="viewing_own_reports"
-               path="saas/common/viewing_own_reports.html"/>
-   <appContext helpID="deleting_a_report" path="saas/common/deleting_a_report.html"/>
    <appContext helpID="report_schedules" path="saas/common/report_schedules.html"/>
-   <appContext helpID="creating_a_report_schedule"
-               path="saas/common/creating_a_report_schedule.html"/>
    <appContext helpID="editing_a_report_schedule"
                path="saas/common/editing_a_report_schedule.html"/>
-   <appContext helpID="deleting_a_report_schedule"
-               path="saas/common/deleting_a_report_schedule.html"/>
+   <appContext helpID="creating_a_report_schedule"
+               path="saas/common/creating_a_report_schedule.html"/>
    <appContext helpID="backup_strikes_reports"
                path="saas/common/backup_strikes_reports.html"/>
-   <appContext helpID="rsc_report_sox_compliance"
-               path="saas/common/rsc_report_sox_compliance.html"/>
+   <appContext helpID="report_templates" path="saas/report_templates.html"/>
+   <appContext helpID="anomalies_report" path="saas/common/anomalies_report.html"/>
+   <appContext helpID="anomalies_report_fields"
+               path="saas/common/anomalies_report_fields.html"/>
+   <appContext helpID="audit_report" path="saas/common/audit_report.html"/>
+   <appContext helpID="audit_report_fields"
+               path="saas/common/audit_report_fields.html"/>
+   <appContext helpID="compliance_report" path="saas/common/compliance_report.html"/>
+   <appContext helpID="compliance_report_fields"
+               path="saas/common/compliance_report_fields.html"/>
+   <appContext helpID="cloud_native_obj_capacity_reports"
+               path="saas/common/cloud_native_obj_capacity_reports.html"/>
+   <appContext helpID="understand_cloud_backup_usage_chargeback"
+               path="saas/common/understand_cloud_backup_usage_chargeback.html"/>
+   <appContext helpID="infrastructure_report"
+               path="saas/common/infrastructure_report.html"/>
+   <appContext helpID="infrastructure_report_fields"
+               path="saas/common/infrastructure_report_fields.html"/>
+   <appContext helpID="object_audit_report"
+               path="saas/common/object_audit_report.html"/>
+   <appContext helpID="object_audit_report_fields"
+               path="saas/common/object_audit_report_fields.html"/>
+   <appContext helpID="object_backup_task_summary_report"
+               path="saas/common/object_backup_task_summary_report.html"/>
+   <appContext helpID="object_backup_task_summary_report_fields"
+               path="saas/common/object_backup_task_summary_report_fields.html"/>
+   <appContext helpID="object_capacity_report"
+               path="saas/common/object_capacity_report.html"/>
+   <appContext helpID="object_capacity_report_fields"
+               path="saas/common/object_capacity_report_fields.html"/>
+   <appContext helpID="object_capacity_over_time_report"
+               path="saas/common/object_capacity_over_time_report.html"/>
+   <appContext helpID="object_capacity_over_time_report_fields"
+               path="saas/common/object_capacity_over_time_report_fields.html"/>
+   <appContext helpID="protection_report" path="saas/common/protection_report.html"/>
+   <appContext helpID="protection_report_fields"
+               path="saas/common/protection_report_fields.html"/>
+   <appContext helpID="protection_tasks_details_report"
+               path="saas/common/protection_tasks_details_report.html"/>
+   <appContext helpID="protection_tasks_detail_report_fields"
+               path="saas/common/protection_tasks_detail_report_fields.html"/>
+   <appContext helpID="qauth_roles_report" path="saas/common/qauth_roles_report.html"/>
+   <appContext helpID="qauth_roles_report_fields"
+               path="saas/common/qauth_roles_report_fields.html"/>
+   <appContext helpID="recovery_tasks_details_report"
+               path="saas/common/recovery_tasks_details_report.html"/>
+   <appContext helpID="recovery_tasks_details_report_fields"
+               path="saas/common/recovery_tasks_details_report_fields.html"/>
+   <appContext helpID="roles_report" path="saas/common/roles_report.html"/>
+   <appContext helpID="roles_report_fields"
+               path="saas/common/roles_report_fields.html"/>
+   <appContext helpID="service_account_report"
+               path="saas/common/service_account_report.html"/>
+   <appContext helpID="service_account_report_fields"
+               path="saas/common/service_account_report_fields.html"/>
+   <appContext helpID="sso_group_report" path="saas/common/sso_group_report.html"/>
+   <appContext helpID="sso_group_report_fields"
+               path="saas/common/sso_group_report_fields.html"/>
+   <appContext helpID="threat_monitoring_report"
+               path="saas/common/threat_monitoring_report.html"/>
+   <appContext helpID="threat_monitoring_report_fields"
+               path="saas/common/threat_monitoring_report_fields.html"/>
+   <appContext helpID="users_reports" path="saas/common/users_reports.html"/>
+   <appContext helpID="users_report_fields"
+               path="saas/common/users_report_fields.html"/>
    <appContext helpID="nascd_protection_report"
                path="saas/nascd_protection_report.html"/>
    <appContext helpID="creating_ncd_protection_report"
@@ -6634,14 +6723,9 @@
                path="saas/creating_ncd_compliance_report.html"/>
    <appContext helpID="nas_cloud_direct_report_filters"
                path="saas/nascd_report_filters.html"/>
+   <appContext helpID="nascd_object_capacity_report"
+               path="saas/nascd_object_capacity_report.html"/>
    <appContext helpID="nascd_report_details" path="saas/nascd_report_details.html"/>
-   <appContext helpID="compliance_report" path="saas/common/compliance_report.html"/>
-   <appContext helpID="protection_task_detail_report"
-               path="saas/common/protection_task_detail_report.html"/>
-   <appContext helpID="cloud_native_obj_capacity_reports"
-               path="saas/common/cloud_native_obj_capacity_reports.html"/>
-   <appContext helpID="understand_cloud_backup_usage_chargeback"
-               path="saas/common/understand_cloud_backup_usage_chargeback.html"/>
    <appContext helpID="rsc_dashboards" path="saas/rsc_dashboards.html"/>
    <appContext helpID="data_protection_dashboard"
                path="saas/data_protection_dashboard.html"/>

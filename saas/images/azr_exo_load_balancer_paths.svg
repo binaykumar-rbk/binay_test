@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 416" width="860" height="416"
+     font-family="Segoe UI, Calibri, Arial, sans-serif">
+  <rect width="860" height="416" fill="#F4F7FB" rx="8"/>
+
+  <!-- ═══ Title bar ═══ -->
+  <rect x="0" y="0" width="860" height="64" fill="#1B2A4A" rx="8"/>
+  <rect x="0" y="48" width="860" height="16" fill="#1B2A4A"/>
+  <text x="430" y="27" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">Standard Load Balancer: Resolving Azure Policy Conflicts</text>
+  <text x="430" y="50" text-anchor="middle" font-size="11" fill="#8BB8E8">AKS uses a standard load balancer with a public IP by default. Apply one of the solutions below if Azure policy restricts public IPs.</text>
+
+  <!-- ═══ Problem box ═══ -->
+  <rect x="230" y="80" width="400" height="76" fill="#FFEBEE" rx="8" stroke="#E53935" stroke-width="2"/>
+  <text x="430" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#C62828">Problem</text>
+  <text x="430" y="124" text-anchor="middle" font-size="11" fill="#333">Azure policy restricts creation of public IP addresses</text>
+  <text x="430" y="142" text-anchor="middle" font-size="11" fill="#C62828">&#x2192; AKS cluster deployment for Exocompute fails</text>
+
+  <!-- ═══ Branch lines from problem bottom to solution tops ═══ -->
+  <!-- Problem box bottom: y=156. Solution centers: x=214 (A), x=646 (B). Solution top: y=188 -->
+  <line x1="330" y1="156" x2="214" y2="188" stroke="#374151" stroke-width="2"/>
+  <line x1="530" y1="156" x2="646" y2="188" stroke="#374151" stroke-width="2"/>
+
+  <!-- Branch labels — placed at y=158–172 (just below problem box bottom y=156).
+       At this y-range: left line is at x=272–323, right line at x=537–588.
+       Both are well outside label rects (left: x=183–245, right: x=615–677). No overlap. -->
+  <rect x="183" y="158" width="62" height="14" fill="#F4F7FB"/>
+  <text x="214" y="169" text-anchor="middle" font-size="10" font-weight="bold" fill="#2E7D32">Solution A</text>
+  <rect x="615" y="158" width="62" height="14" fill="#F4F7FB"/>
+  <text x="646" y="169" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565C0">Solution B</text>
+
+  <!-- ═══ Solution A: Policy Exemption  x=14, y=188, w=400, h=192 ═══ -->
+  <rect x="14" y="188" width="400" height="192" fill="#FFFFFF" rx="8" stroke="#43A047" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="14" y="188" width="400" height="40" fill="#43A047" rx="8"/>
+  <rect x="14" y="212" width="400" height="16" fill="#43A047"/>
+  <text x="214" y="213" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Solution A: Provide a Policy Exemption</text>
+
+  <!-- Body -->
+  <text x="30" y="248" font-size="11" font-weight="bold" fill="#2E7D32">Best when:</text>
+  <text x="30" y="264" font-size="10" fill="#333">Your team can create Azure policy exemptions for</text>
+  <text x="30" y="279" font-size="10" fill="#333">the Exocompute resource group scope.</text>
+
+  <text x="30" y="300" font-size="11" font-weight="bold" fill="#2E7D32">How it works:</text>
+  <text x="30" y="316" font-size="10" fill="#333">Add a policy exemption scoped to the Exocompute</text>
+  <text x="30" y="331" font-size="10" fill="#333">resource group. The public IP is only used for</text>
+  <text x="30" y="346" font-size="10" fill="#333">outbound AKS traffic — inbound is blocked by default.</text>
+
+  <!-- See box — inside parent (parent bottom: 188+192=380; see bottom: 358+18=376 ✓) -->
+  <rect x="24" y="358" width="380" height="18" fill="#C8E6C9" rx="4"/>
+  <text x="214" y="371" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B5E20">See: Azure policies review and exemptions</text>
+
+  <!-- ═══ Solution B: UDR  x=446, y=188, w=400, h=192 ═══ -->
+  <rect x="446" y="188" width="400" height="192" fill="#FFFFFF" rx="8" stroke="#1565C0" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="446" y="188" width="400" height="40" fill="#1565C0" rx="8"/>
+  <rect x="446" y="212" width="400" height="16" fill="#1565C0"/>
+  <text x="646" y="213" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Solution B: Configure User Defined Routing (UDR)</text>
+
+  <!-- Body -->
+  <text x="462" y="248" font-size="11" font-weight="bold" fill="#1565C0">Best when:</text>
+  <text x="462" y="264" font-size="10" fill="#333">Your organization cannot allow public IPs or grant</text>
+  <text x="462" y="279" font-size="10" fill="#333">policy exemptions under any circumstances.</text>
+
+  <text x="462" y="300" font-size="11" font-weight="bold" fill="#1565C0">How it works:</text>
+  <text x="462" y="316" font-size="10" fill="#333">Define custom routes (UDRs) in the AKS VNet to</text>
+  <text x="462" y="331" font-size="10" fill="#333">route all outbound traffic through your firewall or</text>
+  <text x="462" y="346" font-size="10" fill="#333">NAT gateway. Configure UDR for your firewall type.</text>
+
+  <!-- See box — inside parent (parent bottom: 446+192=... wait: y=188+192=380; see bottom=376 ✓) -->
+  <rect x="456" y="358" width="380" height="18" fill="#BBDEFB" rx="4"/>
+  <text x="646" y="371" text-anchor="middle" font-size="10" font-weight="bold" fill="#0D47A1">See: Azure User Defined Routing configuration</text>
+
+  <!-- ═══ Bottom note (y=388; solution boxes end at y=380; 8px gap ✓) ═══ -->
+  <rect x="14" y="388" width="832" height="22" fill="#EEF2F7" rx="4"/>
+  <text x="430" y="403" text-anchor="middle" font-size="10" fill="#555">The standard load balancer blocks all inbound traffic by default. Use NSG rules to control inbound and outbound access to the AKS cluster.</text>
+
+</svg>

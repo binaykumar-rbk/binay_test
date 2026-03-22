@@ -1,0 +1,312 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="RSC monitors and logs various authentication actions for the Active Directory identity provider."/><meta name="DC.relation" content="../identity_resilience/ir_activity_logs.html"/><meta name="DC.relation" content="../identity_resilience/ir_reverting_activity_log.html"/><meta name="DC.relation" content="../identity_resilience/signin_logs.html"/><meta name="DC.relation" content="ir_activity_logs.html"/><meta name="DC.relation" content="ir_viewing_activity_log.html"/><meta name="DC.relation" content="ir_reverting_activity_log.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="ir_ad_authentication_log"/>        
+      <title>AD authentication logs</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="ir_ad_authentication_log-d27248e44124"/><meta name="wh-source-relpath" content="identity_resilience/ir_ad_authentication_log.dita"/><meta name="wh-out-relpath" content="identity_resilience/ir_ad_authentication_log.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260322093117"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260322093117"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="ir_ad_authentication_log" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../identity_resilience/identity_resilience.html">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li><div class="topicref" data-id="identity_resilience"><div class="title"><a href="../identity_resilience/identity_resilience.html"><span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">Rubrik <span class="ph">Identity Resilience</span> secures, monitors, and recovers the         Identity Providers.</p></div></div></div></li><li><div class="topicref" data-id="ir_activity_auditor"><div class="title"><a href="../identity_resilience/ir_activity_auditor.html">Activity auditor in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">The Activity auditor provides a centralized, immutable record of identity management         events and authentication attempts across supported identity providers.</p></div></div></div></li><li><div class="topicref" data-id="ir_activity_logs"><div class="title"><a href="../identity_resilience/ir_activity_logs.html">Activity logs</a><div class="wh-tooltip"><p class="shortdesc">Rubrik <span class="ph">Identity Resilience</span> provides a comprehensive, immutable, and         actionable audit log of all changes within identity providers, such as Active Directory and         Entra ID.</p></div></div></div></li><li class="active"><div class="topicref" data-id="ir_ad_authentication_log"><div class="title"><a href="../identity_resilience/ir_ad_authentication_log.html">AD authentication logs</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> monitors and logs various authentication actions for the Active         Directory identity provider.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../identity_resilience/ir_reverting_activity_log.html" title="Reverting activity logs" aria-label="Previous topic: Reverting activity logs" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../identity_resilience/signin_logs.html" title="Sign-in logs" aria-label="Next topic: Sign-in logs" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d27248e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e1537" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e1537-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d27248e1537-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e4649" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e4649-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d27248e4649-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e8780" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e8780-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d27248e8780-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e11727" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e11727-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d27248e11727-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e40385" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e40385-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d27248e40385-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27248e43670" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27248e43670-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d27248e43670-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="identity_resilience-d27248e43676" class="topicref" data-id="identity_resilience" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action identity_resilience-d27248e43676-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="identity_resilience-d27248e43676-link"><span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">Rubrik <span class="ph">Identity Resilience</span> secures, monitors, and recovers the         Identity Providers.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e43691" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e43691-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_key_features.html" id="tocId-d27248e43691-link">Introduction to Identity Resilience</a></div></div></li><li role="treeitem"><div data-tocid="ir_supported_func_idp-d27248e43723" class="topicref" data-id="ir_supported_func_idp" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_supported_func_idp.html" id="ir_supported_func_idp-d27248e43723-link">Supported functionalities and identities for IdP</a><div class="wh-tooltip"><p class="shortdesc">Information about the functionalities and identities  supported for specific Identity         Provider in <span class="ph">Identity Resilience</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ir_idp_protection_planning-d27248e43737" class="topicref" data-id="ir_idp_protection_planning" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_idp_protection_planning-d27248e43737-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_idp_protection_planning.html" id="ir_idp_protection_planning-d27248e43737-link">IdP protection planning </a><div class="wh-tooltip"><p class="shortdesc">Effective planning for Identity Provider protection involves defining the scope,         assessing criticality, strategizing onboarding and integration, managing permissions and         credentials, establishing SLA Domains, and preparing for recovery scenarios to ensure robust         defense and rapid recovery of identity environments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e43780" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e43780-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_adding_idp.html" id="tocId-d27248e43780-link">Configuring and protecting Identity Providers</a></div></div></li><li role="treeitem"><div data-tocid="ir_dashboard-d27248e43828" class="topicref" data-id="ir_dashboard" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_dashboard.html" id="ir_dashboard-d27248e43828-link"><span class="ph">Identity Resilience</span> dashboard</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">Identity Resilience</span> dashboard provides a unified overview of         identity-related policy violations, activity alerts, and the protection status of hybrid         identity environments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ir_policies_violations-d27248e43844" class="topicref" data-id="ir_policies_violations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_policies_violations-d27248e43844-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_policies_violations.html" id="ir_policies_violations-d27248e43844-link">Policies and violations in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Identity Resilience</span> policies are predefined by Rubrik to identify gaps         in your identity security posture and simplify the process to mitigate identity-based cyber         risks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ir_identities-d27248e43940" class="topicref" data-id="ir_identities" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_identities-d27248e43940-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_identities.html" id="ir_identities-d27248e43940-link">Identities in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">The Identities page in <span class="ph">Identity Resilience</span> provides a centralized view         of all human and non-human identities discovered in your environment.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="ir_activity_auditor-d27248e44029" class="topicref" data-id="ir_activity_auditor" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ir_activity_auditor-d27248e44029-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_activity_auditor.html" id="ir_activity_auditor-d27248e44029-link">Activity auditor in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">The Activity auditor provides a centralized, immutable record of identity management         events and authentication attempts across supported identity providers.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="ir_activity_logs-d27248e44042" class="topicref" data-id="ir_activity_logs" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ir_activity_logs-d27248e44042-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_activity_logs.html" id="ir_activity_logs-d27248e44042-link">Activity logs</a><div class="wh-tooltip"><p class="shortdesc">Rubrik <span class="ph">Identity Resilience</span> provides a comprehensive, immutable, and         actionable audit log of all changes within identity providers, such as Active Directory and         Entra ID.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="ir_configure_actor_identification-d27248e44056" class="topicref" data-id="ir_configure_actor_identification" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_configure_actor_identification-d27248e44056-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_configure_actor_identification.html" id="ir_configure_actor_identification-d27248e44056-link">Configure actor identification</a><div class="wh-tooltip"><p class="shortdesc">You can enable activity logs for actor identification by setting up some specific         requirements.</p></div></div></div></li><li role="treeitem"><div data-tocid="ir_activity_log_filters-d27248e44089" class="topicref" data-id="ir_activity_log_filters" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_activity_log_filters.html" id="ir_activity_log_filters-d27248e44089-link">Activity log filters</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> provides filters for all the activity logs in your hybrid         identity environments based on various criteria.</p></div></div></div></li><li role="treeitem"><div data-tocid="ir_viewing_activity_log-d27248e44102" class="topicref" data-id="ir_viewing_activity_log" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_viewing_activity_log.html" id="ir_viewing_activity_log-d27248e44102-link">Viewing activity log</a><div class="wh-tooltip"><p class="shortdesc">View the activity logs of your identity system to investigate any activities that         might be non-compliant or could compromise security.</p></div></div></div></li><li role="treeitem"><div data-tocid="ir_reverting_activity_log-d27248e44113" class="topicref" data-id="ir_reverting_activity_log" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_reverting_activity_log.html" id="ir_reverting_activity_log-d27248e44113-link">Reverting activity logs</a><div class="wh-tooltip"><p class="shortdesc">Identify and revert accidental errors or unintended changes that could compromise         business operations. You can revert and remediate malicious changes by compromised         identities to roll back the identity system to previous state without performing a full         system rollback.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="ir_ad_authentication_log-d27248e44124" class="topicref" data-id="ir_ad_authentication_log" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_ad_authentication_log.html" id="ir_ad_authentication_log-d27248e44124-link">AD authentication logs</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">RSC</span> monitors and logs various authentication actions for the Active         Directory identity provider.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="signin_logs-d27248e44137" class="topicref" data-id="signin_logs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action signin_logs-d27248e44137-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/signin_logs.html" id="signin_logs-d27248e44137-link">Sign-in logs</a><div class="wh-tooltip"><p class="shortdesc">Sign-in logs capture and surface authentication events from Microsoft Entra ID to         provide visibility into access attempts and identity risks.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="ir_alerts-d27248e44170" class="topicref" data-id="ir_alerts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_alerts-d27248e44170-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_alerts.html" id="ir_alerts-d27248e44170-link">Alerts in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">The Alerts feature within Rubrik <span class="ph">Identity Resilience</span> provides         real-time, live tracking of critical events and suspicious activities detected within your         Active Directory environment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ir_alert_rules-d27248e44244" class="topicref" data-id="ir_alert_rules" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ir_alert_rules-d27248e44244-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_alert_rules.html" id="ir_alert_rules-d27248e44244-link">Alert rules in <span class="ph">Identity Resilience</span></a><div class="wh-tooltip"><p class="shortdesc">Alert rules trigger alerts when specific activities are detected within an Identity         Provider by monitoring changes captured through activity logging.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e44327" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e44327-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/ir_events.html" id="tocId-d27248e44327-link">Events and reports</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e44388" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e44388-link" class="wh-expand-btn"></span><div class="title"><a href="../adds/ad_protection.html" id="tocId-d27248e44388-link">Identity workloads</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e46059" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e46059-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d27248e46059-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47148" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47148-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d27248e47148-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47411" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47411-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d27248e47411-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e47887" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e47887-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d27248e47887-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e49667" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e49667-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d27248e49667-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e49754" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e49754-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d27248e49754-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27248e50319" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27248e50319-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d27248e50319-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">AD authentication logs</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">RSC</span> monitors and logs various authentication actions for the Active
+        Directory identity provider.</p>
+        <p class="- topic/p p">The activity log feature in <span class="- topic/ph ph">Identity Resilience</span> tracks authentication
+            actions such as account lockouts, password updates, and account enable or disable
+            actions. The authentication event logs provide information about what happened, when it
+            occurred, and who performed the action.</p>
+        <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> provides the ability to revert certain authentication actions
+            performed in your Active Directory (AD) environment. You can view the log of
+            authentication actions using the Authentication action type filter.</p>
+        <div class="table-container"><table class="- topic/table table frame-all" data-cols="3"><caption><span class="- topic/desc desc tabledesc">The following table provides the support matrix for the supported authentication
+                actions and whether the actions can be reverted.</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="ir_ad_authentication_log__entry__1">Authentication action</th>
+                        <th class="- topic/entry entry colsep-1 rowsep-1" id="ir_ad_authentication_log__entry__2">Description</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-1" id="ir_ad_authentication_log__entry__3">Revertible</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__1">Account disabled</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__2">A user account was disabled in Active Directory.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="ir_ad_authentication_log__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__1">Account enabled</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__2">A user account was enabled in Active Directory.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="ir_ad_authentication_log__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__1">Account locked</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__2">A user account was locked out.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="ir_ad_authentication_log__entry__3">Yes</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__1">Account unlocked</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-1" headers="ir_ad_authentication_log__entry__2">A user account was unlocked.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-1" headers="ir_ad_authentication_log__entry__3">No</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="ir_ad_authentication_log__entry__1">Password changed</td>
+                        <td class="- topic/entry entry colsep-1 rowsep-0" headers="ir_ad_authentication_log__entry__2">A user account password was changed.</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="ir_ad_authentication_log__entry__3">No</td>
+                    </tr>
+                </tbody></table></div>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ir_activity_logs.html" title="Rubrik Identity Resilience provides a comprehensive, immutable, and actionable audit log of all changes within identity providers, such as Active Directory and Entra ID.">Activity logs</a><div class="- topic/desc desc">Rubrik Identity Resilience provides a comprehensive, immutable, and         actionable audit log of all changes within identity providers, such as Active Directory and         Entra ID.</div></li></ul></div><div class="- topic/linklist linklist reltasks"><strong>Related tasks</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ir_viewing_activity_log.html" title="View the activity logs of your identity system to investigate any activities that might be non-compliant or could compromise security.">Viewing activity log</a><div class="- topic/desc desc">View the activity logs of your identity system to investigate any activities that         might be non-compliant or could compromise security.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="ir_reverting_activity_log.html" title="Identify and revert accidental errors or unintended changes that could compromise business operations. You can revert and remediate malicious changes by compromised identities to roll back the identity system to previous state without performing a full system rollback.">Reverting activity logs</a><div class="- topic/desc desc">Identify and revert accidental errors or unintended changes that could compromise         business operations. You can revert and remediate malicious changes by compromised         identities to roll back the identity system to previous state without performing a full         system rollback.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
