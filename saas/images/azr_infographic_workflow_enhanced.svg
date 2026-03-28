@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="960" viewBox="0 0 800 960"
+     font-family="Segoe UI, Calibri, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6B7280"/>
+    </marker>
+  </defs>
+
+  <!-- Phase 1: Plan your Azure protection -->
+  <rect x="20" y="20" width="760" height="88" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="20" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="52" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="45" r="15" fill="#1DA1DC"/>
+  <text x="56" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="white">1</text>
+  <text x="82" y="50" font-size="15" font-weight="600" fill="white">Plan your Azure protection</text>
+  <text x="40" y="86" font-size="12.5" fill="#6C7576">Understand RSC capabilities, plan user access and roles, and review the Azure permissions RSC requires.</text>
+
+  <line x1="400" y1="108" x2="400" y2="129" stroke="#6B7280" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Phase 2: Set up Azure cloud accounts -->
+  <rect x="20" y="130" width="760" height="88" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="130" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="162" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="155" r="15" fill="#1DA1DC"/>
+  <text x="56" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="white">2</text>
+  <text x="82" y="160" font-size="15" font-weight="600" fill="white">Set up Azure cloud accounts</text>
+  <text x="40" y="196" font-size="12.5" fill="#6C7576">Connect RSC to your Azure subscription by configuring the chosen authentication method.</text>
+
+  <line x1="400" y1="218" x2="400" y2="239" stroke="#6B7280" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Phase 3: Configure core infrastructure -->
+  <rect x="20" y="240" width="760" height="186" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="240" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="272" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="265" r="15" fill="#1DA1DC"/>
+  <text x="56" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="white">3</text>
+  <text x="82" y="270" font-size="15" font-weight="600" fill="white">Configure core infrastructure</text>
+  <text x="40" y="306" font-size="12.5" fill="#6C7576">Configure the underlying Rubrik components within Azure required for data protection operations.</text>
+  <rect x="42" y="318" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="318" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="338" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="343" font-size="13" font-weight="600" fill="#273637">Set up Exocompute on Azure</text>
+  <rect x="42" y="366" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="366" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="386" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="391" font-size="13" font-weight="600" fill="#273637">Set up Azure storage tiering</text>
+
+  <line x1="400" y1="426" x2="400" y2="447" stroke="#6B7280" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Phase 4: Protect Azure workloads -->
+  <rect x="20" y="448" width="760" height="88" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="448" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="480" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="473" r="15" fill="#1DA1DC"/>
+  <text x="56" y="478" text-anchor="middle" font-size="15" font-weight="700" fill="white">4</text>
+  <text x="82" y="478" font-size="15" font-weight="600" fill="white">Protect Azure workloads</text>
+  <text x="40" y="516" font-size="12.5" fill="#6C7576">Define protection policies (SLA Domains) and assign them to Azure workloads for automated backups.</text>
+
+  <line x1="400" y1="536" x2="400" y2="557" stroke="#6B7280" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Phase 5: Monitor and manage (RSC — all 4 children) -->
+  <rect x="20" y="558" width="760" height="276" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="558" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="590" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="583" r="15" fill="#1DA1DC"/>
+  <text x="56" y="588" text-anchor="middle" font-size="15" font-weight="700" fill="white">5</text>
+  <text x="82" y="588" font-size="15" font-weight="600" fill="white">Monitor and manage</text>
+  <text x="40" y="626" font-size="12.5" fill="#6C7576">Use dashboards to track status, review event logs, and continuously optimize your protection configuration.</text>
+  <rect x="42" y="638" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="638" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="658" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="663" font-size="13" font-weight="600" fill="#273637">Manage Azure virtual machines</text>
+  <rect x="42" y="686" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="686" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="706" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="711" font-size="13" font-weight="600" fill="#273637">Manage Azure Blob Storage</text>
+  <rect x="42" y="734" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="734" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="754" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="759" font-size="13" font-weight="600" fill="#273637">Manage Azure SQL Database</text>
+  <rect x="42" y="782" width="716" height="40" rx="6" fill="#F6F8F7" stroke="#E6EAE9" stroke-width="1"/>
+  <rect x="42" y="782" width="4" height="40" rx="2" fill="#1DA1DC"/>
+  <circle cx="60" cy="802" r="3.5" fill="#1DA1DC"/>
+  <text x="74" y="807" font-size="13" font-weight="600" fill="#273637">Manage Azure SQL Managed Instance</text>
+
+  <line x1="400" y1="834" x2="400" y2="855" stroke="#6B7280" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Phase 6: Recover Azure workloads -->
+  <rect x="20" y="856" width="760" height="88" rx="8" fill="white" stroke="#E6EAE9" stroke-width="1.5"/>
+  <rect x="20" y="856" width="760" height="50" rx="8" fill="#0C2448"/>
+  <rect x="20" y="888" width="760" height="18" fill="#0C2448"/>
+  <circle cx="56" cy="881" r="15" fill="#1DA1DC"/>
+  <text x="56" y="886" text-anchor="middle" font-size="15" font-weight="700" fill="white">6</text>
+  <text x="82" y="886" font-size="15" font-weight="600" fill="white">Recover Azure workloads</text>
+  <text x="40" y="922" font-size="12.5" fill="#6C7576">Perform granular or full recoveries for Azure workloads to restore operations with clean data.</text>
+
+</svg>

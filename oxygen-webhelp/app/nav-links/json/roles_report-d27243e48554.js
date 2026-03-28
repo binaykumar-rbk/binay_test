@@ -1,0 +1,1 @@
+oxy_webhelp_navlinks = {"roles_report-d27243e48554":{"topics":[{"title":"Roles report fields","shortdesc":"<p class=\"shortdesc\">Information about the fields in the Roles report.<\/p>","href":"saas\/common\/roles_report_fields.html","attributes":{"data-id":"roles_report_fields"},"menu":{"hasChildren":false},"tocID":"roles_report_fields-d27243e48568","topics":[]}]}};

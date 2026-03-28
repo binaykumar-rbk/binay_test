@@ -2134,9 +2134,10 @@
    <appContext helpID="azr_cnp_arch" path="saas/azr_cnp_arch.html"/>
    <appContext helpID="azr_comm_rbk_azr_subscription"
                path="saas/azr_comm_rbk_azr_subscription.html"/>
+   <appContext helpID="azr_get_started_azure_protection"
+               path="saas/azr_get_started_azure_protection.html"/>
    <appContext helpID="azr_protect_implementation"
                path="saas/azr_protect_implementation.html"/>
-   <appContext helpID="azr_quick_links" path="saas/azr_quick_links.html"/>
    <appContext helpID="azr_protecting_first_subscription"
                path="saas/azr_protecting_first_subscription.html"/>
    <appContext helpID="azr_protection_planning"
@@ -2248,8 +2249,6 @@
                path="saas/azr_migrating_existing_accounts_cloud_discovery_model.html"/>
    <appContext helpID="azr_deleting_cloud_discovery"
                path="saas/azr_deleting_cloud_discovery.html"/>
-   <appContext helpID="azr_troubleshoot_cloud_account_setup"
-               path="saas/azr_troubleshoot_cloud_account_setup.html"/>
    <appContext helpID="azr_exocompute" path="saas/azr_exocompute.html"/>
    <appContext helpID="azr_pvt_aks_clusters" path="saas/azr_pvt_aks_clusters.html"/>
    <appContext helpID="azr_workflow_example_exocompute"
@@ -2368,8 +2367,6 @@
                path="saas/azr_creating_arch_loc_storage_acc.html"/>
    <appContext helpID="azr_configuring_private_endpoint"
                path="saas/azr_configuring_private_endpoint.html"/>
-   <appContext helpID="azr_troubleshoot_storage_tiering"
-               path="saas/azr_troubleshoot_storage_tiering.html"/>
    <appContext helpID="azr_workloads_protection_setup"
                path="saas/azr_workloads_protection_setup.html"/>
    <appContext helpID="azr_hierarchy_sla_assignment"
@@ -2489,15 +2486,13 @@
                path="azure_blob/anomaly_detection_azure_blob_storage.html"/>
    <appContext helpID="enabling_ad_azure_blob_storage_accnts"
                path="azure_blob/enabling_ad_azure_blob_storage_accnts.html"/>
-   <appContext helpID="azr_sql_protection_overview"
-               path="saas/azr_sql_protection_overview.html"/>
+   <appContext helpID="azr_sql_db_manage" path="saas/azr_sql_db_manage.html"/>
    <appContext helpID="azr_sql_native_backup_capability"
                path="saas/azr_sql_native_backup_capability.html"/>
    <appContext helpID="azr_sql_native_vs_rbk_backups"
                path="saas/azr_sql_native_vs_rbk_backups.html"/>
    <appContext helpID="azr_sql_supp_backup_recv_types"
                path="saas/azr_sql_supp_backup_recv_types.html"/>
-   <appContext helpID="azr_sql_db_manage" path="saas/azr_sql_db_manage.html"/>
    <appContext helpID="azr_sql_db_rbk_backup_components"
                path="saas/azr_sql_db_rbk_backup_components.html"/>
    <appContext helpID="azr_sql_db_supp_datatypes_rbk_backup"
@@ -2536,6 +2531,12 @@
    <appContext helpID="azr_sql_db_rbk_backup_limitations"
                path="saas/azr_sql_db_rbk_backup_limitations.html"/>
    <appContext helpID="azr_sql_mi_manage" path="saas/azr_sql_mi_manage.html"/>
+   <appContext helpID="azr_sql_native_backup_capability"
+               path="saas/azr_sql_native_backup_capability.html"/>
+   <appContext helpID="azr_sql_native_vs_rbk_backups"
+               path="saas/azr_sql_native_vs_rbk_backups.html"/>
+   <appContext helpID="azr_sql_supp_backup_recv_types"
+               path="saas/azr_sql_supp_backup_recv_types.html"/>
    <appContext helpID="azr_sql_mi_rbk_backup_components"
                path="saas/azr_sql_mi_rbk_backup_components.html"/>
    <appContext helpID="azr_sql_mi_supp_datatypes_rbk_backups"
@@ -2659,6 +2660,7 @@
                path="saas/azr_sql_db_recovery_settings.html"/>
    <appContext helpID="azr_sql_mi_recovery_settings"
                path="saas/azr_sql_mi_recovery_settings.html"/>
+   <appContext helpID="azr_quick_links" path="saas/azr_quick_links.html"/>
    <appContext helpID="k8s_workload_protection"
                path="kubernetes/k8s_workload_protection.html"/>
    <appContext helpID="k8s_deployment_architecture"
