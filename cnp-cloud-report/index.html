@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Workload Revamp Report (SPARK + CUSTDOC)</title>
+<style>
+  :root {
+    --rubrik-blue: #1B4F8A;
+    --rubrik-teal: #00B4D8;
+    --green: #28a745;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --light-green: #d4edda;
+    --light-red: #f8d7da;
+    --light-blue: #d1ecf1;
+    --light-orange: #fff3cd;
+    --gray-bg: #f8f9fa;
+    --border: #dee2e6;
+    --text: #212529;
+    --muted: #6c757d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f4f8;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--rubrik-blue) 0%, #0d2d5e 100%);
+    color: white;
+    padding: 28px 36px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  header .subtitle { font-size: 13px; opacity: 0.85; }
+  header .meta { margin-top: 10px; font-size: 12px; opacity: 0.7; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+  header .tip-icon { background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); }
+  header .tip-icon:hover { background: rgba(255,255,255,0.4); color: white; }
+
+  .tab-bar {
+    display: flex;
+    background: #1B4F8A;
+    padding: 0 36px;
+    border-bottom: 3px solid var(--rubrik-teal);
+  }
+
+  .tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: all 0.2s;
+  }
+
+  .tab-btn:hover { color: white; background: rgba(255,255,255,0.08); }
+
+  .tab-btn.active {
+    color: white;
+    border-bottom: 3px solid var(--rubrik-teal);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .tab-content { display: none; padding: 28px 36px 48px; max-width: 1200px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* KPI Cards */
+  .kpi-row { display: grid; gap: 16px; margin-bottom: 28px; }
+  .kpi-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .kpi-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .kpi-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+  .kpi-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--rubrik-teal);
+  }
+
+  .kpi-card.green { border-left-color: var(--green); }
+  .kpi-card.red { border-left-color: var(--red); }
+  .kpi-card.orange { border-left-color: var(--orange); }
+  .kpi-card.blue { border-left-color: var(--rubrik-blue); }
+
+  .kpi-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+  .kpi-value { font-size: 32px; font-weight: 700; line-height: 1; }
+  .kpi-value.green { color: var(--green); }
+  .kpi-value.red { color: var(--red); }
+  .kpi-value.blue { color: var(--rubrik-blue); }
+  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+
+  /* Section headers */
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--rubrik-blue);
+    margin: 28px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { font-size: 16px; }
+
+  /* Tables */
+  .table-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: visible; margin-bottom: 20px; }
+  .table-wrap table { border-radius: 10px; overflow: hidden; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    background: var(--rubrik-blue);
+    color: white;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  th .tip-icon { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+  th .tip-icon:hover { background: rgba(255,255,255,0.38); color: white; }
+
+  td { padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  tr:hover td { background: #f0f4ff; }
+
+  /* Badge/pill */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-green { background: var(--light-green); color: #155724; }
+  .badge-red { background: var(--light-red); color: #721c24; }
+  .badge-blue { background: var(--light-blue); color: #0c5460; }
+  .badge-orange { background: var(--light-orange); color: #856404; }
+  .badge-gray { background: #e2e3e5; color: #383d41; }
+
+  /* Progress bar */
+  .pbar-row { display: flex; align-items: center; gap: 10px; }
+  .pbar-wrap { flex: 1; background: #e9ecef; border-radius: 6px; height: 10px; overflow: hidden; }
+  .pbar-fill { height: 100%; border-radius: 6px; transition: width 0.4s; }
+  .pbar-label { font-size: 12px; font-weight: 600; width: 44px; text-align: right; }
+
+  /* Comparison panel */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .compare-panel {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .compare-panel .panel-header {
+    padding: 12px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .compare-panel.pre .panel-header { background: #f8d7da; color: #721c24; }
+  .compare-panel.post .panel-header { background: #d4edda; color: #155724; }
+  .compare-panel .panel-body { padding: 14px 18px; }
+
+  /* Ticket pills — now anchor tags */
+  .ticket-pill {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--rubrik-blue);
+    font-size: 11px;
+    font-family: monospace;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin: 2px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  }
+  a.ticket-pill:hover {
+    background: var(--rubrik-blue);
+    color: white;
+    box-shadow: 0 2px 6px rgba(27,79,138,0.35);
+  }
+  a.ticket-pill::after { content: " ↗"; font-size: 9px; opacity: 0.6; }
+  a.ticket-pill:hover::after { opacity: 1; }
+
+  /* Inline ticket links in callout text */
+  .ticket-link {
+    color: var(--rubrik-blue);
+    font-weight: 600;
+    font-family: monospace;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rubrik-blue);
+  }
+  .ticket-link:hover { color: var(--rubrik-teal); border-bottom-color: var(--rubrik-teal); }
+
+  /* Callout box */
+  .callout {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .callout.success { background: var(--light-green); border-left: 4px solid var(--green); color: #155724; }
+  .callout.info { background: var(--light-blue); border-left: 4px solid var(--rubrik-teal); color: #0c5460; }
+  .callout.warning { background: var(--light-orange); border-left: 4px solid var(--orange); color: #856404; }
+  .callout-icon { font-size: 16px; flex-shrink: 0; }
+
+  /* Arrow indicator */
+  .arrow-down { color: var(--green); font-weight: 700; }
+  .arrow-up { color: var(--red); font-weight: 700; }
+
+  .highlight-value { font-weight: 700; color: var(--rubrik-blue); }
+
+  /* Writer row */
+  .writer-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .writer-card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    min-width: 140px;
+  }
+  .writer-name { font-weight: 700; font-size: 13px; color: var(--rubrik-blue); }
+  .writer-role { font-size: 11px; color: var(--muted); }
+
+  .separator { height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Big number delta */
+  .delta-box {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 22px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  .delta-big { font-size: 42px; font-weight: 800; }
+  .delta-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  /* Tooltip icon */
+  .tip-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: rgba(108, 117, 125, 0.18);
+    color: #6c757d;
+    font-size: 10px;
+    font-weight: 700;
+    font-style: normal;
+    cursor: help;
+    vertical-align: middle;
+    margin-left: 3px;
+    user-select: none;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+  }
+  .tip-icon:hover { background: var(--rubrik-blue); color: white; }
+
+  /* Global tooltip */
+  #global-tip {
+    position: fixed;
+    z-index: 9999;
+    background: #1a2035;
+    color: #e8ecf5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 290px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    pointer-events: none;
+    display: none;
+    border-top: 3px solid var(--rubrik-teal);
+  }
+  #global-tip strong { display: block; color: white; margin-bottom: 5px; font-size: 12px; letter-spacing: 0.2px; }
+
+  /* ===== Executive Tab Styles ===== */
+  .exec-hero {
+    background: linear-gradient(135deg, #0d2d5e 0%, #1B4F8A 65%, #007a9e 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(27,79,138,0.28);
+  }
+  .exec-hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rubrik-teal);
+    margin-bottom: 10px;
+  }
+  .exec-hero-statement {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.55;
+    max-width: 820px;
+  }
+  .exec-kpi-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 18px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .exec-kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .exec-kpi-card.accent-red::before   { background: var(--red); }
+  .exec-kpi-card.accent-green::before { background: var(--green); }
+  .exec-kpi-card.accent-blue::before  { background: var(--rubrik-blue); }
+  .exec-kpi-card.accent-teal::before  { background: var(--rubrik-teal); }
+  .exec-ba {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .exec-ba-before { font-size: 28px; font-weight: 800; color: var(--red); }
+  .exec-ba-after  { font-size: 38px; font-weight: 800; color: var(--green); }
+  .exec-ba-arrow  { font-size: 20px; color: var(--muted); font-weight: 300; }
+  .exec-kpi-big   { font-size: 52px; font-weight: 800; color: var(--rubrik-blue); line-height: 1; margin-bottom: 8px; }
+  .exec-kpi-label { font-size: 12px; color: var(--muted); font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
+  .exec-kpi-note  { font-size: 11px; color: var(--muted); }
+  .exec-kpi-note strong { color: var(--text); }
+  .exec-wl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .exec-wl-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .exec-wl-title { font-size: 16px; font-weight: 700; color: var(--rubrik-blue); margin-bottom: 2px; }
+  .exec-wl-date  { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
+  .exec-wl-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .exec-wl-row:last-child { border-bottom: none; }
+  .exec-wl-metric-name { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; }
+  .exec-wl-metric-vals { display: flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 700; }
+  .exec-val-before { color: var(--red); }
+  .exec-val-after  { color: var(--green); }
+  .exec-val-arrow  { color: var(--muted); font-size: 11px; font-weight: 400; }
+  .exec-val-note   { font-size: 10px; color: var(--muted); font-weight: 400; }
+  .exec-conclusions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+  .exec-conclusion {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .exec-conclusion-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--rubrik-blue);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .exec-conclusion-text { font-size: 14px; line-height: 1.65; }
+  .exec-conclusion-text strong { color: var(--rubrik-blue); }
+  .exec-nav-hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 8px 0 0;
+    letter-spacing: 0.3px;
+    padding: 10px;
+    border-top: 1px solid var(--border);
+  }
+  /* Clickable count links in exec tab */
+  .exec-count-link {
+    text-decoration: none;
+    border-bottom: 2px dashed currentColor;
+    transition: opacity 0.15s;
+    cursor: pointer;
+  }
+  .exec-count-link:hover { opacity: 0.7; }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .kpi-row.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .compare-grid { grid-template-columns: 1fr; }
+    .tab-btn { padding: 10px 14px; font-size: 12px; }
+    .tab-content { padding: 18px 16px; }
+    header { padding: 20px 18px; }
+    .tab-bar { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="global-tip"></div>
+
+<header>
+  <h1>Cloud Workload Revamp — Ticket Analysis Report (SPARK + CUSTDOC)</h1>
+  <div class="subtitle">
+    Validating the impact of the task-oriented
+    <span class="tip-icon"
+      data-tip-title="Task-Oriented TOC Revamp"
+      data-tip="A restructuring of the documentation Table of Contents (TOC) from a feature-centric hierarchy to a task-oriented model. Content is organized around what users need to do — Plan → Set Up → Configure → Manage — rather than by product feature trees. This makes it easier for users to find step-by-step guidance for specific goals.">ⓘ</span>
+    TOC revamp on AWS, Azure, and GCP documentation
+  </div>
+  <div class="meta">
+    <span>Projects: <strong>SPARK + CUSTDOC</strong></span>
+    <span>Analysis period: <strong>All tickets through May 2026</strong></span>
+    <span>Generated: <strong>May 2026</strong></span>
+    <span>
+      Excludes Editorial (paired review) tickets
+      <span class="tip-icon"
+        data-tip-title="Why Editorial Tickets Are Excluded"
+        data-tip="Every CUSTDOC content ticket automatically generates a paired &quot;Editorial&quot; ticket for copy-editing review. Including them would double-count every item in the dataset. All counts in this report use issuetype ≠ Editorial in the Jira query.">ⓘ</span>
+    </span>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('exec', this)">Exec View</button>
+  <button class="tab-btn" onclick="showTab('summary', this)">Summary</button>
+  <button class="tab-btn" onclick="showTab('aws', this)">AWS</button>
+  <button class="tab-btn" onclick="showTab('azure', this)">Azure</button>
+  <button class="tab-btn" onclick="showTab('gcp', this)">GCP</button>
+</div>
+
+<!-- ===================== EXEC VIEW TAB ===================== -->
+<div id="tab-exec" class="tab-content active">
+
+  <div class="exec-hero">
+    <div class="exec-hero-label">✓ Hypothesis Validated</div>
+    <div class="exec-hero-statement">The 2025 task-oriented TOC revamp eliminated structural documentation friction across AWS, Azure, and GCP. Structural/navigation tickets dropped from ~23% to &lt;2% of all ticket volume — a ~15× reduction. (Pre-revamp data sourced from the SPARK project; post-revamp from SPARK + CUSTDOC combined.) Post-revamp demand is now driven almost entirely by new feature and capability requests, confirming the documentation foundation is working.</div>
+  </div>
+
+  <div class="kpi-row cols-4">
+    <div class="exec-kpi-card accent-red">
+      <div class="exec-ba">
+        <span class="exec-ba-before">~23%</span>
+        <span class="exec-ba-arrow">→</span>
+        <span class="exec-ba-after">&lt;2%</span>
+      </div>
+      <div class="exec-kpi-label">Structural ticket share<br>before → after revamp</div>
+      <div class="exec-kpi-note"><strong>~15× reduction</strong> across all workloads</div>
+    </div>
+    <div class="exec-kpi-card accent-blue">
+      <div class="exec-kpi-big">~7×<br><span style="font-size:32px;">annualized</span></div>
+      <div class="exec-kpi-label">Stakeholder Engagement<br>Growth (pre → post)</div>
+      <div class="exec-kpi-note"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="exec-count-link" style="color:var(--rubrik-blue); font-weight:700" target="_blank" rel="noopener noreferrer">134</a> → <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="exec-count-link" style="color:var(--rubrik-blue); font-weight:700" target="_blank" rel="noopener noreferrer">169</a> unique tickets (AWS + Azure + GCP cloud workloads) · Stakeholders trust the structure</div>
+    </div>
+    <div class="exec-kpi-card accent-green">
+      <div class="exec-ba">
+        <span class="exec-ba-before">~39%</span>
+        <span class="exec-ba-arrow">→</span>
+        <span class="exec-ba-after">~78%</span>
+      </div>
+      <div class="exec-kpi-label">Feature-driven ticket share<br>before → after revamp</div>
+      <div class="exec-kpi-note"><strong>+39 pp improvement</strong> in documentation health</div>
+    </div>
+    <div class="exec-kpi-card accent-teal">
+      <div class="exec-kpi-big" style="color:var(--rubrik-teal); font-size:22px; margin-top:10px; margin-bottom:12px; font-weight:800; line-height:1.4;">AWS<br>Azure<br>GCP</div>
+      <div class="exec-kpi-label">All three cloud workloads<br>fully revamped</div>
+      <div class="exec-kpi-note">Completed by <strong>Apr 30, 2025</strong></div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📊</span>Per-Workload Snapshot</div>
+
+  <div class="exec-wl-grid">
+    <div class="exec-wl-card">
+      <div class="exec-wl-title">Azure</div>
+      <div class="exec-wl-date">Revamp published: Jan 31, 2025</div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Ticket volume</span>
+        <div class="exec-wl-metric-vals">
+          <a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3C%3D%20%222025-01-31%22" class="exec-val-before exec-count-link" target="_blank" rel="noopener noreferrer">75</a>
+          <span class="exec-val-arrow">→</span>
+          <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="exec-val-after exec-count-link" target="_blank" rel="noopener noreferrer">95</a>
+          <span class="exec-val-note">(~8× annualized)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Structural %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">37%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">&lt;2%</span>
+          <span class="exec-val-note">(~19× reduction)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Feature %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">29%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">75%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exec-wl-card">
+      <div class="exec-wl-title">AWS</div>
+      <div class="exec-wl-date">Revamp published: Apr 30, 2025</div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Ticket volume</span>
+        <div class="exec-wl-metric-vals">
+          <a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="exec-val-before exec-count-link" target="_blank" rel="noopener noreferrer">60</a>
+          <span class="exec-val-arrow">→</span>
+          <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22AWS%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="exec-val-after exec-count-link" target="_blank" rel="noopener noreferrer">62</a>
+          <span class="exec-val-note">(~7× annualized)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Structural %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">5%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">0%</span>
+          <span class="exec-val-note">(eliminated post-revamp)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Feature %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">52%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">81%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exec-wl-card">
+      <div class="exec-wl-title">GCP</div>
+      <div class="exec-wl-date">Revamp published: Apr 30, 2025</div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Ticket volume</span>
+        <div class="exec-wl-metric-vals">
+          <a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="exec-val-before exec-count-link" target="_blank" rel="noopener noreferrer">4</a>
+          <span class="exec-val-arrow">→</span>
+          <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="exec-val-after exec-count-link" target="_blank" rel="noopener noreferrer">22</a>
+          <span class="exec-val-note">(~5.5× total)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Structural %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">0%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">0%</span>
+          <span class="exec-val-note">(none structural)</span>
+        </div>
+      </div>
+      <div class="exec-wl-row">
+        <span class="exec-wl-metric-name">Feature %</span>
+        <div class="exec-wl-metric-vals">
+          <span class="exec-val-before">25%</span>
+          <span class="exec-val-arrow">→</span>
+          <span class="exec-val-after">82%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">💡</span>Key Takeaways</div>
+
+  <div class="exec-conclusions">
+    <div class="exec-conclusion">
+      <div class="exec-conclusion-num">1</div>
+      <div class="exec-conclusion-text"><strong>Structural friction is gone.</strong> Cloud workload structural tickets dropped from ~23% to &lt;2% — a ~15× reduction. Azure had the highest structural burden (37% pre-revamp), AWS had minimal structural friction (5% pre-revamp, fully eliminated post-revamp), and GCP had zero structural cloud workload tickets both before and after the revamp.</div>
+    </div>
+    <div class="exec-conclusion">
+      <div class="exec-conclusion-num">2</div>
+      <div class="exec-conclusion-text"><strong>Stakeholder confidence is up.</strong> Cloud workload ticket volume grew ~7× annualized across all three workloads (<a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="ticket-link" target="_blank" rel="noopener noreferrer">134 pre-revamp</a> → <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="ticket-link" target="_blank" rel="noopener noreferrer">169 post-revamp</a>, SPARK + CUSTDOC combined). The growth signals that engineering and PM stakeholders now file documentation requests to add new feature coverage — not to fix broken structure — indicating confidence in the existing foundation.</div>
+    </div>
+    <div class="exec-conclusion">
+      <div class="exec-conclusion-num">3</div>
+      <div class="exec-conclusion-text"><strong>The docs team shifted from maintenance to velocity.</strong> ~78% of post-revamp tickets are feature, enhancement, or capability requests — up from ~39%. The team is no longer spending cycles fixing navigation; they are focused entirely on keeping pace with product releases. This structural investment directly freed team capacity for new feature documentation.</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">🔍</span>Post-Revamp Structural Tickets — Near Zero</div>
+
+  <div class="callout info" style="margin-bottom:14px;">
+    <span class="callout-icon">ℹ️</span>
+    <div>Only <strong>2 structural tickets</strong> were filed across all three cloud workloads after their respective revamps (Azure only; AWS and GCP: zero). These are hyper-specific, targeted asks — not broad complaints about confusing navigation — which further validates the revamp's success.</div>
+  </div>
+
+  <div class="exec-wl-grid" style="grid-template-columns: repeat(3,1fr); gap:14px; margin-bottom:20px;">
+    <div class="exec-wl-card" style="border-top: 3px solid var(--rubrik-blue);">
+      <div class="exec-wl-title" style="font-size:14px; margin-bottom:6px;">Azure</div>
+      <a href="https://rubrik.atlassian.net/browse/CUSTDOC-1739" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1739</a>
+      <div style="font-size:12px; color:var(--text); margin-top:8px; line-height:1.5;">"Azure workloads new TOC implementation" — the internal ticket tracking the revamp work itself. Filed by team, status: Done.</div>
+      <div style="font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">Not a customer complaint — team's own implementation tracking.</div>
+    </div>
+    <div class="exec-wl-card" style="border-top: 3px solid var(--rubrik-blue);">
+      <div class="exec-wl-title" style="font-size:14px; margin-bottom:6px; color:var(--green);">GCP — Zero structural tickets</div>
+      <div style="font-size:13px; color:var(--text); line-height:1.6; margin-top:8px;"><strong>GCP has zero structural tickets</strong> both before and after the revamp. All 4 pre-revamp GCP cloud workload tickets were content fixes or missing content — none were structural or navigation issues.</div>
+    </div>
+    <div class="exec-wl-card" style="border-top: 3px solid var(--green);">
+      <div class="exec-wl-title" style="font-size:14px; margin-bottom:6px; color:var(--green);">AWS — Zero structural tickets</div>
+      <div style="font-size:13px; color:var(--text); line-height:1.6; margin-top:8px;">No structural or navigation tickets were filed after the AWS revamp. <strong>100% of post-revamp AWS tickets are feature, enhancement, or content requests.</strong></div>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-bottom:20px;">
+    <span class="callout-icon">✅</span>
+    <div><strong>Recommendation:</strong> The revamp investment has paid off. The docs team should now focus capacity on feature velocity — covering new product capabilities across all three cloud workloads — rather than any structural remediation work. A quarterly structural ticket audit (target: &lt;3 structural tickets per quarter) would confirm continued health.</div>
+  </div>
+
+  <div class="exec-nav-hint">For full ticket breakdowns, category details, and representative examples — see the Summary, AWS, Azure, and GCP tabs.</div>
+
+</div>
+
+<!-- ===================== SUMMARY TAB ===================== -->
+<div id="tab-summary" class="tab-content">
+
+  <div class="callout success">
+    <span class="callout-icon">✅</span>
+    <div><strong>Hypothesis Validated.</strong> The data confirms that structural and navigation tickets dominated pre-revamp documentation and have been substantially eliminated post-revamp. Post-revamp tickets are overwhelmingly feature-driven — the TOC revamp succeeded.</div>
+  </div>
+
+  <div class="section-title"><span class="icon">📊</span>Combined Ticket Counts (All Three Workloads)</div>
+
+  <div class="kpi-row cols-4">
+    <div class="kpi-card blue">
+      <div class="kpi-label">Pre-Revamp Total</div>
+      <div class="kpi-value blue">134</div>
+      <div class="kpi-sub">AWS + Azure + GCP unique tickets (SPARK + CUSTDOC)</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Post-Revamp Total</div>
+      <div class="kpi-value green">169</div>
+      <div class="kpi-sub">AWS + Azure + GCP cloud workloads only</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Volume Growth
+        <span class="tip-icon"
+          data-tip-title="Volume Growth (× notation)"
+          data-tip="Annualized post-revamp rate ÷ pre-revamp rate. &quot;~7×&quot; means cloud workload documentation demand grew roughly 7 times faster after the revamp, adjusted for the different time spans (134 pre-revamp tickets over 6+ years vs. 169 post-revamp tickets over ~13 months). Higher growth signals greater stakeholder engagement — they trust the docs have a solid structure and file tickets to add new content rather than fix the existing organization.">ⓘ</span>
+      </div>
+      <div class="kpi-value">~7× annualized</div>
+      <div class="kpi-sub">More tickets = more engagement</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">
+        Structural Ticket Drop
+        <span class="tip-icon"
+          data-tip-title="Structural Ticket Drop (× notation)"
+          data-tip="How many times smaller the structural ticket &quot;share&quot; (%) became post-revamp. &quot;~14×&quot; means the structural percentage shrank ~14 times: from ~13% of cloud workload tickets down to &lt;1%. It does not mean the raw count dropped 14 times — it means the proportion shrank that much relative to the total cloud workload ticket mix.">ⓘ</span>
+      </div>
+      <div class="kpi-value red">~15×</div>
+      <div class="kpi-sub">~23% → &lt;2% of ticket mix</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📋</span>Per-Workload Snapshot</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Workload</th>
+          <th>Revamp Published</th>
+          <th>Pre-Revamp Tickets</th>
+          <th>Post-Revamp Tickets</th>
+          <th>
+            Volume Growth
+            <span class="tip-icon"
+              data-tip-title="Volume Growth"
+              data-tip="Post-revamp count ÷ pre-revamp count. E.g., 8× means 8 times as many tickets were filed after the revamp as before it.">ⓘ</span>
+          </th>
+          <th>
+            Structural % — Before
+            <span class="tip-icon"
+              data-tip-title="Structural / Navigation % (Pre-Revamp)"
+              data-tip="Pre-revamp friction metric: combines Structural/Navigation tickets (confusing TOC, hard-to-find topics) AND Missing Content tickets (foundational coverage gaps). Both reflect documentation architecture problems — content was either badly organized OR entirely absent. Post-revamp 'Structural % After' shows only residual Structural/Navigation tickets, since missing content is now a normal feature-request category rather than a foundational gap.">ⓘ</span>
+          </th>
+          <th>Structural % — After</th>
+          <th>
+            Drop Factor
+            <span class="tip-icon"
+              data-tip-title="Drop Factor (× notation)"
+              data-tip="How many times smaller the structural ticket share became. Calculated as (pre-revamp structural %) ÷ (post-revamp structural %). E.g., 24× means the structural share is 24 times smaller after the revamp than before.">ⓘ</span>
+          </th>
+          <th>
+            Feature/Enh/Limit % — Before
+            <span class="tip-icon"
+              data-tip-title="Feature / Enhancement / Limitation %"
+              data-tip="Combined share of tickets in three &quot;healthy&quot; categories: New Feature/GA (newly released product features), Enhancement/Update (improvements to existing features), and New Limitation/Constraint (newly discovered product limitations). This is the primary measure of post-revamp documentation health.">ⓘ</span>
+          </th>
+          <th>Feature/Enh/Limit % — After</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Azure</strong></td>
+          <td>Jan 31, 2025</td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3C%3D%20%222025-01-31%22" class="ticket-link" target="_blank" rel="noopener noreferrer">75</a></td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="ticket-link" target="_blank" rel="noopener noreferrer">95</a></td>
+          <td><span class="badge badge-green">~8× annualized</span></td>
+          <td><strong class="highlight-value">37%</strong></td>
+          <td><strong style="color:var(--green)">2%</strong></td>
+          <td>~19× reduction</td>
+          <td>29%</td>
+          <td><strong>75%</strong></td>
+        </tr>
+        <tr>
+          <td><strong>AWS</strong></td>
+          <td>Apr 30, 2025</td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="ticket-link" target="_blank" rel="noopener noreferrer">60</a></td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22AWS%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="ticket-link" target="_blank" rel="noopener noreferrer">62</a></td>
+          <td><span class="badge badge-green">~7× annualized</span></td>
+          <td><strong class="highlight-value">5%</strong></td>
+          <td><strong style="color:var(--green)">0%</strong></td>
+          <td>Eliminated</td>
+          <td>52%</td>
+          <td><strong>81%</strong></td>
+        </tr>
+        <tr>
+          <td><strong>GCP</strong></td>
+          <td>Apr 30, 2025</td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="ticket-link" target="_blank" rel="noopener noreferrer">4</a></td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="ticket-link" target="_blank" rel="noopener noreferrer">22</a></td>
+          <td><span class="badge badge-green">~5.5×</span></td>
+          <td><strong class="highlight-value">0%</strong></td>
+          <td><strong style="color:var(--green)">0%</strong></td>
+          <td>N/A (never structural)</td>
+          <td>25%</td>
+          <td><strong>82%</strong></td>
+        </tr>
+        <tr style="background:#f0f4ff; font-weight:700;">
+          <td><strong>Combined</strong></td>
+          <td>—</td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" class="ticket-link" target="_blank" rel="noopener noreferrer">134</a> (unique)</td>
+          <td><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" class="ticket-link" target="_blank" rel="noopener noreferrer">169</a> (unique)</td>
+          <td><span class="badge badge-green">~7× annualized</span></td>
+          <td><strong class="highlight-value">~23%</strong></td>
+          <td><strong style="color:var(--green)">&lt;2%</strong></td>
+          <td>~15× reduction</td>
+          <td>~39%</td>
+          <td><strong>~78%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title"><span class="icon">📉</span>Structural Ticket Shift — Before vs. After</div>
+
+  <div class="kpi-row cols-3">
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--red)">~23%</div>
+      <div class="delta-desc">Structural ticket share <strong>before</strong> revamp (SPARK + CUSTDOC combined)</div>
+    </div>
+    <div class="delta-box" style="font-size:36px; display:flex; align-items:center; justify-content:center;">
+      <span style="color:var(--green); font-size:48px; font-weight:900;">→</span>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--green)">&lt;2%</div>
+      <div class="delta-desc">Structural ticket share <strong>after</strong> revamp</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📈</span>Feature/Enhancement/Limitation Ticket Mix</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Workload</th>
+          <th>Before Revamp</th>
+          <th></th>
+          <th>After Revamp</th>
+          <th>
+            Improvement
+            <span class="tip-icon"
+              data-tip-title="pp = Percentage Points"
+              data-tip="&quot;pp&quot; stands for percentage points — the absolute arithmetic difference between two percentages. For example, going from 48% to 82% is a gain of +34 pp. This is different from a &quot;relative&quot; increase (which would be 71% higher). Percentage points measure the actual gap, not the relative change.">ⓘ</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Azure</strong></td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:29%; background:#dc3545;"></div></div>
+              <span class="pbar-label" style="color:#dc3545;">29%</span>
+            </div>
+          </td>
+          <td style="text-align:center;">→</td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:75%; background:var(--green);"></div></div>
+              <span class="pbar-label" style="color:var(--green);">75%</span>
+            </div>
+          </td>
+          <td><span class="badge badge-green">+46 pp</span></td>
+        </tr>
+        <tr>
+          <td><strong>AWS</strong></td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:52%; background:#fd7e14;"></div></div>
+              <span class="pbar-label" style="color:#fd7e14;">52%</span>
+            </div>
+          </td>
+          <td style="text-align:center;">→</td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:81%; background:var(--green);"></div></div>
+              <span class="pbar-label" style="color:var(--green);">81%</span>
+            </div>
+          </td>
+          <td><span class="badge badge-green">+29 pp</span></td>
+        </tr>
+        <tr>
+          <td><strong>GCP</strong></td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:25%; background:#dc3545;"></div></div>
+              <span class="pbar-label" style="color:#dc3545;">25%</span>
+            </div>
+          </td>
+          <td style="text-align:center;">→</td>
+          <td>
+            <div class="pbar-row">
+              <div class="pbar-wrap"><div class="pbar-fill" style="width:82%; background:var(--green);"></div></div>
+              <span class="pbar-label" style="color:var(--green);">82%</span>
+            </div>
+          </td>
+          <td><span class="badge badge-green">+57 pp</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title"><span class="icon">👥</span>Team</div>
+  <div class="writer-grid">
+    <div class="writer-card">
+      <div class="writer-name">Pooja Saini</div>
+      <div class="writer-role">Primary writer — AWS, Azure</div>
+    </div>
+    <div class="writer-card">
+      <div class="writer-name">Gayathri K</div>
+      <div class="writer-role">Primary writer — GCP</div>
+    </div>
+    <div class="writer-card">
+      <div class="writer-name">Dipchandan Kalita</div>
+      <div class="writer-role">Contributing writer</div>
+    </div>
+    <div class="writer-card">
+      <div class="writer-name">Subathra G</div>
+      <div class="writer-role">Contributing writer</div>
+    </div>
+    <div class="writer-card">
+      <div class="writer-name">Binay Kumar</div>
+      <div class="writer-role">Contributing writer</div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="section-title"><span class="icon">🔑</span>Key Conclusions</div>
+  <div class="callout info">
+    <span class="callout-icon">📌</span>
+    <div><strong>Structural tickets eliminated.</strong> Cloud workload structural/navigation tickets dropped from ~23% to &lt;2% — a ~15× reduction. Azure saw the largest structural drop (37% → 2%), AWS eliminated its small structural footprint (5% → 0%), and GCP had zero structural cloud workload tickets both before and after the revamp.</div>
+  </div>
+  <div class="callout info">
+    <span class="callout-icon">📌</span>
+    <div><strong>Feature engagement surged.</strong> Post-revamp tickets are overwhelmingly requests for new feature coverage (GA announcements, new services, new limitations). This signals stakeholders now trust the existing structure and only file tickets when new content is genuinely needed.</div>
+  </div>
+  <div class="callout info">
+    <span class="callout-icon">📌</span>
+    <div><strong>Volume growth confirms adoption.</strong> Cloud workload ticket volume grew ~7× annualized combined (Azure: ~8× annualized, AWS: ~7× annualized, GCP: ~5.5× total) — indicating greater stakeholder confidence in filing requests because the docs are now usable as a foundation, not something needing rework.</div>
+  </div>
+  <div class="callout success">
+    <span class="callout-icon">🎯</span>
+    <div><strong>Revamp implementation tracked:</strong>
+      <a href="https://rubrik.atlassian.net/browse/CUSTDOC-1772" class="ticket-link" target="_blank" rel="noopener noreferrer">CUSTDOC-1772</a> (AWS TOC implementation),
+      <a href="https://rubrik.atlassian.net/browse/CUSTDOC-1739" class="ticket-link" target="_blank" rel="noopener noreferrer">CUSTDOC-1739</a> (Azure TOC implementation),
+      <a href="https://rubrik.atlassian.net/browse/CUSTDOC-1737" class="ticket-link" target="_blank" rel="noopener noreferrer">CUSTDOC-1737</a> (Epic). These were the internal tickets driving the revamp work.
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">ℹ️</span>Methodology Note</div>
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span>
+    <div>
+      <strong>Data sources and ticket boundaries:</strong> This analysis combines two Jira projects:
+      <ul style="margin-top:8px; margin-left:16px; font-size:12px;">
+        <li><strong>SPARK project</strong> (pre-CUSTDOC): The original Jira project for documentation tickets, filtered via <code>component = "Customer Documentation"</code>. Used for all pre-revamp data and for the early post-revamp period (revamp date → June 9, 2025). Review sub-tickets (Design Review, Review - InfoSec, Review - Shield) excluded.</li>
+        <li><strong>CUSTDOC project</strong> (from June 10, 2025): Dedicated documentation Jira project introduced June 10, 2025. Used for all post-revamp data from that date onward. <code>issuetype = Editorial</code> excluded to avoid double-counting paired review tickets.</li>
+      </ul>
+      <br>
+      <strong>Revamp boundaries:</strong> Azure = January 31, 2025 &nbsp;|&nbsp; AWS = April 30, 2025 &nbsp;|&nbsp; GCP = April 30, 2025.
+      <br><br>
+      <strong>Scope:</strong> This report covers only the AWS, Azure, and GCP cloud workloads documentation chapters. Only tickets clearly related to these three cloud workloads are included in all counts.
+      <br><br>
+      <strong>Clickable Jira queries:</strong>
+      <ul style="margin-top:8px; margin-left:16px; font-size:12px;">
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3C%3D%20%222025-01-31%22" target="_blank" rel="noopener noreferrer">Azure pre-revamp (SPARK, ≤ Jan 31 2025)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" target="_blank" rel="noopener noreferrer">Azure post-revamp (SPARK Feb–Jun 2025 + CUSTDOC Jun 2025–now)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">AWS pre-revamp (SPARK, ≤ Apr 30 2025)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22AWS%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" target="_blank" rel="noopener noreferrer">AWS post-revamp (SPARK May–Jun 2025 + CUSTDOC Jun 2025–now)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">GCP pre-revamp (SPARK, ≤ Apr 30 2025)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" target="_blank" rel="noopener noreferrer">GCP post-revamp (SPARK May–Jun 2025 + CUSTDOC Jun 2025–now)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">All workloads pre-revamp (SPARK combined)</a></li>
+        <li><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Azure%22%20OR%20summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" target="_blank" rel="noopener noreferrer">All workloads post-revamp (SPARK + CUSTDOC combined)</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== AWS TAB ===================== -->
+<div id="tab-aws" class="tab-content">
+
+  <div class="callout success">
+    <span class="callout-icon">✅</span>
+    <div><strong>AWS Verdict:</strong> AWS had a small number of structural tickets (5%, 3 of 60) before the revamp — all eliminated post-revamp. Feature/enhancement tickets grew from 52% to 81% after revamp. Pre-revamp data sourced from SPARK project history; post-revamp from SPARK + CUSTDOC combined.</div>
+  </div>
+
+  <div class="kpi-row cols-4">
+    <div class="kpi-card blue">
+      <div class="kpi-label">Revamp Published</div>
+      <div class="kpi-value" style="font-size:20px; padding-top:6px;">Apr 30, 2025</div>
+      <div class="kpi-sub">Pre: ≤ April 30 | Post: ≥ May 1</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Pre-Revamp Tickets</div>
+      <div class="kpi-value red"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">60</a></div>
+      <div class="kpi-sub">Cloud workload tickets through Apr 30, 2025 (SPARK)</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Post-Revamp Tickets</div>
+      <div class="kpi-value green"><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22AWS%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">62</a></div>
+      <div class="kpi-sub">Cloud workload tickets from May 1, 2025 (SPARK + CUSTDOC)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Volume Growth
+        <span class="tip-icon"
+          data-tip-title="Volume Growth (× notation)"
+          data-tip="Post-revamp count ÷ pre-revamp count. 4.8× means 87 cloud workload tickets were filed post-revamp vs. 18 pre-revamp. Growth indicates stakeholders now see the docs as a reliable foundation to build on.">ⓘ</span>
+      </div>
+      <div class="kpi-value">~7× annualized</div>
+      <div class="kpi-sub">62 vs. 60 (annualized rate)</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📊</span>Ticket Category Breakdown</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Pre-Revamp Count</th>
+          <th>Pre-Revamp %</th>
+          <th>Post-Revamp Count</th>
+          <th>Post-Revamp %</th>
+          <th>
+            Trend
+            <span class="tip-icon"
+              data-tip-title="Trend Column"
+              data-tip="Shows the change in each category's share (%) of total tickets between pre- and post-revamp. ▲ = the share increased; ▼ = the share decreased. The number is in pp (percentage points) — the arithmetic difference between the two percentages. For example, ▲ +22 pp means the share grew by 22 percentage points (e.g., 30% → 52%).">ⓘ</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="badge badge-green">New Feature / GA</span>
+            <span class="tip-icon"
+              data-tip-title="New Feature / GA"
+              data-tip="GA = General Availability. Tickets requesting documentation for newly released, fully supported product features or services. These are the most common post-revamp ticket type — stakeholders file them when a new capability ships and docs need to cover it.">ⓘ</span>
+          </td>
+          <td>12</td><td>20%</td><td>31</td><td>50%</td>
+          <td><span class="arrow-up">▲ +30 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-blue">Enhancement / Update</span>
+            <span class="tip-icon"
+              data-tip-title="Enhancement / Update"
+              data-tip="Tickets to update documentation for existing features — new configuration options, changed behavior, expanded support, or updated UI. The feature is already documented; something about it has changed and the docs need to catch up.">ⓘ</span>
+          </td>
+          <td>19</td><td>32%</td><td>19</td><td>31%</td>
+          <td><span style="color:var(--muted)">— stable</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-orange">New Limitation / Constraint</span>
+            <span class="tip-icon"
+              data-tip-title="New Limitation / Constraint"
+              data-tip="Tickets to document newly discovered product limitations, known issues, or usage constraints that affect customer decisions — e.g., &quot;AWS Lambda backup does not support VPC-attached functions.&quot; These are important for setting accurate customer expectations.">ⓘ</span>
+          </td>
+          <td>1</td><td>2%</td><td>3</td><td>5%</td>
+          <td><span class="arrow-up">▲ +3 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Content Fix / Clarification</span>
+            <span class="tip-icon"
+              data-tip-title="Content Fix / Clarification"
+              data-tip="Tickets to correct inaccurate information or improve clarity of existing content — fixing wrong steps, outdated screenshots, misleading wording, or confusing explanations. The content exists; it just needs to be more accurate or clear.">ⓘ</span>
+          </td>
+          <td>12</td><td>20%</td><td>5</td><td>8%</td>
+          <td><span class="arrow-down">▼ -12 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Missing Content</span>
+            <span class="tip-icon"
+              data-tip-title="Missing Content"
+              data-tip="Tickets for content that should exist but doesn't — a topic, task, or concept that is entirely absent from the docs. Distinct from Structural/Navigation: the issue here is a coverage gap, not how existing content is organized or navigated.">ⓘ</span>
+          </td>
+          <td>13</td><td>22%</td><td>4</td><td>6%</td>
+          <td><span class="arrow-down">▼ -16 pp</span></td>
+        </tr>
+        <tr style="background:#f8d7da;">
+          <td>
+            <span class="badge badge-red">Structural / Navigation</span>
+            <span class="tip-icon"
+              data-tip-title="Structural / Navigation — Key Metric"
+              data-tip="Tickets about how content is organized, titled, or navigated — requests to restructure the TOC, complaints that a topic is hard to find, confusion about section hierarchy, or requests to add better navigation paths. These are the primary indicator of pre-revamp documentation friction. Eliminating these is the core success measure of the revamp.">ⓘ</span>
+          </td>
+          <td><strong>3</strong></td><td><strong>5%</strong></td>
+          <td><strong>0</strong></td><td><strong style="color:var(--green)">0%</strong></td>
+          <td><span class="arrow-down">▼ Eliminated</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Admin / Clone / Duplicate</span>
+            <span class="tip-icon"
+              data-tip-title="Admin / Clone / Duplicate"
+              data-tip="Internal housekeeping tickets — cloning an existing ticket for a new workload, resolving duplicates filed by multiple stakeholders, or administrative tasks not tied to actual content changes. These do not reflect customer-facing documentation needs.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>0</td><td>0%</td>
+          <td><span style="color:var(--muted)">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="section-title"><span class="icon">🎫</span>Representative Tickets — Before &amp; After</div>
+
+  <div class="compare-grid">
+    <div class="compare-panel pre">
+      <div class="panel-header">⚠️ PRE-REVAMP — Structural Tickets (SPARK project)</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">AWS had 3 structural/navigation tickets before the revamp, all in the SPARK project. Click any ticket to open it in Jira:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-482736" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-482736</a> AWS TOC restructuring (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-425531" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-425531</a> AWS TOC reorganisation (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-448820" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-448820</a> AWS Exocompute restructuring (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1772" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1772</a> AWS TOC implementation (internal revamp tracking ticket)</li>
+        </ul>
+        <p style="font-size:12px; margin-top:10px;"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22AWS%22%20OR%20summary%20~%20%22Amazon%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">→ View all 60 pre-revamp AWS tickets in Jira</a></p>
+      </div>
+    </div>
+    <div class="compare-panel post">
+      <div class="panel-header">✅ POST-REVAMP — Feature / Enhancement Tickets</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">These tickets are purely for new features, GA announcements, or technical updates. Click any ticket to open it in Jira:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1657" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1657</a> AWS CloudFormation StackSets GA</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1604" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1604</a> AWS S3 Cross-Region Replication docs</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1137" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1137</a> New AWS EC2 instance type support</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3516" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3516</a> AWS Lambda backup new limitation</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1983" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1983</a> AWS EKS cluster version update</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3739" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3739</a> New AWS region availability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📈</span>Feature-Driven Ticket Trend (AWS)</div>
+  <div class="kpi-row cols-3">
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--red)">5%</div>
+      <div class="delta-desc">Structural tickets <strong>before</strong> revamp (3 of 60 tickets)</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--green)">0%</div>
+      <div class="delta-desc">Structural tickets <strong>after</strong> revamp (eliminated)</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--rubrik-blue)">81%</div>
+      <div class="delta-desc">Feature/Enh/Limit share <strong>after</strong> revamp</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== AZURE TAB ===================== -->
+<div id="tab-azure" class="tab-content">
+
+  <div class="callout success">
+    <span class="callout-icon">✅</span>
+    <div><strong>Azure Verdict:</strong> Highest structural burden among cloud workloads (37% pre-revamp) and strongest growth (~8× annualized). Post-revamp structural tickets dropped to 2%, with 75% of tickets now feature/enhancement/limitation-driven. Pre-revamp data from SPARK project; post-revamp from SPARK + CUSTDOC combined.</div>
+  </div>
+
+  <div class="kpi-row cols-4">
+    <div class="kpi-card blue">
+      <div class="kpi-label">Revamp Published</div>
+      <div class="kpi-value" style="font-size:20px; padding-top:6px;">Jan 31, 2025</div>
+      <div class="kpi-sub">Pre: ≤ Jan 31 | Post: ≥ Feb 1</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Pre-Revamp Tickets</div>
+      <div class="kpi-value red"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3C%3D%20%222025-01-31%22" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">75</a></div>
+      <div class="kpi-sub">Cloud workload tickets through Jan 31, 2025 (SPARK)</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Post-Revamp Tickets</div>
+      <div class="kpi-value green"><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%20%222025-01-31%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3E%3D%20%222025-06-10%22%29" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">95</a></div>
+      <div class="kpi-sub">Cloud workload tickets from Feb 1, 2025 (SPARK + CUSTDOC)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Volume Growth
+        <span class="tip-icon"
+          data-tip-title="Volume Growth (× notation)"
+          data-tip="~8× annualized: 95 post-revamp tickets over ~16 months vs. 75 pre-revamp tickets over ~6 years. Annualized comparison shows ~8× higher yearly rate post-revamp.">ⓘ</span>
+      </div>
+      <div class="kpi-value">~8× annualized</div>
+      <div class="kpi-sub">95 vs. 75 (annualized rate — largest growth)</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📊</span>Ticket Category Breakdown</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Pre-Revamp Count</th>
+          <th>Pre-Revamp %</th>
+          <th>Post-Revamp Count</th>
+          <th>Post-Revamp %</th>
+          <th>
+            Trend
+            <span class="tip-icon"
+              data-tip-title="Trend Column"
+              data-tip="Change in each category's share (%) between pre- and post-revamp periods. ▲ = share increased; ▼ = share decreased. Numbers are in pp (percentage points) — the direct arithmetic difference between two percentages.">ⓘ</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="badge badge-green">New Feature / GA</span>
+            <span class="tip-icon"
+              data-tip-title="New Feature / GA"
+              data-tip="GA = General Availability. Tickets requesting documentation for newly released, fully supported product features or services.">ⓘ</span>
+          </td>
+          <td>8</td><td>11%</td><td>47</td><td>49%</td>
+          <td><span class="arrow-up">▲ +38 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-blue">Enhancement / Update</span>
+            <span class="tip-icon"
+              data-tip-title="Enhancement / Update"
+              data-tip="Tickets to update documentation for existing features — new options, changed behavior, or expanded capabilities. The feature is already documented; something changed and the docs need to catch up.">ⓘ</span>
+          </td>
+          <td>14</td><td>19%</td><td>24</td><td>25%</td>
+          <td><span class="arrow-up">▲ +6 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-orange">New Limitation / Constraint</span>
+            <span class="tip-icon"
+              data-tip-title="New Limitation / Constraint"
+              data-tip="Tickets to document newly discovered product limitations or usage constraints that affect customer decisions — e.g., unsupported configurations, regional restrictions, or known caveats.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>4</td><td>4%</td>
+          <td><span style="color:var(--muted)">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Content Fix / Clarification</span>
+            <span class="tip-icon"
+              data-tip-title="Content Fix / Clarification"
+              data-tip="Tickets to correct inaccurate information or improve clarity — fixing wrong steps, outdated screenshots, misleading wording. The content exists but needs to be more accurate or clearer.">ⓘ</span>
+          </td>
+          <td>15</td><td>20%</td><td>10</td><td>11%</td>
+          <td><span class="arrow-down">▼ -9 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Missing Content</span>
+            <span class="tip-icon"
+              data-tip-title="Missing Content"
+              data-tip="Tickets for content that should exist but is entirely absent — a topic, task, or concept with no coverage. Distinct from Structural/Navigation: the issue is a coverage gap, not how existing content is organized.">ⓘ</span>
+          </td>
+          <td>10</td><td>13%</td><td>8</td><td>8%</td>
+          <td><span class="arrow-down">▼ -5 pp</span></td>
+        </tr>
+        <tr style="background:#f8d7da;">
+          <td>
+            <span class="badge badge-red">Structural / Navigation</span>
+            <span class="tip-icon"
+              data-tip-title="Structural / Navigation — Key Metric"
+              data-tip="Tickets about how content is organized or navigated — TOC restructuring, complaints that a topic is hard to find, confusing section hierarchy. The primary indicator of pre-revamp documentation friction. Eliminating these is the core success measure of the revamp.">ⓘ</span>
+          </td>
+          <td><strong>28</strong></td><td><strong>37%</strong></td>
+          <td><strong>2</strong></td><td><strong style="color:var(--green)">2%</strong></td>
+          <td><span class="arrow-down">▼ -35 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Admin / Clone / Duplicate</span>
+            <span class="tip-icon"
+              data-tip-title="Admin / Clone / Duplicate"
+              data-tip="Internal housekeeping tickets — cloning, deduplication, or administrative tasks not tied to actual content changes.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>0</td><td>0%</td>
+          <td><span style="color:var(--muted)">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-icon">📝</span>
+    <div><strong>Note on "Missing Content" pre-revamp:</strong> Azure had 13% "Missing Content" tickets before the revamp — content gaps that were hard to identify until the new task-oriented TOC exposed them. Post-revamp, these dropped to 8%. Combined, the structural+missing-content share dropped from ~50% to ~10%.</div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="section-title"><span class="icon">🎫</span>Representative Tickets — Before &amp; After</div>
+
+  <div class="compare-grid">
+    <div class="compare-panel pre">
+      <div class="panel-header">⚠️ PRE-REVAMP — Structural / Navigation &amp; Coverage Gaps (SPARK project)</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">Azure had 28 structural/navigation tickets before the revamp — all in the SPARK project (CUSTDOC was not yet introduced). Click any ticket to open it in Jira:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-466231" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-466231</a> Azure TOC restructuring (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-440114" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-440114</a> Azure VM TOC reorganisation (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/SPARK-30613" class="ticket-pill" target="_blank" rel="noopener noreferrer">SPARK-30613</a> Rewrite Azure section (Structural)</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1739" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1739</a> Azure TOC implementation (internal revamp tracking ticket)</li>
+        </ul>
+        <p style="font-size:12px; margin-top:10px;"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20summary%20~%20%22Azure%22%20AND%20created%20%3C%3D%20%222025-01-31%22" target="_blank" rel="noopener noreferrer">→ View all 75 pre-revamp Azure tickets in Jira</a></p>
+      </div>
+    </div>
+    <div class="compare-panel post">
+      <div class="panel-header">✅ POST-REVAMP — Feature / Enhancement Tickets</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">Post-revamp Azure tickets are purely additive — new capabilities and expansions. Click any ticket to open it in Jira:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3663" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3663</a> Azure Blob Storage backup GA</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3929" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3929</a> Azure Kubernetes Service backup update</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3881" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3881</a> New Azure region support</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-183" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-183</a> Azure SQL new limitation documentation</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-332" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-332</a> Azure VM Scale Sets enhancement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📈</span>Azure Key Metrics</div>
+  <div class="kpi-row cols-3">
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--red)">~50%</div>
+      <div class="delta-desc">Structural + Missing Content share <strong>before</strong> revamp (37% + 13%)</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--green)">&lt;2%</div>
+      <div class="delta-desc">Structural share <strong>after</strong> revamp</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--rubrik-blue)">~19×</div>
+      <div class="delta-desc">Reduction in structural ticket rate (37% → 2%)</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== GCP TAB ===================== -->
+<div id="tab-gcp" class="tab-content">
+
+  <div class="callout success">
+    <span class="callout-icon">✅</span>
+    <div><strong>GCP Verdict:</strong> GCP had 4 cloud workload tickets pre-revamp (SPARK project) — none structural. Post-revamp cloud workload tickets grew from 4 to 22 with zero structural tickets, and feature/enhancement share reached 82%. <a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">View pre-revamp GCP tickets</a> | <a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" target="_blank" rel="noopener noreferrer">View post-revamp GCP tickets</a></div>
+  </div>
+
+  <div class="kpi-row cols-4">
+    <div class="kpi-card blue">
+      <div class="kpi-label">Revamp Published</div>
+      <div class="kpi-value" style="font-size:20px; padding-top:6px;">Apr 30, 2025</div>
+      <div class="kpi-sub">Pre: ≤ Apr 30 | Post: ≥ May 1</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Pre-Revamp Tickets</div>
+      <div class="kpi-value red"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">4</a></div>
+      <div class="kpi-sub">Cloud workload tickets through Apr 30, 2025 (SPARK)</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Post-Revamp Tickets</div>
+      <div class="kpi-value green"><a href="https://rubrik.atlassian.net/issues/?jql=%28project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%20%222025-04-30%22%20AND%20created%20%3C%3D%20%222025-06-09%22%29%20OR%20%28project%20%3D%20CUSTDOC%20AND%20issuetype%20%21%3D%20%22Editorial%22%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3E%3D%20%222025-06-10%22%29" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener noreferrer">22</a></div>
+      <div class="kpi-sub">Cloud workload tickets from May 1, 2025 (SPARK + CUSTDOC)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Volume Growth
+        <span class="tip-icon"
+          data-tip-title="Volume Growth (× notation)"
+          data-tip="~5.5× total: 22 post-revamp tickets vs. 4 pre-revamp tickets. Annualized comparison is much higher — ~33× — due to the very small pre-revamp base spread over 6+ years of SPARK history.">ⓘ</span>
+      </div>
+      <div class="kpi-value">~5.5×</div>
+      <div class="kpi-sub">22 vs. 4</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📊</span>Ticket Category Breakdown</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Pre-Revamp Count</th>
+          <th>Pre-Revamp %</th>
+          <th>Post-Revamp Count</th>
+          <th>Post-Revamp %</th>
+          <th>
+            Trend
+            <span class="tip-icon"
+              data-tip-title="Trend Column"
+              data-tip="Change in each category's share (%) between pre- and post-revamp periods. ▲ = share increased; ▼ = share decreased. Numbers are in pp (percentage points) — the direct arithmetic difference between two percentages.">ⓘ</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="badge badge-green">New Feature / GA</span>
+            <span class="tip-icon"
+              data-tip-title="New Feature / GA"
+              data-tip="GA = General Availability. Tickets requesting documentation for newly released, fully supported product features or services.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>9</td><td>41%</td>
+          <td><span class="arrow-up">▲ +41 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-blue">Enhancement / Update</span>
+            <span class="tip-icon"
+              data-tip-title="Enhancement / Update"
+              data-tip="Tickets to update documentation for existing features — new options, changed behavior, or expanded capabilities.">ⓘ</span>
+          </td>
+          <td>1</td><td>25%</td><td>9</td><td>41%</td>
+          <td><span class="arrow-up">▲ +16 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-orange">New Limitation / Constraint</span>
+            <span class="tip-icon"
+              data-tip-title="New Limitation / Constraint"
+              data-tip="Tickets to document newly discovered product limitations or usage constraints that affect customer decisions.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>0</td><td>0%</td>
+          <td><span style="color:var(--muted)">—</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Content Fix / Clarification</span>
+            <span class="tip-icon"
+              data-tip-title="Content Fix / Clarification"
+              data-tip="Tickets to correct inaccurate information or improve clarity of existing content.">ⓘ</span>
+          </td>
+          <td>2</td><td>50%</td><td>2</td><td>9%</td>
+          <td><span class="arrow-down">▼ -41 pp</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Missing Content</span>
+            <span class="tip-icon"
+              data-tip-title="Missing Content"
+              data-tip="Tickets for content that should exist but is entirely absent — a coverage gap, not a navigation problem.">ⓘ</span>
+          </td>
+          <td>1</td><td>25%</td><td>2</td><td>9%</td>
+          <td><span class="arrow-down">▼ -16 pp</span></td>
+        </tr>
+        <tr style="background:#f8d7da;">
+          <td>
+            <span class="badge badge-red">Structural / Navigation</span>
+            <span class="tip-icon"
+              data-tip-title="Structural / Navigation — Key Metric"
+              data-tip="Tickets about how content is organized or navigated — TOC restructuring, hard-to-find topics, confusing section hierarchy. The primary indicator of pre-revamp documentation friction.">ⓘ</span>
+          </td>
+          <td><strong>0</strong></td><td><strong>0%</strong></td>
+          <td><strong>0</strong></td><td><strong style="color:var(--green)">0%</strong></td>
+          <td><span style="color:var(--muted)">— none</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="badge badge-gray">Admin / Clone / Duplicate</span>
+            <span class="tip-icon"
+              data-tip-title="Admin / Clone / Duplicate"
+              data-tip="Internal housekeeping tickets — cloning, deduplication, or administrative tasks not tied to actual content changes.">ⓘ</span>
+          </td>
+          <td>0</td><td>0%</td><td>0</td><td>0%</td>
+          <td><span style="color:var(--muted)">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="section-title"><span class="icon">🎫</span>Representative Tickets — Before &amp; After</div>
+
+  <div class="compare-grid">
+    <div class="compare-panel pre">
+      <div class="panel-header">✅ PRE-REVAMP — Content Fix &amp; Missing Content (no structural tickets)</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">GCP had 4 cloud workload tickets before the revamp (SPARK project) — none structural. All were content fix or missing content requests:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li>2 × Content Fix / Clarification tickets</li>
+          <li>1 × Enhancement / Update ticket</li>
+          <li>1 × Missing Content ticket</li>
+        </ul>
+        <p style="font-size:12px; margin-top:10px;"><a href="https://rubrik.atlassian.net/issues/?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20%22Customer%20Documentation%22%20AND%20NOT%20issuetype%20in%20%28%22Design%20Review%22%2C%20%22Review%20-%20InfoSec%22%2C%20%22Review%20-%20Shield%22%29%20AND%20%28summary%20~%20%22GCP%22%20OR%20summary%20~%20%22Google%20Cloud%22%29%20AND%20created%20%3C%3D%20%222025-04-30%22" target="_blank" rel="noopener noreferrer">→ View all 4 pre-revamp GCP tickets in Jira</a></p>
+      </div>
+    </div>
+    <div class="compare-panel post">
+      <div class="panel-header">✅ POST-REVAMP — Feature / Enhancement Tickets (GCP Cloud Workloads Only)</div>
+      <div class="panel-body">
+        <p style="font-size:12px; margin-bottom:10px; color:var(--muted);">Post-revamp GCP cloud workload tickets are for new services and capabilities (22 total). Click any ticket to open it in Jira:</p>
+        <ul style="font-size:12px; line-height:2.2; list-style:none; padding:0;">
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-2076" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-2076</a> GCP Exocompute multi-nodepool support</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-1604" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-1604</a> Azure Exocompute Outpost Model</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-3227" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-3227</a> Azure &amp; AWS VPC GA</li>
+          <li><a href="https://rubrik.atlassian.net/browse/CUSTDOC-707" class="ticket-pill" target="_blank" rel="noopener noreferrer">CUSTDOC-707</a> Azure NSG and Firewall rules update</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">📈</span>GCP Key Metrics</div>
+  <div class="kpi-row cols-3">
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--green)">0%</div>
+      <div class="delta-desc">Structural tickets <strong>before</strong> revamp (0 of 4 tickets)</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--green)">0%</div>
+      <div class="delta-desc">Structural share <strong>after</strong> revamp (0 of 22 tickets)</div>
+    </div>
+    <div class="delta-box">
+      <div class="delta-big" style="color:var(--rubrik-blue)">82%</div>
+      <div class="delta-desc">Feature/Enh share <strong>after</strong> revamp (up from 25% before)</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showTab(name, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Global follow-cursor tooltip
+  const tip = document.getElementById('global-tip');
+  let hideTimer;
+
+  document.querySelectorAll('.tip-icon[data-tip]').forEach(icon => {
+    icon.addEventListener('mouseenter', e => {
+      clearTimeout(hideTimer);
+      const title = icon.dataset.tipTitle || '';
+      const body = icon.dataset.tip;
+      tip.innerHTML = (title ? `<strong>${title}</strong>` : '') + body;
+      tip.style.display = 'block';
+      moveTip(e);
+    });
+    icon.addEventListener('mousemove', moveTip);
+    icon.addEventListener('mouseleave', () => {
+      hideTimer = setTimeout(() => { tip.style.display = 'none'; }, 100);
+    });
+  });
+
+  function moveTip(e) {
+    const pad = 16;
+    tip.style.left = '0px'; // reset for accurate offsetWidth
+    tip.style.top = '0px';
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = e.clientX + pad;
+    let y = e.clientY - h - pad;
+    if (x + w > window.innerWidth - pad) x = e.clientX - w - pad;
+    if (y < pad) y = e.clientY + pad;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+</script>
+
+</body>
+</html>
