@@ -1,115 +1,151 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 630" width="920" height="630" font-family="Segoe UI, Calibri, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Segoe UI, Calibri, Arial, sans-serif">
 
   <!-- Background -->
-  <rect width="920" height="630" fill="#F4F7FB" rx="8"/>
+  <rect width="960" height="640" fill="#0A2347" rx="12"/>
+  <!-- Perimeter border -->
+  <rect width="960" height="640" fill="none" stroke="#09A8B8" stroke-width="3.5" rx="12"/>
 
   <!-- Title bar -->
-  <rect x="0" y="0" width="920" height="70" fill="#1B2A4A" rx="8"/>
-  <rect x="0" y="54" width="920" height="16" fill="#1B2A4A"/>
-  <text x="460" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#FFFFFF">Shared Responsibility Model for Azure Data Protection</text>
-  <text x="460" y="54" text-anchor="middle" font-size="12" fill="#8BB8E8">Microsoft secures the infrastructure. You manage your workloads. Rubrik protects your data.</text>
+  <rect x="0" y="0" width="960" height="60" fill="#060F1E" rx="12"/>
+  <rect x="0" y="48" width="960" height="12" fill="#060F1E"/>
+  <rect x="0" y="58" width="960" height="3" fill="#09A8B8"/>
 
-  <!-- ═══════════════ COLUMN 1: Microsoft Azure ═══════════════ -->
-  <rect x="24" y="85" width="274" height="495" fill="#FFFFFF" rx="8" stroke="#0078D4" stroke-width="2"/>
-  <!-- Header -->
-  <rect x="24" y="85" width="274" height="58" fill="#0078D4" rx="8"/>
-  <rect x="24" y="120" width="274" height="23" fill="#0078D4"/>
-  <text x="161" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Microsoft Azure</text>
-  <text x="161" y="131" text-anchor="middle" font-size="11" fill="#C8E0FF">Secures the infrastructure</text>
-  <!-- Divider -->
-  <line x1="44" y1="153" x2="278" y2="153" stroke="#E3F0FD" stroke-width="1"/>
-  <!-- Items -->
-  <circle cx="52" cy="177" r="6" fill="#0078D4"/>
-  <text x="68" y="182" font-size="12" fill="#1B2A4A">Physical data centers</text>
-  <circle cx="52" cy="208" r="6" fill="#0078D4"/>
-  <text x="68" y="213" font-size="12" fill="#1B2A4A">Network infrastructure</text>
-  <circle cx="52" cy="239" r="6" fill="#0078D4"/>
-  <text x="68" y="244" font-size="12" fill="#1B2A4A">Hypervisor &amp; compute fabric</text>
-  <circle cx="52" cy="270" r="6" fill="#0078D4"/>
-  <text x="68" y="275" font-size="12" fill="#1B2A4A">Storage hardware</text>
-  <circle cx="52" cy="301" r="6" fill="#0078D4"/>
-  <text x="68" y="306" font-size="12" fill="#1B2A4A">Global availability zones</text>
-  <circle cx="52" cy="332" r="6" fill="#0078D4"/>
-  <text x="68" y="337" font-size="12" fill="#1B2A4A">Platform redundancy</text>
-  <circle cx="52" cy="363" r="6" fill="#0078D4"/>
-  <text x="68" y="368" font-size="12" fill="#1B2A4A">Azure service uptime SLAs</text>
-  <!-- NOT responsible label -->
-  <rect x="34" y="400" width="254" height="62" fill="#FFF3CD" rx="6" stroke="#FFC107" stroke-width="1.5"/>
-  <text x="161" y="420" text-anchor="middle" font-size="11" font-weight="bold" fill="#7B5E00">Azure does NOT protect:</text>
-  <text x="161" y="438" text-anchor="middle" font-size="11" fill="#7B5E00">Your data contents or application</text>
-  <text x="161" y="454" text-anchor="middle" font-size="11" fill="#7B5E00">state after deployment</text>
+  <!-- Title -->
+  <text x="480" y="33" text-anchor="middle" fill="#FFFFFF" font-size="19" font-weight="bold" letter-spacing="0.3">Azure Shared Responsibility Model</text>
+  <text x="480" y="52" text-anchor="middle" fill="#8AACCC" font-size="11">Who owns each layer of your Azure environment</text>
 
-  <!-- ═══════════════ COLUMN 2: Customer ═══════════════ -->
-  <rect x="323" y="85" width="274" height="495" fill="#FFFFFF" rx="8" stroke="#5C4F9E" stroke-width="2"/>
-  <!-- Header -->
-  <rect x="323" y="85" width="274" height="58" fill="#5C4F9E" rx="8"/>
-  <rect x="323" y="120" width="274" height="23" fill="#5C4F9E"/>
-  <text x="460" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">You (Customer)</text>
-  <text x="460" y="131" text-anchor="middle" font-size="11" fill="#D4C8FF">Manage workloads, data &amp; access</text>
-  <!-- Divider -->
-  <line x1="343" y1="153" x2="577" y2="153" stroke="#EDE7F6" stroke-width="1"/>
-  <!-- Items -->
-  <circle cx="351" cy="177" r="6" fill="#5C4F9E"/>
-  <text x="367" y="182" font-size="12" fill="#1B2A4A">Virtual machines &amp; managed disks</text>
-  <circle cx="351" cy="208" r="6" fill="#5C4F9E"/>
-  <text x="367" y="213" font-size="12" fill="#1B2A4A">Azure Blob Storage data</text>
-  <circle cx="351" cy="239" r="6" fill="#5C4F9E"/>
-  <text x="367" y="244" font-size="12" fill="#1B2A4A">Azure SQL databases &amp; MI</text>
-  <circle cx="351" cy="270" r="6" fill="#5C4F9E"/>
-  <text x="367" y="275" font-size="12" fill="#1B2A4A">Identity &amp; access management</text>
-  <circle cx="351" cy="301" r="6" fill="#5C4F9E"/>
-  <text x="367" y="306" font-size="12" fill="#1B2A4A">OS patching &amp; configuration</text>
-  <circle cx="351" cy="332" r="6" fill="#5C4F9E"/>
-  <text x="367" y="337" font-size="12" fill="#1B2A4A">Application configuration</text>
-  <circle cx="351" cy="363" r="6" fill="#5C4F9E"/>
-  <text x="367" y="368" font-size="12" fill="#1B2A4A">Data classification &amp; compliance</text>
-  <!-- Gap label -->
-  <rect x="333" y="400" width="254" height="62" fill="#FFEBEE" rx="6" stroke="#EF5350" stroke-width="1.5"/>
-  <text x="460" y="420" text-anchor="middle" font-size="11" font-weight="bold" fill="#B71C1C">The protection gap:</text>
-  <text x="460" y="438" text-anchor="middle" font-size="11" fill="#B71C1C">Ransomware, accidental deletion,</text>
-  <text x="460" y="454" text-anchor="middle" font-size="11" fill="#B71C1C">and data loss are your responsibility</text>
+  <!-- Column header: Microsoft Azure -->
+  <rect x="24" y="72" width="284" height="40" fill="#0063B1" rx="6"/>
+  <text x="166" y="90" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Microsoft Azure</text>
+  <text x="166" y="106" text-anchor="middle" fill="#BDE0FF" font-size="10">Managed by Microsoft</text>
 
-  <!-- ═══════════════ COLUMN 3: Rubrik RSC ═══════════════ -->
-  <rect x="622" y="85" width="274" height="495" fill="#FFFFFF" rx="8" stroke="#0076CE" stroke-width="2"/>
-  <!-- Header -->
-  <rect x="622" y="85" width="274" height="58" fill="#0076CE" rx="8"/>
-  <rect x="622" y="120" width="274" height="23" fill="#0076CE"/>
-  <text x="759" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Rubrik</text>
-  <text x="759" y="131" text-anchor="middle" font-size="11" fill="#BAD9F5">Protects and recovers your data</text>
-  <!-- Divider -->
-  <line x1="642" y1="153" x2="876" y2="153" stroke="#E8F4FF" stroke-width="1"/>
-  <!-- Items -->
-  <circle cx="650" cy="177" r="6" fill="#0076CE"/>
-  <text x="666" y="182" font-size="12" fill="#1B2A4A">Automated SLA Domain backups</text>
-  <circle cx="650" cy="208" r="6" fill="#0076CE"/>
-  <text x="666" y="213" font-size="12" fill="#1B2A4A">Immutable backup copies</text>
-  <circle cx="650" cy="239" r="6" fill="#0076CE"/>
-  <text x="666" y="244" font-size="12" fill="#1B2A4A">Cross-region snapshot replication</text>
-  <circle cx="650" cy="270" r="6" fill="#0076CE"/>
-  <text x="666" y="275" font-size="12" fill="#1B2A4A">Storage tiering &amp; archival</text>
-  <circle cx="650" cy="301" r="6" fill="#0076CE"/>
-  <text x="666" y="306" font-size="12" fill="#1B2A4A">Ransomware &amp; anomaly detection</text>
-  <circle cx="650" cy="332" r="6" fill="#0076CE"/>
-  <text x="666" y="337" font-size="12" fill="#1B2A4A">Fast granular recovery options</text>
-  <circle cx="650" cy="363" r="6" fill="#0076CE"/>
-  <text x="666" y="368" font-size="12" fill="#1B2A4A">Compliance &amp; audit reporting</text>
-  <!-- Solves it label -->
-  <rect x="632" y="400" width="254" height="62" fill="#E8F5E9" rx="6" stroke="#43A047" stroke-width="1.5"/>
-  <text x="759" y="420" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B5E20">Rubrik closes this gap:</text>
-  <text x="759" y="438" text-anchor="middle" font-size="11" fill="#1B5E20">Policy-driven protection ensures data</text>
-  <text x="759" y="454" text-anchor="middle" font-size="11" fill="#1B5E20">is recoverable at any point in time</text>
+  <!-- Column header: Customer -->
+  <rect x="338" y="72" width="284" height="40" fill="#075F68" rx="6"/>
+  <text x="480" y="90" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Customer</text>
+  <text x="480" y="106" text-anchor="middle" fill="#B8F0F4" font-size="10">Your team's responsibility</text>
 
-  <!-- Bottom connector lines: start below callout boxes (y=475), exit column borders,
-       meet the horizontal bar placed clearly below all columns (columns end at y=580) -->
-  <line x1="161" y1="475" x2="161" y2="596" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="460" y1="475" x2="460" y2="596" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="759" y1="475" x2="759" y2="596" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- Bottom connector bar: sits 16px below column bottoms (y=580+16=596) -->
-  <line x1="161" y1="596" x2="759" y2="596" stroke="#0076CE" stroke-width="2.5"/>
-  <!-- Arrow at end -->
-  <polygon points="754,590 766,596 754,602" fill="#0076CE"/>
-  <!-- Bottom label: 22px below the bar, clear of all borders -->
-  <text x="460" y="620" text-anchor="middle" font-size="12" fill="#1B2A4A">Together, these three layers form a complete data protection strategy for Azure workloads.</text>
+  <!-- Column header: Rubrik RSC -->
+  <rect x="652" y="72" width="284" height="40" fill="#0B3A72" rx="6"/>
+  <text x="794" y="90" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Rubrik Security Cloud</text>
+  <text x="794" y="106" text-anchor="middle" fill="#B8D4FF" font-size="10">Backup and recovery layer</text>
 
+  <!-- Row label bar -->
+  <rect x="24" y="124" width="912" height="20" fill="#0C1E3A" rx="3"/>
+  <text x="480" y="139" text-anchor="middle" fill="#4DD2D2" font-size="10" font-weight="bold" letter-spacing="0.8">INFRASTRUCTURE LAYER</text>
+
+  <!-- Divider lines between columns -->
+  <line x1="322" y1="72" x2="322" y2="470" stroke="#1A4A7A" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="636" y1="72" x2="636" y2="470" stroke="#1A4A7A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── AZURE cards ── -->
+  <rect x="24" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="148" width="4" height="70" fill="#0078D4" rx="2"/>
+  <text x="38" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Physical Infrastructure</text>
+  <text x="38" y="183" fill="#8AACCC" font-size="10">Data centers, servers, hardware</text>
+  <text x="38" y="197" fill="#8AACCC" font-size="10">Physical network and power</text>
+  <text x="38" y="211" fill="#8AACCC" font-size="10">Cooling and physical security</text>
+
+  <rect x="24" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="224" width="4" height="70" fill="#0078D4" rx="2"/>
+  <text x="38" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Virtualization Platform</text>
+  <text x="38" y="259" fill="#8AACCC" font-size="10">Hypervisor and compute fabric</text>
+  <text x="38" y="273" fill="#8AACCC" font-size="10">VM isolation and scheduling</text>
+  <text x="38" y="287" fill="#8AACCC" font-size="10">Azure-managed host OS</text>
+
+  <rect x="24" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="300" width="4" height="70" fill="#0078D4" rx="2"/>
+  <text x="38" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">Global Network</text>
+  <text x="38" y="335" fill="#8AACCC" font-size="10">Backbone and edge infrastructure</text>
+  <text x="38" y="349" fill="#8AACCC" font-size="10">DDoS protection at network level</text>
+  <text x="38" y="363" fill="#8AACCC" font-size="10">Azure SDN and routing</text>
+
+  <rect x="24" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="376" width="4" height="70" fill="#0078D4" rx="2"/>
+  <text x="38" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Managed Services</text>
+  <text x="38" y="411" fill="#8AACCC" font-size="10">AKS, Azure SQL patching</text>
+  <text x="38" y="425" fill="#8AACCC" font-size="10">PaaS runtime management</text>
+  <text x="38" y="439" fill="#8AACCC" font-size="10">Service availability SLAs</text>
+
+  <!-- ── CUSTOMER cards ── -->
+  <rect x="338" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="148" width="4" height="70" fill="#09A8B8" rx="2"/>
+  <text x="352" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Identity and Access Management</text>
+  <text x="352" y="183" fill="#8AACCC" font-size="10">Azure AD / Entra ID configuration</text>
+  <text x="352" y="197" fill="#8AACCC" font-size="10">Role assignments and MFA policies</text>
+  <text x="352" y="211" fill="#8AACCC" font-size="10">Service principal management</text>
+
+  <rect x="338" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="224" width="4" height="70" fill="#09A8B8" rx="2"/>
+  <text x="352" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Network Security Controls</text>
+  <text x="352" y="259" fill="#8AACCC" font-size="10">VNet design and segmentation</text>
+  <text x="352" y="273" fill="#8AACCC" font-size="10">NSG and firewall rule configuration</text>
+  <text x="352" y="287" fill="#8AACCC" font-size="10">Private endpoint management</text>
+
+  <rect x="338" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="300" width="4" height="70" fill="#09A8B8" rx="2"/>
+  <text x="352" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">OS and Applications</text>
+  <text x="352" y="335" fill="#8AACCC" font-size="10">Guest OS patching (VMs)</text>
+  <text x="352" y="349" fill="#8AACCC" font-size="10">Application code and dependencies</text>
+  <text x="352" y="363" fill="#8AACCC" font-size="10">Container image security</text>
+
+  <rect x="338" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="376" width="4" height="70" fill="#09A8B8" rx="2"/>
+  <text x="352" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Data Classification and Governance</text>
+  <text x="352" y="411" fill="#8AACCC" font-size="10">Data classification and tagging</text>
+  <text x="352" y="425" fill="#8AACCC" font-size="10">Encryption key ownership</text>
+  <text x="352" y="439" fill="#8AACCC" font-size="10">Compliance and audit requirements</text>
+
+  <!-- ── RUBRIK cards ── -->
+  <rect x="652" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="148" width="4" height="70" fill="#1A5FB4" rx="2"/>
+  <text x="666" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Backup Policy Automation</text>
+  <text x="666" y="183" fill="#8AACCC" font-size="10">SLA-driven protection policies</text>
+  <text x="666" y="197" fill="#8AACCC" font-size="10">Automated job scheduling</text>
+  <text x="666" y="211" fill="#8AACCC" font-size="10">Policy compliance reporting</text>
+
+  <rect x="652" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="224" width="4" height="70" fill="#1A5FB4" rx="2"/>
+  <text x="666" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Backup Storage Management</text>
+  <text x="666" y="259" fill="#8AACCC" font-size="10">Exocompute cluster orchestration</text>
+  <text x="666" y="273" fill="#8AACCC" font-size="10">Azure Blob archival tier control</text>
+  <text x="666" y="287" fill="#8AACCC" font-size="10">Snapshot and export management</text>
+
+  <rect x="652" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="300" width="4" height="70" fill="#1A5FB4" rx="2"/>
+  <text x="666" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">Monitoring and Threat Detection</text>
+  <text x="666" y="335" fill="#8AACCC" font-size="10">Anomaly detection in backup data</text>
+  <text x="666" y="349" fill="#8AACCC" font-size="10">Ransomware blast radius analysis</text>
+  <text x="666" y="363" fill="#8AACCC" font-size="10">Alert and notification routing</text>
+
+  <rect x="652" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="376" width="4" height="70" fill="#1A5FB4" rx="2"/>
+  <text x="666" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Recovery Orchestration</text>
+  <text x="666" y="411" fill="#8AACCC" font-size="10">Point-in-time restore (VM, SQL, Files)</text>
+  <text x="666" y="425" fill="#8AACCC" font-size="10">Cross-region recovery support</text>
+  <text x="666" y="439" fill="#8AACCC" font-size="10">Recovery validation and testing</text>
+
+  <!-- Footer -->
+  <rect x="0" y="475" width="960" height="165" fill="#060F1E" rx="0"/>
+  <rect x="0" y="628" width="960" height="12" fill="#060F1E" rx="12"/>
+  <rect x="0" y="475" width="960" height="3" fill="#09A8B8"/>
+
+  <text x="480" y="498" text-anchor="middle" fill="#4DD2D2" font-size="11" font-weight="bold" letter-spacing="0.8">KEY TAKEAWAYS</text>
+
+  <rect x="24" y="508" width="280" height="58" fill="#0D2E5A" rx="5" stroke="#0078D4" stroke-width="1"/>
+  <text x="164" y="527" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold">Microsoft handles the platform</text>
+  <text x="164" y="543" text-anchor="middle" fill="#8AACCC" font-size="10">Physical, network, and managed service</text>
+  <text x="164" y="558" text-anchor="middle" fill="#8AACCC" font-size="10">layers are fully Microsoft-owned</text>
+
+  <rect x="340" y="508" width="280" height="58" fill="#0D2E5A" rx="5" stroke="#09A8B8" stroke-width="1"/>
+  <text x="480" y="527" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold">You own data and identity</text>
+  <text x="480" y="543" text-anchor="middle" fill="#8AACCC" font-size="10">Access control, encryption keys,</text>
+  <text x="480" y="558" text-anchor="middle" fill="#8AACCC" font-size="10">and application security are yours</text>
+
+  <rect x="656" y="508" width="280" height="58" fill="#0D2E5A" rx="5" stroke="#1A5FB4" stroke-width="1"/>
+  <text x="796" y="527" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold">Rubrik fills the backup gap</text>
+  <text x="796" y="543" text-anchor="middle" fill="#8AACCC" font-size="10">Backup, recovery, and cyber resilience</text>
+  <text x="796" y="558" text-anchor="middle" fill="#8AACCC" font-size="10">across all Azure workload types</text>
+
+  <text x="480" y="592" text-anchor="middle" fill="#5A7A9A" font-size="10">Azure does not back up your data by default — Rubrik provides the protection layer across VMs, SQL, AKS, and more</text>
+  <text x="480" y="615" text-anchor="middle" fill="#3A5A7A" font-size="9">Rubrik Security Cloud  |  Azure Native Protection</text>
 </svg>
