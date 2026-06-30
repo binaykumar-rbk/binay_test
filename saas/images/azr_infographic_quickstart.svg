@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" font-family="Segoe UI, Calibri, Arial, sans-serif">
 
-  <!-- Background -->
-  <rect width="960" height="520" fill="#0A2347" rx="12"/>
-  <!-- Perimeter border -->
+  <!-- Background: light cool blue-gray -->
+  <rect width="960" height="520" fill="#F4F7FA" rx="12"/>
+  <!-- Perimeter border: teal -->
   <rect width="960" height="520" fill="none" stroke="#09A8B8" stroke-width="3.5" rx="12"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="960" height="64" fill="#060F1E" rx="12"/>
-  <rect x="0" y="52" width="960" height="12" fill="#060F1E"/>
+  <!-- Title bar: dark navy anchor -->
+  <rect x="0" y="0" width="960" height="64" fill="#0A2347" rx="12"/>
+  <rect x="0" y="52" width="960" height="12" fill="#0A2347"/>
   <rect x="0" y="61" width="960" height="3" fill="#09A8B8"/>
 
   <!-- Title -->
@@ -15,120 +15,120 @@
   <text x="480" y="50" text-anchor="middle" fill="#8AACCC" font-size="11">Five steps to protect your first Azure subscription with Rubrik Security Cloud</text>
 
   <!-- Connector line across all phase circles -->
-  <line x1="110" y1="178" x2="860" y2="178" stroke="#1A4A7A" stroke-width="2"/>
+  <line x1="110" y1="178" x2="860" y2="178" stroke="#B0C8E0" stroke-width="2"/>
 
   <!-- ── PHASE 1: Plan ── -->
-  <rect x="24" y="84" width="172" height="272" fill="#0D2E5A" rx="8" stroke="#09A8B8" stroke-width="1.5"/>
+  <rect x="24" y="84" width="172" height="272" fill="#FFFFFF" rx="8" stroke="#09A8B8" stroke-width="1.5"/>
   <rect x="24" y="84" width="172" height="42" fill="#075F68" rx="8"/>
   <rect x="24" y="112" width="172" height="14" fill="#075F68"/>
   <text x="110" y="110" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Plan</text>
   <!-- Phase circle -->
-  <circle cx="110" cy="178" r="24" fill="#0A2347" stroke="#09A8B8" stroke-width="2.5"/>
+  <circle cx="110" cy="178" r="24" fill="#F4F7FA" stroke="#09A8B8" stroke-width="2.5"/>
   <text x="110" y="184" text-anchor="middle" fill="#09A8B8" font-size="17" font-weight="bold">1</text>
   <!-- Content -->
-  <text x="110" y="216" text-anchor="middle" fill="#B8F0F4" font-size="10" font-weight="bold">PREREQUISITES</text>
-  <line x1="40" y1="222" x2="180" y2="222" stroke="#1A6070" stroke-width="1"/>
-  <text x="44" y="238" fill="#FFFFFF" font-size="10">&#x25B8; Azure subscription</text>
-  <text x="44" y="254" fill="#FFFFFF" font-size="10">&#x25B8; Contributor role or</text>
-  <text x="52" y="268" fill="#8AACCC" font-size="10">  equivalent</text>
-  <text x="44" y="284" fill="#FFFFFF" font-size="10">&#x25B8; Identify workload types</text>
-  <text x="44" y="300" fill="#FFFFFF" font-size="10">&#x25B8; Review Exocompute</text>
-  <text x="52" y="314" fill="#8AACCC" font-size="10">  region requirements</text>
-  <text x="44" y="330" fill="#FFFFFF" font-size="10">&#x25B8; Size storage capacity</text>
-  <text x="44" y="348" fill="#8AACCC" font-size="9" font-style="italic">See: Plan Azure protection</text>
+  <text x="110" y="216" text-anchor="middle" fill="#075F68" font-size="10" font-weight="bold">PREREQUISITES</text>
+  <line x1="40" y1="222" x2="180" y2="222" stroke="#C0D8E0" stroke-width="1"/>
+  <text x="44" y="238" fill="#1A2A3A" font-size="10">&#x25B8; Azure subscription</text>
+  <text x="44" y="254" fill="#1A2A3A" font-size="10">&#x25B8; Contributor role or</text>
+  <text x="52" y="268" fill="#4A6A8A" font-size="10">  equivalent</text>
+  <text x="44" y="284" fill="#1A2A3A" font-size="10">&#x25B8; Identify workload types</text>
+  <text x="44" y="300" fill="#1A2A3A" font-size="10">&#x25B8; Review Exocompute</text>
+  <text x="52" y="314" fill="#4A6A8A" font-size="10">  region requirements</text>
+  <text x="44" y="330" fill="#1A2A3A" font-size="10">&#x25B8; Size storage capacity</text>
+  <text x="44" y="348" fill="#4A6A8A" font-size="9" font-style="italic">See: Plan Azure protection</text>
 
   <!-- Arrow 1 to 2 -->
-  <polygon points="196,172 212,178 196,184" fill="#4DD2D2"/>
-  <line x1="196" y1="178" x2="212" y2="178" stroke="#4DD2D2" stroke-width="2"/>
+  <polygon points="196,172 212,178 196,184" fill="#09A8B8"/>
+  <line x1="196" y1="178" x2="212" y2="178" stroke="#09A8B8" stroke-width="2"/>
 
   <!-- ── PHASE 2: Connect ── -->
-  <rect x="214" y="84" width="172" height="272" fill="#0D2E5A" rx="8" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="214" y="84" width="172" height="272" fill="#FFFFFF" rx="8" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="214" y="84" width="172" height="42" fill="#0C3460" rx="8"/>
   <rect x="214" y="112" width="172" height="14" fill="#0C3460"/>
   <text x="300" y="110" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Connect</text>
-  <circle cx="300" cy="178" r="24" fill="#0A2347" stroke="#09A8B8" stroke-width="2"/>
+  <circle cx="300" cy="178" r="24" fill="#F4F7FA" stroke="#09A8B8" stroke-width="2"/>
   <text x="300" y="184" text-anchor="middle" fill="#09A8B8" font-size="17" font-weight="bold">2</text>
-  <text x="300" y="216" text-anchor="middle" fill="#B8D4FF" font-size="10" font-weight="bold">IN RSC</text>
-  <line x1="230" y1="222" x2="370" y2="222" stroke="#1A3A6A" stroke-width="1"/>
-  <text x="234" y="238" fill="#FFFFFF" font-size="10">&#x25B8; Add Azure subscription</text>
-  <text x="234" y="254" fill="#FFFFFF" font-size="10">&#x25B8; Grant RSC app</text>
-  <text x="242" y="268" fill="#8AACCC" font-size="10">  permissions</text>
-  <text x="234" y="284" fill="#FFFFFF" font-size="10">&#x25B8; Configure tenant ID</text>
-  <text x="234" y="300" fill="#FFFFFF" font-size="10">&#x25B8; Verify subscription</text>
-  <text x="242" y="314" fill="#8AACCC" font-size="10">  appears in RSC</text>
-  <text x="234" y="330" fill="#FFFFFF" font-size="10">&#x25B8; Check resource discovery</text>
-  <text x="234" y="348" fill="#8AACCC" font-size="9" font-style="italic">See: Add Azure subscription</text>
+  <text x="300" y="216" text-anchor="middle" fill="#2A5080" font-size="10" font-weight="bold">IN RSC</text>
+  <line x1="230" y1="222" x2="370" y2="222" stroke="#C8D8E8" stroke-width="1"/>
+  <text x="234" y="238" fill="#1A2A3A" font-size="10">&#x25B8; Add Azure subscription</text>
+  <text x="234" y="254" fill="#1A2A3A" font-size="10">&#x25B8; Grant RSC app</text>
+  <text x="242" y="268" fill="#4A6A8A" font-size="10">  permissions</text>
+  <text x="234" y="284" fill="#1A2A3A" font-size="10">&#x25B8; Configure tenant ID</text>
+  <text x="234" y="300" fill="#1A2A3A" font-size="10">&#x25B8; Verify subscription</text>
+  <text x="242" y="314" fill="#4A6A8A" font-size="10">  appears in RSC</text>
+  <text x="234" y="330" fill="#1A2A3A" font-size="10">&#x25B8; Check resource discovery</text>
+  <text x="234" y="348" fill="#4A6A8A" font-size="9" font-style="italic">See: Add Azure subscription</text>
 
   <!-- Arrow 2 to 3 -->
-  <polygon points="386,172 402,178 386,184" fill="#4DD2D2"/>
-  <line x1="386" y1="178" x2="402" y2="178" stroke="#4DD2D2" stroke-width="2"/>
+  <polygon points="386,172 402,178 386,184" fill="#09A8B8"/>
+  <line x1="386" y1="178" x2="402" y2="178" stroke="#09A8B8" stroke-width="2"/>
 
   <!-- ── PHASE 3: Configure Infrastructure ── -->
-  <rect x="404" y="84" width="172" height="272" fill="#0D2E5A" rx="8" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="404" y="84" width="172" height="272" fill="#FFFFFF" rx="8" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="404" y="84" width="172" height="42" fill="#0C3460" rx="8"/>
   <rect x="404" y="112" width="172" height="14" fill="#0C3460"/>
   <text x="490" y="103" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">Configure</text>
   <text x="490" y="120" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">Infrastructure</text>
-  <circle cx="490" cy="178" r="24" fill="#0A2347" stroke="#09A8B8" stroke-width="2"/>
+  <circle cx="490" cy="178" r="24" fill="#F4F7FA" stroke="#09A8B8" stroke-width="2"/>
   <text x="490" y="184" text-anchor="middle" fill="#09A8B8" font-size="17" font-weight="bold">3</text>
-  <text x="490" y="216" text-anchor="middle" fill="#B8D4FF" font-size="10" font-weight="bold">SETUP</text>
-  <line x1="420" y1="222" x2="560" y2="222" stroke="#1A3A6A" stroke-width="1"/>
-  <text x="424" y="238" fill="#FFFFFF" font-size="10">&#x25B8; Deploy Exocompute</text>
-  <text x="424" y="252" fill="#8AACCC" font-size="10">  cluster in Azure</text>
-  <text x="424" y="268" fill="#FFFFFF" font-size="10">&#x25B8; Select worker node size</text>
-  <text x="424" y="284" fill="#FFFFFF" font-size="10">&#x25B8; Configure blob storage</text>
-  <text x="424" y="298" fill="#8AACCC" font-size="10">  (hot/cool/archive)</text>
-  <text x="424" y="314" fill="#FFFFFF" font-size="10">&#x25B8; Set up VNet/subnets</text>
-  <text x="424" y="330" fill="#FFFFFF" font-size="10">&#x25B8; Validate cluster health</text>
-  <text x="424" y="348" fill="#8AACCC" font-size="9" font-style="italic">See: Configure Exocompute</text>
+  <text x="490" y="216" text-anchor="middle" fill="#2A5080" font-size="10" font-weight="bold">SETUP</text>
+  <line x1="420" y1="222" x2="560" y2="222" stroke="#C8D8E8" stroke-width="1"/>
+  <text x="424" y="238" fill="#1A2A3A" font-size="10">&#x25B8; Deploy Exocompute</text>
+  <text x="424" y="252" fill="#4A6A8A" font-size="10">  cluster in Azure</text>
+  <text x="424" y="268" fill="#1A2A3A" font-size="10">&#x25B8; Select worker node size</text>
+  <text x="424" y="284" fill="#1A2A3A" font-size="10">&#x25B8; Configure blob storage</text>
+  <text x="424" y="298" fill="#4A6A8A" font-size="10">  (hot/cool/archive)</text>
+  <text x="424" y="314" fill="#1A2A3A" font-size="10">&#x25B8; Set up VNet/subnets</text>
+  <text x="424" y="330" fill="#1A2A3A" font-size="10">&#x25B8; Validate cluster health</text>
+  <text x="424" y="348" fill="#4A6A8A" font-size="9" font-style="italic">See: Configure Exocompute</text>
 
   <!-- Arrow 3 to 4 -->
-  <polygon points="576,172 592,178 576,184" fill="#4DD2D2"/>
-  <line x1="576" y1="178" x2="592" y2="178" stroke="#4DD2D2" stroke-width="2"/>
+  <polygon points="576,172 592,178 576,184" fill="#09A8B8"/>
+  <line x1="576" y1="178" x2="592" y2="178" stroke="#09A8B8" stroke-width="2"/>
 
   <!-- ── PHASE 4: Protect ── -->
-  <rect x="594" y="84" width="172" height="272" fill="#0D2E5A" rx="8" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="594" y="84" width="172" height="272" fill="#FFFFFF" rx="8" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="594" y="84" width="172" height="42" fill="#0C3460" rx="8"/>
   <rect x="594" y="112" width="172" height="14" fill="#0C3460"/>
   <text x="680" y="110" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Protect</text>
-  <circle cx="680" cy="178" r="24" fill="#0A2347" stroke="#09A8B8" stroke-width="2"/>
+  <circle cx="680" cy="178" r="24" fill="#F4F7FA" stroke="#09A8B8" stroke-width="2"/>
   <text x="680" y="184" text-anchor="middle" fill="#09A8B8" font-size="17" font-weight="bold">4</text>
-  <text x="680" y="216" text-anchor="middle" fill="#B8D4FF" font-size="10" font-weight="bold">POLICIES</text>
-  <line x1="610" y1="222" x2="750" y2="222" stroke="#1A3A6A" stroke-width="1"/>
-  <text x="614" y="238" fill="#FFFFFF" font-size="10">&#x25B8; Create SLA policy</text>
-  <text x="614" y="254" fill="#FFFFFF" font-size="10">&#x25B8; Set RPO/RTO targets</text>
-  <text x="614" y="270" fill="#FFFFFF" font-size="10">&#x25B8; Assign to VMs or</text>
-  <text x="622" y="284" fill="#8AACCC" font-size="10">  resource groups</text>
-  <text x="614" y="300" fill="#FFFFFF" font-size="10">&#x25B8; Enable SQL/AKS backup</text>
-  <text x="614" y="316" fill="#FFFFFF" font-size="10">&#x25B8; Trigger first backup job</text>
-  <text x="614" y="332" fill="#FFFFFF" font-size="10">&#x25B8; Confirm job completes</text>
-  <text x="614" y="348" fill="#8AACCC" font-size="9" font-style="italic">See: Apply SLA policies</text>
+  <text x="680" y="216" text-anchor="middle" fill="#2A5080" font-size="10" font-weight="bold">POLICIES</text>
+  <line x1="610" y1="222" x2="750" y2="222" stroke="#C8D8E8" stroke-width="1"/>
+  <text x="614" y="238" fill="#1A2A3A" font-size="10">&#x25B8; Create SLA policy</text>
+  <text x="614" y="254" fill="#1A2A3A" font-size="10">&#x25B8; Set RPO/RTO targets</text>
+  <text x="614" y="270" fill="#1A2A3A" font-size="10">&#x25B8; Assign to VMs or</text>
+  <text x="622" y="284" fill="#4A6A8A" font-size="10">  resource groups</text>
+  <text x="614" y="300" fill="#1A2A3A" font-size="10">&#x25B8; Enable SQL/AKS backup</text>
+  <text x="614" y="316" fill="#1A2A3A" font-size="10">&#x25B8; Trigger first backup job</text>
+  <text x="614" y="332" fill="#1A2A3A" font-size="10">&#x25B8; Confirm job completes</text>
+  <text x="614" y="348" fill="#4A6A8A" font-size="9" font-style="italic">See: Apply SLA policies</text>
 
   <!-- Arrow 4 to 5 -->
   <polygon points="766,172 782,178 766,184" fill="#21DDAA"/>
   <line x1="766" y1="178" x2="782" y2="178" stroke="#21DDAA" stroke-width="2"/>
 
   <!-- ── PHASE 5: Verify ── -->
-  <rect x="784" y="84" width="152" height="272" fill="#0D3040" rx="8" stroke="#21DDAA" stroke-width="1.5"/>
+  <rect x="784" y="84" width="152" height="272" fill="#FFFFFF" rx="8" stroke="#21DDAA" stroke-width="1.5"/>
   <rect x="784" y="84" width="152" height="42" fill="#0A4030" rx="8"/>
   <rect x="784" y="112" width="152" height="14" fill="#0A4030"/>
   <text x="860" y="110" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">Verify</text>
-  <circle cx="860" cy="178" r="24" fill="#0A2347" stroke="#21DDAA" stroke-width="2.5"/>
+  <circle cx="860" cy="178" r="24" fill="#F4F7FA" stroke="#21DDAA" stroke-width="2.5"/>
   <text x="860" y="184" text-anchor="middle" fill="#21DDAA" font-size="17" font-weight="bold">5</text>
-  <text x="860" y="216" text-anchor="middle" fill="#A8FFD8" font-size="10" font-weight="bold">VALIDATION</text>
-  <line x1="800" y1="222" x2="920" y2="222" stroke="#0A4030" stroke-width="1"/>
-  <text x="804" y="238" fill="#FFFFFF" font-size="10">&#x25B8; Check backup jobs</text>
-  <text x="804" y="254" fill="#FFFFFF" font-size="10">&#x25B8; Review compliance</text>
-  <text x="812" y="268" fill="#8AACCC" font-size="10">  dashboard</text>
-  <text x="804" y="284" fill="#FFFFFF" font-size="10">&#x25B8; Run test restore</text>
-  <text x="804" y="300" fill="#FFFFFF" font-size="10">&#x25B8; Validate RTO meets</text>
-  <text x="812" y="314" fill="#8AACCC" font-size="10">  policy target</text>
-  <text x="804" y="330" fill="#FFFFFF" font-size="10">&#x25B8; Enable alerting</text>
-  <text x="804" y="348" fill="#8AACCC" font-size="9" font-style="italic">See: Verify backup jobs</text>
+  <text x="860" y="216" text-anchor="middle" fill="#0A6048" font-size="10" font-weight="bold">VALIDATION</text>
+  <line x1="800" y1="222" x2="920" y2="222" stroke="#B0D8C8" stroke-width="1"/>
+  <text x="804" y="238" fill="#1A2A3A" font-size="10">&#x25B8; Check backup jobs</text>
+  <text x="804" y="254" fill="#1A2A3A" font-size="10">&#x25B8; Review compliance</text>
+  <text x="812" y="268" fill="#4A6A8A" font-size="10">  dashboard</text>
+  <text x="804" y="284" fill="#1A2A3A" font-size="10">&#x25B8; Run test restore</text>
+  <text x="804" y="300" fill="#1A2A3A" font-size="10">&#x25B8; Validate RTO meets</text>
+  <text x="812" y="314" fill="#4A6A8A" font-size="10">  policy target</text>
+  <text x="804" y="330" fill="#1A2A3A" font-size="10">&#x25B8; Enable alerting</text>
+  <text x="804" y="348" fill="#4A6A8A" font-size="9" font-style="italic">See: Verify backup jobs</text>
 
-  <!-- Footer -->
-  <rect x="0" y="392" width="960" height="128" fill="#060F1E" rx="0"/>
-  <rect x="0" y="508" width="960" height="12" fill="#060F1E" rx="12"/>
+  <!-- Footer: dark navy anchor -->
+  <rect x="0" y="392" width="960" height="128" fill="#0A2347" rx="0"/>
+  <rect x="0" y="508" width="960" height="12" fill="#0A2347" rx="12"/>
   <rect x="0" y="392" width="960" height="3" fill="#09A8B8"/>
 
   <text x="480" y="414" text-anchor="middle" fill="#4DD2D2" font-size="11" font-weight="bold" letter-spacing="0.8">BEFORE YOU BEGIN</text>
@@ -148,5 +148,5 @@
   <text x="666" y="457" fill="#8AACCC" font-size="10">Once Exocompute is configured, adding</text>
   <text x="666" y="471" fill="#8AACCC" font-size="10">more workloads requires only Step 4</text>
 
-  <text x="480" y="500" text-anchor="middle" fill="#3A5A7A" font-size="9">Rubrik Security Cloud  |  Azure Native Protection  |  Quickstart Guide</text>
+  <text x="480" y="500" text-anchor="middle" fill="#4A7A9A" font-size="9">Rubrik Security Cloud  |  Azure Native Protection  |  Quickstart Guide</text>
 </svg>

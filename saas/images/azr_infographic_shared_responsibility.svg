@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Segoe UI, Calibri, Arial, sans-serif">
 
-  <!-- Background -->
-  <rect width="960" height="640" fill="#0A2347" rx="12"/>
-  <!-- Perimeter border -->
+  <!-- Background: light cool blue-gray -->
+  <rect width="960" height="640" fill="#F4F7FA" rx="12"/>
+  <!-- Perimeter border: teal — visible on both dark and light portal themes -->
   <rect width="960" height="640" fill="none" stroke="#09A8B8" stroke-width="3.5" rx="12"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="960" height="60" fill="#060F1E" rx="12"/>
-  <rect x="0" y="48" width="960" height="12" fill="#060F1E"/>
+  <!-- Title bar: dark navy anchor -->
+  <rect x="0" y="0" width="960" height="60" fill="#0A2347" rx="12"/>
+  <rect x="0" y="48" width="960" height="12" fill="#0A2347"/>
   <rect x="0" y="58" width="960" height="3" fill="#09A8B8"/>
 
   <!-- Title -->
@@ -30,103 +30,103 @@
   <text x="794" y="106" text-anchor="middle" fill="#B8D4FF" font-size="10">Backup and recovery layer</text>
 
   <!-- Row label bar -->
-  <rect x="24" y="124" width="912" height="20" fill="#0C1E3A" rx="3"/>
-  <text x="480" y="139" text-anchor="middle" fill="#4DD2D2" font-size="10" font-weight="bold" letter-spacing="0.8">INFRASTRUCTURE LAYER</text>
+  <rect x="24" y="124" width="912" height="20" fill="#DDE6F0" rx="3"/>
+  <text x="480" y="139" text-anchor="middle" fill="#2A5080" font-size="10" font-weight="bold" letter-spacing="0.8">INFRASTRUCTURE LAYER</text>
 
   <!-- Divider lines between columns -->
-  <line x1="322" y1="72" x2="322" y2="470" stroke="#1A4A7A" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="636" y1="72" x2="636" y2="470" stroke="#1A4A7A" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="322" y1="72" x2="322" y2="470" stroke="#B0C8E0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="636" y1="72" x2="636" y2="470" stroke="#B0C8E0" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- ── AZURE cards ── -->
-  <rect x="24" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="148" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="24" y="148" width="4" height="70" fill="#0078D4" rx="2"/>
-  <text x="38" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Physical Infrastructure</text>
-  <text x="38" y="183" fill="#8AACCC" font-size="10">Data centers, servers, hardware</text>
-  <text x="38" y="197" fill="#8AACCC" font-size="10">Physical network and power</text>
-  <text x="38" y="211" fill="#8AACCC" font-size="10">Cooling and physical security</text>
+  <text x="38" y="167" fill="#1A2A3A" font-size="11" font-weight="bold">Physical Infrastructure</text>
+  <text x="38" y="183" fill="#4A6A8A" font-size="10">Data centers, servers, hardware</text>
+  <text x="38" y="197" fill="#4A6A8A" font-size="10">Physical network and power</text>
+  <text x="38" y="211" fill="#4A6A8A" font-size="10">Cooling and physical security</text>
 
-  <rect x="24" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="224" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="24" y="224" width="4" height="70" fill="#0078D4" rx="2"/>
-  <text x="38" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Virtualization Platform</text>
-  <text x="38" y="259" fill="#8AACCC" font-size="10">Hypervisor and compute fabric</text>
-  <text x="38" y="273" fill="#8AACCC" font-size="10">VM isolation and scheduling</text>
-  <text x="38" y="287" fill="#8AACCC" font-size="10">Azure-managed host OS</text>
+  <text x="38" y="243" fill="#1A2A3A" font-size="11" font-weight="bold">Virtualization Platform</text>
+  <text x="38" y="259" fill="#4A6A8A" font-size="10">Hypervisor and compute fabric</text>
+  <text x="38" y="273" fill="#4A6A8A" font-size="10">VM isolation and scheduling</text>
+  <text x="38" y="287" fill="#4A6A8A" font-size="10">Azure-managed host OS</text>
 
-  <rect x="24" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="300" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="24" y="300" width="4" height="70" fill="#0078D4" rx="2"/>
-  <text x="38" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">Global Network</text>
-  <text x="38" y="335" fill="#8AACCC" font-size="10">Backbone and edge infrastructure</text>
-  <text x="38" y="349" fill="#8AACCC" font-size="10">DDoS protection at network level</text>
-  <text x="38" y="363" fill="#8AACCC" font-size="10">Azure SDN and routing</text>
+  <text x="38" y="319" fill="#1A2A3A" font-size="11" font-weight="bold">Global Network</text>
+  <text x="38" y="335" fill="#4A6A8A" font-size="10">Backbone and edge infrastructure</text>
+  <text x="38" y="349" fill="#4A6A8A" font-size="10">DDoS protection at network level</text>
+  <text x="38" y="363" fill="#4A6A8A" font-size="10">Azure SDN and routing</text>
 
-  <rect x="24" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="24" y="376" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="24" y="376" width="4" height="70" fill="#0078D4" rx="2"/>
-  <text x="38" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Managed Services</text>
-  <text x="38" y="411" fill="#8AACCC" font-size="10">AKS, Azure SQL patching</text>
-  <text x="38" y="425" fill="#8AACCC" font-size="10">PaaS runtime management</text>
-  <text x="38" y="439" fill="#8AACCC" font-size="10">Service availability SLAs</text>
+  <text x="38" y="395" fill="#1A2A3A" font-size="11" font-weight="bold">Managed Services</text>
+  <text x="38" y="411" fill="#4A6A8A" font-size="10">AKS, Azure SQL patching</text>
+  <text x="38" y="425" fill="#4A6A8A" font-size="10">PaaS runtime management</text>
+  <text x="38" y="439" fill="#4A6A8A" font-size="10">Service availability SLAs</text>
 
   <!-- ── CUSTOMER cards ── -->
-  <rect x="338" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="148" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="338" y="148" width="4" height="70" fill="#09A8B8" rx="2"/>
-  <text x="352" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Identity and Access Management</text>
-  <text x="352" y="183" fill="#8AACCC" font-size="10">Azure AD / Entra ID configuration</text>
-  <text x="352" y="197" fill="#8AACCC" font-size="10">Role assignments and MFA policies</text>
-  <text x="352" y="211" fill="#8AACCC" font-size="10">Service principal management</text>
+  <text x="352" y="167" fill="#1A2A3A" font-size="11" font-weight="bold">Identity and Access Management</text>
+  <text x="352" y="183" fill="#4A6A8A" font-size="10">Azure AD / Entra ID configuration</text>
+  <text x="352" y="197" fill="#4A6A8A" font-size="10">Role assignments and MFA policies</text>
+  <text x="352" y="211" fill="#4A6A8A" font-size="10">Service principal management</text>
 
-  <rect x="338" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="224" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="338" y="224" width="4" height="70" fill="#09A8B8" rx="2"/>
-  <text x="352" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Network Security Controls</text>
-  <text x="352" y="259" fill="#8AACCC" font-size="10">VNet design and segmentation</text>
-  <text x="352" y="273" fill="#8AACCC" font-size="10">NSG and firewall rule configuration</text>
-  <text x="352" y="287" fill="#8AACCC" font-size="10">Private endpoint management</text>
+  <text x="352" y="243" fill="#1A2A3A" font-size="11" font-weight="bold">Network Security Controls</text>
+  <text x="352" y="259" fill="#4A6A8A" font-size="10">VNet design and segmentation</text>
+  <text x="352" y="273" fill="#4A6A8A" font-size="10">NSG and firewall rule configuration</text>
+  <text x="352" y="287" fill="#4A6A8A" font-size="10">Private endpoint management</text>
 
-  <rect x="338" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="300" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="338" y="300" width="4" height="70" fill="#09A8B8" rx="2"/>
-  <text x="352" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">OS and Applications</text>
-  <text x="352" y="335" fill="#8AACCC" font-size="10">Guest OS patching (VMs)</text>
-  <text x="352" y="349" fill="#8AACCC" font-size="10">Application code and dependencies</text>
-  <text x="352" y="363" fill="#8AACCC" font-size="10">Container image security</text>
+  <text x="352" y="319" fill="#1A2A3A" font-size="11" font-weight="bold">OS and Applications</text>
+  <text x="352" y="335" fill="#4A6A8A" font-size="10">Guest OS patching (VMs)</text>
+  <text x="352" y="349" fill="#4A6A8A" font-size="10">Application code and dependencies</text>
+  <text x="352" y="363" fill="#4A6A8A" font-size="10">Container image security</text>
 
-  <rect x="338" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="338" y="376" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="338" y="376" width="4" height="70" fill="#09A8B8" rx="2"/>
-  <text x="352" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Data Classification and Governance</text>
-  <text x="352" y="411" fill="#8AACCC" font-size="10">Data classification and tagging</text>
-  <text x="352" y="425" fill="#8AACCC" font-size="10">Encryption key ownership</text>
-  <text x="352" y="439" fill="#8AACCC" font-size="10">Compliance and audit requirements</text>
+  <text x="352" y="395" fill="#1A2A3A" font-size="11" font-weight="bold">Data Classification and Governance</text>
+  <text x="352" y="411" fill="#4A6A8A" font-size="10">Data classification and tagging</text>
+  <text x="352" y="425" fill="#4A6A8A" font-size="10">Encryption key ownership</text>
+  <text x="352" y="439" fill="#4A6A8A" font-size="10">Compliance and audit requirements</text>
 
   <!-- ── RUBRIK cards ── -->
-  <rect x="652" y="148" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="148" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="652" y="148" width="4" height="70" fill="#1A5FB4" rx="2"/>
-  <text x="666" y="167" fill="#FFFFFF" font-size="11" font-weight="bold">Backup Policy Automation</text>
-  <text x="666" y="183" fill="#8AACCC" font-size="10">SLA-driven protection policies</text>
-  <text x="666" y="197" fill="#8AACCC" font-size="10">Automated job scheduling</text>
-  <text x="666" y="211" fill="#8AACCC" font-size="10">Policy compliance reporting</text>
+  <text x="666" y="167" fill="#1A2A3A" font-size="11" font-weight="bold">Backup Policy Automation</text>
+  <text x="666" y="183" fill="#4A6A8A" font-size="10">SLA-driven protection policies</text>
+  <text x="666" y="197" fill="#4A6A8A" font-size="10">Automated job scheduling</text>
+  <text x="666" y="211" fill="#4A6A8A" font-size="10">Policy compliance reporting</text>
 
-  <rect x="652" y="224" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="224" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="652" y="224" width="4" height="70" fill="#1A5FB4" rx="2"/>
-  <text x="666" y="243" fill="#FFFFFF" font-size="11" font-weight="bold">Backup Storage Management</text>
-  <text x="666" y="259" fill="#8AACCC" font-size="10">Exocompute cluster orchestration</text>
-  <text x="666" y="273" fill="#8AACCC" font-size="10">Azure Blob archival tier control</text>
-  <text x="666" y="287" fill="#8AACCC" font-size="10">Snapshot and export management</text>
+  <text x="666" y="243" fill="#1A2A3A" font-size="11" font-weight="bold">Backup Storage Management</text>
+  <text x="666" y="259" fill="#4A6A8A" font-size="10">Exocompute cluster orchestration</text>
+  <text x="666" y="273" fill="#4A6A8A" font-size="10">Azure Blob archival tier control</text>
+  <text x="666" y="287" fill="#4A6A8A" font-size="10">Snapshot and export management</text>
 
-  <rect x="652" y="300" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="300" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="652" y="300" width="4" height="70" fill="#1A5FB4" rx="2"/>
-  <text x="666" y="319" fill="#FFFFFF" font-size="11" font-weight="bold">Monitoring and Threat Detection</text>
-  <text x="666" y="335" fill="#8AACCC" font-size="10">Anomaly detection in backup data</text>
-  <text x="666" y="349" fill="#8AACCC" font-size="10">Ransomware blast radius analysis</text>
-  <text x="666" y="363" fill="#8AACCC" font-size="10">Alert and notification routing</text>
+  <text x="666" y="319" fill="#1A2A3A" font-size="11" font-weight="bold">Monitoring and Threat Detection</text>
+  <text x="666" y="335" fill="#4A6A8A" font-size="10">Anomaly detection in backup data</text>
+  <text x="666" y="349" fill="#4A6A8A" font-size="10">Ransomware blast radius analysis</text>
+  <text x="666" y="363" fill="#4A6A8A" font-size="10">Alert and notification routing</text>
 
-  <rect x="652" y="376" width="284" height="70" fill="#0D2E5A" rx="5" stroke="#1A4A7A" stroke-width="1"/>
+  <rect x="652" y="376" width="284" height="70" fill="#FFFFFF" rx="5" stroke="#C8D8E8" stroke-width="1"/>
   <rect x="652" y="376" width="4" height="70" fill="#1A5FB4" rx="2"/>
-  <text x="666" y="395" fill="#FFFFFF" font-size="11" font-weight="bold">Recovery Orchestration</text>
-  <text x="666" y="411" fill="#8AACCC" font-size="10">Point-in-time restore (VM, SQL, Files)</text>
-  <text x="666" y="425" fill="#8AACCC" font-size="10">Cross-region recovery support</text>
-  <text x="666" y="439" fill="#8AACCC" font-size="10">Recovery validation and testing</text>
+  <text x="666" y="395" fill="#1A2A3A" font-size="11" font-weight="bold">Recovery Orchestration</text>
+  <text x="666" y="411" fill="#4A6A8A" font-size="10">Point-in-time restore (VM, SQL, Files)</text>
+  <text x="666" y="425" fill="#4A6A8A" font-size="10">Cross-region recovery support</text>
+  <text x="666" y="439" fill="#4A6A8A" font-size="10">Recovery validation and testing</text>
 
-  <!-- Footer -->
-  <rect x="0" y="475" width="960" height="165" fill="#060F1E" rx="0"/>
-  <rect x="0" y="628" width="960" height="12" fill="#060F1E" rx="12"/>
+  <!-- Footer: dark navy anchor (mirrors title bar) -->
+  <rect x="0" y="475" width="960" height="165" fill="#0A2347" rx="0"/>
+  <rect x="0" y="628" width="960" height="12" fill="#0A2347" rx="12"/>
   <rect x="0" y="475" width="960" height="3" fill="#09A8B8"/>
 
   <text x="480" y="498" text-anchor="middle" fill="#4DD2D2" font-size="11" font-weight="bold" letter-spacing="0.8">KEY TAKEAWAYS</text>
@@ -146,6 +146,6 @@
   <text x="796" y="543" text-anchor="middle" fill="#8AACCC" font-size="10">Backup, recovery, and cyber resilience</text>
   <text x="796" y="558" text-anchor="middle" fill="#8AACCC" font-size="10">across all Azure workload types</text>
 
-  <text x="480" y="592" text-anchor="middle" fill="#5A7A9A" font-size="10">Azure does not back up your data by default — Rubrik provides the protection layer across VMs, SQL, AKS, and more</text>
-  <text x="480" y="615" text-anchor="middle" fill="#3A5A7A" font-size="9">Rubrik Security Cloud  |  Azure Native Protection</text>
+  <text x="480" y="592" text-anchor="middle" fill="#5A8AAA" font-size="10">Azure does not back up your data by default — Rubrik provides the protection layer across VMs, SQL, AKS, and more</text>
+  <text x="480" y="615" text-anchor="middle" fill="#4A7A9A" font-size="9">Rubrik Security Cloud  |  Azure Native Protection</text>
 </svg>
