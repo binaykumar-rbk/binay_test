@@ -181,66 +181,64 @@
             virtual machines, Azure managed disks, Azure Blob Storage, and Azure SQL workloads in
             Azure subscriptions.</span></p>
         <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Key benefits</h2>
-            
-            <ul class="- topic/ul ul">
-                <li class="- topic/li li">Automated, policy-driven protection using SLA Domains across all Azure workload types</li>
-                <li class="- topic/li li">Cloud-native snapshot approach — no persistent compute required in your Azure subscription</li>
-                <li class="- topic/li li">Hierarchical protection at subscription, resource group, region, or individual workload level</li>
-                <li class="- topic/li li">Immutable backup copies with retention lock to meet regulatory requirements</li>
-                <li class="- topic/li li">Rapid recovery options ranging from granular file recovery to full cross-region VM export</li>
-                <li class="- topic/li li">Integrated data security with ransomware detection, data classification, and anomaly alerting</li>
-            </ul>
+            <dl class="- topic/dl dl">
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">Policy-driven protection</dt>
+                    <dd class="- topic/dd dd">SLA Domains apply consistent backup, archival, and replication policies across all Azure workload types from a single control plane.</dd>
+                </div>
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">No persistent compute required</dt>
+                    <dd class="- topic/dd dd">Cloud-native snapshots run without deploying or maintaining dedicated compute resources in your Azure subscription.</dd>
+                </div>
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">Hierarchical workload coverage</dt>
+                    <dd class="- topic/dd dd">Assign protection at the subscription, resource group, region, or individual workload level. New workloads added to a protected scope are automatically covered.</dd>
+                </div>
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">Compliance-ready immutability</dt>
+                    <dd class="- topic/dd dd">Retention lock prevents backup copies from being modified or deleted before their retention period expires, supporting regulatory compliance requirements.</dd>
+                </div>
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">Flexible recovery options</dt>
+                    <dd class="- topic/dd dd">Recover individual files, mount disks, export full VMs, or perform cross-region restores &#x2014; all from the same snapshot.</dd>
+                </div>
+                <div class="- topic/dlentry dlentry">
+                    <dt class="- topic/dt dt">Integrated data security</dt>
+                    <dd class="- topic/dd dd">Anomaly detection, ransomware threat monitoring, and sensitive data classification run against backup data without additional agents or infrastructure.</dd>
+                </div>
+            </dl>
         </section>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Your Azure protection journey</h2>
-            <p class="- topic/p p"><span class="- topic/ph ph">RSC</span> protects Azure workloads through a set of configuration steps that build on each other. Select a phase below to navigate to the relevant documentation.</p>
-            <map name="azr_journey_map">
-                <area shape="rect" coords="40,309,390,332" href="azr_get_started_azure_protection.html" alt="Get started with Azure workloads protection"/>
-                <area shape="rect" coords="40,333,390,356" href="azr_protect_implementation.html" alt="Azure protection implementation workflow"/>
-                <area shape="rect" coords="40,357,390,380" href="azr_protecting_first_subscription.html" alt="Protecting your first Azure subscription"/>
-                <area shape="rect" coords="40,381,390,404" href="azr_quick_links.html" alt="Quick links for Azure workloads"/>
-                <area shape="rect" coords="420,309,770,332" href="azr_cloud_acc_setup.html" alt="Set up Azure cloud accounts"/>
-                <area shape="rect" coords="420,333,770,356" href="azr_exocompute.html" alt="Set up Exocompute on Azure"/>
-                <area shape="rect" coords="420,357,770,380" href="azr_storage_tiering_setup.html" alt="Set up Azure storage tiering"/>
-                <area shape="rect" coords="420,381,770,404" href="azr_workloads_protection_setup.html" alt="Set up Azure workloads protection"/>
-                <area shape="rect" coords="800,309,1150,332" href="azr_manage_vm_md.html" alt="Manage Azure virtual machines"/>
-                <area shape="rect" coords="800,333,1150,356" href="../azure_blob/azr_manage_blob_storage.html" alt="Manage Azure Blob Storage"/>
-                <area shape="rect" coords="800,357,1150,380" href="azr_sql_db_manage.html" alt="Manage Azure SQL Database"/>
-                <area shape="rect" coords="800,381,1150,404" href="azr_workload_recovery.html" alt="Recover Azure workloads"/>
-                <area shape="rect" coords="40,88,390,470" href="azr_get_started_azure_protection.html" alt="Get started"/>
-                <area shape="rect" coords="420,88,770,470" href="azr_cloud_acc_setup.html" alt="Set up and protect"/>
-                <area shape="rect" coords="800,88,1150,470" href="azr_manage_vm_md.html" alt="Manage and recover"/>
-            </map>
-            <img src="images/azr_journey_overview.svg" usemap="#azr_journey_map" style="width:100%; max-width:1200px; display:block;" alt="Azure workload protection journey with three phases: Get started, Set up and protect, and Manage and recover."/>
-            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-top:14px; font-size:13px; line-height:1.7;">
-                <div>
-                    <strong style="display:block; margin-bottom:6px; color:#0A2347; font-size:13px;">Get started</strong>
-                    <a href="azr_get_started_azure_protection.html">Get started with Azure workloads protection</a><br/>
-                    <a href="azr_protect_implementation.html">Azure protection implementation workflow</a><br/>
-                    <a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a><br/>
-                    <a href="azr_quick_links.html">Quick links for Azure workloads</a>
-                </div>
-                <div>
-                    <strong style="display:block; margin-bottom:6px; color:#0A2347; font-size:13px;">Set up and protect</strong>
-                    <a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a><br/>
-                    <a href="azr_exocompute.html">Set up Exocompute on Azure</a><br/>
-                    <a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a><br/>
-                    <a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a>
-                </div>
-                <div>
-                    <strong style="display:block; margin-bottom:6px; color:#0A2347; font-size:13px;">Manage and recover</strong>
-                    <a href="azr_manage_vm_md.html">Manage Azure virtual machines</a><br/>
-                    <a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a><br/>
-                    <a href="azr_sql_db_manage.html">Manage Azure SQL Database</a><br/>
-                    <a href="azr_workload_recovery.html">Recover Azure workloads</a>
-                </div>
-            </div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">What is in this chapter</h2>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><colgroup><col style="width:46.666666666666664%"/><col style="width:53.333333333333336%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row"><th class="- topic/entry entry colsep-1 rowsep-1">What you want to do</th><th class="- topic/entry entry colsep-0 rowsep-1">Where to go</th></tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Learn</b></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Understand RSC features and architecture for Azure protection</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_key_features_protection.html">Key features for protecting Azure workloads</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Learn common terminology for Azure protection in RSC</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_common_protection_terms.html">Common Azure protection terms</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Get started</b></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Follow a complete end-to-end setup guide covering all phases and dependencies</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protect_implementation.html">Azure protection implementation workflow</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Protect your first Azure subscription using the minimum required steps</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Plan and set up</b></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Define user roles and review required permissions before setup</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protection_planning.html">Plan your Azure protection</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Connect Azure subscriptions to RSC using OAuth or manual configuration</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Deploy Exocompute for file indexing, file recovery, and storage tiering</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_exocompute.html">Set up Exocompute on Azure</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Archive virtual machine and managed disk snapshots to Azure storage tiers</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Create SLA Domains and assign protection to Azure workloads</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Manage</b></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Monitor snapshots, manage relic virtual machines, and configure tag-based protection</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_manage_vm_md.html">Manage Azure virtual machines</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Manage Blob Storage container protection and compliance reporting</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Enable Rubrik-managed backup for Azure SQL Database</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_sql_db_manage.html">Manage Azure SQL Database</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Enable Rubrik-managed backup for Azure SQL Managed Instance</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_sql_mi_manage.html">Manage Azure SQL Managed Instance</a></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Recover</b></td></tr>
+                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Restore Azure virtual machines, Blob Storage, SQL workloads, or individual files</td><td class="- topic/entry entry colsep-0 rowsep-0"><a href="azr_workload_recovery.html">Recover Azure workloads</a></td></tr>
+                    </tbody></table></div>
         </section>
     </div>
     
 </article></main></div>
                         
                         
-                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="sla_domains.html" title="SLA Domains in RSC unify data protection policies, providing a unified approach to manage data protection across various workloads and environments.">SLA Domains</a><div class="- topic/desc desc">SLA Domains in RSC unify data protection policies, providing a         unified approach to manage data protection across various workloads and         environments.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="azr_key_features_protection.html" title="RSC provides unified data management, automated global data protection, various recovery options for Azure workloads, and additional security features to protect your workloads.">Key features for protecting Azure workloads</a><div class="- topic/desc desc">RSC provides unified data management, automated global data         protection, various recovery options for Azure workloads, and additional security features         to protect your workloads.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="azr_common_protection_terms.html" title="It is important to understand some common terms when protecting Azure workloads with RSC.">Common Azure protection terms</a><div class="- topic/desc desc">It is important to understand some common terms when protecting Azure workloads with             RSC.</div></li></ul></div></nav></div>
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="sla_domains.html" title="SLA Domains in RSC unify data protection policies, providing a unified approach to manage data protection across various workloads and environments.">SLA Domains</a><div class="- topic/desc desc">SLA Domains in RSC unify data protection policies, providing a unified approach to manage data protection across various workloads and environments.</div></li></ul></div><div class="- topic/linklist linklist relref"><strong>Related reference</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="azr_key_features_protection.html" title="RSC provides unified data management, automated global data protection, various recovery options for Azure workloads, and additional security features to protect your workloads.">Key features for protecting Azure workloads</a><div class="- topic/desc desc">RSC provides unified data management, automated global data protection, various recovery options for Azure workloads, and additional security features to protect your workloads.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="azr_protect_implementation.html">Azure protection implementation workflow</a></li></ul></div></nav></div>
                         
                         
                         
