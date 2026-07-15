@@ -11,6 +11,76 @@
     <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
     <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
 <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <style>
+    .chapter-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .chapter-cards-bottom {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .phase-card {
+      border: 1px solid rgba(200,216,232,0.25);
+      border-top: 3px solid #09A8B8;
+      border-radius: 8px;
+      padding: 14px 16px 16px;
+      background: rgba(255,255,255,0.06);
+    }
+    .theme-light .phase-card {
+      background: #ffffff;
+      border-color: #C8D8E8;
+      border-top: 3px solid #09A8B8;
+    }
+    .phase-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #09A8B8;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(200,216,232,0.2);
+    }
+    .theme-light .phase-card-title {
+      color: #0A2347;
+      border-bottom-color: #E8EDF5;
+    }
+    .chapter-cards ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .chapter-cards ul li {
+      margin-bottom: 10px;
+      padding-left: 14px;
+      position: relative;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .chapter-cards ul li:last-child { margin-bottom: 0; }
+    .chapter-cards ul li::before {
+      content: "›";
+      color: #09A8B8;
+      position: absolute;
+      left: 0;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .chapter-cards ul li a { font-weight: 500; display: block; }
+    .chapter-link-desc {
+      display: block;
+      font-size: 11.5px;
+      margin-top: 2px;
+      line-height: 1.35;
+      opacity: 0.65;
+    }
+    </style>
     <script>
     window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
     </script>
@@ -209,29 +279,56 @@
             </dl>
         </section>
         <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">What is in this chapter</h2>
-            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><colgroup><col style="width:46.666666666666664%"/><col style="width:53.333333333333336%"/></colgroup><thead class="- topic/thead thead">
-                        <tr class="- topic/row"><th class="- topic/entry entry colsep-1 rowsep-1">What you want to do</th><th class="- topic/entry entry colsep-0 rowsep-1">Where to go</th></tr>
-                    </thead><tbody class="- topic/tbody tbody">
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Learn</b></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Understand RSC features and architecture for Azure protection</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_key_features_protection.html">Key features for protecting Azure workloads</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Learn common terminology for Azure protection in RSC</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_common_protection_terms.html">Common Azure protection terms</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Get started</b></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Follow a complete end-to-end setup guide covering all phases and dependencies</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protect_implementation.html">Azure protection implementation workflow</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Protect your first Azure subscription using the minimum required steps</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Plan and set up</b></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Define user roles and review required permissions before setup</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_protection_planning.html">Plan your Azure protection</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Connect Azure subscriptions to RSC using OAuth or manual configuration</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Deploy Exocompute for file indexing, file recovery, and storage tiering</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_exocompute.html">Set up Exocompute on Azure</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Archive virtual machine and managed disk snapshots to Azure storage tiers</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Create SLA Domains and assign protection to Azure workloads</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Manage</b></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Monitor snapshots, manage relic virtual machines, and configure tag-based protection</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_manage_vm_md.html">Manage Azure virtual machines</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Manage Blob Storage container protection and compliance reporting</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Enable Rubrik-managed backup for Azure SQL Database</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_sql_db_manage.html">Manage Azure SQL Database</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Enable Rubrik-managed backup for Azure SQL Managed Instance</td><td class="- topic/entry entry colsep-0 rowsep-1"><a href="azr_sql_mi_manage.html">Manage Azure SQL Managed Instance</a></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1" colspan="2"><b>Recover</b></td></tr>
-                        <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Restore Azure virtual machines, Blob Storage, SQL workloads, or individual files</td><td class="- topic/entry entry colsep-0 rowsep-0"><a href="azr_workload_recovery.html">Recover Azure workloads</a></td></tr>
-                    </tbody></table></div>
+            <div class="chapter-cards">
+
+              <div class="phase-card">
+                <div class="phase-card-title">Learn</div>
+                <ul>
+                  <li><a href="azr_key_features_protection.html">Key features for protecting Azure workloads</a><span class="chapter-link-desc">Understand RSC features and architecture for Azure protection</span></li>
+                  <li><a href="azr_common_protection_terms.html">Common Azure protection terms</a><span class="chapter-link-desc">Learn common terminology for Azure protection in RSC</span></li>
+                </ul>
+              </div>
+
+              <div class="phase-card">
+                <div class="phase-card-title">Get started</div>
+                <ul>
+                  <li><a href="azr_protect_implementation.html">Azure protection implementation workflow</a><span class="chapter-link-desc">Follow a complete end-to-end setup guide covering all phases and dependencies</span></li>
+                  <li><a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a><span class="chapter-link-desc">Protect your first Azure subscription using the minimum required steps</span></li>
+                </ul>
+              </div>
+
+              <div class="phase-card">
+                <div class="phase-card-title">Plan and set up</div>
+                <ul>
+                  <li><a href="azr_protection_planning.html">Plan your Azure protection</a><span class="chapter-link-desc">Define user roles and review required permissions before setup</span></li>
+                  <li><a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a><span class="chapter-link-desc">Connect Azure subscriptions to RSC using OAuth or manual configuration</span></li>
+                  <li><a href="azr_exocompute.html">Set up Exocompute on Azure</a><span class="chapter-link-desc">Deploy Exocompute for file indexing, file recovery, and storage tiering</span></li>
+                  <li><a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a><span class="chapter-link-desc">Archive virtual machine and managed disk snapshots to Azure storage tiers</span></li>
+                  <li><a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a><span class="chapter-link-desc">Create SLA Domains and assign protection to Azure workloads</span></li>
+                </ul>
+              </div>
+
+              <div class="chapter-cards-bottom">
+
+                <div class="phase-card">
+                  <div class="phase-card-title">Manage</div>
+                  <ul>
+                    <li><a href="azr_manage_vm_md.html">Manage Azure virtual machines</a><span class="chapter-link-desc">Monitor snapshots, manage relic virtual machines, and configure tag-based protection</span></li>
+                    <li><a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a><span class="chapter-link-desc">Manage Blob Storage container protection and compliance reporting</span></li>
+                    <li><a href="azr_sql_db_manage.html">Manage Azure SQL Database</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Database</span></li>
+                    <li><a href="azr_sql_mi_manage.html">Manage Azure SQL Managed Instance</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Managed Instance</span></li>
+                  </ul>
+                </div>
+
+                <div class="phase-card">
+                  <div class="phase-card-title">Recover</div>
+                  <ul>
+                    <li><a href="azr_workload_recovery.html">Recover Azure workloads</a><span class="chapter-link-desc">Restore Azure virtual machines, Blob Storage, SQL workloads, or individual files</span></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
         </section>
     </div>
     
