@@ -26,30 +26,52 @@
     }
     .phase-card {
       border: 1px solid rgba(200,216,232,0.25);
-      border-top: 3px solid #09A8B8;
       border-radius: 8px;
-      padding: 14px 16px 16px;
-      background: rgba(255,255,255,0.06);
+      overflow: hidden;
     }
-    .theme-light .phase-card {
-      background: #ffffff;
-      border-color: #C8D8E8;
-      border-top: 3px solid #09A8B8;
-    }
+    .theme-light .phase-card { border-color: #C8D8E8; }
     .phase-card-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.7px;
-      color: #09A8B8;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(200,216,232,0.2);
+      color: #ffffff;
     }
-    .theme-light .phase-card-title {
-      color: #0A2347;
-      border-bottom-color: #E8EDF5;
+    .phase-card-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.22);
+      font-size: 10px;
+      font-weight: 700;
     }
+    .phase-card-body { padding: 12px 16px 16px; }
+    /* Phase header colors — Rubrik Aura palette */
+    .pch-learn   { background: #075F68; }
+    .pch-start   { background: #0C3460; }
+    .pch-plan    { background: #0B3A72; }
+    .pch-manage  { background: #1A5FB4; }
+    .pch-recover { background: #0A4030; }
+    /* Card body backgrounds — dark mode */
+    .pcb-learn   { background: rgba(7,95,104,0.15); }
+    .pcb-start   { background: rgba(12,52,96,0.15); }
+    .pcb-plan    { background: rgba(11,58,114,0.15); }
+    .pcb-manage  { background: rgba(26,95,180,0.15); }
+    .pcb-recover { background: rgba(10,64,48,0.15); }
+    /* Card body backgrounds — light mode */
+    .theme-light .pcb-learn   { background: #EDF7F8; }
+    .theme-light .pcb-start   { background: #EEF2FA; }
+    .theme-light .pcb-plan    { background: #EEF1FB; }
+    .theme-light .pcb-manage  { background: #EEF3FC; }
+    .theme-light .pcb-recover { background: #EDF7F3; }
     .chapter-cards ul {
       list-style: none;
       padding: 0;
@@ -252,52 +274,62 @@
             <p style="margin-bottom:14px;font-size:14px">Topics are grouped by phase. Start with Learn if you are new to Azure protection in RSC, or go directly to the phase that matches your current task.</p>
             <div class="chapter-cards">
 
-              <div class="phase-card">
-                <div class="phase-card-title">Learn</div>
-                <ul>
-                  <li><a href="azr_how_rubrik_protects.html">Shared responsibility for Azure data protection</a><span class="chapter-link-desc">Understand how the Microsoft shared responsibility model applies to Azure data protection</span></li>
-                  <li><a href="azr_key_features_protection.html">Key features for protecting Azure workloads</a><span class="chapter-link-desc">Understand RSC features and architecture for Azure protection</span></li>
-                  <li><a href="azr_protection_high_level_arch.html">High-level architecture for Azure protection</a><span class="chapter-link-desc">See how RSC components and Azure resources connect to protect workloads</span></li>
-                  <li><a href="azr_common_protection_terms.html">Common Azure protection terms</a><span class="chapter-link-desc">Learn common terminology for Azure protection in RSC</span></li>
-                </ul>
+              <div class="phase-card pcb-learn">
+                <div class="phase-card-title pch-learn"><span class="phase-card-num">1</span>Learn</div>
+                <div class="phase-card-body">
+                  <ul>
+                    <li><a href="azr_how_rubrik_protects.html">Shared responsibility for Azure data protection</a><span class="chapter-link-desc">Understand how the Microsoft shared responsibility model applies to Azure data protection</span></li>
+                    <li><a href="azr_key_features_protection.html">Key features for protecting Azure workloads</a><span class="chapter-link-desc">Understand RSC features and architecture for Azure protection</span></li>
+                    <li><a href="azr_protection_high_level_arch.html">High-level architecture for Azure protection</a><span class="chapter-link-desc">See how RSC components and Azure resources connect to protect workloads</span></li>
+                    <li><a href="azr_common_protection_terms.html">Common Azure protection terms</a><span class="chapter-link-desc">Learn common terminology for Azure protection in RSC</span></li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="phase-card">
-                <div class="phase-card-title">Get started</div>
-                <ul>
-                  <li><a href="azr_protect_implementation.html">Azure protection implementation workflow</a><span class="chapter-link-desc">Follow a complete end-to-end setup guide covering all phases and dependencies</span></li>
-                  <li><a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a><span class="chapter-link-desc">Protect your first Azure subscription using the minimum required steps</span></li>
-                </ul>
+              <div class="phase-card pcb-start">
+                <div class="phase-card-title pch-start"><span class="phase-card-num">2</span>Get started</div>
+                <div class="phase-card-body">
+                  <ul>
+                    <li><a href="azr_protect_implementation.html">Azure protection implementation workflow</a><span class="chapter-link-desc">Follow a complete end-to-end setup guide covering all phases and dependencies</span></li>
+                    <li><a href="azr_protecting_first_subscription.html">Protecting your first Azure subscription</a><span class="chapter-link-desc">Protect your first Azure subscription using the minimum required steps</span></li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="phase-card">
-                <div class="phase-card-title">Plan and set up</div>
-                <ul>
-                  <li><a href="azr_protection_planning.html">Plan your Azure protection</a><span class="chapter-link-desc">Define user roles and review required permissions before setup</span></li>
-                  <li><a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a><span class="chapter-link-desc">Connect Azure subscriptions to RSC using OAuth or manual configuration</span></li>
-                  <li><a href="azr_exocompute.html">Set up Exocompute on Azure</a><span class="chapter-link-desc">Deploy Exocompute for file indexing, file recovery, and storage tiering</span></li>
-                  <li><a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a><span class="chapter-link-desc">Archive virtual machine and managed disk snapshots to Azure storage tiers</span></li>
-                  <li><a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a><span class="chapter-link-desc">Create SLA Domains and assign protection to Azure workloads</span></li>
-                </ul>
+              <div class="phase-card pcb-plan">
+                <div class="phase-card-title pch-plan"><span class="phase-card-num">3</span>Plan and set up</div>
+                <div class="phase-card-body">
+                  <ul>
+                    <li><a href="azr_protection_planning.html">Plan your Azure protection</a><span class="chapter-link-desc">Define user roles and review required permissions before setup</span></li>
+                    <li><a href="azr_cloud_acc_setup.html">Set up Azure cloud accounts</a><span class="chapter-link-desc">Connect Azure subscriptions to RSC using OAuth or manual configuration</span></li>
+                    <li><a href="azr_exocompute.html">Set up Exocompute on Azure</a><span class="chapter-link-desc">Deploy Exocompute for file indexing, file recovery, and storage tiering</span></li>
+                    <li><a href="azr_storage_tiering_setup.html">Set up Azure storage tiering</a><span class="chapter-link-desc">Archive virtual machine and managed disk snapshots to Azure storage tiers</span></li>
+                    <li><a href="azr_workloads_protection_setup.html">Set up Azure workloads protection</a><span class="chapter-link-desc">Create SLA Domains and assign protection to Azure workloads</span></li>
+                  </ul>
+                </div>
               </div>
 
               <div class="chapter-cards-bottom">
 
-                <div class="phase-card">
-                  <div class="phase-card-title">Manage</div>
-                  <ul>
-                    <li><a href="azr_manage_vm_md.html">Manage Azure virtual machines</a><span class="chapter-link-desc">Monitor snapshots, manage relic virtual machines, and configure tag-based protection</span></li>
-                    <li><a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a><span class="chapter-link-desc">Manage Blob Storage container protection and compliance reporting</span></li>
-                    <li><a href="azr_sql_db_manage.html">Manage Azure SQL Database</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Database</span></li>
-                    <li><a href="azr_sql_mi_manage.html">Manage Azure SQL Managed Instance</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Managed Instance</span></li>
-                  </ul>
+                <div class="phase-card pcb-manage">
+                  <div class="phase-card-title pch-manage"><span class="phase-card-num">4</span>Manage</div>
+                  <div class="phase-card-body">
+                    <ul>
+                      <li><a href="azr_manage_vm_md.html">Manage Azure virtual machines</a><span class="chapter-link-desc">Monitor snapshots, manage relic virtual machines, and configure tag-based protection</span></li>
+                      <li><a href="../azure_blob/azr_manage_blob_storage.html">Manage Azure Blob Storage</a><span class="chapter-link-desc">Manage Blob Storage container protection and compliance reporting</span></li>
+                      <li><a href="azr_sql_db_manage.html">Manage Azure SQL Database</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Database</span></li>
+                      <li><a href="azr_sql_mi_manage.html">Manage Azure SQL Managed Instance</a><span class="chapter-link-desc">Enable Rubrik-managed backup for Azure SQL Managed Instance</span></li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div class="phase-card">
-                  <div class="phase-card-title">Recover</div>
-                  <ul>
-                    <li><a href="azr_workload_recovery.html">Recover Azure workloads</a><span class="chapter-link-desc">Restore Azure virtual machines, Blob Storage, SQL workloads, or individual files</span></li>
-                  </ul>
+                <div class="phase-card pcb-recover">
+                  <div class="phase-card-title pch-recover"><span class="phase-card-num">5</span>Recover</div>
+                  <div class="phase-card-body">
+                    <ul>
+                      <li><a href="azr_workload_recovery.html">Recover Azure workloads</a><span class="chapter-link-desc">Restore Azure virtual machines, Blob Storage, SQL workloads, or individual files</span></li>
+                    </ul>
+                  </div>
                 </div>
 
               </div>
