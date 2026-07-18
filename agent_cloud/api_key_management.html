@@ -1,0 +1,333 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="Agent Cloud uses API keys to authenticate AI agents and a dual-key architecture — upstream keys and model gateway keys — to secure agent traffic."/><meta name="DC.relation" content="../agent_cloud/custom_agents_built_in_model_gateway.html"/><meta name="DC.relation" content="../agent_cloud/onboarding_agent_rewind.html"/><meta name="DC.relation" content="../agent_cloud/viewing_api_keys.html"/><meta name="DC.relation" content="../agent_cloud/viewing_api_keys.html"/><meta name="DC.relation" content="../agent_cloud/generating_api_key.html"/><meta name="DC.relation" content="../agent_cloud/deleting_api_key.html"/><meta name="DC.relation" content="custom_agents_deployed_agent_cloud.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="api_key_management"/>        
+      <title>API key management</title><!--  Generated with Oxygen version 27.1, build number 2025032023.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="api_key_management-d30753e51722"/><meta name="wh-source-relpath" content="agent_cloud/api_key_management.dita"/><meta name="wh-out-relpath" content="agent_cloud/api_key_management.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025032023"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025032023"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260718175330"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025032023"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260718175330"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025032023"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025032023"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025032023"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025032023"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+    <script defer="true" src="../oxygen-webhelp/template/js/custom-collapsed-sections.js"></script>
+</head>
+
+    <body id="api_key_management" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html">Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li><div class="topicref" data-id="agent_cloud_RSC"><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html"><span class="ph">Agent Cloud</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> is the <span class="ph">RSC</span> solution for governing autonomous         AI agents — discovering them, monitoring their actions, enforcing policies, and reversing         unauthorized data changes without taking systems offline.</p></div></div></div></li><li><div class="topicref" data-id="configure_ai_connections"><div class="title"><a href="../agent_cloud/configure_ai_connections.html">Connect your AI platforms</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> connects to the AI platforms, frameworks, and agent         infrastructure in your environment. The connection method depends on whether your AI agents         use a native platform, endpoint detection, or a custom model gateway.</p></div></div></div></li><li><div class="topicref" data-id="custom_agents_deployed_agent_cloud"><div class="title"><a href="../agent_cloud/custom_agents_deployed_agent_cloud.html">Custom agents managed by <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">If your organization has built AI agents that call LLM APIs directly, connect them to <span class="ph">Agent Cloud</span> through a model gateway. A model gateway routes and monitors API traffic between your agents and the LLM, enabling <span class="ph">Agent Cloud</span> to enforce policies on custom agent behavior.</p></div></div></div></li><li><div class="topicref" data-id="custom_agents_built_in_model_gateway"><div class="title"><a href="../agent_cloud/custom_agents_built_in_model_gateway.html">Custom agents with the built-in <span class="ph">Agent Cloud</span> model gateway</a><div class="wh-tooltip"><p class="shortdesc">Use the Rubrik-managed model gateway when you want Rubrik to operate the gateway infrastructure. After configuring the gateway in RSC, your agent developers replace the direct LLM endpoint in their agent code with the Agent Cloud gateway endpoint.</p></div></div></div></li><li class="active"><div class="topicref" data-id="api_key_management"><div class="title"><a href="../agent_cloud/api_key_management.html">API key management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> uses API keys to authenticate AI agents and a dual-key         architecture — upstream keys and model gateway keys — to secure agent traffic.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../agent_cloud/onboarding_agent_rewind.html" title="Configuring Agent Cloud model gateways" aria-label="Previous topic: Configuring Agent Cloud model gateways" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../agent_cloud/viewing_api_keys.html" title="Viewing the API keys" aria-label="Next topic: Viewing the API keys" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e974" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e974-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d30753e974-link">Getting Started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e1661" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e1661-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d30753e1661-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e5081" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e5081-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d30753e5081-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e9418" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e9418-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d30753e9418-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e12567" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e12567-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d30753e12567-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e43919" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e43919-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d30753e43919-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e47763" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e47763-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d30753e47763-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d30753e50670" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d30753e50670-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html" id="tocId-d30753e50670-link">Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="agent_cloud_RSC-d30753e50676" class="topicref" data-id="agent_cloud_RSC" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action agent_cloud_RSC-d30753e50676-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html" id="agent_cloud_RSC-d30753e50676-link"><span class="ph">Agent Cloud</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> is the <span class="ph">RSC</span> solution for governing autonomous         AI agents — discovering them, monitoring their actions, enforcing policies, and reversing         unauthorized data changes without taking systems offline.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e50696" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e50696-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_overview.html" id="tocId-d30753e50696-link">Introduction to Agent Cloud</a></div></div></li><li role="treeitem"><div data-tocid="high_level_implementation_workflow-d30753e50764" class="topicref" data-id="high_level_implementation_workflow" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/high_level_implementation_workflow.html" id="high_level_implementation_workflow-d30753e50764-link">High-level implementation workflow</a><div class="wh-tooltip"><p class="shortdesc">Follow this end-to-end workflow to set up <span class="ph">Agent Cloud</span>, connect your AI         platforms, configure governance, and begin monitoring AI agent activity in your         environment.</p></div></div></div></li><li role="treeitem"><div data-tocid="quick_links-d30753e50778" class="topicref" data-id="quick_links" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/quick_links.html" id="quick_links-d30753e50778-link">Quick links</a><div class="wh-tooltip"><p class="shortdesc">Quick access to the most common setup, governance, monitoring, and rewind tasks in             <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="plan_agent_cloud_deployment-d30753e50792" class="topicref" data-id="plan_agent_cloud_deployment" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action plan_agent_cloud_deployment-d30753e50792-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/plan_agent_cloud_deployment.html" id="plan_agent_cloud_deployment-d30753e50792-link">Plan your <span class="ph">Agent Cloud</span> deployment</a><div class="wh-tooltip"><p class="shortdesc">Before connecting AI platforms or configuring policies, complete three planning steps:         confirm your environment meets the requirements, review best practices for your AI agents,         and decide where <span class="ph">Agent Cloud</span>'s data plane will run.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="configure_ai_connections-d30753e51138" class="topicref" data-id="configure_ai_connections" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action configure_ai_connections-d30753e51138-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/configure_ai_connections.html" id="configure_ai_connections-d30753e51138-link">Connect your AI platforms</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> connects to the AI platforms, frameworks, and agent         infrastructure in your environment. The connection method depends on whether your AI agents         use a native platform, endpoint detection, or a custom model gateway.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="native_integrations_agent_cloud-d30753e51151" class="topicref" data-id="native_integrations_agent_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action native_integrations_agent_cloud-d30753e51151-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/native_integrations_agent_cloud.html" id="native_integrations_agent_cloud-d30753e51151-link">Native integrations and cloud platforms</a><div class="wh-tooltip"><p class="shortdesc">Connect AI platforms that have built-in agent capabilities to <span class="ph">Agent Cloud</span>. These platforms use cloud-to-cloud integrations that do not require deploying a model         gateway.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="endpoint_detection_agent_cloud-d30753e51581" class="topicref" data-id="endpoint_detection_agent_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action endpoint_detection_agent_cloud-d30753e51581-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/endpoint_detection_agent_cloud.html" id="endpoint_detection_agent_cloud-d30753e51581-link">Endpoint detection in <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">Endpoint detection connects Agent Cloud to AI agents running on managed devices — desktops and laptops enrolled in an MDM system — so Agent Cloud can monitor their activity.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="custom_agents_deployed_agent_cloud-d30753e51642" class="topicref" data-id="custom_agents_deployed_agent_cloud" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action custom_agents_deployed_agent_cloud-d30753e51642-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/custom_agents_deployed_agent_cloud.html" id="custom_agents_deployed_agent_cloud-d30753e51642-link">Custom agents managed by <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">If your organization has built AI agents that call LLM APIs directly, connect them to <span class="ph">Agent Cloud</span> through a model gateway. A model gateway routes and monitors API traffic between your agents and the LLM, enabling <span class="ph">Agent Cloud</span> to enforce policies on custom agent behavior.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="understand_how_model_gateways_work-d30753e51661" class="topicref" data-id="understand_how_model_gateways_work" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/understand_how_model_gateways_work.html" id="understand_how_model_gateways_work-d30753e51661-link">Understand how model gateways work</a><div class="wh-tooltip"><p class="shortdesc">Model gateways are the fundamental infrastructure components that enable <span class="ph">Agent Cloud</span> to govern, monitor, and secure your AI agent         interactions.</p></div></div></div></li><li role="treeitem"><div data-tocid="prerequisites_custom_agents_agent_cloud-d30753e51675" class="topicref" data-id="prerequisites_custom_agents_agent_cloud" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/prerequisites_custom_agents_agent_cloud.html" id="prerequisites_custom_agents_agent_cloud-d30753e51675-link">Prerequisites for using custom agents with <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">Before onboarding <span class="ph">Agent Cloud</span>, you must ensure that your environment         meets the required account, network, and configuration prerequisites.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="custom_agents_built_in_model_gateway-d30753e51691" class="topicref" data-id="custom_agents_built_in_model_gateway" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action custom_agents_built_in_model_gateway-d30753e51691-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/custom_agents_built_in_model_gateway.html" id="custom_agents_built_in_model_gateway-d30753e51691-link">Custom agents with the built-in <span class="ph">Agent Cloud</span> model gateway</a><div class="wh-tooltip"><p class="shortdesc">Use the Rubrik-managed model gateway when you want Rubrik to operate the gateway infrastructure. After configuring the gateway in RSC, your agent developers replace the direct LLM endpoint in their agent code with the Agent Cloud gateway endpoint.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="onboarding_agent_rewind-d30753e51705" class="topicref" data-id="onboarding_agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/onboarding_agent_rewind.html" id="onboarding_agent_rewind-d30753e51705-link">Configuring <span class="ph">Agent Cloud</span> model gateways</a><div class="wh-tooltip"><p class="shortdesc">Onboard model gateways to <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="api_key_management-d30753e51722" class="topicref" data-id="api_key_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action api_key_management-d30753e51722-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/api_key_management.html" id="api_key_management-d30753e51722-link">API key management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> uses API keys to authenticate AI agents and a dual-key         architecture — upstream keys and model gateway keys — to secure agent traffic.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="viewing_api_keys-d30753e51735" class="topicref" data-id="viewing_api_keys" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/viewing_api_keys.html" id="viewing_api_keys-d30753e51735-link">Viewing the API keys</a><div class="wh-tooltip"><p class="shortdesc">View the API keys listed on <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="generating_api_key-d30753e51749" class="topicref" data-id="generating_api_key" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/generating_api_key.html" id="generating_api_key-d30753e51749-link">Generating an API key</a><div class="wh-tooltip"><p class="shortdesc">Generate an API key to use for authentication on <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="deleting_api_key-d30753e51763" class="topicref" data-id="deleting_api_key" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/deleting_api_key.html" id="deleting_api_key-d30753e51763-link">Deleting an API key</a><div class="wh-tooltip"><p class="shortdesc">Delete an API key you no longer need.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="custom_agents_existing_model_gateways-d30753e51774" class="topicref" data-id="custom_agents_existing_model_gateways" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action custom_agents_existing_model_gateways-d30753e51774-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/custom_agents_existing_model_gateways.html" id="custom_agents_existing_model_gateways-d30753e51774-link">Custom agents with existing model gateways</a><div class="wh-tooltip"><p class="shortdesc">Use an existing model gateway when you already operate gateway infrastructure and want to keep it, or when your agents call LLM providers not supported by the built-in gateway. Agent Cloud connects to your existing gateway by receiving event callbacks from a plugin.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="onboard_ai_operations-d30753e51862" class="topicref" data-id="onboard_ai_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action onboard_ai_operations-d30753e51862-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/onboard_ai_operations.html" id="onboard_ai_operations-d30753e51862-link">Onboard <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">After setting up your data plane and configuring your AI platform connections,         complete onboarding in <span class="ph">RSC</span> to activate <span class="ph">Agent Cloud</span> in your         environment. Onboarding creates the model router that connects your agents to the LLM         providers <span class="ph">Agent Cloud</span> monitors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_agent_operations_policies-d30753e51901" class="topicref" data-id="manage_agent_operations_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_agent_operations_policies-d30753e51901-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/manage_agent_operations_policies.html" id="manage_agent_operations_policies-d30753e51901-link">Manage <span class="ph">Agent Cloud</span> policies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> policies define the governance rules for AI agent behavior.         Enable system policies for broad protection, then create custom policies for requirements         specific to your organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="monitor_analyze_ai_agent_activity-d30753e52015" class="topicref" data-id="monitor_analyze_ai_agent_activity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitor_analyze_ai_agent_activity-d30753e52015-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/monitor_analyze_ai_agent_activity.html" id="monitor_analyze_ai_agent_activity-d30753e52015-link">Monitor AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">Use the <span class="ph">Agent Cloud</span> UI to maintain continuous visibility into what your         AI agents are doing, which tools they are using, and whether they are violating your         policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind_agent_violations-d30753e52276" class="topicref" data-id="rewind_agent_violations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind_agent_violations-d30753e52276-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/rewind_agent_violations.html" id="rewind_agent_violations-d30753e52276-link">Rewind AI agent violations</a><div class="wh-tooltip"><p class="shortdesc">When an AI agent action causes an unintended or unauthorized data change, use <span class="ph">Agent Cloud</span>'s Rewind feature to reverse the specific change without restoring         the entire system.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e52304" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e52304-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/rubrik_ai_overview.html" id="tocId-d30753e52304-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Use Rubrik AI and Annapurna for conversational interaction with your
+                environment, and access the GraphQL API Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e52585" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e52585-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d30753e52585-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e53230" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e53230-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d30753e53230-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e55136" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e55136-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d30753e55136-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e55223" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e55223-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenancy.html" id="tocId-d30753e55223-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e56055" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e56055-link" class="wh-expand-btn"></span><div class="title"><a href="../rsc_ports/port_specs.html" id="tocId-d30753e56055-link">Port Specifications</a><div class="wh-tooltip"><p class="shortdesc">Port requirements for <span class="ph">RSC</span> deployments, organized by workload
+                type, Envoy organization network ports, and Rubrik cluster administration
+                ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e56143" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e56143-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d30753e56143-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">API key management</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">Agent Cloud</span> uses API keys to authenticate AI agents and a dual-key
+        architecture — upstream keys and model gateway keys — to secure agent traffic.</p>
+        <p class="- topic/p p">From <span class="- topic/ph ph">Agent Cloud</span>, you can generate a new API key or delete an existing
+            key.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Upstream and model gateway API keys</h2>
+            
+            <p class="- topic/p p"><span class="- topic/ph ph">Agent Cloud</span> uses a dual-key system to separate your sensitive data from
+                your provider credentials.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="api_key_management__entry__1">Key type</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="api_key_management__entry__2">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="api_key_management__entry__1">Upstream API keys</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="api_key_management__entry__2">These keys are the primary credentials provided by your LLM
+                                vendor, such as OpenAI, Azure OpenAI, or Anthropic. You provide
+                                these keys to the model gateway during initial deployment. The
+                                model gateway uses them to authenticate its requests to the
+                                provider. These keys are not shared with your AI agent
+                                developers.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="api_key_management__entry__1">Model gateway API keys</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="api_key_management__entry__2">These are unique credentials generated by <span class="- topic/ph ph">Agent Cloud</span>. You provide these keys to your developers to authenticate their
+                                custom AI agents with the model gateway. If a model gateway API key
+                                is compromised, you can revoke it without exposing or changing the
+                                primary upstream API key.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Key management tasks</h2>
+            
+            <p class="- topic/p p">You can manage the lifecycle of your model gateway API keys from the <span class="- topic/ph ph">Agent Cloud</span> interface.</p>
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="api_key_management__entry__7">Action</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="api_key_management__entry__8">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="api_key_management__entry__7">View API keys</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="api_key_management__entry__8">View the inventory of active keys, including the creation date,
+                                creator, and associated model gateway for each credential.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="api_key_management__entry__7">Generate an API key</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="api_key_management__entry__8">Create unique credentials for specific agents or environments.
+                                    <p class="- topic/p p">This enables you to issue separate keys for different
+                                    development teams without redeploying the gateway.</p></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="api_key_management__entry__7">Delete an API key</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="api_key_management__entry__8">Permanently revoke a key to block traffic from a specific agent
+                                or developer. This ensures immediate security after a credential
+                                compromise or project termination.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="custom_agents_deployed_agent_cloud.html" title="If your organization has built AI agents that call LLM APIs directly, connect them to Agent Cloud through a model gateway. A model gateway routes and monitors API traffic between your agents and the LLM, enabling Agent Cloud to enforce policies on custom agent behavior.">Custom agents managed by Agent Cloud</a><div class="- topic/desc ">If your organization has built AI agents that call LLM APIs directly, connect them to Agent Cloud through a model gateway. A model gateway routes and monitors API traffic between your agents and the LLM, enabling Agent Cloud to enforce policies on custom agent behavior.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

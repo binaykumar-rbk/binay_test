@@ -1,0 +1,396 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="Agent Cloud's data plane — the component that processes agent traffic and enforces policies — runs either as a Rubrik-managed SaaS service or inside your own AWS or Azure VPC. Choose the option that fits your data residency requirements, cost model, and infrastructure."/><meta name="DC.relation" content="../agent_cloud/plan_agent_cloud_deployment.html"/><meta name="DC.relation" content="../agent_cloud/agent_cloud_best_practices.html"/><meta name="DC.relation" content="../agent_cloud/aws_azure_region_support.html"/><meta name="DC.relation" content="../agent_cloud/aws_azure_region_support.html"/><meta name="DC.relation" content="../agent_cloud/provisioning_saas_infrastructure_agent_clouds.html"/><meta name="DC.relation" content="../agent_cloud/provisioning_aws_vpc_agent_operations.html"/><meta name="DC.relation" content="../agent_cloud/deploy_azure_vpc_ao.html"/><meta name="DC.relation" content="agent_cloud_RSC.html"/><meta name="DC.relation" content="configure_ai_connections.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="agent_cloud_deployment_provisioning_options"/>        
+      <title>Choose your data plane</title><!--  Generated with Oxygen version 27.1, build number 2025032023.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="agent_cloud_deployment_provisioning_options-d30753e50847"/><meta name="wh-source-relpath" content="agent_cloud/agent_cloud_deployment_provisioning_options.dita"/><meta name="wh-out-relpath" content="agent_cloud/agent_cloud_deployment_provisioning_options.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025032023"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025032023"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260718175330"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025032023"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260718175330"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025032023"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025032023"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025032023"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025032023"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+    <script defer="true" src="../oxygen-webhelp/template/js/custom-collapsed-sections.js"></script>
+</head>
+
+    <body id="agent_cloud_deployment_provisioning_options" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html">Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li><div class="topicref" data-id="agent_cloud_RSC"><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html"><span class="ph">Agent Cloud</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> is the <span class="ph">RSC</span> solution for governing autonomous         AI agents — discovering them, monitoring their actions, enforcing policies, and reversing         unauthorized data changes without taking systems offline.</p></div></div></div></li><li><div class="topicref" data-id="plan_agent_cloud_deployment"><div class="title"><a href="../agent_cloud/plan_agent_cloud_deployment.html">Plan your <span class="ph">Agent Cloud</span> deployment</a><div class="wh-tooltip"><p class="shortdesc">Before connecting AI platforms or configuring policies, complete three planning steps:         confirm your environment meets the requirements, review best practices for your AI agents,         and decide where <span class="ph">Agent Cloud</span>'s data plane will run.</p></div></div></div></li><li class="active"><div class="topicref" data-id="agent_cloud_deployment_provisioning_options"><div class="title"><a href="../agent_cloud/agent_cloud_deployment_provisioning_options.html">Choose your data plane</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span>'s data plane — the component that processes agent traffic         and enforces policies — runs either as a Rubrik-managed SaaS service or inside your own AWS         or Azure VPC. Choose the option that fits your data residency requirements, cost model, and         infrastructure.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../agent_cloud/agent_cloud_best_practices.html" title="Best practices for AI agents managed by Agent Cloud" aria-label="Previous topic: Best practices for AI agents managed by Agent Cloud" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../agent_cloud/aws_azure_region_support.html" title="Region support for Agent Cloud" aria-label="Next topic: Region support for Agent Cloud" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e974" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e974-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d30753e974-link">Getting Started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e1661" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e1661-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d30753e1661-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e5081" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e5081-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d30753e5081-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e9418" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e9418-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d30753e9418-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e12567" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e12567-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d30753e12567-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e43919" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e43919-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d30753e43919-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e47763" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e47763-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d30753e47763-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d30753e50670" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d30753e50670-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html" id="tocId-d30753e50670-link">Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="agent_cloud_RSC-d30753e50676" class="topicref" data-id="agent_cloud_RSC" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action agent_cloud_RSC-d30753e50676-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_RSC.html" id="agent_cloud_RSC-d30753e50676-link"><span class="ph">Agent Cloud</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> is the <span class="ph">RSC</span> solution for governing autonomous         AI agents — discovering them, monitoring their actions, enforcing policies, and reversing         unauthorized data changes without taking systems offline.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e50696" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e50696-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_overview.html" id="tocId-d30753e50696-link">Introduction to Agent Cloud</a></div></div></li><li role="treeitem"><div data-tocid="high_level_implementation_workflow-d30753e50764" class="topicref" data-id="high_level_implementation_workflow" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/high_level_implementation_workflow.html" id="high_level_implementation_workflow-d30753e50764-link">High-level implementation workflow</a><div class="wh-tooltip"><p class="shortdesc">Follow this end-to-end workflow to set up <span class="ph">Agent Cloud</span>, connect your AI         platforms, configure governance, and begin monitoring AI agent activity in your         environment.</p></div></div></div></li><li role="treeitem"><div data-tocid="quick_links-d30753e50778" class="topicref" data-id="quick_links" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/quick_links.html" id="quick_links-d30753e50778-link">Quick links</a><div class="wh-tooltip"><p class="shortdesc">Quick access to the most common setup, governance, monitoring, and rewind tasks in             <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="plan_agent_cloud_deployment-d30753e50792" class="topicref" data-id="plan_agent_cloud_deployment" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action plan_agent_cloud_deployment-d30753e50792-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/plan_agent_cloud_deployment.html" id="plan_agent_cloud_deployment-d30753e50792-link">Plan your <span class="ph">Agent Cloud</span> deployment</a><div class="wh-tooltip"><p class="shortdesc">Before connecting AI platforms or configuring policies, complete three planning steps:         confirm your environment meets the requirements, review best practices for your AI agents,         and decide where <span class="ph">Agent Cloud</span>'s data plane will run.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="agent_cloud_prerequisites-d30753e50809" class="topicref" data-id="agent_cloud_prerequisites" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_prerequisites.html" id="agent_cloud_prerequisites-d30753e50809-link"><span class="ph">Agent Cloud</span> prerequisites</a><div class="wh-tooltip"><p class="shortdesc">Confirm your <span class="ph">RSC</span> environment meets these requirements before setting         up <span class="ph">Agent Cloud</span>.</p></div></div></div></li><li role="treeitem"><div data-tocid="agent_cloud_best_practices-d30753e50828" class="topicref" data-id="agent_cloud_best_practices" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_best_practices.html" id="agent_cloud_best_practices-d30753e50828-link">Best practices for AI agents managed by <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">Before connecting AI agents to <span class="ph">Agent Cloud</span>, review these best practices. Applying them during development and configuration — rather than after — ensures <span class="ph">Agent Cloud</span> can accurately monitor, govern, and trace the actions of your agents.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="agent_cloud_deployment_provisioning_options-d30753e50847" class="topicref" data-id="agent_cloud_deployment_provisioning_options" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action agent_cloud_deployment_provisioning_options-d30753e50847-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/agent_cloud_deployment_provisioning_options.html" id="agent_cloud_deployment_provisioning_options-d30753e50847-link">Choose your data plane</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span>'s data plane — the component that processes agent traffic         and enforces policies — runs either as a Rubrik-managed SaaS service or inside your own AWS         or Azure VPC. Choose the option that fits your data residency requirements, cost model, and         infrastructure.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="aws_azure_region_support-d30753e50860" class="topicref" data-id="aws_azure_region_support" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/aws_azure_region_support.html" id="aws_azure_region_support-d30753e50860-link">Region support for <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> supports regions across SaaS, AWS, and Azure         deployments.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="provisioning_saas_infrastructure_agent_clouds-d30753e50875" class="topicref" data-id="provisioning_saas_infrastructure_agent_clouds" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action provisioning_saas_infrastructure_agent_clouds-d30753e50875-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/provisioning_saas_infrastructure_agent_clouds.html" id="provisioning_saas_infrastructure_agent_clouds-d30753e50875-link">Provision SaaS infrastructure</a><div class="wh-tooltip"><p class="shortdesc">You chose SaaS deployment, which means Rubrik manages the data plane in a dedicated         tenant. No deployment steps are required. This topic describes what Rubrik creates         automatically and what credentials you provide for each connection type.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="provisioning_aws_vpc_agent_operations-d30753e50905" class="topicref" data-id="provisioning_aws_vpc_agent_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action provisioning_aws_vpc_agent_operations-d30753e50905-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/provisioning_aws_vpc_agent_operations.html" id="provisioning_aws_vpc_agent_operations-d30753e50905-link">Deploy AWS VPC infrastructure in <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">You chose AWS VPC deployment. <span class="ph">Agent Cloud</span>'s data plane runs inside your AWS account — all sensitive agent traffic is processed and stored locally within your VPC and never leaves your cloud environment. Work through the topics in this section in order to complete your deployment.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="deploy_azure_vpc_ao-d30753e51026" class="topicref" data-id="deploy_azure_vpc_ao" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action deploy_azure_vpc_ao-d30753e51026-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/deploy_azure_vpc_ao.html" id="deploy_azure_vpc_ao-d30753e51026-link">Deploy Azure VPC in <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">You chose Azure VPC deployment. <span class="ph">Agent Cloud</span>'s data plane runs inside your Azure subscription — all sensitive agent traffic is processed and stored locally within your environment and never leaves your cloud boundary. Work through the topics in this section in order to complete your deployment.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="configure_ai_connections-d30753e51138" class="topicref" data-id="configure_ai_connections" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configure_ai_connections-d30753e51138-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/configure_ai_connections.html" id="configure_ai_connections-d30753e51138-link">Connect your AI platforms</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> connects to the AI platforms, frameworks, and agent         infrastructure in your environment. The connection method depends on whether your AI agents         use a native platform, endpoint detection, or a custom model gateway.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="onboard_ai_operations-d30753e51862" class="topicref" data-id="onboard_ai_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action onboard_ai_operations-d30753e51862-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/onboard_ai_operations.html" id="onboard_ai_operations-d30753e51862-link">Onboard <span class="ph">Agent Cloud</span></a><div class="wh-tooltip"><p class="shortdesc">After setting up your data plane and configuring your AI platform connections,         complete onboarding in <span class="ph">RSC</span> to activate <span class="ph">Agent Cloud</span> in your         environment. Onboarding creates the model router that connects your agents to the LLM         providers <span class="ph">Agent Cloud</span> monitors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_agent_operations_policies-d30753e51901" class="topicref" data-id="manage_agent_operations_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_agent_operations_policies-d30753e51901-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/manage_agent_operations_policies.html" id="manage_agent_operations_policies-d30753e51901-link">Manage <span class="ph">Agent Cloud</span> policies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Cloud</span> policies define the governance rules for AI agent behavior.         Enable system policies for broad protection, then create custom policies for requirements         specific to your organization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="monitor_analyze_ai_agent_activity-d30753e52015" class="topicref" data-id="monitor_analyze_ai_agent_activity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitor_analyze_ai_agent_activity-d30753e52015-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/monitor_analyze_ai_agent_activity.html" id="monitor_analyze_ai_agent_activity-d30753e52015-link">Monitor AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">Use the <span class="ph">Agent Cloud</span> UI to maintain continuous visibility into what your         AI agents are doing, which tools they are using, and whether they are violating your         policies.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind_agent_violations-d30753e52276" class="topicref" data-id="rewind_agent_violations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind_agent_violations-d30753e52276-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_cloud/rewind_agent_violations.html" id="rewind_agent_violations-d30753e52276-link">Rewind AI agent violations</a><div class="wh-tooltip"><p class="shortdesc">When an AI agent action causes an unintended or unauthorized data change, use <span class="ph">Agent Cloud</span>'s Rewind feature to reverse the specific change without restoring         the entire system.</p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e52304" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e52304-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/rubrik_ai_overview.html" id="tocId-d30753e52304-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Use Rubrik AI and Annapurna for conversational interaction with your
+                environment, and access the GraphQL API Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e52585" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e52585-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d30753e52585-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e53230" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e53230-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d30753e53230-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e55136" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e55136-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d30753e55136-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e55223" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e55223-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenancy.html" id="tocId-d30753e55223-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e56055" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e56055-link" class="wh-expand-btn"></span><div class="title"><a href="../rsc_ports/port_specs.html" id="tocId-d30753e56055-link">Port Specifications</a><div class="wh-tooltip"><p class="shortdesc">Port requirements for <span class="ph">RSC</span> deployments, organized by workload
+                type, Envoy organization network ports, and Rubrik cluster administration
+                ports.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d30753e56143" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d30753e56143-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d30753e56143-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Choose your data plane</h1>
+    
+    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">Agent Cloud</span>'s data plane — the component that processes agent traffic
+        and enforces policies — runs either as a Rubrik-managed SaaS service or inside your own AWS
+        or Azure VPC. Choose the option that fits your data residency requirements, cost model, and
+        infrastructure.</p>
+        <p class="- topic/p p">Every action an AI agent takes — a prompt sent to an LLM, a tool call, a response —
+            passes through the <span class="- topic/ph ph">Agent Cloud</span> data plane for policy evaluation. Where that
+            data plane runs determines who processes your agent traffic, who bears the compute cost,
+            and whether sensitive content leaves your cloud environment.</p>
+        <div class="- topic/note note important note_important"><span class="note__title">Important:</span> <div class="note__body">You can run the <span class="- topic/ph ph">Agent Cloud</span> data plane in only one
+            location at a time. If you require multiple data planes, contact Rubrik
+            Support.</div></div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Compare your options</h2>
+            
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="4"><caption><span class="- topic/desc desc tabledesc">This table compares the SaaS, AWS VPC, and Azure VPC deployment options for
+                    the <span class="- topic/ph ph">Agent Cloud</span> data plane.</span></caption><colgroup><col style="width:28.57142857142857%"/><col style="width:23.809523809523807%"/><col style="width:23.809523809523807%"/><col style="width:23.809523809523807%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__1"></th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__2">SaaS</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__3">AWS VPC</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__4">Azure VPC</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__1"><strong class="+ topic/ph hi-d/b ph b">Who operates the data plane</strong></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__2">Rubrik</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__3">You</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__4">You</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__1"><strong class="+ topic/ph hi-d/b ph b">Where agent traffic is processed</strong></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__2">Rubrik-managed tenant</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__3">Your AWS account</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__4">Your Azure subscription</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__1"><strong class="+ topic/ph hi-d/b ph b">Setup required</strong></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__2">None — provisioned automatically at onboarding</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__3">Deploy CloudFormation template</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__4">Deploy using Azure CLI</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__1"><strong class="+ topic/ph hi-d/b ph b">Compute cost</strong></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__2">Rubrik</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__3">You (billed by AWS)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__4">You (billed by Azure)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__1"><strong class="+ topic/ph hi-d/b ph b">Latency</strong></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__2">Higher — agents require internet access</td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__3">Lower — gateway runs inside your VPC</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__4">Lower — gateway runs inside your subscription</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">How to decide</h2>
+            
+            <p class="- topic/p p">Choose <strong class="+ topic/ph hi-d/b ph b">SaaS</strong> if:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">You are connecting native integrations — Microsoft Copilot Studio, Gemini,
+                    Claude, Microsoft 365 Copilot, ChatGPT Enterprise, Microsoft Foundry, or AWS
+                    Bedrock. These platforms route traffic through Rubrik-managed infrastructure by
+                    design.</li>
+                <li class="- topic/li li">You want to evaluate <span class="- topic/ph ph">Agent Cloud</span> with minimal setup time.</li>
+                <li class="- topic/li li">Your data residency policy permits sending agent metadata to Rubrik-managed
+                    infrastructure.</li>
+            </ul>
+            <p class="- topic/p p">Choose <strong class="+ topic/ph hi-d/b ph b">AWS VPC</strong> if:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Your custom AI agents are deployed in AWS and must not send prompt and response
+                    data outside your cloud boundary.</li>
+                <li class="- topic/li li">You want low latency between your agents and the gateway.</li>
+                <li class="- topic/li li">You want the gateway to operate within your existing AWS security controls.</li>
+            </ul>
+            <p class="- topic/p p">Choose <strong class="+ topic/ph hi-d/b ph b">Azure VPC</strong> if:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Your custom AI agents are deployed in Azure and must not send prompt and
+                    response data outside your cloud boundary.</li>
+                <li class="- topic/li li">You want low latency between your agents and the gateway.</li>
+                <li class="- topic/li li">You have Azure compliance controls that need to extend to the gateway
+                    environment.</li>
+            </ul>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">What's in this section</h2>
+            
+            <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the topics in this section and what each covers.</span></caption><colgroup><col style="width:37.49999999999999%"/><col style="width:62.5%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__25">Topic</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="agent_cloud_deployment_provisioning_options__entry__26">What it answers</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__25"><a class="- topic/xref xref" href="aws_azure_region_support.html" title="Agent Cloud supports regions across SaaS, AWS, and Azure deployments.">Region support for Agent Cloud</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__26">Which RSC, AWS, and Azure regions <span class="- topic/ph ph">Agent Cloud</span>
+                                supports.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__25"><a class="- topic/xref xref" href="provisioning_saas_infrastructure_agent_clouds.html" title="You chose SaaS deployment, which means Rubrik manages the data plane in a dedicated tenant. No deployment steps are required. This topic describes what Rubrik creates automatically and what credentials you provide for each connection type.">Provision SaaS infrastructure</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__26">What Rubrik provisions automatically for SaaS, and what
+                                credentials you provide for each connection type.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__25"><a class="- topic/xref xref" href="provisioning_aws_vpc_agent_operations.html" title="You chose AWS VPC deployment. Agent Cloud's data plane runs inside your AWS account — all sensitive agent traffic is processed and stored locally within your VPC and never leaves your cloud environment. Work through the topics in this section in order to complete your deployment.">Deploy AWS VPC infrastructure in Agent Cloud</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="agent_cloud_deployment_provisioning_options__entry__26">Architecture, best practices, customer responsibilities, cost,
+                                and deployment steps for AWS VPC.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__25"><a class="- topic/xref xref" href="deploy_azure_vpc_ao.html" title="You chose Azure VPC deployment. Agent Cloud's data plane runs inside your Azure subscription — all sensitive agent traffic is processed and stored locally within your environment and never leaves your cloud boundary. Work through the topics in this section in order to complete your deployment.">Deploy Azure VPC in Agent Cloud</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="agent_cloud_deployment_provisioning_options__entry__26">Architecture, best practices, customer responsibilities, cost,
+                                and deployment steps for Azure VPC.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Next step</h2>
+            
+            <p class="- topic/p p">After choosing and deploying your data plane:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">SaaS users:</strong> Proceed to <a class="- topic/xref xref" href="configure_ai_connections.html" title="Agent Cloud connects to the AI platforms, frameworks, and agent infrastructure in your environment. The connection method depends on whether your AI agents use a native platform, endpoint detection, or a custom model gateway.">Connect your AI platforms</a>. RSC provisions the SaaS data plane automatically during onboarding — no
+                    deployment steps required.</li>
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">AWS VPC users:</strong> Complete <a class="- topic/xref xref" href="provisioning_aws_vpc_agent_operations.html" title="You chose AWS VPC deployment. Agent Cloud's data plane runs inside your AWS account — all sensitive agent traffic is processed and stored locally within your VPC and never leaves your cloud environment. Work through the topics in this section in order to complete your deployment.">Deploy AWS VPC infrastructure in Agent Cloud</a>, then proceed to <a class="- topic/xref xref" href="configure_ai_connections.html" title="Agent Cloud connects to the AI platforms, frameworks, and agent infrastructure in your environment. The connection method depends on whether your AI agents use a native platform, endpoint detection, or a custom model gateway.">Connect your AI platforms</a>.</li>
+                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">Azure VPC users:</strong> Complete <a class="- topic/xref xref" href="deploy_azure_vpc_ao.html" title="You chose Azure VPC deployment. Agent Cloud's data plane runs inside your Azure subscription — all sensitive agent traffic is processed and stored locally within your environment and never leaves your cloud boundary. Work through the topics in this section in order to complete your deployment.">Deploy Azure VPC in Agent Cloud</a>, then
+                    proceed to <a class="- topic/xref xref" href="configure_ai_connections.html" title="Agent Cloud connects to the AI platforms, frameworks, and agent infrastructure in your environment. The connection method depends on whether your AI agents use a native platform, endpoint detection, or a custom model gateway.">Connect your AI platforms</a>.</li>
+            </ul>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="agent_cloud_RSC.html" title="Agent Cloud is the RSC solution for governing autonomous AI agents — discovering them, monitoring their actions, enforcing policies, and reversing unauthorized data changes without taking systems offline.">Agent Cloud with RSC</a><div class="- topic/desc ">Agent Cloud is the RSC solution for governing autonomous         AI agents — discovering them, monitoring their actions, enforcing policies, and reversing         unauthorized data changes without taking systems offline.</div></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="configure_ai_connections.html" title="Agent Cloud connects to the AI platforms, frameworks, and agent infrastructure in your environment. The connection method depends on whether your AI agents use a native platform, endpoint detection, or a custom model gateway.">Connect your AI platforms</a><div class="- topic/desc ">Agent Cloud connects to the AI platforms, frameworks, and agent         infrastructure in your environment. The connection method depends on whether your AI agents         use a native platform, endpoint detection, or a custom model gateway.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
