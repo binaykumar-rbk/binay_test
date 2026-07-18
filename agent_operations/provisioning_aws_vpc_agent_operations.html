@@ -177,40 +177,26 @@
                     <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
                         
                         <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Provisioning AWS VPC infrastructure in <span class="- topic/ph ph">Agent Operations</span></h1>
-    
-    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">Deploying AWS VPC in <span class="- topic/ph ph">Agent Operations</span> involves provisioning the necessary
-        infrastructure directly within your AWS account to establish a dedicated data
-        plane.</p>
-        <p class="- topic/p p">Deploying AWS model gateways involves provisioning the necessary infrastructure directly
-            within your AWS account. This configuration establishes a dedicated data plane within
-            your AWS account, enabling Agent Operations to monitor and govern your custom AI agents
-            while ensuring sensitive data remains within your cloud boundary.</p>
-        <p class="- topic/p p">The model gateways process data locally within your virtual private cloud (VPC), but you
-            perform all management and orchestration operations using <span class="- topic/ph ph">Agent Operations</span>.</p>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Key capabilities</h2>
-            
-            <ul class="- topic/ul ul">
-                <li class="- topic/li li">Data sovereignty: The model gateway processes all sensitive agent traffic, such
-                    as prompts and responses, locally within your AWS VPC. This ensures that private
-                    data never leaves your controlled environment.</li>
-                <li class="- topic/li li">Hybrid management: You utilize a hybrid operational model where the data plane
-                    resides in your AWS account, but all orchestration, policy management, and
-                    reporting are handled through <span class="- topic/ph ph">Agent Operations</span>.</li>
-                <li class="- topic/li li">Automated provisioning: You provide access to <span class="- topic/ph ph">Agent Operations</span> so it can
-                    deploy the required resources, including Amazon EKS clusters and S3 buckets,
-                    using a Rubrik-provided AWS CloudFormation template, streamlining the setup
-                    process.</li>
-            </ul>
-        </section>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">When to use AWS VPC</h2>
-            
-            <p class="- topic/p p">You can deploy this VPC when your custom AI agents and associated infrastructure are
-                hosted in AWS. This minimizes latency by keeping the gateway close to your agents
-                and leveraging your existing AWS security configurations.</p>
-        </section>
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">AWS VPC deployment</h1>
+    <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/shortdesc shortdesc">You chose AWS VPC deployment. Agent Cloud's data plane runs inside your AWS account — all sensitive agent traffic is processed and stored locally within your VPC and never leaves your cloud environment.</p>
+      <p class="- topic/p p">Work through the topics in this section in order before starting the deployment.</p>
+      <div class="table-container"><table class="- topic/table table frame-all" data-cols="2">
+        <thead class="- topic/thead thead"><tr class="- topic/row"><th class="- topic/entry entry colsep-1 rowsep-1">Topic</th><th class="- topic/entry entry colsep-0 rowsep-1">What it covers</th></tr></thead>
+        <tbody class="- topic/tbody tbody">
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">AWS VPC architecture</td><td class="- topic/entry entry colsep-0 rowsep-1">How the data plane is structured and how it connects to Agent Cloud</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Best practices</td><td class="- topic/entry entry colsep-0 rowsep-1">Recommended AWS account setup and security configuration before deployment</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Customer responsibilities</td><td class="- topic/entry entry colsep-0 rowsep-1">What you are responsible for managing after deployment</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Cost management</td><td class="- topic/entry entry colsep-0 rowsep-1">How AWS bills you for the gateway infrastructure</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Deploy AWS VPC infrastructure</td><td class="- topic/entry entry colsep-0 rowsep-1">Step-by-step deployment using the CloudFormation template</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-1">Configure AWS PrivateLink</td><td class="- topic/entry entry colsep-0 rowsep-1">Private connectivity between the gateway and Agent Cloud</td></tr>
+          <tr class="- topic/row"><td class="- topic/entry entry colsep-1 rowsep-0">HTTPS endpoint access</td><td class="- topic/entry entry colsep-0 rowsep-0">How agents reach the gateway over HTTPS</td></tr>
+        </tbody>
+      </table></div>
+      <div class="next-step" style="background:linear-gradient(135deg,#f4f7ff,#fff);border:1px solid #dde3f5;border-left:4px solid #4a6cf7;padding:13px 18px;margin:24px 0;border-radius:0 8px 8px 0;font-size:14px">
+        <strong>Next step:</strong> After completing deployment, proceed to <a href="configure_ai_connections.html">Connect your AI platforms</a>.
+      </div>
     </div>
-    
 </article></main></div>
                         
                         

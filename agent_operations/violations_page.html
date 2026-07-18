@@ -176,91 +176,13 @@
                     
                     <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
                         
-                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic       reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Violations page</h1>
-    
-    <div class="- topic/body reference/refbody body refbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">Agent Operations</span> triggers a violation when it detects configurations that
-        violate a policy, for example, when it detects a delete_file tool configured on an agent.
-            <span class="- topic/ph ph">Agent Operations</span> triggers an alert when it detects an action that has violated a
-        policy. Another way to think of the difference is that violations refer to a state of data
-        analysis and alerts refer to activity or actions on data.</p>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Filters for the Violations page</h2>
-            
-            <div class="- topic/p p">
-                <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">This table describes the filters for the Violations table.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-                            <tr class="- topic/row">
-                                <th class="- topic/entry entry colsep-1 rowsep-1" id="violations_page__entry__1">Heading</th>
-                                <th class="- topic/entry entry colsep-0 rowsep-1" id="violations_page__entry__2">Description</th>
-                            </tr>
-                        </thead><tbody class="- topic/tbody tbody">
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__entry__1">Violation Status</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__entry__2">Status of the violation. One or more of Dismissed, In
-                                    Progress, Open, and Remediated.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__entry__1">Policy Violated</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__entry__2">The policies the tool violated.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__entry__1">Agents</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__entry__2">Name of the AI agent that performed the violation.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__entry__1">Applications</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__entry__2">Name of the application that issued the tool.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="violations_page__entry__1">Tools</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="violations_page__entry__2">Name of the tool that performed the violation.</td>
-                            </tr>
-                        </tbody></table></div>
-            </div>
-        </section>
-        <section class="- topic/section section" id="violations_page__section_vvp_fdr_23c" data-ofbid="violations_page__section_vvp_fdr_23c"><h2 class="- topic/title title sectiontitle">Columns for the Violations table</h2>
-            
-            <div class="- topic/p p">
-                <div class="table-container"><table class="- topic/table table frame-all" data-cols="2"><caption><span class="- topic/desc desc tabledesc">Describes the columns in the Violations table.</span></caption><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
-                            <tr class="- topic/row">
-                                <th class="- topic/entry entry colsep-1 rowsep-1" id="violations_page__section_vvp_fdr_23c__entry__1">Column</th>
-                                <th class="- topic/entry entry colsep-0 rowsep-1" id="violations_page__section_vvp_fdr_23c__entry__2">Description</th>
-                            </tr>
-                        </thead><tbody class="- topic/tbody tbody">
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__1">Violations Summary</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__2">Description of the violation.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__1">Entities Affected</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__2">Names of the entities affected by the violation.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__1">Status</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__2">Status of the violation. You can choose from:<ul class="- topic/ul ul" id="violations_page__ul_bdl_gdr_23c" data-ofbid="violations_page__ul_bdl_gdr_23c">
-                                        <li class="- topic/li li">Open: The violation is still active in the workload
-                                            data.</li>
-                                        <li class="- topic/li li">Remediated: <span class="- topic/ph ph">Agent Operations</span> has rolled back the
-                                            violation.</li>
-                                    </ul></td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__1">Active Alerts</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__2">Number of active alerts that resulted from this
-                                    violation.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__1">Policy Violated</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-1" headers="violations_page__section_vvp_fdr_23c__entry__2">Name of the policy the AI agent violated.</td>
-                            </tr>
-                            <tr class="- topic/row">
-                                <td class="- topic/entry entry colsep-1 rowsep-0" headers="violations_page__section_vvp_fdr_23c__entry__1">Detected On</td>
-                                <td class="- topic/entry entry colsep-0 rowsep-0" headers="violations_page__section_vvp_fdr_23c__entry__2">Date and time the violation was detected.</td>
-                            </tr>
-                        </tbody></table></div>
-            </div>
-        </section>
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Review violations and insights</h1>
+    <div class="- topic/body reference/refbody body refbody">
+      <p class="- topic/shortdesc shortdesc">The Posture section is where you triage and resolve policy violations. The Violations page shows what Agent Cloud flagged as non-compliant. The Insights page provides AI-generated analysis of agent behavior patterns with remediation recommendations.</p>
+      <p class="- topic/p p">Use the <strong>Violations page</strong> to review open violations, update their status as you investigate (Open, In Progress, Remediated, Dismissed), and close them when resolved. Use the <strong>Insights page</strong> to spot behavioral patterns — recurring risky actions or agents with consistently high-risk behavior — and to get recommendations for remediation. If a violation or insight points to a specific action that changed data, you can initiate a Rewind from the action detail tray. See <a href="rewind_ai_agent_actions_using_agent_operations.html">Rewind AI agent violations</a>.</p>
+      <div class="- topic/note note note_note" style="background:#f0f5ff;border-left:4px solid #4a6cf7;padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0"><div class="note__body">For the complete violation and insight table references (filters, columns, status values), see the existing Violations page and Insights page topics.</div></div>
     </div>
-    
 </article></main></div>
                         
                         
