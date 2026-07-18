@@ -30,6 +30,96 @@
             function OptanonWrapper() {
             }</script>
         <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+    <style>
+    .chapter-cards-intro {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .chapter-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 0;
+    }
+    .phase-card {
+      border: 1px solid rgba(200,216,232,0.25);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .theme-light .phase-card { border-color: #C8D8E8; }
+    .intro-card-title {
+      display: flex;
+      align-items: center;
+      padding: 9px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #ffffff;
+      background: #1F4068;
+    }
+    .intro-card-body { padding: 12px 16px 16px; }
+    .phase-card-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #ffffff;
+      background: #0C3460;
+    }
+    .phase-card-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.22);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .phase-card-body { padding: 12px 16px 16px; background: #EEF4FA; }
+    .chapter-cards ul, .chapter-cards-intro ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .chapter-cards ul li, .chapter-cards-intro ul li {
+      margin-bottom: 10px;
+      padding-left: 14px;
+      position: relative;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .chapter-cards ul li:last-child,
+    .chapter-cards-intro ul li:last-child { margin-bottom: 0; }
+    .chapter-cards ul li::before,
+    .chapter-cards-intro ul li::before {
+      content: "\25CF";
+      color: #09A8B8;
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+      top: 2px;
+      line-height: 1.4;
+    }
+    .chapter-cards ul li a,
+    .chapter-cards-intro ul li a { font-weight: 700; display: block; }
+    .chapter-link-desc {
+      display: block;
+      font-size: 11.5px;
+      margin-top: 2px;
+      line-height: 1.35;
+      color: #4A6A8A;
+    }
+    </style>
 </head>
 
     <body id="agent_rewind" class="wh_topic_page frmBody">
@@ -159,9 +249,9 @@
                 Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e11727" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e11727-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d27243e11727-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
                 wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e40394" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e40394-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d27243e40394-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
                 Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e43679" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e43679-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d27243e43679-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
-                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27243e46068" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27243e46068-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d27243e46068-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27243e46068" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27243e46068-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d27243e46068-link">Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
                 the actions to repair changes to the data and configurations without
-                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="agent_rewind-d27243e46074" class="topicref" data-id="agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="agent_rewind-d27243e46074-link"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span> provides a comprehensive solution         for discovering agents, detecting risky actions on your data caused by autonomous AI agents,         finding their root causes, and rewinding the actions to repair changes to the data and         configurations without downtime.</p></div></div></div></li><li role="treeitem"><div data-tocid="key_concepts_agent_operations-d27243e46094" class="topicref" data-id="key_concepts_agent_operations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/key_concepts_agent_operations.html" id="key_concepts_agent_operations-d27243e46094-link">Key concepts for <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">Information about the core components of <span class="ph">Agent Operations</span> and how these         components work together to provide observability, security, and remediation for your AI         infrastructure.</p></div></div></div></li><li role="treeitem"><div data-tocid="common_agent_operations_terms-d27243e46110" class="topicref" data-id="common_agent_operations_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/common_agent_operations_terms.html" id="common_agent_operations_terms-d27243e46110-link">Common <span class="ph">Agent Operations</span> terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AI agents with <span class="ph">Agent Operations</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="configure_ai_connections-d27243e46127" class="topicref" data-id="configure_ai_connections" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configure_ai_connections-d27243e46127-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="configure_ai_connections-d27243e46127-link">Configure AI connections</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> connections provide governance and monitoring for AI agent         interactions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="onboard_ai_operations-d27243e46676" class="topicref" data-id="onboard_ai_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action onboard_ai_operations-d27243e46676-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboard_ai_operations.html" id="onboard_ai_operations-d27243e46676-link">Onboard <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">After deploying the model gateways or native integrations for your custom AI agents,         you must onboard Agent Operations within <span class="ph">RSC</span> to monitor AI agent actions and         rewind the actions when required.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_agent_operations_policies-d27243e46779" class="topicref" data-id="manage_agent_operations_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_agent_operations_policies-d27243e46779-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/manage_agent_operations_policies.html" id="manage_agent_operations_policies-d27243e46779-link">Manage <span class="ph">Agent Operations</span> policies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> policies are the governance rules that define the acceptable         behavior for your AI agents to ensure they operate within safe boundaries.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="monitor_analyze_ai_agent_activity-d27243e46866" class="topicref" data-id="monitor_analyze_ai_agent_activity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitor_analyze_ai_agent_activity-d27243e46866-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html" id="monitor_analyze_ai_agent_activity-d27243e46866-link">Monitor and analyze AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">You can view information about AI agents, violations, tools, policies, and AI         gateways on the <span class="ph">Agent Operations</span> UI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind_actions_using_agent_operations-d27243e47119" class="topicref" data-id="rewind_actions_using_agent_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind_actions_using_agent_operations-d27243e47119-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/rewind_ai_agent_actions_using_agent_operations.html" id="rewind_actions_using_agent_operations-d27243e47119-link">Rewind AI agent violations using <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Agent Operations</span> to rewind the AI agent violations, undoing         high-risk alterations to data and configurations, or create tickets to resolve the errors at         a later date.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47157" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47157-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d27243e47157-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="agent_rewind-root" class="topicref" data-id="agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="agent_rewind-root-link">Agent Cloud with RSC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ac-intro-head" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ac-intro-head-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/key_concepts_agent_operations.html" id="ac-intro-head-link" style="font-style:italic">Introduction to Agent Cloud</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="key-concepts-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/key_concepts_agent_operations.html">Key concepts for Agent Cloud</a></div></div></li><li role="treeitem"><div data-tocid="common-terms-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/common_agent_operations_terms.html">Common Agent Cloud terms</a></div></div></li><li role="treeitem"><div data-tocid="tool-blocking-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/tool_blocking_support.html">Tool blocking support</a></div></div></li></ul></li><li role="treeitem"><div data-tocid="hlw-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/high_level_implementation_workflow.html">High-level implementation workflow</a></div></div></li><li role="treeitem"><div data-tocid="ql-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/quick_links.html">Quick links</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="plan-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action plan-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/plan_agent_cloud_deployment.html" id="plan-ac-link">Plan your Agent Cloud deployment</a><div class="wh-tooltip"><p class="shortdesc">Phase 1: Confirm prerequisites, review best practices, and choose your data plane.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="prereqs-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind_prerequisites.html">Prerequisites for Agent Cloud</a></div></div></li><li role="treeitem"><div data-tocid="bp-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html">Best practices for AI agents</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dp-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dp-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_operation_deployment_provisioning_options.html" id="dp-ac-link">Choose your data plane</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="region-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/aws_azure_region_support.html">Region support</a></div></div></li><li role="treeitem"><div data-tocid="saas-prov-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/provisioning_saas_infrastructure_agent_clouds.html">Provisioning SaaS infrastructure</a></div></div></li><li role="treeitem"><div data-tocid="aws-vpc-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/provisioning_aws_vpc_agent_operations.html">AWS VPC deployment</a></div></div></li><li role="treeitem"><div data-tocid="azr-vpc-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/deploy_azure_vpc_ao.html">Azure VPC deployment</a></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="connect-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connect-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="connect-ac-link">Connect your AI platforms</a><div class="wh-tooltip"><p class="shortdesc">Phase 2: Connect native integrations, endpoint detection, or custom agents.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="native-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action native-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="native-ac-link">Native integrations and cloud platforms</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="copilot-studio-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/ms_copilot_studio_agent_operations.html">Microsoft Copilot Studio</a></div></div></li><li role="treeitem"><div data-tocid="gemini-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/vertex_ai_agent_operations.html">Google Cloud Gemini Enterprise</a></div></div></li><li role="treeitem"><div data-tocid="m365-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html">Microsoft 365 Copilot</a></div></div></li><li role="treeitem"><div data-tocid="foundry-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/ms_foundry_deployed_agent_operations.html">Microsoft Foundry</a></div></div></li><li role="treeitem"><div data-tocid="bedrock-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html">AWS Bedrock</a></div></div></li></ul></li><li role="treeitem"><div data-tocid="endpoint-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/jamf_model_gateways_deployed_in.html">Endpoint detection</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="custom-agents-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action custom-agents-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="custom-agents-ac-link">Custom agents</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="builtin-gw-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboarding_agent_rewind.html">Built-in model gateway</a></div></div></li><li role="treeitem"><div data-tocid="litellm-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/litellm_model_gateway_deployed_agent_operations.html">LiteLLM</a></div></div></li></ul></li></ul></li><li role="treeitem"><div data-tocid="onboard-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboard_ai_operations.html">Onboard Agent Cloud</a><div class="wh-tooltip"><p class="shortdesc">Phase 3: Activate monitoring in RSC.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/manage_agent_operations_policies.html" id="manage-ac-link">Manage Agent Cloud policies</a><div class="wh-tooltip"><p class="shortdesc">Phase 4: Enable system policies and create custom policies.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="sys-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_operations_default_policies.html">Agent Cloud system policies</a></div></div></li><li role="treeitem"><div data-tocid="cust-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/creating_custom_policies.html">Custom policies</a></div></div></li><li role="treeitem"><div data-tocid="view-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_ai_operations_policies.html">View policies</a></div></div></li><li role="treeitem"><div data-tocid="create-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/creating_custom_policies.html">Create a custom policy</a></div></div></li><li role="treeitem"><div data-tocid="edit-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/editing_policy_llm_judge.html">Edit a policy</a></div></div></li><li role="treeitem"><div data-tocid="ena-pol-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/enabling_disabling_ai_operations_policies.html">Enable or disable a policy</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="monitor-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitor-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html" id="monitor-ac-link">Monitor AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">Phase 5: View the dashboard, inventory, violations, and runtime activity.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="dashboard-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/dashboard_page.html">View the Agent Cloud dashboard</a></div></div></li><li role="treeitem"><div data-tocid="inventory-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/inventory_page.html">Review your AI agent inventory</a></div></div></li><li role="treeitem"><div data-tocid="posture-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/violations_page.html">Review violations and insights</a></div></div></li><li role="treeitem"><div data-tocid="runtime-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/activity_page.html">Monitor runtime activity</a></div></div></li><li role="treeitem"><div data-tocid="connectors-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/viewing_connected_router_models.html">Review configured connections</a></div></div></li><li role="treeitem"><div data-tocid="events-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html">View events</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind-ac" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind-ac-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/rewind_ai_agent_actions_using_agent_operations.html" id="rewind-ac-link">Rewind AI agent violations</a><div class="wh-tooltip"><p class="shortdesc">Phase 6: Reverse specific data changes without restoring entire systems.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rewind-action-ac" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/rewind_ai_agent_actions_using_agent_operations.html">Rewind an AI agent action</a></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47157" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47157-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d27243e47157-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
                 Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47420" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47420-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d27243e47420-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
                 entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47896" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47896-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d27243e47896-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
                 dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e49676" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e49676-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d27243e49676-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
@@ -181,102 +271,93 @@
       <p class="- topic/shortdesc shortdesc">Agent Cloud is the Rubrik Security Cloud solution for governing autonomous AI agents — discovering them, monitoring their actions, enforcing policies, and reversing unauthorized data changes without taking systems offline.</p>
       <p class="- topic/p p">New to Agent Cloud? Start with <a class="- topic/xref xref" href="key_concepts_agent_operations.html">Key concepts for Agent Cloud</a> to understand how it works, then follow the <a class="- topic/xref xref" href="high_level_implementation_workflow.html">High-level implementation workflow</a> for the end-to-end setup path. Already familiar? Go directly to the phase that matches your current task.</p>
       <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">What's in this chapter</h2>
-        <div class="chapter-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#f4f7ff;padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#12132b">Introduction to Agent Cloud</div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="key_concepts_agent_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Key concepts</a> — Core components and how they work together</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="common_agent_operations_terms.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Common terms</a> — Quick-reference glossary</li>
-              <li style="padding:6px 0"><a href="tool_blocking_support.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Tool blocking support</a> — Which connections support real-time enforcement</li>
-            </ul></div>
-          </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#f4f7ff;padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#12132b">Getting Started</div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="high_level_implementation_workflow.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">High-level implementation workflow</a> — End-to-end setup path</li>
-              <li style="padding:6px 0"><a href="quick_links.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Quick links</a> — Fast access to common tasks</li>
-            </ul></div>
-          </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Plan</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 1</span>
+        <div class="chapter-cards-intro">
+          <div class="phase-card">
+            <div class="intro-card-title">Introduction to Agent Cloud</div>
+            <div class="intro-card-body">
+              <ul>
+                <li><a href="key_concepts_agent_operations.html">Key concepts for Agent Cloud</a><span class="chapter-link-desc">Core components and how they work together</span></li>
+                <li><a href="common_agent_operations_terms.html">Common Agent Cloud terms</a><span class="chapter-link-desc">Quick-reference glossary</span></li>
+                <li><a href="tool_blocking_support.html">Tool blocking support</a><span class="chapter-link-desc">Which connections support real-time enforcement</span></li>
+              </ul>
             </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="plan_agent_cloud_deployment.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Plan your deployment</a> — Overview of the planning phase</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_rewind_prerequisites.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Prerequisites</a> — Account and feature requirements</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_cloud_best_practices.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Best practices</a> — Agent naming, tool design, identity standards</li>
-              <li style="padding:6px 0"><a href="agent_operation_deployment_provisioning_options.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Choose your data plane</a> — SaaS vs. VPC decision guide</li>
-            </ul></div>
           </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Connect</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 2</span>
+          <div class="phase-card">
+            <div class="intro-card-title">Getting Started</div>
+            <div class="intro-card-body">
+              <ul>
+                <li><a href="high_level_implementation_workflow.html">High-level implementation workflow</a><span class="chapter-link-desc">End-to-end setup path, phase by phase</span></li>
+                <li><a href="quick_links.html">Quick links</a><span class="chapter-link-desc">Fast access to the most common tasks</span></li>
+              </ul>
             </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="configure_ai_connections.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Native integrations and cloud platforms</a> — Copilot Studio, Gemini, Claude, M365, ChatGPT, Foundry, Bedrock</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="jamf_model_gateways_deployed_in.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Endpoint detection</a> — Monitor agents on managed devices</li>
-              <li style="padding:6px 0"><a href="configure_ai_connections.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Custom agents</a> — Deploy a model gateway</li>
-            </ul></div>
           </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Onboard</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 3</span>
-            </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0"><a href="onboard_ai_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Onboard Agent Cloud</a> — Complete the RSC onboarding wizard to activate monitoring</li>
-            </ul></div>
-          </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">4</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Manage</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 4</span>
-            </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_operations_default_policies.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Agent Cloud system policies</a> — 24 built-in governance rules</li>
-              <li style="padding:6px 0"><a href="manage_agent_operations_policies.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Custom policies</a> — Site-specific rules evaluated by an AI judge</li>
-            </ul></div>
-          </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">5</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Monitor</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 5</span>
-            </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="dashboard_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Agent Cloud dashboard</a> — Environment overview</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="inventory_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">AI agent inventory</a> — Discovered agents, tools, and models</li>
-              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="violations_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Violations and insights</a> — Triage policy violations</li>
-              <li style="padding:6px 0"><a href="monitor_analyze_ai_agent_activity.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Runtime activity</a> — Sessions, actions, and alerts</li>
-            </ul></div>
-          </div>
-
-          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
-            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
-              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">6</span>
-              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Rewind</span>
-              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 6</span>
-            </div>
-            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
-              <li style="padding:6px 0"><a href="rewind_ai_agent_actions_using_agent_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Rewind an AI agent action</a> — Reverse specific data changes without restoring entire systems</li>
-            </ul></div>
-          </div>
-
         </div>
-      </section>
+        <div class="chapter-cards">
+
+          <div class="phase-card pcb-plan">
+            <div class="phase-card-title"><span class="phase-card-num">1</span>Plan</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="plan_agent_cloud_deployment.html">Plan your deployment</a><span class="chapter-link-desc">Overview of the three planning steps</span></li>
+                <li><a href="agent_rewind_prerequisites.html">Prerequisites for Agent Cloud</a><span class="chapter-link-desc">Account and feature requirements before you start</span></li>
+                <li><a href="agent_rewind.html">Best practices for AI agents</a><span class="chapter-link-desc">Agent naming, tool design, and identity standards</span></li>
+                <li><a href="agent_operation_deployment_provisioning_options.html">Choose your data plane</a><span class="chapter-link-desc">Compare SaaS and VPC options and decide</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-card pcb-start">
+            <div class="phase-card-title"><span class="phase-card-num">2</span>Connect</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="configure_ai_connections.html">Native integrations and cloud platforms</a><span class="chapter-link-desc">Copilot Studio, Gemini, Claude, M365 Copilot, ChatGPT, Foundry, Bedrock</span></li>
+                <li><a href="jamf_model_gateways_deployed_in.html">Endpoint detection</a><span class="chapter-link-desc">Monitor AI agents on Jamf-managed devices</span></li>
+                <li><a href="configure_ai_connections.html">Custom agents</a><span class="chapter-link-desc">Deploy a model gateway for internally built agents</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-card pcb-plan">
+            <div class="phase-card-title"><span class="phase-card-num">3</span>Onboard</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="onboard_ai_operations.html">Onboard Agent Cloud</a><span class="chapter-link-desc">Complete the RSC onboarding wizard to activate monitoring and create your model router</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-card pcb-manage">
+            <div class="phase-card-title"><span class="phase-card-num">4</span>Manage</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="agent_operations_default_policies.html">Agent Cloud system policies</a><span class="chapter-link-desc">24 built-in governance rules — security, compliance, and operations</span></li>
+                <li><a href="creating_custom_policies.html">Custom policies</a><span class="chapter-link-desc">Site-specific rules written in plain language, evaluated by an AI judge</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-card pcb-manage">
+            <div class="phase-card-title"><span class="phase-card-num">5</span>Monitor</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="dashboard_page.html">View the Agent Cloud dashboard</a><span class="chapter-link-desc">Agents discovered, high-risk agents, active violations</span></li>
+                <li><a href="inventory_page.html">Review your AI agent inventory</a><span class="chapter-link-desc">Every agent, tool, and model Agent Cloud has discovered</span></li>
+                <li><a href="violations_page.html">Review violations and insights</a><span class="chapter-link-desc">Triage policy violations and behavioral patterns</span></li>
+                <li><a href="activity_page.html">Monitor runtime activity</a><span class="chapter-link-desc">Drill into live sessions, tool calls, and alerts</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-card pcb-recover">
+            <div class="phase-card-title"><span class="phase-card-num">6</span>Rewind</div>
+            <div class="phase-card-body">
+              <ul>
+                <li><a href="rewind_ai_agent_actions_using_agent_operations.html">Rewind an AI agent action</a><span class="chapter-link-desc">Reverse specific data changes without restoring entire systems</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div></section>
     </div>
 </article></main></div>
                         
