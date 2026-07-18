@@ -1,0 +1,301 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><link rel="shortcut icon" href="../favicon.ico"/><link rel="icon" href="../favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="description" content="After deploying the model gateways or native integrations for your custom AI agents, you must onboard Agent Operations within RSC to monitor AI agent actions and rewind the actions when required."/><meta name="DC.relation" content="../agent_operations/https_endpoint_access_azure.html"/><meta name="DC.relation" content="../agent_operations/agent_rewind_prerequisites.html"/><meta name="DC.relation" content="../agent_operations/agent_rewind_prerequisites.html"/><meta name="DC.relation" content="../agent_operations/onboarding_agent_rewind.html"/><meta name="DC.relation" content="../agent_operations/api_key_management.html"/><meta name="DC.relation" content="agent_rewind.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="onboard_ai_operations"/>        
+      <title>Onboard Agent Operations</title><!--  Generated with Oxygen version 27.1, build number 2025041503.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="onboard_ai_operations-d27243e46676"/><meta name="wh-source-relpath" content="agent_operations/onboard_ai_operations.dita"/><meta name="wh-out-relpath" content="agent_operations/onboard_ai_operations.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025041503"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025041503"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260328103520"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025041503"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260328103520"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025041503"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025041503"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025041503"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/html-tiles-style-en_min.css?buildId=2025041503"/>
+    <script>
+    window.addEventListener("load", myInit, true); function myInit(){  addTargetBlank() };
+    </script>
+        
+    <script>
+    function addTargetBlank() {
+    const links = document.querySelectorAll('.open-in-tab');
+    links.forEach(link =&gt; {
+    link.setAttribute('target', '_blank');
+    });
+    }
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for docs.rubrik.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="48df0b20-13be-42ae-a47f-8fda7fae9dc7"></script>
+        <script type="text/javascript">
+            function OptanonWrapper() {
+            }</script>
+        <!-- OneTrust Cookies Consent Notice end for docs.rubrik.com -->
+</head>
+
+    <body id="onboard_ai_operations" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/rubrik_logo.png" alt="Rubrik Security Cloud"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Rubrik Security Cloud</span></a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                <title>toggle</title>
+        <div style="display: flex; justify-content: right; margin: 10px 0 0 0">
+            <label class="switch">
+                <input name="theme" type="checkbox" onclick="toggleTheme()" checked="checked"/>
+                <span title="Switch theme" class="eye"></span>
+            </label>
+        </div>
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+            
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-light') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            })();</script>
+    
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref"><div class="title"><a href="../agent_operations/agent_rewind.html">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div></li><li class="active"><div class="topicref" data-id="onboard_ai_operations"><div class="title"><a href="../agent_operations/onboard_ai_operations.html">Onboard <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">After deploying the model gateways or native integrations for your custom AI agents,         you must onboard Agent Operations within <span class="ph">RSC</span> to monitor AI agent actions and         rewind the actions when required.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+<span class="navprev"><a class="- topic/link link" href="../agent_operations/https_endpoint_access_azure.html" title="HTTPS endpoint access for Azure" aria-label="Previous topic: HTTPS endpoint access for Azure" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../agent_operations/agent_rewind_prerequisites.html" title="Agent Operations AI agent prerequisites" aria-label="Next topic: Agent Operations AI agent prerequisites" rel="next"></a></span>  </span></div>
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e893" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e893-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/getting_started_with_rsc.html" id="tocId-d27243e893-link">Getting started with RSC</a><div class="wh-tooltip"><p class="shortdesc">Set up initial configuration, network prerequisites, and primary
+                accounts.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e1537" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e1537-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/rubrik_clusters_2.html" id="tocId-d27243e1537-link">Rubrik Clusters</a><div class="wh-tooltip"><p class="shortdesc">Manage on-premises infrastructure, including cluster registration, CDM
+                upgrades, and hardware configuration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e4649" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e4649-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/sla_domains.html" id="tocId-d27243e4649-link">Protection Policies</a><div class="wh-tooltip"><p class="shortdesc">Configure SLA Domains to define backup frequency, retention, archiving, and
+                replication schedules.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e8780" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e8780-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/users_access.html" id="tocId-d27243e8780-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Configure and manage RSC security features, including user access, SSO,
+                Quorum Authorization, and data encryption.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e11727" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e11727-link" class="wh-expand-btn"></span><div class="title"><a href="../rubrik/supported_workloads.html" id="tocId-d27243e11727-link">Workloads</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Rubrik Security Cloud - Data Protection</span> securely manages and protects data from a
+                wide variety of workload types.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e40394" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e40394-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/ri_ransomware_monitoring.html" id="tocId-d27243e40394-link">Cyber Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Detect and govern risk using Threat Analytics and Data Security Posture.
+                Prepare for automated Orchestrated Application Recovery.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e43679" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e43679-link" class="wh-expand-btn"></span><div class="title"><a href="../identity_resilience/identity_resilience.html" id="tocId-d27243e43679-link">Identity Resiliency</a><div class="wh-tooltip"><p class="shortdesc">Secure, monitor, and recover hybrid identity providers, including Active
+                Directory, Microsoft Entra ID, and Okta.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d27243e46068" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d27243e46068-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="tocId-d27243e46068-link">Agent Operations</a><div class="wh-tooltip"><p class="shortdesc">Detect risky actions caused on your data by autonomous AI agents, and rewind
+                the actions to repair changes to the data and configurations without
+                downtime.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="agent_rewind-d27243e46074" class="topicref" data-id="agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind.html" id="agent_rewind-d27243e46074-link"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span></a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> with <span class="ph">RSC</span> provides a comprehensive solution         for discovering agents, detecting risky actions on your data caused by autonomous AI agents,         finding their root causes, and rewinding the actions to repair changes to the data and         configurations without downtime.</p></div></div></div></li><li role="treeitem"><div data-tocid="key_concepts_agent_operations-d27243e46094" class="topicref" data-id="key_concepts_agent_operations" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/key_concepts_agent_operations.html" id="key_concepts_agent_operations-d27243e46094-link">Key concepts for <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">Information about the core components of <span class="ph">Agent Operations</span> and how these         components work together to provide observability, security, and remediation for your AI         infrastructure.</p></div></div></div></li><li role="treeitem"><div data-tocid="common_agent_operations_terms-d27243e46110" class="topicref" data-id="common_agent_operations_terms" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/common_agent_operations_terms.html" id="common_agent_operations_terms-d27243e46110-link">Common <span class="ph">Agent Operations</span> terms</a><div class="wh-tooltip"><p class="shortdesc">It is important to understand some common terms when protecting AI agents with <span class="ph">Agent Operations</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="configure_ai_connections-d27243e46127" class="topicref" data-id="configure_ai_connections" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action configure_ai_connections-d27243e46127-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/configure_ai_connections.html" id="configure_ai_connections-d27243e46127-link">Configure AI connections</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> connections provide governance and monitoring for AI agent         interactions.</p></div></div></div></li><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="onboard_ai_operations-d27243e46676" class="topicref" data-id="onboard_ai_operations" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action onboard_ai_operations-d27243e46676-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboard_ai_operations.html" id="onboard_ai_operations-d27243e46676-link">Onboard <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">After deploying the model gateways or native integrations for your custom AI agents,         you must onboard Agent Operations within <span class="ph">RSC</span> to monitor AI agent actions and         rewind the actions when required.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="agent_rewind_prerequisites-d27243e46692" class="topicref" data-id="agent_rewind_prerequisites" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/agent_rewind_prerequisites.html" id="agent_rewind_prerequisites-d27243e46692-link"><span class="ph">Agent Operations</span> AI agent prerequisites</a><div class="wh-tooltip"><p class="shortdesc">Before onboarding <span class="ph">Agent Operations</span>, you must ensure that your environment         meets the specific account, network, and configuration requirements.</p></div></div></div></li><li role="treeitem"><div data-tocid="onboarding_agent_rewind-d27243e46708" class="topicref" data-id="onboarding_agent_rewind" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/onboarding_agent_rewind.html" id="onboarding_agent_rewind-d27243e46708-link">Onboarding <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">Onboard <span class="ph">Agent Operations</span> directly from <span class="ph">RSC</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="api_key_management-d27243e46727" class="topicref" data-id="api_key_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action api_key_management-d27243e46727-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/api_key_management.html" id="api_key_management-d27243e46727-link">API key management</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> uses API keys to authenticate the AI agents and uses a         dual-key architecture to secure agent traffic, including the distinction between upstream         and gateway keys.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="manage_agent_operations_policies-d27243e46779" class="topicref" data-id="manage_agent_operations_policies" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action manage_agent_operations_policies-d27243e46779-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/manage_agent_operations_policies.html" id="manage_agent_operations_policies-d27243e46779-link">Manage <span class="ph">Agent Operations</span> policies</a><div class="wh-tooltip"><p class="shortdesc"><span class="ph">Agent Operations</span> policies are the governance rules that define the acceptable         behavior for your AI agents to ensure they operate within safe boundaries.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="monitor_analyze_ai_agent_activity-d27243e46866" class="topicref" data-id="monitor_analyze_ai_agent_activity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action monitor_analyze_ai_agent_activity-d27243e46866-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/monitor_analyze_ai_agent_activity.html" id="monitor_analyze_ai_agent_activity-d27243e46866-link">Monitor and analyze AI agent activity</a><div class="wh-tooltip"><p class="shortdesc">You can view information about AI agents, violations, tools, policies, and AI         gateways on the <span class="ph">Agent Operations</span> UI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="rewind_actions_using_agent_operations-d27243e47119" class="topicref" data-id="rewind_actions_using_agent_operations" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rewind_actions_using_agent_operations-d27243e47119-link" class="wh-expand-btn"></span><div class="title"><a href="../agent_operations/rewind_ai_agent_actions_using_agent_operations.html" id="rewind_actions_using_agent_operations-d27243e47119-link">Rewind AI agent violations using <span class="ph">Agent Operations</span></a><div class="wh-tooltip"><p class="shortdesc">You can use <span class="ph">Agent Operations</span> to rewind the AI agent violations, undoing         high-risk alterations to data and configurations, or create tickets to resolve the errors at         a later date.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47157" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47157-link" class="wh-expand-btn"></span><div class="title"><a href="../saas-ai/ruby_overview.html" id="tocId-d27243e47157-link">AI and Automation</a><div class="wh-tooltip"><p class="shortdesc">Utilize conversational AI with Ruby and Annapurna and access the GraphQL API
+                Playground for scripting.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47420" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47420-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/integration_third_party_apps_in_rsc.html" id="tocId-d27243e47420-link">Integrations and License Usage</a><div class="wh-tooltip"><p class="shortdesc">Connect external systems, such as Zscaler and Okta ITP. Monitor consumption,
+                entitlements, and license usage.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e47896" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e47896-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/common/events.html" id="tocId-d27243e47896-link">Monitoring and Reporting</a><div class="wh-tooltip"><p class="shortdesc">Monitor live events, generate reports, check real-time system health using
+                dashboards, and configure notifications.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e49676" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e49676-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/rsc_insights.html" id="tocId-d27243e49676-link">Diagnostic Tools</a><div class="wh-tooltip"><p class="shortdesc">Access diagnostic solutions, such as Network Diagnostics, for operational
+                issues.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e49763" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e49763-link" class="wh-expand-btn"></span><div class="title"><a href="../saas/mt_multitenant_organizations.html" id="tocId-d27243e49763-link">Multitenancy</a><div class="wh-tooltip"><p class="shortdesc">Logically isolate shared resources to ensure organizations can only access
+                their specific data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d27243e50328" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d27243e50328-link" class="wh-expand-btn"></span><div class="title"><a href="../reuse/notices.html" id="tocId-d27243e50328-link">Additional Resources</a><div class="wh-tooltip"><p class="shortdesc">Access additional resources, such as Offline Recovery and Compatibility
+                Matrix guides.</p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic reference/reference topic reference" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Quick links</h1>
+    <div class="- topic/body reference/refbody body refbody">
+      <p class="- topic/shortdesc shortdesc">Quick access to the most common setup, governance, monitoring, and rewind tasks in Agent Cloud.</p>
+      <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">First-time setup</h2>
+        <ul class="- topic/ul ul">
+          <li class="- topic/li li"><a href="agent_rewind_prerequisites.html">Prerequisites for Agent Cloud</a></li>
+          <li class="- topic/li li"><a href="agent_operation_deployment_provisioning_options.html">Choose your data plane</a></li>
+          <li class="- topic/li li"><a href="provisioning_aws_vpc_agent_operations.html">Deploy AWS VPC infrastructure</a></li>
+          <li class="- topic/li li"><a href="deploy_azure_vpc_ao.html">Deploy Azure VPC infrastructure</a></li>
+          <li class="- topic/li li"><a href="ms_copilot_studio_agent_operations.html">Connect Microsoft Copilot Studio</a></li>
+          <li class="- topic/li li"><a href="onboarding_agent_rewind.html">Configure model gateways in RSC</a></li>
+          <li class="- topic/li li"><a href="onboard_ai_operations.html">Onboard Agent Cloud</a></li>
+        </ul>
+      </section>
+      <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Governance</h2>
+        <ul class="- topic/ul ul">
+          <li class="- topic/li li"><a href="agent_operations_default_policies.html">Agent Cloud system policies</a></li>
+          <li class="- topic/li li"><a href="creating_custom_policies.html">Create a custom policy</a></li>
+          <li class="- topic/li li"><a href="enabling_disabling_ai_operations_policies.html">Enable or disable a policy</a></li>
+          <li class="- topic/li li"><a href="enabling_tool_blocking.html">Enable tool blocking (Copilot Studio)</a></li>
+        </ul>
+      </section>
+      <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Monitoring</h2>
+        <ul class="- topic/ul ul">
+          <li class="- topic/li li"><a href="dashboard_page.html">View the Agent Cloud dashboard</a></li>
+          <li class="- topic/li li"><a href="inventory_page.html">Review your AI agent inventory</a></li>
+          <li class="- topic/li li"><a href="violations_page.html">Review violations and insights</a></li>
+          <li class="- topic/li li"><a href="monitor_analyze_ai_agent_activity.html">Monitor runtime activity</a></li>
+        </ul>
+      </section>
+      <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Rewind</h2>
+        <ul class="- topic/ul ul">
+          <li class="- topic/li li"><a href="rewind_ai_agent_actions_using_agent_operations.html">Rewind an AI agent action</a></li>
+        </ul>
+      </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relconcepts"><strong>Related concepts</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="agent_rewind.html" title="Agent Operations with RSC provides a comprehensive solution for discovering agents, detecting risky actions on your data caused by autonomous AI agents, finding their root causes, and rewinding the actions to repair changes to the data and configurations without downtime.">Agent Operations with RSC</a><div class="- topic/desc desc">Agent Operations with RSC provides a comprehensive solution         for discovering agents, detecting risky actions on your data caused by autonomous AI agents,         finding their root causes, and rewinding the actions to repair changes to the data and         configurations without downtime.</div></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    
+        <title>footer</title>
+    
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    <a href="https://support.rubrik.com/" target="_blank">Support</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal" target="_blank">Legal</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-policy" target="_blank">Privacy Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/terms-of-use" target="_blank">Terms of Use</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/cookie-policy" target="_blank">Cookie Policy</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/trust" target="_blank">Trust</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="footernav">
+                <li>
+                    CA Residents only: <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not sell or share my personal information</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="https://www.rubrik.com/legal/privacy-request" target="_blank">Do not share my sensitive information</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <script type="text/javascript">
+<!--
+            var generated = new Date(document.lastModified);
+            var day = generated.getDate();
+            var month = generated.getMonth() + 1;
+            var year = generated.getFullYear();
+            document.write("Generated on: " + year + '/' + (month <= 9 ? '0' + month: month) + '/' + (day <= 9 ? '0' + day: day));// --></script>
+        </div>
+        <div class="footer">Copyright © Rubrik - Zero Trust Data
+            Security™</div>
+    
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

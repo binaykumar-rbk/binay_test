@@ -176,53 +176,107 @@
                     <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
                         
                         <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
-    <h1 class="- topic/title title topictitle1" id="ariaid-title1"><span class="- topic/ph ph">Agent Operations</span> with <span class="- topic/ph ph">RSC</span></h1>
-    
-    <div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"><span class="- topic/ph ph">Agent Operations</span> with <span class="- topic/ph ph">RSC</span> provides a comprehensive solution
-        for discovering agents, detecting risky actions on your data caused by autonomous AI agents,
-        finding their root causes, and rewinding the actions to repair changes to the data and
-        configurations without downtime.</p>
-        <p class="- topic/p p"><span class="- topic/ph ph">Agent Operations</span> detects risky actions caused on your data by autonomous AI
-            agents, helps you find their root causes, and rewinds the actions to repair changes to
-            the data and configurations without downtime.</p>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">The challenges of agentic AI</h2>
-            
-            <p class="- topic/p p">Organizations using agentic AI, which are autonomous agents capable of executing
-                tasks, face significant risks when these agents accidentally alter or delete
-                critical data, leading to extended downtime and potential data loss. An unfortunate
-                reality of agentic AI is a lack of visibility into agent actions, the data they
-                affect, and clear path to recover the affected data.</p>
-            <p class="- topic/p p">For example, a support AI agent closes a Salesforce ticket and, as an enhancement,
-                changes a date field from a string to a date, rendering Salesforce unusable for most
-                users. </p>
-            <p class="- topic/p p">In another example, a nightly garbage collection agent, designed to optimize
-                SharePoint storage, erroneously deletes recent data. Days later, a user reports
-                missing files, prompting a help desk ticket. The IT team confirms the data loss but
-                lacks crucial information: they do not know the extent of the missing data or that
-                an agent caused the deletion. Furthermore, they have no assurance of a backup or a
-                clear recovery path.</p>
-            <p class="- topic/p p">In both these situations, <span class="- topic/ph ph">Agent Operations</span> can follow the AI agent changes
-                back to the root cause, enabling you to revert to the changes, rendering the data
-                correct.</p>
-        </section>
-        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">How <span class="- topic/ph ph">Agent Operations</span> solves these problems</h2>
-            
-            <div class="- topic/p p"><span class="- topic/ph ph">RSC</span> addresses these visibility and recovery gaps by providing a
-                centralized pane of glass for monitoring AI agents across multiple providers and frameworks.<ul class="- topic/ul ul">
-                    <li class="- topic/li li">Root cause analysis: <span class="- topic/ph ph">Agent Operations</span> tracks every action an agent
-                        takes, enabling you to trace an error, such as the SharePoint deletion, back
-                        to the root cause: the specific agent, the prompt, and tool that caused the
-                        error..</li>
-                    <li class="- topic/li li">Monitoring: <span class="- topic/ph ph">Agent Operations</span> enables you to monitor activity on your
-                        system. This can prompt critical questions about your AI environment, such
-                        as which AI agents are most active, which tools they are utilizing, and
-                        whether any specific interactions are violating your security policies. </li>
-                    <li class="- topic/li li">Transaction rewind: Instead of rolling back an entire system, <span class="- topic/ph ph">Agent Operations</span> enables you to rewind specific AI agent
-                        transactions. This selectively undoes the erroneous changes to data and
-                        configurations, restoring the system to a correct state while keeping other
-                        operations intact.</li>
-                </ul></div>
-        </section>
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Agent Cloud with RSC</h1>
+    <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/shortdesc shortdesc">Agent Cloud is the Rubrik Security Cloud solution for governing autonomous AI agents — discovering them, monitoring their actions, enforcing policies, and reversing unauthorized data changes without taking systems offline.</p>
+      <p class="- topic/p p">New to Agent Cloud? Start with <a class="- topic/xref xref" href="key_concepts_agent_operations.html">Key concepts for Agent Cloud</a> to understand how it works, then follow the <a class="- topic/xref xref" href="high_level_implementation_workflow.html">High-level implementation workflow</a> for the end-to-end setup path. Already familiar? Go directly to the phase that matches your current task.</p>
+      <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">What's in this chapter</h2>
+        <div class="chapter-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#f4f7ff;padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#12132b">Introduction to Agent Cloud</div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="key_concepts_agent_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Key concepts</a> — Core components and how they work together</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="common_agent_operations_terms.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Common terms</a> — Quick-reference glossary</li>
+              <li style="padding:6px 0"><a href="tool_blocking_support.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Tool blocking support</a> — Which connections support real-time enforcement</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#f4f7ff;padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#12132b">Getting Started</div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="high_level_implementation_workflow.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">High-level implementation workflow</a> — End-to-end setup path</li>
+              <li style="padding:6px 0"><a href="quick_links.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Quick links</a> — Fast access to common tasks</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Plan</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 1</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="plan_agent_cloud_deployment.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Plan your deployment</a> — Overview of the planning phase</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_rewind_prerequisites.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Prerequisites</a> — Account and feature requirements</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_cloud_best_practices.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Best practices</a> — Agent naming, tool design, identity standards</li>
+              <li style="padding:6px 0"><a href="agent_operation_deployment_provisioning_options.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Choose your data plane</a> — SaaS vs. VPC decision guide</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Connect</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 2</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="configure_ai_connections.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Native integrations and cloud platforms</a> — Copilot Studio, Gemini, Claude, M365, ChatGPT, Foundry, Bedrock</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="jamf_model_gateways_deployed_in.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Endpoint detection</a> — Monitor agents on managed devices</li>
+              <li style="padding:6px 0"><a href="configure_ai_connections.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Custom agents</a> — Deploy a model gateway</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Onboard</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 3</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0"><a href="onboard_ai_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Onboard Agent Cloud</a> — Complete the RSC onboarding wizard to activate monitoring</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">4</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Manage</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 4</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="agent_operations_default_policies.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Agent Cloud system policies</a> — 24 built-in governance rules</li>
+              <li style="padding:6px 0"><a href="manage_agent_operations_policies.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Custom policies</a> — Site-specific rules evaluated by an AI judge</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">5</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Monitor</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 5</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="dashboard_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Agent Cloud dashboard</a> — Environment overview</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="inventory_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">AI agent inventory</a> — Discovered agents, tools, and models</li>
+              <li style="padding:6px 0;border-bottom:1px solid #f0f2f8"><a href="violations_page.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Violations and insights</a> — Triage policy violations</li>
+              <li style="padding:6px 0"><a href="monitor_analyze_ai_agent_activity.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Runtime activity</a> — Sessions, actions, and alerts</li>
+            </ul></div>
+          </div>
+
+          <div class="chapter-card" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
+            <div style="background:#0d0e1e;padding:11px 16px;border-bottom:1px solid #1e2038;display:flex;align-items:center;gap:10px">
+              <span style="width:22px;height:22px;background:#4a6cf7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">6</span>
+              <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff">Rewind</span>
+              <span style="margin-left:auto;font-size:10px;color:#6b7a9a">Phase 6</span>
+            </div>
+            <div style="padding:12px 16px"><ul class="- topic/ul ul" style="list-style:none;padding:0;margin:0">
+              <li style="padding:6px 0"><a href="rewind_ai_agent_actions_using_agent_operations.html" style="color:#4a6cf7;font-weight:600;text-decoration:none">Rewind an AI agent action</a> — Reverse specific data changes without restoring entire systems</li>
+            </ul></div>
+          </div>
+
+        </div>
+      </section>
     </div>
 </article></main></div>
                         
